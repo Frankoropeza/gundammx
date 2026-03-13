@@ -1,0 +1,49 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-gundam-dark border-t border-gundam-blue/20 mt-auto">
+  <div class="max-w-7xl mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="/favicon.svg" alt="Gundam MX" class="w-8 h-8" />
+          <span class="font-display font-bold text-lg">
+            <span class="text-white">GUNDAM</span>
+            <span class="text-gundam-red ml-1">MX</span>
+          </span>
+        </div>
+        <p class="text-sm text-gundam-text/60 max-w-xs">
+          La comunidad y tienda de modelos Gundam más grande de México. Kits, guías y todo para el builder mexicano.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h3 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Navegación</h3>
+        <ul class="space-y-2">
+          <li><a href="/noticias" class="text-sm text-gundam-text/60 hover:text-gundam-gold transition-colors">Noticias</a></li>
+          <li><a href="#kits" class="text-sm text-gundam-text/60 hover:text-gundam-gold transition-colors">Catálogo de Kits</a></li>
+          <li><a href="#guias" class="text-sm text-gundam-text/60 hover:text-gundam-gold transition-colors">Guías</a></li>
+          <li><a href="#comunidad" class="text-sm text-gundam-text/60 hover:text-gundam-gold transition-colors">Comunidad</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Contacto</h3>
+        <ul class="space-y-2">
+          <li class="text-sm text-gundam-text/60">contacto@gundammx.com</li>
+          <li class="text-sm text-gundam-text/60">CDMX, México</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-gundam-blue/20 mt-8 pt-8 text-center">
+      <p class="text-xs text-gundam-text/40">
+        &copy; {year} Gundam MX. Todos los derechos reservados. Gundam es una marca registrada de Bandai Namco.
+      </p>
+    </div>
+  </div>
+</footer>

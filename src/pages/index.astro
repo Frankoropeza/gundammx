@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import { getCollection } from 'astro:content';
+
+const allNoticias = await getCollection('noticias', ({ data }) => !data.draft);
+const latestNoticias = allNoticias
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+const grades = [
+  {
+    name: 'HG',
+    full: 'High Grade',
+    scale: '1/144',
+    color: 'bg-green-600',
+    desc: 'El punto de entrada perfecto. Kits accesibles, fáciles de armar y con gran variedad de diseños. Ideales para principiantes.',
+  },
+  {
+    name: 'MG',
+    full: 'Master Grade',
+    scale: '1/100',
+    color: 'bg-gundam-blue',
+    desc: 'Mayor detalle y articulación. Incluyen estructura interna y piezas más elaboradas. Para builders con algo de experiencia.',
+  },
+  {
+    name: 'RG',
+    full: 'Real Grade',
+    scale: '1/144',
+    color: 'bg-purple-600',
+    desc: 'Detalle de Master Grade en escala 1/144. Piezas pequeñas y precisas. Un reto satisfactorio para builders intermedios.',
+  },
+  {
+    name: 'PG',
+    full: 'Perfect Grade',
+    scale: '1/60',
+    color: 'bg-gundam-red',
+    desc: 'La cima del Gunpla. Kits enormes con el máximo nivel de detalle, LEDs y mecanismos internos. Para veteranos.',
+  },
+];
+---
+
+<BaseLayout
+  title="Gundam MX"
+  description="La mejor comunidad Gundam de México. Kits, guías de armado, noticias y tienda de Gunpla con envíos a toda la República."
+>
+  <HeroSection />
+
+  <!-- Últimas Noticias -->
+  <section class="max-w-7xl mx-auto px-4 py-16">
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="font-display font-bold text-2xl md:text-3xl text-white">Últimas Noticias</h2>
+      <a href="/noticias" class="text-sm text-gundam-gold hover:underline">Ver todas &rarr;</a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {latestNoticias.map((noticia) => (
+        <a
+          href={`/noticias/${noticia.slug}`}
+          class="block bg-gundam-blue/10 border border-gundam-blue/20 rounded-xl p-6 hover:border-gundam-gold/40 transition-colors group"
+        >
+          <span class="inline-block bg-gundam-red text-white text-xs font-medium px-2 py-0.5 rounded-full mb-3">
+            {noticia.data.category}
+          </span>
+          <h3 class="font-display font-bold text-white text-lg mb-2 group-hover:text-gundam-gold transition-colors">
+            {noticia.data.title}
+          </h3>
+          <p class="text-sm text-gundam-text/60 mb-4 line-clamp-2">{noticia.data.description}</p>
+          <time class="text-xs text-gundam-text/40" datetime={noticia.data.pubDate.toISOString()}>
+            {noticia.data.pubDate.toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' })}
+          </time>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Grados de Kits -->
+  <section id="kits" class="bg-gundam-blue/5 py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="font-display font-bold text-2xl md:text-3xl text-white mb-4">Grados de Kits Gunpla</h2>
+        <p class="text-gundam-text/60 max-w-2xl mx-auto">
+          Desde tu primer High Grade hasta el legendario Perfect Grade, conoce cada línea y encuentra el kit perfecto para ti.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {grades.map((grade) => (
+          <div class="bg-gundam-dark border border-gundam-blue/20 rounded-xl p-6 text-center hover:border-gundam-gold/30 transition-colors">
+            <div class:list={['inline-flex items-center justify-center w-16 h-16 rounded-full mb-4', grade.color]}>
+              <span class="font-display font-black text-2xl text-white">{grade.name}</span>
+            </div>
+            <h3 class="font-display font-bold text-white text-lg mb-1">{grade.full}</h3>
+            <p class="text-xs text-gundam-gold mb-3">Escala {grade.scale}</p>
+            <p class="text-sm text-gundam-text/60">{grade.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Comunidad -->
+  <section id="comunidad" class="py-20">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="bg-gradient-to-br from-gundam-blue/20 to-gundam-red/10 border border-gundam-blue/30 rounded-2xl p-10 md:p-16">
+        <h2 class="font-display font-black text-3xl md:text-4xl text-white mb-4">
+          Únete a la Comunidad
+        </h2>
+        <p class="text-gundam-text/70 max-w-xl mx-auto mb-8">
+          Conecta con builders de toda la República Mexicana. Comparte tus builds, aprende técnicas nuevas y participa en eventos exclusivos.
+        </p>
+        <a
+          href="#"
+          class="inline-flex items-center px-8 py-3 bg-gundam-gold text-gundam-dark font-bold rounded-lg hover:bg-yellow-400 transition-colors"
+        >
+          Registrarme Ahora
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

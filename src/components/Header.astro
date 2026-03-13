@@ -1,0 +1,80 @@
+---
+const navLinks = [
+  { href: '/', label: 'Inicio' },
+  { href: '/noticias', label: 'Noticias' },
+  { href: '#kits', label: 'Kits' },
+  { href: '#guias', label: 'Guías' },
+  { href: '#tienda', label: 'Tienda' },
+  { href: '#comunidad', label: 'Comunidad' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-gundam-dark/95 backdrop-blur-md border-b border-gundam-blue/20">
+  <nav class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-3 group">
+      <img src="/favicon.svg" alt="Gundam MX" class="w-8 h-8" />
+      <span class="font-display font-bold text-xl tracking-wider">
+        <span class="text-white">GUNDAM</span>
+        <span class="text-gundam-red ml-1">MX</span>
+      </span>
+    </a>
+
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden text-gundam-text p-2"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <ul class="hidden md:flex items-center gap-6">
+      {navLinks.map(({ href, label }) => (
+        <li>
+          <a
+            href={href}
+            class:list={[
+              'text-sm font-medium transition-colors hover:text-gundam-gold',
+              currentPath === href ? 'text-gundam-gold' : 'text-gundam-text/80',
+            ]}
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gundam-blue/20">
+    <ul class="px-4 py-4 space-y-3">
+      {navLinks.map(({ href, label }) => (
+        <li>
+          <a
+            href={href}
+            class:list={[
+              'block text-sm font-medium transition-colors hover:text-gundam-gold',
+              currentPath === href ? 'text-gundam-gold' : 'text-gundam-text/80',
+            ]}
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    menu?.classList.toggle('hidden');
+  });
+</script>

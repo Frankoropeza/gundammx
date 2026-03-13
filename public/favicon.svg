@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Cabeza de Gundam estilizada -->
+  <rect x="16" y="8" width="32" height="28" rx="2" fill="#1E3A5F" stroke="#E6EDF3" stroke-width="1.5"/>
+  <!-- Visor -->
+  <polygon points="20,22 44,22 42,28 22,28" fill="#FFD700"/>
+  <!-- V-Fin -->
+  <polygon points="32,8 24,2 26,8" fill="#CC0000"/>
+  <polygon points="32,8 40,2 38,8" fill="#CC0000"/>
+  <!-- Antena central -->
+  <rect x="30" y="4" width="4" height="6" fill="#FFD700"/>
+  <!-- Cuerpo -->
+  <rect x="20" y="36" width="24" height="16" rx="2" fill="#1E3A5F" stroke="#E6EDF3" stroke-width="1.5"/>
+  <!-- Pecho rojo -->
+  <polygon points="26,38 38,38 36,48 28,48" fill="#CC0000"/>
+  <!-- Cuello -->
+  <rect x="28" y="34" width="8" height="4" fill="#E6EDF3" opacity="0.3"/>
+  <!-- Hombros -->
+  <rect x="12" y="36" width="10" height="8" rx="1" fill="#1E3A5F" stroke="#E6EDF3" stroke-width="1"/>
+  <rect x="42" y="36" width="10" height="8" rx="1" fill="#1E3A5F" stroke="#E6EDF3" stroke-width="1"/>
+  <!-- Piernas -->
+  <rect x="22" y="52" width="8" height="10" rx="1" fill="#1E3A5F" stroke="#E6EDF3" stroke-width="1"/>
+  <rect x="34" y="52" width="8" height="10" rx="1" fill="#1E3A5F" stroke="#E6EDF3" stroke-width="1"/>
+</svg>
