@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  site: 'https://gundammx.com',
+  site: process.env.PUBLIC_SITE_URL ?? 'https://gundam.mx',
   integrations: [mdx(), sitemap(), tailwind()],
   markdown: {
     shikiConfig: {

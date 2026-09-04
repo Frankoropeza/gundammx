@@ -4,3 +4,7 @@ dist/
 .DS_Store
 *.env
 *.env.*
+
+# salida de herramientas y material de referencia local
+graphify-out/
+_referencia/
