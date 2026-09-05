@@ -11,9 +11,11 @@ import GunplaBlock from '@components/GunplaBlock.astro';
 import EntryRow from '@components/EntryRow.astro';
 import UniverseTimeline from '@components/UniverseTimeline.astro';
 import NewsletterCTA from '@components/NewsletterCTA.astro';
+import FAQ from '@components/FAQ.astro';
 import { universosConContenido, seriesOrdenRecomendado, seriesCronologiaUC, seriesPorRuta, nombres, publicado } from '@lib/archivo';
 import { tiendasActivas, tiendasVerificadas, estadosConTiendas } from '@lib/directorio';
 import { SITE } from '@config/site';
+import { schemaFAQ } from '@lib/seo';
 import { fechaCorta } from '@lib/precio';
 
 const universos = await universosConContenido();
@@ -56,6 +58,33 @@ const filasLinea = universos.map((u) => ({
     .map((x) => ({ titulo: x.data.titulo, anio: x.data.anio, href: `/series/${x.id}/` })),
 }));
 
+const faq = [
+  {
+    pregunta: '¿En qué orden hay que ver Gundam?',
+    respuesta: `No hay un orden único: las ${universos.length} líneas temporales de Gundam son independientes y cada una se puede ver por separado. Para empezar de cero conviene elegir una serie de entrada —Mobile Suit Gundam si quieres el origen, Gundam Wing, SEED o The Witch from Mercury si prefieres una historia cerrada— y solo después decidir si sigues el Universal Century en orden.`,
+  },
+  {
+    pregunta: '¿Dónde se puede ver Gundam en México?',
+    respuesta: 'El catálogo está repartido entre Crunchyroll, Netflix, Prime Video y Disney+, además del canal oficial de Gundam en YouTube, que publica series completas de forma gratuita y rotativa. En televisión abierta, Azteca 7 transmite Mobile Suit Gundam SEED con doblaje latino desde el 28 de noviembre de 2025.',
+  },
+  {
+    pregunta: '¿Qué es el Gunpla?',
+    respuesta: `Gunpla es la contracción de "Gundam plastic model": los kits armables de plástico que Bandai fabrica desde 1980. Se arman a presión, sin pegamento, y se clasifican por grados —Entry Grade, High Grade, Real Grade, Master Grade y Perfect Grade— que cambian en escala, número de piezas y detalle.`,
+  },
+  {
+    pregunta: '¿Cuál es el mejor Gunpla para empezar?',
+    respuesta: 'Un Entry Grade o un High Grade en escala 1/144: son los más baratos, se arman en un par de horas y no necesitan pegamento ni pintura. El Master Grade y el Perfect Grade tienen mucho más detalle, pero también más piezas, más tiempo y un precio bastante mayor.',
+  },
+  {
+    pregunta: '¿Dónde comprar Gunpla original en México?',
+    respuesta: `En el directorio hay ${verificadas.length} tiendas verificadas en ${totalEstados} estados, entre tiendas físicas, tiendas en línea y talleres. Cada ficha indica cómo se verificó, qué grados maneja y, cuando existe, un precio observado con su fecha.`,
+  },
+  {
+    pregunta: '¿Cuántas series de Gundam hay?',
+    respuesta: `La franquicia lleva más de cuarenta años y decenas de series, películas y OVAs. En este archivo hay ${todasSeries.length} obras documentadas con ficha completa, repartidas entre los ${universos.length} calendarios que tienen contenido publicado.`,
+  },
+];
+
 const entradas = [
   { titulo: 'Universos', texto: 'Las líneas temporales de la franquicia, cada una con su calendario y su serie de entrada.', meta: `${universos.length} líneas documentadas`, href: '/universos/' },
   { titulo: 'Series', texto: 'Fichas por obra: año, formato, estudio, dirección y dónde encaja en su universo.', meta: `${todasSeries.length} obras en el archivo`, href: '/series/' },
@@ -68,15 +97,16 @@ const entradas = [
 
 <BaseLayout
   titulo="Gundam en español: por dónde empezar, qué ver y dónde comprar en México"
-  descripcion="Archivo independiente de Gundam en español: los siete universos explicados, fichas de series y mobile suits con fuentes, guías de Gunpla por grado y tiendas verificadas en México."
+  descripcion="Guía y archivo de Gundam en español: en qué orden ver las series, dónde verlas en México, qué Gunpla comprar primero y qué tiendas venden kits originales, con fuentes verificables."
+  schemas={[schemaFAQ(faq)]}
 >
   {destacado && (
     <EditorialHero
       sello={{ archivo: `Archivo ${SITE.nombre}`, actualizado: fechaCorta(destacado.data.fecha) }}
-      titulo="Entra a Gundam por"
-      destaque="la puerta correcta"
-      entrada="Cuarenta y siete años de series, siete calendarios que no se cruzan y listas de internet que se contradicen entre sí. Este archivo ordena la franquicia en español: qué ver primero según lo que te guste, qué mobile suit es cuál y en qué tienda mexicana comprar Gunpla original sin pagar de más."
-      busqueda={{ sugerencia: 'Prueba «Universal Century», «Master Grade» o «Guadalajara»' }}
+      titulo="Gundam en español: qué ver,"
+      destaque="en qué orden y dónde comprarlo"
+      entrada="Guía y archivo de Gundam para México. Aquí está el orden para ver las series sin spoilers, en qué plataforma está cada una, quién es quién entre los mobile suits y sus pilotos, y qué Gunpla comprar primero —con el directorio de tiendas verificadas que venden kits originales en el país."
+      busqueda={{ sugerencia: 'Busca «orden para ver Gundam», «Gunpla para principiantes» o «tiendas en CDMX»' }}
       acciones={[
         { texto: 'Empieza por aquí', href: `/articulos/${destacado.id}/`, principal: true },
         { texto: 'Ver tiendas verificadas', href: '/tiendas/' },
@@ -84,15 +114,15 @@ const entradas = [
       contexto={{
         titulo: 'Qué vas a encontrar',
         parrafos: [
-          'Gundam empezó en 1979 con una serie sobre una guerra entre la Tierra y sus colonias, y hoy son <strong>siete líneas temporales independientes</strong>: Universal Century, After Colony, Cosmic Era, Anno Domini, Post Disaster, Ad Stella y Correct Century. Cada una se puede ver por separado, y por eso la pregunta de <strong>en qué orden ver Gundam</strong> no tiene una sola respuesta: aquí hay tres rutas —empezar de cero, profundizar en el UC o irte por una historia cerrada— con la ficha de cada serie, sus mobile suits, sus pilotos y sus facciones.',
-          'La otra mitad es el hobby y el mercado mexicano. Explicamos <strong>Gunpla</strong> —los kits armables de Bandai— grado por grado, de Entry Grade y High Grade a Real Grade, Master Grade y Perfect Grade: qué trae cada caja, cuánta paciencia pide y con qué herramientas. Y mantenemos el directorio de <strong>dónde comprar Gundam original en México</strong>, tienda por tienda, con precios fechados, talleres de pintura, eventos y comunidad.',
+          'La franquicia arrancó en 1979 con <strong>Mobile Suit Gundam</strong> y hoy son <strong>siete líneas temporales independientes</strong>: Universal Century, After Colony, Cosmic Era, Anno Domini, Post Disaster, Ad Stella y Correct Century. Por eso <strong>en qué orden ver Gundam</strong> no tiene una sola respuesta. Damos tres rutas —empezar de cero, seguir el Universal Century o ver una historia cerrada como <strong>Wing</strong>, <strong>SEED</strong> o <strong>The Witch from Mercury</strong>— con la ficha de cada serie, sus mobile suits, sus pilotos y sus facciones.',
+          'La otra mitad es el hobby. Explicamos qué es el <strong>Gunpla</strong> y en qué se diferencian los grados —<strong>Entry Grade, High Grade, Real Grade, Master Grade y Perfect Grade</strong>—, cuál conviene como primer kit y qué herramientas hacen falta. Y mantenemos el directorio de <strong>dónde comprar Gunpla original en México</strong>: tiendas en CDMX, Guadalajara, Monterrey y el resto del país, con precios fechados, talleres de pintura, eventos y comunidad.',
         ],
         masBuscado: [
-          { texto: 'En qué orden ver Gundam', href: '/articulos/en-que-orden-ver-gundam/' },
-          { texto: 'Universal Century', href: '/universos/uc/' },
-          { texto: 'High Grade', href: '/gunpla/high-grade/' },
-          { texto: 'RX-78-2', href: '/mobile-suits/rx-78-2-gundam/' },
-          { texto: 'Tiendas verificadas', href: '/tiendas/' },
+          { texto: 'Orden para ver Gundam', href: '/articulos/en-que-orden-ver-gundam/' },
+          { texto: 'Dónde ver Gundam', href: '/articulos/donde-ver-gundam-en-mexico/' },
+          { texto: 'Gunpla para principiantes', href: '/gunpla/high-grade/' },
+          { texto: 'Qué es el Universal Century', href: '/universos/uc/' },
+          { texto: 'Tiendas en México', href: '/tiendas/' },
         ],
       }}
     />
@@ -104,13 +134,13 @@ const entradas = [
 
   <UniverseNavigator universos={universos} />
 
-  <SeriesRail eyebrow="Series esenciales · Empieza aquí" titulo="Cuatro puertas de entrada" series={empiezaAqui} verTodo={{ texto: 'Todas las series', href: '/series/' }} />
+  <SeriesRail eyebrow="Series esenciales · Empieza aquí" titulo="Por dónde empezar a ver Gundam" series={empiezaAqui} verTodo={{ texto: 'Todas las series', href: '/series/' }} />
 
   <section class="grid-page py-16" aria-labelledby="ms-h">
     <div class="flex flex-wrap items-end justify-between gap-6">
       <div>
         <p class="class-line">Mobile suits · fichas técnicas</p>
-        <h2 id="ms-h" class="display mt-3 text-3xl md:text-4xl">Las máquinas que definen cada época</h2>
+        <h2 id="ms-h" class="display mt-3 text-3xl md:text-4xl">Mobile suits: qué es cada máquina y quién la pilota</h2>
       </div>
       <a href="/mobile-suits/" class="link text-sm">Archivo completo</a>
     </div>
@@ -124,18 +154,29 @@ const entradas = [
   <TimelineGuide cronologia={cronologia} recomendado={recomendado} compacto />
 
   <SeriesRail eyebrow="Series esenciales · Profundiza en el Universal Century" titulo="Después de la primera" series={profundiza} />
-  <SeriesRail eyebrow="Series esenciales · Líneas independientes" titulo="Alternativas que no piden contexto" series={alternativas} />
+  <SeriesRail eyebrow="Series esenciales · Líneas independientes" titulo="Series de Gundam que se ven sueltas" series={alternativas} />
 
   <section class="grid-page py-16" aria-labelledby="arch-h">
     <div class="flex flex-wrap items-end justify-between gap-6">
       <div>
         <p class="class-line">Archivo editorial</p>
-        <h2 id="arch-h" class="display mt-3 text-3xl md:text-4xl">Explicadores, análisis y guías</h2>
+        <h2 id="arch-h" class="display mt-3 text-3xl md:text-4xl">Guías y explicadores sobre Gundam</h2>
       </div>
       <a href="/articulos/" class="link text-sm">Todos los artículos</a>
     </div>
     <div class="mt-10 grid gap-x-12 gap-y-2 lg:grid-cols-2">
       {archivo.map((a, i) => <ArchiveCard articulo={a} grande={i === 0} folio={i + 1} />)}
+    </div>
+  </section>
+
+  <section class="grid-page py-16" aria-labelledby="faq-home">
+    <p class="class-line">Preguntas frecuentes</p>
+    <div class="mt-8 grid gap-x-16 gap-y-10 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <h2 id="faq-home" class="display text-3xl md:text-4xl text-balance">Las dudas con las que casi todos llegan</h2>
+        <p class="mt-4 text-ink-2 text-pretty">Respuestas cortas a lo que más se pregunta sobre la franquicia y sobre el hobby en México. Cada una lleva a la ficha o a la guía donde está el detalle.</p>
+      </div>
+      <div class="lg:col-span-8"><FAQ items={faq} titulo="Sobre Gundam, el Gunpla y dónde comprarlo" /></div>
     </div>
   </section>
 
