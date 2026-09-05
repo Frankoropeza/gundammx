@@ -35,7 +35,7 @@ const guias = (await getCollection('guias', ({ data }) => !data.borrador))
       </div>
       <a href="/tiendas/verificadas/" class="link text-sm">Ver todas</a>
     </div>
-    <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-8 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
       {verificadas.slice(0, 6).map((t, i) => <DirectoryCard tienda={t} prioridad={i < 3} />)}
     </div>
   </section>

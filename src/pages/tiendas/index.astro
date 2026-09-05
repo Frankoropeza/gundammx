@@ -52,7 +52,7 @@ const schemas = [
     </div>
 
     <section class="mt-8" aria-label="Resultados">
-      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {tiendas.map((t, i) => <DirectoryCard tienda={t} prioridad={i < 3} />)}
       </div>
     </section>

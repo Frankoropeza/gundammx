@@ -55,7 +55,7 @@ const schemas = [
         Estamos poblando el catálogo con los kits que sí circulan en tiendas mexicanas.
       </p>
     ) : (
-      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="mt-8 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6">
         {kits.map((k) => <KitCard kit={k} />)}
       </div>
     )}

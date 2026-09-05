@@ -50,7 +50,7 @@ const schemas = [
     ) : (
       <>
         <div class="mt-10"><DirectoryFilters ciudades={ciudades} estados={estados} /></div>
-        <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="mt-8 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
           {tiendas.map((t, i) => <DirectoryCard tienda={t} prioridad={i < 3} />)}
         </div>
       </>

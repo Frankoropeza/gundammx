@@ -55,14 +55,9 @@ const dataCiudades = d.sucursales.map((s) => s.ciudad).join('|');
       loading={prioridad ? 'eager' : 'lazy'}
       decoding="async"
     />
-  ) : (
-    <div class="flex h-24 items-center justify-between border-b border-line bg-paper px-5" aria-hidden="true">
-      <span class="font-serif text-4xl leading-none text-ink/20">{d.nombre.slice(0, 2)}</span>
-      <span class="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">{d.sucursales[0]?.estado ? nombreEstado(d.sucursales[0].estado) : 'En línea'}</span>
-    </div>
-  )}
+  ) : null}
 
-  <div class="flex flex-1 flex-col gap-3 p-5">
+  <div class="flex flex-1 flex-col gap-3 p-6">
     <div class="flex items-center justify-between gap-3">
       <span class="eyebrow">{categorias[d.categoria]}</span>
       {d.destacada && <span class="tag-signal">Patrocinado</span>}
@@ -84,9 +79,9 @@ const dataCiudades = d.sucursales.map((s) => s.ciudad).join('|');
       <p class="font-mono text-xs text-ink-3">{señales.join(' · ')}</p>
     )}
 
-    <div class="mt-auto flex items-center justify-between border-t border-line pt-4">
+    <div class="mt-auto flex items-center justify-between pt-4">
       <BadgeVerificacion estado={d.verificacion.estado} fecha={d.verificacion.fecha} conEnlace={false} />
-      <span class="font-mono text-xs text-ink-2 transition-colors group-hover:text-ink" aria-hidden="true">Ver ficha →</span>
+      <span class="font-mono text-xs text-ink-3 transition-colors group-hover:text-ink" aria-hidden="true">Ver ficha →</span>
     </div>
   </div>
 </article>

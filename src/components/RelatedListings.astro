@@ -11,7 +11,7 @@ const { tiendas, titulo, verTodo } = Astro.props;
       <h2 id="rel-h" class="display text-2xl">{titulo}</h2>
       {verTodo && <a href={verTodo.href} class="link text-sm">{verTodo.texto}</a>}
     </div>
-    <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-6 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
       {tiendas.map((t) => <DirectoryCard tienda={t} />)}
     </div>
   </section>

@@ -8,30 +8,16 @@
 ------------------------------------------------------------------- */
 @layer base {
   :root {
-    --paper: 247 246 242;
+    --paper: 255 255 255;
     --surface: 255 255 255;
-    --line: 227 225 218;
-    --ink: 20 20 20;
-    --ink-2: 92 92 87;
-    --ink-3: 150 150 143;
-    --accent: 15 122 95;
-    --signal: 183 121 31;
-    --alert: 179 38 30;
+    --line: 229 229 229;
+    --ink: 17 17 17;
+    --ink-2: 102 102 102;
+    --ink-3: 153 153 153;
+    --accent: 17 17 17;
+    --signal: 107 107 107;
+    --alert: 68 68 68;
     color-scheme: light;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --paper: 18 19 17;
-      --surface: 26 27 25;
-      --line: 44 46 42;
-      --ink: 237 235 230;
-      --ink-2: 165 163 156;
-      --ink-3: 110 110 104;
-      --accent: 76 201 163;
-      --signal: 224 169 74;
-      --alert: 229 118 110;
-      color-scheme: dark;
-    }
   }
 
   html {
@@ -58,7 +44,7 @@
     outline-offset: 3px;
     border-radius: 2px;
   }
-  ::selection { background: rgb(var(--accent) / 0.18); }
+  ::selection { background: rgb(var(--ink) / 0.1); }
 
   /* Acordeones nativos: sin marcador por defecto */
   summary { list-style: none; cursor: pointer; }
@@ -66,27 +52,27 @@
 }
 
 @layer components {
-  .grid-page { @apply mx-auto w-full max-w-grid px-5 sm:px-8 lg:px-12; }
+  .grid-page { @apply w-full px-5 sm:px-8 lg:px-12 xl:px-16; }
 
   .eyebrow { @apply font-mono text-xs uppercase tracking-[0.14em] text-ink-2; }
   .display { @apply font-serif font-normal tracking-[-0.01em] text-ink; }
 
   .rule { @apply border-t border-line; }
 
-  .link { @apply text-accent underline decoration-accent/40 underline-offset-[3px] transition-colors hover:decoration-accent; }
+  .link { @apply text-ink underline decoration-ink-3 underline-offset-[3px] transition-colors hover:decoration-ink; }
   .link-quiet { @apply text-ink underline-offset-[3px] hover:underline; }
 
   .btn { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-sm px-5 text-sm font-medium transition-colors; }
-  .btn-primary { @apply btn bg-ink text-paper hover:bg-accent; }
-  .btn-secondary { @apply btn border border-line bg-transparent text-ink hover:border-ink; }
+  .btn-primary { @apply btn bg-ink text-paper hover:bg-ink-2; }
+  .btn-secondary { @apply btn border border-line bg-transparent text-ink hover:bg-paper hover:border-ink-3; }
   .btn-ghost { @apply btn px-3 text-ink-2 hover:text-ink; }
 
   .tag { @apply inline-flex min-h-7 items-center rounded-sm border border-line px-2 font-mono text-xs text-ink-2; }
-  .tag-accent { @apply tag border-accent/40 text-accent; }
-  .tag-signal { @apply tag border-signal/50 text-signal; }
-  .tag-alert { @apply tag border-alert/50 text-alert; }
+  .tag-accent { @apply tag border-ink text-ink; }
+  .tag-signal { @apply tag border-line text-ink-2; }
+  .tag-alert { @apply tag border-ink-3 text-ink; }
 
-  .card { @apply flex flex-col border border-line bg-surface transition-colors hover:border-ink; }
+  .card { @apply flex flex-col border-b border-r border-line bg-surface transition-colors hover:bg-[#FAFAFA]; }
 
   .table-scroll { @apply -mx-5 overflow-x-auto px-5 sm:-mx-8 sm:px-8; }
   .table-scroll table { @apply w-full min-w-[46rem] border-collapse text-sm; }
@@ -101,7 +87,7 @@
   .prose-ed a { @apply link; }
   .prose-ed ul { @apply list-disc space-y-2 pl-6; }
   .prose-ed ol { @apply list-decimal space-y-2 pl-6; }
-  .prose-ed blockquote { @apply border-l-2 border-accent pl-5 text-ink-2; }
+  .prose-ed blockquote { @apply border-l-2 border-ink pl-5 text-ink-2; }
   .prose-ed table { @apply w-full border-collapse text-sm; }
   .prose-ed th { @apply border-b border-line py-2 pr-4 text-left font-mono text-xs uppercase tracking-wider text-ink-2; }
   .prose-ed td { @apply border-b border-line/70 py-2 pr-4 align-top; }

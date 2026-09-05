@@ -26,7 +26,7 @@ const categorias = [
 const grados = (Object.keys(GRADOS) as GradoId[]).sort((a, b) => GRADOS[a].orden - GRADOS[b].orden);
 ---
 
-<details class="group border border-line bg-surface" id="filtros" open data-pagefind-ignore>
+<details class="group border-y border-line" id="filtros" open data-pagefind-ignore>
   <summary class="flex min-h-12 items-center justify-between px-5 text-sm font-medium">
     <span>Filtrar</span>
     <span class="font-mono text-xs text-ink-3" id="filtros-conteo" aria-live="polite"></span>
@@ -36,7 +36,7 @@ const grados = (Object.keys(GRADOS) as GradoId[]).sort((a, b) => GRADOS[a].orden
     {mostrarCiudad && (
       <div class="lg:col-span-2">
         <label for="f-ciudad" class="eyebrow block">Ciudad</label>
-        <select id="f-ciudad" name="ciudad" class="mt-2 h-11 w-full border border-line bg-paper px-3 text-sm">
+        <select id="f-ciudad" name="ciudad" class="mt-2 h-11 w-full border border-line bg-white px-3 text-sm">
           <option value="">Todas</option>
           {ciudades.map((c) => <option value={c.nombre}>{c.nombre}</option>)}
         </select>
@@ -45,7 +45,7 @@ const grados = (Object.keys(GRADOS) as GradoId[]).sort((a, b) => GRADOS[a].orden
     {mostrarEstado && (
       <div class="lg:col-span-2">
         <label for="f-estado" class="eyebrow block">Estado</label>
-        <select id="f-estado" name="estado" class="mt-2 h-11 w-full border border-line bg-paper px-3 text-sm">
+        <select id="f-estado" name="estado" class="mt-2 h-11 w-full border border-line bg-white px-3 text-sm">
           <option value="">Todos</option>
           {estados.map((e) => <option value={e}>{nombreEstado(e)}</option>)}
         </select>
@@ -53,14 +53,14 @@ const grados = (Object.keys(GRADOS) as GradoId[]).sort((a, b) => GRADOS[a].orden
     )}
     <div class="lg:col-span-1">
       <label for="f-categoria" class="eyebrow block">Tipo</label>
-      <select id="f-categoria" name="categoria" class="mt-2 h-11 w-full border border-line bg-paper px-3 text-sm">
+      <select id="f-categoria" name="categoria" class="mt-2 h-11 w-full border border-line bg-white px-3 text-sm">
         <option value="">Todos</option>
         {categorias.map(([v, t]) => <option value={v}>{t}</option>)}
       </select>
     </div>
     <div class="lg:col-span-1">
       <label for="f-grado" class="eyebrow block">Grado</label>
-      <select id="f-grado" name="grado" class="mt-2 h-11 w-full border border-line bg-paper px-3 text-sm">
+      <select id="f-grado" name="grado" class="mt-2 h-11 w-full border border-line bg-white px-3 text-sm">
         <option value="">Todos</option>
         {grados.map((g) => <option value={g}>{GRADOS[g].etiqueta} — {GRADOS[g].nombre}</option>)}
       </select>
@@ -68,9 +68,9 @@ const grados = (Object.keys(GRADOS) as GradoId[]).sort((a, b) => GRADOS[a].orden
 
     <fieldset class="flex flex-wrap gap-x-6 gap-y-3 sm:col-span-2 lg:col-span-6">
       <legend class="eyebrow mb-2 w-full">Condiciones</legend>
-      <label class="flex min-h-11 items-center gap-2 text-sm"><input type="checkbox" name="envio" value="1" class="h-4 w-4 accent-[rgb(var(--accent))]" /> Envío a todo México</label>
-      <label class="flex min-h-11 items-center gap-2 text-sm"><input type="checkbox" name="preventa" value="1" class="h-4 w-4 accent-[rgb(var(--accent))]" /> Maneja preventas</label>
-      <label class="flex min-h-11 items-center gap-2 text-sm"><input type="checkbox" name="verificada" value="1" class="h-4 w-4 accent-[rgb(var(--accent))]" /> Solo verificadas</label>
+      <label class="flex min-h-11 items-center gap-2 text-sm"><input type="checkbox" name="envio" value="1" class="h-4 w-4 accent-black" /> Envío a todo México</label>
+      <label class="flex min-h-11 items-center gap-2 text-sm"><input type="checkbox" name="preventa" value="1" class="h-4 w-4 accent-black" /> Maneja preventas</label>
+      <label class="flex min-h-11 items-center gap-2 text-sm"><input type="checkbox" name="verificada" value="1" class="h-4 w-4 accent-black" /> Solo verificadas</label>
     </fieldset>
 
     <div class="flex gap-2 sm:col-span-2 lg:col-span-6">

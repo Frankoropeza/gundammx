@@ -6,7 +6,7 @@ const { precioJpy, observados } = Astro.props;
 const rango = precioJpy ? rangoEstimadoMXN(precioJpy) : null;
 ---
 
-<section class="border border-line bg-surface p-6" aria-labelledby="precio-h">
+<section class="border-t border-line pt-6" aria-labelledby="precio-h">
   <h2 id="precio-h" class="eyebrow">Precio</h2>
   <dl class="mt-4 space-y-3 font-mono text-sm tabular">
     {precioJpy && <div class="flex justify-between gap-4"><dt class="text-ink-3">Lista Japón</dt><dd class="text-ink-2">{yenes(precioJpy)}</dd></div>}

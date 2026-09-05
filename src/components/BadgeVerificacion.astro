@@ -10,7 +10,7 @@ const mapa = {
   verificada:    { texto: 'Verificada',    clase: 'tag-accent' },
   sin_verificar: { texto: 'Sin verificar', clase: 'tag-signal' },
   reportada:     { texto: 'Reportada',     clase: 'tag-alert' },
-  cerrada:       { texto: 'Cerrada',       clase: 'tag-alert' },
+  cerrada:       { texto: 'Cerrada',       clase: 'tag-alert line-through' },
 } as const;
 const s = mapa[estado];
 ---
