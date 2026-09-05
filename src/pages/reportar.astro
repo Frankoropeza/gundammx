@@ -1,15 +1,17 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import { schemaMigaDePan } from '@lib/seo';
 import { SITE } from '@config/site';
 
 const migas = [{ nombre: 'Reportar', href: '/reportar/' }];
+const schemasMiga = [schemaMigaDePan({ site: Astro.site, url: Astro.url.pathname }, migas)];
 ---
 
 <BaseLayout
   titulo="Reportar un dato | Directorio Gundam México"
   descripcion="Reporta un dato incorrecto, una tienda Gundam cerrada o la venta de producto no original en México. Revisamos cada aviso en un máximo de 48 horas."
->
+ schemas={schemasMiga}>
   <Breadcrumbs items={migas} />
 
   <div class="grid-page max-w-3xl py-8">

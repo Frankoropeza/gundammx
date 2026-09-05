@@ -25,7 +25,7 @@ const { Content } = await render(articulo);
 const temas: Record<string, string> = { universo: 'Universo', series: 'Series', 'mobile-suits': 'Mobile suits', gunpla: 'Gunpla', mexico: 'México', guia: 'Guía' };
 const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Artículos', href: '/articulos/' }, { nombre: d.titulo, href: `/articulos/${articulo.id}/` }];
-const schemas = [schemaMigaDePan(base, migas), schemaArticulo(base, { titulo: d.titulo, descripcion: d.resumen, fecha: d.fecha })];
+const schemas = [schemaMigaDePan(base, migas), schemaArticulo(base, { titulo: d.titulo, descripcion: d.resumen, fecha: d.fecha, autor: d.autor })];
 ---
 <BaseLayout titulo={tituloEditorial(d.titulo, d.tema)} descripcion={descripcionFicha(d.resumen, 'Guía publicada en Gundam México.')} tipo="article" schemas={schemas}>
   <Breadcrumbs items={migas} />

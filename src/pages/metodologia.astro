@@ -1,18 +1,20 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import { schemaMigaDePan } from '@lib/seo';
 import { tiendasActivas, tiendasVerificadas } from '@lib/directorio';
 import { FACTOR_MX } from '@config/site';
 
 const tiendas = await tiendasActivas();
 const verificadas = await tiendasVerificadas();
 const migas = [{ nombre: 'Cómo verificamos', href: '/metodologia/' }];
+const schemasMiga = [schemaMigaDePan({ site: Astro.site, url: Astro.url.pathname }, migas)];
 ---
 
 <BaseLayout
   titulo="Cómo verificamos | Metodología del directorio Gundam"
   descripcion="Qué significa que una tienda esté verificada en GUNDAMMX, qué comprobamos, con qué fuentes y cada cuánto lo revisamos."
->
+ schemas={schemasMiga}>
   <Breadcrumbs items={migas} />
 
   <div class="grid-page max-w-3xl py-8">

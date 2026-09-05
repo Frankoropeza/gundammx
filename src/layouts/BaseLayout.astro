@@ -1,7 +1,4 @@
 ---
-import '@fontsource-variable/inter';
-import '@fontsource-variable/jetbrains-mono';
-import '@fontsource/instrument-serif';
 import '@styles/global.css';
 import SEO from '@components/SEO.astro';
 import SiteHeader from '@components/SiteHeader.astro';
@@ -28,6 +25,8 @@ const todos = [schemaSitio(base), schemaOrganizacion(base), ...schemas];
     <meta name="theme-color" content="#F6F5F1" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#101113" media="(prefers-color-scheme: dark)" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/instrument-serif-latin-400-normal.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin-wght-normal.woff2" crossorigin />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <SEO titulo={titulo} descripcion={descripcion} tipo={tipo} noindex={noindex} schemas={todos} />
     {/* Tema antes del primer pintado: evita el destello */}

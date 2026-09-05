@@ -1,16 +1,18 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import { schemaMigaDePan } from '@lib/seo';
 import AvisoIndependencia from '@components/AvisoIndependencia.astro';
 import { SITE } from '@config/site';
 
 const migas = [{ nombre: 'Aviso legal', href: '/aviso-legal/' }];
+const schemasMiga = [schemaMigaDePan({ site: Astro.site, url: Astro.url.pathname }, migas)];
 ---
 
 <BaseLayout
   titulo="Aviso legal | Independencia de GUNDAMMX"
   descripcion="GUNDAMMX es un directorio independiente sin afiliación con Bandai Namco ni sus filiales. Aquí explicamos qué es este sitio y qué no es."
->
+ schemas={schemasMiga}>
   <Breadcrumbs items={migas} />
 
   <div class="grid-page max-w-3xl py-8">

@@ -44,8 +44,11 @@ const schemas = [
       ))}
     </nav>
 
-    <div class="mt-8 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6">
-      {kits.map((k) => <KitCard kit={k} />)}
-    </div>
+    <section class="mt-10" aria-labelledby="lista-kits">
+      <h2 id="lista-kits" class="display text-2xl md:text-3xl">Kits de Gunpla con precio de referencia</h2>
+      <div class="mt-6 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6">
+        {kits.map((k) => <KitCard kit={k} />)}
+      </div>
+    </section>
   </div>
 </BaseLayout>

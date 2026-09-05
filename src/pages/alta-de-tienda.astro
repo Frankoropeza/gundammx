@@ -1,15 +1,17 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import { schemaMigaDePan } from '@lib/seo';
 import { SITE } from '@config/site';
 
 const migas = [{ nombre: 'Dar de alta una tienda', href: '/alta-de-tienda/' }];
+const schemasMiga = [schemaMigaDePan({ site: Astro.site, url: Astro.url.pathname }, migas)];
 ---
 
 <BaseLayout
   titulo="Dar de alta una tienda | Directorio Gundam México"
   descripcion="Cómo agregar una tienda al directorio de tiendas Gundam en México: qué datos pedimos, qué verificamos con fuente y por qué la verificación no se vende."
->
+ schemas={schemasMiga}>
   <Breadcrumbs items={migas} />
 
   <div class="grid-page max-w-3xl py-8">

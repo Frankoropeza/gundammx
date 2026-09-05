@@ -1,20 +1,56 @@
+/* Tipografías autoalojadas: solo el subconjunto latino que usa el sitio. Licencias en /fonts/LICENCIAS.txt */
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/instrument-serif-latin-400-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/instrument-serif-latin-400-italic.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/inter-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'JetBrains Mono Variable';
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url('/fonts/jetbrains-mono-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* ------------------------------------------------------------------
-   Tokens de color — paleta institucional Gundam / Bandai Namco.
-   Referencia: bandainamcoshop.com.mx (--bnd-red #E31623, --bnd-yellow
-   #FCB814, --bnd-ink #151515, --bnd-white #FFFFFF) + azul del esquema
-   clásico RX-78-2 para el rol de "verificado".
+   Tokens de color — identidad propia de GUNDAMMX.
+
+   Regla de marca: NO se usan los colores institucionales de Bandai
+   Namco ni la paleta del RX-78-2. La identidad es un archivo editorial
+   en blanco hueso y grafito, con un único acento de señal técnica.
+   Ver "05 - RIESGO DE MARCA" y "14 - PORTAL EDITORIAL v3" del vault.
 
    Roles semánticos (no decorativos):
-     brand    rojo Bandai   — marca, rellenos, CTA principal
-     accent   rojo profundo — texto y bordes rojos con contraste AA
-     signal   amarillo      — atención / advertencia (rellenos y bordes)
-     signal-ink amarillo oscuro — texto de advertencia con contraste AA
-     verify   azul Gundam   — confianza, estado verificado
-     alert    rojo oscuro   — error, ficha reportada o cerrada
+     brand    grafito       — marca, rellenos, CTA principal
+     accent   señal naranja — enlaces activos, subrayados, detalles
+     signal   ámbar apagado — atención / advertencia
+     signal-ink ámbar oscuro — texto de advertencia con contraste AA
+     verify   verde sobrio  — confianza, estado verificado
+     alert    rojo apagado  — error, ficha reportada o cerrada
 
    Valores en RGB sin función para que Tailwind aplique alpha.
 ------------------------------------------------------------------- */
@@ -23,48 +59,48 @@
   :root {
     --paper: 246 245 241;
     --surface: 255 255 255;
-    --line: 221 219 212;
-    --ink: 21 21 21;
-    --ink-2: 90 92 96;
-    --ink-3: 138 141 146;
-    --brand: 227 22 35;
-    --accent: 199 16 31;
-    --signal: 252 184 20;
-    --signal-ink: 138 92 0;
-    --verify: 11 60 140;
-    --alert: 154 12 24;
+    --line: 220 219 213;
+    --ink: 28 29 31;
+    --ink-2: 92 94 98;
+    --ink-3: 140 143 148;
+    --brand: 28 29 31;
+    --accent: 178 66 18;
+    --signal: 146 104 16;
+    --signal-ink: 118 82 10;
+    --verify: 34 84 61;
+    --alert: 150 35 30;
     color-scheme: light;
   }
   /* Oscuro real: grafito profundo, no inversión. Contraste AA en texto y líneas. */
   :root[data-theme='dark'] {
-    --paper: 16 17 19;
+    --paper: 20 21 23;
     --surface: 27 28 31;
     --line: 52 54 58;
     --ink: 232 230 224;
     --ink-2: 168 170 174;
-    --ink-3: 122 125 130;
-    --brand: 227 22 35;
-    --accent: 255 77 87;
-    --signal: 252 184 20;
-    --signal-ink: 255 209 102;
-    --verify: 110 155 255;
-    --alert: 255 107 107;
+    --ink-3: 118 121 126;
+    --brand: 232 230 224;
+    --accent: 240 130 70;
+    --signal: 214 168 78;
+    --signal-ink: 226 178 96;
+    --verify: 122 190 152;
+    --alert: 240 140 132;
     color-scheme: dark;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme='light']) {
-      --paper: 16 17 19;
+      --paper: 20 21 23;
       --surface: 27 28 31;
       --line: 52 54 58;
       --ink: 232 230 224;
       --ink-2: 168 170 174;
-      --ink-3: 122 125 130;
-      --brand: 227 22 35;
-      --accent: 255 77 87;
-      --signal: 252 184 20;
-      --signal-ink: 255 209 102;
-      --verify: 110 155 255;
-      --alert: 255 107 107;
+      --ink-3: 118 121 126;
+      --brand: 232 230 224;
+      --accent: 240 130 70;
+      --signal: 214 168 78;
+      --signal-ink: 226 178 96;
+      --verify: 122 190 152;
+      --alert: 240 140 132;
       color-scheme: dark;
     }
   }
@@ -112,7 +148,7 @@
   .link-quiet { @apply text-ink underline-offset-[3px] transition-colors hover:text-accent hover:underline; }
 
   .btn { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-sm px-5 text-sm font-medium transition-colors; }
-  .btn-primary { @apply btn bg-brand text-white hover:bg-accent; }
+  .btn-primary { @apply btn bg-brand text-paper hover:bg-accent hover:text-white; }
   .btn-secondary { @apply btn border border-line bg-transparent text-ink hover:border-brand hover:text-accent; }
   .btn-ghost { @apply btn px-3 text-ink-2 hover:text-accent; }
   .btn-ink { @apply btn bg-ink text-paper hover:bg-ink-2; }
@@ -166,7 +202,7 @@
   .placeholder-frame { @apply relative flex flex-col justify-between border border-dashed border-line bg-surface p-4 text-ink-3; }
   .placeholder-frame::after { content: ''; @apply pointer-events-none absolute inset-3 border border-line/60; }
 
-  .btn-signal { @apply btn bg-brand text-white hover:bg-accent; }
+  .btn-signal { @apply btn bg-brand text-paper hover:bg-accent hover:text-white; }
   .link-signal { @apply text-accent underline-offset-[3px] hover:underline; }
 
   /* Franja institucional: azul · blanco · rojo · amarillo (esquema clásico).

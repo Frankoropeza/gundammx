@@ -43,6 +43,9 @@ export function schemaOrganizacion(b: Base) {
     name: SITE.nombre,
     url: b.site?.toString(),
     description: SITE.descripcion,
+    logo: abs(b.site, '/og/logo.png'),
+    image: abs(b.site, '/og/default.png'),
+    areaServed: 'MX',
     // Declaración explícita de independencia: no somos canal oficial de nadie.
     disambiguatingDescription:
       'Directorio independiente. Sin afiliación con Bandai Namco ni con sus filiales.',
@@ -145,7 +148,7 @@ export function schemaNoticia(
 
 export function schemaArticulo(
   b: Base,
-  a: { titulo: string; descripcion: string; fecha: Date },
+  a: { titulo: string; descripcion: string; fecha: Date; actualizado?: Date; autor?: string; imagen?: string },
 ) {
   return {
     '@context': 'https://schema.org',
@@ -153,7 +156,14 @@ export function schemaArticulo(
     headline: a.titulo,
     description: a.descripcion,
     datePublished: a.fecha.toISOString(),
-    publisher: { '@type': 'Organization', name: SITE.nombre },
+    dateModified: (a.actualizado ?? a.fecha).toISOString(),
+    author: { '@type': a.autor && !a.autor.startsWith('Redacción') ? 'Person' : 'Organization', name: a.autor ?? SITE.nombre },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE.nombre,
+      logo: { '@type': 'ImageObject', url: abs(b.site, '/og/logo.png') },
+    },
+    image: abs(b.site, a.imagen ?? '/og/articulos.png'),
     mainEntityOfPage: abs(b.site, b.url),
     inLanguage: SITE.locale,
   };

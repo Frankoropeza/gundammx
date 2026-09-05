@@ -13,6 +13,30 @@ const { titulo, descripcion, tipo = 'website', noindex = false, schemas = [] } =
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const tituloCompleto = titulo === SITE.nombre ? titulo : `${titulo} | ${SITE.nombre}`;
+
+/** Imagen social por sección. Activos propios; nunca arte de terceros. */
+const OG_SECCION: [string, string][] = [
+  ['/series', 'series'],
+  ['/universos', 'universos'],
+  ['/mobile-suits', 'mobile-suits'],
+  ['/personajes', 'personajes'],
+  ['/facciones', 'personajes'],
+  ['/cronologia', 'series'],
+  ['/gunpla', 'gunpla'],
+  ['/kits', 'gunpla'],
+  ['/kit/', 'gunpla'],
+  ['/guias', 'gunpla'],
+  ['/servicios', 'gunpla'],
+  ['/tiendas', 'tiendas'],
+  ['/tienda/', 'tiendas'],
+  ['/comunidad', 'tiendas'],
+  ['/eventos', 'noticias'],
+  ['/noticias', 'noticias'],
+  ['/articulos', 'articulos'],
+];
+const ruta = Astro.url.pathname;
+const slugOg = OG_SECCION.find(([prefijo]) => ruta.startsWith(prefijo))?.[1] ?? 'default';
+const ogImagen = new URL(`/og/${slugOg}.png`, Astro.site).toString();
 ---
 
 <title>{tituloCompleto}</title>
@@ -26,7 +50,12 @@ const tituloCompleto = titulo === SITE.nombre ? titulo : `${titulo} | ${SITE.nom
 <meta property="og:description" content={descripcion} />
 <meta property="og:locale" content="es_MX" />
 <meta property="og:site_name" content={SITE.nombre} />
+<meta property="og:image" content={ogImagen} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={tituloCompleto} />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content={ogImagen} />
 <meta name="twitter:title" content={tituloCompleto} />
 <meta name="twitter:description" content={descripcion} />
 

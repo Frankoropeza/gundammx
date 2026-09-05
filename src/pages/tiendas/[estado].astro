@@ -6,7 +6,7 @@ import Breadcrumbs from '@components/Breadcrumbs.astro';
 import DirectoryCard from '@components/DirectoryCard.astro';
 import EmptyState from '@components/EmptyState.astro';
 import LocationGrid from '@components/LocationGrid.astro';
-import { tiendasActivas, estadosDe, ciudadesConPagina, indexable } from '@lib/directorio';
+import { tiendasActivas, estadosDe, ciudadesConPagina, indexable, UMBRAL_CIUDAD } from '@lib/directorio';
 import { ESTADOS, nombreEstado } from '@lib/estados';
 import { schemaListado, schemaMigaDePan } from '@lib/seo';
 
@@ -39,7 +39,7 @@ const schemas = [
 <BaseLayout
   titulo={`Tiendas Gundam en ${nombre} | Gunpla original`}
   descripcion={`Tiendas Gundam en ${nombre}: dónde comprar Gunpla y model kits originales, con grados en catálogo, cobertura de envío y verificación con fuente y fecha.`}
-  noindex={sinContenido}
+  noindex={sinContenido || tiendas.length < UMBRAL_CIUDAD}
   schemas={schemas}
 >
   <Breadcrumbs items={migas} />
@@ -61,7 +61,8 @@ const schemas = [
       </div>
     ) : (
       <>
-        <div class="mt-10 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+        <h2 class="display mt-12 text-2xl md:text-3xl">{`Tiendas Gundam verificadas en ${nombre}`}</h2>
+        <div class="mt-6 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
           {tiendas.map((t, i) => <DirectoryCard tienda={t} prioridad={i < 3} />)}
         </div>
         {ciudades.length > 0 && <div class="mt-16"><LocationGrid ciudades={ciudades} titulo={`Ciudades de ${nombre} con página propia`} /></div>}

@@ -34,12 +34,12 @@ export async function rutasIndexables(): Promise<{ url: string; lastmod?: string
   const tiendas = await tiendasActivas();
   tiendas.forEach((t) => add(`/tienda/${t.id}/`, t.data.actualizada));
 
-  // Estados con al menos una tienda
-  const porEstado = await estadosConTiendas();
-  [...porEstado.keys()].forEach((e) => add(`/tiendas/${e}/`));
-
   // Ciudades sobre el umbral
   (await ciudadesConPagina()).filter((c) => indexable(c.total)).forEach((c) => add(`/tiendas/ciudad/${c.slug}/`));
+
+  // Estados con ≥2 tiendas (misma regla que la página)
+  const porEstado = await estadosConTiendas();
+  [...porEstado.entries()].filter(([, total]) => indexable(total)).forEach(([slug]) => add(`/tiendas/${slug}/`));
 
   // Categorías con ≥2 tiendas (misma regla que la página)
   (await categoriasConTiendas()).filter((c) => c.total >= 2).forEach((c) => add(`/tiendas/categoria/${c.slug}/`));

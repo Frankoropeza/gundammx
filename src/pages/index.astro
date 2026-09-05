@@ -9,7 +9,6 @@ import TimelineGuide from '@components/TimelineGuide.astro';
 import ArchiveCard from '@components/ArchiveCard.astro';
 import GunplaBlock from '@components/GunplaBlock.astro';
 import EntryRow from '@components/EntryRow.astro';
-import UniverseTimeline from '@components/UniverseTimeline.astro';
 import NewsletterCTA from '@components/NewsletterCTA.astro';
 import FAQ from '@components/FAQ.astro';
 import { universosConContenido, seriesOrdenRecomendado, seriesCronologiaUC, seriesPorRuta, nombres, publicado } from '@lib/archivo';
@@ -43,20 +42,6 @@ const totalEstados = estados.size;
 const pilotos = await getCollection('pilots', publicado);
 const facciones = await getCollection('factions', publicado);
 const todasSeries = await getCollection('series', publicado);
-
-const aniosSerie = todasSeries.map((x) => x.data.anio);
-const primerAnio = Math.min(...aniosSerie);
-const ultimoAnio = Math.max(...aniosSerie);
-
-const filasLinea = universos.map((u) => ({
-  universo: u.data.abreviatura,
-  nombre: u.data.nombre,
-  href: `/universos/${u.id}/`,
-  obras: todasSeries
-    .filter((x) => x.data.universo === u.data.abreviatura)
-    .sort((a, b) => a.data.anio - b.data.anio)
-    .map((x) => ({ titulo: x.data.titulo, anio: x.data.anio, href: `/series/${x.id}/` })),
-}));
 
 const faq = [
   {
@@ -127,8 +112,6 @@ const entradas = [
       }}
     />
   )}
-
-  <UniverseTimeline filas={filasLinea} desde={primerAnio} hasta={ultimoAnio} />
 
   <EntryRow items={entradas} />
 

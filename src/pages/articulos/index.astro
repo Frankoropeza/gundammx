@@ -15,6 +15,9 @@ const schemas = [schemaMigaDePan(base, migas), schemaColeccion(base, { nombre: '
     <p class="class-line">Archivo editorial</p>
     <h1 class="display mt-3 text-4xl md:text-5xl">Artículos</h1>
     <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">Redacción propia, con referencias visibles al pie de cada texto. Nada de resúmenes de wiki ni de traducciones de comunicados.</p>
-    <div class="mt-10 grid gap-x-12 gap-y-2 lg:grid-cols-2">{articulos.map((a, i) => <ArchiveCard articulo={a} grande={i === 0} folio={i + 1} />)}</div>
+    <section class="mt-10" aria-labelledby="lista-articulos">
+      <h2 id="lista-articulos" class="display text-2xl md:text-3xl">Guías y explicadores publicados</h2>
+      <div class="mt-6 grid gap-x-12 gap-y-2 lg:grid-cols-2">{articulos.map((a, i) => <ArchiveCard articulo={a} grande={i === 0} folio={i + 1} />)}</div>
+    </section>
   </div>
 </BaseLayout>
