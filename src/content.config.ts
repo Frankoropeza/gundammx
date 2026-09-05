@@ -1,5 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { CATEGORIA_IDS } from './config/categorias';
 
 const GRADOS = [
   'eg', 'sd', 'hg', 'rg', 'mg', 'mgsd', 'mgex', 'pg', 'full-mechanics', 'mega-size', 're100',
@@ -158,24 +159,6 @@ const noticias = defineCollection({
         message: 'Toda nota sobre terceros exige fuente_nombre y fuente_url. Solo los avisos propios (categoria: directorio) están exentos.',
       });
     }
-  }),
-});
-
-const guides = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/guides' }),
-  schema: ({ image }) => z.object({
-    titulo: z.string(),
-    descripcion: z.string(),
-    nivel: z.enum(['principiante', 'intermedio', 'avanzado']),
-    fecha: z.coerce.date(),
-    actualizada: z.string().optional(),
-    orden: z.number().default(50),
-    tiendas_relacionadas: z.array(z.string()).default([]),
-    kits_relacionados: z.array(z.string()).default([]),
-    imagen: image().optional(),
-    imagen_alt: z.string().optional(),
-    imagen_credito: z.string().optional(),   // clave en src/config/creditos-imagenes.ts
-    borrador: z.boolean().default(false),
   }),
 });
 
@@ -370,6 +353,11 @@ const articles = defineCollection({
     autor: z.string().default('Redacción GUNDAMMX'),
     fecha: z.coerce.date(),
     tema: z.enum(['universo', 'series', 'mobile-suits', 'gunpla', 'mexico', 'guia']),
+    categoria: z.enum(CATEGORIA_IDS),
+    nivel: z.enum(['principiante', 'intermedio', 'avanzado']).optional(),
+    actualizada: z.string().optional(),
+    tiendas_relacionadas: z.array(z.string()).default([]),
+    kits_relacionados: z.array(z.string()).default([]),
     lectura_min: z.number(),
     destacado: z.boolean().default(false),
     universos: z.array(z.enum(UNIVERSOS)).default([]),
@@ -384,7 +372,7 @@ const articles = defineCollection({
 
 export const collections = {
   // directorio y hobby
-  tiendas, kits, noticias, guides, eventos, servicios, comunidad,
+  tiendas, kits, noticias, eventos, servicios, comunidad,
   // archivo editorial
   universes, series, 'mobile-suits': mobileSuits, pilots, factions, gunpla, articles,
 };

@@ -4,6 +4,7 @@ resumen: Cinco pilotos, una operación de sabotaje y un doblaje grabado en Cuern
 autor: Redacción GUNDAMMX
 fecha: 2026-09-05
 tema: series
+categoria: series
 lectura_min: 5
 destacado: false
 universos: [ac]

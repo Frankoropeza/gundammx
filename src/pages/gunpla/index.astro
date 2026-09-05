@@ -10,7 +10,7 @@ import { tiendasActivas, tiendasVerificadas } from '@lib/directorio';
 import { schemaColeccion, schemaMigaDePan } from '@lib/seo';
 const grados = (await getCollection('gunpla', publicado)).sort((a, b) => a.data.orden - b.data.orden);
 const kits = await getCollection('kits');
-const guias = (await getCollection('guides', ({ data }) => !data.borrador)).sort((a, b) => a.data.orden - b.data.orden);
+const guias = (await getCollection('articles', ({ data }) => !data.borrador && data.categoria === 'comprar')).sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime());
 const tiendas = await tiendasActivas();
 const verificadas = await tiendasVerificadas();
 const base = { site: Astro.site, url: Astro.url.pathname };
@@ -28,7 +28,7 @@ import imgGunpla from '../../assets/hub-gunpla.jpg';
     <h1 class="display mt-3 text-4xl md:text-5xl">Gunpla</h1>
     <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">Esta sección trata el model kit como modelismo, no como ficción: grados, herramienta, precio en pesos y dónde comprarlo sin que te vendan una copia.</p>
   </div>
-  <div class="mt-10"><GunplaBlock grados={grados} totalTiendas={tiendas.length} totalVerificadas={verificadas.length} guias={guias.map((g) => ({ titulo: g.data.titulo, href: `/guias/${g.id}/` }))} /></div>
+  <div class="mt-10"><GunplaBlock grados={grados} totalTiendas={tiendas.length} totalVerificadas={verificadas.length} guias={guias.map((g) => ({ titulo: g.data.titulo, href: `/articulos/${g.id}/` }))} /></div>
   <section class="grid-page py-16" aria-labelledby="kits-h">
     <div class="flex items-end justify-between gap-6"><h2 id="kits-h" class="display text-3xl">Kits con precio de referencia</h2><a href="/kits/" class="link text-sm">Todos los kits</a></div>
     <div class="mt-8 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-5">{kits.map((k) => <KitCard kit={k} />)}</div>

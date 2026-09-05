@@ -9,30 +9,42 @@ import RelatedContent from '@components/RelatedContent.astro';
 import { entradasPorIds, nombreUniverso, FORMATO } from '@lib/archivo';
 import { fechaLarga } from '@lib/precio';
 import { schemaArticulo, schemaMigaDePan, tituloEditorial, descripcionFicha } from '@lib/seo';
+import { CATEGORIAS } from '@config/categorias';
+import { categoriasAbiertas, urlCategoria } from '@lib/categorias';
 
 export const getStaticPaths = (async () => {
   const articulos = await getCollection('articles', ({ data }) => !data.borrador);
+  const abiertas = (await categoriasAbiertas()).map((c) => c.id);
   return Promise.all(articulos.map(async (a) => ({
     params: { id: a.id },
-    props: { articulo: a, series: await entradasPorIds('series', a.data.series), otros: articulos.filter((o) => o.id !== a.id).slice(0, 3) },
+    props: {
+      articulo: a,
+      series: await entradasPorIds('series', a.data.series),
+      otros: articulos.filter((o) => o.id !== a.id).slice(0, 3),
+      hubAbierto: abiertas.includes(a.data.categoria),
+    },
   })));
 }) satisfies GetStaticPaths;
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
-const { articulo, series, otros } = Astro.props;
+const { articulo, series, otros, hubAbierto } = Astro.props;
 const d = articulo.data;
 const { Content } = await render(articulo);
-const temas: Record<string, string> = { universo: 'Universo', series: 'Series', 'mobile-suits': 'Mobile suits', gunpla: 'Gunpla', mexico: 'México', guia: 'Guía' };
+const categoria = CATEGORIAS[d.categoria];
 const base = { site: Astro.site, url: Astro.url.pathname };
-const migas = [{ nombre: 'Artículos', href: '/articulos/' }, { nombre: d.titulo, href: `/articulos/${articulo.id}/` }];
+const migas = [
+  { nombre: 'Artículos', href: '/articulos/' },
+  ...(hubAbierto ? [{ nombre: categoria.nombre, href: urlCategoria(d.categoria) }] : []),
+  { nombre: d.titulo, href: `/articulos/${articulo.id}/` },
+];
 const schemas = [schemaMigaDePan(base, migas), schemaArticulo(base, { titulo: d.titulo, descripcion: d.resumen, fecha: d.fecha, autor: d.autor })];
 ---
-<BaseLayout titulo={tituloEditorial(d.titulo, d.tema)} descripcion={descripcionFicha(d.resumen, 'Guía publicada en Gundam México.')} tipo="article" schemas={schemas}>
+<BaseLayout titulo={tituloEditorial(d.titulo, categoria.nombre)} descripcion={descripcionFicha(d.resumen, 'Guía publicada en Gundam México.')} tipo="article" schemas={schemas}>
   <Breadcrumbs items={migas} />
   <article class="grid-page py-10">
     <header class="grid gap-10 lg:grid-cols-12">
       <div class="lg:col-span-7">
-        <p class="class-line">{temas[d.tema]} · {fechaLarga(d.fecha)} · {d.lectura_min} min de lectura</p>
+        <p class="class-line">{categoria.nombre} · {fechaLarga(d.fecha)} · {d.lectura_min} min de lectura</p>
         <h1 class="display mt-4 text-4xl md:text-5xl text-balance">{d.titulo}</h1>
         <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">{d.resumen}</p>
         <MetadataRow class="mt-8" items={[{ etiqueta: 'Autoría', valor: d.autor }, { etiqueta: 'Universos', valor: d.universos.map((u) => nombreUniverso(u)).join(', ') }, { etiqueta: 'Referencias', valor: String(d.referencias.length) }]} />
@@ -49,7 +61,7 @@ const schemas = [schemaMigaDePan(base, migas), schemaArticulo(base, { titulo: d.
       </div>
       <aside class="space-y-10 lg:col-span-4 lg:col-start-9" data-pagefind-ignore>
         <RelatedContent titulo="Series citadas" items={series.map((s) => ({ eyebrow: `${s.data.anio} · ${FORMATO[s.data.formato]}`, titulo: s.data.titulo, href: `/series/${s.id}/` }))} />
-        <RelatedContent titulo="Seguir leyendo" items={otros.map((o) => ({ eyebrow: temas[o.data.tema], titulo: o.data.titulo, href: `/articulos/${o.id}/` }))} />
+        <RelatedContent titulo="Seguir leyendo" items={otros.map((o) => ({ eyebrow: CATEGORIAS[o.data.categoria].nombre, titulo: o.data.titulo, href: `/articulos/${o.id}/` }))} />
       </aside>
     </div>
   </article>

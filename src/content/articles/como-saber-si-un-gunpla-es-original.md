@@ -1,13 +1,25 @@
 ---
 titulo: Cómo saber si un Gunpla es original
-descripcion: Qué revisar antes de pagar, por qué el bootleg circula en México y qué señales delatan un kit que no salió de Bandai.
-nivel: principiante
+resumen: Qué revisar antes de pagar, por qué el bootleg circula en México y qué señales delatan un kit que no salió de Bandai.
+autor: Redacción GUNDAMMX
 fecha: 2026-09-04
+tema: guia
+categoria: comprar
+nivel: principiante
 actualizada: '2026-09-04'
-orden: 2
+lectura_min: 2
+destacado: false
+universos: []
+series: []
 imagen: ../../assets/gui-original.jpg
 imagen_alt: "Model kit Real Grade del RX-78-2 expuesto en una vitrina."
 imagen_credito: gui-original
+referencias:
+  - { titulo: 'BANDAI SPIRITS Hobby — canal oficial y entidades de servicio', url: 'https://bandai-hobby.net/global/index.html' }
+  - { titulo: 'P-Rex Hobby — guía comparativa para identificar Gunpla falsificado', url: 'https://www.prexhobby.com/blogs/guides/how-to-spot-fake-gunpla-authentic-vs-bootleg-comparison' }
+  - { titulo: 'Gundam Philippines — comparativa de bootlegs Dragon Momoko contra TT Hongli', url: 'https://gundamph.com/2011/08/20/bootleg-gundam-dragon-momoko-taiwan-vs-tt-hongli-china/' }
+  - { titulo: 'El Financiero — el IMPI decomisa más de 5,000 productos pirata en Cuemanco', url: 'https://www.elfinanciero.com.mx/economia/2025/05/07/impi-decomisa-mas-de-5-mil-productos-pirata-en-cuemanco/' }
+  - { titulo: 'El Universal — fraude y comercio ilegal en Facebook Marketplace', url: 'https://www.eluniversal.com.mx/nacion/marketplace-fraude-y-comercio-ilegal-en-la-red-de-facebook/' }
 ---
 
 Es la pregunta que más se repite en los grupos mexicanos, y la que ningún vendedor va a responder sobre

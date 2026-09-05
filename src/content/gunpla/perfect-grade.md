@@ -23,4 +23,4 @@ La línea "Unleashed", iniciada en 2020 con el RX-78-2, elevó todavía más el 
 
 En México los PG prácticamente no circulan en el canal oficial —su precio estimado va de 3 800 a 14 000
 pesos— y dependen de tienda especializada o importación. Antes de comprar uno conviene revisar la [guía de
-precios](/guias/cuanto-cuesta-un-gunpla-en-mexico/).
+precios](/articulos/cuanto-cuesta-un-gunpla-en-mexico/).

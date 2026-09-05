@@ -1,13 +1,26 @@
 ---
 titulo: Cuánto debería costar un Gunpla en México
-descripcion: El sobreprecio mexicano medido con kits idénticos, qué rango esperar por grado y cómo detectar cuando te están cobrando de más.
-nivel: principiante
+resumen: El sobreprecio mexicano medido con kits idénticos, qué rango esperar por grado y cómo detectar cuando te están cobrando de más.
+autor: Redacción GUNDAMMX
 fecha: 2026-09-04
+tema: guia
+categoria: comprar
+nivel: principiante
 actualizada: '2026-09-04'
-orden: 3
+lectura_min: 2
+destacado: false
+universos: []
+series: []
 imagen: ../../assets/gui-precio.jpg
 imagen_alt: "Model kits High Grade expuestos junto a su ficha de precio."
 imagen_credito: gui-precio
+referencias:
+  - { titulo: 'BANDAI HOBBY SITE — fichas oficiales de producto con precio de lista', url: 'https://bandai-hobby.net/global/index.html' }
+  - { titulo: 'Bandai Shop México — catálogo de la tienda oficial', url: 'https://shop.bandaicollectors.com.mx/' }
+  - { titulo: 'Pricey.jp — rangos de precio por grado en Japón y alzas de 2025', url: 'https://www.pricey.jp/web/articles/3086' }
+  - { titulo: 'Gundam Kits Collection — segunda ronda de alzas sobre kits clásicos, mayo 2026', url: 'https://www.gundamkitscollection.com/2026/05/several-classic-gunpla-kits-are-getting.html' }
+  - { titulo: 'Expansión — aranceles a juguetes vigentes desde el 1 de enero de 2026', url: 'https://expansion.mx/economia/2026/01/01/adios-gangas-chinas-mexico-activa-nuevos-aranceles' }
+  - { titulo: 'Frankfurter / Banco Central Europeo — tipos de cambio de referencia', url: 'https://api.frankfurter.app/latest?from=USD&to=MXN,JPY' }
 ---
 
 La queja constante es que en México los kits salen caros. Es cierto, y se puede medir.

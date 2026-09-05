@@ -1,0 +1,43 @@
+---
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import ArchiveCard from '@components/ArchiveCard.astro';
+import { categoriasAbiertas, urlCategoria } from '@lib/categorias';
+import { schemaColeccion, schemaMigaDePan } from '@lib/seo';
+
+export const getStaticPaths = (async () => {
+  const abiertas = await categoriasAbiertas();
+  return abiertas.map((c) => ({ params: { categoria: c.id }, props: { cat: c } }));
+}) satisfies GetStaticPaths;
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { cat } = Astro.props;
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [
+  { nombre: 'Artículos', href: '/articulos/' },
+  { nombre: cat.meta.nombre, href: urlCategoria(cat.id) },
+];
+const schemas = [
+  schemaMigaDePan(base, migas),
+  schemaColeccion(base, {
+    nombre: cat.meta.nombre,
+    descripcion: cat.meta.descripcion,
+    items: cat.piezas.map((a) => ({ nombre: a.data.titulo, href: `/articulos/${a.id}/` })),
+  }),
+];
+---
+<BaseLayout titulo={`${cat.meta.nombre} | Gundam México`} descripcion={cat.meta.descripcion} schemas={schemas}>
+  <Breadcrumbs items={migas} />
+  <div class="grid-page py-10">
+    <p class="class-line">Artículos · {cat.piezas.length} {cat.piezas.length === 1 ? 'pieza' : 'piezas'}</p>
+    <h1 class="display mt-3 text-4xl md:text-5xl">{cat.meta.nombre}</h1>
+    <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">{cat.meta.descripcion}</p>
+    <section class="mt-10" aria-labelledby="lista-categoria">
+      <h2 id="lista-categoria" class="sr-only">Piezas publicadas en {cat.meta.nombre}</h2>
+      <div class="mt-6 grid gap-x-12 gap-y-2 lg:grid-cols-2">
+        {cat.piezas.map((a, i) => <ArchiveCard articulo={a} grande={i === 0} folio={i + 1} />)}
+      </div>
+    </section>
+  </div>
+</BaseLayout>

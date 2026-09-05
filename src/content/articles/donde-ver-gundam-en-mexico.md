@@ -4,6 +4,7 @@ resumen: En qué plataformas está Gundam hoy en México, qué se puede ver grat
 autor: Redacción GUNDAMMX
 fecha: 2026-09-05
 tema: mexico
+categoria: donde-ver
 lectura_min: 6
 destacado: false
 universos: [uc, ac, ce, as]
