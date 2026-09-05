@@ -132,6 +132,9 @@
   .class-line { @apply flex items-center gap-4 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3; }
   .class-line::after { content: ''; @apply h-px flex-1 bg-line; }
 
+  /* Énfasis en párrafos de contexto */
+  .hero-copy strong { @apply font-medium text-ink; }
+
   /* Numeración editorial */
   .folio { @apply font-mono text-xs tabular text-ink-3; }
 

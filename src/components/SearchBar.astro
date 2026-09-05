@@ -2,19 +2,19 @@
 /**
  * Formulario GET: funciona sin JavaScript. La página /buscar/ resuelve la consulta.
  */
-interface Props { compacto?: boolean; valor?: string; autofocus?: boolean }
-const { compacto = false, valor = '', autofocus = false } = Astro.props;
+interface Props { compacto?: boolean; valor?: string; autofocus?: boolean; placeholder?: string }
+const { compacto = false, valor = '', autofocus = false, placeholder } = Astro.props;
 const id = `q-${Math.random().toString(36).slice(2, 7)}`;
 ---
 
 <form action="/buscar/" method="get" role="search" class:list={['flex w-full', compacto ? 'max-w-sm' : 'max-w-2xl']}>
-  <label for={id} class="sr-only">Buscar tiendas, kits o guías</label>
+  <label for={id} class="sr-only">Buscar en el archivo</label>
   <input
     id={id}
     type="search"
     name="q"
     value={valor}
-    placeholder={compacto ? 'Buscar' : 'Buscar tiendas, kits o guías'}
+    placeholder={placeholder ?? (compacto ? 'Buscar' : 'Buscar series, mobile suits, kits o tiendas')}
     autocomplete="off"
     autofocus={autofocus}
     class:list={[

@@ -16,11 +16,8 @@ const { universos } = Astro.props;
   <ol class="mt-10 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-4">
     {universos.map((u, i) => (
       <li class:list={['card p-6', i === 0 && 'sm:col-span-2']}>
-        <div class="flex items-center justify-between">
-          <span class="folio">{String(i + 1).padStart(2, '0')}</span>
-          <span class="font-mono text-xs uppercase tracking-[0.14em] text-ink-2">{u.data.abreviatura.toUpperCase()}</span>
-        </div>
-        <h3 class="display mt-8 text-2xl">
+        <span class="font-mono text-xs uppercase tracking-[0.14em] text-ink-2">{u.data.abreviatura.toUpperCase()}</span>
+        <h3 class="display mt-7 text-2xl">
           <a href={`/universos/${u.id}/`} class="link-quiet">{u.data.nombre}</a>
         </h3>
         <p class="mt-1 font-mono text-xs text-ink-3">{u.data.periodo}</p>
