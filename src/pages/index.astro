@@ -44,15 +44,25 @@ const verificadas = await tiendasVerificadas();
       intro={destacado.data.resumen}
       href={`/articulos/${destacado.id}/`}
       cta="Leer el expediente"
-      codigo={`ART-${destacado.id.toUpperCase().slice(0, 18)}`}
-      imagen={destacado.data.imagen}
-      imagenAlt={destacado.data.imagen_alt}
       metadata={[
         { etiqueta: 'Tema', valor: 'Guía de entrada' },
         { etiqueta: 'Lectura', valor: `${destacado.data.lectura_min} min` },
         { etiqueta: 'Universos', valor: `${destacado.data.universos.length} líneas temporales` },
         { etiqueta: 'Fuentes', valor: `${destacado.data.referencias.length} referencias` },
       ]}
+      contexto={{
+        titulo: 'El archivo',
+        parrafos: [
+          'Gundam empezó en 1979 con una serie de televisión sobre una guerra entre la Tierra y sus colonias espaciales, y desde entonces creció hasta convertirse en siete calendarios independientes: Universal Century, After Colony, Cosmic Era, Anno Domini, Post Disaster, Ad Stella y Correct Century. Aquí documentamos cada línea temporal con fichas verificadas de series, mobile suits, pilotos y facciones, además de guías de entrada para saber qué ver primero, qué es canon dentro de cada universo y cómo se conectan las obras entre sí.',
+          'La otra mitad del archivo es el hobby y el mercado mexicano. Cubrimos Gunpla —los kits de plástico armables de Bandai— por grado y escala, de Entry Grade y High Grade a Real Grade, Master Grade y Perfect Grade, con criterios de dificultad y herramientas. Y mantenemos un directorio verificado de dónde comprar Gundam original en México: tiendas físicas y en línea por estado y ciudad, referencias de precio con fecha de observación, talleres de pintura, eventos y comunidad.',
+        ],
+        enlaces: [
+          { texto: 'Universos', href: '/universos/' },
+          { texto: 'Series', href: '/series/' },
+          { texto: 'Gunpla', href: '/gunpla/' },
+          { texto: 'Tiendas verificadas', href: '/tiendas/' },
+        ],
+      }}
     />
   )}
 
