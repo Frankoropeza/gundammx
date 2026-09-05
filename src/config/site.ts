@@ -8,7 +8,7 @@ export const SITE = {
   nombreLargo: 'GUNDAM MEXICO',
   descriptor: 'Directorio independiente de tiendas',
   descripcion:
-    'Directorio nacional de tiendas que venden Gundam y Gunpla en México, con verificación de originalidad, precios de referencia y noticias del sector.',
+    'Gundam y Gunpla en México: directorio de tiendas verificadas, kits con precio de referencia en pesos, guías de armado, talleres, eventos y comunidad. Independiente y sin afiliación con ninguna marca.',
   // El dominio se resuelve desde astro.config (PUBLIC_SITE_URL). Nunca en duro aquí.
   locale: 'es-MX',
   pais: 'MX',
