@@ -57,14 +57,6 @@ const entradas = [
       eyebrow={`Expediente destacado · ${fechaCorta(destacado.data.fecha)}`}
       titulo={destacado.data.titulo}
       intro={destacado.data.resumen}
-      href={`/articulos/${destacado.id}/`}
-      cta="Leer el expediente"
-      metadata={[
-        { etiqueta: 'Tema', valor: 'Guía de entrada' },
-        { etiqueta: 'Lectura', valor: `${destacado.data.lectura_min} min` },
-        { etiqueta: 'Universos', valor: `${destacado.data.universos.length} líneas temporales` },
-        { etiqueta: 'Fuentes', valor: `${destacado.data.referencias.length} referencias` },
-      ]}
       busqueda={{ sugerencia: 'Prueba «Universal Century», «Master Grade» o «Guadalajara»' }}
       contexto={{
         titulo: 'El archivo',
