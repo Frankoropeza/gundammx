@@ -1,0 +1,64 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import { getCollection } from 'astro:content';
+import { nombreEstado } from '@lib/estados';
+import { schemaListado, schemaMigaDePan } from '@lib/seo';
+
+const servicios = (await getCollection('servicios'))
+  .sort((a, b) => a.data.nombre.localeCompare(b.data.nombre, 'es-MX'));
+
+const etiquetas: Record<string, string> = {
+  custom_paint: 'Custom paint', aerografia: 'Aerografía', taller: 'Taller',
+  curso: 'Curso', herramientas: 'Herramientas', pinturas: 'Pinturas',
+};
+
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [{ nombre: 'Servicios', href: '/servicios/' }];
+const schemas = [
+  schemaMigaDePan(base, migas),
+  schemaListado(base, 'Servicios de modelismo en México',
+    servicios.map((s) => ({ nombre: s.data.nombre, href: '/servicios/' }))),
+];
+---
+
+<BaseLayout
+  titulo="Pinturas, herramientas y talleres de modelismo en México"
+  descripcion="Dónde conseguir pinturas Tamiya, Mr. Hobby, Gaia y Vallejo en México, y qué talleres y cursos de armado existen."
+  schemas={schemas}
+>
+  <Breadcrumbs items={migas} />
+
+  <div class="contenedor py-8">
+    <h1 class="font-display text-3xl font-bold md:text-4xl">Servicios, herramientas y pinturas</h1>
+    <p class="mt-4 max-w-3xl text-ink-muted">
+      El kit es la mitad del hobby. Aquí van los proveedores de pintura y herramienta, y los talleres
+      donde se aprende a armar. Es la sección más vacía del ecosistema mexicano: si conoces a alguien
+      que ofrezca pintado por encargo, <a href="/alta-de-tienda/" class="enlace">mándanoslo</a>.
+    </p>
+
+    {servicios.length === 0 ? (
+      <p class="mt-8 text-ink-muted">Estamos armando esta sección.</p>
+    ) : (
+      <div class="mt-8 grid gap-4 sm:grid-cols-2">
+        {servicios.map((s) => (
+          <article class="tarjeta">
+            <ul class="flex flex-wrap gap-1.5">
+              {s.data.tipo.map((t) => <li class="chip">{etiquetas[t] ?? t}</li>)}
+            </ul>
+            <h2 class="mt-3 font-display text-lg font-semibold">
+              {s.data.web
+                ? <a href={s.data.web} class="hover:text-accent" rel="nofollow noopener" target="_blank">{s.data.nombre}</a>
+                : s.data.nombre}
+            </h2>
+            <p class="mt-1 text-sm text-ink-faint">{s.data.ciudad}, {nombreEstado(s.data.estado)}</p>
+            <p class="mt-2 text-sm text-ink-muted">{s.data.descripcion}</p>
+            {s.data.marcas.length > 0 && (
+              <p class="mt-3 font-mono text-xs text-ink-faint">{s.data.marcas.join(' · ')}</p>
+            )}
+          </article>
+        ))}
+      </div>
+    )}
+  </div>
+</BaseLayout>

@@ -1,0 +1,128 @@
+---
+import type { GetStaticPaths } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import TarjetaTienda from '@components/TarjetaTienda.astro';
+import TablaTiendas from '@components/TablaTiendas.astro';
+import { getCollection } from 'astro:content';
+import { tiendasActivas, ciudadesDe, ciudadesConPagina, indexable } from '@lib/directorio';
+import { nombreEstado, slugificar } from '@lib/estados';
+import { schemaListado, schemaMigaDePan } from '@lib/seo';
+import { fechaLarga } from '@lib/precio';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const tiendas = await tiendasActivas();
+  const ciudades = await ciudadesConPagina();
+  return ciudades.map((c) => ({
+    params: { ciudad: c.slug },
+    props: {
+      nombre: c.nombre,
+      estado: c.estado,
+      total: c.total,
+      tiendas: tiendas.filter((t) => ciudadesDe(t).some((x) => x.slug === c.slug)),
+    },
+  }));
+};
+
+interface Props {
+  nombre: string;
+  estado: string;
+  total: number;
+  tiendas: CollectionEntry<'tiendas'>[];
+}
+
+const { ciudad } = Astro.params;
+const { nombre, estado, total, tiendas } = Astro.props;
+
+const eventos = (await getCollection('eventos'))
+  .filter((e) => slugificar(e.data.ciudad) === ciudad && e.data.fecha_inicio >= new Date())
+  .sort((a, b) => a.data.fecha_inicio.getTime() - b.data.fecha_inicio.getTime());
+
+const conEnvio = tiendas.filter((t) => t.data.envio_nacional).length;
+const conPreventa = tiendas.filter((t) => t.data.maneja_preventa).length;
+
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [
+  { nombre: 'Tiendas', href: '/tiendas/' },
+  { nombre: nombreEstado(estado), href: `/tiendas/${estado}/` },
+  { nombre, href: `/tiendas/ciudad/${ciudad}/` },
+];
+const schemas = [
+  schemaMigaDePan(base, migas),
+  schemaListado(base, `Tiendas de Gundam en ${nombre}`, tiendas.map((t) => ({
+    nombre: t.data.nombre, href: `/tienda/${t.id}/`,
+  }))),
+];
+---
+
+<BaseLayout
+  titulo={`Tiendas de Gundam en ${nombre}`}
+  descripcion={`${total} tiendas que venden Gundam y Gunpla en ${nombre}, ${nombreEstado(estado)}: qué grados manejan, si envían y cómo verificamos cada una.`}
+  noindex={!indexable(total)}
+  schemas={schemas}
+>
+  <Breadcrumbs items={migas} />
+
+  <div class="contenedor py-8">
+    <h1 class="font-display text-3xl font-bold md:text-4xl">
+      Tiendas de Gundam en {nombre}
+    </h1>
+    <p class="mt-4 max-w-3xl text-ink-muted">
+      {total} {total === 1 ? 'tienda' : 'tiendas'} en el directorio · {conEnvio} con envío nacional ·
+      {' '}{conPreventa} con preventas.
+    </p>
+
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {tiendas.map((t) => <TarjetaTienda tienda={t} />)}
+    </div>
+
+    <section class="mt-12">
+      <h2 class="font-display text-xl font-semibold">Comparativa</h2>
+      <div class="mt-4"><TablaTiendas tiendas={tiendas} /></div>
+    </section>
+
+    {eventos.length > 0 && (
+      <section class="mt-12">
+        <h2 class="font-display text-xl font-semibold">Próximos eventos en {nombre}</h2>
+        <ul class="mt-4 space-y-3">
+          {eventos.map((e) => (
+            <li class="tarjeta">
+              <p class="font-medium">{e.data.nombre}</p>
+              <p class="mt-1 text-sm text-ink-muted">
+                {fechaLarga(e.data.fecha_inicio)}{e.data.sede && ` · ${e.data.sede}`}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <section class="mt-12 max-w-3xl">
+      <h2 class="font-display text-xl font-semibold">Preguntas frecuentes</h2>
+      <dl class="mt-4 space-y-5 text-sm">
+        <div>
+          <dt class="font-medium text-ink">¿Cómo sé que una tienda vende producto original?</dt>
+          <dd class="mt-1 text-ink-muted">
+            Cada ficha declara el origen del producto y la fuente con la que lo comprobamos.
+            Cuando no pudimos verificarlo, lo decimos: la etiqueta dice «origen no verificado».
+            La guía de <a href="/guias/como-saber-si-un-gunpla-es-original/" class="enlace">cómo identificar un kit original</a> explica qué revisar al comprar.
+          </dd>
+        </div>
+        <div>
+          <dt class="font-medium text-ink">¿Cuánto debería costar un kit aquí?</dt>
+          <dd class="mt-1 text-ink-muted">
+            En el canal oficial mexicano el precio ronda 2.3 veces el precio de lista japonés.
+            En cada <a href="/kits/" class="enlace">ficha de kit</a> publicamos el rango esperado en pesos para que puedas detectar sobreprecio.
+          </dd>
+        </div>
+        <div>
+          <dt class="font-medium text-ink">Falta una tienda de {nombre}</dt>
+          <dd class="mt-1 text-ink-muted">
+            <a href="/alta-de-tienda/" class="enlace">Mándanosla</a> y la verificamos antes de publicarla.
+          </dd>
+        </div>
+      </dl>
+    </section>
+  </div>
+</BaseLayout>

@@ -1,0 +1,63 @@
+---
+import type { GetStaticPaths } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import KitCard from '@components/KitCard.astro';
+import { getCollection } from 'astro:content';
+import { GRADOS, type GradoId } from '@config/site';
+import { schemaListado, schemaMigaDePan } from '@lib/seo';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const kits = await getCollection('kits');
+  return (Object.keys(GRADOS) as GradoId[]).map((g) => ({
+    params: { grado: g },
+    props: { kits: kits.filter((k) => k.data.grado === g), grado: g },
+  }));
+};
+
+interface Props {
+  kits: CollectionEntry<'kits'>[];
+  grado: GradoId;
+}
+
+const { kits, grado } = Astro.props;
+const info = GRADOS[grado];
+
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [
+  { nombre: 'Kits', href: '/kits/' },
+  { nombre: info.etiqueta, href: `/kits/${grado}/` },
+];
+const schemas = [
+  schemaMigaDePan(base, migas),
+  schemaListado(base, `Kits ${info.etiqueta}`, kits.map((k) => ({
+    nombre: k.data.nombre, href: `/kit/${k.id}/`,
+  }))),
+];
+---
+
+<BaseLayout
+  titulo={`Kits ${info.etiqueta} — ${info.nombre}`}
+  descripcion={`Kits de grado ${info.nombre} (${info.escala}) con precio de referencia en pesos y disponibilidad en tiendas mexicanas.`}
+  noindex={kits.length === 0}
+  schemas={schemas}
+>
+  <Breadcrumbs items={migas} />
+
+  <div class="contenedor py-8">
+    <h1 class="font-display text-3xl font-bold md:text-4xl">{info.nombre} <span class="text-ink-faint">({info.etiqueta})</span></h1>
+    <p class="mt-3 font-mono text-sm text-ink-muted">Escala {info.escala}</p>
+
+    {kits.length === 0 ? (
+      <p class="mt-6 max-w-2xl text-ink-muted">
+        Todavía no registramos kits de este grado con precio observado en México.
+        Estamos poblando el catálogo con los kits que sí circulan en tiendas mexicanas.
+      </p>
+    ) : (
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {kits.map((k) => <KitCard kit={k} />)}
+      </div>
+    )}
+  </div>
+</BaseLayout>

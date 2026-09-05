@@ -1,0 +1,65 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import { tiendasEnLinea } from '@lib/directorio';
+import { pesos } from '@lib/precio';
+import { schemaListado, schemaMigaDePan } from '@lib/seo';
+
+const tiendas = await tiendasEnLinea();
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [
+  { nombre: 'Tiendas', href: '/tiendas/' },
+  { nombre: 'Con envío nacional', href: '/tiendas/en-linea/' },
+];
+const schemas = [
+  schemaMigaDePan(base, migas),
+  schemaListado(base, 'Tiendas de Gunpla con envío a todo México', tiendas.map((t) => ({
+    nombre: t.data.nombre, href: `/tienda/${t.id}/`,
+  }))),
+];
+---
+
+<BaseLayout
+  titulo="Tiendas de Gunpla con envío a todo México"
+  descripcion="Comparativa de tiendas mexicanas que envían Gunpla a todo el país: paqueterías, umbral de envío gratis, preventas y verificación de oferta."
+  schemas={schemas}
+>
+  <Breadcrumbs items={migas} />
+
+  <div class="contenedor py-8">
+    <h1 class="font-display text-3xl font-bold md:text-4xl">Tiendas con envío a todo México</h1>
+    <p class="mt-4 max-w-3xl text-ink-muted">
+      Si no hay tienda física en tu ciudad, esta es la lista. Comparamos paqueterías, umbral de envío
+      gratis y si manejan preventa, que es donde más dudas genera el comercio de kits en México.
+    </p>
+
+    <div class="tabla-scroll mt-8">
+      <table class="w-full min-w-[44rem] border-collapse text-sm">
+        <thead>
+          <tr class="border-b border-base-line text-left text-xs uppercase tracking-wide text-ink-faint">
+            <th class="py-3 pr-4 font-medium">Tienda</th>
+            <th class="py-3 pr-4 font-medium">Paqueterías</th>
+            <th class="py-3 pr-4 font-medium">Envío gratis desde</th>
+            <th class="py-3 pr-4 font-medium">Preventa</th>
+            <th class="py-3 font-medium">Verificación</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tiendas.map((t) => (
+            <tr class="border-b border-base-line/60">
+              <td class="py-3 pr-4"><a href={`/tienda/${t.id}/`} class="enlace font-medium">{t.data.nombre}</a></td>
+              <td class="py-3 pr-4 text-ink-muted">{t.data.paqueterias.join(', ') || '—'}</td>
+              <td class="py-3 pr-4 font-mono text-ink-muted">
+                {t.data.envio_gratis_desde ? pesos(t.data.envio_gratis_desde) : '—'}
+              </td>
+              <td class="py-3 pr-4 text-ink-muted">{t.data.maneja_preventa ? 'Sí' : '—'}</td>
+              <td class="py-3 text-ink-muted">
+                {t.data.verificacion.estado === 'verificada' ? 'Verificada' : 'Sin verificar'}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</BaseLayout>

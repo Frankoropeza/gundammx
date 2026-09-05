@@ -1,0 +1,39 @@
+---
+import type { GetStaticPaths } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '@layouts/ArticleLayout.astro';
+import { schemaArticulo, schemaMigaDePan } from '@lib/seo';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const guias = await getCollection('guias', ({ data }) => !data.borrador);
+  return guias.map((g) => ({ params: { id: g.id }, props: { guia: g } }));
+};
+
+interface Props { guia: CollectionEntry<'guias'> }
+
+const { guia } = Astro.props;
+const d = guia.data;
+const { Content } = await render(guia);
+
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [
+  { nombre: 'Guías', href: '/guias/' },
+  { nombre: d.titulo, href: `/guias/${guia.id}/` },
+];
+const schemas = [
+  schemaMigaDePan(base, migas),
+  schemaArticulo(base, { titulo: d.titulo, descripcion: d.descripcion, fecha: d.fecha }),
+];
+---
+
+<ArticleLayout
+  titulo={d.titulo}
+  descripcion={d.descripcion}
+  fecha={d.fecha}
+  actualizada={d.actualizada}
+  migas={migas}
+  schemas={schemas}
+>
+  <Content />
+</ArticleLayout>

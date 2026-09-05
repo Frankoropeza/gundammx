@@ -1,0 +1,76 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import AvisoIndependencia from '@components/AvisoIndependencia.astro';
+import { SITE } from '@config/site';
+
+const migas = [{ nombre: 'Aviso legal', href: '/aviso-legal/' }];
+---
+
+<BaseLayout
+  titulo="Aviso legal e independencia"
+  descripcion="GUNDAMMX es un directorio independiente sin afiliación con Bandai Namco ni sus filiales. Aquí explicamos qué es este sitio y qué no es."
+>
+  <Breadcrumbs items={migas} />
+
+  <div class="contenedor max-w-3xl py-8">
+    <h1 class="font-display text-3xl font-bold md:text-4xl">Aviso legal e independencia</h1>
+
+    <div class="mt-8"><AvisoIndependencia /></div>
+
+    <section class="mt-10">
+      <h2 class="font-display text-2xl font-semibold">Qué es este sitio</h2>
+      <p class="mt-4 text-sm text-ink-muted">
+        {SITE.nombre} es un directorio de tiendas y un medio informativo, operado de forma independiente
+        desde {SITE.ciudad}. Reunimos información pública sobre dónde comprar model kits en México
+        y publicamos noticias del sector redactadas por nosotros.
+      </p>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="font-display text-2xl font-semibold">Qué no es</h2>
+      <ul class="mt-4 space-y-2 text-sm text-ink-muted">
+        <li>No es una tienda oficial ni un canal autorizado de ninguna marca.</li>
+        <li>No vendemos model kits ni intermediamos en las compras: cada operación es entre tú y la tienda.</li>
+        <li>No representamos a las tiendas listadas ni respondemos por sus envíos, precios o garantías.</li>
+        <li>No usamos logotipos, tipografías ni imágenes de identidad de terceros como marca propia.</li>
+      </ul>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="font-display text-2xl font-semibold">Marcas de terceros</h2>
+      <p class="mt-4 text-sm text-ink-muted">
+        Las marcas citadas pertenecen a sus respectivos titulares. Las mencionamos con fines informativos
+        y para identificar los productos de los que hablamos, sin sugerir relación comercial, patrocinio
+        ni afiliación de ningún tipo.
+      </p>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="font-display text-2xl font-semibold">Contenido de terceros y fuentes</h2>
+      <p class="mt-4 text-sm text-ink-muted">
+        Nuestras notas son de redacción propia y siempre citan y enlazan la fuente original.
+        No republicamos comunicados íntegros ni galerías de imágenes de terceros. Si eres titular de
+        algún contenido y consideras que un uso es indebido, escríbenos a {SITE.email} y lo revisamos.
+      </p>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="font-display text-2xl font-semibold">Enlaces monetizados</h2>
+      <p class="mt-4 text-sm text-ink-muted">
+        Algunos enlaces a tiendas pueden generarnos una comisión, y algunos listados pueden ser pagados.
+        Cuando así sea, lo verás señalado como <span class="chip">Patrocinado</span> en la propia ficha.
+        Esto no altera la verificación: el sello se otorga por evidencia y no está a la venta.
+      </p>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="font-display text-2xl font-semibold">Exactitud de la información</h2>
+      <p class="mt-4 text-sm text-ink-muted">
+        Los datos se comprueban con fuentes públicas en la fecha que indica cada ficha. Precios,
+        horarios y catálogos cambian: confirma siempre con la tienda antes de comprar.
+        Si detectas un error, <a href="/reportar/" class="enlace">repórtalo</a>.
+      </p>
+    </section>
+  </div>
+</BaseLayout>

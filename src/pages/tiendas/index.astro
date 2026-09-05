@@ -1,0 +1,74 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import TablaTiendas from '@components/TablaTiendas.astro';
+import { tiendasActivas, ciudadesConPagina, estadosConTiendas, indexable } from '@lib/directorio';
+import { ESTADOS } from '@lib/estados';
+import { schemaListado, schemaMigaDePan } from '@lib/seo';
+
+const tiendas = await tiendasActivas();
+const ciudades = (await ciudadesConPagina()).filter((c) => indexable(c.total));
+const porEstado = await estadosConTiendas();
+const estados = ESTADOS.filter((e) => porEstado.has(e.slug));
+
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [{ nombre: 'Tiendas', href: '/tiendas/' }];
+const schemas = [
+  schemaMigaDePan(base, migas),
+  schemaListado(base, 'Tiendas de Gundam en México', tiendas.map((t) => ({
+    nombre: t.data.nombre, href: `/tienda/${t.id}/`,
+  }))),
+];
+---
+
+<BaseLayout
+  titulo="Tiendas de Gundam y Gunpla en México"
+  descripcion={`Directorio de ${tiendas.length} tiendas que venden Gundam en México, con verificación de oferta, cobertura de envío y grados en catálogo.`}
+  schemas={schemas}
+>
+  <Breadcrumbs items={migas} />
+
+  <div class="contenedor py-8">
+    <h1 class="font-display text-3xl font-bold md:text-4xl">Tiendas de Gundam en México</h1>
+    <p class="mt-4 max-w-3xl text-ink-muted">
+      {tiendas.length} tiendas en el directorio. Cada una indica qué grados maneja, si envía a todo el país
+      y con qué fuente comprobamos su oferta. No cobramos por verificar.
+    </p>
+
+    <nav class="mt-8 flex flex-wrap gap-2">
+      <a href="/tiendas/verificadas/" class="chip hover:border-accent hover:text-accent">Solo verificadas</a>
+      <a href="/tiendas/en-linea/" class="chip hover:border-accent hover:text-accent">Con envío nacional</a>
+    </nav>
+
+    <section class="mt-10">
+      <h2 class="font-display text-xl font-semibold">Por ciudad</h2>
+      <ul class="mt-4 flex flex-wrap gap-2">
+        {ciudades.map((c) => (
+          <li>
+            <a href={`/tiendas/ciudad/${c.slug}/`} class="chip hover:border-accent hover:text-accent">
+              {c.nombre} <span class="ml-1 text-ink-faint">{c.total}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="font-display text-xl font-semibold">Por estado</h2>
+      <ul class="mt-4 flex flex-wrap gap-2">
+        {estados.map((e) => (
+          <li>
+            <a href={`/tiendas/${e.slug}/`} class="chip hover:border-accent hover:text-accent">
+              {e.nombre} <span class="ml-1 text-ink-faint">{porEstado.get(e.slug)}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mt-12">
+      <h2 class="font-display text-xl font-semibold">Todas las tiendas</h2>
+      <div class="mt-4"><TablaTiendas tiendas={tiendas} /></div>
+    </section>
+  </div>
+</BaseLayout>

@@ -1,41 +1,38 @@
 ---
-title: "Bienvenidos a Gundam MX — La Comunidad Gundam de México"
-description: "Inauguramos Gundam MX, el espacio definitivo para los fans de Gundam en México. Descubre kits, guías de armado y conecta con la comunidad."
-pubDate: 2024-12-01
-author: "Gundam MX"
-category: "Comunidad"
-tags: ["comunidad", "gundam", "méxico", "gunpla"]
-draft: false
+titulo: Arranca GUNDAMMX, el directorio de tiendas de Gundam en México
+descripcion: Qué es este proyecto, qué problema intenta resolver y con qué reglas vamos a publicar.
+fecha: 2026-09-04
+categoria: directorio
+autor: Redacción GUNDAMMX
+tags: [directorio, metodologia]
 ---
 
-# ¡Bienvenidos a Gundam MX!
+Buscar dónde comprar un model kit en México se resuelve hoy, en la práctica, preguntando en un grupo de
+Facebook. No existe ningún directorio de tiendas de Gunpla en el país, ni en la región. Eso es lo que
+venimos a construir.
 
-Después de meses de trabajo, estamos emocionados de presentar **Gundam MX**, la comunidad definitiva para todos los fans de Gundam y Gunpla en México. Este proyecto nace de la pasión compartida por el universo de Mobile Suit Gundam y la creciente escena de modelismo en nuestro país.
+## Qué vamos a publicar
 
-## ¿Por qué Gundam MX?
+Un directorio de tiendas verificadas una por una, con la fuente y la fecha a la vista. Una base de kits
+con precio de referencia en pesos, para que sea posible detectar sobreprecio. Y noticias del sector en
+español, con el dato local que las fuentes internacionales no traen: qué significa en pesos y si llega
+a México.
 
-México tiene una de las comunidades de Gunpla más apasionadas de Latinoamérica. Desde las primeras transmisiones de **Mobile Suit Gundam Wing** en televisión abierta a finales de los 90, la franquicia capturó los corazones de miles de mexicanos. Con el paso de los años, esa semilla creció hasta convertirse en una comunidad vibrante de coleccionistas, modelistas y fans dedicados.
+## Tres reglas que no vamos a romper
 
-Sin embargo, hasta ahora no existía un espacio centralizado en español donde los fans mexicanos pudieran encontrar todo lo que necesitan: desde **reseñas de kits** hasta **guías de armado paso a paso**, pasando por **noticias de la industria** y una **tienda con precios en pesos mexicanos**.
+**Ninguna ficha sin fuente.** Está impuesto en el propio esquema del sitio: una tienda no se publica sin
+al menos una URL que respalde el dato.
 
-## Lo que encontrarás aquí
+**La verificación no se vende.** Habrá listados patrocinados, y estarán etiquetados como tales. El sello
+de verificación se otorga por evidencia y no cambia porque alguien pague.
 
-### Catálogo de Kits
-Mantenemos un catálogo actualizado con todos los grados disponibles: **High Grade (HG)**, **Master Grade (MG)**, **Real Grade (RG)**, **Perfect Grade (PG)** y **Super Deformed (SD)**. Cada kit incluye nivel de dificultad, precio estimado y reseñas de la comunidad.
+**Cuando no sepamos algo, lo vamos a decir.** Verás fichas marcadas como «sin verificar» y campos con
+«origen no verificado». Preferimos una página que admita sus huecos a una que los rellene.
 
-### Guías de Armado y Pintura
-¿Eres nuevo en el mundo del Gunpla? No te preocupes. Nuestras guías están diseñadas para todos los niveles, desde principiantes que arman su primer HG hasta veteranos que buscan técnicas avanzadas de aerografía, weathering y scribing.
+## Somos independientes
 
-### Noticias y Lanzamientos
-Te mantenemos al día con los últimos anuncios de **Bandai Namco**, nuevos lanzamientos de kits, eventos como el **GBWC (Gunpla Builders World Cup)** y todo lo relevante del universo Gundam.
+No estamos afiliados con Bandai Namco ni con ninguna de sus filiales, y no vendemos kits. El sitio oficial
+de la franquicia y el canal oficial en México están enlazados en el pie de cada página.
 
-### Comunidad
-Lo más importante de Gundam MX es la comunidad. Queremos crear un espacio donde puedas compartir tus builds, recibir feedback constructivo, intercambiar tips y conocer a otros builders cerca de ti. Organizaremos meetups, concursos y eventos especiales a lo largo del año.
-
-## El futuro de Gundam MX
-
-Esto es solo el comienzo. Tenemos planes ambiciosos que incluyen una tienda en línea con envíos a toda la República Mexicana, colaboraciones con tiendas locales de hobby, talleres presenciales en CDMX, Guadalajara y Monterrey, y mucho más.
-
-**¡Únete a la revolución Gunpla en México!** Síguenos en nuestras redes sociales y sé parte de esta comunidad que apenas comienza a despegar. Como diría el legendario Char Aznable: *"Los tiempos están cambiando"*.
-
-¡Nos vemos en el campo de batalla, pilotos! 🤖
+Si detectas un error o falta una tienda, [repórtalo](/reportar/). Es lo más útil que puedes hacer por
+este directorio.

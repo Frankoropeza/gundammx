@@ -1,0 +1,51 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import KitCard from '@components/KitCard.astro';
+import { getCollection } from 'astro:content';
+import { GRADOS, type GradoId, FACTOR_MX } from '@config/site';
+import { schemaListado, schemaMigaDePan } from '@lib/seo';
+
+const kits = (await getCollection('kits'))
+  .sort((a, b) => GRADOS[a.data.grado].orden - GRADOS[b.data.grado].orden);
+
+const conKits = (Object.keys(GRADOS) as GradoId[])
+  .filter((g) => kits.some((k) => k.data.grado === g));
+
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [{ nombre: 'Kits', href: '/kits/' }];
+const schemas = [
+  schemaMigaDePan(base, migas),
+  schemaListado(base, 'Kits de Gunpla con precio de referencia en México',
+    kits.map((k) => ({ nombre: k.data.nombre, href: `/kit/${k.id}/` }))),
+];
+---
+
+<BaseLayout
+  titulo="Kits de Gunpla y precios de referencia en México"
+  descripcion="Precio de lista japonés, rango esperado en pesos y precios observados en tiendas mexicanas, kit por kit."
+  schemas={schemas}
+>
+  <Breadcrumbs items={migas} />
+
+  <div class="contenedor py-8">
+    <h1 class="font-display text-3xl font-bold md:text-4xl">Kits y precios de referencia</h1>
+    <p class="mt-4 max-w-3xl text-ink-muted">
+      Para cada kit publicamos el precio de lista en Japón y el rango que debería costar en México,
+      calculado con el factor de {FACTOR_MX}× que medimos en el canal oficial. Sirve para una sola cosa:
+      saber si el precio que te están pidiendo es normal o es sobreprecio.
+    </p>
+
+    <nav class="mt-8 flex flex-wrap gap-2">
+      {conKits.map((g) => (
+        <a href={`/kits/${g}/`} class="chip hover:border-accent hover:text-accent">
+          {GRADOS[g].etiqueta} <span class="ml-1 text-ink-faint">{GRADOS[g].nombre}</span>
+        </a>
+      ))}
+    </nav>
+
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {kits.map((k) => <KitCard kit={k} />)}
+    </div>
+  </div>
+</BaseLayout>

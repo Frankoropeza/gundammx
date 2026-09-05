@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-base-bg text-ink antialiased;
+  }
+  /* Entradas a 16px: evita el zoom automatico de iOS */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+@layer components {
+  .contenedor {
+    @apply mx-auto w-full max-w-content px-4;
+  }
+  .tarjeta {
+    @apply rounded-xl border border-base-line bg-base-surface p-5;
+  }
+  .enlace {
+    @apply text-accent underline-offset-4 hover:underline;
+  }
+  .chip {
+    @apply inline-flex items-center rounded border border-base-line px-2 py-0.5 font-mono text-xs text-ink-muted;
+  }
+  /* Las tablas anchas se desplazan dentro de su contenedor, nunca el body */
+  .tabla-scroll {
+    @apply -mx-4 overflow-x-auto px-4;
+  }
+}

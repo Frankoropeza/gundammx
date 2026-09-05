@@ -1,0 +1,45 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BadgeVerificacion from '@components/BadgeVerificacion.astro';
+import ChipsGrado from '@components/ChipsGrado.astro';
+import { nombreEstado } from '@lib/estados';
+
+interface Props { tienda: CollectionEntry<'tiendas'> }
+const { tienda } = Astro.props;
+const d = tienda.data;
+
+const ubicacion = d.sucursales.length
+  ? [...new Set(d.sucursales.map((s) => `${s.ciudad}, ${nombreEstado(s.estado)}`))].join(' · ')
+  : 'Solo en línea';
+
+const señales = [
+  d.envio_nacional && 'Envío nacional',
+  d.pickup && 'Recoger en tienda',
+  d.maneja_preventa && 'Preventas',
+  d.msi && 'MSI',
+].filter(Boolean) as string[];
+---
+
+<article class="tarjeta flex flex-col gap-3 transition-colors hover:border-accent/40">
+  <div class="flex items-start justify-between gap-3">
+    <h3 class="font-display text-lg font-semibold leading-tight">
+      <a href={`/tienda/${tienda.id}/`} class="hover:text-accent">{d.nombre}</a>
+    </h3>
+    {d.destacada && <span class="chip border-signal/40 text-signal">Patrocinado</span>}
+  </div>
+
+  <p class="text-sm text-ink-muted">{ubicacion}</p>
+  <p class="text-sm text-ink-muted">{d.descripcion_corta}</p>
+
+  <ChipsGrado grados={d.grados} />
+
+  {señales.length > 0 && (
+    <ul class="flex flex-wrap gap-x-3 gap-y-1 text-xs text-ink-faint">
+      {señales.map((s) => <li>{s}</li>)}
+    </ul>
+  )}
+
+  <div class="mt-auto pt-1">
+    <BadgeVerificacion estado={d.verificacion.estado} fecha={d.verificacion.fecha} conEnlace={false} />
+  </div>
+</article>

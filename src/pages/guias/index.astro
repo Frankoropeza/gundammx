@@ -1,0 +1,45 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import { getCollection } from 'astro:content';
+import { schemaListado, schemaMigaDePan } from '@lib/seo';
+
+const guias = (await getCollection('guias', ({ data }) => !data.borrador))
+  .sort((a, b) => a.data.orden - b.data.orden);
+
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [{ nombre: 'Guías', href: '/guias/' }];
+const schemas = [
+  schemaMigaDePan(base, migas),
+  schemaListado(base, 'Guías de Gunpla para México',
+    guias.map((g) => ({ nombre: g.data.titulo, href: `/guias/${g.id}/` }))),
+];
+---
+
+<BaseLayout
+  titulo="Guías de Gunpla para México"
+  descripcion="Qué kit comprar primero, cómo distinguir un original de un bootleg y cuánto debería costar en pesos."
+  schemas={schemas}
+>
+  <Breadcrumbs items={migas} />
+
+  <div class="contenedor py-8">
+    <h1 class="font-display text-3xl font-bold md:text-4xl">Guías</h1>
+    <p class="mt-4 max-w-3xl text-ink-muted">
+      Escritas para quien compra en México: precios en pesos, tiendas nacionales y los problemas
+      reales de este mercado, que no son los mismos que en Japón o Estados Unidos.
+    </p>
+
+    <ul class="mt-8 grid gap-4 sm:grid-cols-2">
+      {guias.map((g) => (
+        <li class="tarjeta">
+          <span class="chip capitalize">{g.data.nivel}</span>
+          <h2 class="mt-3 font-display text-lg font-semibold">
+            <a href={`/guias/${g.id}/`} class="hover:text-accent">{g.data.titulo}</a>
+          </h2>
+          <p class="mt-2 text-sm text-ink-muted">{g.data.descripcion}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>
