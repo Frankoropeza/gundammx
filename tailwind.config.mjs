@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 // Tokens como variables CSS (src/styles/global.css) para soportar tema claro/oscuro
-// sin duplicar clases. NO es el esquema RX-78-2: ver vault 03 y 13.
+// sin duplicar clases. Paleta institucional Gundam / Bandai Namco:
+// brand #E31623 · signal #FCB814 · verify #0B3C8C · ink #151515.
 const v = (name) => `rgb(var(--${name}) / <alpha-value>)`;
 
 export default {
@@ -15,8 +16,11 @@ export default {
         ink: v('ink'),
         'ink-2': v('ink-2'),
         'ink-3': v('ink-3'),
+        brand: v('brand'),
         accent: v('accent'),
         signal: v('signal'),
+        'signal-ink': v('signal-ink'),
+        verify: v('verify'),
         alert: v('alert'),
         white: '#FFFFFF',
       },

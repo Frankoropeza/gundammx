@@ -3,47 +3,68 @@
 @tailwind utilities;
 
 /* ------------------------------------------------------------------
-   Tokens. Tema claro por defecto; oscuro por preferencia del sistema.
-   Valores en RGB sin función para que Tailwind pueda aplicar alpha.
+   Tokens de color — paleta institucional Gundam / Bandai Namco.
+   Referencia: bandainamcoshop.com.mx (--bnd-red #E31623, --bnd-yellow
+   #FCB814, --bnd-ink #151515, --bnd-white #FFFFFF) + azul del esquema
+   clásico RX-78-2 para el rol de "verificado".
+
+   Roles semánticos (no decorativos):
+     brand    rojo Bandai   — marca, rellenos, CTA principal
+     accent   rojo profundo — texto y bordes rojos con contraste AA
+     signal   amarillo      — atención / advertencia (rellenos y bordes)
+     signal-ink amarillo oscuro — texto de advertencia con contraste AA
+     verify   azul Gundam   — confianza, estado verificado
+     alert    rojo oscuro   — error, ficha reportada o cerrada
+
+   Valores en RGB sin función para que Tailwind aplique alpha.
 ------------------------------------------------------------------- */
 @layer base {
-  /* Claro: blanco hueso, grafito, gris acero. Acento de señalización técnica, usado con moderación. */
+  /* Claro: blanco hueso, tinta Bandai #151515. Color usado con intención. */
   :root {
     --paper: 246 245 241;
     --surface: 255 255 255;
-    --line: 220 219 213;
-    --ink: 28 29 31;
-    --ink-2: 92 94 98;
-    --ink-3: 140 143 148;
-    --accent: 196 74 20;
-    --signal: 196 74 20;
-    --alert: 150 35 30;
+    --line: 221 219 212;
+    --ink: 21 21 21;
+    --ink-2: 90 92 96;
+    --ink-3: 138 141 146;
+    --brand: 227 22 35;
+    --accent: 199 16 31;
+    --signal: 252 184 20;
+    --signal-ink: 138 92 0;
+    --verify: 11 60 140;
+    --alert: 154 12 24;
     color-scheme: light;
   }
   /* Oscuro real: grafito profundo, no inversión. Contraste AA en texto y líneas. */
   :root[data-theme='dark'] {
-    --paper: 20 21 23;
+    --paper: 16 17 19;
     --surface: 27 28 31;
     --line: 52 54 58;
     --ink: 232 230 224;
     --ink-2: 168 170 174;
-    --ink-3: 118 121 126;
-    --accent: 240 130 70;
-    --signal: 240 130 70;
-    --alert: 224 110 100;
+    --ink-3: 122 125 130;
+    --brand: 227 22 35;
+    --accent: 255 77 87;
+    --signal: 252 184 20;
+    --signal-ink: 255 209 102;
+    --verify: 110 155 255;
+    --alert: 255 107 107;
     color-scheme: dark;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme='light']) {
-      --paper: 20 21 23;
+      --paper: 16 17 19;
       --surface: 27 28 31;
       --line: 52 54 58;
       --ink: 232 230 224;
       --ink-2: 168 170 174;
-      --ink-3: 118 121 126;
-      --accent: 240 130 70;
-      --signal: 240 130 70;
-      --alert: 224 110 100;
+      --ink-3: 122 125 130;
+      --brand: 227 22 35;
+      --accent: 255 77 87;
+      --signal: 252 184 20;
+      --signal-ink: 255 209 102;
+      --verify: 110 155 255;
+      --alert: 255 107 107;
       color-scheme: dark;
     }
   }
@@ -68,11 +89,11 @@
 
   /* Foco visible y consistente para teclado */
   :focus-visible {
-    outline: 2px solid rgb(var(--accent));
+    outline: 2px solid rgb(var(--brand));
     outline-offset: 3px;
     border-radius: 2px;
   }
-  ::selection { background: rgb(var(--ink) / 0.1); }
+  ::selection { background: rgb(var(--brand) / 0.18); }
 
   /* Acordeones nativos: sin marcador por defecto */
   summary { list-style: none; cursor: pointer; }
@@ -87,18 +108,21 @@
 
   .rule { @apply border-t border-line; }
 
-  .link { @apply text-ink underline decoration-ink-3 underline-offset-[3px] transition-colors hover:decoration-ink; }
-  .link-quiet { @apply text-ink underline-offset-[3px] hover:underline; }
+  .link { @apply text-ink underline decoration-ink-3 underline-offset-[3px] transition-colors hover:decoration-accent hover:text-accent; }
+  .link-quiet { @apply text-ink underline-offset-[3px] transition-colors hover:text-accent hover:underline; }
 
   .btn { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-sm px-5 text-sm font-medium transition-colors; }
-  .btn-primary { @apply btn bg-ink text-paper hover:bg-ink-2; }
-  .btn-secondary { @apply btn border border-line bg-transparent text-ink hover:bg-paper hover:border-ink-3; }
-  .btn-ghost { @apply btn px-3 text-ink-2 hover:text-ink; }
+  .btn-primary { @apply btn bg-brand text-white hover:bg-accent; }
+  .btn-secondary { @apply btn border border-line bg-transparent text-ink hover:border-brand hover:text-accent; }
+  .btn-ghost { @apply btn px-3 text-ink-2 hover:text-accent; }
+  .btn-ink { @apply btn bg-ink text-paper hover:bg-ink-2; }
 
   .tag { @apply inline-flex min-h-7 items-center rounded-sm border border-line px-2 font-mono text-xs text-ink-2; }
-  .tag-accent { @apply tag border-ink text-ink; }
-  .tag-signal { @apply tag border-line text-ink-2; }
-  .tag-alert { @apply tag border-ink-3 text-ink; }
+  .tag-brand { @apply tag border-brand/45 bg-brand/[0.06] text-accent; }
+  .tag-accent { @apply tag border-verify/45 bg-verify/[0.06] text-verify; }
+  .tag-verify { @apply tag border-verify/45 bg-verify/[0.06] text-verify; }
+  .tag-signal { @apply tag border-signal/60 bg-signal/[0.12] text-signal-ink; }
+  .tag-alert { @apply tag border-alert/50 bg-alert/[0.07] text-alert; }
 
   .card { @apply flex flex-col border-b border-r border-line bg-surface transition-colors hover:bg-paper; }
 
@@ -115,7 +139,7 @@
   .prose-ed a { @apply link; }
   .prose-ed ul { @apply list-disc space-y-2 pl-6; }
   .prose-ed ol { @apply list-decimal space-y-2 pl-6; }
-  .prose-ed blockquote { @apply border-l-2 border-ink pl-5 text-ink-2; }
+  .prose-ed blockquote { @apply border-l-2 border-brand pl-5 text-ink-2; }
   .prose-ed table { @apply w-full border-collapse text-sm; }
   .prose-ed th { @apply border-b border-line py-2 pr-4 text-left font-mono text-xs uppercase tracking-wider text-ink-2; }
   .prose-ed td { @apply border-b border-line/70 py-2 pr-4 align-top; }
@@ -126,7 +150,7 @@
 @layer components {
   /* Código de archivo: etiqueta técnica monoespaciada */
   .archive-code { @apply inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3; }
-  .archive-code::before { content: ''; @apply inline-block h-px w-4 bg-ink-3; }
+  .archive-code::before { content: ''; @apply inline-block h-px w-4 bg-brand; }
 
   /* Línea de clasificación: separador con etiqueta */
   .class-line { @apply flex items-center gap-4 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3; }
@@ -142,8 +166,25 @@
   .placeholder-frame { @apply relative flex flex-col justify-between border border-dashed border-line bg-surface p-4 text-ink-3; }
   .placeholder-frame::after { content: ''; @apply pointer-events-none absolute inset-3 border border-line/60; }
 
-  .btn-signal { @apply btn bg-accent text-white hover:bg-ink; }
+  .btn-signal { @apply btn bg-brand text-white hover:bg-accent; }
   .link-signal { @apply text-accent underline-offset-[3px] hover:underline; }
+
+  /* Franja institucional: azul · blanco · rojo · amarillo (esquema clásico).
+     Elemento gráfico propio, sin logotipos ni marcas de terceros. */
+  .franja-gundam {
+    height: 3px;
+    background-image: linear-gradient(
+      90deg,
+      rgb(var(--verify)) 0 22%,
+      rgb(var(--line)) 22% 34%,
+      rgb(var(--brand)) 34% 78%,
+      rgb(var(--signal)) 78% 100%
+    );
+  }
+  .franja-gundam-fina { height: 2px; }
+
+  /* Regla de sección con guía roja de encabezado */
+  .rule-brand { @apply border-t-2 border-brand; }
 }
 
 @layer utilities {

@@ -17,7 +17,7 @@ const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Gunpla', href: '/gunpla/' }];
 const schemas = [schemaMigaDePan(base, migas), schemaColeccion(base, { nombre: 'Gunpla: grados, kits y tiendas en México', descripcion: 'Hub del hobby.', items: grados.map((g) => ({ nombre: g.data.nombre, href: `/gunpla/${g.id}/` })) })];
 ---
-<BaseLayout titulo="Gunpla: grados, kits, precios y tiendas en México" descripcion="El hobby del model kit de Bandai explicado: qué grado elegir, cuánto debería costar en pesos y dónde comprarlo verificado en México." schemas={schemas}>
+<BaseLayout titulo="Gunpla México | Grados, precios y dónde comprar" descripcion="Gunpla explicado para México: los grados Entry, High, Real, Master y Perfect, cuál conviene de primer kit y en qué tiendas Gundam comprarlo." schemas={schemas}>
   <Breadcrumbs items={migas} />
   <div class="grid-page pt-10">
     <p class="class-line">Hobby</p>

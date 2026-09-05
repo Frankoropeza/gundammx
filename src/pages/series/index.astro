@@ -14,7 +14,7 @@ const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Series', href: '/series/' }];
 const schemas = [schemaMigaDePan(base, migas), schemaColeccion(base, { nombre: 'Series de Gundam', descripcion: 'Fichas de series, OVA y películas de la franquicia.', items: todas.map((s) => ({ nombre: s.data.titulo, href: `/series/${s.id}/` })) })];
 ---
-<BaseLayout titulo="Series de Gundam: fichas, orden y por dónde empezar" descripcion={`${todas.length} obras con año, universo, formato, equipo y una recomendación editorial sobre cuándo verlas.`} schemas={schemas}>
+<BaseLayout titulo="Series de Gundam | Lista y orden para verlas" descripcion={`Todas las series de Gundam del archivo: ${todas.length} obras con año, universo, formato y equipo, más las tres rutas para ver Gundam según por dónde quieras empezar.`} schemas={schemas}>
   <Breadcrumbs items={migas} />
   <div class="grid-page pt-10">
     <p class="class-line">Archivo</p>

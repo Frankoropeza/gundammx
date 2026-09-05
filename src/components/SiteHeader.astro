@@ -6,6 +6,8 @@ const ruta = Astro.url.pathname;
 const activo = (href: string) => (href === '/' ? ruta === '/' : ruta.startsWith(href));
 ---
 
+<div class="franja-gundam" aria-hidden="true"></div>
+
 <div class="border-b border-line bg-surface">
   <div class="grid-page flex h-9 items-center justify-between gap-6 overflow-hidden">
     <p class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-2">
@@ -26,7 +28,7 @@ const activo = (href: string) => (href === '/' ? ruta === '/' : ruta.startsWith(
 <header class="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur-sm">
   <div class="grid-page flex h-16 items-center gap-6">
     <a href="/" class="flex shrink-0 items-baseline gap-3" aria-label="GUNDAMMX, inicio">
-      <span class="font-serif text-[1.75rem] leading-none tracking-tight text-ink">GUNDAM<span class="text-ink-3">MX</span></span>
+      <span class="font-serif text-[1.75rem] leading-none tracking-tight text-ink">GUNDAM<span class="text-brand">MX</span></span>
       <span class="hidden whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3 xl:inline">{SITE.descriptor}</span>
     </a>
 
@@ -35,7 +37,7 @@ const activo = (href: string) => (href === '/' ? ruta === '/' : ruta.startsWith(
         {NAV.map((i) => (
           <li>
             <a href={i.href} aria-current={activo(i.href) ? 'page' : undefined}
-              class:list={['whitespace-nowrap text-sm transition-colors hover:text-ink', activo(i.href) ? 'text-ink underline decoration-accent underline-offset-[7px]' : 'text-ink-2']}>{i.texto}</a>
+              class:list={['whitespace-nowrap text-sm transition-colors hover:text-ink', activo(i.href) ? 'text-ink underline decoration-brand decoration-2 underline-offset-[7px]' : 'text-ink-2']}>{i.texto}</a>
           </li>
         ))}
       </ul>
@@ -56,7 +58,7 @@ const activo = (href: string) => (href === '/' ? ruta === '/' : ruta.startsWith(
   <div id="menu-movil" class="border-t border-line bg-paper lg:hidden" hidden>
     <nav aria-label="Principal móvil" class="grid-page py-2">
       <ul class="divide-y divide-line">
-        {NAV.map((i) => <li><a href={i.href} class="block py-3 text-base text-ink">{i.texto}</a></li>)}
+        {NAV.map((i) => <li><a href={i.href} class="block py-3 text-base text-ink transition-colors hover:text-accent">{i.texto}</a></li>)}
         {NAV_SECUNDARIA.map((i) => (
           <li class="lg:hidden"><a href={i.href} class="block py-3 font-mono text-xs uppercase tracking-[0.14em] text-ink-2">{i.texto}</a></li>
         ))}

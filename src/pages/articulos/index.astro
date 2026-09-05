@@ -9,7 +9,7 @@ const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Artículos', href: '/articulos/' }];
 const schemas = [schemaMigaDePan(base, migas), schemaColeccion(base, { nombre: 'Artículos', descripcion: 'Explicadores, análisis y guías.', items: articulos.map((a) => ({ nombre: a.data.titulo, href: `/articulos/${a.id}/` })) })];
 ---
-<BaseLayout titulo="Artículos: explicadores, análisis y guías sobre Gundam" descripcion="Textos largos con referencias: qué es cada universo, en qué orden ver la franquicia, cómo llegó a México y cómo funciona el hobby." schemas={schemas}>
+<BaseLayout titulo="Guías de Gundam | Explicadores y análisis" descripcion="Guías y explicadores de Gundam con referencias: qué es cada universo, en qué orden ver la franquicia, dónde verla y cómo llegó Gundam a México." schemas={schemas}>
   <Breadcrumbs items={migas} />
   <div class="grid-page py-10">
     <p class="class-line">Archivo editorial</p>

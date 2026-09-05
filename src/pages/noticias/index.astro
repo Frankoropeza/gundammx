@@ -21,7 +21,7 @@ const schemas = [
 ];
 ---
 
-<BaseLayout titulo="Noticias de Gundam y Gunpla en México" descripcion="Lanzamientos, exclusivos P-Bandai, eventos en México y movimientos de precio, en español y con la fuente siempre enlazada." schemas={schemas}>
+<BaseLayout titulo="Noticias Gundam México | Lanzamientos y eventos" descripcion="Noticias de Gundam y Gunpla en México: lanzamientos, exclusivos P-Bandai, eventos y movimientos de precio, siempre con la fuente enlazada." schemas={schemas}>
   <Fragment slot="head">{totalPaginas > 1 && <link rel="next" href={new URL(urlPagina(2), Astro.site).toString()} />}</Fragment>
   <Breadcrumbs items={migas} />
   <div class="grid-page py-10">

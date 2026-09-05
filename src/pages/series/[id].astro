@@ -8,7 +8,7 @@ import MetadataRow from '@components/MetadataRow.astro';
 import RelatedContent from '@components/RelatedContent.astro';
 import { entradasPorIds, FORMATO, nombreUniverso } from '@lib/archivo';
 import { fechaLarga } from '@lib/precio';
-import { schemaSerie, schemaMigaDePan } from '@lib/seo';
+import { schemaSerie, schemaMigaDePan, descripcionFicha } from '@lib/seo';
 
 export const getStaticPaths = (async () => {
   const series = await getCollection('series');
@@ -34,7 +34,7 @@ const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Series', href: '/series/' }, { nombre: d.titulo, href: `/series/${serie.id}/` }];
 const schemas = [schemaMigaDePan(base, migas), schemaSerie(base, { titulo: d.titulo, resumen: d.resumen, anio: d.anio, episodios: d.episodios, formato: d.formato, direccion: d.direccion, estudio: d.estudio, fechaInicio: d.fecha_inicio, fechaFin: d.fecha_fin })];
 ---
-<BaseLayout noindex={d.estado_editorial === 'borrador'} titulo={d.seo?.titulo ?? `${d.titulo} (${d.anio}): ficha, contexto y cuándo verla`} descripcion={d.seo?.descripcion ?? d.resumen} tipo="article" schemas={schemas}>
+<BaseLayout noindex={d.estado_editorial === 'borrador'} titulo={d.seo?.titulo ?? (d.titulo.length > 38 ? d.titulo : d.titulo.length > 26 ? `${d.titulo} | Serie ${d.anio}` : `${d.titulo} | Serie de Gundam (${d.anio})`)} descripcion={d.seo?.descripcion ?? descripcionFicha(d.resumen, 'Ficha de la serie en Gundam México.')} tipo="article" schemas={schemas}>
   <Breadcrumbs items={migas} />
   <article class="grid-page py-10">
     <header class="grid gap-10 lg:grid-cols-12">

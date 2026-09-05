@@ -1,6 +1,6 @@
 ---
 titulo: Dónde ver Gundam en México
-resumen: En qué plataformas está la franquicia hoy, qué se puede ver gratis en televisión abierta y en YouTube, y cómo comprobar si una serie sigue en catálogo antes de pagar una suscripción.
+resumen: En qué plataformas está Gundam hoy en México, qué se puede ver gratis en televisión abierta y en YouTube, y cómo comprobar si una serie sigue en catálogo.
 autor: Redacción GUNDAMMX
 fecha: 2026-09-05
 tema: mexico

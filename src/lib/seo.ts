@@ -267,3 +267,23 @@ export function schemaFicha(b: Base, f: { nombre: string; descripcion: string; f
     inLanguage: SITE.locale,
   };
 }
+
+/** Segundo módulo del <title> para contenido editorial. Se omite si el título ya es largo. */
+const TEMAS: Record<string, string> = {
+  universo: 'Universos de Gundam',
+  series: 'Series de Gundam',
+  'mobile-suits': 'Mobile Suits de Gundam',
+  gunpla: 'Guía de Gunpla',
+  mexico: 'Gundam México',
+  guia: 'Guía de Gundam',
+};
+export function tituloEditorial(titulo: string, tema?: string, respaldo = 'Gundam México') {
+  const modulo = (tema && TEMAS[tema]) || respaldo;
+  return titulo.length > 36 ? titulo : `${titulo} | ${modulo}`;
+}
+
+/** Meta description de ficha: recorta el resumen y garantiza que la cola de marca quede completa. */
+export function descripcionFicha(resumen: string, cola: string, max = 112) {
+  const base = resumen.length > max ? `${resumen.slice(0, max).trimEnd().replace(/[.,;:]$/, '')}…` : resumen;
+  return `${base} ${cola}`;
+}

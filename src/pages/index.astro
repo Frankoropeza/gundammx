@@ -96,16 +96,16 @@ const entradas = [
 ---
 
 <BaseLayout
-  titulo="Gundam en español: por dónde empezar, qué ver y dónde comprar en México"
-  descripcion="Guía y archivo de Gundam en español: en qué orden ver las series, dónde verlas en México, qué Gunpla comprar primero y qué tiendas venden kits originales, con fuentes verificables."
+  titulo="Gundam México | Series, Gunpla y tiendas Gundam"
+  descripcion="Gundam México: en qué orden ver las series de Gundam, dónde verlas, qué Gunpla comprar primero y el directorio de tiendas Gundam verificadas en todo el país."
   schemas={[schemaFAQ(faq)]}
 >
   {destacado && (
     <EditorialHero
       sello={{ archivo: `Archivo ${SITE.nombre}`, actualizado: fechaCorta(destacado.data.fecha) }}
-      titulo="Gundam en español: qué ver,"
-      destaque="en qué orden y dónde comprarlo"
-      entrada="Guía y archivo de Gundam para México. Aquí está el orden para ver las series sin spoilers, en qué plataforma está cada una, quién es quién entre los mobile suits y sus pilotos, y qué Gunpla comprar primero —con el directorio de tiendas verificadas que venden kits originales en el país."
+      titulo="Gundam en México:"
+      destaque="qué ver, en qué orden y dónde comprarlo"
+      entrada="Todo Gundam, ordenado para México. El orden para ver las series sin spoilers, en qué plataforma está cada una, quién es quién entre los mobile suits y sus pilotos, y qué Gunpla comprar primero —con el directorio de tiendas Gundam verificadas en el país."
       busqueda={{ sugerencia: 'Busca «orden para ver Gundam», «Gunpla para principiantes» o «tiendas en CDMX»' }}
       acciones={[
         { texto: 'Empieza por aquí', href: `/articulos/${destacado.id}/`, principal: true },

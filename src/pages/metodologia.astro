@@ -10,7 +10,7 @@ const migas = [{ nombre: 'Cómo verificamos', href: '/metodologia/' }];
 ---
 
 <BaseLayout
-  titulo="Cómo verificamos"
+  titulo="Cómo verificamos | Metodología del directorio Gundam"
   descripcion="Qué significa que una tienda esté verificada en GUNDAMMX, qué comprobamos, con qué fuentes y cada cuánto lo revisamos."
 >
   <Breadcrumbs items={migas} />
@@ -26,14 +26,14 @@ const migas = [{ nombre: 'Cómo verificamos', href: '/metodologia/' }];
       <h2 class="display text-2xl">Los cuatro estados de una ficha</h2>
       <dl class="mt-4 space-y-4 text-sm">
         <div class="card p-5">
-          <dt class="font-medium text-accent">Verificada</dt>
+          <dt class="font-medium text-verify">Verificada</dt>
           <dd class="mt-1 text-ink-2">
             Comprobamos que la tienda vende Gunpla, con al menos una fuente enlazada y una fecha.
             La fuente puede ser su propio catálogo, un listado de distribuidor o una visita.
           </dd>
         </div>
         <div class="card p-5">
-          <dt class="font-medium text-signal">Sin verificar</dt>
+          <dt class="font-medium text-signal-ink">Sin verificar</dt>
           <dd class="mt-1 text-ink-2">
             La tienda existe y opera, pero no pudimos confirmar su oferta de Gunpla.
             Aparece en el directorio con el aviso puesto. Preferimos decirlo a inventarlo.

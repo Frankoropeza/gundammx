@@ -8,7 +8,7 @@ import MetadataRow from '@components/MetadataRow.astro';
 import RelatedContent from '@components/RelatedContent.astro';
 import { entradasPorIds, nombreUniverso, FORMATO } from '@lib/archivo';
 import { fechaLarga } from '@lib/precio';
-import { schemaFicha, schemaMigaDePan } from '@lib/seo';
+import { schemaFicha, schemaMigaDePan, descripcionFicha } from '@lib/seo';
 
 export const getStaticPaths = (async () => {
   const pilotos = await getCollection('pilots');
@@ -31,7 +31,7 @@ const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Personajes', href: '/personajes/' }, { nombre: d.nombre, href: `/personajes/${piloto.id}/` }];
 const schemas = [schemaMigaDePan(base, migas), schemaFicha(base, { nombre: d.nombre, descripcion: d.resumen, fecha: d.actualizado })];
 ---
-<BaseLayout noindex={d.estado_editorial === 'borrador'} titulo={d.seo?.titulo ?? `${d.nombre}: quién es, serie y mobile suits`} descripcion={d.seo?.descripcion ?? d.resumen} tipo="article" schemas={schemas}>
+<BaseLayout noindex={d.estado_editorial === 'borrador'} titulo={d.seo?.titulo ?? `${d.nombre} | Personaje de Gundam`} descripcion={d.seo?.descripcion ?? descripcionFicha(d.resumen, 'Ficha de personaje en Gundam México.')} tipo="article" schemas={schemas}>
   <Breadcrumbs items={migas} />
   <article class="grid-page py-10">
     <header class="grid gap-10 lg:grid-cols-12">

@@ -13,7 +13,7 @@ const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Mobile Suits', href: '/mobile-suits/' }];
 const schemas = [schemaMigaDePan(base, migas), schemaColeccion(base, { nombre: 'Mobile suits de Gundam', descripcion: 'Fichas técnicas por universo.', items: ms.map((m) => ({ nombre: `${m.data.designacion} ${m.data.nombre}`, href: `/mobile-suits/${m.id}/` })) })];
 ---
-<BaseLayout titulo="Mobile suits de Gundam: fichas técnicas por universo" descripcion={`${ms.length} fichas con designación, facción, piloto, primera aparición y kits disponibles.`} schemas={schemas}>
+<BaseLayout titulo="Mobile Suits de Gundam | Fichas por universo" descripcion={`Los mobile suits de Gundam, máquina por máquina: ${ms.length} fichas con designación, facción, piloto, primera aparición y los kits de Gunpla que existen de cada una.`} schemas={schemas}>
   <Breadcrumbs items={migas} />
   <div class="grid-page py-10">
     <p class="class-line">Archivo</p>

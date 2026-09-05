@@ -11,7 +11,7 @@ const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Cronología', href: '/cronologia/' }];
 const schemas = [schemaMigaDePan(base, migas), schemaArticulo(base, { titulo: 'En qué orden ver Gundam', descripcion: 'Orden recomendado para empezar y cronología interna del Universal Century, separados.', fecha: new Date('2026-09-05') })];
 ---
-<BaseLayout titulo="Cronología de Gundam y orden para verla" descripcion="Dos pistas: el orden recomendado para empezar hoy y la cronología interna del Universal Century, año por año. Solo obras verificadas." schemas={schemas}>
+<BaseLayout titulo="Cronología de Gundam | Orden para ver las series" descripcion="La cronología de Gundam en dos pistas: el orden recomendado para empezar hoy y la cronología interna del Universal Century, año por año, solo con obras verificadas." schemas={schemas}>
   <Breadcrumbs items={migas} />
   <div class="grid-page pt-10">
     <p class="class-line">Guía de entrada</p>

@@ -32,8 +32,8 @@ const schemas = [
 ---
 
 <BaseLayout
-  titulo={`${info.nombre} en México`}
-  descripcion={`${tiendas.length} ${tiendas.length === 1 ? 'tienda' : 'tiendas'}: ${info.descripcion} Verificadas con fuente y fecha.`}
+  titulo={`${info.nombre} | Tiendas Gundam en México`}
+  descripcion={`${tiendas.length} ${tiendas.length === 1 ? 'tienda Gundam' : 'tiendas Gundam'} en México: ${info.descripcion} Cada ficha se verifica con fuente y fecha.`.slice(0, 155)}
   noindex={tiendas.length < 2}
   schemas={schemas}
 >

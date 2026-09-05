@@ -14,7 +14,7 @@ import RelatedListings from '@components/RelatedListings.astro';
 import { tiendasActivas, relacionadasDe, faqDeTienda, CATEGORIAS } from '@lib/directorio';
 import { nombreEstado } from '@lib/estados';
 import { pesos } from '@lib/precio';
-import { schemaTienda, schemaMigaDePan, schemaFAQ } from '@lib/seo';
+import { schemaTienda, schemaMigaDePan, schemaFAQ, descripcionFicha } from '@lib/seo';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const tiendas = await tiendasActivas();
@@ -40,8 +40,8 @@ const servicios: Record<string, string> = {
   panel_lining: 'Panel lining', aerografia: 'Aerografía', club: 'Club o comunidad', concursos: 'Concursos',
 };
 
-const titulo = d.seo?.titulo ?? `${d.nombre} — Gunpla en ${principal?.ciudad ?? 'línea'}`;
-const descripcion = d.seo?.descripcion ?? d.descripcion_corta;
+const titulo = d.seo?.titulo ?? `${d.nombre} | Tienda Gundam en ${principal?.ciudad ?? 'línea'}`;
+const descripcion = d.seo?.descripcion ?? descripcionFicha(d.descripcion_corta, 'Ficha verificada del directorio de tiendas Gundam.');
 
 const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [

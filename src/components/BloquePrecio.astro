@@ -22,7 +22,7 @@ const rango = precioJpy ? rangoEstimadoMXN(precioJpy) : null;
           return (
             <li class="flex flex-wrap items-baseline justify-between gap-2 font-mono text-sm tabular">
               <span class="text-ink-2">{o.tienda}</span>
-              <span class:list={[alerta ? 'text-signal' : 'text-ink']}>
+              <span class:list={[alerta ? 'text-signal-ink' : 'text-ink']}>
                 {pesos(o.monto)} <span class="ml-2 text-xs text-ink-3">{fechaCorta(o.fecha)}</span>
                 {alerta && sobreprecio !== null && <span class="ml-2 text-xs">· {sobreprecio}% sobre lo esperado</span>}
               </span>

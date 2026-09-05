@@ -7,7 +7,7 @@ import MetadataRow from '@components/MetadataRow.astro';
 import KitCard from '@components/KitCard.astro';
 import RelatedContent from '@components/RelatedContent.astro';
 import { fechaLarga } from '@lib/precio';
-import { schemaFicha, schemaMigaDePan } from '@lib/seo';
+import { schemaFicha, schemaMigaDePan, descripcionFicha } from '@lib/seo';
 
 export const getStaticPaths = (async () => {
   const grados = (await getCollection('gunpla')).sort((a, b) => a.data.orden - b.data.orden);
@@ -26,7 +26,7 @@ const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Gunpla', href: '/gunpla/' }, { nombre: d.nombre, href: `/gunpla/${grado.id}/` }];
 const schemas = [schemaMigaDePan(base, migas), schemaFicha(base, { nombre: `${d.nombre} (${d.etiqueta})`, descripcion: d.resumen, fecha: d.actualizado })];
 ---
-<BaseLayout noindex={d.estado_editorial === 'borrador'} titulo={`${d.nombre} (${d.etiqueta}): qué es, para quién y cuánto cuesta en México`} descripcion={d.resumen} tipo="article" schemas={schemas}>
+<BaseLayout noindex={d.estado_editorial === 'borrador'} titulo={`${d.nombre} ${d.etiqueta} | Grado de Gunpla en México`} descripcion={descripcionFicha(d.resumen, 'Grado de Gunpla explicado en Gundam México.')} tipo="article" schemas={schemas}>
   <Breadcrumbs items={migas} />
   <article class="grid-page grid gap-10 py-10 lg:grid-cols-12">
     <header class="lg:col-span-8">

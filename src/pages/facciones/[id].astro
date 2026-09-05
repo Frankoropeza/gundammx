@@ -7,7 +7,7 @@ import MetadataRow from '@components/MetadataRow.astro';
 import RelatedContent from '@components/RelatedContent.astro';
 import { entradasPorIds, nombreUniverso, FORMATO } from '@lib/archivo';
 import { fechaLarga } from '@lib/precio';
-import { schemaFicha, schemaMigaDePan } from '@lib/seo';
+import { schemaFicha, schemaMigaDePan, descripcionFicha } from '@lib/seo';
 
 export const getStaticPaths = (async () => {
   const facciones = await getCollection('factions');
@@ -31,7 +31,7 @@ const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Universos', href: '/universos/' }, { nombre: nombreUniverso(d.universo), href: `/universos/${d.universo}/` }, { nombre: d.nombre, href: `/facciones/${faccion.id}/` }];
 const schemas = [schemaMigaDePan(base, migas), schemaFicha(base, { nombre: d.nombre, descripcion: d.resumen, fecha: d.actualizado })];
 ---
-<BaseLayout noindex={d.estado_editorial === 'borrador'} titulo={`${d.nombre}: ${d.tipo.toLowerCase()} en ${nombreUniverso(d.universo)}`} descripcion={d.resumen} tipo="article" schemas={schemas}>
+<BaseLayout noindex={d.estado_editorial === 'borrador'} titulo={`${d.nombre} | Facción de Gundam (${d.universo.toUpperCase()})`} descripcion={descripcionFicha(d.resumen, 'Ficha de facción en Gundam México.')} tipo="article" schemas={schemas}>
   <Breadcrumbs items={migas} />
   <article class="grid-page grid gap-10 py-10 lg:grid-cols-12">
     <header class="lg:col-span-8">
