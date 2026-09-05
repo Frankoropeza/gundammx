@@ -4,6 +4,7 @@ resumen: Cómo llegó la franquicia al país, qué se emitió y cuándo, y por q
 autor: Redacción GUNDAMMX
 fecha: 2026-09-05
 tema: mexico
+categoria: mexico
 lectura_min: 6
 destacado: false
 universos: [ac, ce, as, uc]

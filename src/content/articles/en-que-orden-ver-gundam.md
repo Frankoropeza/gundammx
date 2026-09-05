@@ -4,6 +4,7 @@ resumen: La franquicia tiene más de cuarenta años y siete calendarios independ
 autor: Redacción GUNDAMMX
 fecha: 2026-09-05
 tema: guia
+categoria: empezar
 lectura_min: 8
 destacado: true
 universos: [uc, ac, ce, ad, pd, as, cc]

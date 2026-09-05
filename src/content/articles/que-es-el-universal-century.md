@@ -4,6 +4,7 @@ resumen: "El calendario original de Gundam explicado desde cero: por qué empiez
 autor: Redacción GUNDAMMX
 fecha: 2026-09-05
 tema: universo
+categoria: mobile-suits
 lectura_min: 7
 destacado: false
 universos: [uc]
