@@ -42,10 +42,6 @@ const pilotos = await getCollection('pilots', publicado);
 const facciones = await getCollection('factions', publicado);
 const todasSeries = await getCollection('series', publicado);
 
-const fuentesCitadas = [
-  ...todasSeries, ...ms, ...pilotos, ...facciones, ...universos, ...grados,
-].reduce((n, e) => n + e.data.fuentes.length, 0) + articulos.reduce((n, a) => n + a.data.referencias.length, 0);
-
 const aniosSerie = todasSeries.map((x) => x.data.anio);
 const primerAnio = Math.min(...aniosSerie);
 const ultimoAnio = Math.max(...aniosSerie);
@@ -85,13 +81,6 @@ const entradas = [
         { texto: 'Empieza por aquí', href: `/articulos/${destacado.id}/`, principal: true },
         { texto: 'Ver tiendas verificadas', href: '/tiendas/' },
       ]}
-      credenciales={[
-        { cifra: String(universos.length), etiqueta: 'Universos' },
-        { cifra: String(todasSeries.length), etiqueta: 'Series con ficha' },
-        { cifra: String(ms.length), etiqueta: 'Mobile suits' },
-        { cifra: String(fuentesCitadas), etiqueta: 'Fuentes citadas' },
-      ]}
-      firma={`Lo escribimos y lo verificamos en ${SITE.ciudad}. Cada ficha cita de dónde salió el dato y cuándo se revisó; si encuentras un error, se corrige y se anota. Proyecto independiente, sin relación con Bandai Namco, Sunrise ni Sotsu.`}
       contexto={{
         titulo: 'Qué vas a encontrar',
         parrafos: [

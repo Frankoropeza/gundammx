@@ -8,12 +8,10 @@ interface Props {
   entrada: string;
   busqueda: { sugerencia: string };
   acciones: { texto: string; href: string; principal?: boolean }[];
-  credenciales: { cifra: string; etiqueta: string }[];
-  firma: string;
   contexto: { titulo: string; parrafos: string[]; masBuscado: { texto: string; href: string }[] };
   lectura: { eyebrow: string; titulo: string; resumen: string; href: string; meta: string };
 }
-const { sello, titulo, destaque, entrada, busqueda, acciones, credenciales, firma, contexto, lectura } = Astro.props;
+const { sello, titulo, destaque, entrada, busqueda, acciones, contexto, lectura } = Astro.props;
 ---
 <section class="border-b border-line" aria-labelledby="hero-h">
   <div class="grid-page grid gap-12 py-12 lg:grid-cols-12 lg:gap-16 lg:py-16">
@@ -39,17 +37,6 @@ const { sello, titulo, destaque, entrada, busqueda, acciones, credenciales, firm
           <a href={a.href} class:list={[a.principal ? 'btn-primary' : 'btn-secondary']}>{a.texto}</a>
         ))}
       </div>
-
-      <dl class="mt-12 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-line pt-8 sm:grid-cols-4">
-        {credenciales.map((c) => (
-          <div>
-            <dt class="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">{c.etiqueta}</dt>
-            <dd class="display mt-2 text-2xl">{c.cifra}</dd>
-          </div>
-        ))}
-      </dl>
-
-      <p class="mt-6 max-w-[60ch] text-sm text-ink-3 text-pretty">{firma}</p>
     </div>
 
     <div class="lg:col-span-5 lg:border-l lg:border-line lg:pl-12">
