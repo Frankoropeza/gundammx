@@ -1,0 +1,82 @@
+---
+/**
+ * Diagrama de emisión: una fila por universo, un punto por obra publicada en el archivo.
+ * Dibujado con datos reales de la colección `series`. Sin imágenes de terceros, sin JS.
+ */
+import { UNIVERSOS_META, type UniversoId } from '@config/site';
+
+interface Props {
+  filas: { universo: UniversoId; nombre: string; href: string; obras: { titulo: string; anio: number; href: string }[] }[];
+  desde: number;
+  hasta: number;
+}
+const { filas, desde, hasta } = Astro.props;
+
+const W = 1000;
+const M = { l: 136, r: 24, t: 30, b: 32 };
+const filaH = 44;
+const H = M.t + filas.length * filaH + M.b;
+const x = (anio: number) => M.l + ((anio - desde) / (hasta - desde)) * (W - M.l - M.r);
+
+const decadas: number[] = [];
+for (let a = Math.ceil(desde / 10) * 10; a <= hasta; a += 10) decadas.push(a);
+const totalObras = filas.reduce((n, f) => n + f.obras.length, 0);
+---
+<figure class="grid-page py-14" aria-labelledby="linea-h">
+  <figcaption>
+    <p class="class-line">Emisión · {desde}–{hasta}</p>
+    <div class="mt-3 flex flex-wrap items-end justify-between gap-x-8 gap-y-3">
+      <div>
+        <h2 id="linea-h" class="display text-3xl md:text-4xl">De {desde} a {hasta}, calendario por calendario</h2>
+        <p class="mt-3 max-w-prose text-ink-2 text-pretty">
+          Cada fila es una línea temporal distinta y cada punto, una obra documentada en el archivo. Se ve de un vistazo
+          por qué el Universal Century no se termina nunca y por qué las demás se pueden ver sueltas.
+        </p>
+      </div>
+      <p class="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">{totalObras} obras · {filas.length} calendarios</p>
+    </div>
+  </figcaption>
+
+  <div class="table-scroll mt-6">
+  <svg
+    class="w-full min-w-[44rem]"
+    viewBox={`0 0 ${W} ${H}`}
+    role="img"
+    aria-label={`Línea de emisión de ${totalObras} obras de Gundam entre ${desde} y ${hasta}, agrupadas por universo.`}
+    preserveAspectRatio="xMidYMid meet"
+  >
+    {decadas.map((a) => (
+      <g>
+        <line x1={x(a)} y1={M.t - 8} x2={x(a)} y2={H - M.b + 6} stroke="rgb(var(--line))" stroke-width="1" />
+        <text x={x(a)} y={H - M.b + 20} fill="rgb(var(--ink-3))" font-size="11" font-family="ui-monospace, monospace" letter-spacing="1" text-anchor="middle">{a}</text>
+      </g>
+    ))}
+
+    {filas.map((f, i) => {
+      const y = M.t + i * filaH + filaH / 2;
+      return (
+        <g>
+          <line x1={M.l} y1={y} x2={W - M.r} y2={y} stroke="rgb(var(--line))" stroke-width="1" />
+          <a href={f.href}>
+            <text x="0" y={y - 7} fill="rgb(var(--ink))" font-size="13" font-family="ui-sans-serif, system-ui">{f.nombre}</text>
+          </a>
+          <text x="0" y={y + 13} fill="rgb(var(--ink-3))" font-size="10.5" font-family="ui-monospace, monospace" letter-spacing="1.2">
+            {UNIVERSOS_META[f.universo].corto} · {f.obras.length} {f.obras.length === 1 ? 'obra' : 'obras'}
+          </text>
+          {f.obras.map((o) => (
+            <a href={o.href}>
+              <title>{o.titulo} ({o.anio})</title>
+              <circle cx={x(o.anio)} cy={y} r="5" fill="rgb(var(--paper))" stroke="rgb(var(--ink))" stroke-width="1.5" />
+              <circle cx={x(o.anio)} cy={y} r="11" fill="transparent" />
+            </a>
+          ))}
+        </g>
+      );
+    })}
+  </svg>
+  </div>
+
+  <p class="sr-only">
+    {filas.map((f) => `${f.nombre}: ${f.obras.map((o) => `${o.titulo} (${o.anio})`).join(', ')}.`).join(' ')}
+  </p>
+</figure>

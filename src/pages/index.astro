@@ -9,6 +9,7 @@ import TimelineGuide from '@components/TimelineGuide.astro';
 import ArchiveCard from '@components/ArchiveCard.astro';
 import GunplaBlock from '@components/GunplaBlock.astro';
 import EntryRow from '@components/EntryRow.astro';
+import UniverseTimeline from '@components/UniverseTimeline.astro';
 import NewsletterCTA from '@components/NewsletterCTA.astro';
 import { universosConContenido, seriesOrdenRecomendado, seriesCronologiaUC, seriesPorRuta, nombres, publicado } from '@lib/archivo';
 import { tiendasActivas, tiendasVerificadas, estadosConTiendas } from '@lib/directorio';
@@ -41,6 +42,24 @@ const pilotos = await getCollection('pilots', publicado);
 const facciones = await getCollection('factions', publicado);
 const todasSeries = await getCollection('series', publicado);
 
+const fuentesCitadas = [
+  ...todasSeries, ...ms, ...pilotos, ...facciones, ...universos, ...grados,
+].reduce((n, e) => n + e.data.fuentes.length, 0) + articulos.reduce((n, a) => n + a.data.referencias.length, 0);
+
+const aniosSerie = todasSeries.map((x) => x.data.anio);
+const primerAnio = Math.min(...aniosSerie);
+const ultimoAnio = Math.max(...aniosSerie);
+
+const filasLinea = universos.map((u) => ({
+  universo: u.data.abreviatura,
+  nombre: u.data.nombre,
+  href: `/universos/${u.id}/`,
+  obras: todasSeries
+    .filter((x) => x.data.universo === u.data.abreviatura)
+    .sort((a, b) => a.data.anio - b.data.anio)
+    .map((x) => ({ titulo: x.data.titulo, anio: x.data.anio, href: `/series/${x.id}/` })),
+}));
+
 const entradas = [
   { titulo: 'Universos', texto: 'Las líneas temporales de la franquicia, cada una con su calendario y su serie de entrada.', meta: `${universos.length} líneas documentadas`, href: '/universos/' },
   { titulo: 'Series', texto: 'Fichas por obra: año, formato, estudio, dirección y dónde encaja en su universo.', meta: `${todasSeries.length} obras en el archivo`, href: '/series/' },
@@ -51,18 +70,33 @@ const entradas = [
 ];
 ---
 
-<BaseLayout titulo={SITE.nombre} descripcion={SITE.descripcion}>
+<BaseLayout
+  titulo="Gundam en español: por dónde empezar, qué ver y dónde comprar en México"
+  descripcion="Archivo independiente de Gundam en español: los siete universos explicados, fichas de series y mobile suits con fuentes, guías de Gunpla por grado y tiendas verificadas en México."
+>
   {destacado && (
     <EditorialHero
-      eyebrow={`Expediente destacado · ${fechaCorta(destacado.data.fecha)}`}
-      titulo={destacado.data.titulo}
-      intro={destacado.data.resumen}
+      sello={{ archivo: `Archivo ${SITE.nombre}`, actualizado: fechaCorta(destacado.data.fecha) }}
+      titulo="Entra a Gundam por"
+      destaque="la puerta correcta"
+      entrada="Cuarenta y siete años de series, siete calendarios que no se cruzan y listas de internet que se contradicen entre sí. Este archivo ordena la franquicia en español: qué ver primero según lo que te guste, qué mobile suit es cuál y en qué tienda mexicana comprar Gunpla original sin pagar de más."
       busqueda={{ sugerencia: 'Prueba «Universal Century», «Master Grade» o «Guadalajara»' }}
+      acciones={[
+        { texto: 'Empieza por aquí', href: `/articulos/${destacado.id}/`, principal: true },
+        { texto: 'Ver tiendas verificadas', href: '/tiendas/' },
+      ]}
+      credenciales={[
+        { cifra: String(universos.length), etiqueta: 'Universos' },
+        { cifra: String(todasSeries.length), etiqueta: 'Series con ficha' },
+        { cifra: String(ms.length), etiqueta: 'Mobile suits' },
+        { cifra: String(fuentesCitadas), etiqueta: 'Fuentes citadas' },
+      ]}
+      firma={`Lo escribimos y lo verificamos en ${SITE.ciudad}. Cada ficha cita de dónde salió el dato y cuándo se revisó; si encuentras un error, se corrige y se anota. Proyecto independiente, sin relación con Bandai Namco, Sunrise ni Sotsu.`}
       contexto={{
-        titulo: 'El archivo',
+        titulo: 'Qué vas a encontrar',
         parrafos: [
-          'Gundam empezó en 1979 con una serie de televisión sobre una guerra entre la Tierra y sus colonias espaciales, y hoy son <strong>siete calendarios independientes</strong>: Universal Century, After Colony, Cosmic Era, Anno Domini, Post Disaster, Ad Stella y Correct Century. Documentamos cada línea temporal con fichas verificadas de series, mobile suits, pilotos y facciones, y con guías de entrada para saber <strong>en qué orden ver Gundam</strong> según por dónde quieras empezar.',
-          'La otra mitad del archivo es el hobby y el mercado mexicano. Cubrimos <strong>Gunpla</strong> —los kits armables de Bandai— por grado y escala, de Entry Grade y High Grade a Real Grade, Master Grade y Perfect Grade, con criterios de dificultad y herramientas. Y mantenemos un directorio de <strong>dónde comprar Gundam original en México</strong>: tiendas físicas y en línea por estado y ciudad, precios con fecha de observación, talleres de pintura, eventos y comunidad.',
+          'Gundam empezó en 1979 con una serie sobre una guerra entre la Tierra y sus colonias, y hoy son <strong>siete líneas temporales independientes</strong>: Universal Century, After Colony, Cosmic Era, Anno Domini, Post Disaster, Ad Stella y Correct Century. Cada una se puede ver por separado, y por eso la pregunta de <strong>en qué orden ver Gundam</strong> no tiene una sola respuesta: aquí hay tres rutas —empezar de cero, profundizar en el UC o irte por una historia cerrada— con la ficha de cada serie, sus mobile suits, sus pilotos y sus facciones.',
+          'La otra mitad es el hobby y el mercado mexicano. Explicamos <strong>Gunpla</strong> —los kits armables de Bandai— grado por grado, de Entry Grade y High Grade a Real Grade, Master Grade y Perfect Grade: qué trae cada caja, cuánta paciencia pide y con qué herramientas. Y mantenemos el directorio de <strong>dónde comprar Gundam original en México</strong>, tienda por tienda, con precios fechados, talleres de pintura, eventos y comunidad.',
         ],
         masBuscado: [
           { texto: 'En qué orden ver Gundam', href: '/articulos/en-que-orden-ver-gundam/' },
@@ -72,8 +106,17 @@ const entradas = [
           { texto: 'Tiendas verificadas', href: '/tiendas/' },
         ],
       }}
+      lectura={{
+        eyebrow: `Expediente destacado · ${fechaCorta(destacado.data.fecha)}`,
+        titulo: destacado.data.titulo,
+        resumen: destacado.data.resumen,
+        href: `/articulos/${destacado.id}/`,
+        meta: `${destacado.data.lectura_min} min de lectura · ${destacado.data.referencias.length} referencias`,
+      }}
     />
   )}
+
+  <UniverseTimeline filas={filasLinea} desde={primerAnio} hasta={ultimoAnio} />
 
   <EntryRow items={entradas} />
 
