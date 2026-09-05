@@ -37,12 +37,11 @@ export const NAV = [
   { texto: 'Personajes', href: '/personajes/' },
   { texto: 'Gunpla', href: '/gunpla/' },
   { texto: 'Cronología', href: '/cronologia/' },
-  { texto: 'Guías', href: '/guias/' },
+  { texto: 'Artículos', href: '/articulos/' },
 ] as const;
 
 /** Secciones secundarias (pie y hub Gunpla) */
 export const NAV_SECUNDARIA = [
-  { texto: 'Artículos', href: '/articulos/' },
   { texto: 'Noticias', href: '/noticias/' },
   { texto: 'Tiendas verificadas', href: '/tiendas/' },
   { texto: 'Kits y precios', href: '/kits/' },

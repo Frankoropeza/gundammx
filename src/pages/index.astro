@@ -34,7 +34,7 @@ const destacado = articulos.find((a) => a.data.destacado) ?? articulos[0];
 const archivo = articulos.filter((a) => a.id !== destacado?.id).slice(0, 5);
 
 const grados = (await getCollection('gunpla', publicado)).sort((a, b) => a.data.orden - b.data.orden);
-const guias = (await getCollection('guides', ({ data }) => !data.borrador)).sort((a, b) => a.data.orden - b.data.orden).slice(0, 4);
+const guias = (await getCollection('articles', ({ data }) => !data.borrador && data.categoria === 'comprar')).sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime()).slice(0, 4);
 const tiendas = await tiendasActivas();
 const verificadas = await tiendasVerificadas();
 const estados = await estadosConTiendas();
@@ -163,7 +163,7 @@ const entradas = [
     </div>
   </section>
 
-  <GunplaBlock grados={grados} totalTiendas={tiendas.length} totalVerificadas={verificadas.length} guias={guias.map((g) => ({ titulo: g.data.titulo, href: `/guias/${g.id}/` }))} />
+  <GunplaBlock grados={grados} totalTiendas={tiendas.length} totalVerificadas={verificadas.length} guias={guias.map((g) => ({ titulo: g.data.titulo, href: `/articulos/${g.id}/` }))} />
 
   <NewsletterCTA />
 </BaseLayout>

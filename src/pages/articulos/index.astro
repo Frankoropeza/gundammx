@@ -4,7 +4,9 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
 import ArchiveCard from '@components/ArchiveCard.astro';
 import { schemaColeccion, schemaMigaDePan } from '@lib/seo';
+import { categoriasAbiertas, urlCategoria } from '@lib/categorias';
 const articulos = (await getCollection('articles', ({ data }) => !data.borrador)).sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime());
+const abiertas = await categoriasAbiertas();
 const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Artículos', href: '/articulos/' }];
 const schemas = [schemaMigaDePan(base, migas), schemaColeccion(base, { nombre: 'Artículos', descripcion: 'Explicadores, análisis y guías.', items: articulos.map((a) => ({ nombre: a.data.titulo, href: `/articulos/${a.id}/` })) })];
@@ -19,6 +21,20 @@ import imgArticulos from '../../assets/hub-articulos.jpg';
     <p class="class-line">Archivo editorial</p>
     <h1 class="display mt-3 text-4xl md:text-5xl">Artículos</h1>
     <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">Redacción propia, con referencias visibles al pie de cada texto. Nada de resúmenes de wiki ni de traducciones de comunicados.</p>
+    {abiertas.length > 0 && (
+      <nav class="mt-10 border-t border-line pt-6" aria-labelledby="nav-categorias">
+        <h2 id="nav-categorias" class="class-line">Por categoría</h2>
+        <ul class="mt-4 grid gap-x-12 gap-y-4 md:grid-cols-2">
+          {abiertas.map((c) => (
+            <li class="border-t border-line pt-3">
+              <a href={urlCategoria(c.id)} class="display text-xl hover:text-accent">{c.meta.nombre}</a>
+              <p class="mt-1 max-w-prose text-sm text-ink-2">{c.meta.descripcion}</p>
+              <p class="mt-1 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">{c.piezas.length} {c.piezas.length === 1 ? 'pieza' : 'piezas'}</p>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
     <section class="mt-10" aria-labelledby="lista-articulos">
       <h2 id="lista-articulos" class="display text-2xl md:text-3xl">Guías y explicadores publicados</h2>
       <div class="mt-6 grid gap-x-12 gap-y-2 lg:grid-cols-2">{articulos.map((a, i) => <ArchiveCard articulo={a} grande={i === 0} folio={i + 1} />)}</div>
