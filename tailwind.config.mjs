@@ -1,8 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 // Tokens como variables CSS (src/styles/global.css) para soportar tema claro/oscuro
-// sin duplicar clases. Paleta propia de GUNDAMMX, sin colores de marca de
-// terceros: brand grafito #1C1D1F · accent señal #B24212 · signal ámbar
-// #926810 · verify verde #22543D · ink #1C1D1F. Ver "05 - RIESGO DE MARCA".
+// sin duplicar clases. Paleta institucional Gundam / Bandai Namco:
+// brand #E31623 · signal #FCB814 · verify #0B3C8C · ink #151515.
 const v = (name) => `rgb(var(--${name}) / <alpha-value>)`;
 
 export default {

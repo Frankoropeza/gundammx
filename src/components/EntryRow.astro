@@ -7,10 +7,10 @@ const { items } = Astro.props;
 // Secuencia cromática institucional: azul · rojo · amarillo · grafito.
 // Clases completas (Tailwind no resuelve nombres construidos en tiempo de ejecución).
 const TONOS = [
-  { barra: 'bg-verify', num: 'text-verify', hover: 'group-hover:text-verify' },
-  { barra: 'bg-brand', num: 'text-accent', hover: 'group-hover:text-accent' },
-  { barra: 'bg-signal', num: 'text-signal-ink', hover: 'group-hover:text-signal-ink' },
-  { barra: 'bg-ink', num: 'text-ink-2', hover: 'group-hover:text-ink' },
+  { barra: 'bg-verify', num: 'text-verify', hover: 'group-hover:text-verify', fondo: 'hover:bg-verify/[0.05]' },
+  { barra: 'bg-brand', num: 'text-accent', hover: 'group-hover:text-accent', fondo: 'hover:bg-brand/[0.05]' },
+  { barra: 'bg-signal', num: 'text-signal-ink', hover: 'group-hover:text-signal-ink', fondo: 'hover:bg-signal/[0.09]' },
+  { barra: 'bg-ink', num: 'text-ink-2', hover: 'group-hover:text-ink', fondo: 'hover:bg-ink/[0.05]' },
 ] as const;
 ---
 
@@ -19,21 +19,24 @@ const TONOS = [
     {items.map((i, n) => {
       const t = TONOS[n % TONOS.length];
       return (
-        <li class="group relative flex flex-col border-b border-l border-line px-4 pb-4 pt-5 transition-colors hover:bg-surface">
+        <li class:list={['group relative flex flex-col border-b border-l border-line px-4 pb-4 pt-5 transition-colors', t.fondo]}>
           <span
             aria-hidden="true"
-            class:list={['absolute left-0 top-0 h-[3px] w-full opacity-80 transition-opacity group-hover:opacity-100', t.barra]}
+            class:list={['absolute left-0 top-0 h-1 w-full transition-all group-hover:h-1.5', t.barra]}
           ></span>
 
           <div class="flex items-baseline gap-2">
-            <span class:list={['font-mono text-[10px] tabular tracking-[0.18em]', t.num]}>{String(n + 1).padStart(2, '0')}</span>
+            <span class:list={['font-mono text-[11px] font-medium tabular tracking-[0.18em]', t.num]}>{String(n + 1).padStart(2, '0')}</span>
             <h2 class:list={['display text-[1.0625rem] leading-tight transition-colors', t.hover]}>
               <a href={i.href} class="after:absolute after:inset-0 after:content-['']">{i.titulo}</a>
             </h2>
           </div>
 
           <p class="mt-1.5 line-clamp-2 text-[13px] leading-snug text-ink-2 text-pretty">{i.texto}</p>
-          <p class="mt-auto pt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-ink-3">{i.meta}</p>
+          <p class="mt-auto flex items-center gap-2 pt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-ink-3">
+            <span aria-hidden="true" class:list={['inline-block h-1.5 w-1.5 shrink-0', t.barra]}></span>
+            <span>{i.meta}</span>
+          </p>
         </li>
       );
     })}
