@@ -1,30 +1,36 @@
 ---
-import SEO from '../components/SEO.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import '@styles/global.css';
+import SEO from '@components/SEO.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import { schemaSitio, schemaOrganizacion } from '@lib/seo';
 
 interface Props {
-  title: string;
-  description: string;
-  image?: string;
-  type?: 'website' | 'article';
-  pubDate?: Date;
-  author?: string;
+  titulo: string;
+  descripcion: string;
+  tipo?: 'website' | 'article';
+  noindex?: boolean;
+  schemas?: unknown[];
 }
 
-const props = Astro.props;
+const { titulo, descripcion, tipo = 'website', noindex = false, schemas = [] } = Astro.props;
+const base = { site: Astro.site, url: Astro.url.pathname };
+const todos = [schemaSitio(base), schemaOrganizacion(base), ...schemas];
 ---
 
 <!doctype html>
-<html lang="es-MX" class="scroll-smooth">
+<html lang="es-MX">
   <head>
-    <SEO {...props} />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <SEO titulo={titulo} descripcion={descripcion} tipo={tipo} noindex={noindex} schemas={todos} />
+    <slot name="head" />
   </head>
-  <body class="bg-gundam-dark text-gundam-text min-h-screen flex flex-col antialiased">
+  <body class="flex min-h-screen flex-col">
     <Header />
-    <main class="flex-1">
-      <slot />
-    </main>
+    <main class="flex-1"><slot /></main>
     <Footer />
   </body>
 </html>

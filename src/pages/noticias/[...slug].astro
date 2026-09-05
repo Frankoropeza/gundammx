@@ -1,26 +1,51 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import { getCollection } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '@layouts/ArticleLayout.astro';
+import { schemaNoticia, schemaMigaDePan } from '@lib/seo';
 
-export async function getStaticPaths() {
-  const noticias = await getCollection('noticias', ({ data }) => !data.draft);
-  return noticias.map((noticia) => ({
-    params: { slug: noticia.slug },
-    props: { noticia },
-  }));
-}
+export const getStaticPaths: GetStaticPaths = async () => {
+  const notas = await getCollection('noticias', ({ data }) => !data.borrador);
+  return notas.map((n) => ({ params: { slug: n.id }, props: { nota: n } }));
+};
 
-const { noticia } = Astro.props;
-const { Content } = await noticia.render();
+interface Props { nota: CollectionEntry<'noticias'> }
+
+const { nota } = Astro.props;
+const d = nota.data;
+const { Content } = await render(nota);
+
+// fuente_nombre y fuente_url solo existen en notas sobre terceros;
+// los avisos propios (categoria: directorio) van sin fuente.
+const fuente = d.fuente_nombre && d.fuente_url
+  ? { nombre: d.fuente_nombre, url: d.fuente_url }
+  : undefined;
+
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [
+  { nombre: 'Noticias', href: '/noticias/' },
+  { nombre: d.titulo, href: `/noticias/${nota.id}/` },
+];
+const schemas = [
+  schemaMigaDePan(base, migas),
+  schemaNoticia(base, {
+    titulo: d.titulo,
+    descripcion: d.descripcion,
+    fecha: d.fecha,
+    autor: d.autor,
+    fuenteUrl: d.fuente_url,
+  }),
+];
 ---
 
 <ArticleLayout
-  title={noticia.data.title}
-  description={noticia.data.description}
-  pubDate={noticia.data.pubDate}
-  author={noticia.data.author}
-  category={noticia.data.category}
-  tags={noticia.data.tags}
+  titulo={d.titulo}
+  descripcion={d.descripcion}
+  fecha={d.fecha}
+  migas={migas}
+  fuente={fuente}
+  schemas={schemas}
 >
   <Content />
 </ArticleLayout>

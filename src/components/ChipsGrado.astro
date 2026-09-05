@@ -1,0 +1,22 @@
+---
+import { GRADOS, type GradoId } from '@config/site';
+
+interface Props { grados: GradoId[]; enlazar?: boolean }
+const { grados, enlazar = false } = Astro.props;
+
+const ordenados = [...grados].sort((a, b) => GRADOS[a].orden - GRADOS[b].orden);
+---
+
+{ordenados.length > 0 ? (
+  <ul class="flex flex-wrap gap-1.5">
+    {ordenados.map((g) => (
+      <li>
+        {enlazar
+          ? <a href={`/kits/${g}/`} class="chip hover:border-accent hover:text-accent" title={GRADOS[g].nombre}>{GRADOS[g].etiqueta}</a>
+          : <span class="chip" title={GRADOS[g].nombre}>{GRADOS[g].etiqueta}</span>}
+      </li>
+    ))}
+  </ul>
+) : (
+  <p class="text-xs text-ink-faint">Surtido por confirmar</p>
+)}

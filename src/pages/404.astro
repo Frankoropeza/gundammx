@@ -1,19 +1,17 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Página no encontrada" description="La página que buscas no existe.">
-  <section class="max-w-2xl mx-auto px-4 py-32 text-center">
-    <p class="font-display text-8xl font-black text-gundam-red mb-4">404</p>
-    <h1 class="font-display text-2xl font-bold text-white mb-4">Unidad no encontrada</h1>
-    <p class="text-gundam-text/60 mb-8">
-      Parece que este Mobile Suit fue destruido en combate. La página que buscas no existe.
+<BaseLayout titulo="Página no encontrada" descripcion="La página que buscas no existe." noindex>
+  <section class="contenedor max-w-xl py-28 text-center">
+    <p class="font-display text-7xl font-bold text-accent">404</p>
+    <h1 class="mt-4 font-display text-2xl font-bold">Esta página no existe</h1>
+    <p class="mt-4 text-ink-muted">
+      Puede que la ficha se haya movido o que el enlace esté mal escrito.
     </p>
-    <a
-      href="/"
-      class="inline-flex items-center px-6 py-3 bg-gundam-blue text-white font-bold rounded-lg hover:bg-gundam-blue/80 transition-colors"
-    >
-      Volver a la base
-    </a>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href="/tiendas/" class="rounded-lg bg-accent px-5 py-3 font-medium text-base-bg hover:bg-accent-dark">Ver el directorio</a>
+      <a href="/" class="rounded-lg border border-base-line px-5 py-3 font-medium hover:border-accent hover:text-accent">Ir al inicio</a>
+    </div>
   </section>
 </BaseLayout>

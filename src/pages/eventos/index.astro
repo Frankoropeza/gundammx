@@ -1,0 +1,100 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import { getCollection } from 'astro:content';
+import { nombreEstado } from '@lib/estados';
+import { fechaLarga } from '@lib/precio';
+import { schemaEvento, schemaMigaDePan } from '@lib/seo';
+
+const todos = (await getCollection('eventos'))
+  .sort((a, b) => a.data.fecha_inicio.getTime() - b.data.fecha_inicio.getTime());
+
+const hoy = new Date();
+const proximos = todos.filter((e) => (e.data.fecha_fin ?? e.data.fecha_inicio) >= hoy);
+const pasados = todos.filter((e) => (e.data.fecha_fin ?? e.data.fecha_inicio) < hoy).reverse();
+
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [{ nombre: 'Eventos', href: '/eventos/' }];
+const schemas = [
+  schemaMigaDePan(base, migas),
+  ...proximos.map((e) => schemaEvento(base, {
+    nombre: e.data.nombre,
+    descripcion: e.data.descripcion,
+    inicio: e.data.fecha_inicio,
+    fin: e.data.fecha_fin,
+    sede: e.data.sede,
+    ciudad: e.data.ciudad,
+    estado: e.data.estado,
+    organizador: e.data.organizador,
+    urlOficial: e.data.url_oficial,
+  })),
+];
+---
+
+<BaseLayout
+  titulo="Eventos de Gundam y modelismo en México"
+  descripcion="Convenciones, concursos, talleres y exposiciones con presencia de Gunpla en México."
+  schemas={schemas}
+>
+  <Breadcrumbs items={migas} />
+
+  <div class="contenedor py-8">
+    <h1 class="font-display text-3xl font-bold md:text-4xl">Eventos en México</h1>
+    <p class="mt-4 max-w-3xl text-ink-muted">
+      Convenciones, concursos de armado, talleres y exposiciones. Marcamos cuáles tienen presencia
+      de Gunpla confirmada y cuáles solo son eventos afines.
+    </p>
+
+    <section class="mt-10">
+      <h2 class="font-display text-xl font-semibold">Próximos</h2>
+      {proximos.length === 0 ? (
+        <p class="mt-4 text-ink-muted">No tenemos eventos futuros confirmados en este momento.</p>
+      ) : (
+        <ul class="mt-4 space-y-4">
+          {proximos.map((e) => (
+            <li class="tarjeta">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="chip capitalize">{e.data.tipo.replace('-', ' ')}</span>
+                {e.data.gunpla_confirmado && <span class="chip border-accent/40 text-accent">Gunpla confirmado</span>}
+                {e.data.recurrente && <span class="chip">Recurrente</span>}
+              </div>
+              <h3 class="mt-3 font-display text-lg font-semibold">{e.data.nombre}</h3>
+              <p class="mt-1 font-mono text-sm text-ink-muted">
+                {fechaLarga(e.data.fecha_inicio)}
+                {e.data.fecha_fin && ` – ${fechaLarga(e.data.fecha_fin)}`}
+              </p>
+              <p class="text-sm text-ink-muted">
+                {[e.data.sede, e.data.ciudad, nombreEstado(e.data.estado)].filter(Boolean).join(' · ')}
+              </p>
+              <p class="mt-3 text-sm text-ink-muted">{e.data.descripcion}</p>
+              {e.data.url_oficial && (
+                <p class="mt-3 text-sm">
+                  <a href={e.data.url_oficial} class="enlace" rel="nofollow noopener" target="_blank">Sitio oficial del evento</a>
+                </p>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+
+    {pasados.length > 0 && (
+      <section class="mt-12">
+        <h2 class="font-display text-xl font-semibold">Ediciones anteriores</h2>
+        <p class="mt-2 text-sm text-ink-muted">
+          Las conservamos porque casi todas se repiten: sirven de referencia para la siguiente edición.
+        </p>
+        <ul class="mt-4 space-y-3">
+          {pasados.map((e) => (
+            <li class="tarjeta">
+              <p class="font-medium">{e.data.nombre}</p>
+              <p class="mt-1 font-mono text-sm text-ink-faint">
+                {fechaLarga(e.data.fecha_inicio)} · {e.data.ciudad}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </div>
+</BaseLayout>

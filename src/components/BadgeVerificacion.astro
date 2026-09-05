@@ -1,0 +1,26 @@
+---
+import { fechaCorta } from '@lib/precio';
+
+interface Props {
+  estado: 'verificada' | 'reportada' | 'sin_verificar' | 'cerrada';
+  fecha?: string;
+  conEnlace?: boolean;
+}
+const { estado, fecha, conEnlace = true } = Astro.props;
+
+const mapa = {
+  verificada:   { texto: 'Verificada',    icono: '✓', clase: 'border-accent/40 bg-accent/10 text-accent' },
+  sin_verificar:{ texto: 'Sin verificar', icono: '!', clase: 'border-signal/40 bg-signal/10 text-signal' },
+  reportada:    { texto: 'Reportada',     icono: '!', clase: 'border-alert/40 bg-alert/10 text-alert' },
+  cerrada:      { texto: 'Cerrada',       icono: '×', clase: 'border-alert/40 bg-alert/10 text-alert' },
+} as const;
+
+const s = mapa[estado];
+---
+
+<span class:list={['inline-flex items-center gap-1.5 rounded border px-2 py-0.5 text-xs font-medium', s.clase]}>
+  <span aria-hidden="true">{s.icono}</span>
+  <span>{s.texto}</span>
+  {fecha && <span class="font-mono text-[11px] opacity-80">· {fechaCorta(fecha)}</span>}
+  {conEnlace && <a href="/metodologia/" class="underline decoration-dotted underline-offset-2" aria-label="Cómo verificamos">?</a>}
+</span>

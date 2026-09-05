@@ -1,0 +1,55 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import { SITE } from '@config/site';
+
+const migas = [{ nombre: 'Dar de alta una tienda', href: '/alta-de-tienda/' }];
+---
+
+<BaseLayout
+  titulo="Dar de alta una tienda"
+  descripcion="Cómo agregar una tienda al directorio de GUNDAMMX: qué datos pedimos, qué verificamos y cuánto cuesta aparecer."
+>
+  <Breadcrumbs items={migas} />
+
+  <div class="contenedor max-w-3xl py-8">
+    <h1 class="font-display text-3xl font-bold md:text-4xl">Dar de alta una tienda</h1>
+    <p class="mt-4 text-lg text-ink-muted">
+      Aparecer en el directorio es gratis. También lo es la verificación.
+    </p>
+
+    <section class="mt-10">
+      <h2 class="font-display text-2xl font-semibold">Qué necesitamos</h2>
+      <ul class="mt-4 space-y-2 text-sm text-ink-muted">
+        <li>Nombre de la tienda y sitio web o redes.</li>
+        <li>Dirección y horarios, si tiene punto físico.</li>
+        <li>Qué grados manejas y aproximadamente cuántos SKU de Gunpla tienes.</li>
+        <li>Si envías a todo México, con qué paqueterías y desde qué monto es gratis.</li>
+        <li>Si manejas preventas y cuál es tu política de anticipos.</li>
+        <li>De dónde viene tu producto: distribuidor nacional, importación directa o ambos.</li>
+      </ul>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="font-display text-2xl font-semibold">Qué verificamos antes de publicar</h2>
+      <p class="mt-4 text-sm text-ink-muted">
+        Revisamos tu catálogo para confirmar que vendes Gunpla y que el producto es original.
+        Guardamos la fuente y la fecha, y las mostramos públicamente en tu ficha. El detalle está en
+        <a href="/metodologia/" class="enlace">cómo verificamos</a>.
+      </p>
+      <p class="mt-4 rounded-lg border border-base-line bg-base-alt/40 p-4 text-sm text-ink-muted">
+        <strong class="text-ink">Condición para estar listado:</strong> vender exclusivamente producto
+        original. Si detectamos réplicas o kits no originales, la ficha se da de baja sin aviso previo.
+      </p>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="font-display text-2xl font-semibold">Cómo enviarnos los datos</h2>
+      <p class="mt-4 text-sm text-ink-muted">
+        Por ahora, por correo a <span class="font-mono text-ink">{SITE.email}</span> con el asunto
+        «Alta de tienda». Contesta el cuestionario de arriba en el cuerpo del mensaje.
+        El formulario en línea llega en la siguiente versión del sitio.
+      </p>
+    </section>
+  </div>
+</BaseLayout>

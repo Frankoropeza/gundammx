@@ -1,0 +1,41 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import TarjetaTienda from '@components/TarjetaTienda.astro';
+import { tiendasVerificadas } from '@lib/directorio';
+import { schemaListado, schemaMigaDePan } from '@lib/seo';
+
+const tiendas = await tiendasVerificadas();
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [
+  { nombre: 'Tiendas', href: '/tiendas/' },
+  { nombre: 'Verificadas', href: '/tiendas/verificadas/' },
+];
+const schemas = [
+  schemaMigaDePan(base, migas),
+  schemaListado(base, 'Tiendas de Gunpla verificadas en México', tiendas.map((t) => ({
+    nombre: t.data.nombre, href: `/tienda/${t.id}/`,
+  }))),
+];
+---
+
+<BaseLayout
+  titulo="Tiendas de Gunpla verificadas en México"
+  descripcion="Tiendas cuya oferta de Gunpla comprobamos con fuente y fecha. La verificación no se compra: se otorga por evidencia."
+  schemas={schemas}
+>
+  <Breadcrumbs items={migas} />
+
+  <div class="contenedor py-8">
+    <h1 class="font-display text-3xl font-bold md:text-4xl">Tiendas verificadas</h1>
+    <p class="mt-4 max-w-3xl text-ink-muted">
+      Comprobamos que estas tiendas venden Gunpla, con qué fuente lo comprobamos y en qué fecha.
+      <strong class="text-ink"> La verificación no se paga.</strong> Un listado patrocinado cambia la posición,
+      nunca el sello. Puedes revisar el detalle en <a href="/metodologia/" class="enlace">cómo verificamos</a>.
+    </p>
+
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {tiendas.map((t) => <TarjetaTienda tienda={t} />)}
+    </div>
+  </div>
+</BaseLayout>

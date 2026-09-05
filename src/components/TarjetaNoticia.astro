@@ -1,0 +1,19 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { fechaCorta } from '@lib/precio';
+
+interface Props { nota: CollectionEntry<'noticias'> }
+const { nota } = Astro.props;
+const d = nota.data;
+---
+
+<article class="tarjeta flex flex-col gap-2 transition-colors hover:border-accent/40">
+  <div class="flex items-center gap-3 text-xs text-ink-faint">
+    <span class="chip">{d.categoria}</span>
+    <time datetime={d.fecha.toISOString()}>{fechaCorta(d.fecha)}</time>
+  </div>
+  <h3 class="font-display text-lg font-semibold leading-tight">
+    <a href={`/noticias/${nota.id}/`} class="hover:text-accent">{d.titulo}</a>
+  </h3>
+  <p class="text-sm text-ink-muted">{d.descripcion}</p>
+</article>

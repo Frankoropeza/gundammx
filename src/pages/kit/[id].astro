@@ -1,0 +1,85 @@
+---
+import type { GetStaticPaths } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import { getCollection, getEntry, render } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import BloquePrecio from '@components/BloquePrecio.astro';
+import { GRADOS } from '@config/site';
+import { schemaKit, schemaMigaDePan } from '@lib/seo';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const kits = await getCollection('kits');
+  return kits.map((k) => ({ params: { id: k.id }, props: { kit: k } }));
+};
+
+interface Props { kit: CollectionEntry<'kits'> }
+
+const { kit } = Astro.props;
+const d = kit.data;
+const { Content } = await render(kit);
+const info = GRADOS[d.grado];
+
+const tiendas = await Promise.all(
+  d.disponible_en.map(async (id) => {
+    const t = await getEntry('tiendas', id);
+    return t ? { id: t.id, nombre: t.data.nombre } : null;
+  }),
+);
+
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [
+  { nombre: 'Kits', href: '/kits/' },
+  { nombre: info.etiqueta, href: `/kits/${d.grado}/` },
+  { nombre: d.nombre, href: `/kit/${kit.id}/` },
+];
+const schemas = [
+  schemaMigaDePan(base, migas),
+  schemaKit(base, { nombre: d.nombre, resumen: d.resumen, observados: d.precio_mx_observado }),
+];
+---
+
+<BaseLayout titulo={d.nombre} descripcion={d.resumen} schemas={schemas}>
+  <Breadcrumbs items={migas} />
+
+  <div class="contenedor max-w-3xl py-8">
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="chip">{info.etiqueta}</span>
+      <span class="chip">{d.escala}</span>
+      {d.linea && <span class="chip border-signal/40 text-signal">{d.linea}</span>}
+    </div>
+
+    <h1 class="mt-4 font-display text-3xl font-bold md:text-4xl">{d.nombre}</h1>
+    <p class="mt-3 text-ink-muted">{d.resumen}</p>
+
+    <dl class="mt-8 grid gap-3 text-sm sm:grid-cols-3">
+      <div class="tarjeta">
+        <dt class="text-xs uppercase tracking-wide text-ink-faint">Serie</dt>
+        <dd class="mt-1 text-ink-muted">{d.serie}</dd>
+      </div>
+      <div class="tarjeta">
+        <dt class="text-xs uppercase tracking-wide text-ink-faint">Grado</dt>
+        <dd class="mt-1 text-ink-muted">{info.nombre}</dd>
+      </div>
+      <div class="tarjeta">
+        <dt class="text-xs uppercase tracking-wide text-ink-faint">Dificultad</dt>
+        <dd class="mt-1 capitalize text-ink-muted">{d.dificultad ?? 'sin clasificar'}</dd>
+      </div>
+    </dl>
+
+    <div class="mt-8"><BloquePrecio precioJpy={d.precio_jp_jpy} observados={d.precio_mx_observado} /></div>
+
+    {tiendas.filter(Boolean).length > 0 && (
+      <section class="mt-8">
+        <h2 class="font-display text-xl font-semibold">Dónde conseguirlo</h2>
+        <ul class="mt-4 flex flex-wrap gap-2">
+          {tiendas.filter(Boolean).map((t) => (
+            <li><a href={`/tienda/${t!.id}/`} class="chip hover:border-accent hover:text-accent">{t!.nombre}</a></li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <div class="prose-ficha mt-8 text-sm text-ink-muted"><Content /></div>
+  </div>
+</BaseLayout>

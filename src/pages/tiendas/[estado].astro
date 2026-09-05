@@ -1,0 +1,73 @@
+---
+import type { GetStaticPaths } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import TarjetaTienda from '@components/TarjetaTienda.astro';
+import { tiendasActivas, estadosDe } from '@lib/directorio';
+import { ESTADOS, nombreEstado } from '@lib/estados';
+import { schemaListado, schemaMigaDePan } from '@lib/seo';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const tiendas = await tiendasActivas();
+  return ESTADOS.map((e) => ({
+    params: { estado: e.slug },
+    props: { tiendas: tiendas.filter((t) => estadosDe(t).includes(e.slug)) },
+  }));
+};
+
+interface Props { tiendas: CollectionEntry<'tiendas'>[] }
+
+const { estado } = Astro.params;
+const { tiendas } = Astro.props;
+const nombre = nombreEstado(estado!);
+
+// Un estado sin tiendas no se indexa: se activa cuando haya al menos una.
+const sinContenido = tiendas.length === 0;
+
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [
+  { nombre: 'Tiendas', href: '/tiendas/' },
+  { nombre, href: `/tiendas/${estado}/` },
+];
+const schemas = [
+  schemaMigaDePan(base, migas),
+  schemaListado(base, `Tiendas de Gundam en ${nombre}`, tiendas.map((t) => ({
+    nombre: t.data.nombre, href: `/tienda/${t.id}/`,
+  }))),
+];
+---
+
+<BaseLayout
+  titulo={`Tiendas de Gundam en ${nombre}`}
+  descripcion={`Tiendas que venden Gundam y Gunpla en ${nombre}, con verificación de oferta y cobertura de envío.`}
+  noindex={sinContenido}
+  schemas={schemas}
+>
+  <Breadcrumbs items={migas} />
+
+  <div class="contenedor py-8">
+    <h1 class="font-display text-3xl font-bold md:text-4xl">Tiendas de Gundam en {nombre}</h1>
+
+    {sinContenido ? (
+      <div class="mt-6 max-w-2xl">
+        <p class="text-ink-muted">
+          Todavía no tenemos ninguna tienda verificada en {nombre}. Preferimos decirlo a llenar la página
+          con resultados que no comprobamos.
+        </p>
+        <p class="mt-4 text-ink-muted">
+          ¿Conoces una o tienes tienda aquí? <a href="/alta-de-tienda/" class="enlace">Dala de alta</a> y la verificamos.
+        </p>
+      </div>
+    ) : (
+      <>
+        <p class="mt-4 text-ink-muted">
+          {tiendas.length} {tiendas.length === 1 ? 'tienda' : 'tiendas'} en el directorio.
+        </p>
+        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {tiendas.map((t) => <TarjetaTienda tienda={t} />)}
+        </div>
+      </>
+    )}
+  </div>
+</BaseLayout>

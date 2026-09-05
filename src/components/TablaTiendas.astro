@@ -1,0 +1,46 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { GRADOS, type GradoId } from '@config/site';
+import { nombreEstado } from '@lib/estados';
+
+interface Props { tiendas: CollectionEntry<'tiendas'>[] }
+const { tiendas } = Astro.props;
+
+const etiquetas = (g: GradoId[]) =>
+  [...g].sort((a, b) => GRADOS[a].orden - GRADOS[b].orden).map((x) => GRADOS[x].etiqueta).join(' ');
+---
+
+<div class="tabla-scroll">
+  <table class="w-full min-w-[46rem] border-collapse text-sm">
+    <thead>
+      <tr class="border-b border-base-line text-left text-xs uppercase tracking-wide text-ink-faint">
+        <th class="py-3 pr-4 font-medium">Tienda</th>
+        <th class="py-3 pr-4 font-medium">Ubicación</th>
+        <th class="py-3 pr-4 font-medium">Grados</th>
+        <th class="py-3 pr-4 font-medium">Envío</th>
+        <th class="py-3 pr-4 font-medium">Preventa</th>
+        <th class="py-3 font-medium">Verificación</th>
+      </tr>
+    </thead>
+    <tbody>
+      {tiendas.map((t) => (
+        <tr class="border-b border-base-line/60 align-top">
+          <td class="py-3 pr-4">
+            <a href={`/tienda/${t.id}/`} class="enlace font-medium">{t.data.nombre}</a>
+          </td>
+          <td class="py-3 pr-4 text-ink-muted">
+            {t.data.sucursales.length
+              ? [...new Set(t.data.sucursales.map((s) => `${s.ciudad}, ${nombreEstado(s.estado)}`))].join(' · ')
+              : 'Solo en línea'}
+          </td>
+          <td class="py-3 pr-4 font-mono text-xs text-ink-muted">{etiquetas(t.data.grados) || '—'}</td>
+          <td class="py-3 pr-4 text-ink-muted">{t.data.envio_nacional ? 'Nacional' : '—'}</td>
+          <td class="py-3 pr-4 text-ink-muted">{t.data.maneja_preventa ? 'Sí' : '—'}</td>
+          <td class="py-3 text-ink-muted">
+            {t.data.verificacion.estado === 'verificada' ? 'Verificada' : 'Sin verificar'}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

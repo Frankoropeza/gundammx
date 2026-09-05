@@ -1,49 +1,44 @@
 ---
-const year = new Date().getFullYear();
+import { SITE, NAV } from '@config/site';
+import AvisoIndependencia from '@components/AvisoIndependencia.astro';
+const anio = new Date().getFullYear();
 ---
 
-<footer class="bg-gundam-dark border-t border-gundam-blue/20 mt-auto">
-  <div class="max-w-7xl mx-auto px-4 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Brand -->
+<footer class="mt-16 border-t border-base-line bg-base-surface">
+  <div class="contenedor py-12">
+    <div class="grid gap-8 md:grid-cols-3">
       <div>
-        <div class="flex items-center gap-3 mb-4">
-          <img src="/favicon.svg" alt="Gundam MX" class="w-8 h-8" />
-          <span class="font-display font-bold text-lg">
-            <span class="text-white">GUNDAM</span>
-            <span class="text-gundam-red ml-1">MX</span>
-          </span>
-        </div>
-        <p class="text-sm text-gundam-text/60 max-w-xs">
-          La comunidad y tienda de modelos Gundam más grande de México. Kits, guías y todo para el builder mexicano.
+        <p class="font-display text-lg font-bold">
+          <span class="text-ink">GUNDAM</span><span class="text-accent">MX</span>
         </p>
+        <p class="mt-3 max-w-xs text-sm text-ink-muted">{SITE.descripcion}</p>
       </div>
 
-      <!-- Links -->
       <div>
-        <h3 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Navegación</h3>
-        <ul class="space-y-2">
-          <li><a href="/noticias" class="text-sm text-gundam-text/60 hover:text-gundam-gold transition-colors">Noticias</a></li>
-          <li><a href="#kits" class="text-sm text-gundam-text/60 hover:text-gundam-gold transition-colors">Catálogo de Kits</a></li>
-          <li><a href="#guias" class="text-sm text-gundam-text/60 hover:text-gundam-gold transition-colors">Guías</a></li>
-          <li><a href="#comunidad" class="text-sm text-gundam-text/60 hover:text-gundam-gold transition-colors">Comunidad</a></li>
+        <h2 class="font-display text-sm uppercase tracking-wider text-ink">Directorio</h2>
+        <ul class="mt-4 space-y-2">
+          {NAV.map((i) => (
+            <li><a href={i.href} class="text-sm text-ink-muted hover:text-accent">{i.texto}</a></li>
+          ))}
         </ul>
       </div>
 
-      <!-- Contact -->
       <div>
-        <h3 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Contacto</h3>
-        <ul class="space-y-2">
-          <li class="text-sm text-gundam-text/60">contacto@gundammx.com</li>
-          <li class="text-sm text-gundam-text/60">CDMX, México</li>
+        <h2 class="font-display text-sm uppercase tracking-wider text-ink">El proyecto</h2>
+        <ul class="mt-4 space-y-2">
+          <li><a href="/metodologia/" class="text-sm text-ink-muted hover:text-accent">Cómo verificamos</a></li>
+          <li><a href="/alta-de-tienda/" class="text-sm text-ink-muted hover:text-accent">Dar de alta una tienda</a></li>
+          <li><a href="/reportar/" class="text-sm text-ink-muted hover:text-accent">Reportar un dato</a></li>
+          <li><a href="/aviso-legal/" class="text-sm text-ink-muted hover:text-accent">Aviso legal</a></li>
+          <li><span class="text-sm text-ink-faint">{SITE.email}</span></li>
         </ul>
       </div>
     </div>
 
-    <div class="border-t border-gundam-blue/20 mt-8 pt-8 text-center">
-      <p class="text-xs text-gundam-text/40">
-        &copy; {year} Gundam MX. Todos los derechos reservados. Gundam es una marca registrada de Bandai Namco.
-      </p>
+    <div class="mt-10">
+      <AvisoIndependencia compacto />
     </div>
+
+    <p class="mt-6 text-xs text-ink-faint">© {anio} {SITE.nombre} — {SITE.nombreLargo}. {SITE.ciudad}, México.</p>
   </div>
 </footer>
