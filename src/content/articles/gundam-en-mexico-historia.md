@@ -15,6 +15,9 @@ referencias:
   - { titulo: 'Requiem for Vengeance — Netflix', url: 'https://about.netflix.com/en/news/trailer-gundam-requiem-for-vengeance-coming-to-netflix-october-17' }
   - { titulo: 'Primera tienda de Bandai Namco en CDMX — El Financiero', url: 'https://www.elfinanciero.com.mx/entretenimiento/2026/08/13/donde-esta-la-primera-tienda-oficial-de-bandai-namco-en-cdmx/' }
   - { titulo: 'Gundam Base Pop-Up Store Mexico City — Bandai Hobby', url: 'https://global.bandai-hobby.net/en-others/site/gbase_worldtour/mexicocity/' }
+imagen: ../../assets/art-historia-mexico.jpg
+imagen_alt: "Primer plano de un model kit del RX-78-2."
+imagen_credito: art-historia-mexico
 ---
 
 Para buena parte del público mexicano, Gundam empezó un día de julio de 2002. Esa es la fecha en que

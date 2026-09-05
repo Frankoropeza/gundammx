@@ -5,6 +5,9 @@ nivel: principiante
 fecha: 2026-09-04
 actualizada: '2026-09-04'
 orden: 3
+imagen: ../../assets/gui-precio.jpg
+imagen_alt: "Model kits High Grade expuestos junto a su ficha de precio."
+imagen_credito: gui-precio
 ---
 
 La queja constante es que en México los kits salen caros. Es cierto, y se puede medir.

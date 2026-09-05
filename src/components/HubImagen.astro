@@ -1,0 +1,41 @@
+---
+/**
+ * Banner de sección con imagen de banco licenciada.
+ * La atribución (autor + licencia + enlace a la fuente) es obligatoria y va visible:
+ * las licencias CC BY y CC BY-SA la exigen. Datos en @config/creditos-imagenes.
+ */
+import { Image } from 'astro:assets';
+import { CREDITOS } from '@config/creditos-imagenes';
+
+interface Props {
+  src: ImageMetadata;
+  id: keyof typeof CREDITOS | string;
+  alt?: string;
+  prioridad?: boolean;
+  ratio?: string;
+}
+const { src, id, alt, prioridad = true, ratio = 'aspect-[16/9] md:aspect-[7/2]' } = Astro.props;
+const c = CREDITOS[id];
+if (!c) throw new Error(`Falta el crédito de la imagen "${id}" en src/config/creditos-imagenes.ts`);
+---
+
+<figure class="grid-page mt-6">
+  <div class="relative overflow-hidden border border-line">
+    <Image
+      src={src}
+      alt={alt ?? c.alt}
+      widths={[640, 1024, 1440]}
+      sizes="(min-width: 1280px) 1200px, 100vw"
+      class:list={['w-full object-cover', ratio]}
+      loading={prioridad ? 'eager' : 'lazy'}
+      fetchpriority={prioridad ? 'high' : undefined}
+      decoding="async"
+    />
+    <span aria-hidden="true" class="franja-gundam franja-gundam-fina absolute inset-x-0 bottom-0"></span>
+  </div>
+  <figcaption class="mt-2 font-mono text-[10px] uppercase tracking-[0.14em] text-ink-3">
+    Foto de <a href={c.fuente} class="link-quiet" rel="nofollow noopener" target="_blank">{c.autor}</a>
+    · <a href={c.licenciaUrl} class="link-quiet" rel="nofollow noopener license" target="_blank">{c.licencia}</a>
+    · Recortada. Sin relación con Bandai Namco, Sunrise ni Sotsu.
+  </figcaption>
+</figure>

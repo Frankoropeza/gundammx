@@ -13,9 +13,13 @@ const alternativas = await seriesPorRuta('alternativa');
 const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Series', href: '/series/' }];
 const schemas = [schemaMigaDePan(base, migas), schemaColeccion(base, { nombre: 'Series de Gundam', descripcion: 'Fichas de series, OVA y películas de la franquicia.', items: todas.map((s) => ({ nombre: s.data.titulo, href: `/series/${s.id}/` })) })];
+import HubImagen from '@components/HubImagen.astro';
+import imgSeries from '../../assets/hub-series.jpg';
 ---
 <BaseLayout titulo="Series de Gundam | Lista y orden para verlas" descripcion={`Todas las series de Gundam del archivo: ${todas.length} obras con año, universo, formato y equipo, más las tres rutas para ver Gundam según por dónde quieras empezar.`} schemas={schemas}>
   <Breadcrumbs items={migas} />
+
+  <HubImagen src={imgSeries} id="hub-series" />
   <div class="grid-page pt-10">
     <p class="class-line">Archivo</p>
     <h1 class="display mt-3 text-4xl md:text-5xl">Series</h1>

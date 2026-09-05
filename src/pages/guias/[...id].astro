@@ -3,6 +3,7 @@ import type { GetStaticPaths } from 'astro';
 import type { CollectionEntry } from 'astro:content';
 import { getCollection, render } from 'astro:content';
 import ArticleLayout from '@layouts/ArticleLayout.astro';
+import Figura from '@components/Figura.astro';
 import { schemaArticulo, schemaMigaDePan, tituloEditorial, descripcionFicha } from '@lib/seo';
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -35,5 +36,11 @@ const schemas = [
   migas={migas}
   schemas={schemas}
 >
+  {d.imagen && (
+    <div class="mb-8">
+      <Figura src={d.imagen} alt={d.imagen_alt} credito={d.imagen_credito} codigo={`GUI-${guia.id.toUpperCase().slice(0, 18)}`} prioridad ratio="aspect-[16/9]" />
+    </div>
+  )}
+
   <Content />
 </ArticleLayout>

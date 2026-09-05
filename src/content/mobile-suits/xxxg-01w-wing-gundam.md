@@ -19,6 +19,9 @@ codigo: MS-AC-XXXG-01W
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Wing
 actualizado: '2026-09-05'
+imagen: ../../assets/ms-wing.jpg
+imagen_alt: "Model kit del XXXG-01W Wing Gundam armado."
+imagen_credito: ms-wing
 ---
 
 El XXXG-01W Wing Gundam es el mobile suit de Heero Yuy, construido por el Doctor J para la Operación Meteoro.

@@ -46,7 +46,7 @@ const schemas = [schemaMigaDePan(base, migas), schemaSerie(base, { titulo: d.tit
         <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">{d.resumen}</p>
         <p class="mt-4 border-l-2 border-accent pl-4 text-sm text-ink"><span class="text-ink-3">Por qué importa · </span>{d.relevancia}</p>
       </div>
-      <div class="lg:col-span-6"><Figura src={d.imagen} alt={d.imagen_alt} codigo={d.codigo} prioridad ratio="aspect-[16/10]" /></div>
+      <div class="lg:col-span-6"><Figura src={d.imagen} alt={d.imagen_alt} credito={d.imagen_credito} codigo={d.codigo} prioridad ratio="aspect-[16/10]" /></div>
     </header>
 
     <div class="mt-12 grid gap-10 lg:grid-cols-12">

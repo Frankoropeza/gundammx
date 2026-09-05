@@ -22,6 +22,9 @@ codigo: SER-UC-0079
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam
 actualizado: '2026-09-05'
+imagen: ../../assets/art-historia-mexico.jpg
+imagen_alt: "Model kit del RX-78-2, el mobile suit protagonista de la serie."
+imagen_credito: art-historia-mexico
 ---
 
 Emitida entre abril de 1979 y enero de 1980, *Mobile Suit Gundam* fue cancelada antes de tiempo: de los 52

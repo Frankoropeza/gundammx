@@ -19,6 +19,9 @@ codigo: MS-UC-RX-93
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_Char%27s_Counterattack
 actualizado: '2026-09-05'
+imagen: ../../assets/ms-nu.jpg
+imagen_alt: "Model kit del RX-93 Nu Gundam armado."
+imagen_credito: ms-nu
 ---
 
 El RX-93 ν Gundam ("Nu Gundam") es el mobile suit que Amuro Ray diseña para sí mismo en UC 0093, ya como

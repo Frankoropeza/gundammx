@@ -5,6 +5,9 @@ nivel: principiante
 fecha: 2026-09-04
 actualizada: '2026-09-04'
 orden: 2
+imagen: ../../assets/gui-original.jpg
+imagen_alt: "Model kit Real Grade del RX-78-2 expuesto en una vitrina."
+imagen_credito: gui-original
 ---
 
 Es la pregunta que más se repite en los grupos mexicanos, y la que ningún vendedor va a responder sobre

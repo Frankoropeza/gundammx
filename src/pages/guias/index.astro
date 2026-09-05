@@ -14,6 +14,8 @@ const schemas = [
   schemaListado(base, 'Guías de Gunpla para México',
     guias.map((g) => ({ nombre: g.data.titulo, href: `/guias/${g.id}/` }))),
 ];
+import HubImagen from '@components/HubImagen.astro';
+import imgGuias from '../../assets/hub-guias.jpg';
 ---
 
 <BaseLayout
@@ -22,6 +24,8 @@ const schemas = [
   schemas={schemas}
 >
   <Breadcrumbs items={migas} />
+
+  <HubImagen src={imgGuias} id="hub-guias" />
 
   <div class="grid-page py-8">
     <h1 class="display text-3xl md:text-4xl">Guías</h1>

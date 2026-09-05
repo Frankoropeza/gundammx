@@ -18,7 +18,7 @@ export async function rutasIndexables(): Promise<{ url: string; lastmod?: string
   // Fijas
   ['/', '/universos/', '/series/', '/mobile-suits/', '/personajes/', '/gunpla/', '/cronologia/', '/articulos/',
    '/tiendas/', '/tiendas/en-linea/', '/tiendas/verificadas/', '/kits/', '/guias/', '/noticias/',
-   '/eventos/', '/servicios/', '/comunidad/', '/metodologia/', '/aviso-legal/', '/alta-de-tienda/', '/reportar/']
+   '/eventos/', '/servicios/', '/comunidad/', '/metodologia/', '/aviso-legal/', '/creditos/', '/alta-de-tienda/', '/reportar/']
     .forEach((u) => add(u));
 
   // Archivo editorial

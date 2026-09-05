@@ -19,6 +19,9 @@ codigo: MS-UC-MSZ-006
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Zeta_Gundam
 actualizado: '2026-09-05'
+imagen: ../../assets/ms-zeta.jpg
+imagen_alt: "Model kit del MSZ-006 Zeta Gundam armado."
+imagen_credito: ms-zeta
 ---
 
 El MSZ-006 Zeta Gundam introdujo en la franquicia el mobile suit transformable: en modo Waverider es una nave

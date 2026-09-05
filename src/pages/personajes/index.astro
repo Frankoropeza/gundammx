@@ -9,9 +9,13 @@ const n = await nombres();
 const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Personajes', href: '/personajes/' }];
 const schemas = [schemaMigaDePan(base, migas), schemaColeccion(base, { nombre: 'Personajes de Gundam', descripcion: 'Pilotos y protagonistas por universo.', items: pilotos.map((p) => ({ nombre: p.data.nombre, href: `/personajes/${p.id}/` })) })];
+import HubImagen from '@components/HubImagen.astro';
+import imgPersonajes from '../../assets/hub-personajes.jpg';
 ---
 <BaseLayout titulo="Personajes de Gundam | Pilotos y facciones" descripcion={`Los personajes de Gundam por universo: ${pilotos.length} fichas de pilotos y protagonistas con su facción, su serie de origen y los mobile suits que conducen.`} schemas={schemas}>
   <Breadcrumbs items={migas} />
+
+  <HubImagen src={imgPersonajes} id="hub-personajes" />
   <div class="grid-page py-10">
     <p class="class-line">Archivo</p>
     <h1 class="display mt-3 text-4xl md:text-5xl">Personajes</h1>

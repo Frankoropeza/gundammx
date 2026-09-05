@@ -12,9 +12,13 @@ const porUniverso = [...new Set(ms.map((m) => m.data.universo))].map((u) => ({ u
 const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Mobile Suits', href: '/mobile-suits/' }];
 const schemas = [schemaMigaDePan(base, migas), schemaColeccion(base, { nombre: 'Mobile suits de Gundam', descripcion: 'Fichas técnicas por universo.', items: ms.map((m) => ({ nombre: `${m.data.designacion} ${m.data.nombre}`, href: `/mobile-suits/${m.id}/` })) })];
+import HubImagen from '@components/HubImagen.astro';
+import imgMobileSuits from '../../assets/hub-mobile-suits.jpg';
 ---
 <BaseLayout titulo="Mobile Suits de Gundam | Fichas por universo" descripcion={`Los mobile suits de Gundam, máquina por máquina: ${ms.length} fichas con designación, facción, piloto, primera aparición y los kits de Gunpla que existen de cada una.`} schemas={schemas}>
   <Breadcrumbs items={migas} />
+
+  <HubImagen src={imgMobileSuits} id="hub-mobile-suits" />
   <div class="grid-page py-10">
     <p class="class-line">Archivo</p>
     <h1 class="display mt-3 text-4xl md:text-5xl">Mobile suits</h1>

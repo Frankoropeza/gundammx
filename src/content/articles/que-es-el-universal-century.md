@@ -12,6 +12,9 @@ referencias:
   - { titulo: 'Universal Century — Wikipedia', url: 'https://en.wikipedia.org/wiki/Universal_Century' }
   - { titulo: 'Mobile Suit Gundam — Wikipedia', url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam' }
   - { titulo: 'Mobile Suit Gundam Unicorn — Wikipedia', url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Unicorn' }
+imagen: ../../assets/art-universal-century.jpg
+imagen_alt: "Model kit del RX-0 Unicorn Gundam en modo unicornio."
+imagen_credito: art-universal-century
 ---
 
 "Universal Century" es el nombre del calendario en que transcurre la serie original de Gundam y todas sus

@@ -22,6 +22,8 @@ const schemas = [
   schemaMigaDePan(base, migas),
   schemaListado(base, 'Tiendas de Gundam en México', tiendas.map((t) => ({ nombre: t.data.nombre, href: `/tienda/${t.id}/` }))),
 ];
+import HubImagen from '@components/HubImagen.astro';
+import imgTiendas from '../../assets/hub-tiendas.jpg';
 ---
 
 <BaseLayout
@@ -30,6 +32,8 @@ const schemas = [
   schemas={schemas}
 >
   <Breadcrumbs items={migas} />
+
+  <HubImagen src={imgTiendas} id="hub-tiendas" />
 
   <div class="grid-page py-10">
     <header class="max-w-3xl">

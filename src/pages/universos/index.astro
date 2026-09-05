@@ -8,9 +8,13 @@ const universos = await universosConContenido();
 const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Universos', href: '/universos/' }];
 const schemas = [schemaMigaDePan(base, migas), schemaColeccion(base, { nombre: 'Universos de Gundam', descripcion: 'Las líneas temporales de la franquicia.', items: universos.map((u) => ({ nombre: u.data.nombre, href: `/universos/${u.id}/` })) })];
+import HubImagen from '@components/HubImagen.astro';
+import imgUniversos from '../../assets/hub-universos.jpg';
 ---
 <BaseLayout titulo="Universos de Gundam | Las siete líneas temporales" descripcion="Los universos de Gundam explicados: Universal Century, After Colony, Cosmic Era, Anno Domini, Post Disaster, Ad Stella y Correct Century, con su serie de entrada." schemas={schemas}>
   <Breadcrumbs items={migas} />
+
+  <HubImagen src={imgUniversos} id="hub-universos" />
   <div class="grid-page pt-10"><p class="class-line">Archivo</p><h1 class="display mt-3 text-4xl md:text-5xl">Universos</h1><p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">Gundam no es una historia continua sino siete calendarios independientes. Solo uno de ellos —el Universal Century— exige seguir un orden.</p></div>
   <UniverseNavigator universos={universos} />
 </BaseLayout>

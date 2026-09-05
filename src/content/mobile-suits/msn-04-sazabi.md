@@ -19,6 +19,9 @@ codigo: MS-UC-MSN-04
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_Char%27s_Counterattack
 actualizado: '2026-09-05'
+imagen: ../../assets/ms-sazabi.jpg
+imagen_alt: "Model kit del MSN-04 Sazabi armado."
+imagen_credito: ms-sazabi
 ---
 
 El MSN-04 Sazabi es la máquina con la que Char Aznable lidera Neo Zeon en UC 0093. Construido por Anaheim

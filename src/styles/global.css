@@ -1,20 +1,14 @@
 /* Tipografías autoalojadas: solo el subconjunto latino que usa el sitio. Licencias en /fonts/LICENCIAS.txt */
 @font-face {
-  font-family: 'Instrument Serif';
+  font-family: 'Archivo Variable';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
   font-display: swap;
-  src: url('/fonts/instrument-serif-latin-400-normal.woff2') format('woff2');
+  src: url('/fonts/archivo-latin-standard-normal.woff2') format('woff2-variations');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-@font-face {
-  font-family: 'Instrument Serif';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/instrument-serif-latin-400-italic.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
+
 @font-face {
   font-family: 'Inter Variable';
   font-style: normal;
@@ -138,7 +132,21 @@
   .grid-page { @apply w-full px-5 sm:px-8 lg:px-12 xl:px-16; }
 
   .eyebrow { @apply font-mono text-xs uppercase tracking-[0.14em] text-ink-2; }
-  .display { @apply font-serif font-normal tracking-[-0.01em] text-ink; }
+  /* Titulares: Archivo ensanchada. Masa de placa, no de serifa editorial. */
+  .display {
+    @apply font-display text-ink;
+    font-variation-settings: 'wdth' 112, 'wght' 680;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+  /* Wordmark: ancho máximo del eje, peso 800, versalitas apagadas. */
+  .wordmark {
+    @apply font-display uppercase text-ink;
+    font-variation-settings: 'wdth' 125, 'wght' 800;
+    letter-spacing: -0.03em;
+    font-feature-settings: 'case' 1;
+  }
+  .wordmark .mx { @apply text-brand; }
 
   .rule { @apply border-t border-line; }
 

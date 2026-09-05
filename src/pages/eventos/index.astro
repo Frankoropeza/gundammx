@@ -29,6 +29,8 @@ const schemas = [
     urlOficial: e.data.url_oficial,
   })),
 ];
+import HubImagen from '@components/HubImagen.astro';
+import imgEventos from '../../assets/hub-eventos.jpg';
 ---
 
 <BaseLayout
@@ -37,6 +39,8 @@ const schemas = [
   schemas={schemas}
 >
   <Breadcrumbs items={migas} />
+
+  <HubImagen src={imgEventos} id="hub-eventos" />
 
   <div class="grid-page py-8">
     <h1 class="display text-3xl md:text-4xl">Eventos en México</h1>

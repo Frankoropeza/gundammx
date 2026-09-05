@@ -19,6 +19,9 @@ codigo: MS-AD-GN-001
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_00
 actualizado: '2026-09-05'
+imagen: ../../assets/ms-exia.jpg
+imagen_alt: "Model kit Real Grade del GN-001 Gundam Exia."
+imagen_credito: ms-exia
 ---
 
 El GN-001 Gundam Exia es una de las cuatro máquinas de tercera generación de Celestial Being y la de Setsuna F.

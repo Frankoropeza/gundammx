@@ -20,6 +20,8 @@ const schemas = [
   schemaListado(base, 'Comunidad Gunpla en México',
     nodos.map((n) => ({ nombre: n.data.nombre, href: '/comunidad/' }))),
 ];
+import HubImagen from '@components/HubImagen.astro';
+import imgComunidad from '../../assets/hub-comunidad.jpg';
 ---
 
 <BaseLayout
@@ -28,6 +30,8 @@ const schemas = [
   schemas={schemas}
 >
   <Breadcrumbs items={migas} />
+
+  <HubImagen src={imgComunidad} id="hub-comunidad" />
 
   <div class="grid-page py-8">
     <h1 class="display text-3xl md:text-4xl">Comunidad</h1>

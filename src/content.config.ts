@@ -42,6 +42,7 @@ const tiendas = defineCollection({
     // Imagen propia o autorizada por la tienda. NUNCA box art ni material de terceros.
     imagen: image().optional(),
     imagen_alt: z.string().optional(),
+    imagen_credito: z.string().optional(),
     galeria: z.array(z.object({ src: image(), alt: z.string() })).default([]),
 
     zonas_cobertura: z.array(z.string()).default([]),
@@ -162,7 +163,7 @@ const noticias = defineCollection({
 
 const guides = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/guides' }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
     titulo: z.string(),
     descripcion: z.string(),
     nivel: z.enum(['principiante', 'intermedio', 'avanzado']),
@@ -171,6 +172,9 @@ const guides = defineCollection({
     orden: z.number().default(50),
     tiendas_relacionadas: z.array(z.string()).default([]),
     kits_relacionados: z.array(z.string()).default([]),
+    imagen: image().optional(),
+    imagen_alt: z.string().optional(),
+    imagen_credito: z.string().optional(),   // clave en src/config/creditos-imagenes.ts
     borrador: z.boolean().default(false),
   }),
 });
@@ -255,6 +259,7 @@ const universes = defineCollection({
     serie_de_entrada: z.string(),           // id de la serie recomendada para empezar
     imagen: image().optional(),
     imagen_alt: z.string().optional(),
+    imagen_credito: z.string().optional(),
     ...base,
   }),
 });
@@ -285,6 +290,7 @@ const series = defineCollection({
     disponibilidad_mx: z.array(z.string()).default([]),   // dónde verla en México, si se verificó
     imagen: image().optional(),
     imagen_alt: z.string().optional(),
+    imagen_credito: z.string().optional(),
     ...base,
   }),
 });
@@ -306,6 +312,7 @@ const mobileSuits = defineCollection({
     kits: z.array(z.string()).default([]),  // ids de la colección kits (Gunpla)
     imagen: image().optional(),
     imagen_alt: z.string().optional(),
+    imagen_credito: z.string().optional(),
     ...base,
   }),
 });
@@ -323,6 +330,7 @@ const pilots = defineCollection({
     resumen: z.string(),
     imagen: image().optional(),
     imagen_alt: z.string().optional(),
+    imagen_credito: z.string().optional(),
     ...base,
   }),
 });
@@ -368,6 +376,7 @@ const articles = defineCollection({
     series: z.array(z.string()).default([]),
     imagen: image().optional(),
     imagen_alt: z.string().optional(),
+    imagen_credito: z.string().optional(),   // clave en src/config/creditos-imagenes.ts
     referencias: z.array(z.object({ titulo: z.string(), url: z.string().url() })).min(1),
     borrador: z.boolean().default(false),
   }),

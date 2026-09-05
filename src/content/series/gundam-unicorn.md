@@ -22,6 +22,9 @@ codigo: SER-UC-0096
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Unicorn
 actualizado: '2026-09-05'
+imagen: ../../assets/art-universal-century.jpg
+imagen_alt: "Model kit del RX-0 Unicorn Gundam, protagonista de la serie."
+imagen_credito: art-universal-century
 ---
 
 Siete episodios de OVA de larga duración (2010–2014), adaptados de las novelas de Harutoshi Fukui. *Unicorn*

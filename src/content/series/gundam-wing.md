@@ -23,6 +23,9 @@ fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Wing
   - https://doblaje.fandom.com/es/wiki/Gundam_Wing
 actualizado: '2026-09-05'
+imagen: ../../assets/ms-wing.jpg
+imagen_alt: "Model kit del XXXG-01W Wing Gundam, protagonista de la serie."
+imagen_credito: ms-wing
 ---
 
 *Gundam Wing* fue la primera serie de la franquicia pensada desde el inicio como línea alternativa completa,

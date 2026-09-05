@@ -19,6 +19,8 @@ const schemas = [
   schemaListado(base, 'Kits de Gunpla con precio de referencia en México',
     kits.map((k) => ({ nombre: k.data.nombre, href: `/kit/${k.id}/` }))),
 ];
+import HubImagen from '@components/HubImagen.astro';
+import imgKits from '../../assets/hub-kits.jpg';
 ---
 
 <BaseLayout
@@ -27,6 +29,8 @@ const schemas = [
   schemas={schemas}
 >
   <Breadcrumbs items={migas} />
+
+  <HubImagen src={imgKits} id="hub-kits" />
 
   <div class="grid-page py-8">
     <h1 class="display text-3xl md:text-4xl">Kits y precios de referencia</h1>

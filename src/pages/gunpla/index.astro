@@ -16,9 +16,13 @@ const verificadas = await tiendasVerificadas();
 const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Gunpla', href: '/gunpla/' }];
 const schemas = [schemaMigaDePan(base, migas), schemaColeccion(base, { nombre: 'Gunpla: grados, kits y tiendas en México', descripcion: 'Hub del hobby.', items: grados.map((g) => ({ nombre: g.data.nombre, href: `/gunpla/${g.id}/` })) })];
+import HubImagen from '@components/HubImagen.astro';
+import imgGunpla from '../../assets/hub-gunpla.jpg';
 ---
 <BaseLayout titulo="Gunpla México | Grados, precios y dónde comprar" descripcion="Gunpla explicado para México: los grados Entry, High, Real, Master y Perfect, cuál conviene de primer kit y en qué tiendas Gundam comprarlo." schemas={schemas}>
   <Breadcrumbs items={migas} />
+
+  <HubImagen src={imgGunpla} id="hub-gunpla" />
   <div class="grid-page pt-10">
     <p class="class-line">Hobby</p>
     <h1 class="display mt-3 text-4xl md:text-5xl">Gunpla</h1>

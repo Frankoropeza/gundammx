@@ -19,6 +19,9 @@ codigo: MS-UC-RX-78-2
 fuentes:
   - https://en.wikipedia.org/wiki/RX-78-2_Gundam
 actualizado: '2026-09-05'
+imagen: ../../assets/gui-original.jpg
+imagen_alt: "Model kit Real Grade del RX-78-2 expuesto en una vitrina."
+imagen_credito: gui-original
 ---
 
 El RX-78-2 es el origen de la palabra "Gundam" y el molde de casi todo lo que vino después: un prototipo

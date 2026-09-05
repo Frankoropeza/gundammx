@@ -22,6 +22,9 @@ codigo: SER-UC-0087
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Zeta_Gundam
 actualizado: '2026-09-05'
+imagen: ../../assets/ms-zeta.jpg
+imagen_alt: "Model kit del MSZ-006 Zeta Gundam, protagonista de la serie."
+imagen_credito: ms-zeta
 ---
 
 *Zeta Gundam* parte de una premisa incómoda: los buenos de la primera serie ganaron y se volvieron los malos.

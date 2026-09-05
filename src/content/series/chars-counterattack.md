@@ -20,6 +20,9 @@ codigo: SER-UC-0093
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_Char%27s_Counterattack
 actualizado: '2026-09-05'
+imagen: ../../assets/ms-nu.jpg
+imagen_alt: "Model kit del RX-93 Nu Gundam, protagonista de la película."
+imagen_credito: ms-nu
 ---
 
 La primera película de Gundam con historia original —las anteriores eran recopilaciones— y el final de la

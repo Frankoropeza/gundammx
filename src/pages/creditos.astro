@@ -1,0 +1,67 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import { CREDITOS } from '@config/creditos-imagenes';
+import { schemaMigaDePan } from '@lib/seo';
+
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [{ nombre: 'Créditos de imágenes', href: '/creditos/' }];
+const items = Object.entries(CREDITOS).sort(([a], [b]) => a.localeCompare(b));
+const porLicencia = items.reduce<Record<string, number>>((acc, [, c]) => {
+  acc[c.licencia] = (acc[c.licencia] ?? 0) + 1;
+  return acc;
+}, {});
+---
+
+<BaseLayout
+  titulo="Créditos de imágenes | Autoría y licencias"
+  descripcion="Autoría, licencia y fuente de cada fotografía usada en GUNDAMMX. Todas son de banco con licencia libre para uso comercial y obra derivada."
+  schemas={[schemaMigaDePan(base, migas)]}
+>
+  <Breadcrumbs items={migas} />
+
+  <div class="grid-page py-10">
+    <header class="max-w-3xl">
+      <p class="eyebrow">El proyecto</p>
+      <h1 class="display mt-3 text-4xl md:text-5xl text-balance">Créditos de imágenes</h1>
+      <p class="mt-5 text-lg text-ink-2 text-pretty">
+        Ninguna fotografía de este sitio es propia todavía. Todas vienen de bancos con licencia libre que
+        permite uso comercial y obra derivada, y todas están recortadas y recomprimidas. Aquí está el autor,
+        la licencia y el enlace al original de cada una, como exigen las licencias CC BY y CC BY-SA.
+      </p>
+      <p class="mt-4 max-w-prose text-sm text-ink-2">
+        Las fotografías muestran model kits de plástico. GUNDAMMX es un archivo independiente: no está
+        afiliado a Bandai Namco, Sunrise ni Sotsu, y ninguna de estas imágenes se usa como logotipo,
+        favicon ni imagen de marca.
+      </p>
+      <p class="mt-6 flex flex-wrap gap-2">
+        {Object.entries(porLicencia).map(([lic, n]) => <span class="tag">{lic} · {n}</span>)}
+      </p>
+    </header>
+
+    <div class="table-scroll mt-10">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Archivo</th>
+            <th scope="col">Título original</th>
+            <th scope="col">Autoría</th>
+            <th scope="col">Licencia</th>
+            <th scope="col">Fuente</th>
+          </tr>
+        </thead>
+        <tbody>
+          {items.map(([id, c]) => (
+            <tr>
+              <td class="font-mono text-xs text-ink-2">{id}</td>
+              <td>{c.titulo}</td>
+              <td>{c.autor}</td>
+              <td><a href={c.licenciaUrl} class="link-quiet" rel="nofollow noopener license" target="_blank">{c.licencia}</a></td>
+              <td><a href={c.fuente} class="link-quiet" rel="nofollow noopener" target="_blank">Original</a></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</BaseLayout>

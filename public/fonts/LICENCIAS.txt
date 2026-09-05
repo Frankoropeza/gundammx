@@ -1,13 +1,18 @@
 Tipografías autoalojadas en gundam.mx
 =====================================
 
-Instrument Serif — Copyright 2022 The Instrument Serif Project Authors
-  https://github.com/Instrument/instrument-serif
+Archivo — Copyright 2019 The Archivo Project Authors (Omnibus-Type)
+  https://github.com/Omnibus-Type/Archivo
+  Variable: ejes wght 100–900 y wdth 62–125. Titulares y wordmark.
 Inter — Copyright 2016 The Inter Project Authors
   https://github.com/rsms/inter
+  Variable: eje wght 100–900. Interfaz y cuerpo de texto.
 JetBrains Mono — Copyright 2020 The JetBrains Mono Project Authors
   https://github.com/JetBrains/JetBrainsMono
+  Variable: eje wght 100–800. Datos, etiquetas y eyebrows.
 
 Las tres se distribuyen bajo la SIL Open Font License, Version 1.1
-(https://openfontlicense.org). Los archivos .woff2 de esta carpeta son los
-subconjuntos latinos publicados por Fontsource.
+(https://openfontlicense.org). Los .woff2 de esta carpeta parten de los
+subconjuntos latinos de Fontsource; Archivo se resubsetea con pyftsubset
+al mismo unicode-range que las demás (latin básico + puntuación),
+conservando ambos ejes variables.

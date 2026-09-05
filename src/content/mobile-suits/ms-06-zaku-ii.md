@@ -19,6 +19,9 @@ codigo: MS-UC-MS-06
 fuentes:
   - https://en.wikipedia.org/wiki/Zaku_II
 actualizado: '2026-09-05'
+imagen: ../../assets/ms-zaku-ii.jpg
+imagen_alt: "Model kit del MS-06S Zaku II armado."
+imagen_credito: ms-zaku-ii
 ---
 
 Si el Gundam es el prototipo, el Zaku es el ejército. El MS-06 Zaku II fue el mobile suit de producción en masa

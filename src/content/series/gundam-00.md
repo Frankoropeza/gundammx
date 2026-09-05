@@ -21,6 +21,9 @@ codigo: SER-AD-2307
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_00
 actualizado: '2026-09-05'
+imagen: ../../assets/ms-exia.jpg
+imagen_alt: "Model kit del GN-001 Gundam Exia, protagonista de la serie."
+imagen_credito: ms-exia
 ---
 
 Dos temporadas de 25 episodios (2007–2009) y una película (2010). *Gundam 00* transcurre en el año 2307 de

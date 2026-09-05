@@ -16,6 +16,9 @@ referencias:
   - { titulo: 'Mobile Suit Gundam Wing — Disney+', url: 'https://www.disneyplus.com/es-us/browse/entity-ca21d947-e5b1-4c5d-b973-f638016b112c' }
   - { titulo: 'GUNDAM: ver en YouTube — sitio oficial', url: 'https://es.gundam-official.com/feature/gwoy/' }
   - { titulo: 'Gundam Requiem for Vengeance — Netflix', url: 'https://about.netflix.com/en/news/trailer-gundam-requiem-for-vengeance-coming-to-netflix-october-17' }
+imagen: ../../assets/art-donde-ver.jpg
+imagen_alt: "Model kit expuesto en el mostrador de una tienda de hobby."
+imagen_credito: art-donde-ver
 ---
 
 No hay una sola plataforma con "todo Gundam". La franquicia está repartida entre servicios de suscripción,

@@ -11,6 +11,9 @@ series: [gundam-wing]
 referencias:
   - { titulo: 'Mobile Suit Gundam Wing — Wikipedia', url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Wing' }
   - { titulo: 'Gundam Wing — Doblaje Wiki', url: 'https://doblaje.fandom.com/es/wiki/Gundam_Wing' }
+imagen: ../../assets/art-gundam-wing.jpg
+imagen_alt: "Primer plano de un model kit del Wing Gundam Zero Kai."
+imagen_credito: art-gundam-wing
 ---
 
 *Gundam Wing* no fue la primera serie de Gundam ni la más ambiciosa, pero sí la que Sunrise diseñó para poder

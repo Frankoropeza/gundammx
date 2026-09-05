@@ -37,7 +37,7 @@ const schemas = [schemaMigaDePan(base, migas), schemaArticulo(base, { titulo: d.
         <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">{d.resumen}</p>
         <MetadataRow class="mt-8" items={[{ etiqueta: 'Autoría', valor: d.autor }, { etiqueta: 'Universos', valor: d.universos.map((u) => nombreUniverso(u)).join(', ') }, { etiqueta: 'Referencias', valor: String(d.referencias.length) }]} />
       </div>
-      <div class="lg:col-span-5"><Figura src={d.imagen} alt={d.imagen_alt} codigo={`ART-${articulo.id.toUpperCase().slice(0, 18)}`} prioridad ratio="aspect-[4/3]" /></div>
+      <div class="lg:col-span-5"><Figura src={d.imagen} alt={d.imagen_alt} credito={d.imagen_credito} codigo={`ART-${articulo.id.toUpperCase().slice(0, 18)}`} prioridad ratio="aspect-[4/3]" /></div>
     </header>
     <div class="mt-12 grid gap-10 lg:grid-cols-12">
       <div class="lg:col-span-7">

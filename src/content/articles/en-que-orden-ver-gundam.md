@@ -12,6 +12,9 @@ referencias:
   - { titulo: 'Mobile Suit Gundam — Wikipedia', url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam' }
   - { titulo: 'Universal Century — Wikipedia', url: 'https://en.wikipedia.org/wiki/Universal_Century' }
   - { titulo: 'The Witch from Mercury — Wikipedia', url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_The_Witch_from_Mercury' }
+imagen: ../../assets/art-orden.jpg
+imagen_alt: "Varios model kits de distintas series expuestos juntos en una vitrina."
+imagen_credito: art-orden
 ---
 
 La pregunta más repetida sobre Gundam es también la que peor se responde. Quien la hace suele recibir una

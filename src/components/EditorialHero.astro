@@ -20,13 +20,13 @@ const { sello, titulo, destaque, entrada, busqueda, acciones, contexto } = Astro
         <span class="hidden whitespace-nowrap sm:inline">Actualizado {sello.actualizado}</span>
       </p>
 
-      <h1 id="hero-h" class="display mt-7 text-[2.6rem] leading-[1.04] md:text-[3.4rem] xl:text-[4.1rem] text-balance">
+      <h1 id="hero-h" class="display mt-7 text-[2.6rem] leading-[1.04] md:text-[3.4rem] xl:text-[4.1rem]">
         {titulo} <em class="italic text-ink-2">{destaque}</em>
       </h1>
 
-      <p class="mt-7 max-w-[52ch] text-lg leading-relaxed text-ink-2 text-pretty">{entrada}</p>
+      <p class="mt-7 text-lg leading-relaxed text-ink-2 text-pretty">{entrada}</p>
 
-      <div class="mt-9 max-w-2xl">
+      <div class="mt-9">
         <SearchBar placeholder="Busca una serie, un mobile suit, un kit o una tienda" />
         <p class="mt-3 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">{busqueda.sugerencia}</p>
       </div>

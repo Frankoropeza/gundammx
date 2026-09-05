@@ -5,6 +5,9 @@ nivel: principiante
 fecha: 2026-09-04
 actualizada: '2026-09-04'
 orden: 1
+imagen: ../../assets/gui-donde-comprar.jpg
+imagen_alt: "Entrada de la tienda The Gundam Base en Tokio."
+imagen_credito: gui-donde-comprar
 ---
 
 En México hay cuatro formas de comprar un model kit, y cada una resuelve un problema distinto.

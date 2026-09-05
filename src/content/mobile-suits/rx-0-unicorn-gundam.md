@@ -19,6 +19,9 @@ codigo: MS-UC-RX-0
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Unicorn
 actualizado: '2026-09-05'
+imagen: ../../assets/art-universal-century.jpg
+imagen_alt: "Model kit del RX-0 Unicorn Gundam en modo unicornio."
+imagen_credito: art-universal-century
 ---
 
 El RX-0 Unicorn Gundam es el primer mobile suit con armazón de psicoframe completo, desarrollado por Anaheim

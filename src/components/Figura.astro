@@ -2,12 +2,25 @@
 /** Imagen propia/licenciada si existe; si no, marco pendiente. Dimensiones fijas: cero CLS. */
 import { Image } from 'astro:assets';
 import ImagenPendiente from '@components/ImagenPendiente.astro';
+import { CREDITOS } from '@config/creditos-imagenes';
 interface Props {
   src?: ImageMetadata; alt?: string; codigo: string; ancho?: number; alto?: number;
-  prioridad?: boolean; class?: string; ratio?: string;
+  prioridad?: boolean; class?: string; ratio?: string; credito?: string;
 }
-const { src, alt = '', codigo, ancho = 1600, alto = 1000, prioridad = false, class: cls = '', ratio = 'aspect-[16/10]' } = Astro.props;
+const { src, alt = '', codigo, ancho = 1600, alto = 1000, prioridad = false, class: cls = '', ratio = 'aspect-[16/10]', credito } = Astro.props;
+const c = credito ? CREDITOS[credito] : undefined;
+if (credito && !c) throw new Error(`Falta el crédito de la imagen "${credito}" en src/config/creditos-imagenes.ts`);
 ---
 {src
-  ? <Image src={src} alt={alt} width={ancho} height={alto} class:list={['w-full object-cover', ratio, cls]} loading={prioridad ? 'eager' : 'lazy'} fetchpriority={prioridad ? 'high' : undefined} decoding="async" />
+  ? (
+    <figure>
+      <Image src={src} alt={alt || c?.alt || ''} width={ancho} height={alto} class:list={['w-full border border-line object-cover', ratio, cls]} loading={prioridad ? 'eager' : 'lazy'} fetchpriority={prioridad ? 'high' : undefined} decoding="async" />
+      {c && (
+        <figcaption class="mt-2 font-mono text-[10px] uppercase tracking-[0.14em] text-ink-3">
+          Foto de <a href={c.fuente} class="link-quiet" rel="nofollow noopener" target="_blank">{c.autor}</a>
+          · <a href={c.licenciaUrl} class="link-quiet" rel="nofollow noopener license" target="_blank">{c.licencia}</a> · Recortada
+        </figcaption>
+      )}
+    </figure>
+  )
   : <ImagenPendiente codigo={codigo} ratio={ratio} class={cls} />}
