@@ -1,0 +1,20 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { fechaCorta } from '@lib/precio';
+interface Props { articulo: CollectionEntry<'articles'>; grande?: boolean; folio?: number }
+const { articulo, grande = false, folio } = Astro.props;
+const d = articulo.data;
+const temas: Record<string, string> = { universo: 'Universo', series: 'Series', 'mobile-suits': 'Mobile suits', gunpla: 'Gunpla', mexico: 'México', guia: 'Guía' };
+---
+<article class="group relative flex flex-col gap-3 border-t border-line pt-5">
+  <p class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">
+    {folio !== undefined && <span class="folio">{String(folio).padStart(2, '0')}</span>}
+    <span>{temas[d.tema]}</span><span aria-hidden="true">·</span>
+    <time datetime={d.fecha.toISOString()}>{fechaCorta(d.fecha)}</time><span aria-hidden="true">·</span>
+    <span>{d.lectura_min} min</span>
+  </p>
+  <h3 class:list={['display leading-tight', grande ? 'text-3xl md:text-4xl' : 'text-xl md:text-2xl']}>
+    <a href={`/articulos/${articulo.id}/`} class="after:absolute after:inset-0 after:content-['']">{d.titulo}</a>
+  </h3>
+  <p class="max-w-prose text-sm text-ink-2 text-pretty">{d.resumen}</p>
+</article>

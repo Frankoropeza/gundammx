@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import SeriesRail from '@components/SeriesRail.astro';
+import { seriesPorRuta, publicado } from '@lib/archivo';
+import { UNIVERSOS_META, type UniversoId } from '@config/site';
+import { schemaColeccion, schemaMigaDePan } from '@lib/seo';
+const todas = (await getCollection('series', publicado)).sort((a, b) => a.data.anio - b.data.anio);
+const empieza = await seriesPorRuta('empieza-aqui');
+const profundiza = await seriesPorRuta('profundiza');
+const alternativas = await seriesPorRuta('alternativa');
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [{ nombre: 'Series', href: '/series/' }];
+const schemas = [schemaMigaDePan(base, migas), schemaColeccion(base, { nombre: 'Series de Gundam', descripcion: 'Fichas de series, OVA y películas de la franquicia.', items: todas.map((s) => ({ nombre: s.data.titulo, href: `/series/${s.id}/` })) })];
+---
+<BaseLayout titulo="Series de Gundam: fichas, orden y por dónde empezar" descripcion={`${todas.length} obras con año, universo, formato, equipo y una recomendación editorial sobre cuándo verlas.`} schemas={schemas}>
+  <Breadcrumbs items={migas} />
+  <div class="grid-page pt-10">
+    <p class="class-line">Archivo</p>
+    <h1 class="display mt-3 text-4xl md:text-5xl">Series</h1>
+    <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">Selección curada, no lista plana. Cada ficha dice cuándo conviene verla, y las agrupamos por ruta de descubrimiento.</p>
+  </div>
+  <SeriesRail eyebrow="Ruta 1" titulo="Empieza aquí" series={empieza} />
+  <SeriesRail eyebrow="Ruta 2" titulo="Profundiza en el Universal Century" series={profundiza} />
+  <SeriesRail eyebrow="Ruta 3" titulo="Alternativas independientes" series={alternativas} />
+  <section class="grid-page py-16" aria-labelledby="todas-h">
+    <h2 id="todas-h" class="class-line">Índice cronológico de producción</h2>
+    <div class="table-scroll mt-5"><table>
+      <thead><tr><th scope="col">Año</th><th scope="col">Obra</th><th scope="col">Universo</th><th scope="col">Formato</th><th scope="col">Episodios</th><th scope="col">Dirección</th></tr></thead>
+      <tbody>{todas.map((s) => (
+        <tr><td class="font-mono tabular text-ink-2">{s.data.anio}</td><td><a href={`/series/${s.id}/`} class="link-quiet font-medium">{s.data.titulo}</a></td><td class="text-ink-2">{UNIVERSOS_META[s.data.universo as UniversoId].corto}</td><td class="text-ink-2 capitalize">{s.data.formato}</td><td class="font-mono tabular text-ink-2">{s.data.episodios ?? '—'}</td><td class="text-ink-2">{s.data.direccion.join(', ')}</td></tr>
+      ))}</tbody>
+    </table></div>
+  </section>
+</BaseLayout>

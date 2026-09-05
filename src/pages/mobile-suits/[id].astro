@@ -1,0 +1,77 @@
+---
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
+import { getCollection, getEntry, render } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import Figura from '@components/Figura.astro';
+import MetadataRow from '@components/MetadataRow.astro';
+import RelatedContent from '@components/RelatedContent.astro';
+import { entradasPorIds, nombreUniverso } from '@lib/archivo';
+import { fechaLarga } from '@lib/precio';
+import { schemaFicha, schemaMigaDePan } from '@lib/seo';
+
+export const getStaticPaths = (async () => {
+  const ms = await getCollection('mobile-suits');
+  const kits = await getCollection('kits');
+  return Promise.all(ms.map(async (m) => ({
+    params: { id: m.id },
+    props: {
+      ms: m,
+      faccion: await getEntry('factions', m.data.faccion),
+      pilotos: await entradasPorIds('pilots', m.data.pilotos),
+      serie: await getEntry('series', m.data.primera_aparicion),
+      relacionados: await entradasPorIds('mobile-suits', m.data.relacionados),
+      kits: kits.filter((k) => m.data.kits.includes(k.id)),
+    },
+  })));
+}) satisfies GetStaticPaths;
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { ms, faccion, pilotos, serie, relacionados, kits } = Astro.props;
+const d = ms.data;
+const { Content } = await render(ms);
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [{ nombre: 'Mobile Suits', href: '/mobile-suits/' }, { nombre: `${d.designacion} ${d.nombre}`, href: `/mobile-suits/${ms.id}/` }];
+const schemas = [schemaMigaDePan(base, migas), schemaFicha(base, { nombre: `${d.designacion} ${d.nombre}`, descripcion: d.resumen, fecha: d.actualizado })];
+---
+<BaseLayout noindex={d.estado_editorial === 'borrador'} titulo={d.seo?.titulo ?? `${d.designacion} ${d.nombre}: ficha técnica`} descripcion={d.seo?.descripcion ?? d.resumen} tipo="article" schemas={schemas}>
+  <Breadcrumbs items={migas} />
+  <article class="grid-page py-10">
+    <header class="grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-6">
+        <p class="archive-code">{d.codigo}</p>
+        <p class="mt-4 font-mono text-lg tracking-wide text-ink">{d.designacion}</p>
+        <h1 class="display mt-1 text-4xl md:text-5xl text-balance">{d.nombre}</h1>
+        <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">{d.resumen}</p>
+      </div>
+      <div class="lg:col-span-6"><Figura src={d.imagen} alt={d.imagen_alt} codigo={d.codigo} prioridad ratio="aspect-[4/3]" /></div>
+    </header>
+    <div class="mt-12 grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-7">
+        <MetadataRow items={[
+          { etiqueta: 'Universo', valor: nombreUniverso(d.universo), href: `/universos/${d.universo}/` },
+          { etiqueta: 'Facción', valor: faccion?.data.nombre ?? d.faccion, href: faccion ? `/facciones/${faccion.id}/` : undefined },
+          { etiqueta: 'Piloto', valor: pilotos.map((p) => p.data.nombre).join(', '), href: pilotos[0] ? `/personajes/${pilotos[0].id}/` : undefined },
+          { etiqueta: 'Primera aparición', valor: serie?.data.titulo ?? '', href: serie ? `/series/${serie.id}/` : undefined },
+          { etiqueta: 'Fabricante', valor: d.fabricante ?? '' },
+          { etiqueta: 'Tipo', valor: d.tipo ?? '' },
+        ]} />
+        {d.especificaciones.length > 0 && (
+          <dl class="mt-8 grid border-l border-t border-line sm:grid-cols-2">
+            {d.especificaciones.map((e) => <div class="border-b border-r border-line p-4"><dt class="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">{e.etiqueta}</dt><dd class="mt-1 text-sm text-ink">{e.valor}</dd></div>)}
+          </dl>
+        )}
+        <div class="prose-ed mt-10"><Content /></div>
+        <section class="mt-10 border-t border-line pt-6" data-pagefind-ignore>
+          <h2 class="class-line">Fuentes</h2>
+          <ul class="mt-3 space-y-1">{d.fuentes.map((f) => <li class="truncate text-sm"><a href={f} class="link" rel="nofollow noopener" target="_blank">{f}</a></li>)}</ul>
+          <p class="mt-3 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">Estado editorial: {d.estado_editorial} · actualizado {fechaLarga(d.actualizado)}</p>
+        </section>
+      </div>
+      <aside class="space-y-10 lg:col-span-4 lg:col-start-9" data-pagefind-ignore>
+        {kits.length > 0 && <RelatedContent titulo="Gunpla de esta máquina" items={kits.map((k) => ({ eyebrow: `${k.data.grado.toUpperCase()} · ${k.data.escala}`, titulo: k.data.nombre, href: `/kit/${k.id}/`, texto: 'Precio de referencia en pesos' }))} />}
+        <RelatedContent titulo="Relacionados" items={relacionados.map((r) => ({ codigo: r.data.designacion, eyebrow: 'Mobile suit', titulo: r.data.nombre, href: `/mobile-suits/${r.id}/` }))} />
+      </aside>
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,48 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props { grados: CollectionEntry<'gunpla'>[]; totalTiendas: number; totalVerificadas: number; guias: { titulo: string; href: string }[] }
+const { grados, totalTiendas, totalVerificadas, guias } = Astro.props;
+---
+<section class="border-y border-line bg-surface" aria-labelledby="gunpla-h">
+  <div class="grid-page grid gap-10 py-16 lg:grid-cols-12 lg:gap-14">
+    <div class="lg:col-span-4">
+      <p class="class-line">Gunpla · hobby</p>
+      <h2 id="gunpla-h" class="display mt-3 text-3xl md:text-4xl">El modelo, aparte de la historia</h2>
+      <p class="mt-4 max-w-prose text-ink-2 text-pretty">
+        Gunpla es el model kit de Bandai. Es un hobby con sus propias reglas —grados, escalas, herramienta, pintura—
+        y un mercado real en México. Aquí lo tratamos como lo que es: modelismo, no ficción.
+      </p>
+      <dl class="mt-8 grid grid-cols-2 gap-6">
+        <div><dd class="display text-3xl tabular">{totalTiendas}</dd><dt class="text-xs text-ink-3">tiendas en el directorio</dt></div>
+        <div><dd class="display text-3xl tabular">{totalVerificadas}</dd><dt class="text-xs text-ink-3">con oferta verificada</dt></div>
+      </dl>
+      <div class="mt-8 flex flex-wrap gap-2">
+        <a href="/gunpla/" class="btn-primary">Entrar al hub Gunpla</a>
+        <a href="/tiendas/" class="btn-secondary">Dónde comprar en México</a>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5">
+      <h3 class="class-line">Grados, de menor a mayor complejidad</h3>
+      <ol class="mt-4 divide-y divide-line border-y border-line">
+        {grados.map((g) => (
+          <li class="flex items-baseline gap-5 py-3">
+            <span class="w-12 shrink-0 font-mono text-sm text-ink">{g.data.etiqueta}</span>
+            <div class="min-w-0 flex-1">
+              <a href={`/gunpla/${g.id}/`} class="link-quiet">{g.data.nombre}</a>
+              <span class="ml-2 font-mono text-xs text-ink-3">{g.data.escala} · desde {g.data.anio_lanzamiento}</span>
+            </div>
+            <span class="shrink-0 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">{g.data.dificultad}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+
+    <div class="lg:col-span-3">
+      <h3 class="class-line">Guías del hobby</h3>
+      <ul class="mt-4 space-y-3">
+        {guias.map((g) => <li><a href={g.href} class="link-quiet text-sm">{g.titulo}</a></li>)}
+      </ul>
+    </div>
+  </div>
+</section>

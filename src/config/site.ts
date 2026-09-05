@@ -6,9 +6,9 @@
 export const SITE = {
   nombre: 'GUNDAMMX',
   nombreLargo: 'GUNDAM MEXICO',
-  descriptor: 'Directorio independiente de tiendas',
+  descriptor: 'Archivo editorial · México',
   descripcion:
-    'Gundam y Gunpla en México: directorio de tiendas verificadas, kits con precio de referencia en pesos, guías de armado, talleres, eventos y comunidad. Independiente y sin afiliación con ninguna marca.',
+    'Portal editorial independiente sobre el universo Gundam en español: universos, series, mobile suits, pilotos, cronologías, Gunpla y un directorio verificado de tiendas en México. Sin afiliación con ninguna marca.',
   // El dominio se resuelve desde astro.config (PUBLIC_SITE_URL). Nunca en duro aquí.
   locale: 'es-MX',
   pais: 'MX',
@@ -31,14 +31,36 @@ export const ENLACES_OFICIALES = [
 ] as const;
 
 export const NAV = [
-  { texto: 'Tiendas', href: '/tiendas/' },
-  { texto: 'Kits', href: '/kits/' },
+  { texto: 'Universos', href: '/universos/' },
+  { texto: 'Series', href: '/series/' },
+  { texto: 'Mobile Suits', href: '/mobile-suits/' },
+  { texto: 'Personajes', href: '/personajes/' },
+  { texto: 'Gunpla', href: '/gunpla/' },
+  { texto: 'Cronología', href: '/cronologia/' },
   { texto: 'Guías', href: '/guias/' },
+] as const;
+
+/** Secciones secundarias (pie y hub Gunpla) */
+export const NAV_SECUNDARIA = [
+  { texto: 'Artículos', href: '/articulos/' },
   { texto: 'Noticias', href: '/noticias/' },
+  { texto: 'Tiendas verificadas', href: '/tiendas/' },
+  { texto: 'Kits y precios', href: '/kits/' },
   { texto: 'Eventos', href: '/eventos/' },
   { texto: 'Servicios', href: '/servicios/' },
   { texto: 'Comunidad', href: '/comunidad/' },
 ] as const;
+
+export const UNIVERSOS_META = {
+  uc: { nombre: 'Universal Century', corto: 'UC' },
+  ac: { nombre: 'After Colony', corto: 'AC' },
+  ce: { nombre: 'Cosmic Era', corto: 'CE' },
+  ad: { nombre: 'Anno Domini', corto: 'AD' },
+  pd: { nombre: 'Post Disaster', corto: 'PD' },
+  as: { nombre: 'Ad Stella', corto: 'AS' },
+  cc: { nombre: 'Correct Century', corto: 'CC' },
+} as const;
+export type UniversoId = keyof typeof UNIVERSOS_META;
 
 export const GRADOS = {
   eg: { etiqueta: 'EG', nombre: 'Entry Grade', escala: '1/144', orden: 1 },

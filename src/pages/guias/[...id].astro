@@ -6,11 +6,11 @@ import ArticleLayout from '@layouts/ArticleLayout.astro';
 import { schemaArticulo, schemaMigaDePan } from '@lib/seo';
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const guias = await getCollection('guias', ({ data }) => !data.borrador);
+  const guias = await getCollection('guides', ({ data }) => !data.borrador);
   return guias.map((g) => ({ params: { id: g.id }, props: { guia: g } }));
 };
 
-interface Props { guia: CollectionEntry<'guias'> }
+interface Props { guia: CollectionEntry<'guides'> }
 
 const { guia } = Astro.props;
 const d = guia.data;

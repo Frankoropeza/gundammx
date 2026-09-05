@@ -1,0 +1,39 @@
+---
+import { SITE, NAV, NAV_SECUNDARIA } from '@config/site';
+import AvisoIndependencia from '@components/AvisoIndependencia.astro';
+const anio = new Date().getFullYear();
+---
+
+<footer class="mt-30 border-t border-line">
+  <div class="grid-page grid gap-10 py-16 md:grid-cols-12">
+    <div class="md:col-span-4">
+      <p class="font-serif text-3xl text-ink">GUNDAM<span class="text-ink-3">MX</span></p>
+      <p class="mt-4 max-w-sm text-sm text-ink-2 text-pretty">{SITE.descripcion}</p>
+      <p class="archive-code mt-6">Archivo editorial · {SITE.ciudad}</p>
+    </div>
+
+    <nav aria-label="Archivo" class="md:col-span-2">
+      <h2 class="class-line">Archivo</h2>
+      <ul class="mt-4 space-y-2">{NAV.map((i) => <li><a href={i.href} class="link-quiet text-sm">{i.texto}</a></li>)}</ul>
+    </nav>
+
+    <nav aria-label="Hobby y México" class="md:col-span-3">
+      <h2 class="class-line">Hobby y México</h2>
+      <ul class="mt-4 space-y-2">{NAV_SECUNDARIA.map((i) => <li><a href={i.href} class="link-quiet text-sm">{i.texto}</a></li>)}</ul>
+    </nav>
+
+    <nav aria-label="El proyecto" class="md:col-span-3">
+      <h2 class="class-line">El proyecto</h2>
+      <ul class="mt-4 space-y-2">
+        <li><a href="/metodologia/" class="link-quiet text-sm">Política de fuentes y verificación</a></li>
+        <li><a href="/alta-de-tienda/" class="link-quiet text-sm">Dar de alta una tienda</a></li>
+        <li><a href="/reportar/" class="link-quiet text-sm">Reportar un error</a></li>
+        <li><a href="/aviso-legal/" class="link-quiet text-sm">Aviso legal y créditos</a></li>
+        <li><span class="font-mono text-sm text-ink-3">{SITE.email}</span></li>
+      </ul>
+    </nav>
+
+    <div class="md:col-span-12"><AvisoIndependencia compacto /></div>
+    <p class="font-mono text-xs text-ink-3 md:col-span-12">© {anio} {SITE.nombre} · {SITE.nombreLargo}. Textos propios; datos con fuente citada en cada ficha.</p>
+  </div>
+</footer>

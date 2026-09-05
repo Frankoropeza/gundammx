@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { UNIVERSOS_META } from '@config/site';
+import Figura from '@components/Figura.astro';
+interface Props { titulo: string; eyebrow: string; series: CollectionEntry<'series'>[]; verTodo?: { texto: string; href: string } }
+const { titulo, eyebrow, series, verTodo } = Astro.props;
+const formato: Record<string, string> = { tv: 'Serie TV', ova: 'OVA', pelicula: 'Película', ona: 'Serie web' };
+---
+{series.length > 0 && (
+  <section class="grid-page py-16" aria-label={titulo}>
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <p class="class-line">{eyebrow}</p>
+        <h2 class="display mt-3 text-3xl md:text-4xl">{titulo}</h2>
+      </div>
+      {verTodo && <a href={verTodo.href} class="link text-sm">{verTodo.texto}</a>}
+    </div>
+    <ol class="mt-10 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+      {series.map((s) => (
+        <li class="card group relative">
+          <Figura src={s.data.imagen} alt={s.data.imagen_alt} codigo={s.data.codigo} ratio="aspect-[16/9]" />
+          <div class="flex flex-1 flex-col p-6">
+            <p class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">
+              <span>{s.data.anio}</span><span aria-hidden="true">·</span>
+              <span>{UNIVERSOS_META[s.data.universo].corto}</span><span aria-hidden="true">·</span>
+              <span>{formato[s.data.formato]}{s.data.episodios ? ` · ${s.data.episodios} ep.` : ''}</span>
+            </p>
+            <h3 class="display mt-3 text-2xl leading-tight">
+              <a href={`/series/${s.id}/`} class="after:absolute after:inset-0 after:content-['']">{s.data.titulo}</a>
+            </h3>
+            <p class="mt-3 text-sm text-ink-2 text-pretty">{s.data.resumen}</p>
+            <p class="mt-auto border-t border-line pt-4 text-sm text-ink"><span class="text-ink-3">Por qué importa · </span>{s.data.relevancia}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+)}

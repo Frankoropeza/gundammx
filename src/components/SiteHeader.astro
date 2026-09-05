@@ -1,0 +1,59 @@
+---
+import { SITE, NAV } from '@config/site';
+import ThemeToggle from '@components/ThemeToggle.astro';
+import SearchDialog from '@components/SearchDialog.astro';
+const ruta = Astro.url.pathname;
+const activo = (href: string) => (href === '/' ? ruta === '/' : ruta.startsWith(href));
+---
+
+<header class="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur-sm">
+  <div class="grid-page flex h-16 items-center gap-6">
+    <a href="/" class="flex shrink-0 items-baseline gap-3" aria-label="GUNDAMMX, inicio">
+      <span class="font-serif text-[1.75rem] leading-none tracking-tight text-ink">GUNDAM<span class="text-ink-3">MX</span></span>
+      <span class="hidden whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3 xl:inline">{SITE.descriptor}</span>
+    </a>
+
+    <nav aria-label="Principal" class="hidden flex-1 md:block">
+      <ul class="flex items-center justify-center gap-6">
+        {NAV.map((i) => (
+          <li>
+            <a href={i.href} aria-current={activo(i.href) ? 'page' : undefined}
+              class:list={['whitespace-nowrap text-sm transition-colors hover:text-ink', activo(i.href) ? 'text-ink underline decoration-accent underline-offset-[7px]' : 'text-ink-2']}>{i.texto}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="ml-auto flex items-center gap-1">
+      <button type="button" data-abrir-busqueda class="btn-ghost gap-2" aria-label="Abrir búsqueda">
+        <span class="font-mono text-xs uppercase tracking-[0.14em]">Buscar</span>
+        <kbd class="hidden rounded-sm border border-line px-1.5 font-mono text-[10px] text-ink-3 lg:inline">⌘K</kbd>
+      </button>
+      <ThemeToggle />
+      <button id="menu-btn" type="button" class="btn-ghost md:hidden" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil">
+        <span class="font-mono text-xs uppercase tracking-[0.14em]">Menú</span>
+      </button>
+    </div>
+  </div>
+
+  <div id="menu-movil" class="border-t border-line bg-paper md:hidden" hidden>
+    <nav aria-label="Principal móvil" class="grid-page py-2">
+      <ul class="divide-y divide-line">
+        {NAV.map((i) => <li><a href={i.href} class="block py-3 text-base text-ink">{i.texto}</a></li>)}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<SearchDialog />
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu-movil');
+  btn?.addEventListener('click', () => {
+    const abierto = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!abierto));
+    btn.setAttribute('aria-label', abierto ? 'Abrir menú' : 'Cerrar menú');
+    if (menu) menu.hidden = abierto;
+  });
+</script>

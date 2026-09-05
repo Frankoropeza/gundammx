@@ -1,0 +1,12 @@
+---
+interface Props { items: { etiqueta: string; valor: string; href?: string }[]; class?: string }
+const { items, class: cls = '' } = Astro.props;
+---
+<dl class:list={['flex flex-wrap gap-x-8 gap-y-3', cls]}>
+  {items.filter((i) => i.valor).map((i) => (
+    <div class="min-w-0">
+      <dt class="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">{i.etiqueta}</dt>
+      <dd class="mt-1 text-sm text-ink">{i.href ? <a href={i.href} class="link-quiet">{i.valor}</a> : i.valor}</dd>
+    </div>
+  ))}
+</dl>

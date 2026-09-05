@@ -160,8 +160,8 @@ const noticias = defineCollection({
   }),
 });
 
-const guias = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/guias' }),
+const guides = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/guides' }),
   schema: z.object({
     titulo: z.string(),
     descripcion: z.string(),
@@ -225,4 +225,157 @@ const comunidad = defineCollection({
   }),
 });
 
-export const collections = { tiendas, kits, noticias, guias, eventos, servicios, comunidad };
+
+
+/* ================================================================== */
+/*  ARCHIVO EDITORIAL — universo Gundam                                */
+/*  Regla: ningún dato sin `fuentes`. Sin imágenes de terceros:        */
+/*  `imagen` solo acepta activos propios o licenciados del repo.       */
+/* ================================================================== */
+
+const UNIVERSOS = ['uc', 'ac', 'ce', 'ad', 'pd', 'as', 'cc'] as const;
+
+const base = {
+  codigo: z.string(),                       // código de archivo, p. ej. "SER-UC-0079"
+  fuentes: z.array(z.string().url()).min(1),
+  estado_editorial: z.enum(['verificado', 'borrador']).default('verificado'),
+  actualizado: z.string(),
+  seo: z.object({ titulo: z.string().optional(), descripcion: z.string().optional() }).optional(),
+};
+
+const universes = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/universes' }),
+  schema: ({ image }) => z.object({
+    nombre: z.string(),
+    abreviatura: z.enum(UNIVERSOS),
+    calendario: z.string(),                 // "Universal Century"
+    periodo: z.string(),                    // "UC 0079 – UC 0153 en la línea principal"
+    introduccion: z.string(),
+    orden: z.number(),
+    serie_de_entrada: z.string(),           // id de la serie recomendada para empezar
+    imagen: image().optional(),
+    imagen_alt: z.string().optional(),
+    ...base,
+  }),
+});
+
+const series = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/series' }),
+  schema: ({ image }) => z.object({
+    titulo: z.string(),
+    titulo_original: z.string().optional(),
+    universo: z.enum(UNIVERSOS),
+    formato: z.enum(['tv', 'ova', 'pelicula', 'ona']),
+    anio: z.number(),
+    fecha_inicio: z.string().optional(),
+    fecha_fin: z.string().optional(),
+    episodios: z.number().optional(),
+    estudio: z.string(),
+    direccion: z.array(z.string()),
+    anio_ficcion: z.string().optional(),   // "UC 0079"
+    estado: z.enum(['finalizada', 'en_emision', 'anunciada']).default('finalizada'),
+    resumen: z.string(),
+    relevancia: z.string(),                 // por qué importa, en una frase
+    orden_recomendado: z.number().optional(),   // ruta para principiantes
+    orden_cronologico: z.number().optional(),   // cronología interna del universo
+    ruta: z.enum(['empieza-aqui', 'profundiza', 'alternativa']).optional(),
+    mobile_suits: z.array(z.string()).default([]),
+    pilotos: z.array(z.string()).default([]),
+    facciones: z.array(z.string()).default([]),
+    disponibilidad_mx: z.array(z.string()).default([]),   // dónde verla en México, si se verificó
+    imagen: image().optional(),
+    imagen_alt: z.string().optional(),
+    ...base,
+  }),
+});
+
+const mobileSuits = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/mobile-suits' }),
+  schema: ({ image }) => z.object({
+    nombre: z.string(),
+    designacion: z.string(),                // "RX-78-2"
+    universo: z.enum(UNIVERSOS),
+    faccion: z.string(),                    // id de facción
+    pilotos: z.array(z.string()).default([]),
+    primera_aparicion: z.string(),          // id de serie
+    fabricante: z.string().optional(),
+    tipo: z.string().optional(),            // "Prototipo de combate cercano"
+    especificaciones: z.array(z.object({ etiqueta: z.string(), valor: z.string() })).default([]),
+    resumen: z.string(),
+    relacionados: z.array(z.string()).default([]),
+    kits: z.array(z.string()).default([]),  // ids de la colección kits (Gunpla)
+    imagen: image().optional(),
+    imagen_alt: z.string().optional(),
+    ...base,
+  }),
+});
+
+const pilots = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/pilots' }),
+  schema: ({ image }) => z.object({
+    nombre: z.string(),
+    alias: z.array(z.string()).default([]),
+    universo: z.enum(UNIVERSOS),
+    facciones: z.array(z.string()).default([]),
+    series: z.array(z.string()).default([]),
+    mobile_suits: z.array(z.string()).default([]),
+    rol: z.string(),                        // "Protagonista", "Antagonista", "Secundario"
+    resumen: z.string(),
+    imagen: image().optional(),
+    imagen_alt: z.string().optional(),
+    ...base,
+  }),
+});
+
+const factions = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/factions' }),
+  schema: z.object({
+    nombre: z.string(),
+    universo: z.enum(UNIVERSOS),
+    tipo: z.string(),                       // "Estado", "Fuerza militar", "Organización privada"
+    series: z.array(z.string()).default([]),
+    resumen: z.string(),
+    ...base,
+  }),
+});
+
+const gunpla = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/gunpla' }),
+  schema: z.object({
+    nombre: z.string(),                     // "High Grade"
+    etiqueta: z.string(),                   // "HG"
+    escala: z.string(),
+    anio_lanzamiento: z.number(),
+    dificultad: z.enum(['principiante', 'intermedio', 'avanzado', 'experto']),
+    resumen: z.string(),
+    para_quien: z.string(),
+    orden: z.number(),
+    ...base,
+  }),
+});
+
+const articles = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/articles' }),
+  schema: ({ image }) => z.object({
+    titulo: z.string(),
+    resumen: z.string(),
+    autor: z.string().default('Redacción GUNDAMMX'),
+    fecha: z.coerce.date(),
+    tema: z.enum(['universo', 'series', 'mobile-suits', 'gunpla', 'mexico', 'guia']),
+    lectura_min: z.number(),
+    destacado: z.boolean().default(false),
+    universos: z.array(z.enum(UNIVERSOS)).default([]),
+    series: z.array(z.string()).default([]),
+    imagen: image().optional(),
+    imagen_alt: z.string().optional(),
+    referencias: z.array(z.object({ titulo: z.string(), url: z.string().url() })).min(1),
+    borrador: z.boolean().default(false),
+  }),
+});
+
+export const collections = {
+  // directorio y hobby
+  tiendas, kits, noticias, guides, eventos, servicios, comunidad,
+  // archivo editorial
+  universes, series, 'mobile-suits': mobileSuits, pilots, factions, gunpla, articles,
+};

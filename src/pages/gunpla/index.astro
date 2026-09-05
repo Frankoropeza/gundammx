@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import { publicado } from '@lib/archivo';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import GunplaBlock from '@components/GunplaBlock.astro';
+import KitCard from '@components/KitCard.astro';
+import DirectoryCard from '@components/DirectoryCard.astro';
+import { tiendasActivas, tiendasVerificadas } from '@lib/directorio';
+import { schemaColeccion, schemaMigaDePan } from '@lib/seo';
+const grados = (await getCollection('gunpla', publicado)).sort((a, b) => a.data.orden - b.data.orden);
+const kits = await getCollection('kits');
+const guias = (await getCollection('guides', ({ data }) => !data.borrador)).sort((a, b) => a.data.orden - b.data.orden);
+const tiendas = await tiendasActivas();
+const verificadas = await tiendasVerificadas();
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [{ nombre: 'Gunpla', href: '/gunpla/' }];
+const schemas = [schemaMigaDePan(base, migas), schemaColeccion(base, { nombre: 'Gunpla: grados, kits y tiendas en México', descripcion: 'Hub del hobby.', items: grados.map((g) => ({ nombre: g.data.nombre, href: `/gunpla/${g.id}/` })) })];
+---
+<BaseLayout titulo="Gunpla: grados, kits, precios y tiendas en México" descripcion="El hobby del model kit de Bandai explicado: qué grado elegir, cuánto debería costar en pesos y dónde comprarlo verificado en México." schemas={schemas}>
+  <Breadcrumbs items={migas} />
+  <div class="grid-page pt-10">
+    <p class="class-line">Hobby</p>
+    <h1 class="display mt-3 text-4xl md:text-5xl">Gunpla</h1>
+    <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">Esta sección trata el model kit como modelismo, no como ficción: grados, herramienta, precio en pesos y dónde comprarlo sin que te vendan una copia.</p>
+  </div>
+  <div class="mt-10"><GunplaBlock grados={grados} totalTiendas={tiendas.length} totalVerificadas={verificadas.length} guias={guias.map((g) => ({ titulo: g.data.titulo, href: `/guias/${g.id}/` }))} /></div>
+  <section class="grid-page py-16" aria-labelledby="kits-h">
+    <div class="flex items-end justify-between gap-6"><h2 id="kits-h" class="display text-3xl">Kits con precio de referencia</h2><a href="/kits/" class="link text-sm">Todos los kits</a></div>
+    <div class="mt-8 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-5">{kits.map((k) => <KitCard kit={k} />)}</div>
+  </section>
+  <section class="grid-page pb-16" aria-labelledby="tiendas-h">
+    <div class="flex items-end justify-between gap-6"><h2 id="tiendas-h" class="display text-3xl">Tiendas verificadas en México</h2><a href="/tiendas/" class="link text-sm">Directorio completo</a></div>
+    <div class="mt-8 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{verificadas.slice(0, 8).map((t) => <DirectoryCard tienda={t} />)}</div>
+  </section>
+</BaseLayout>

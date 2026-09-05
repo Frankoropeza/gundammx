@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import { nombreUniverso, nombres, publicado } from '@lib/archivo';
+import { schemaColeccion, schemaMigaDePan } from '@lib/seo';
+const pilotos = (await getCollection('pilots', publicado)).sort((a, b) => a.data.universo.localeCompare(b.data.universo) || a.data.nombre.localeCompare(b.data.nombre));
+const n = await nombres();
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [{ nombre: 'Personajes', href: '/personajes/' }];
+const schemas = [schemaMigaDePan(base, migas), schemaColeccion(base, { nombre: 'Personajes de Gundam', descripcion: 'Pilotos y protagonistas por universo.', items: pilotos.map((p) => ({ nombre: p.data.nombre, href: `/personajes/${p.id}/` })) })];
+---
+<BaseLayout titulo="Personajes de Gundam: pilotos por universo" descripcion={`${pilotos.length} fichas de pilotos y protagonistas, con facción, serie de origen y mobile suits.`} schemas={schemas}>
+  <Breadcrumbs items={migas} />
+  <div class="grid-page py-10">
+    <p class="class-line">Archivo</p>
+    <h1 class="display mt-3 text-4xl md:text-5xl">Personajes</h1>
+    <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">Los pilotos que sostienen cada historia. Cada ficha enlaza su serie, su facción y sus máquinas.</p>
+    <ol class="mt-10 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-3">
+      {pilotos.map((p, i) => (
+        <li class="card group relative p-6">
+          <div class="flex items-center justify-between"><span class="folio">{String(i + 1).padStart(2, '0')}</span><span class="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">{p.data.rol}</span></div>
+          <h2 class="display mt-6 text-2xl"><a href={`/personajes/${p.id}/`} class="after:absolute after:inset-0 after:content-['']">{p.data.nombre}</a></h2>
+          {p.data.alias.length > 0 && <p class="mt-1 font-mono text-xs text-ink-3">{p.data.alias.slice(0, 2).join(' · ')}</p>}
+          <p class="mt-3 text-sm text-ink-2 text-pretty">{p.data.resumen}</p>
+          <p class="mt-4 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">{nombreUniverso(p.data.universo)} · {p.data.mobile_suits.map((m) => n.ms[m]).filter(Boolean).join(', ')}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</BaseLayout>

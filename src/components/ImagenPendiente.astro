@@ -1,0 +1,12 @@
+---
+/**
+ * Marco de imagen pendiente. Identificado, con código de archivo; nunca decorativo.
+ * Sustituir por <Image> cuando exista un activo propio o licenciado en el repo.
+ */
+interface Props { codigo: string; etiqueta?: string; ratio?: string; class?: string }
+const { codigo, etiqueta = 'Imagen pendiente · activo propio o licenciado', ratio = 'aspect-[16/10]', class: cls = '' } = Astro.props;
+---
+<div class:list={['placeholder-frame', ratio, cls]} role="img" aria-label={`${etiqueta}. Código ${codigo}`}>
+  <span class="archive-code">{codigo}</span>
+  <span class="font-mono text-[11px] uppercase tracking-[0.14em]">{etiqueta}</span>
+</div>

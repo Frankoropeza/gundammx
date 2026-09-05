@@ -1,0 +1,61 @@
+---
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import SeriesRail from '@components/SeriesRail.astro';
+import MetadataRow from '@components/MetadataRow.astro';
+import RelatedContent from '@components/RelatedContent.astro';
+import { seriesDeUniverso } from '@lib/archivo';
+import { schemaFicha, schemaMigaDePan } from '@lib/seo';
+
+export const getStaticPaths = (async () => {
+  const universos = await getCollection('universes');
+  const [ms, pilotos] = await Promise.all([getCollection('mobile-suits'), getCollection('pilots')]);
+  return Promise.all(universos.map(async (u) => ({
+    params: { id: u.id },
+    props: {
+      universo: u,
+      series: await seriesDeUniverso(u.data.abreviatura),
+      ms: ms.filter((m) => m.data.universo === u.data.abreviatura),
+      pilotos: pilotos.filter((p) => p.data.universo === u.data.abreviatura),
+    },
+  })));
+}) satisfies GetStaticPaths;
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { universo, series, ms, pilotos } = Astro.props;
+const d = universo.data;
+const { Content } = await render(universo);
+const entrada = series.find((s) => s.id === d.serie_de_entrada);
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [{ nombre: 'Universos', href: '/universos/' }, { nombre: d.nombre, href: `/universos/${universo.id}/` }];
+const schemas = [schemaMigaDePan(base, migas), schemaFicha(base, { nombre: d.nombre, descripcion: d.introduccion, fecha: d.actualizado })];
+---
+<BaseLayout noindex={d.estado_editorial === 'borrador'} titulo={`${d.nombre} (${d.abreviatura.toUpperCase()}): qué es y por dónde empezar`} descripcion={d.introduccion} tipo="article" schemas={schemas}>
+  <Breadcrumbs items={migas} />
+  <article class="grid-page grid gap-10 py-10 lg:grid-cols-12">
+    <header class="lg:col-span-8">
+      <p class="archive-code">{d.codigo}</p>
+      <p class="class-line mt-4">Universo · {d.calendario}</p>
+      <h1 class="display mt-4 text-4xl md:text-5xl text-balance">{d.nombre}</h1>
+      <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">{d.introduccion}</p>
+      <MetadataRow class="mt-8" items={[
+        { etiqueta: 'Abreviatura', valor: d.abreviatura.toUpperCase() },
+        { etiqueta: 'Periodo', valor: d.periodo },
+        { etiqueta: 'Obras en el archivo', valor: String(series.length) },
+        ...(entrada ? [{ etiqueta: 'Empieza por', valor: entrada.data.titulo, href: `/series/${entrada.id}/` }] : []),
+      ]} />
+    </header>
+    <div class="prose-ed lg:col-span-7"><Content /></div>
+    <aside class="lg:col-span-4 lg:col-start-9">
+      <h2 class="class-line">Fuentes</h2>
+      <ul class="mt-3 space-y-1">{d.fuentes.map((f) => <li class="truncate text-sm"><a href={f} class="link" rel="nofollow noopener" target="_blank">{f}</a></li>)}</ul>
+    </aside>
+  </article>
+  <SeriesRail eyebrow="Obras" titulo={`Series y películas en ${d.nombre}`} series={series} />
+  <div class="grid-page pb-16 space-y-10">
+    <RelatedContent titulo="Mobile suits de este universo" items={ms.map((m) => ({ codigo: m.data.designacion, eyebrow: 'Mobile suit', titulo: m.data.nombre, href: `/mobile-suits/${m.id}/` }))} />
+    <RelatedContent titulo="Personajes" items={pilotos.map((p) => ({ eyebrow: p.data.rol, titulo: p.data.nombre, href: `/personajes/${p.id}/` }))} />
+  </div>
+</BaseLayout>

@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import ArchiveCard from '@components/ArchiveCard.astro';
+import { schemaColeccion, schemaMigaDePan } from '@lib/seo';
+const articulos = (await getCollection('articles', ({ data }) => !data.borrador)).sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime());
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [{ nombre: 'Artículos', href: '/articulos/' }];
+const schemas = [schemaMigaDePan(base, migas), schemaColeccion(base, { nombre: 'Artículos', descripcion: 'Explicadores, análisis y guías.', items: articulos.map((a) => ({ nombre: a.data.titulo, href: `/articulos/${a.id}/` })) })];
+---
+<BaseLayout titulo="Artículos: explicadores, análisis y guías sobre Gundam" descripcion="Textos largos con referencias: qué es cada universo, en qué orden ver la franquicia, cómo llegó a México y cómo funciona el hobby." schemas={schemas}>
+  <Breadcrumbs items={migas} />
+  <div class="grid-page py-10">
+    <p class="class-line">Archivo editorial</p>
+    <h1 class="display mt-3 text-4xl md:text-5xl">Artículos</h1>
+    <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">Redacción propia, con referencias visibles al pie de cada texto. Nada de resúmenes de wiki ni de traducciones de comunicados.</p>
+    <div class="mt-10 grid gap-x-12 gap-y-2 lg:grid-cols-2">{articulos.map((a, i) => <ArchiveCard articulo={a} grande={i === 0} folio={i + 1} />)}</div>
+  </div>
+</BaseLayout>

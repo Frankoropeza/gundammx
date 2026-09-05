@@ -4,7 +4,7 @@ import Breadcrumbs from '@components/Breadcrumbs.astro';
 import { getCollection } from 'astro:content';
 import { schemaListado, schemaMigaDePan } from '@lib/seo';
 
-const guias = (await getCollection('guias', ({ data }) => !data.borrador))
+const guias = (await getCollection('guides', ({ data }) => !data.borrador))
   .sort((a, b) => a.data.orden - b.data.orden);
 
 const base = { site: Astro.site, url: Astro.url.pathname };

@@ -1,0 +1,69 @@
+---
+/**
+ * Búsqueda global: <dialog> nativo. Sin JS el formulario lleva a /buscar/.
+ * Con JS carga Pagefind bajo demanda la primera vez que se abre.
+ */
+---
+<dialog id="buscar-dialogo" class="w-full max-w-2xl border border-line bg-surface p-0 text-ink shadow-none backdrop:bg-ink/40">
+  <form action="/buscar/" method="get" role="search" class="flex border-b border-line">
+    <label for="buscar-q" class="sr-only">Buscar en el archivo</label>
+    <input id="buscar-q" type="search" name="q" placeholder="Buscar series, mobile suits, pilotos, kits…" autocomplete="off"
+      class="h-14 min-w-0 flex-1 bg-transparent px-5 text-base text-ink placeholder:text-ink-3 focus:outline-none" />
+    <button type="submit" class="px-5 font-mono text-xs uppercase tracking-[0.14em] text-ink-2 hover:text-ink">Buscar</button>
+    <button type="button" data-cerrar class="border-l border-line px-5 font-mono text-xs uppercase tracking-[0.14em] text-ink-2 hover:text-ink" aria-label="Cerrar">Esc</button>
+  </form>
+  <div id="buscar-resultados" class="max-h-[60vh] overflow-y-auto" aria-live="polite">
+    <p class="px-5 py-6 font-mono text-xs text-ink-3">Escribe para buscar en todo el archivo.</p>
+  </div>
+</dialog>
+
+<script>
+  type R = { url: string; meta: { title?: string }; excerpt: string };
+  type PF = { init: () => Promise<void>; search: (q: string) => Promise<{ results: { data: () => Promise<R> }[] }> };
+
+  const dlg = document.getElementById('buscar-dialogo') as HTMLDialogElement | null;
+  const input = document.getElementById('buscar-q') as HTMLInputElement | null;
+  const cont = document.getElementById('buscar-resultados');
+  const form = dlg?.querySelector('form');
+  let pf: PF | null | undefined;
+
+  async function cargar(): Promise<PF | null> {
+    if (pf !== undefined) return pf;
+    try {
+      const ruta = '/pagefind/pagefind.js';
+      pf = (await import(/* @vite-ignore */ ruta)) as PF;
+      await pf.init();
+    } catch { pf = null; }
+    return pf;
+  }
+
+  function pintar(items: R[], q: string) {
+    if (!cont) return;
+    if (!q) { cont.innerHTML = '<p class="px-5 py-6 font-mono text-xs text-ink-3">Escribe para buscar en todo el archivo.</p>'; return; }
+    if (!items.length) { cont.innerHTML = `<p class="px-5 py-6 text-sm text-ink-2">Nada para «${q}».</p>`; return; }
+    cont.innerHTML = '<ol class="divide-y divide-line">' + items.map((r) =>
+      `<li><a href="${r.url}" class="block px-5 py-4 hover:bg-paper"><span class="display block text-lg">${r.meta.title ?? r.url}</span><span class="mt-1 block text-sm text-ink-2">${r.excerpt}</span></a></li>`
+    ).join('') + '</ol>';
+  }
+
+  let t: number | undefined;
+  input?.addEventListener('input', () => {
+    window.clearTimeout(t);
+    t = window.setTimeout(async () => {
+      const q = input.value.trim();
+      const motor = await cargar();
+      if (!motor) return; // sin índice (dev): el submit sigue llevando a /buscar/
+      const { results } = await motor.search(q);
+      pintar(await Promise.all(results.slice(0, 12).map((r) => r.data())), q);
+    }, 160);
+  });
+  form?.addEventListener('submit', (e) => { if (pf) e.preventDefault(); });
+
+  document.querySelectorAll<HTMLElement>('[data-abrir-busqueda]').forEach((b) =>
+    b.addEventListener('click', () => { dlg?.showModal(); input?.focus(); }));
+  dlg?.querySelector('[data-cerrar]')?.addEventListener('click', () => dlg.close());
+  dlg?.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); dlg?.showModal(); input?.focus(); }
+  });
+</script>

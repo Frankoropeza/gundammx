@@ -217,3 +217,53 @@ export function schemaKit(
       : {}),
   };
 }
+
+
+export function schemaColeccion(b: Base, c: { nombre: string; descripcion: string; items: { nombre: string; href: string }[] }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: c.nombre,
+    description: c.descripcion,
+    url: abs(b.site, b.url),
+    inLanguage: SITE.locale,
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: c.items.length,
+      itemListElement: c.items.map((it, i) => ({ '@type': 'ListItem', position: i + 1, name: it.nombre, url: abs(b.site, it.href) })),
+    },
+  };
+}
+
+export function schemaSerie(b: Base, s: {
+  titulo: string; resumen: string; anio: number; episodios?: number; formato: string;
+  direccion: string[]; estudio: string; fechaInicio?: string; fechaFin?: string;
+}) {
+  const tipo = s.formato === 'pelicula' ? 'Movie' : 'TVSeries';
+  return {
+    '@context': 'https://schema.org',
+    '@type': tipo,
+    name: s.titulo,
+    description: s.resumen,
+    url: abs(b.site, b.url),
+    inLanguage: 'ja',
+    ...(s.fechaInicio ? { datePublished: s.fechaInicio } : {}),
+    ...(s.fechaFin && tipo === 'TVSeries' ? { endDate: s.fechaFin } : {}),
+    ...(s.episodios && tipo === 'TVSeries' ? { numberOfEpisodes: s.episodios } : {}),
+    director: s.direccion.map((d) => ({ '@type': 'Person', name: d })),
+    productionCompany: { '@type': 'Organization', name: s.estudio },
+  };
+}
+
+export function schemaFicha(b: Base, f: { nombre: string; descripcion: string; fecha?: string }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: f.nombre,
+    description: f.descripcion,
+    ...(f.fecha ? { dateModified: f.fecha } : {}),
+    publisher: { '@type': 'Organization', name: SITE.nombre },
+    mainEntityOfPage: abs(b.site, b.url),
+    inLanguage: SITE.locale,
+  };
+}

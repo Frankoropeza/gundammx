@@ -1,0 +1,22 @@
+---
+import { SITE } from '@config/site';
+---
+<section class="grid-page py-16" aria-labelledby="nl-h">
+  <div class="grid gap-8 border-y border-line py-10 lg:grid-cols-12">
+    <div class="lg:col-span-6">
+      <p class="class-line">Correo del archivo</p>
+      <h2 id="nl-h" class="display mt-3 text-3xl">Un correo al mes. Sin ruido.</h2>
+      <p class="mt-3 max-w-prose text-ink-2 text-pretty">
+        Lo que entra al archivo ese mes: fichas nuevas, un explicador largo, los lanzamientos de Gunpla con precio
+        en pesos y los eventos en México. Nada de promociones ni cadenas diarias.
+      </p>
+    </div>
+    <div class="lg:col-span-6 lg:pl-10">
+      <p class="text-sm text-ink-2">
+        El formulario de suscripción se activa en la siguiente versión. Mientras tanto, escribe a
+        <span class="font-mono text-ink">{SITE.email}</span> con el asunto «Correo» y te sumamos a mano.
+      </p>
+      <p class="mt-4 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">Sin suscripción automática hasta contar con proveedor y aviso de privacidad</p>
+    </div>
+  </div>
+</section>

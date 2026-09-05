@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import MobileSuitCard from '@components/MobileSuitCard.astro';
+import { nombres, publicado } from '@lib/archivo';
+import { UNIVERSOS_META, type UniversoId } from '@config/site';
+import { schemaColeccion, schemaMigaDePan } from '@lib/seo';
+const ms = (await getCollection('mobile-suits', publicado)).sort((a, b) => a.data.universo.localeCompare(b.data.universo) || a.data.designacion.localeCompare(b.data.designacion));
+const n = await nombres();
+const porUniverso = [...new Set(ms.map((m) => m.data.universo))].map((u) => ({ u, items: ms.filter((m) => m.data.universo === u) }));
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [{ nombre: 'Mobile Suits', href: '/mobile-suits/' }];
+const schemas = [schemaMigaDePan(base, migas), schemaColeccion(base, { nombre: 'Mobile suits de Gundam', descripcion: 'Fichas técnicas por universo.', items: ms.map((m) => ({ nombre: `${m.data.designacion} ${m.data.nombre}`, href: `/mobile-suits/${m.id}/` })) })];
+---
+<BaseLayout titulo="Mobile suits de Gundam: fichas técnicas por universo" descripcion={`${ms.length} fichas con designación, facción, piloto, primera aparición y kits disponibles.`} schemas={schemas}>
+  <Breadcrumbs items={migas} />
+  <div class="grid-page py-10">
+    <p class="class-line">Archivo</p>
+    <h1 class="display mt-3 text-4xl md:text-5xl">Mobile suits</h1>
+    <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">Las máquinas, tratadas como lo que son en la ficción: armamento con fabricante, designación y piloto. Agrupadas por universo.</p>
+    {porUniverso.map(({ u, items }) => (
+      <section class="mt-14" aria-labelledby={`ms-${u}`}>
+        <h2 id={`ms-${u}`} class="class-line">{UNIVERSOS_META[u as UniversoId].nombre} · {items.length}</h2>
+        <div class="mt-5 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+          {items.map((m, i) => <MobileSuitCard ms={m} folio={i + 1} faccion={n.facciones[m.data.faccion]} piloto={m.data.pilotos.map((p) => n.pilotos[p]).join(', ')} />)}
+        </div>
+      </section>
+    ))}
+  </div>
+</BaseLayout>

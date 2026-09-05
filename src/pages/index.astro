@@ -1,80 +1,99 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro';
-import HeroSection from '@components/HeroSection.astro';
-import DirectoryCard from '@components/DirectoryCard.astro';
-import CategoryGrid from '@components/CategoryGrid.astro';
-import LocationGrid from '@components/LocationGrid.astro';
-import TarjetaNoticia from '@components/TarjetaNoticia.astro';
 import { getCollection } from 'astro:content';
-import { tiendasActivas, tiendasVerificadas, ciudadesConPagina, categoriasConTiendas, estadosConTiendas, indexable } from '@lib/directorio';
-import { SITE, type GradoId } from '@config/site';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import EditorialHero from '@components/EditorialHero.astro';
+import UniverseNavigator from '@components/UniverseNavigator.astro';
+import SeriesRail from '@components/SeriesRail.astro';
+import MobileSuitCard from '@components/MobileSuitCard.astro';
+import TimelineGuide from '@components/TimelineGuide.astro';
+import ArchiveCard from '@components/ArchiveCard.astro';
+import GunplaBlock from '@components/GunplaBlock.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+import { universosConContenido, seriesOrdenRecomendado, seriesCronologiaUC, seriesPorRuta, nombres, publicado } from '@lib/archivo';
+import { tiendasActivas, tiendasVerificadas } from '@lib/directorio';
+import { SITE } from '@config/site';
+import { fechaCorta } from '@lib/precio';
 
+const universos = await universosConContenido();
+const recomendado = (await seriesOrdenRecomendado()).slice(0, 8);
+const cronologia = await seriesCronologiaUC();
+const empiezaAqui = await seriesPorRuta('empieza-aqui');
+const profundiza = await seriesPorRuta('profundiza');
+const alternativas = await seriesPorRuta('alternativa');
+
+const ms = (await getCollection('mobile-suits', publicado)).sort((a, b) => a.data.codigo.localeCompare(b.data.codigo));
+const destacadosMS = ['rx-78-2-gundam', 'ms-06-zaku-ii', 'xxxg-01w-wing-gundam', 'rx-0-unicorn-gundam', 'asw-g-08-gundam-barbatos', 'xvx-016-gundam-aerial']
+  .map((id) => ms.find((m) => m.id === id)).filter(Boolean) as typeof ms;
+const n = await nombres();
+
+const articulos = (await getCollection('articles', ({ data }) => !data.borrador)).sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime());
+const destacado = articulos.find((a) => a.data.destacado) ?? articulos[0];
+const archivo = articulos.filter((a) => a.id !== destacado?.id).slice(0, 5);
+
+const grados = (await getCollection('gunpla', publicado)).sort((a, b) => a.data.orden - b.data.orden);
+const guias = (await getCollection('guides', ({ data }) => !data.borrador)).sort((a, b) => a.data.orden - b.data.orden).slice(0, 4);
 const tiendas = await tiendasActivas();
 const verificadas = await tiendasVerificadas();
-const ciudades = (await ciudadesConPagina()).filter((c) => indexable(c.total));
-const categorias = await categoriasConTiendas();
-const totalEstados = (await estadosConTiendas()).size;
-
-const kits = await getCollection('kits');
-const gradosConKits = [...new Set(kits.map((k) => k.data.grado))] as GradoId[];
-
-const noticias = (await getCollection('noticias', ({ data }) => !data.borrador))
-  .sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime()).slice(0, 3);
-const guias = (await getCollection('guias', ({ data }) => !data.borrador))
-  .sort((a, b) => a.data.orden - b.data.orden).slice(0, 3);
 ---
 
 <BaseLayout titulo={SITE.nombre} descripcion={SITE.descripcion}>
-  <HeroSection totalTiendas={tiendas.length} totalVerificadas={verificadas.length} totalEstados={totalEstados} />
+  {destacado && (
+    <EditorialHero
+      eyebrow={`Expediente destacado · ${fechaCorta(destacado.data.fecha)}`}
+      titulo={destacado.data.titulo}
+      intro={destacado.data.resumen}
+      href={`/articulos/${destacado.id}/`}
+      cta="Leer el expediente"
+      codigo={`ART-${destacado.id.toUpperCase().slice(0, 18)}`}
+      imagen={destacado.data.imagen}
+      imagenAlt={destacado.data.imagen_alt}
+      metadata={[
+        { etiqueta: 'Tema', valor: 'Guía de entrada' },
+        { etiqueta: 'Lectura', valor: `${destacado.data.lectura_min} min` },
+        { etiqueta: 'Universos', valor: `${destacado.data.universos.length} líneas temporales` },
+        { etiqueta: 'Fuentes', valor: `${destacado.data.referencias.length} referencias` },
+      ]}
+    />
+  )}
 
-  <section class="grid-page py-16" aria-labelledby="verif-h">
-    <div class="flex items-end justify-between gap-6">
+  <UniverseNavigator universos={universos} />
+
+  <SeriesRail eyebrow="Series esenciales · Empieza aquí" titulo="Cuatro puertas de entrada" series={empiezaAqui} verTodo={{ texto: 'Todas las series', href: '/series/' }} />
+
+  <section class="grid-page py-16" aria-labelledby="ms-h">
+    <div class="flex flex-wrap items-end justify-between gap-6">
       <div>
-        <p class="eyebrow">Selección</p>
-        <h2 id="verif-h" class="display mt-2 text-3xl">Tiendas con oferta verificada</h2>
+        <p class="class-line">Mobile suits · fichas técnicas</p>
+        <h2 id="ms-h" class="display mt-3 text-3xl md:text-4xl">Las máquinas que definen cada época</h2>
       </div>
-      <a href="/tiendas/verificadas/" class="link text-sm">Ver todas</a>
+      <a href="/mobile-suits/" class="link text-sm">Archivo completo</a>
     </div>
-    <div class="mt-8 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-      {verificadas.slice(0, 6).map((t, i) => <DirectoryCard tienda={t} prioridad={i < 3} />)}
+    <div class="mt-10 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-3">
+      {destacadosMS.map((m, i) => (
+        <MobileSuitCard ms={m} folio={i + 1} faccion={n.facciones[m.data.faccion]} piloto={m.data.pilotos.map((p) => n.pilotos[p]).join(', ')} />
+      ))}
     </div>
   </section>
 
-  <section class="grid-page py-8" aria-labelledby="cat-h">
-    <p class="eyebrow">Explora</p>
-    <h2 id="cat-h" class="display mt-2 text-3xl">Por tipo de tienda</h2>
-    <div class="mt-8"><CategoryGrid categorias={categorias} grados={gradosConKits} /></div>
-  </section>
+  <TimelineGuide cronologia={cronologia} recomendado={recomendado} compacto />
 
-  <section class="grid-page py-16">
-    <LocationGrid ciudades={ciudades} />
-    <p class="mt-4 text-sm text-ink-2">
-      Solo listamos ciudades con al menos dos tiendas verificadas. El resto se consulta
-      <a href="/tiendas/" class="link">por estado</a> o en las <a href="/tiendas/en-linea/" class="link">tiendas con envío nacional</a>.
-    </p>
-  </section>
+  <SeriesRail eyebrow="Series esenciales · Profundiza en el Universal Century" titulo="Después de la primera" series={profundiza} />
+  <SeriesRail eyebrow="Series esenciales · Líneas independientes" titulo="Alternativas que no piden contexto" series={alternativas} />
 
-  <section class="grid-page grid gap-12 border-t border-line py-16 md:grid-cols-12" aria-labelledby="ed-h">
-    <div class="md:col-span-5">
-      <p class="eyebrow">Guías</p>
-      <h2 id="ed-h" class="display mt-2 text-3xl">Para comprar sin equivocarte</h2>
-      <ul class="mt-6 divide-y divide-line border-y border-line">
-        {guias.map((g) => (
-          <li class="py-4">
-            <a href={`/guias/${g.id}/`} class="link-quiet text-lg">{g.data.titulo}</a>
-            <p class="mt-1 text-sm text-ink-2">{g.data.descripcion}</p>
-          </li>
-        ))}
-      </ul>
+  <section class="grid-page py-16" aria-labelledby="arch-h">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <p class="class-line">Archivo editorial</p>
+        <h2 id="arch-h" class="display mt-3 text-3xl md:text-4xl">Explicadores, análisis y guías</h2>
+      </div>
+      <a href="/articulos/" class="link text-sm">Todos los artículos</a>
     </div>
-    <div class="md:col-span-6 md:col-start-7">
-      <div class="flex items-baseline justify-between">
-        <h2 class="display text-3xl">Noticias</h2>
-        <a href="/noticias/" class="link text-sm">Todas</a>
-      </div>
-      <div class="mt-6 space-y-2">
-        {noticias.map((n, i) => <TarjetaNoticia nota={n} grande={i === 0} />)}
-      </div>
+    <div class="mt-10 grid gap-x-12 gap-y-2 lg:grid-cols-2">
+      {archivo.map((a, i) => <ArchiveCard articulo={a} grande={i === 0} folio={i + 1} />)}
     </div>
   </section>
+
+  <GunplaBlock grados={grados} totalTiendas={tiendas.length} totalVerificadas={verificadas.length} guias={guias.map((g) => ({ titulo: g.data.titulo, href: `/guias/${g.id}/` }))} />
+
+  <NewsletterCTA />
 </BaseLayout>

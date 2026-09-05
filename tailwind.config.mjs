@@ -18,6 +18,7 @@ export default {
         accent: v('accent'),
         signal: v('signal'),
         alert: v('alert'),
+        white: '#FFFFFF',
       },
       fontFamily: {
         serif: ['"Instrument Serif"', 'Georgia', 'serif'],

@@ -7,17 +7,45 @@
    Valores en RGB sin función para que Tailwind pueda aplicar alpha.
 ------------------------------------------------------------------- */
 @layer base {
+  /* Claro: blanco hueso, grafito, gris acero. Acento de señalización técnica, usado con moderación. */
   :root {
-    --paper: 255 255 255;
+    --paper: 246 245 241;
     --surface: 255 255 255;
-    --line: 229 229 229;
-    --ink: 17 17 17;
-    --ink-2: 102 102 102;
-    --ink-3: 153 153 153;
-    --accent: 17 17 17;
-    --signal: 107 107 107;
-    --alert: 68 68 68;
+    --line: 220 219 213;
+    --ink: 28 29 31;
+    --ink-2: 92 94 98;
+    --ink-3: 140 143 148;
+    --accent: 196 74 20;
+    --signal: 196 74 20;
+    --alert: 150 35 30;
     color-scheme: light;
+  }
+  /* Oscuro real: grafito profundo, no inversión. Contraste AA en texto y líneas. */
+  :root[data-theme='dark'] {
+    --paper: 20 21 23;
+    --surface: 27 28 31;
+    --line: 52 54 58;
+    --ink: 232 230 224;
+    --ink-2: 168 170 174;
+    --ink-3: 118 121 126;
+    --accent: 240 130 70;
+    --signal: 240 130 70;
+    --alert: 224 110 100;
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+      --paper: 20 21 23;
+      --surface: 27 28 31;
+      --line: 52 54 58;
+      --ink: 232 230 224;
+      --ink-2: 168 170 174;
+      --ink-3: 118 121 126;
+      --accent: 240 130 70;
+      --signal: 240 130 70;
+      --alert: 224 110 100;
+      color-scheme: dark;
+    }
   }
 
   html {
@@ -72,7 +100,7 @@
   .tag-signal { @apply tag border-line text-ink-2; }
   .tag-alert { @apply tag border-ink-3 text-ink; }
 
-  .card { @apply flex flex-col border-b border-r border-line bg-surface transition-colors hover:bg-[#FAFAFA]; }
+  .card { @apply flex flex-col border-b border-r border-line bg-surface transition-colors hover:bg-paper; }
 
   .table-scroll { @apply -mx-5 overflow-x-auto px-5 sm:-mx-8 sm:px-8; }
   .table-scroll table { @apply w-full min-w-[46rem] border-collapse text-sm; }
@@ -93,6 +121,26 @@
   .prose-ed td { @apply border-b border-line/70 py-2 pr-4 align-top; }
   .prose-ed strong { @apply font-semibold; }
   .prose-ed code { @apply rounded-sm bg-line/50 px-1 font-mono text-[0.9em]; }
+}
+
+@layer components {
+  /* Código de archivo: etiqueta técnica monoespaciada */
+  .archive-code { @apply inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3; }
+  .archive-code::before { content: ''; @apply inline-block h-px w-4 bg-ink-3; }
+
+  /* Línea de clasificación: separador con etiqueta */
+  .class-line { @apply flex items-center gap-4 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3; }
+  .class-line::after { content: ''; @apply h-px flex-1 bg-line; }
+
+  /* Numeración editorial */
+  .folio { @apply font-mono text-xs tabular text-ink-3; }
+
+  /* Marco de imagen pendiente: identificado, nunca decorativo */
+  .placeholder-frame { @apply relative flex flex-col justify-between border border-dashed border-line bg-surface p-4 text-ink-3; }
+  .placeholder-frame::after { content: ''; @apply pointer-events-none absolute inset-3 border border-line/60; }
+
+  .btn-signal { @apply btn bg-accent text-white hover:bg-ink; }
+  .link-signal { @apply text-accent underline-offset-[3px] hover:underline; }
 }
 
 @layer utilities {
