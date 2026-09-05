@@ -1,52 +1,29 @@
 ---
 import { fechaLarga } from '@lib/precio';
-
 interface Props {
-  verificacion: {
-    estado: string; fecha: string; metodo: string;
-    fuentes: string[]; nivel_confianza: number; notas?: string;
-  };
+  verificacion: { estado: string; fecha: string; metodo: string; fuentes: string[]; nivel_confianza: number; notas?: string };
+  autor?: string;
+  actualizada?: string;
 }
-const { verificacion: v } = Astro.props;
-
+const { verificacion: v, autor, actualizada } = Astro.props;
 const metodos: Record<string, string> = {
-  sitio_web: 'Revisión del sitio de la tienda',
-  visita: 'Visita presencial',
-  telefono: 'Contacto telefónico',
-  distribuidor: 'Listado de distribuidor',
-  documento: 'Documento probatorio',
+  sitio_web: 'Revisión del sitio de la tienda', visita: 'Visita presencial', telefono: 'Contacto telefónico',
+  distribuidor: 'Listado de distribuidor', documento: 'Documento probatorio',
 };
 ---
 
-<section class="tarjeta bg-base-alt/40">
-  <h2 class="font-display text-sm uppercase tracking-wider text-ink">Cómo verificamos esta ficha</h2>
-  <dl class="mt-4 grid gap-3 text-sm sm:grid-cols-3">
-    <div>
-      <dt class="text-xs uppercase tracking-wide text-ink-faint">Método</dt>
-      <dd class="text-ink-muted">{metodos[v.metodo] ?? v.metodo}</dd>
-    </div>
-    <div>
-      <dt class="text-xs uppercase tracking-wide text-ink-faint">Última comprobación</dt>
-      <dd class="text-ink-muted">{fechaLarga(v.fecha)}</dd>
-    </div>
-    <div>
-      <dt class="text-xs uppercase tracking-wide text-ink-faint">Confianza</dt>
-      <dd class="font-mono text-ink-muted">{v.nivel_confianza} / 3</dd>
-    </div>
+<section class="border-t border-line pt-8" aria-labelledby="fuentes-h" data-pagefind-ignore>
+  <h2 id="fuentes-h" class="eyebrow">Cómo verificamos esta ficha</h2>
+  <dl class="mt-4 grid gap-4 text-sm sm:grid-cols-4">
+    <div><dt class="text-ink-3">Método</dt><dd class="mt-1 text-ink">{metodos[v.metodo] ?? v.metodo}</dd></div>
+    <div><dt class="text-ink-3">Última comprobación</dt><dd class="mt-1 text-ink">{fechaLarga(v.fecha)}</dd></div>
+    <div><dt class="text-ink-3">Confianza</dt><dd class="mt-1 font-mono text-ink tabular">{v.nivel_confianza} / 3</dd></div>
+    {autor && <div><dt class="text-ink-3">Redacción</dt><dd class="mt-1 text-ink">{autor}{actualizada && <span class="block text-xs text-ink-3">actualizada {fechaLarga(actualizada)}</span>}</dd></div>}
   </dl>
-
-  {v.notas && <p class="mt-3 text-sm text-ink-muted">{v.notas}</p>}
-
-  <h3 class="mt-5 text-xs uppercase tracking-wide text-ink-faint">Fuentes</h3>
+  {v.notas && <p class="mt-4 max-w-prose text-sm text-ink-2 text-pretty">{v.notas}</p>}
+  <h3 class="mt-6 text-xs text-ink-3">Fuentes</h3>
   <ul class="mt-2 space-y-1">
-    {v.fuentes.map((f) => (
-      <li class="truncate text-sm">
-        <a href={f} class="enlace" rel="nofollow noopener" target="_blank">{f}</a>
-      </li>
-    ))}
+    {v.fuentes.map((f) => <li class="truncate text-sm"><a href={f} class="link" rel="nofollow noopener" target="_blank">{f}</a></li>)}
   </ul>
-
-  <p class="mt-4 text-xs text-ink-faint">
-    ¿Algo está mal o cambió? <a href="/reportar/" class="enlace">Repórtalo</a> y lo revisamos.
-  </p>
+  <p class="mt-5 text-xs text-ink-3">¿Algo cambió? <a href="/reportar/" class="link">Repórtalo</a> y lo revisamos en 48 horas.</p>
 </section>

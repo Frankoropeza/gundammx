@@ -1,0 +1,28 @@
+---
+/**
+ * Formulario GET: funciona sin JavaScript. La página /buscar/ resuelve la consulta.
+ */
+interface Props { compacto?: boolean; valor?: string; autofocus?: boolean }
+const { compacto = false, valor = '', autofocus = false } = Astro.props;
+const id = `q-${Math.random().toString(36).slice(2, 7)}`;
+---
+
+<form action="/buscar/" method="get" role="search" class:list={['flex w-full', compacto ? 'max-w-sm' : 'max-w-2xl']}>
+  <label for={id} class="sr-only">Buscar tiendas, kits o guías</label>
+  <input
+    id={id}
+    type="search"
+    name="q"
+    value={valor}
+    placeholder={compacto ? 'Buscar' : 'Busca una tienda, una ciudad o un kit'}
+    autocomplete="off"
+    autofocus={autofocus}
+    class:list={[
+      'min-w-0 flex-1 border border-line bg-surface px-4 text-ink placeholder:text-ink-3 focus:border-ink focus:outline-none',
+      compacto ? 'h-10 rounded-l-sm text-sm' : 'h-14 rounded-l-sm text-base',
+    ]}
+  />
+  <button type="submit" class:list={['btn-primary rounded-l-none rounded-r-sm', compacto ? 'h-10 px-4' : 'h-14 px-6']}>
+    Buscar
+  </button>
+</form>

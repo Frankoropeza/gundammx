@@ -2,26 +2,25 @@
 import type { CollectionEntry } from 'astro:content';
 import { GRADOS } from '@config/site';
 import { rangoEstimadoMXN, pesos } from '@lib/precio';
-
 interface Props { kit: CollectionEntry<'kits'> }
 const { kit } = Astro.props;
 const d = kit.data;
 const rango = d.precio_jp_jpy ? rangoEstimadoMXN(d.precio_jp_jpy) : null;
 ---
 
-<article class="tarjeta flex flex-col gap-2 transition-colors hover:border-accent/40">
-  <div class="flex items-center justify-between gap-2">
-    <span class="chip">{GRADOS[d.grado].etiqueta}</span>
-    <span class="font-mono text-xs text-ink-faint">{d.escala}</span>
+<article class="card relative p-5">
+  <div class="flex items-center justify-between">
+    <span class="tag">{GRADOS[d.grado].etiqueta}</span>
+    <span class="font-mono text-xs text-ink-3">{d.escala}</span>
   </div>
-  <h3 class="font-display text-base font-semibold leading-tight">
-    <a href={`/kit/${kit.id}/`} class="hover:text-accent">{d.nombre}</a>
+  <h3 class="display mt-4 text-xl leading-tight">
+    <a href={`/kit/${kit.id}/`} class="after:absolute after:inset-0 after:content-['']">{d.nombre}</a>
   </h3>
-  <p class="text-xs text-ink-faint">{d.serie}</p>
+  <p class="mt-1 text-xs text-ink-3">{d.serie}</p>
   {rango && (
-    <p class="mt-auto pt-2 font-mono text-sm text-ink-muted">
+    <p class="mt-auto pt-5 font-mono text-sm text-ink tabular">
       {pesos(rango.min)} – {pesos(rango.max)}
-      <span class="block text-[11px] text-ink-faint">estimado</span>
+      <span class="block text-[11px] text-ink-3">estimado en México</span>
     </p>
   )}
 </article>

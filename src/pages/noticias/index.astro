@@ -2,41 +2,37 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
 import TarjetaNoticia from '@components/TarjetaNoticia.astro';
+import Pagination from '@components/Pagination.astro';
+import EmptyState from '@components/EmptyState.astro';
 import { getCollection } from 'astro:content';
 import { schemaListado, schemaMigaDePan } from '@lib/seo';
+import { POR_PAGINA, urlPagina } from '@lib/paginacion';
 
-const notas = (await getCollection('noticias', ({ data }) => !data.borrador))
+const todas = (await getCollection('noticias', ({ data }) => !data.borrador))
   .sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime());
+const totalPaginas = Math.max(1, Math.ceil(todas.length / POR_PAGINA));
+const notas = todas.slice(0, POR_PAGINA);
 
 const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Noticias', href: '/noticias/' }];
 const schemas = [
   schemaMigaDePan(base, migas),
-  schemaListado(base, 'Noticias de Gundam y Gunpla en México',
-    notas.map((n) => ({ nombre: n.data.titulo, href: `/noticias/${n.id}/` }))),
+  schemaListado(base, 'Noticias de Gundam y Gunpla en México', notas.map((n) => ({ nombre: n.data.titulo, href: `/noticias/${n.id}/` }))),
 ];
 ---
 
-<BaseLayout
-  titulo="Noticias de Gundam y Gunpla en México"
-  descripcion="Lanzamientos, exclusivos P-Bandai, eventos en México y movimientos de precio, en español y con la fuente siempre enlazada."
-  schemas={schemas}
->
+<BaseLayout titulo="Noticias de Gundam y Gunpla en México" descripcion="Lanzamientos, exclusivos P-Bandai, eventos en México y movimientos de precio, en español y con la fuente siempre enlazada." schemas={schemas}>
+  <Fragment slot="head">{totalPaginas > 1 && <link rel="next" href={new URL(urlPagina(2), Astro.site).toString()} />}</Fragment>
   <Breadcrumbs items={migas} />
-
-  <div class="contenedor py-8">
-    <h1 class="font-display text-3xl font-bold md:text-4xl">Noticias</h1>
-    <p class="mt-4 max-w-3xl text-ink-muted">
-      Redactamos cada nota y enlazamos siempre a la fuente original. Cuando el anuncio es global,
-      le agregamos lo que falta: qué significa en pesos y si llega a México.
-    </p>
-
-    {notas.length === 0 ? (
-      <p class="mt-8 text-ink-muted">Todavía no hay notas publicadas.</p>
-    ) : (
-      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {notas.map((n) => <TarjetaNoticia nota={n} />)}
-      </div>
-    )}
+  <div class="grid-page py-10">
+    <header class="max-w-3xl">
+      <p class="eyebrow">Noticias</p>
+      <h1 class="display mt-3 text-4xl md:text-5xl">Lo que pasa en el sector</h1>
+      <p class="mt-5 text-lg text-ink-2 text-pretty">Redactamos cada nota y enlazamos siempre a la fuente original. Cuando el anuncio es global, agregamos lo que falta: qué significa en pesos y si llega a México.</p>
+    </header>
+    {notas.length === 0
+      ? <div class="mt-10"><EmptyState titulo="Todavía no hay notas" texto="Estamos preparando la primera tanda." /></div>
+      : <div class="mt-10 grid gap-x-8 gap-y-2 md:grid-cols-2">{notas.map((n, i) => <TarjetaNoticia nota={n} grande={i === 0} />)}</div>}
+    <Pagination actual={1} total={totalPaginas} urlDe={urlPagina} />
   </div>
 </BaseLayout>

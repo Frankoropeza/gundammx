@@ -1,56 +1,30 @@
 ---
 import { rangoEstimadoMXN, evaluarObservado, pesos, yenes, fechaCorta } from '@lib/precio';
 import { FACTOR_MX } from '@config/site';
-
-interface Props {
-  precioJpy?: number;
-  observados: { monto: number; tienda: string; fecha: string; fuente: string }[];
-}
+interface Props { precioJpy?: number; observados: { monto: number; tienda: string; fecha: string; fuente: string }[] }
 const { precioJpy, observados } = Astro.props;
 const rango = precioJpy ? rangoEstimadoMXN(precioJpy) : null;
 ---
 
-<section class="tarjeta">
-  <h2 class="font-display text-sm uppercase tracking-wider text-ink">Precio</h2>
-
-  <dl class="mt-4 space-y-3 font-mono text-sm">
-    {precioJpy && (
-      <div class="flex flex-wrap items-baseline justify-between gap-2">
-        <dt class="text-ink-faint">Lista Japón</dt>
-        <dd class="text-ink-muted">{yenes(precioJpy)}</dd>
-      </div>
-    )}
-
-    {rango && (
-      <div class="flex flex-wrap items-baseline justify-between gap-2">
-        <dt class="text-ink-faint">Esperado en México</dt>
-        <dd class="text-ink">{pesos(rango.min)} – {pesos(rango.max)}</dd>
-      </div>
-    )}
+<section class="border border-line bg-surface p-6" aria-labelledby="precio-h">
+  <h2 id="precio-h" class="eyebrow">Precio</h2>
+  <dl class="mt-4 space-y-3 font-mono text-sm tabular">
+    {precioJpy && <div class="flex justify-between gap-4"><dt class="text-ink-3">Lista Japón</dt><dd class="text-ink-2">{yenes(precioJpy)}</dd></div>}
+    {rango && <div class="flex justify-between gap-4"><dt class="text-ink-3">Esperado en México</dt><dd class="text-lg text-ink">{pesos(rango.min)} – {pesos(rango.max)}</dd></div>}
   </dl>
-
-  {rango && (
-    <p class="mt-3 text-xs text-ink-faint">
-      Estimación con el factor de {FACTOR_MX}× medido sobre cinco kits idénticos en el canal oficial.
-      Es una referencia para detectar sobreprecio, no un precio de venta.
-    </p>
-  )}
-
+  {rango && <p class="mt-3 text-xs text-ink-3 text-pretty">Estimación con el factor de {FACTOR_MX}× medido sobre cinco kits idénticos en el canal oficial. Referencia para detectar sobreprecio, no precio de venta.</p>}
   {observados.length > 0 ? (
-    <div class="mt-5">
-      <h3 class="text-xs uppercase tracking-wide text-ink-faint">Observado en tiendas mexicanas</h3>
+    <div class="mt-6 border-t border-line pt-4">
+      <h3 class="text-xs text-ink-3">Observado en tiendas mexicanas</h3>
       <ul class="mt-2 space-y-2">
         {observados.map((o) => {
           const { sobreprecio, alerta } = evaluarObservado(precioJpy, o);
           return (
-            <li class="flex flex-wrap items-baseline justify-between gap-2 font-mono text-sm">
-              <span class="text-ink-muted">{o.tienda}</span>
+            <li class="flex flex-wrap items-baseline justify-between gap-2 font-mono text-sm tabular">
+              <span class="text-ink-2">{o.tienda}</span>
               <span class:list={[alerta ? 'text-signal' : 'text-ink']}>
-                {pesos(o.monto)}
-                <span class="ml-2 text-xs text-ink-faint">{fechaCorta(o.fecha)}</span>
-                {alerta && sobreprecio !== null && (
-                  <span class="ml-2 text-xs">⚠ {sobreprecio}% sobre lo esperado</span>
-                )}
+                {pesos(o.monto)} <span class="ml-2 text-xs text-ink-3">{fechaCorta(o.fecha)}</span>
+                {alerta && sobreprecio !== null && <span class="ml-2 text-xs">· {sobreprecio}% sobre lo esperado</span>}
               </span>
             </li>
           );
@@ -58,6 +32,6 @@ const rango = precioJpy ? rangoEstimadoMXN(precioJpy) : null;
       </ul>
     </div>
   ) : (
-    <p class="mt-5 text-sm text-ink-faint">Todavía no registramos precios observados de este kit en México.</p>
+    <p class="mt-5 text-sm text-ink-3">Todavía no registramos precios observados de este kit en México.</p>
   )}
 </section>

@@ -15,39 +15,39 @@ const migas = [{ nombre: 'Cómo verificamos', href: '/metodologia/' }];
 >
   <Breadcrumbs items={migas} />
 
-  <div class="contenedor max-w-3xl py-8">
-    <h1 class="font-display text-3xl font-bold md:text-4xl">Cómo verificamos</h1>
-    <p class="mt-4 text-lg text-ink-muted">
+  <div class="grid-page max-w-3xl py-8">
+    <h1 class="display text-3xl md:text-4xl">Cómo verificamos</h1>
+    <p class="mt-4 text-lg text-ink-2">
       Un directorio sirve para una cosa: que confíes en el dato. Por eso publicamos de dónde
       salió cada ficha y cuándo la revisamos por última vez.
     </p>
 
     <section class="mt-10">
-      <h2 class="font-display text-2xl font-semibold">Los cuatro estados de una ficha</h2>
+      <h2 class="display text-2xl">Los cuatro estados de una ficha</h2>
       <dl class="mt-4 space-y-4 text-sm">
-        <div class="tarjeta">
+        <div class="card p-5">
           <dt class="font-medium text-accent">Verificada</dt>
-          <dd class="mt-1 text-ink-muted">
+          <dd class="mt-1 text-ink-2">
             Comprobamos que la tienda vende Gunpla, con al menos una fuente enlazada y una fecha.
             La fuente puede ser su propio catálogo, un listado de distribuidor o una visita.
           </dd>
         </div>
-        <div class="tarjeta">
+        <div class="card p-5">
           <dt class="font-medium text-signal">Sin verificar</dt>
-          <dd class="mt-1 text-ink-muted">
+          <dd class="mt-1 text-ink-2">
             La tienda existe y opera, pero no pudimos confirmar su oferta de Gunpla.
             Aparece en el directorio con el aviso puesto. Preferimos decirlo a inventarlo.
           </dd>
         </div>
-        <div class="tarjeta">
+        <div class="card p-5">
           <dt class="font-medium text-alert">Reportada</dt>
-          <dd class="mt-1 text-ink-muted">
+          <dd class="mt-1 text-ink-2">
             Alguien nos avisó de un problema y está en revisión. Se resuelve en un máximo de 48 horas.
           </dd>
         </div>
-        <div class="tarjeta">
-          <dt class="font-medium text-ink-muted">Cerrada</dt>
-          <dd class="mt-1 text-ink-muted">
+        <div class="card p-5">
+          <dt class="font-medium text-ink-2">Cerrada</dt>
+          <dd class="mt-1 text-ink-2">
             Dejó de operar. No borramos la ficha: la marcamos, porque alguien la seguirá buscando.
           </dd>
         </div>
@@ -55,8 +55,8 @@ const migas = [{ nombre: 'Cómo verificamos', href: '/metodologia/' }];
     </section>
 
     <section class="mt-10">
-      <h2 class="font-display text-2xl font-semibold">Reglas que no rompemos</h2>
-      <ul class="mt-4 space-y-3 text-sm text-ink-muted">
+      <h2 class="display text-2xl">Reglas que no rompemos</h2>
+      <ul class="mt-4 space-y-3 text-sm text-ink-2">
         <li><strong class="text-ink">Ninguna ficha se publica sin fuente.</strong> El esquema del sitio exige al menos una URL. No hay excepción técnica ni editorial.</li>
         <li><strong class="text-ink">La verificación no se vende.</strong> Un listado patrocinado cambia la posición, nunca el sello. El sello se otorga por evidencia.</li>
         <li><strong class="text-ink">No etiquetamos a nadie como «oficial» o «autorizado»</strong> salvo que exista documento probatorio de distribución.</li>
@@ -66,8 +66,8 @@ const migas = [{ nombre: 'Cómo verificamos', href: '/metodologia/' }];
     </section>
 
     <section class="mt-10">
-      <h2 class="font-display text-2xl font-semibold">De dónde salen los precios de referencia</h2>
-      <p class="mt-4 text-sm text-ink-muted">
+      <h2 class="display text-2xl">De dónde salen los precios de referencia</h2>
+      <p class="mt-4 text-sm text-ink-2">
         Comparamos cinco kits idénticos entre la ficha oficial japonesa y el catálogo oficial mexicano.
         El sobreprecio resultó de <strong class="text-ink">{FACTOR_MX}× el precio de lista japonés</strong>,
         con una dispersión estrecha entre grados. Con ese factor calculamos el rango esperado en pesos de
@@ -76,21 +76,21 @@ const migas = [{ nombre: 'Cómo verificamos', href: '/metodologia/' }];
     </section>
 
     <section class="mt-10">
-      <h2 class="font-display text-2xl font-semibold">Cada cuánto revisamos</h2>
-      <p class="mt-4 text-sm text-ink-muted">
+      <h2 class="display text-2xl">Cada cuánto revisamos</h2>
+      <p class="mt-4 text-sm text-ink-2">
         Las tiendas especializadas, cada seis meses. Las de catálogo ocasional, cada tres, porque
         la rotación de locales en plazas es alta. Un reporte de un usuario abre revisión inmediata.
       </p>
-      <p class="mt-4 font-mono text-sm text-ink-faint">
+      <p class="mt-4 font-mono text-sm text-ink-3">
         Estado actual: {verificadas.length} verificadas de {tiendas.length} fichas publicadas.
       </p>
     </section>
 
     <section class="mt-10">
-      <h2 class="font-display text-2xl font-semibold">Encontraste un error</h2>
-      <p class="mt-4 text-sm text-ink-muted">
+      <h2 class="display text-2xl">Encontraste un error</h2>
+      <p class="mt-4 text-sm text-ink-2">
         Es lo más útil que puedes hacer por el directorio.
-        <a href="/reportar/" class="enlace">Repórtalo aquí</a> y lo revisamos.
+        <a href="/reportar/" class="link">Repórtalo aquí</a> y lo revisamos.
       </p>
     </section>
   </div>

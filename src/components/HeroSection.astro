@@ -1,42 +1,32 @@
 ---
-interface Props { totalTiendas: number; totalVerificadas: number; totalCiudades: number }
-const { totalTiendas, totalVerificadas, totalCiudades } = Astro.props;
-
+import SearchBar from '@components/SearchBar.astro';
+interface Props { totalTiendas: number; totalVerificadas: number; totalEstados: number }
+const { totalTiendas, totalVerificadas, totalEstados } = Astro.props;
 const metricas = [
   { valor: totalTiendas, etiqueta: 'tiendas en el directorio' },
   { valor: totalVerificadas, etiqueta: 'con oferta verificada' },
-  { valor: totalCiudades, etiqueta: 'ciudades cubiertas' },
+  { valor: totalEstados, etiqueta: 'estados con tiendas' },
 ];
 ---
 
-<section class="border-b border-base-line bg-base-surface">
-  <div class="contenedor py-16 md:py-24">
-    <p class="font-mono text-xs uppercase tracking-widest text-accent">Directorio independiente</p>
-    <h1 class="mt-4 max-w-3xl font-display text-4xl font-bold leading-tight md:text-5xl">
-      Dónde comprar Gundam original en México
-    </h1>
-    <p class="mt-5 max-w-2xl text-lg text-ink-muted">
-      Tiendas verificadas una por una, con fuente y fecha. Precios de referencia en pesos
-      para detectar sobreprecio. Sin afiliación con ninguna marca.
-    </p>
-
-    <div class="mt-8 flex flex-wrap gap-3">
-      <a href="/tiendas/" class="rounded-lg bg-accent px-5 py-3 font-medium text-base-bg transition-colors hover:bg-accent-dark">
-        Ver tiendas por ciudad
-      </a>
-      <a href="/guias/como-saber-si-un-gunpla-es-original/" class="rounded-lg border border-base-line px-5 py-3 font-medium text-ink transition-colors hover:border-accent hover:text-accent">
-        ¿Original o bootleg?
-      </a>
+<section class="border-b border-line">
+  <div class="grid-page grid gap-10 py-16 md:grid-cols-12 md:py-24">
+    <div class="md:col-span-8">
+      <p class="eyebrow">Directorio independiente · México</p>
+      <h1 class="display mt-5 text-5xl md:text-6xl text-balance" data-pagefind-meta="title">Dónde comprar Gundam original en México.</h1>
+      <p class="mt-6 max-w-prose text-lg text-ink-2 text-pretty">
+        Tiendas verificadas una por una, con fuente y fecha a la vista. Precio de referencia en pesos
+        para detectar sobreprecio. Sin afiliación con ninguna marca.
+      </p>
+      <div class="mt-8"><SearchBar /></div>
+      <p class="mt-3 font-mono text-xs text-ink-3">Prueba «Guadalajara», «Master Grade» o «preventa»</p>
     </div>
 
-    <dl class="mt-12 grid max-w-2xl grid-cols-3 gap-6">
+    <dl class="grid grid-cols-3 gap-6 self-end md:col-span-4 md:grid-cols-1 md:border-l md:border-line md:pl-8">
       {metricas.map((m) => (
         <div>
-          <dt class="sr-only">{m.etiqueta}</dt>
-          <dd>
-            <span class="block font-display text-3xl font-bold text-ink">{m.valor}</span>
-            <span class="block text-xs text-ink-faint">{m.etiqueta}</span>
-          </dd>
+          <dd class="display text-4xl tabular">{m.valor}</dd>
+          <dt class="mt-1 text-xs text-ink-3">{m.etiqueta}</dt>
         </div>
       ))}
     </dl>

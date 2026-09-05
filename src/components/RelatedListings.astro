@@ -1,0 +1,18 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import DirectoryCard from '@components/DirectoryCard.astro';
+interface Props { tiendas: CollectionEntry<'tiendas'>[]; titulo: string; verTodo?: { texto: string; href: string } }
+const { tiendas, titulo, verTodo } = Astro.props;
+---
+
+{tiendas.length > 0 && (
+  <section aria-labelledby="rel-h" data-pagefind-ignore>
+    <div class="flex items-baseline justify-between gap-4">
+      <h2 id="rel-h" class="display text-2xl">{titulo}</h2>
+      {verTodo && <a href={verTodo.href} class="link text-sm">{verTodo.texto}</a>}
+    </div>
+    <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {tiendas.map((t) => <DirectoryCard tienda={t} />)}
+    </div>
+  </section>
+)}

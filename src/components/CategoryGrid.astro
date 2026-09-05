@@ -1,0 +1,28 @@
+---
+import { GRADOS, type GradoId } from '@config/site';
+interface Props {
+  categorias: { slug: string; nombre: string; total: number; descripcion: string }[];
+  grados?: GradoId[];
+}
+const { categorias, grados = [] } = Astro.props;
+---
+
+<div class="grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+  {categorias.map((c) => (
+    <a href={`/tiendas/categoria/${c.slug}/`} class="group flex min-h-40 flex-col justify-between bg-surface p-6 transition-colors hover:bg-paper">
+      <span class="font-mono text-xs text-ink-3 tabular">{c.total} {c.total === 1 ? 'tienda' : 'tiendas'}</span>
+      <span>
+        <span class="display block text-2xl group-hover:text-accent">{c.nombre}</span>
+        <span class="mt-1 block text-sm text-ink-2">{c.descripcion}</span>
+      </span>
+    </a>
+  ))}
+</div>
+
+{grados.length > 0 && (
+  <ul class="mt-4 flex flex-wrap gap-2" aria-label="Kits por grado">
+    {grados.map((g) => (
+      <li><a href={`/kits/${g}/`} class="tag hover:border-ink hover:text-ink">{GRADOS[g].etiqueta} <span class="ml-1 text-ink-3">{GRADOS[g].nombre}</span></a></li>
+    ))}
+  </ul>
+)}

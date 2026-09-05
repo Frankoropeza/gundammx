@@ -28,9 +28,9 @@ const schemas = [
 >
   <Breadcrumbs items={migas} />
 
-  <div class="contenedor py-8">
-    <h1 class="font-display text-3xl font-bold md:text-4xl">Kits y precios de referencia</h1>
-    <p class="mt-4 max-w-3xl text-ink-muted">
+  <div class="grid-page py-8">
+    <h1 class="display text-3xl md:text-4xl">Kits y precios de referencia</h1>
+    <p class="mt-4 max-w-3xl text-ink-2">
       Para cada kit publicamos el precio de lista en Japón y el rango que debería costar en México,
       calculado con el factor de {FACTOR_MX}× que medimos en el canal oficial. Sirve para una sola cosa:
       saber si el precio que te están pidiendo es normal o es sobreprecio.
@@ -38,8 +38,8 @@ const schemas = [
 
     <nav class="mt-8 flex flex-wrap gap-2">
       {conKits.map((g) => (
-        <a href={`/kits/${g}/`} class="chip hover:border-accent hover:text-accent">
-          {GRADOS[g].etiqueta} <span class="ml-1 text-ink-faint">{GRADOS[g].nombre}</span>
+        <a href={`/kits/${g}/`} class="tag hover:border-accent hover:text-accent">
+          {GRADOS[g].etiqueta} <span class="ml-1 text-ink-3">{GRADOS[g].nombre}</span>
         </a>
       ))}
     </nav>

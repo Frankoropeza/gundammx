@@ -2,47 +2,46 @@
 import type { GetStaticPaths } from 'astro';
 import type { CollectionEntry } from 'astro:content';
 import { render } from 'astro:content';
+import { Image } from 'astro:assets';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
-import BadgeVerificacion from '@components/BadgeVerificacion.astro';
-import BadgeOrigen from '@components/BadgeOrigen.astro';
+import ListingHero from '@components/ListingHero.astro';
 import ChipsGrado from '@components/ChipsGrado.astro';
+import ContactCTA from '@components/ContactCTA.astro';
+import FAQ from '@components/FAQ.astro';
 import FuentesFicha from '@components/FuentesFicha.astro';
-import TarjetaTienda from '@components/TarjetaTienda.astro';
-import { tiendasActivas, ciudadesDe } from '@lib/directorio';
+import RelatedListings from '@components/RelatedListings.astro';
+import { tiendasActivas, relacionadasDe, faqDeTienda, CATEGORIAS } from '@lib/directorio';
 import { nombreEstado } from '@lib/estados';
 import { pesos } from '@lib/precio';
-import { schemaTienda, schemaMigaDePan } from '@lib/seo';
+import { schemaTienda, schemaMigaDePan, schemaFAQ } from '@lib/seo';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const tiendas = await tiendasActivas();
-  return tiendas.map((t) => ({
+  return Promise.all(tiendas.map(async (t) => ({
     params: { id: t.id },
-    props: {
-      tienda: t,
-      cercanas: tiendas
-        .filter((o) => o.id !== t.id)
-        .filter((o) => ciudadesDe(o).some((c) => ciudadesDe(t).some((x) => x.slug === c.slug)))
-        .slice(0, 3),
-    },
-  }));
+    props: { tienda: t, relacionadas: await relacionadasDe(t) },
+  })));
 };
 
-interface Props {
-  tienda: CollectionEntry<'tiendas'>;
-  cercanas: CollectionEntry<'tiendas'>[];
-}
-
-const { tienda, cercanas } = Astro.props;
+interface Props { tienda: CollectionEntry<'tiendas'>; relacionadas: CollectionEntry<'tiendas'>[] }
+const { tienda, relacionadas } = Astro.props;
 const d = tienda.data;
 const { Content } = await render(tienda);
 
 const principal = d.sucursales[0];
+const ubicacion = principal
+  ? [...new Set(d.sucursales.map((s) => s.ciudad))].join(' · ')
+  : 'En línea · envío nacional';
+const faq = faqDeTienda(tienda);
+
 const servicios: Record<string, string> = {
-  talleres: 'Talleres', cursos: 'Cursos', custom_paint: 'Custom paint',
-  armado_por_encargo: 'Armado por encargo', panel_lining: 'Panel lining',
-  aerografia: 'Aerografía', club: 'Club o comunidad', concursos: 'Concursos',
+  talleres: 'Talleres', cursos: 'Cursos', custom_paint: 'Custom paint', armado_por_encargo: 'Armado por encargo',
+  panel_lining: 'Panel lining', aerografia: 'Aerografía', club: 'Club o comunidad', concursos: 'Concursos',
 };
+
+const titulo = d.seo?.titulo ?? `${d.nombre} — Gunpla en ${principal?.ciudad ?? 'línea'}`;
+const descripcion = d.seo?.descripcion ?? d.descripcion_corta;
 
 const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [
@@ -53,152 +52,150 @@ const migas = [
 const schemas = [
   schemaMigaDePan(base, migas),
   schemaTienda(base, {
-    nombre: d.nombre,
-    descripcion: d.descripcion_corta,
-    web: d.web,
-    sucursales: d.sucursales,
-    redes: d.redes,
+    nombre: d.nombre, descripcion: d.descripcion_corta, web: d.web, sucursales: d.sucursales, redes: d.redes,
+    imagen: d.imagen?.src, rangoPrecio: d.rango_precio,
   }),
+  ...(faq.length ? [schemaFAQ(faq)] : []),
 ];
 ---
 
-<BaseLayout titulo={d.nombre} descripcion={d.descripcion_corta} schemas={schemas}>
+<BaseLayout titulo={titulo} descripcion={descripcion} schemas={schemas}>
   <Breadcrumbs items={migas} />
 
-  <div class="contenedor max-w-4xl py-8">
-    <!-- 1. Confianza primero: es la pregunta real del usuario -->
-    <header>
-      <div class="flex flex-wrap items-center gap-2">
-        <BadgeVerificacion estado={d.verificacion.estado} fecha={d.verificacion.fecha} />
-        <BadgeOrigen origen={d.origen_producto} />
-        {d.destacada && <span class="chip border-signal/40 text-signal">Patrocinado</span>}
+  <div class="grid-page py-10">
+    <ListingHero
+      nombre={d.nombre}
+      resumen={d.descripcion_corta}
+      categoria={CATEGORIAS[d.categoria].nombre}
+      ubicacion={ubicacion}
+      verificacion={d.verificacion}
+      origen={d.origen_producto}
+      destacada={d.destacada}
+      rangoPrecio={d.rango_precio}
+    />
+
+    {(d.imagen || d.galeria.length > 0) && (
+      <div class="mt-10 grid gap-3 sm:grid-cols-3">
+        {d.imagen && <Image src={d.imagen} alt={d.imagen_alt ?? d.nombre} width={1200} height={800} class="aspect-[3/2] w-full object-cover sm:col-span-2" loading="eager" />}
+        {d.galeria.slice(0, 2).map((g) => <Image src={g.src} alt={g.alt} width={600} height={400} class="aspect-[3/2] w-full object-cover" loading="lazy" />)}
       </div>
+    )}
 
-      <h1 class="mt-4 font-display text-3xl font-bold md:text-4xl">{d.nombre}</h1>
-      <p class="mt-3 text-lg text-ink-muted">{d.descripcion_corta}</p>
-
-      {d.verificacion.estado === 'sin_verificar' && (
-        <p class="mt-4 rounded-lg border border-signal/40 bg-signal/10 p-3 text-sm text-signal">
-          La tienda existe y está operando, pero todavía no comprobamos su oferta de Gunpla.
-          Confirma disponibilidad antes de comprar.
-        </p>
-      )}
-    </header>
-
-    <!-- 2. Qué vende -->
-    <section class="mt-10">
-      <h2 class="font-display text-xl font-semibold">Qué vende</h2>
-      <div class="mt-4 grid gap-4 sm:grid-cols-2">
-        <div class="tarjeta">
-          <h3 class="text-xs uppercase tracking-wide text-ink-faint">Grados en catálogo</h3>
-          <div class="mt-3"><ChipsGrado grados={d.grados} enlazar /></div>
-          {d.profundidad_catalogo && (
-            <p class="mt-3 font-mono text-xs text-ink-faint">≈{d.profundidad_catalogo} SKU de Gunpla</p>
-          )}
-        </div>
-        <div class="tarjeta">
-          <h3 class="text-xs uppercase tracking-wide text-ink-faint">También maneja</h3>
-          <ul class="mt-3 space-y-1 text-sm text-ink-muted">
-            {d.otras_lineas.map((l) => <li>{l}</li>)}
-            {d.vende_herramientas && <li>Herramientas de armado</li>}
-            {d.vende_pinturas && <li>Pinturas{d.marcas_pintura.length > 0 && `: ${d.marcas_pintura.join(', ')}`}</li>}
-            {d.otras_lineas.length === 0 && !d.vende_herramientas && !d.vende_pinturas && (
-              <li class="text-ink-faint">Sin datos confirmados</li>
+    <div class="mt-12 grid gap-12 md:grid-cols-12">
+      <div class="space-y-12 md:col-span-7">
+        <!-- Qué vende -->
+        <section aria-labelledby="vende-h">
+          <h2 id="vende-h" class="display text-2xl">Qué vende</h2>
+          <dl class="mt-5 grid gap-6 sm:grid-cols-2">
+            <div>
+              <dt class="eyebrow">Grados en catálogo</dt>
+              <dd class="mt-3"><ChipsGrado grados={d.grados} enlazar /></dd>
+              {d.profundidad_catalogo && <dd class="mt-2 font-mono text-xs text-ink-3">≈{d.profundidad_catalogo} SKU de Gunpla</dd>}
+            </div>
+            <div>
+              <dt class="eyebrow">También maneja</dt>
+              <dd class="mt-3 text-sm text-ink-2">
+                <ul class="space-y-1">
+                  {d.otras_lineas.map((l) => <li>{l}</li>)}
+                  {d.vende_herramientas && <li>Herramientas de armado</li>}
+                  {d.vende_pinturas && <li>Pinturas{d.marcas_pintura.length > 0 && `: ${d.marcas_pintura.join(', ')}`}</li>}
+                  {!d.otras_lineas.length && !d.vende_herramientas && !d.vende_pinturas && <li class="text-ink-3">Sin datos confirmados</li>}
+                </ul>
+              </dd>
+            </div>
+            {d.especialidades.length > 0 && (
+              <div class="sm:col-span-2"><dt class="eyebrow">Especialidades</dt><dd class="mt-3 flex flex-wrap gap-2">{d.especialidades.map((e) => <span class="tag">{e}</span>)}</dd></div>
             )}
-          </ul>
-        </div>
+            {d.servicios.length > 0 && (
+              <div class="sm:col-span-2"><dt class="eyebrow">Servicios</dt><dd class="mt-3 flex flex-wrap gap-2">{d.servicios.map((s) => <span class="tag">{servicios[s] ?? s}</span>)}</dd></div>
+            )}
+          </dl>
+        </section>
+
+        <!-- Cómo comprar -->
+        <section aria-labelledby="comprar-h">
+          <h2 id="comprar-h" class="display text-2xl">Cómo comprar</h2>
+          <dl class="mt-5 grid gap-6 sm:grid-cols-2">
+            <div>
+              <dt class="eyebrow">Envío</dt>
+              <dd class="mt-3 text-sm text-ink-2">
+                {d.envio_nacional ? 'Envía a todo México' : 'Sin envío nacional confirmado'}
+                {d.paqueterias.length > 0 && <span class="block font-mono text-xs text-ink-3">{d.paqueterias.join(' · ')}</span>}
+                {d.envio_gratis_desde && <span class="block font-mono text-xs text-ink-3">Gratis desde {pesos(d.envio_gratis_desde)}</span>}
+                {d.pickup && <span class="block">Recoger en tienda</span>}
+              </dd>
+            </div>
+            <div>
+              <dt class="eyebrow">Preventas y pagos</dt>
+              <dd class="mt-3 text-sm text-ink-2">
+                {d.maneja_preventa ? 'Maneja preventas' : 'Sin preventas confirmadas'}
+                {d.maneja_pbandai && <span class="block">Consigue exclusivos P-Bandai</span>}
+                {d.pagos.length > 0 && <span class="block font-mono text-xs text-ink-3">{d.pagos.join(' · ')}</span>}
+                {d.msi && <span class="block">Meses sin intereses</span>}
+              </dd>
+            </div>
+            {d.zonas_cobertura.length > 0 && (
+              <div class="sm:col-span-2"><dt class="eyebrow">Zonas de cobertura</dt><dd class="mt-3 text-sm text-ink-2">{d.zonas_cobertura.join(' · ')}</dd></div>
+            )}
+          </dl>
+        </section>
+
+        <!-- Dónde está -->
+        {d.sucursales.length > 0 && (
+          <section aria-labelledby="donde-h">
+            <h2 id="donde-h" class="display text-2xl">{d.sucursales.length === 1 ? 'Dónde está' : `Sucursales (${d.sucursales.length})`}</h2>
+            <ul class="mt-5 grid gap-px border border-line bg-line sm:grid-cols-2">
+              {d.sucursales.map((s) => (
+                <li class="bg-surface p-5">
+                  {s.etiqueta && <p class="font-medium">{s.etiqueta}</p>}
+                  <address class="mt-1 text-sm not-italic text-ink-2">
+                    {[s.calle, s.colonia].filter(Boolean).join(', ')}{(s.calle || s.colonia) && <br />}
+                    {s.ciudad}, {nombreEstado(s.estado)}{s.cp && ` · CP ${s.cp}`}
+                  </address>
+                  {s.dentro_de_plaza && <p class="mt-1 text-xs text-ink-3">Dentro de {s.dentro_de_plaza}</p>}
+                  {s.telefono && <p class="mt-2 font-mono text-sm text-ink-2">{s.telefono}</p>}
+                  {s.horarios && (
+                    <dl class="mt-3 grid grid-cols-[auto_1fr] gap-x-3 font-mono text-xs text-ink-3">
+                      {Object.entries(s.horarios).map(([dia, h]) => <><dt class="capitalize">{dia}</dt><dd>{h}</dd></>)}
+                    </dl>
+                  )}
+                  {s.lat && s.lng && (
+                    <a href={`https://www.google.com/maps/search/?api=1&query=${s.lat},${s.lng}`} class="link mt-3 inline-block text-sm" rel="noopener" target="_blank">Abrir en mapas</a>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        <div class="prose-ed"><Content /></div>
+
+        <FAQ items={faq} />
+
+        <FuentesFicha verificacion={d.verificacion} autor={d.autor} actualizada={d.actualizada} />
       </div>
 
-      {d.servicios.length > 0 && (
-        <div class="tarjeta mt-4">
-          <h3 class="text-xs uppercase tracking-wide text-ink-faint">Servicios</h3>
-          <ul class="mt-3 flex flex-wrap gap-2">
-            {d.servicios.map((s) => <li class="chip">{servicios[s] ?? s}</li>)}
-          </ul>
+      <aside class="space-y-6 md:col-span-4 md:col-start-9">
+        <div class="md:sticky md:top-24">
+          <ContactCTA
+            nombre={d.nombre}
+            web={d.web}
+            whatsapp={principal?.whatsapp}
+            telefono={principal?.telefono}
+            email={d.email}
+            redes={d.redes}
+            marketplaces={d.marketplaces}
+          />
         </div>
-      )}
-    </section>
+      </aside>
+    </div>
 
-    <!-- 3. Cómo comprar -->
-    <section class="mt-10">
-      <h2 class="font-display text-xl font-semibold">Cómo comprar</h2>
-      <dl class="mt-4 grid gap-4 sm:grid-cols-2">
-        <div class="tarjeta">
-          <dt class="text-xs uppercase tracking-wide text-ink-faint">Envío</dt>
-          <dd class="mt-2 text-sm text-ink-muted">
-            {d.envio_nacional ? 'Envía a todo México' : 'Sin envío nacional confirmado'}
-            {d.paqueterias.length > 0 && <span class="block text-xs text-ink-faint">{d.paqueterias.join(' · ')}</span>}
-            {d.envio_gratis_desde && <span class="block text-xs text-ink-faint">Envío gratis desde {pesos(d.envio_gratis_desde)}</span>}
-          </dd>
-        </div>
-        <div class="tarjeta">
-          <dt class="text-xs uppercase tracking-wide text-ink-faint">Preventas y pagos</dt>
-          <dd class="mt-2 text-sm text-ink-muted">
-            {d.maneja_preventa ? 'Maneja preventas' : 'Sin preventas confirmadas'}
-            {d.maneja_pbandai && <span class="block">Consigue exclusivos P-Bandai</span>}
-            {d.pagos.length > 0 && <span class="block text-xs text-ink-faint">{d.pagos.join(' · ')}</span>}
-            {d.msi && <span class="block text-xs text-ink-faint">Meses sin intereses</span>}
-          </dd>
-        </div>
-      </dl>
-    </section>
-
-    <!-- 4. Dónde está -->
-    {d.sucursales.length > 0 && (
-      <section class="mt-10">
-        <h2 class="font-display text-xl font-semibold">
-          {d.sucursales.length === 1 ? 'Dónde está' : `Sucursales (${d.sucursales.length})`}
-        </h2>
-        <ul class="mt-4 grid gap-4 sm:grid-cols-2">
-          {d.sucursales.map((s) => (
-            <li class="tarjeta">
-              {s.etiqueta && <p class="font-medium">{s.etiqueta}</p>}
-              <p class="text-sm text-ink-muted">
-                {[s.calle, s.colonia].filter(Boolean).join(', ')}
-                {(s.calle || s.colonia) && <br />}
-                {s.ciudad}, {nombreEstado(s.estado)}
-              </p>
-              {s.dentro_de_plaza && <p class="mt-1 text-xs text-ink-faint">Dentro de {s.dentro_de_plaza}</p>}
-              {s.telefono && <p class="mt-2 font-mono text-sm text-ink-muted">{s.telefono}</p>}
-            </li>
-          ))}
-        </ul>
-      </section>
-    )}
-
-    <!-- 5. Contacto -->
-    <section class="mt-10">
-      <h2 class="font-display text-xl font-semibold">Contacto</h2>
-      <ul class="mt-4 flex flex-wrap gap-2">
-        {d.web && <li><a href={d.web} class="chip hover:border-accent hover:text-accent" rel="nofollow noopener" target="_blank">Sitio web</a></li>}
-        {Object.entries(d.redes).map(([red, url]) => url && (
-          <li><a href={url} class="chip capitalize hover:border-accent hover:text-accent" rel="nofollow noopener" target="_blank">{red}</a></li>
-        ))}
-        {Object.entries(d.marketplaces).map(([m, url]) => url && (
-          <li><a href={url} class="chip capitalize hover:border-accent hover:text-accent" rel="nofollow noopener" target="_blank">{m}</a></li>
-        ))}
-      </ul>
-    </section>
-
-    {/* Notas editoriales de la ficha, si las hay */}
-    <div class="prose-ficha mt-10 text-sm text-ink-muted"><Content /></div>
-
-    <!-- 6. Metodología -->
-    <div class="mt-10"><FuentesFicha verificacion={d.verificacion} /></div>
-
-    {cercanas.length > 0 && (
-      <section class="mt-12">
-        <h2 class="font-display text-xl font-semibold">Otras tiendas en la misma ciudad</h2>
-        <div class="mt-4 grid gap-4 sm:grid-cols-3">
-          {cercanas.map((t) => <TarjetaTienda tienda={t} />)}
-        </div>
-      </section>
-    )}
+    <div class="mt-20">
+      <RelatedListings
+        tiendas={relacionadas}
+        titulo={principal ? `Más tiendas en ${principal.ciudad}` : 'Otras tiendas con envío nacional'}
+        verTodo={principal ? { texto: `Ver ${nombreEstado(principal.estado)}`, href: `/tiendas/${principal.estado}/` } : { texto: 'Ver todas', href: '/tiendas/en-linea/' }}
+      />
+    </div>
   </div>
 </BaseLayout>
-
-<style is:global>
-  .prose-ficha p { @apply mt-3 leading-relaxed; }
-  .prose-ficha a { @apply text-accent underline-offset-4 hover:underline; }
-  .prose-ficha ul { @apply mt-3 list-disc space-y-1 pl-6; }
-</style>

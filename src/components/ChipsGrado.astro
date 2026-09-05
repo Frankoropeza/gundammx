@@ -1,22 +1,20 @@
 ---
 import { GRADOS, type GradoId } from '@config/site';
-
 interface Props { grados: GradoId[]; enlazar?: boolean }
 const { grados, enlazar = false } = Astro.props;
-
 const ordenados = [...grados].sort((a, b) => GRADOS[a].orden - GRADOS[b].orden);
 ---
 
 {ordenados.length > 0 ? (
-  <ul class="flex flex-wrap gap-1.5">
+  <ul class="flex flex-wrap gap-1.5" aria-label="Grados en catálogo">
     {ordenados.map((g) => (
       <li>
         {enlazar
-          ? <a href={`/kits/${g}/`} class="chip hover:border-accent hover:text-accent" title={GRADOS[g].nombre}>{GRADOS[g].etiqueta}</a>
-          : <span class="chip" title={GRADOS[g].nombre}>{GRADOS[g].etiqueta}</span>}
+          ? <a href={`/kits/${g}/`} class="tag hover:border-ink hover:text-ink" title={GRADOS[g].nombre}>{GRADOS[g].etiqueta}</a>
+          : <span class="tag" title={GRADOS[g].nombre}>{GRADOS[g].etiqueta}</span>}
       </li>
     ))}
   </ul>
 ) : (
-  <p class="text-xs text-ink-faint">Surtido por confirmar</p>
+  <p class="font-mono text-xs text-ink-3">Surtido por confirmar</p>
 )}

@@ -1,22 +1,16 @@
 ---
 import { AVISO_INDEPENDENCIA, ENLACES_OFICIALES } from '@config/site';
-
 interface Props { compacto?: boolean }
 const { compacto = false } = Astro.props;
 ---
 
-<aside
-  class:list={[
-    'rounded-lg border border-base-line bg-base-alt/60 p-4 text-ink-muted',
-    compacto ? 'text-xs' : 'text-sm',
-  ]}
->
-  <p>{AVISO_INDEPENDENCIA}</p>
+<aside class:list={['border-t border-line pt-6 text-ink-2', compacto ? 'text-xs' : 'text-sm']} aria-label="Aviso de independencia">
+  <p class="max-w-prose text-pretty">{AVISO_INDEPENDENCIA}</p>
   <p class="mt-2">
     {ENLACES_OFICIALES.map((e, i) => (
       <>
-        {i > 0 && <span class="mx-2 text-ink-faint">·</span>}
-        <a class="enlace" href={e.url} rel="nofollow noopener" target="_blank">{e.nombre}</a>
+        {i > 0 && <span class="mx-2 text-ink-3" aria-hidden="true">·</span>}
+        <a class="link" href={e.url} rel="nofollow noopener" target="_blank">{e.nombre}</a>
       </>
     ))}
   </p>

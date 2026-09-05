@@ -3,19 +3,15 @@ interface Props {
   origen: 'distribuidor_autorizado' | 'revende_original' | 'importacion_directa' | 'mixto' | 'no_verificado';
 }
 const { origen } = Astro.props;
-
-// Nunca usamos las palabras "oficial", "autorizado por Bandai" ni "partner".
+// Nunca "oficial", "autorizado por Bandai" ni "partner".
 const mapa = {
-  distribuidor_autorizado: { texto: 'Distribuidor autorizado', clase: 'text-accent' },
-  revende_original:        { texto: 'Revende original',        clase: 'text-ink-muted' },
-  importacion_directa:     { texto: 'Importación directa',     clase: 'text-ink-muted' },
-  mixto:                   { texto: 'Origen mixto',            clase: 'text-signal' },
-  no_verificado:           { texto: 'Origen no verificado',    clase: 'text-signal' },
+  distribuidor_autorizado: { texto: 'Distribuidor autorizado', clase: 'tag-accent' },
+  revende_original:        { texto: 'Revende original',        clase: 'tag' },
+  importacion_directa:     { texto: 'Importación directa',     clase: 'tag' },
+  mixto:                   { texto: 'Origen mixto',            clase: 'tag-signal' },
+  no_verificado:           { texto: 'Origen no verificado',    clase: 'tag-signal' },
 } as const;
-
 const s = mapa[origen];
 ---
 
-<span class:list={['inline-flex items-center rounded border border-base-line px-2 py-0.5 text-xs', s.clase]}>
-  {s.texto}
-</span>
+<span class={s.clase}>{s.texto}</span>

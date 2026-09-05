@@ -13,6 +13,26 @@ export function schemaSitio(b: Base) {
     url: b.site?.toString(),
     description: SITE.descripcion,
     inLanguage: SITE.locale,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: abs(b.site, '/buscar/?q={search_term_string}'),
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+}
+
+export function schemaFAQ(items: { pregunta: string; respuesta: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((i) => ({
+      '@type': 'Question',
+      name: i.pregunta,
+      acceptedAnswer: { '@type': 'Answer', text: i.respuesta },
+    })),
   };
 }
 
@@ -51,17 +71,21 @@ type DatosTienda = {
     lat?: number; lng?: number; telefono?: string;
   }[];
   redes: Record<string, string | undefined>;
+  imagen?: string;
+  rangoPrecio?: string;
 };
 
-/** Store, sin aggregateRating: no publicamos reseñas que no son nuestras. */
+/** HobbyShop (subtipo de Store), sin aggregateRating: no publicamos reseñas que no son nuestras. */
 export function schemaTienda(b: Base, t: DatosTienda) {
   const principal = t.sucursales[0];
   return {
     '@context': 'https://schema.org',
-    '@type': 'Store',
+    '@type': 'HobbyShop',
     name: t.nombre,
     description: t.descripcion,
     url: abs(b.site, b.url),
+    ...(t.imagen ? { image: abs(b.site, t.imagen) } : {}),
+    ...(t.rangoPrecio ? { priceRange: t.rangoPrecio } : {}),
     ...(t.web ? { sameAs: [t.web, ...Object.values(t.redes).filter(Boolean)] } : {}),
     ...(principal
       ? {

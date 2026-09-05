@@ -2,39 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ------------------------------------------------------------------
+   Tokens. Tema claro por defecto; oscuro por preferencia del sistema.
+   Valores en RGB sin función para que Tailwind pueda aplicar alpha.
+------------------------------------------------------------------- */
 @layer base {
   :root {
-    color-scheme: dark;
+    --paper: 247 246 242;
+    --surface: 255 255 255;
+    --line: 227 225 218;
+    --ink: 20 20 20;
+    --ink-2: 92 92 87;
+    --ink-3: 150 150 143;
+    --accent: 15 122 95;
+    --signal: 183 121 31;
+    --alert: 179 38 30;
+    color-scheme: light;
   }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: 18 19 17;
+      --surface: 26 27 25;
+      --line: 44 46 42;
+      --ink: 237 235 230;
+      --ink-2: 165 163 156;
+      --ink-3: 110 110 104;
+      --accent: 76 201 163;
+      --signal: 224 169 74;
+      --alert: 229 118 110;
+      color-scheme: dark;
+    }
+  }
+
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
   }
   body {
-    @apply bg-base-bg text-ink antialiased;
+    @apply bg-paper font-sans text-ink antialiased;
+    font-feature-settings: 'cv11', 'ss01', 'tnum';
   }
-  /* Entradas a 16px: evita el zoom automatico de iOS */
-  input,
-  select,
-  textarea {
-    font-size: 16px;
+  /* Entradas a 16px: iOS no hace zoom */
+  input, select, textarea, button { font: inherit; font-size: 16px; }
+
+  /* Foco visible y consistente para teclado */
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 3px;
+    border-radius: 2px;
   }
+  ::selection { background: rgb(var(--accent) / 0.18); }
+
+  /* Acordeones nativos: sin marcador por defecto */
+  summary { list-style: none; cursor: pointer; }
+  summary::-webkit-details-marker { display: none; }
 }
 
 @layer components {
-  .contenedor {
-    @apply mx-auto w-full max-w-content px-4;
-  }
-  .tarjeta {
-    @apply rounded-xl border border-base-line bg-base-surface p-5;
-  }
-  .enlace {
-    @apply text-accent underline-offset-4 hover:underline;
-  }
-  .chip {
-    @apply inline-flex items-center rounded border border-base-line px-2 py-0.5 font-mono text-xs text-ink-muted;
-  }
-  /* Las tablas anchas se desplazan dentro de su contenedor, nunca el body */
-  .tabla-scroll {
-    @apply -mx-4 overflow-x-auto px-4;
-  }
+  .grid-page { @apply mx-auto w-full max-w-grid px-5 sm:px-8 lg:px-12; }
+
+  .eyebrow { @apply font-mono text-xs uppercase tracking-[0.14em] text-ink-2; }
+  .display { @apply font-serif font-normal tracking-[-0.01em] text-ink; }
+
+  .rule { @apply border-t border-line; }
+
+  .link { @apply text-accent underline decoration-accent/40 underline-offset-[3px] transition-colors hover:decoration-accent; }
+  .link-quiet { @apply text-ink underline-offset-[3px] hover:underline; }
+
+  .btn { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-sm px-5 text-sm font-medium transition-colors; }
+  .btn-primary { @apply btn bg-ink text-paper hover:bg-accent; }
+  .btn-secondary { @apply btn border border-line bg-transparent text-ink hover:border-ink; }
+  .btn-ghost { @apply btn px-3 text-ink-2 hover:text-ink; }
+
+  .tag { @apply inline-flex min-h-7 items-center rounded-sm border border-line px-2 font-mono text-xs text-ink-2; }
+  .tag-accent { @apply tag border-accent/40 text-accent; }
+  .tag-signal { @apply tag border-signal/50 text-signal; }
+  .tag-alert { @apply tag border-alert/50 text-alert; }
+
+  .card { @apply flex flex-col border border-line bg-surface transition-colors hover:border-ink; }
+
+  .table-scroll { @apply -mx-5 overflow-x-auto px-5 sm:-mx-8 sm:px-8; }
+  .table-scroll table { @apply w-full min-w-[46rem] border-collapse text-sm; }
+  .table-scroll th { @apply border-b border-line py-3 pr-4 text-left font-mono text-xs uppercase tracking-wider text-ink-2; }
+  .table-scroll td { @apply border-b border-line/70 py-3 pr-4 align-top; }
+
+  /* Prosa editorial para guías y notas */
+  .prose-ed { @apply text-[1.0625rem] leading-[1.7] text-ink; }
+  .prose-ed > * + * { @apply mt-5; }
+  .prose-ed h2 { @apply display mt-12 text-2xl md:text-3xl; }
+  .prose-ed h3 { @apply mt-9 font-sans text-lg font-semibold; }
+  .prose-ed a { @apply link; }
+  .prose-ed ul { @apply list-disc space-y-2 pl-6; }
+  .prose-ed ol { @apply list-decimal space-y-2 pl-6; }
+  .prose-ed blockquote { @apply border-l-2 border-accent pl-5 text-ink-2; }
+  .prose-ed table { @apply w-full border-collapse text-sm; }
+  .prose-ed th { @apply border-b border-line py-2 pr-4 text-left font-mono text-xs uppercase tracking-wider text-ink-2; }
+  .prose-ed td { @apply border-b border-line/70 py-2 pr-4 align-top; }
+  .prose-ed strong { @apply font-semibold; }
+  .prose-ed code { @apply rounded-sm bg-line/50 px-1 font-mono text-[0.9em]; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+  .tabular { font-variant-numeric: tabular-nums; }
 }

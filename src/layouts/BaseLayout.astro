@@ -1,4 +1,7 @@
 ---
+import '@fontsource-variable/inter';
+import '@fontsource-variable/jetbrains-mono';
+import '@fontsource/instrument-serif';
 import '@styles/global.css';
 import SEO from '@components/SEO.astro';
 import Header from '@components/Header.astro';
@@ -23,14 +26,20 @@ const todos = [schemaSitio(base), schemaOrganizacion(base), ...schemas];
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#F7F6F2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121311" media="(prefers-color-scheme: dark)" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <SEO titulo={titulo} descripcion={descripcion} tipo={tipo} noindex={noindex} schemas={todos} />
     <slot name="head" />
   </head>
   <body class="flex min-h-screen flex-col">
+    <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-ink focus:px-4 focus:py-2 focus:text-paper">
+      Saltar al contenido
+    </a>
     <Header />
-    <main class="flex-1"><slot /></main>
+    {/* Pagefind solo indexa páginas con data-pagefind-body: las noindex quedan fuera del buscador */}
+    <main id="contenido" class="flex-1" data-pagefind-body={noindex ? undefined : ''}><slot /></main>
     <Footer />
   </body>
 </html>

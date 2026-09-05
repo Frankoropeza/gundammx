@@ -33,10 +33,18 @@ export const pesos = (n: number) =>
 export const yenes = (n: number) =>
   new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY', maximumFractionDigits: 0 }).format(n);
 
+/**
+ * Una fecha "YYYY-MM-DD" se interpreta como UTC a medianoche; formateada en
+ * America/Mexico_City (UTC-6) se corría un día hacia atrás. Se formatea en UTC.
+ */
+const esSoloFecha = (v: string | Date) => typeof v === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(v);
+const opts = (v: string | Date, base: Intl.DateTimeFormatOptions): Intl.DateTimeFormatOptions =>
+  esSoloFecha(v) ? { ...base, timeZone: 'UTC' } : base;
+
 export const fechaLarga = (iso: string | Date) =>
-  new Intl.DateTimeFormat('es-MX', { day: 'numeric', month: 'long', year: 'numeric' })
+  new Intl.DateTimeFormat('es-MX', opts(iso, { day: 'numeric', month: 'long', year: 'numeric' }))
     .format(typeof iso === 'string' ? new Date(iso) : iso);
 
 export const fechaCorta = (iso: string | Date) =>
-  new Intl.DateTimeFormat('es-MX', { day: 'numeric', month: 'short', year: 'numeric' })
+  new Intl.DateTimeFormat('es-MX', opts(iso, { day: 'numeric', month: 'short', year: 'numeric' }))
     .format(typeof iso === 'string' ? new Date(iso) : iso);

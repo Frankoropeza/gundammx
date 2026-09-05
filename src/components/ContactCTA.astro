@@ -1,0 +1,51 @@
+---
+interface Props {
+  nombre: string;
+  web?: string;
+  whatsapp?: string;
+  telefono?: string;
+  email?: string;
+  redes: Record<string, string | undefined>;
+  marketplaces: Record<string, string | undefined>;
+}
+const { nombre, web, whatsapp, telefono, email, redes, marketplaces } = Astro.props;
+
+const waUrl = whatsapp
+  ? `https://wa.me/${whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(`Hola, vi ${nombre} en GUNDAMMX y quiero preguntar por disponibilidad.`)}`
+  : undefined;
+
+const etiquetas: Record<string, string> = {
+  instagram: 'Instagram', facebook: 'Facebook', tiktok: 'TikTok', youtube: 'YouTube', x: 'X', discord: 'Discord',
+  mercadolibre: 'Mercado Libre', amazon: 'Amazon', mercadoshops: 'Mercado Shops',
+};
+const enlaces = [...Object.entries(redes), ...Object.entries(marketplaces)].filter(([, u]) => u) as [string, string][];
+---
+
+<section class="border border-line bg-surface p-6" aria-labelledby="contacto-h" data-pagefind-ignore>
+  <h2 id="contacto-h" class="eyebrow">Contacto</h2>
+
+  <div class="mt-4 flex flex-wrap gap-2">
+    {waUrl && <a href={waUrl} class="btn-primary" rel="nofollow noopener" target="_blank">WhatsApp</a>}
+    {web && <a href={web} class="btn-secondary" rel="nofollow noopener" target="_blank">Sitio web</a>}
+    {telefono && !waUrl && <a href={`tel:${telefono}`} class="btn-secondary">Llamar</a>}
+  </div>
+
+  {(telefono || email) && (
+    <dl class="mt-5 space-y-1 font-mono text-sm text-ink-2">
+      {telefono && <div class="flex gap-3"><dt class="text-ink-3">Tel.</dt><dd>{telefono}</dd></div>}
+      {email && <div class="flex gap-3"><dt class="text-ink-3">Correo</dt><dd>{email}</dd></div>}
+    </dl>
+  )}
+
+  {enlaces.length > 0 && (
+    <ul class="mt-5 flex flex-wrap gap-2" aria-label="Redes y marketplaces">
+      {enlaces.map(([k, u]) => (
+        <li><a href={u} class="tag hover:border-ink hover:text-ink" rel="nofollow noopener" target="_blank">{etiquetas[k] ?? k}</a></li>
+      ))}
+    </ul>
+  )}
+
+  <p class="mt-5 text-xs text-ink-3 text-pretty">
+    La compra es directamente con la tienda. GUNDAMMX no intermedia ni cobra comisión al comprador.
+  </p>
+</section>

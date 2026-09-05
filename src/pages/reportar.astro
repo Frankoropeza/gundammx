@@ -12,15 +12,15 @@ const migas = [{ nombre: 'Reportar', href: '/reportar/' }];
 >
   <Breadcrumbs items={migas} />
 
-  <div class="contenedor max-w-3xl py-8">
-    <h1 class="font-display text-3xl font-bold md:text-4xl">Reportar</h1>
-    <p class="mt-4 text-lg text-ink-muted">
+  <div class="grid-page max-w-3xl py-8">
+    <h1 class="display text-3xl md:text-4xl">Reportar</h1>
+    <p class="mt-4 text-lg text-ink-2">
       El directorio se mantiene con reportes. Si algo está mal, avísanos.
     </p>
 
     <section class="mt-10">
-      <h2 class="font-display text-2xl font-semibold">Qué puedes reportar</h2>
-      <ul class="mt-4 space-y-2 text-sm text-ink-muted">
+      <h2 class="display text-2xl">Qué puedes reportar</h2>
+      <ul class="mt-4 space-y-2 text-sm text-ink-2">
         <li>Un dato incorrecto: dirección, horario, catálogo o envíos.</li>
         <li>Una tienda que cerró o cambió de domicilio.</li>
         <li>Una tienda que falta en el directorio.</li>
@@ -29,8 +29,8 @@ const migas = [{ nombre: 'Reportar', href: '/reportar/' }];
     </section>
 
     <section class="mt-8">
-      <h2 class="font-display text-2xl font-semibold">Cómo lo atendemos</h2>
-      <ol class="mt-4 space-y-2 text-sm text-ink-muted">
+      <h2 class="display text-2xl">Cómo lo atendemos</h2>
+      <ol class="mt-4 space-y-2 text-sm text-ink-2">
         <li>La ficha pasa a estado <span class="text-alert">reportada</span> y se muestra así al público.</li>
         <li>Revisamos con fuentes públicas y, si hace falta, contactamos a la tienda.</li>
         <li>Corregimos, damos de baja o cerramos el reporte. Plazo máximo: 48 horas.</li>
@@ -39,10 +39,10 @@ const migas = [{ nombre: 'Reportar', href: '/reportar/' }];
     </section>
 
     <section class="mt-8">
-      <h2 class="font-display text-2xl font-semibold">Mándalo por correo</h2>
-      <p class="mt-4 text-sm text-ink-muted">
+      <h2 class="display text-2xl">Mándalo por correo</h2>
+      <p class="mt-4 text-sm text-ink-2">
         A <span class="font-mono text-ink">{SITE.email}</span>, con el asunto «Reporte».
-        Incluye el enlace de la ficha y, si puedes, una captura o un enlace que respalde lo que reportas.
+        Incluye el link de la ficha y, si puedes, una captura o un link que respalde lo que reportas.
         Entre más concreto, más rápido lo resolvemos.
       </p>
     </section>

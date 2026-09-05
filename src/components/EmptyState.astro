@@ -1,0 +1,14 @@
+---
+interface Props {
+  titulo: string;
+  texto: string;
+  accion?: { texto: string; href: string };
+}
+const { titulo, texto, accion } = Astro.props;
+---
+
+<div class="border border-dashed border-line px-6 py-14 text-center">
+  <p class="display text-2xl">{titulo}</p>
+  <p class="mx-auto mt-3 max-w-md text-sm text-ink-2 text-pretty">{texto}</p>
+  {accion && <a href={accion.href} class="btn-secondary mt-6">{accion.texto}</a>}
+</div>

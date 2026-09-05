@@ -45,12 +45,12 @@ const schemas = [
 >
   <Breadcrumbs items={migas} />
 
-  <div class="contenedor py-8">
-    <h1 class="font-display text-3xl font-bold md:text-4xl">{info.nombre} <span class="text-ink-faint">({info.etiqueta})</span></h1>
-    <p class="mt-3 font-mono text-sm text-ink-muted">Escala {info.escala}</p>
+  <div class="grid-page py-8">
+    <h1 class="display text-3xl md:text-4xl">{info.nombre} <span class="text-ink-3">({info.etiqueta})</span></h1>
+    <p class="mt-3 font-mono text-sm text-ink-2">Escala {info.escala}</p>
 
     {kits.length === 0 ? (
-      <p class="mt-6 max-w-2xl text-ink-muted">
+      <p class="mt-6 max-w-2xl text-ink-2">
         Todavía no registramos kits de este grado con precio observado en México.
         Estamos poblando el catálogo con los kits que sí circulan en tiendas mexicanas.
       </p>

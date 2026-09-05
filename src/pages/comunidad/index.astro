@@ -29,32 +29,32 @@ const schemas = [
 >
   <Breadcrumbs items={migas} />
 
-  <div class="contenedor py-8">
-    <h1 class="font-display text-3xl font-bold md:text-4xl">Comunidad</h1>
-    <p class="mt-4 max-w-3xl text-ink-muted">
+  <div class="grid-page py-8">
+    <h1 class="display text-3xl md:text-4xl">Comunidad</h1>
+    <p class="mt-4 max-w-3xl text-ink-2">
       Casi toda la comunidad mexicana de Gunpla vive en grupos de Facebook, y el circuito de modelismo
       organizado está en los capítulos de IPMS. Los juntamos aquí porque hoy no hay ningún punto de entrada.
     </p>
 
     {nodos.length === 0 ? (
-      <p class="mt-8 text-ink-muted">Estamos armando esta sección.</p>
+      <p class="mt-8 text-ink-2">Estamos armando esta sección.</p>
     ) : (
       <ul class="mt-8 grid gap-4 sm:grid-cols-2">
         {nodos.map((n) => (
-          <li class="tarjeta">
+          <li class="card p-5">
             <div class="flex flex-wrap items-center gap-2">
-              <span class="chip">{etiquetas[n.data.tipo] ?? n.data.tipo}</span>
-              <span class="chip capitalize">{n.data.alcance}</span>
+              <span class="tag">{etiquetas[n.data.tipo] ?? n.data.tipo}</span>
+              <span class="tag capitalize">{n.data.alcance}</span>
             </div>
-            <h2 class="mt-3 font-display text-lg font-semibold">
+            <h2 class="mt-3 display text-lg">
               <a href={n.data.url} class="hover:text-accent" rel="nofollow noopener" target="_blank">{n.data.nombre}</a>
             </h2>
             {(n.data.ciudad || n.data.estado) && (
-              <p class="mt-1 text-sm text-ink-faint">
+              <p class="mt-1 text-sm text-ink-3">
                 {[n.data.ciudad, n.data.estado && nombreEstado(n.data.estado)].filter(Boolean).join(', ')}
               </p>
             )}
-            <p class="mt-2 text-sm text-ink-muted">{n.data.descripcion}</p>
+            <p class="mt-2 text-sm text-ink-2">{n.data.descripcion}</p>
           </li>
         ))}
       </ul>

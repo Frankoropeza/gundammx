@@ -1,0 +1,59 @@
+---
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import DirectoryCard from '@components/DirectoryCard.astro';
+import DirectoryFilters from '@components/DirectoryFilters.astro';
+import EmptyState from '@components/EmptyState.astro';
+import { CATEGORIAS, type CategoriaId, tiendasActivas, ciudadesConPagina, estadosDe } from '@lib/directorio';
+import { schemaListado, schemaMigaDePan } from '@lib/seo';
+
+export const getStaticPaths = (async () => {
+  const ciudades = await ciudadesConPagina();
+  const todas = await tiendasActivas();
+  return (Object.keys(CATEGORIAS) as CategoriaId[]).map((slug) => ({
+    params: { categoria: slug },
+    props: { tiendas: todas.filter((t) => t.data.categoria === slug), ciudades },
+  }));
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { categoria } = Astro.params;
+const { tiendas, ciudades } = Astro.props;
+const info = CATEGORIAS[categoria as CategoriaId];
+const estados = [...new Set(tiendas.flatMap((t) => estadosDe(t)))];
+
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [{ nombre: 'Tiendas', href: '/tiendas/' }, { nombre: info.nombre, href: `/tiendas/categoria/${categoria}/` }];
+const schemas = [
+  schemaMigaDePan(base, migas),
+  schemaListado(base, `${info.nombre} en México`, tiendas.map((t) => ({ nombre: t.data.nombre, href: `/tienda/${t.id}/` }))),
+];
+---
+
+<BaseLayout
+  titulo={`${info.nombre} en México`}
+  descripcion={`${tiendas.length} ${tiendas.length === 1 ? 'tienda' : 'tiendas'}: ${info.descripcion} Verificadas con fuente y fecha.`}
+  noindex={tiendas.length < 2}
+  schemas={schemas}
+>
+  <Breadcrumbs items={migas} />
+  <div class="grid-page py-10">
+    <header class="max-w-3xl">
+      <p class="eyebrow">Tipo de tienda</p>
+      <h1 class="display mt-3 text-4xl md:text-5xl">{info.nombre}</h1>
+      <p class="mt-5 text-lg text-ink-2 text-pretty">{info.descripcion}</p>
+    </header>
+
+    {tiendas.length === 0 ? (
+      <div class="mt-10"><EmptyState titulo="Aún no hay tiendas en esta categoría" texto="Preferimos una categoría vacía a una llena de fichas sin verificar." accion={{ texto: 'Dar de alta una tienda', href: '/alta-de-tienda/' }} /></div>
+    ) : (
+      <>
+        <div class="mt-10"><DirectoryFilters ciudades={ciudades} estados={estados} /></div>
+        <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {tiendas.map((t, i) => <DirectoryCard tienda={t} prioridad={i < 3} />)}
+        </div>
+      </>
+    )}
+  </div>
+</BaseLayout>

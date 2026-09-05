@@ -1,0 +1,86 @@
+---
+/**
+ * Búsqueda con Pagefind (índice estático generado en el build).
+ * noindex: es resultado interno. Sin JS, ofrece navegación alternativa.
+ */
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import SearchBar from '@components/SearchBar.astro';
+import LocationGrid from '@components/LocationGrid.astro';
+import CategoryGrid from '@components/CategoryGrid.astro';
+import { ciudadesConPagina, categoriasConTiendas, indexable } from '@lib/directorio';
+
+const ciudades = (await ciudadesConPagina()).filter((c) => indexable(c.total));
+const categorias = await categoriasConTiendas();
+const migas = [{ nombre: 'Buscar', href: '/buscar/' }];
+---
+
+<BaseLayout titulo="Buscar" descripcion="Busca tiendas, kits, guías y noticias en GUNDAMMX." noindex>
+  <Breadcrumbs items={migas} />
+  <div class="grid-page py-10">
+    <h1 class="display text-4xl">Buscar</h1>
+    <div class="mt-6"><SearchBar autofocus /></div>
+
+    <div id="resultados" class="mt-10" aria-live="polite"></div>
+
+    <noscript>
+      <p class="mt-6 border border-line bg-surface p-4 text-sm text-ink-2">
+        La búsqueda instantánea necesita JavaScript. Puedes navegar por ciudad o por tipo de tienda aquí abajo.
+      </p>
+    </noscript>
+
+    <div class="mt-16 space-y-12">
+      <LocationGrid ciudades={ciudades} />
+      <section><h2 class="eyebrow">Por tipo de tienda</h2><div class="mt-4"><CategoryGrid categorias={categorias} /></div></section>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  type Resultado = { url: string; meta: { title?: string }; excerpt: string };
+  type Pagefind = { init: () => Promise<void>; search: (q: string) => Promise<{ results: { data: () => Promise<Resultado> }[] }> };
+
+  const cont = document.getElementById('resultados');
+  const input = document.querySelector<HTMLInputElement>('input[name="q"]');
+  const form = input?.closest('form');
+
+  async function cargar(): Promise<Pagefind | null> {
+    try {
+      // Lo genera pagefind después del build; la ruta va en variable para que Vite no la resuelva
+      const ruta = '/pagefind/pagefind.js';
+      const pf: Pagefind = await import(/* @vite-ignore */ ruta);
+      await pf.init();
+      return pf;
+    } catch { return null; }
+  }
+
+  function pintar(items: Resultado[], q: string) {
+    if (!cont) return;
+    if (!items.length) {
+      cont.innerHTML = `<div class="border border-dashed border-line px-6 py-14 text-center"><p class="display text-2xl">Nada para «${q}»</p><p class="mt-3 text-sm text-ink-2">Prueba con el nombre de la ciudad o del grado (HG, RG, MG).</p></div>`;
+      return;
+    }
+    cont.innerHTML = `<p class="eyebrow">${items.length} resultado${items.length === 1 ? '' : 's'}</p>` +
+      `<ol class="mt-4 divide-y divide-line border-y border-line">` +
+      items.map((r) => `<li class="py-5"><a href="${r.url}" class="display text-2xl link-quiet">${r.meta.title ?? r.url}</a><p class="mt-2 text-sm text-ink-2">${r.excerpt}</p></li>`).join('') +
+      `</ol>`;
+  }
+
+  (async () => {
+    const pf = await cargar();
+    if (!pf || !input || !cont) return;
+    const buscar = async (q: string) => {
+      q = q.trim();
+      if (!q) { cont.innerHTML = ''; return; }
+      const { results } = await pf.search(q);
+      const items = await Promise.all(results.slice(0, 20).map((r) => r.data()));
+      pintar(items, q);
+      history.replaceState(null, '', `?q=${encodeURIComponent(q)}`);
+    };
+    form?.addEventListener('submit', (e) => { e.preventDefault(); buscar(input.value); });
+    let t: number | undefined;
+    input.addEventListener('input', () => { window.clearTimeout(t); t = window.setTimeout(() => buscar(input.value), 180); });
+    const inicial = new URLSearchParams(location.search).get('q');
+    if (inicial) { input.value = inicial; buscar(inicial); }
+  })();
+</script>

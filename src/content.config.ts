@@ -31,11 +31,26 @@ const sucursal = z.object({
   horarios: z.record(z.string(), z.string()).optional(),
 });
 
+const faqItem = z.object({ pregunta: z.string(), respuesta: z.string() });
+
 const tiendas = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/tiendas' }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
     nombre: z.string(),
     descripcion_corta: z.string().max(200),
+
+    // Imagen propia o autorizada por la tienda. NUNCA box art ni material de terceros.
+    imagen: image().optional(),
+    imagen_alt: z.string().optional(),
+    galeria: z.array(z.object({ src: image(), alt: z.string() })).default([]),
+
+    zonas_cobertura: z.array(z.string()).default([]),
+    especialidades: z.array(z.string()).default([]),
+    rango_precio: z.enum(['$', '$$', '$$$']).optional(),
+    faq: z.array(faqItem).default([]),
+    relacionadas: z.array(z.string()).default([]),
+    seo: z.object({ titulo: z.string().optional(), descripcion: z.string().optional() }).optional(),
+    autor: z.string().default('Redacción GUNDAMMX'),
     tipo: z.enum(['fisica', 'online', 'hibrida', 'popup', 'marketplace']),
     categoria: z.enum(['especialista', 'coleccionables', 'modelismo', 'oficial']),
     anio_fundacion: z.number().optional(),

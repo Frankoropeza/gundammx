@@ -1,0 +1,39 @@
+---
+import BadgeVerificacion from '@components/BadgeVerificacion.astro';
+import BadgeOrigen from '@components/BadgeOrigen.astro';
+
+interface Props {
+  nombre: string;
+  resumen: string;
+  categoria: string;
+  ubicacion: string;
+  verificacion: { estado: 'verificada' | 'reportada' | 'sin_verificar' | 'cerrada'; fecha: string };
+  origen: 'distribuidor_autorizado' | 'revende_original' | 'importacion_directa' | 'mixto' | 'no_verificado';
+  destacada?: boolean;
+  rangoPrecio?: string;
+}
+const { nombre, resumen, categoria, ubicacion, verificacion, origen, destacada = false, rangoPrecio } = Astro.props;
+---
+
+<header class="grid gap-6 border-b border-line pb-10 md:grid-cols-12">
+  <div class="md:col-span-8">
+    <p class="eyebrow">{categoria} · {ubicacion}</p>
+    <h1 class="display mt-3 text-4xl md:text-5xl text-balance">{nombre}</h1>
+    <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">{resumen}</p>
+  </div>
+
+  <aside class="flex flex-col gap-3 md:col-span-4 md:items-end" aria-label="Confianza">
+    <BadgeVerificacion estado={verificacion.estado} fecha={verificacion.fecha} />
+    <BadgeOrigen origen={origen} />
+    <div class="flex gap-2">
+      {rangoPrecio && <span class="tag tabular">{rangoPrecio}</span>}
+      {destacada && <span class="tag-signal">Patrocinado</span>}
+    </div>
+  </aside>
+
+  {verificacion.estado === 'sin_verificar' && (
+    <p class="border border-signal/50 bg-signal/5 px-4 py-3 text-sm text-ink md:col-span-12">
+      La tienda existe y opera, pero todavía no comprobamos su oferta de Gunpla. Confirma disponibilidad antes de comprar.
+    </p>
+  )}
+</header>

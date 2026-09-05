@@ -1,0 +1,36 @@
+---
+/**
+ * Paginación indexable: enlaces reales, canónica autorreferencial en cada página
+ * y rel=prev/next en el <head> (los inyecta la página que la usa vía slot "head").
+ */
+interface Props {
+  actual: number;
+  total: number;
+  urlDe: (n: number) => string;
+}
+const { actual, total, urlDe } = Astro.props;
+const paginas = Array.from({ length: total }, (_, i) => i + 1);
+---
+
+{total > 1 && (
+  <nav aria-label="Paginación" class="mt-14 flex items-center justify-between border-t border-line pt-6">
+    {actual > 1
+      ? <a href={urlDe(actual - 1)} rel="prev" class="btn-secondary">← Anterior</a>
+      : <span class="btn-secondary opacity-40" aria-disabled="true">← Anterior</span>}
+
+    <ol class="hidden gap-1 sm:flex">
+      {paginas.map((n) => (
+        <li>
+          {n === actual
+            ? <span aria-current="page" class="inline-flex h-10 w-10 items-center justify-center bg-ink font-mono text-sm text-paper">{n}</span>
+            : <a href={urlDe(n)} class="inline-flex h-10 w-10 items-center justify-center font-mono text-sm text-ink-2 hover:text-ink">{n}</a>}
+        </li>
+      ))}
+    </ol>
+    <p class="font-mono text-xs text-ink-3 sm:hidden">{actual} / {total}</p>
+
+    {actual < total
+      ? <a href={urlDe(actual + 1)} rel="next" class="btn-secondary">Siguiente →</a>
+      : <span class="btn-secondary opacity-40" aria-disabled="true">Siguiente →</span>}
+  </nav>
+)}

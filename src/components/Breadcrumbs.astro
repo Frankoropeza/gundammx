@@ -3,16 +3,16 @@ interface Props { items: { nombre: string; href: string }[] }
 const { items } = Astro.props;
 ---
 
-<nav aria-label="Ruta" class="contenedor pt-6">
-  <ol class="flex flex-wrap items-center gap-2 text-xs text-ink-faint">
-    <li><a href="/" class="hover:text-accent">Inicio</a></li>
+<nav aria-label="Ruta" class="grid-page pt-6" data-pagefind-ignore>
+  <ol class="flex flex-wrap items-center gap-2 font-mono text-xs text-ink-3">
+    <li><a href="/" class="hover:text-ink">Inicio</a></li>
     {items.map((i, n) => (
       <>
         <li aria-hidden="true">/</li>
         <li>
           {n === items.length - 1
-            ? <span class="text-ink-muted">{i.nombre}</span>
-            : <a href={i.href} class="hover:text-accent">{i.nombre}</a>}
+            ? <span class="text-ink-2" aria-current="page">{i.nombre}</span>
+            : <a href={i.href} class="hover:text-ink">{i.nombre}</a>}
         </li>
       </>
     ))}

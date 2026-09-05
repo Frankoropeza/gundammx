@@ -1,0 +1,40 @@
+---
+import type { GetStaticPaths } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import TarjetaNoticia from '@components/TarjetaNoticia.astro';
+import Pagination from '@components/Pagination.astro';
+import { schemaMigaDePan } from '@lib/seo';
+import { POR_PAGINA, urlPagina } from '@lib/paginacion';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const todas = (await getCollection('noticias', ({ data }) => !data.borrador))
+    .sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime());
+  const total = Math.ceil(todas.length / POR_PAGINA);
+  // La página 1 vive en /noticias/; aquí solo de la 2 en adelante
+  return Array.from({ length: Math.max(0, total - 1) }, (_, i) => i + 2).map((n) => ({
+    params: { pagina: String(n) },
+    props: { notas: todas.slice((n - 1) * POR_PAGINA, n * POR_PAGINA), actual: n, total },
+  }));
+};
+
+interface Props { notas: CollectionEntry<'noticias'>[]; actual: number; total: number }
+const { notas, actual, total } = Astro.props;
+const base = { site: Astro.site, url: Astro.url.pathname };
+const migas = [{ nombre: 'Noticias', href: '/noticias/' }, { nombre: `Página ${actual}`, href: urlPagina(actual) }];
+---
+
+<BaseLayout titulo={`Noticias — página ${actual}`} descripcion={`Noticias de Gundam y Gunpla en México, página ${actual} de ${total}.`} schemas={[schemaMigaDePan(base, migas)]}>
+  <Fragment slot="head">
+    <link rel="prev" href={new URL(urlPagina(actual - 1), Astro.site).toString()} />
+    {actual < total && <link rel="next" href={new URL(urlPagina(actual + 1), Astro.site).toString()} />}
+  </Fragment>
+  <Breadcrumbs items={migas} />
+  <div class="grid-page py-10">
+    <header><p class="eyebrow">Noticias</p><h1 class="display mt-3 text-4xl">Página {actual} de {total}</h1></header>
+    <div class="mt-10 grid gap-x-8 gap-y-2 md:grid-cols-2">{notas.map((n) => <TarjetaNoticia nota={n} />)}</div>
+    <Pagination actual={actual} total={total} urlDe={urlPagina} />
+  </div>
+</BaseLayout>

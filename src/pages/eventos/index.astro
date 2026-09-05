@@ -38,38 +38,38 @@ const schemas = [
 >
   <Breadcrumbs items={migas} />
 
-  <div class="contenedor py-8">
-    <h1 class="font-display text-3xl font-bold md:text-4xl">Eventos en México</h1>
-    <p class="mt-4 max-w-3xl text-ink-muted">
+  <div class="grid-page py-8">
+    <h1 class="display text-3xl md:text-4xl">Eventos en México</h1>
+    <p class="mt-4 max-w-3xl text-ink-2">
       Convenciones, concursos de armado, talleres y exposiciones. Marcamos cuáles tienen presencia
       de Gunpla confirmada y cuáles solo son eventos afines.
     </p>
 
     <section class="mt-10">
-      <h2 class="font-display text-xl font-semibold">Próximos</h2>
+      <h2 class="display text-xl">Próximos</h2>
       {proximos.length === 0 ? (
-        <p class="mt-4 text-ink-muted">No tenemos eventos futuros confirmados en este momento.</p>
+        <p class="mt-4 text-ink-2">No tenemos eventos futuros confirmados en este momento.</p>
       ) : (
         <ul class="mt-4 space-y-4">
           {proximos.map((e) => (
-            <li class="tarjeta">
+            <li class="card p-5">
               <div class="flex flex-wrap items-center gap-2">
-                <span class="chip capitalize">{e.data.tipo.replace('-', ' ')}</span>
-                {e.data.gunpla_confirmado && <span class="chip border-accent/40 text-accent">Gunpla confirmado</span>}
-                {e.data.recurrente && <span class="chip">Recurrente</span>}
+                <span class="tag capitalize">{e.data.tipo.replace('-', ' ')}</span>
+                {e.data.gunpla_confirmado && <span class="tag border-accent/40 text-accent">Gunpla confirmado</span>}
+                {e.data.recurrente && <span class="tag">Recurrente</span>}
               </div>
-              <h3 class="mt-3 font-display text-lg font-semibold">{e.data.nombre}</h3>
-              <p class="mt-1 font-mono text-sm text-ink-muted">
+              <h3 class="mt-3 display text-lg">{e.data.nombre}</h3>
+              <p class="mt-1 font-mono text-sm text-ink-2">
                 {fechaLarga(e.data.fecha_inicio)}
                 {e.data.fecha_fin && ` – ${fechaLarga(e.data.fecha_fin)}`}
               </p>
-              <p class="text-sm text-ink-muted">
+              <p class="text-sm text-ink-2">
                 {[e.data.sede, e.data.ciudad, nombreEstado(e.data.estado)].filter(Boolean).join(' · ')}
               </p>
-              <p class="mt-3 text-sm text-ink-muted">{e.data.descripcion}</p>
+              <p class="mt-3 text-sm text-ink-2">{e.data.descripcion}</p>
               {e.data.url_oficial && (
                 <p class="mt-3 text-sm">
-                  <a href={e.data.url_oficial} class="enlace" rel="nofollow noopener" target="_blank">Sitio oficial del evento</a>
+                  <a href={e.data.url_oficial} class="link" rel="nofollow noopener" target="_blank">Sitio oficial del evento</a>
                 </p>
               )}
             </li>
@@ -80,15 +80,15 @@ const schemas = [
 
     {pasados.length > 0 && (
       <section class="mt-12">
-        <h2 class="font-display text-xl font-semibold">Ediciones anteriores</h2>
-        <p class="mt-2 text-sm text-ink-muted">
+        <h2 class="display text-xl">Ediciones anteriores</h2>
+        <p class="mt-2 text-sm text-ink-2">
           Las conservamos porque casi todas se repiten: sirven de referencia para la siguiente edición.
         </p>
         <ul class="mt-4 space-y-3">
           {pasados.map((e) => (
-            <li class="tarjeta">
+            <li class="card p-5">
               <p class="font-medium">{e.data.nombre}</p>
-              <p class="mt-1 font-mono text-sm text-ink-faint">
+              <p class="mt-1 font-mono text-sm text-ink-3">
                 {fechaLarga(e.data.fecha_inicio)} · {e.data.ciudad}
               </p>
             </li>

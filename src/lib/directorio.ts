@@ -1,5 +1,6 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { slugificar } from '@lib/estados';
+import { fechaLarga } from '@lib/precio';
 
 export type Tienda = CollectionEntry<'tiendas'>;
 
@@ -90,3 +91,79 @@ export async function estadosConTiendas() {
 }
 
 export const indexable = (total: number) => total >= UMBRAL_CIUDAD;
+
+
+/* ------------------------------------------------------------------ */
+/* Categorías de tienda                                                */
+/* ------------------------------------------------------------------ */
+export const CATEGORIAS = {
+  especialista: { nombre: 'Especialistas en Gunpla', descripcion: 'Gunpla es su línea principal: catálogo profundo y preventas.' },
+  coleccionables: { nombre: 'Coleccionables', descripcion: 'Tiendas de anime y figuras con sección de Gunpla.' },
+  modelismo: { nombre: 'Modelismo', descripcion: 'Hobby shops de maquetas, pinturas y herramienta.' },
+  oficial: { nombre: 'Canal oficial', descripcion: 'Puntos de venta operados por la propia marca.' },
+} as const;
+export type CategoriaId = keyof typeof CATEGORIAS;
+
+export async function categoriasConTiendas() {
+  const tiendas = await tiendasActivas();
+  return (Object.keys(CATEGORIAS) as CategoriaId[])
+    .map((slug) => ({ slug, ...CATEGORIAS[slug], total: tiendas.filter((t) => t.data.categoria === slug).length }))
+    .filter((c) => c.total > 0);
+}
+
+export async function tiendasPorCategoria(slug: CategoriaId) {
+  const tiendas = await tiendasActivas();
+  return tiendas.filter((t) => t.data.categoria === slug);
+}
+
+/* ------------------------------------------------------------------ */
+/* FAQ derivada de datos reales de la ficha (nunca inventada)          */
+/* ------------------------------------------------------------------ */
+export function faqDeTienda(t: Tienda): { pregunta: string; respuesta: string }[] {
+  const d = t.data;
+  const items: { pregunta: string; respuesta: string }[] = [];
+  const ciudad = d.sucursales[0]?.ciudad;
+
+  if (d.vende_gunpla === 'si') {
+    items.push({
+      pregunta: `¿${d.nombre} vende Gunpla original?`,
+      respuesta:
+        d.verificacion.estado === 'verificada'
+          ? `Sí. Comprobamos su oferta de Gunpla el ${fechaLarga(d.verificacion.fecha)} con las fuentes que enlazamos en esta ficha.${d.origen_producto === 'distribuidor_autorizado' ? ' Opera como distribuidor autorizado.' : ''}`
+          : 'Existe la oferta, pero aún no la verificamos con fuente. Confirma disponibilidad y origen con la tienda antes de comprar.',
+    });
+  }
+  items.push({
+    pregunta: `¿${d.nombre} envía a todo México?`,
+    respuesta: d.envio_nacional
+      ? `Sí, envía a todo el país${d.paqueterias.length ? ` con ${d.paqueterias.join(', ')}` : ''}${d.envio_gratis_desde ? `, con envío gratis desde $${d.envio_gratis_desde.toLocaleString('es-MX')} MXN` : ''}.`
+      : 'No tenemos confirmado envío nacional. Consulta directamente con la tienda.',
+  });
+  if (d.maneja_preventa) {
+    items.push({
+      pregunta: `¿${d.nombre} maneja preventas?`,
+      respuesta: 'Sí. Antes de dar un anticipo, pregunta el plazo estimado de llegada y la política si el kit no llega: es la duda más frecuente en este mercado.',
+    });
+  }
+  if (ciudad) {
+    items.push({
+      pregunta: `¿Dónde está ${d.nombre}?`,
+      respuesta: d.sucursales.length === 1
+        ? `En ${[d.sucursales[0].calle, d.sucursales[0].colonia, ciudad].filter(Boolean).join(', ')}.`
+        : `Tiene ${d.sucursales.length} sucursales: ${[...new Set(d.sucursales.map((s) => s.ciudad))].join(', ')}.`,
+    });
+  }
+  // FAQ editorial de la ficha, si existe, al final
+  return [...items, ...d.faq];
+}
+
+/** Relacionadas: las declaradas en la ficha; si no hay, misma ciudad; si no, misma categoría. */
+export async function relacionadasDe(t: Tienda, max = 3): Promise<Tienda[]> {
+  const todas = (await tiendasActivas()).filter((o) => o.id !== t.id);
+  const declaradas = t.data.relacionadas.map((id) => todas.find((o) => o.id === id)).filter(Boolean) as Tienda[];
+  if (declaradas.length) return declaradas.slice(0, max);
+  const misCiudades = ciudadesDe(t).map((c) => c.slug);
+  const mismaCiudad = todas.filter((o) => ciudadesDe(o).some((c) => misCiudades.includes(c.slug)));
+  if (mismaCiudad.length) return mismaCiudad.slice(0, max);
+  return todas.filter((o) => o.data.categoria === t.data.categoria).slice(0, max);
+}

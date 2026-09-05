@@ -1,0 +1,50 @@
+import { getCollection } from 'astro:content';
+import {
+  tiendasActivas, ciudadesConPagina, estadosConTiendas, categoriasConTiendas, indexable,
+} from '@lib/directorio';
+import { GRADOS, type GradoId } from '@config/site';
+import { POR_PAGINA, urlPagina } from '@lib/paginacion';
+
+/**
+ * Única fuente de verdad del sitemap. Aplica exactamente las mismas reglas
+ * de `noindex` que las páginas, para que el sitemap nunca liste lo que
+ * la página pide no indexar. Si añades una ruta indexable, regístrala aquí.
+ */
+export async function rutasIndexables(): Promise<{ url: string; lastmod?: string }[]> {
+  const rutas: { url: string; lastmod?: string }[] = [];
+  const add = (url: string, lastmod?: string) => rutas.push({ url, lastmod });
+
+  // Fijas
+  ['/', '/tiendas/', '/tiendas/en-linea/', '/tiendas/verificadas/', '/kits/', '/guias/', '/noticias/',
+   '/eventos/', '/servicios/', '/comunidad/', '/metodologia/', '/aviso-legal/', '/alta-de-tienda/', '/reportar/']
+    .forEach((u) => add(u));
+
+  // Tiendas
+  const tiendas = await tiendasActivas();
+  tiendas.forEach((t) => add(`/tienda/${t.id}/`, t.data.actualizada));
+
+  // Estados con al menos una tienda
+  const porEstado = await estadosConTiendas();
+  [...porEstado.keys()].forEach((e) => add(`/tiendas/${e}/`));
+
+  // Ciudades sobre el umbral
+  (await ciudadesConPagina()).filter((c) => indexable(c.total)).forEach((c) => add(`/tiendas/ciudad/${c.slug}/`));
+
+  // Categorías con ≥2 tiendas (misma regla que la página)
+  (await categoriasConTiendas()).filter((c) => c.total >= 2).forEach((c) => add(`/tiendas/categoria/${c.slug}/`));
+
+  // Kits y grados con kits
+  const kits = await getCollection('kits');
+  kits.forEach((k) => add(`/kit/${k.id}/`));
+  (Object.keys(GRADOS) as GradoId[]).filter((g) => kits.some((k) => k.data.grado === g)).forEach((g) => add(`/kits/${g}/`));
+
+  // Editorial
+  const guias = await getCollection('guias', ({ data }) => !data.borrador);
+  guias.forEach((g) => add(`/guias/${g.id}/`, g.data.actualizada ?? g.data.fecha.toISOString()));
+  const noticias = await getCollection('noticias', ({ data }) => !data.borrador);
+  noticias.forEach((n) => add(`/noticias/${n.id}/`, n.data.fecha.toISOString()));
+  const totalPaginas = Math.ceil(noticias.length / POR_PAGINA);
+  for (let n = 2; n <= totalPaginas; n++) add(urlPagina(n));
+
+  return rutas;
+}

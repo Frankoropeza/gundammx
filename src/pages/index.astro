@@ -1,81 +1,80 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import HeroSection from '@components/HeroSection.astro';
-import TarjetaTienda from '@components/TarjetaTienda.astro';
+import DirectoryCard from '@components/DirectoryCard.astro';
+import CategoryGrid from '@components/CategoryGrid.astro';
+import LocationGrid from '@components/LocationGrid.astro';
 import TarjetaNoticia from '@components/TarjetaNoticia.astro';
 import { getCollection } from 'astro:content';
-import { tiendasActivas, tiendasVerificadas, ciudadesConPagina, indexable } from '@lib/directorio';
-import { SITE } from '@config/site';
+import { tiendasActivas, tiendasVerificadas, ciudadesConPagina, categoriasConTiendas, estadosConTiendas, indexable } from '@lib/directorio';
+import { SITE, type GradoId } from '@config/site';
 
 const tiendas = await tiendasActivas();
 const verificadas = await tiendasVerificadas();
 const ciudades = (await ciudadesConPagina()).filter((c) => indexable(c.total));
+const categorias = await categoriasConTiendas();
+const totalEstados = (await estadosConTiendas()).size;
+
+const kits = await getCollection('kits');
+const gradosConKits = [...new Set(kits.map((k) => k.data.grado))] as GradoId[];
 
 const noticias = (await getCollection('noticias', ({ data }) => !data.borrador))
-  .sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime())
-  .slice(0, 3);
-
+  .sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime()).slice(0, 3);
 const guias = (await getCollection('guias', ({ data }) => !data.borrador))
-  .sort((a, b) => a.data.orden - b.data.orden)
-  .slice(0, 4);
+  .sort((a, b) => a.data.orden - b.data.orden).slice(0, 3);
 ---
 
 <BaseLayout titulo={SITE.nombre} descripcion={SITE.descripcion}>
-  <HeroSection
-    totalTiendas={tiendas.length}
-    totalVerificadas={verificadas.length}
-    totalCiudades={ciudades.length}
-  />
+  <HeroSection totalTiendas={tiendas.length} totalVerificadas={verificadas.length} totalEstados={totalEstados} />
 
-  <section class="contenedor py-14">
-    <div class="flex items-baseline justify-between gap-4">
-      <h2 class="font-display text-2xl font-bold">Busca por ciudad</h2>
-      <a href="/tiendas/" class="enlace text-sm">Ver todo el directorio</a>
+  <section class="grid-page py-16" aria-labelledby="verif-h">
+    <div class="flex items-end justify-between gap-6">
+      <div>
+        <p class="eyebrow">Selección</p>
+        <h2 id="verif-h" class="display mt-2 text-3xl">Tiendas con oferta verificada</h2>
+      </div>
+      <a href="/tiendas/verificadas/" class="link text-sm">Ver todas</a>
     </div>
-    <ul class="mt-6 flex flex-wrap gap-2">
-      {ciudades.map((c) => (
-        <li>
-          <a href={`/tiendas/ciudad/${c.slug}/`} class="chip hover:border-accent hover:text-accent">
-            {c.nombre} <span class="ml-1 text-ink-faint">{c.total}</span>
-          </a>
-        </li>
-      ))}
-    </ul>
+    <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {verificadas.slice(0, 6).map((t, i) => <DirectoryCard tienda={t} prioridad={i < 3} />)}
+    </div>
   </section>
 
-  <section class="contenedor pb-14">
-    <h2 class="font-display text-2xl font-bold">Tiendas con oferta verificada</h2>
-    <p class="mt-2 max-w-2xl text-sm text-ink-muted">
-      Cada ficha declara con qué fuente y en qué fecha comprobamos que vende Gunpla.
+  <section class="grid-page py-8" aria-labelledby="cat-h">
+    <p class="eyebrow">Explora</p>
+    <h2 id="cat-h" class="display mt-2 text-3xl">Por tipo de tienda</h2>
+    <div class="mt-8"><CategoryGrid categorias={categorias} grados={gradosConKits} /></div>
+  </section>
+
+  <section class="grid-page py-16">
+    <LocationGrid ciudades={ciudades} />
+    <p class="mt-4 text-sm text-ink-2">
+      Solo listamos ciudades con al menos dos tiendas verificadas. El resto se consulta
+      <a href="/tiendas/" class="link">por estado</a> o en las <a href="/tiendas/en-linea/" class="link">tiendas con envío nacional</a>.
     </p>
-    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {verificadas.slice(0, 6).map((t) => <TarjetaTienda tienda={t} />)}
-    </div>
   </section>
 
-  {guias.length > 0 && (
-    <section class="contenedor pb-14">
-      <h2 class="font-display text-2xl font-bold">Guías para empezar</h2>
-      <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+  <section class="grid-page grid gap-12 border-t border-line py-16 md:grid-cols-12" aria-labelledby="ed-h">
+    <div class="md:col-span-5">
+      <p class="eyebrow">Guías</p>
+      <h2 id="ed-h" class="display mt-2 text-3xl">Para comprar sin equivocarte</h2>
+      <ul class="mt-6 divide-y divide-line border-y border-line">
         {guias.map((g) => (
-          <li class="tarjeta">
-            <a href={`/guias/${g.id}/`} class="font-medium hover:text-accent">{g.data.titulo}</a>
-            <p class="mt-2 text-sm text-ink-muted">{g.data.descripcion}</p>
+          <li class="py-4">
+            <a href={`/guias/${g.id}/`} class="link-quiet text-lg">{g.data.titulo}</a>
+            <p class="mt-1 text-sm text-ink-2">{g.data.descripcion}</p>
           </li>
         ))}
       </ul>
-    </section>
-  )}
-
-  {noticias.length > 0 && (
-    <section class="contenedor pb-16">
-      <div class="flex items-baseline justify-between gap-4">
-        <h2 class="font-display text-2xl font-bold">Noticias</h2>
-        <a href="/noticias/" class="enlace text-sm">Todas las noticias</a>
+    </div>
+    <div class="md:col-span-6 md:col-start-7">
+      <div class="flex items-baseline justify-between">
+        <h2 class="display text-3xl">Noticias</h2>
+        <a href="/noticias/" class="link text-sm">Todas</a>
       </div>
-      <div class="mt-6 grid gap-4 sm:grid-cols-3">
-        {noticias.map((n) => <TarjetaNoticia nota={n} />)}
+      <div class="mt-6 space-y-2">
+        {noticias.map((n, i) => <TarjetaNoticia nota={n} grande={i === 0} />)}
       </div>
-    </section>
-  )}
+    </div>
+  </section>
 </BaseLayout>

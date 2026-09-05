@@ -1,0 +1,92 @@
+---
+/**
+ * Tarjeta de ficha. Tipográfica por defecto; con foto propia cuando existe.
+ * Sin imágenes de terceros: ver vault 05 §c.
+ */
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import BadgeVerificacion from '@components/BadgeVerificacion.astro';
+import ChipsGrado from '@components/ChipsGrado.astro';
+import { nombreEstado } from '@lib/estados';
+
+interface Props { tienda: CollectionEntry<'tiendas'>; prioridad?: boolean }
+const { tienda, prioridad = false } = Astro.props;
+const d = tienda.data;
+
+const categorias: Record<string, string> = {
+  especialista: 'Especialista en Gunpla',
+  coleccionables: 'Coleccionables',
+  modelismo: 'Modelismo',
+  oficial: 'Canal oficial',
+};
+
+const ubicacion = d.sucursales.length
+  ? [...new Set(d.sucursales.map((s) => s.ciudad))].slice(0, 2).join(' · ')
+  : 'En línea';
+const estadoPrincipal = d.sucursales[0]?.estado;
+
+const señales = [
+  d.envio_nacional && 'Envío nacional',
+  d.maneja_preventa && 'Preventas',
+  d.pickup && 'Recoger en tienda',
+].filter(Boolean) as string[];
+
+// Atributos para el filtrado progresivo en cliente (no generan URLs)
+const dataCiudades = d.sucursales.map((s) => s.ciudad).join('|');
+---
+
+<article
+  class="card group relative"
+  data-categoria={d.categoria}
+  data-ciudades={dataCiudades}
+  data-estado={estadoPrincipal ?? ''}
+  data-grados={d.grados.join('|')}
+  data-envio={d.envio_nacional ? '1' : '0'}
+  data-preventa={d.maneja_preventa ? '1' : '0'}
+  data-verificada={d.verificacion.estado === 'verificada' ? '1' : '0'}
+>
+  {d.imagen ? (
+    <Image
+      src={d.imagen}
+      alt={d.imagen_alt ?? `Interior de ${d.nombre}`}
+      width={960}
+      height={720}
+      class="aspect-[4/3] w-full object-cover"
+      loading={prioridad ? 'eager' : 'lazy'}
+      decoding="async"
+    />
+  ) : (
+    <div class="flex h-24 items-center justify-between border-b border-line bg-paper px-5" aria-hidden="true">
+      <span class="font-serif text-4xl leading-none text-ink/20">{d.nombre.slice(0, 2)}</span>
+      <span class="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">{d.sucursales[0]?.estado ? nombreEstado(d.sucursales[0].estado) : 'En línea'}</span>
+    </div>
+  )}
+
+  <div class="flex flex-1 flex-col gap-3 p-5">
+    <div class="flex items-center justify-between gap-3">
+      <span class="eyebrow">{categorias[d.categoria]}</span>
+      {d.destacada && <span class="tag-signal">Patrocinado</span>}
+    </div>
+
+    <h3 class="display text-2xl leading-tight">
+      <a href={`/tienda/${tienda.id}/`} class="after:absolute after:inset-0 after:content-['']">{d.nombre}</a>
+    </h3>
+
+    <p class="text-sm text-ink-2">
+      {ubicacion}{estadoPrincipal && nombreEstado(estadoPrincipal) !== ubicacion && <span class="text-ink-3"> · {nombreEstado(estadoPrincipal)}</span>}
+    </p>
+
+    <p class="text-sm text-ink-2 text-pretty">{d.descripcion_corta}</p>
+
+    <ChipsGrado grados={d.grados} />
+
+    {señales.length > 0 && (
+      <p class="font-mono text-xs text-ink-3">{señales.join(' · ')}</p>
+    )}
+
+    <div class="mt-auto flex items-center justify-between border-t border-line pt-4">
+      <BadgeVerificacion estado={d.verificacion.estado} fecha={d.verificacion.fecha} conEnlace={false} />
+      <span class="font-mono text-xs text-ink-2 transition-colors group-hover:text-ink" aria-hidden="true">Ver ficha →</span>
+    </div>
+  </div>
+</article>

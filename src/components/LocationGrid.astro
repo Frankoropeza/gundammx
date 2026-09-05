@@ -1,0 +1,38 @@
+---
+import { nombreEstado } from '@lib/estados';
+interface Props {
+  ciudades: { slug: string; nombre: string; estado: string; total: number }[];
+  estados?: { slug: string; total: number }[];
+  titulo?: string;
+}
+const { ciudades, estados = [], titulo = 'Por ciudad' } = Astro.props;
+---
+
+<section>
+  <h2 class="eyebrow">{titulo}</h2>
+  {ciudades.length > 0 ? (
+    <ul class="mt-4 grid gap-px border border-line bg-line sm:grid-cols-3 lg:grid-cols-5">
+      {ciudades.map((c) => (
+        <li>
+          <a href={`/tiendas/ciudad/${c.slug}/`} class="flex h-full flex-col justify-between bg-surface p-5 transition-colors hover:bg-paper">
+            <span class="font-mono text-xs text-ink-3 tabular">{c.total}</span>
+            <span class="mt-6 block">
+              <span class="block text-lg text-ink">{c.nombre}</span>
+              <span class="block text-xs text-ink-3">{nombreEstado(c.estado)}</span>
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p class="mt-4 text-sm text-ink-2">Todavía no hay ciudades con dos o más tiendas verificadas.</p>
+  )}
+
+  {estados.length > 0 && (
+    <ul class="mt-4 flex flex-wrap gap-2" aria-label="Por estado">
+      {estados.map((e) => (
+        <li><a href={`/tiendas/${e.slug}/`} class="tag hover:border-ink hover:text-ink">{nombreEstado(e.slug)} <span class="ml-1 text-ink-3 tabular">{e.total}</span></a></li>
+      ))}
+    </ul>
+  )}
+</section>
