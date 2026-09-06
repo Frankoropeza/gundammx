@@ -79,5 +79,6 @@ Que la misma empresa arme a enemigos es una de las observaciones más agudas de 
 ## Por dónde entrar
 
 Por la serie de 1979, o por sus tres películas recopilatorias si prefieres seis horas a cuarenta y tres
-episodios. Todo lo demás del Universal Century se apoya en ella. La [guía de orden](/articulos/en-que-orden-ver-gundam/)
-detalla el resto.
+episodios. Todo lo demás del Universal Century se apoya en ella. El orden completo de la línea —qué ver, qué
+saltarse y en qué momento— está en la [guía del Universal Century](/universos/uc/), y el orden recomendado
+para toda la franquicia, en [en qué orden ver Gundam](/articulos/en-que-orden-ver-gundam/).

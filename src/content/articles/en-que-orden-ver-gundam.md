@@ -65,16 +65,14 @@ Después de cualquiera de estas, ya sabes si Gundam es para ti. Si lo es, sigue 
 
 ## Cómo seguir el Universal Century
 
-Aquí sí importa el orden, porque las obras se responden entre sí. La ruta mínima es:
+Aquí sí importa el orden, porque las obras se responden entre sí. La ruta mínima son cuatro títulos:
+*Mobile Suit Gundam* (UC 0079), *Zeta Gundam* (UC 0087), *Char's Counterattack* (UC 0093) y *Unicorn*
+(UC 0096). Con ellos tienes el tronco completo; el resto de la línea es opcional.
 
-1. **Mobile Suit Gundam** (UC 0079) — o las películas recopilatorias.
-2. **Zeta Gundam** (UC 0087) — la secuela directa; presupone la anterior.
-3. **Char's Counterattack** (UC 0093) — la película que cierra el duelo Amuro–Char.
-4. **Unicorn** (UC 0096) — siete episodios de OVA que reabren la línea.
-
-Entre medias hay más —*ZZ Gundam* (UC 0088), *The 08th MS Team* y *Requiem for Vengeance* (ambas en UC 0079
-desde otros frentes), *Hathaway* (UC 0105)—, pero ninguna es obligatoria para entender las cuatro anteriores.
-La [cronología completa](/cronologia/) las ubica a todas.
+El orden detallado —qué presupone cada obra, cuáles se pueden saltar y dónde encajan *ZZ*, *Hathaway*, *F91* y
+*Victory*— está en la [guía del Universal Century](/universos/uc/), que es también donde ubicamos las
+facciones y las máquinas de la línea. La [cronología completa](/cronologia/) ubica todas las obras por año de
+ficción, incluidas las de las otras seis líneas.
 
 ## Lo que no conviene hacer
 
