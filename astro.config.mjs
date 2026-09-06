@@ -10,9 +10,14 @@ export default defineConfig({
   // Las guías se unificaron en /articulos/. En salida estática Astro emite una página
   // de redirección con meta-refresh, canonical al destino y noindex. Estas rutas quedan
   // fuera del sitemap a propósito (ver src/lib/rutas-indexables.ts).
+  //
+  // 2026-09-06: el cluster de compra estaba canibalizado por dos artículos con la misma
+  // intención. Se consolidaron en /articulos/donde-comprar-gunpla-en-mexico/ y el slug
+  // retirado redirige aquí.
   redirects: {
     '/guias': '/articulos/',
-    '/guias/donde-comprar-gunpla-original-en-mexico': '/articulos/donde-comprar-gunpla-original-en-mexico/',
+    '/articulos/donde-comprar-gunpla-original-en-mexico': '/articulos/donde-comprar-gunpla-en-mexico/',
+    '/guias/donde-comprar-gunpla-original-en-mexico': '/articulos/donde-comprar-gunpla-en-mexico/',
     '/guias/cuanto-cuesta-un-gunpla-en-mexico': '/articulos/cuanto-cuesta-un-gunpla-en-mexico/',
     '/guias/como-saber-si-un-gunpla-es-original': '/articulos/como-saber-si-un-gunpla-es-original/',
   },
