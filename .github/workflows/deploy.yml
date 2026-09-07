@@ -46,3 +46,17 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deploy
         uses: actions/deploy-pages@v4
+      - name: Verificar que el dominio sirve este commit
+        run: |
+          DOMINIO="gundam.mx"
+          for i in $(seq 1 32); do
+            sleep 15
+            LIVE=$(curl -fsSL --max-time 15 "https://$DOMINIO/build-id.txt?cb=${{ github.run_id }}$i" 2>/dev/null | tr -d '[:space:]' || echo "")
+            if [ "$LIVE" = "${{ github.sha }}" ]; then
+              echo "OK - $DOMINIO sirve ${GITHUB_SHA:0:12}"
+              exit 0
+            fi
+            echo "intento $i/32 - dominio devuelve '${LIVE:0:12}', esperado '${GITHUB_SHA:0:12}'"
+          done
+          echo "::error::$DOMINIO NO sirve este deploy tras 8 min. Revisar GitHub Pages y el proxy de Cloudflare."
+          exit 1
