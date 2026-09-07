@@ -19,9 +19,16 @@ mobile_suits: [rx-78-2-gundam, ms-06-zaku-ii]
 pilotos: [amuro-ray, char-aznable]
 facciones: [federacion-terrestre, principado-de-zeon]
 codigo: SER-UC-0079
+disponibilidad_mx:
+  - 'Crunchyroll — catálogo México'
+  - 'Netflix México'
+  - 'Prime Video México'
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam
-actualizado: '2026-09-05'
+  - https://www.crunchyroll.com/es/series/GKEH2G9XV/mobile-suit-gundam
+  - https://www.netflix.com/mx/title/81276500
+  - https://www.primevideo.com/-/es/detail/0KK5BXKGUUPM3NG6YTAK4ZPXCL
+actualizado: '2026-09-06'
 imagen: ../../assets/art-historia-mexico.jpg
 imagen_alt: "Model kit del RX-78-2, el mobile suit protagonista de la serie."
 imagen_credito: art-historia-mexico

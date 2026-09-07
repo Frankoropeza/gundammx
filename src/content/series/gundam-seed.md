@@ -21,6 +21,7 @@ disponibilidad_mx: ['Azteca 7 (Planeta Anime), desde noviembre de 2025']
 codigo: SER-CE-0071
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_SEED
+  - https://www.tvazteca.com/azteca7/series/como-cuando-y-donde-ver-gratis-mobile-suit-gundam-seed-en-espanol-ma-notas
   - https://www.anmtvla.com/2025/11/mexico-mobile-suit-gundam-seed-se.html
 actualizado: '2026-09-05'
 ---

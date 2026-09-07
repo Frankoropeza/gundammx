@@ -51,6 +51,24 @@ Los catálogos regionales no coinciden: una serie disponible en México puede no
 Unidos, y al revés. Los enlaces del final de esta página apuntan a las fichas oficiales de cada plataforma
 para México cuando existen.
 
+## La tabla, serie por serie
+
+Solo las obras cuya disponibilidad hemos comprobado con fuente. Cada ficha del archivo repite el dato con su
+fecha de verificación.
+
+| Serie | Dónde verla en México |
+|---|---|
+| [Mobile Suit Gundam](/series/mobile-suit-gundam/) (1979) | Crunchyroll · Netflix · Prime Video |
+| [Mobile Suit Gundam Wing](/series/gundam-wing/) (1995) | Disney+ |
+| [Mobile Suit Gundam SEED](/series/gundam-seed/) (2002) | Azteca 7, televisión abierta, con doblaje latino |
+| [The Witch from Mercury](/series/the-witch-from-mercury/) (2022) | Azteca 7 (Planeta Anime) |
+| [Requiem for Vengeance](/series/requiem-for-vengeance/) (2024) | Netflix |
+| [GQuuuuuuX](/series/gquuuuuux/) (2025) | Prime Video · película *Beginning* en Cinépolis (Konnichiwa Festival, marzo 2025) |
+
+Las demás obras del [archivo de series](/series/) no tienen disponibilidad verificada en México a la fecha de
+esta revisión. Que no aparezcan aquí no significa que no estén: significa que todavía no lo hemos comprobado
+con una fuente que podamos enlazar.
+
 ## Cómo comprobarlo en dos minutos
 
 1. Busca el **título original completo** (por ejemplo, *Mobile Suit Gundam: The Witch from Mercury*, no

@@ -22,6 +22,7 @@ codigo: SER-UC-0079-RFV
 fuentes:
   - https://en.wikipedia.org/wiki/Gundam:_Requiem_for_Vengeance
   - https://about.netflix.com/en/news/trailer-gundam-requiem-for-vengeance-coming-to-netflix-october-17
+  - https://about.netflix.com/en/news/trailer-gundam-requiem-for-vengeance-coming-to-netflix-october-17
 actualizado: '2026-09-05'
 ---
 

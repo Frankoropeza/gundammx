@@ -17,12 +17,14 @@ ruta: empieza-aqui
 mobile_suits: [xxxg-01w-wing-gundam]
 pilotos: [heero-yuy]
 facciones: [oz]
-disponibilidad_mx: []
+disponibilidad_mx:
+  - 'Disney+ — ficha oficial vigente a septiembre de 2026'
 codigo: SER-AC-0195
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Wing
+  - https://www.disneyplus.com/es-us/browse/entity-ca21d947-e5b1-4c5d-b973-f638016b112c
   - https://doblaje.fandom.com/es/wiki/Gundam_Wing
-actualizado: '2026-09-05'
+actualizado: '2026-09-06'
 imagen: ../../assets/ms-wing.jpg
 imagen_alt: "Model kit del XXXG-01W Wing Gundam, protagonista de la serie."
 imagen_credito: ms-wing

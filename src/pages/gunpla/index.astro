@@ -11,6 +11,7 @@ import { schemaColeccion, schemaMigaDePan } from '@lib/seo';
 const grados = (await getCollection('gunpla', publicado)).sort((a, b) => a.data.orden - b.data.orden);
 const kits = await getCollection('kits');
 const guias = (await getCollection('articles', ({ data }) => !data.borrador && data.categoria === 'comprar')).sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime());
+const guiasHobby = (await getCollection('articles', ({ data }) => !data.borrador && data.categoria === 'gunpla')).sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime());
 const tiendas = await tiendasActivas();
 const verificadas = await tiendasVerificadas();
 const base = { site: Astro.site, url: Astro.url.pathname };
@@ -28,6 +29,25 @@ import imgGunpla from '../../assets/hub-gunpla.jpg';
     <h1 class="display mt-3 text-4xl md:text-5xl">Gunpla</h1>
     <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">Esta sección trata el model kit como modelismo, no como ficción: grados, herramienta, precio en pesos y dónde comprarlo sin que te vendan una copia.</p>
   </div>
+  <section class="grid-page pt-12" aria-labelledby="que-es-h">
+    <div class="prose-ed max-w-prose">
+      <h2 id="que-es-h">Qué es un Gunpla</h2>
+      <p><strong>Gunpla</strong> es la contracción de <em>Gundam plastic model</em>: los model kits de la franquicia que Bandai produce desde 1980. No son figuras de colección ni juguetes armables. Son kits de modelismo a escala, con las piezas moldeadas en su color sobre bastidores —los <em>runners</em>—, que se separan, se limpian y se ensamblan a presión. No hacen falta pegamento ni pintura para terminar uno, y esa es la decisión de diseño que explica por qué el hobby creció: la barrera de entrada es un cortador y una tarde. La explicación larga, con el detalle de escalas y por qué el dato importa, está en <a href="/articulos/que-es-un-gunpla/">qué es un Gunpla</a>.</p>
+      <p>El catálogo se organiza por <strong>grados</strong>, que no son niveles de calidad sino compromisos distintos entre escala, número de piezas y tiempo de armado: Entry Grade, High Grade, Real Grade, Master Grade y Perfect Grade. Un High Grade se termina en una tarde; un Master Grade puede llevarte un fin de semana. La comparación completa, con precio de lista japonés como referencia, está en <a href="/articulos/grados-de-gunpla/">los grados del Gunpla</a>, y la decisión más frecuente del hobby —<a href="/articulos/master-grade-vs-real-grade/">Master Grade contra Real Grade</a>— tiene su propia comparativa.</p>
+      <p>Si es tu primer kit, el orden útil es este: elige grado, calcula lo que <a href="/articulos/cuanto-cuesta-un-gunpla-en-mexico/">debería costarte en pesos</a>, cómpralo en un <a href="/articulos/donde-comprar-gunpla-en-mexico/">canal donde puedas verificar el origen</a> y ármalo siguiendo la <a href="/articulos/como-armar-tu-primer-gunpla/">guía del primer Gunpla</a>, que abre con la única herramienta que de verdad hace falta.</p>
+    </div>
+    {guiasHobby.length > 0 && (
+      <ul class="mt-8 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-3">
+        {guiasHobby.map((g) => (
+          <li class="card p-6">
+            <p class="font-mono text-xs uppercase tracking-[0.14em] text-ink-3">Guía</p>
+            <h3 class="display mt-3 text-xl"><a href={`/articulos/${g.id}/`} class="link-quiet">{g.data.titulo}</a></h3>
+            <p class="mt-2 text-sm text-ink-2">{g.data.resumen}</p>
+          </li>
+        ))}
+      </ul>
+    )}
+  </section>
   <div class="mt-10"><GunplaBlock grados={grados} totalTiendas={tiendas.length} totalVerificadas={verificadas.length} guias={guias.map((g) => ({ titulo: g.data.titulo, href: `/articulos/${g.id}/` }))} /></div>
   <section class="grid-page py-16" aria-labelledby="kits-h">
     <div class="flex items-end justify-between gap-6"><h2 id="kits-h" class="display text-3xl">Kits con precio de referencia</h2><a href="/kits/" class="link text-sm">Todos los kits</a></div>
