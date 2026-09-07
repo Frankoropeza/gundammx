@@ -61,3 +61,13 @@ Que México se ha convertido en el mercado de prueba de Bandai Namco en Latinoam
 un plan regional declarado. Para el aficionado, el efecto inmediato es un canal oficial con envío nacional y
 un catálogo de vitrina; el surtido profundo sigue dependiendo de las tiendas especializadas independientes,
 que son las que este portal [verifica una por una](/tiendas/).
+
+## Para seguir
+
+El detalle de la presencia comercial de Bandai Namco en el país está en
+[The Gundam Base en México](/articulos/the-gundam-base-mexico/), y el mapa de canales de compra vigente,
+en [dónde comprar Gunpla original en México](/articulos/donde-comprar-gunpla-en-mexico/).
+
+La serie que explica por qué el público mexicano llegó a Gundam por donde llegó es
+[Gundam Wing](/articulos/gundam-wing-la-serie-de-mexico/), y el calendario de encuentros presenciales,
+[eventos Gundam en México](/articulos/eventos-gundam-mexico/).

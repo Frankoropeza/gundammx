@@ -9,6 +9,7 @@ sucursales:
     estado: estado-de-mexico
 web: https://www.distritomax.com/
 vende_gunpla: si
+maneja_preventa: true
 origen_producto: revende_original
 grados: [hg, rg, mg]
 envio_nacional: true
@@ -21,7 +22,8 @@ verificacion:
   nivel_confianza: 2
   fuentes:
     - https://www.distritomax.com/collections/bandai-hobby-gunpla
-actualizada: '2026-09-04'
+  notas: 'Preventa verificada el 2026-09-07 en su sitio, secciones "PREVENTAS" y "PREVENTAS MÁS VENDIDAS" en la navegación.'
+actualizada: '2026-09-07'
 ---
 
 Tiene colección específica de Bandai Hobby Gunpla dentro de un catálogo de coleccionables más amplio.

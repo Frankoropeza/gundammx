@@ -13,6 +13,7 @@ sucursales:
     estado: baja-california
 web: https://www.herozone.com.mx/
 vende_gunpla: ocasional
+maneja_preventa: true
 origen_producto: no_verificado
 grados: [hg]
 envio_nacional: true
@@ -23,8 +24,8 @@ verificacion:
   nivel_confianza: 1
   fuentes:
     - https://www.herozone.com.mx/collections/all/gundam
-  notas: Tiene colección con etiqueta Gundam, pero su foco es el coleccionable pop en general. Falta confirmar profundidad y origen del producto.
-actualizada: '2026-09-04'
+  notas: 'Tiene colección con etiqueta Gundam, pero su foco es el coleccionable pop en general. Falta confirmar profundidad y origen del producto. Preventa verificada el 2026-09-07 en su sitio, productos publicados en preventa en el catálogo.'
+actualizada: '2026-09-07'
 ---
 
 La incluimos porque es de las pocas referencias verificables en Baja California, pero con la advertencia

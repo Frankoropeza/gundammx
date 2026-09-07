@@ -366,6 +366,18 @@ const articles = defineCollection({
     imagen_alt: z.string().optional(),
     imagen_credito: z.string().optional(),   // clave en src/config/creditos-imagenes.ts
     referencias: z.array(z.object({ titulo: z.string(), url: z.string().url() })).min(1),
+
+    // --- SEO autorable. Si se omite, la pagina cae al derivado de titulo/resumen. ---
+    seo: z.object({
+      titulo: z.string().max(65).optional(),
+      descripcion: z.string().min(120).max(165).optional(),
+    }).optional(),
+    keyword_principal: z.string().optional(),
+    keywords_secundarias: z.array(z.string()).default([]),
+
+    // Bloque de preguntas frecuentes. Alimenta schemaFAQ() y es elegible para rich results.
+    faq: z.array(faqItem).default([]),
+
     borrador: z.boolean().default(false),
   }),
 });

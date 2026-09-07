@@ -9,6 +9,7 @@ sucursales:
     estado: sinaloa
 web: https://www.tooys.mx/
 vende_gunpla: desconocido
+maneja_preventa: true
 origen_producto: no_verificado
 envio_nacional: true
 verificacion:
@@ -18,8 +19,8 @@ verificacion:
   nivel_confianza: 1
   fuentes:
     - https://www.tooys.mx/
-  notas: Distribuidor confirmado de Tamashii Nations y con categoría de model kit, pero no confirmamos surtido específico de Gunpla.
-actualizada: '2026-09-04'
+  notas: 'Distribuidor confirmado de Tamashii Nations y con categoría de model kit, pero no confirmamos surtido específico de Gunpla. Preventa verificada el 2026-09-07 en su sitio, copy "Aparta en PreVenta, Paga Comodamente" y productos en pre-venta.'
+actualizada: '2026-09-07'
 ---
 
 Aparece en el directorio porque cubre una plaza sin otras opciones verificadas, pero con el estado real:

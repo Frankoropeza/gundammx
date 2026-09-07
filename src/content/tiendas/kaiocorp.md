@@ -10,6 +10,7 @@ sucursales:
     estado: michoacan
 web: https://kaiocorp.com.mx/
 vende_gunpla: si
+maneja_preventa: true
 origen_producto: revende_original
 grados: [hg, rg, mg]
 otras_lineas: [Blokees]
@@ -21,7 +22,8 @@ verificacion:
   nivel_confianza: 2
   fuentes:
     - https://kaiocorp.com.mx/product-category/gundam/
-actualizada: '2026-09-04'
+  notas: 'Preventa verificada el 2026-09-07 en su sitio, categoría "Preventas" y productos con prefijo PREVENTA, incluido Gunpla.'
+actualizada: '2026-09-07'
 ---
 
 Una de las pocas opciones verificadas en Michoacán con categoría de Gundam separada del resto del catálogo.

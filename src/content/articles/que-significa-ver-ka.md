@@ -63,4 +63,13 @@ precio de lista en Japón, dificultad avanzada.
 Finish`, `Clear Color` y similares son acabados sobre un molde existente. Ninguno de los tres es lo
 mismo.
 
-Cómo encaja cada grado en el catálogo está en [los grados del Gunpla](/articulos/grados-de-gunpla/).
+Cómo encaja cada grado en el catálogo está en [los grados del Gunpla](/articulos/grados-de-gunpla/), y el
+extremo superior, donde estas versiones de autor son más frecuentes, en
+[Perfect Grade](/articulos/perfect-grade-que-es/).
+
+Un caso que ilustra bien la diferencia entre rediseño y versión de autor es el de las máquinas de
+[Gundam Wing](/articulos/en-que-orden-ver-gundam-wing/): las cinco fueron rediseñadas para *Endless Waltz*,
+así que del mismo mobile suit conviven dos siluetas muy distintas en las tiendas.
+
+Y si vas a trabajar el acabado de uno de estos kits, el proceso está en
+[panel lining, topcoat y acabados](/articulos/panel-lining-topcoat-acabados/).

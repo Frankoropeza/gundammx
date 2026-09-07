@@ -29,6 +29,7 @@ sucursales:
     telefono: '8132659335'
 web: https://akibaraxpress.com/
 vende_gunpla: si
+maneja_preventa: true
 origen_producto: revende_original
 grados: [hg, rg, mg, pg]
 envio_nacional: true
@@ -41,7 +42,8 @@ verificacion:
   fuentes:
     - https://akibaraxpress.com/pages/ubicaciones
     - https://akibaraxpress.com/collections/gundam
-actualizada: '2026-09-04'
+  notas: 'Preventa verificada el 2026-09-07 en su sitio, menú "Preventas" y productos etiquetados PREVENTA en el catálogo.'
+actualizada: '2026-09-07'
 ---
 
 Es la operación con más presencia física verificada del norte del país. Tiene sección de Gundam propia

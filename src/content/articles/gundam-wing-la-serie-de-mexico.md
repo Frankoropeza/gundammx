@@ -35,14 +35,19 @@ corresponde con su peso global.
 
 ## Lo que la serie hace bien
 
-Sus cinco pilotos son arquetipos claros y distintos, y la serie los usa para preguntar qué significa ser un
-arma con conciencia. Su antagonista, Treize Khushrenada, y el rival enmascarado Zechs Merquise —una cita
+Sus [cinco pilotos](/articulos/pilotos-de-gundam-wing/) son arquetipos claros y distintos, y la serie los
+usa para preguntar qué significa ser un arma con conciencia. Su antagonista, Treize Khushrenada, y el rival enmascarado Zechs Merquise —una cita
 directa de Char Aznable— dan a la trama una dimensión política que el ritmo de acción no sacrifica. Y su
 epílogo, *Endless Waltz* (1997), cierra la historia con uno de los rediseños de mobile suits más apreciados de
-la franquicia.
+la franquicia — existe en dos versiones, y [cuál conviene ver está resuelto aquí](/articulos/en-que-orden-ver-gundam-wing/).
 
 ## Dónde empezar hoy
 
 Los 49 episodios siguen siendo una puerta de entrada válida, aunque *The Witch from Mercury* sea hoy la
-recomendación por defecto para un primer contacto. Si tu primer Gundam fue el de Heero Yuy, el Entry Grade del
-Wing Gundam —299 pesos en el canal oficial— es la forma más barata de volver a armarlo.
+recomendación por defecto para un primer contacto. El orden completo de la serie, la OVA y la película está
+en [en qué orden ver Gundam Wing](/articulos/en-que-orden-ver-gundam-wing/), y la ficha de producción, en
+[/series/gundam-wing/](/series/gundam-wing/).
+
+Si tu primer Gundam fue el de Heero Yuy, el Entry Grade del Wing Gundam es el punto de reentrada más barato:
+es el grado de menor precio del catálogo, como se explica en [los grados del Gunpla](/articulos/grados-de-gunpla/),
+y los rangos de precio reales en México están en [cuánto debería costar un Gunpla](/articulos/cuanto-cuesta-un-gunpla-en-mexico/).

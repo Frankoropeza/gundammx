@@ -86,3 +86,17 @@ terminado Gundam así.
 La serie de 2025 transcurre en un Universal Century alternativo, en UC 0085, y su gracia está en reconocer
 qué cambió respecto al original. Es la obra que explica por qué Gundam volvió al centro de la conversación,
 pero no es un punto de entrada: guárdala para después de la serie de 1979.
+
+## Orden de visionado y cronología no son lo mismo
+
+Esta guía resuelve **en qué orden conviene verlas**. La pregunta distinta —en qué año de ficción ocurre
+cada obra y por qué las líneas alternas no se cruzan— está en
+[la cronología de Gundam](/articulos/cronologia-de-gundam-explicada/).
+
+## Guías por serie
+
+Cuando ya elegiste por dónde entrar, cada línea tiene su propio orden interno:
+[Gundam Wing](/articulos/en-que-orden-ver-gundam-wing/) con su OVA y su película,
+[Gundam SEED](/articulos/gundam-seed-guia-y-orden/) con Destiny y Freedom,
+[Zeta Gundam](/articulos/zeta-gundam-guia/) con su trilogía de final alternativo, y
+[Gundam Unicorn](/articulos/gundam-unicorn-guia/) en sus dos montajes.

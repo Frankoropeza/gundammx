@@ -25,7 +25,7 @@ verificacion:
   fuentes:
     - https://bandainamcoshop.com.mx/
     - https://www.elfinanciero.com.mx/entretenimiento/2026/08/13/donde-esta-la-primera-tienda-oficial-de-bandai-namco-en-cdmx/
-  notas: Primera tienda física permanente de Bandai Namco en América Latina, inaugurada el 21 de agosto de 2026.
+  notas: 'Primera tienda física permanente de Bandai Namco en América Latina, inaugurada el 21 de agosto de 2026.'
 actualizada: '2026-09-04'
 ---
 

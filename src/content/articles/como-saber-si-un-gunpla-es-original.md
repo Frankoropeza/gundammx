@@ -69,3 +69,14 @@ verás la etiqueta «origen no verificado» en lugar de un sello inventado.
 
 Si detectas una tienda listada vendiendo producto no original, [repórtalo](/reportar/). Es el reporte
 que atendemos primero.
+
+## Dónde comprar con menos riesgo
+
+El mapa de canales verificados está en [dónde comprar Gunpla original en México](/articulos/donde-comprar-gunpla-en-mexico/),
+y la referencia de precios que permite detectar un sobreprecio o una ganga sospechosa, en
+[cuánto debería costar un Gunpla en México](/articulos/cuanto-cuesta-un-gunpla-en-mexico/).
+
+Dos casos merecen cuidado adicional porque escapan al canal habitual:
+[importar Gunpla a México](/articulos/importar-gunpla-a-mexico/), donde el vendedor está fuera de tu
+alcance legal, y [las preventas y el canal P-Bandai](/articulos/preventas-y-p-bandai-desde-mexico/),
+donde pagas meses antes de recibir.

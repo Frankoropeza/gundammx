@@ -8,6 +8,7 @@ sucursales:
     estado: san-luis-potosi
 web: https://plastic-zoo.com/
 vende_gunpla: si
+maneja_preventa: true
 origen_producto: distribuidor_autorizado
 grados: [hg, rg, mg]
 otras_lineas: [Banpresto, Furyu]
@@ -20,7 +21,8 @@ verificacion:
   nivel_confianza: 3
   fuentes:
     - https://plastic-zoo.com/
-actualizada: '2026-09-04'
+  notas: 'Preventa verificada el 2026-09-07 en su sitio, menú "Preventas" y colección preventas-activas.'
+actualizada: '2026-09-07'
 ---
 
 Opera como distribuidor de Bandai, no solo como minorista, lo que suele traducirse en mejor

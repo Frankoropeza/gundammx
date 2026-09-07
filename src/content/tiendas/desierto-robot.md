@@ -10,6 +10,7 @@ sucursales:
     estado: sonora
 web: https://www.desiertorobot.com/
 vende_gunpla: si
+maneja_preventa: true
 origen_producto: revende_original
 grados: [hg, rg, mg]
 envio_nacional: true
@@ -21,7 +22,8 @@ verificacion:
   nivel_confianza: 2
   fuentes:
     - https://www.desiertorobot.com/
-actualizada: '2026-09-04'
+  notas: 'Preventa verificada el 2026-09-07 en su sitio, enlace "Información de Preventas" en atención a clientes.'
+actualizada: '2026-09-07'
 ---
 
 Referencia del noroeste. Sección de Gunpla identificada dentro de su catálogo de coleccionables.

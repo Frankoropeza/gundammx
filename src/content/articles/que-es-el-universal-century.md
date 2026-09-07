@@ -82,3 +82,11 @@ Por la serie de 1979, o por sus tres películas recopilatorias si prefieres seis
 episodios. Todo lo demás del Universal Century se apoya en ella. El orden completo de la línea —qué ver, qué
 saltarse y en qué momento— está en la [guía del Universal Century](/universos/uc/), y el orden recomendado
 para toda la franquicia, en [en qué orden ver Gundam](/articulos/en-que-orden-ver-gundam/).
+
+Conviene no confundir las dos preguntas: el orden de visionado y la cronología interna del universo no
+coinciden, y la diferencia está explicada en
+[la cronología de Gundam](/articulos/cronologia-de-gundam-explicada/).
+
+Si prefieres entrar al Universal Century por su tramo moderno en lugar de por 1979,
+[Gundam Unicorn](/articulos/gundam-unicorn-guia/) es la puerta habitual. Y el personaje que atraviesa la
+línea entera, de la primera serie al desenlace, es [Char Aznable](/articulos/char-aznable-quien-es/).

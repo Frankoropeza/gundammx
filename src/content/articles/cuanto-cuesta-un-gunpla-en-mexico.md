@@ -79,3 +79,15 @@ un Master Grade. Diciembre y enero mueven más volumen, pero sesgado a los grado
 
 Si el precio que te piden está más de 15% arriba del rango esperado y no es un kit descontinuado ni un
 exclusivo, es sobreprecio. En nuestras fichas de kit ese caso aparece marcado automáticamente.
+
+Un precio muy por debajo del rango es una señal distinta y peor: apunta a producto no original, y los
+criterios para distinguirlo están en [cómo saber si un Gunpla es original](/articulos/como-saber-si-un-gunpla-es-original/).
+
+## Antes de comparar precios
+
+El rango depende del grado, así que conviene saber qué estás comparando: [los grados del Gunpla](/articulos/grados-de-gunpla/)
+explica qué aporta cada uno y por qué la diferencia de precio entre un Entry Grade y un
+[Perfect Grade](/articulos/perfect-grade-que-es/) es de otro orden de magnitud.
+
+Y si el kit que buscas no llega al canal mexicano, la alternativa tiene su propio cálculo:
+[importar Gunpla a México](/articulos/importar-gunpla-a-mexico/) desglosa el costo total desembarcado.

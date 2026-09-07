@@ -9,6 +9,7 @@ sucursales:
     estado: cdmx
 web: https://palitrochestore.com.mx/
 vende_gunpla: si
+maneja_preventa: true
 origen_producto: revende_original
 grados: [hg, rg, mg]
 envio_nacional: true
@@ -20,7 +21,8 @@ verificacion:
   nivel_confianza: 2
   fuentes:
     - https://palitrochestore.com.mx/product-tag/gundam-model-kit/
-actualizada: '2026-09-04'
+  notas: 'Preventa verificada el 2026-09-07 en su sitio, sección "APARTADO / PREVENTAS" con reserva anticipada.'
+actualizada: '2026-09-07'
 ---
 
 Opción céntrica en la Ciudad de México, con etiqueta específica de model kits de Gundam dentro de su categoría de Bandai Hobby.

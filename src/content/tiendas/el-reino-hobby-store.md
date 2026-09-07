@@ -8,6 +8,7 @@ sucursales:
     estado: jalisco
 web: https://elreino.mx/
 vende_gunpla: si
+maneja_preventa: true
 origen_producto: revende_original
 grados: [hg, rg, mg]
 otras_lineas: [Kotobukiya, Good Smile Company]
@@ -22,7 +23,8 @@ verificacion:
   nivel_confianza: 3
   fuentes:
     - https://elreino.mx/
-actualizada: '2026-09-04'
+  notas: 'Preventa verificada el 2026-09-07 en su sitio, sección "Preventas" y "PREAVISOS - Planifica tu preventa".'
+actualizada: '2026-09-07'
 ---
 
 Maneja categoría explícita de Gundam junto a otras líneas de model kit, y además pinturas y herramienta,
