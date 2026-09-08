@@ -118,8 +118,8 @@ Francisco I. Madero 490, con unas 24 horas de preparación. Al 8 de septiembre d
 formas de pago, incluidas Apple Pay, Google Pay y Shop Pay.
 
 Tres cosas antes de comprar. El envío se paga siempre: 169 pesos el nacional estándar, 199.99 el
-express y 85 el local, sin umbral de envío gratis, así que para un kit barato el envío pesa mucho en
-el total. Anuncia preventas, pero sus dos páginas de preventas devolvían error cuando las revisamos y
+express y 85 el local. No hay umbral de envío gratis, así que ese costo se suma a cualquier pedido,
+del más caro al más barato. Anuncia preventas, pero sus dos páginas de preventas devolvían error y
 no publica ninguna política escrita. Y sobre el origen del producto, no encontramos documento de
 distribución autorizada ni prueba del canal por el que compra, así que esta ficha lo deja como no
 verificado en lugar de suponerlo.

@@ -48,25 +48,33 @@ politica_preventa: >-
   las fechas de llegada dependen del proveedor y pueden cambiar sin aviso; que al llegar el producto
   hay cinco días naturales para completar el pago, y que pasado ese plazo el pedido se cancela y se
   pierde el apartado. El límite declarado es de dos piezas.
-origen_producto: revende_original
+origen_producto: no_verificado
 grados: [hg, rg, mg, pg]
 envio_nacional: true
 pickup: true
 evidencias:
   - afirmacion: Cuatro sucursales en Nuevo León, con calle, colonia y código postal
     url: https://akibaraxpress.com/pages/ubicaciones
+    cita: Página de ubicaciones
     fecha: '2026-09-08'
+    vigencia_meses: 12
   - afirmacion: Teléfonos de las sucursales Interplaza, TEC y San Nicolás
     url: https://akibaraxpress.com/pages/ubicaciones
+    cita: Página de ubicaciones, por sucursal
     fecha: '2026-09-08'
+    vigencia_meses: 12
   - afirmacion: Correo de ventas y perfiles de Facebook, Instagram, X y YouTube
     url: https://akibaraxpress.com/pages/ubicaciones
+    cita: Pie de página
     fecha: '2026-09-08'
+    vigencia_meses: 12
   - afirmacion: Declara horario general de 10:00 a 20:00 y pide confirmarlo por sucursal en sus redes
     url: https://akibaraxpress.com/pages/ubicaciones
+    cita: Página de ubicaciones, nota de horarios
     fecha: '2026-09-08'
   - afirmacion: Política de preventa publicada por escrito, con pago en línea, sin cancelaciones y cinco días para liquidar
     url: https://akibaraxpress.com/pages/preventas
+    cita: Página de preventas
     fecha: '2026-09-08'
   - afirmacion: Sección propia de Gundam con High Grade, Real Grade, Master Grade y Perfect Grade
     url: https://akibaraxpress.com/collections/gundam
@@ -122,6 +130,8 @@ verificacion:
     por estado sin sucursal real, porque no volvimos a comprobarla; y se retira la mención a su blog,
     que no aparece en las fuentes citadas. Los horarios se declaran de forma general y su propio
     sitio pide confirmarlos por sucursal, así que no se cargan como horarios estructurados.
+    origen_producto pasa a "no_verificado": el expediente acredita catálogo, sucursales y política de
+    preventa, pero no el canal por el que compra el producto.
 alta: '2026-09-04'
 actualizada: '2026-09-08'
 ---

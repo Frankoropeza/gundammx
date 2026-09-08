@@ -133,7 +133,18 @@ for (const { archivo, d, cuerpo } of fichas) {
   if (d.maneja_preventa && !d.politica_preventa) avi(archivo, 'maneja_preventa sin politica_preventa: la FAQ saldrá con la respuesta genérica');
 }
 
-/* 9. relacionadas: los ids deben existir */
+/* 9. evidencias: vigencia por afirmación */
+for (const { archivo, d } of fichas) {
+  for (const e of d.evidencias ?? []) {
+    if (!ISO.test(String(e.fecha ?? ''))) { err(archivo, `evidencia con fecha inválida: "${e.fecha}"`); continue; }
+    const meses = mesesDesde(e.fecha);
+    const tope = e.vigencia_meses ?? 6;
+    if (meses < 0) err(archivo, `evidencia con fecha futura: ${e.fecha}`);
+    else if (meses > tope) avi(archivo, `evidencia vencida (${meses.toFixed(1)} de ${tope} meses): "${String(e.afirmacion).slice(0, 60)}…"`);
+  }
+}
+
+/* 10. relacionadas: los ids deben existir */
 const ids = new Set(fichas.map((f) => f.archivo.replace(/\.mdx?$/, '')));
 for (const { archivo, d } of fichas) {
   for (const id of d.relacionadas ?? []) {
@@ -142,7 +153,7 @@ for (const { archivo, d } of fichas) {
   }
 }
 
-/* 10. Duplicados y casi-duplicados entre fichas */
+/* 11. Duplicados y casi-duplicados entre fichas */
 for (const campo of ['descripcion_corta', 'cuerpo']) {
   const textos = fichas.map((f) => ({ archivo: f.archivo, t: campo === 'cuerpo' ? f.cuerpo : String(f.d.descripcion_corta ?? '') }));
   const tri = textos.map((x) => ({ ...x, g: trigramas(x.t) }));

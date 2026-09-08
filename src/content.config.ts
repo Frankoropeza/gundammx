@@ -94,8 +94,13 @@ const tiendas = defineCollection({
       afirmacion: z.string().min(12).max(200),
       url: z.string().url(),
       fecha: fechaISO,
-      /** Dónde exactamente dentro de la fuente: sección, menú, encabezado. */
-      cita: z.string().max(160).optional(),
+      /** Dónde exactamente dentro de la fuente: sección, menú, encabezado. Obligatorio: una URL sola no dice qué parte sostiene el dato. */
+      cita: z.string().min(3).max(160),
+      /**
+       * Meses que esta evidencia sigue siendo defendible sin volver a mirar.
+       * Un precio caduca antes que un domicilio, y el script marca las vencidas.
+       */
+      vigencia_meses: z.number().int().min(1).max(24).default(6),
       tipo: z.enum(['pagina_propia', 'documento', 'nota_de_prensa', 'directorio_oficial']).default('pagina_propia'),
     })).default([]),
 
