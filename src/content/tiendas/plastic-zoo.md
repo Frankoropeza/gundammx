@@ -32,38 +32,47 @@ evidencias:
     url: https://plastic-zoo.com/
     cita: Catálogo de la portada
     fecha: '2026-09-08'
+    vigencia_meses: 3
   - afirmacion: Envía a todo México y también hace entrega local en San Luis Potosí en un radio de 9 km
     url: https://plastic-zoo.com/policies/shipping-policy
     cita: Política de envío
     fecha: '2026-09-08'
+    vigencia_meses: 6
   - afirmacion: Sus envíos van por Estafeta, FedEx, DHL o Paquetexpress, según el caso
     url: https://plastic-zoo.com/policies/shipping-policy
     cita: Política de envío
     fecha: '2026-09-08'
+    vigencia_meses: 6
   - afirmacion: No tiene envío gratis; cobra 169 pesos el nacional estándar, 199.99 el express y 85 el local
     url: https://plastic-zoo.com/policies/shipping-policy
     cita: Política de envío
     fecha: '2026-09-08'
+    vigencia_meses: 3
   - afirmacion: Recolección en tienda en Francisco I. Madero 490, Centro, 78000 San Luis Potosí, con 24 horas de preparación
     url: https://plastic-zoo.com/policies/shipping-policy
     cita: Política de envío, sección de recolección
     fecha: '2026-09-08'
+    vigencia_meses: 12
   - afirmacion: Acepta Visa, Mastercard, American Express, PayPal, Apple Pay, Google Pay y Shop Pay
     url: https://plastic-zoo.com/
     cita: Pie de página
     fecha: '2026-09-08'
+    vigencia_meses: 3
   - afirmacion: Maneja Bandai Spirits, Banpresto, Furyu, Kotobukiya, Good Smile Company, Tamashii Nations, Tamiya, Blokees, Aoshima y Takara Tomy
     url: https://plastic-zoo.com/
     cita: Listado de marcas de la portada
     fecha: '2026-09-08'
+    vigencia_meses: 3
   - afirmacion: Anuncia preventas en su navegación, pero la página de preventas devolvía 404
     url: https://plastic-zoo.com/pages/preventas
     cita: Enlace del menú, sin destino válido
     fecha: '2026-09-08'
+    vigencia_meses: 6
   - afirmacion: Su colección de preventas activas también devolvía 404
     url: https://plastic-zoo.com/collections/preventas-activas
     cita: Colección anunciada, sin destino válido
     fecha: '2026-09-08'
+    vigencia_meses: 6
 faq:
   - pregunta: ¿Dónde está Plastic Zoo y se puede recoger ahí?
     respuesta: >-

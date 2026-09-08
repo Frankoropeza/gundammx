@@ -37,26 +37,32 @@ evidencias:
     url: https://www.hobbyshop.mx/collections/gunpla-modelos
     cita: Aviso de envío del encabezado
     fecha: '2026-09-08'
+    vigencia_meses: 3
   - afirmacion: Acepta Visa, Mastercard, American Express y PayPal
     url: https://www.hobbyshop.mx/collections/gunpla-modelos
     cita: Pie de página
     fecha: '2026-09-08'
+    vigencia_meses: 3
   - afirmacion: Publica el correo hobbyshopmex@gmail.com y perfiles de Facebook e Instagram
     url: https://www.hobbyshop.mx/collections/gunpla-modelos
     cita: Pie de página
     fecha: '2026-09-08'
+    vigencia_meses: 12
   - afirmacion: Entrega a toda la República, salvo códigos postales donde las paqueterías no tienen cobertura
     url: https://www.hobbyshop.mx/policies/shipping-policy
     cita: Política de envío
     fecha: '2026-09-08'
+    vigencia_meses: 6
   - afirmacion: Tiempos declarados de 3 a 5 días hábiles en existencia y de 5 a 7 tras el lanzamiento en preventa
     url: https://www.hobbyshop.mx/policies/shipping-policy
     cita: Política de envío
     fecha: '2026-09-08'
+    vigencia_meses: 6
   - afirmacion: No publica qué paqueterías usa ni domicilio ni recolección en tienda
     url: https://www.hobbyshop.mx/policies/shipping-policy
     cita: Ausencia comprobada en la política de envío
     fecha: '2026-09-08'
+    vigencia_meses: 12
 faq:
   - pregunta: ¿HobbyShop.MX tiene tienda física?
     respuesta: >-

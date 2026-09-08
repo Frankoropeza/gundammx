@@ -98,9 +98,12 @@ const tiendas = defineCollection({
       cita: z.string().min(3).max(160),
       /**
        * Meses que esta evidencia sigue siendo defendible sin volver a mirar.
-       * Un precio caduca antes que un domicilio, y el script marca las vencidas.
+       * Obligatoria y explícita: un precio caduca antes que un domicilio, y un
+       * valor por omisión dejaría esa decisión al azar. El script marca las
+       * vencidas. Guía: catálogo, precios y ausencias 3 · políticas 6 ·
+       * domicilios, teléfonos y redes 12.
        */
-      vigencia_meses: z.number().int().min(1).max(24).default(6),
+      vigencia_meses: z.number().int().min(1).max(24),
       tipo: z.enum(['pagina_propia', 'documento', 'nota_de_prensa', 'directorio_oficial']).default('pagina_propia'),
     })).default([]),
 
