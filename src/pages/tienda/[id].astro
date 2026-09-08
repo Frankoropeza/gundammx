@@ -11,16 +11,17 @@ import ContactCTA from '@components/ContactCTA.astro';
 import FAQ from '@components/FAQ.astro';
 import FuentesFicha from '@components/FuentesFicha.astro';
 import RelatedListings from '@components/RelatedListings.astro';
-import { tiendasActivas, relacionadasDe, faqDeTienda, CATEGORIAS } from '@lib/directorio';
+import { tiendasActivas, relacionadasDe, indiceTiendas, faqDeTienda, CATEGORIAS } from '@lib/directorio';
 import { nombreEstado } from '@lib/estados';
 import { pesos } from '@lib/precio';
 import { schemaTienda, schemaMigaDePan, schemaFAQ, descripcionFicha } from '@lib/seo';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const tiendas = await tiendasActivas();
+  const indice = await indiceTiendas();   // se construye una vez, no una por ficha
   return Promise.all(tiendas.map(async (t) => ({
     params: { id: t.id },
-    props: { tienda: t, relacionadas: await relacionadasDe(t) },
+    props: { tienda: t, relacionadas: await relacionadasDe(t, 3, indice) },
   })));
 };
 

@@ -4,12 +4,16 @@ import { fechaLarga } from '@lib/precio';
 
 export type Tienda = CollectionEntry<'tiendas'>;
 
-/** Tiendas publicables: excluye las cerradas del listado general. */
-export async function tiendasActivas(): Promise<Tienda[]> {
-  const todas = await getCollection('tiendas');
-  return todas
-    .filter((t) => t.data.verificacion.estado !== 'cerrada')
-    .sort(ordenarTiendas);
+/**
+ * Tiendas publicables: excluye las cerradas del listado general.
+ * Memoizada por build: la colección se lee y se ordena una sola vez, aunque
+ * la llamen una decena de páginas.
+ */
+let cacheTiendas: Promise<Tienda[]> | null = null;
+export function tiendasActivas(): Promise<Tienda[]> {
+  cacheTiendas ??= getCollection('tiendas').then((todas) =>
+    todas.filter((t) => t.data.verificacion.estado !== 'cerrada').sort(ordenarTiendas));
+  return cacheTiendas;
 }
 
 /** Verificadas primero, luego destacadas, luego alfabético. */
@@ -157,13 +161,63 @@ export function faqDeTienda(t: Tienda): { pregunta: string; respuesta: string }[
   return [...items, ...d.faq];
 }
 
-/** Relacionadas: las declaradas en la ficha; si no hay, misma ciudad; si no, misma categoría. */
-export async function relacionadasDe(t: Tienda, max = 3): Promise<Tienda[]> {
-  const todas = (await tiendasActivas()).filter((o) => o.id !== t.id);
-  const declaradas = t.data.relacionadas.map((id) => todas.find((o) => o.id === id)).filter(Boolean) as Tienda[];
+/* ------------------------------------------------------------------ */
+/* Índice del directorio                                               */
+/* ------------------------------------------------------------------ */
+/**
+ * Índices precalculados del censo. Existen para que `relacionadasDe()` no
+ * recorra la colección entera por cada ficha dentro de `getStaticPaths`:
+ * con 12 fichas da igual, con 300 el build se vuelve cuadrático.
+ */
+export type IndiceTiendas = {
+  todas: Tienda[];
+  porId: Map<string, Tienda>;
+  porCiudad: Map<string, Tienda[]>;
+  porCategoria: Map<CategoriaId, Tienda[]>;
+};
+
+let cacheIndice: Promise<IndiceTiendas> | null = null;
+export function indiceTiendas(): Promise<IndiceTiendas> {
+  cacheIndice ??= tiendasActivas().then((todas) => {
+    const porId = new Map<string, Tienda>();
+    const porCiudad = new Map<string, Tienda[]>();
+    const porCategoria = new Map<CategoriaId, Tienda[]>();
+    for (const t of todas) {
+      porId.set(t.id, t);
+      for (const c of ciudadesDe(t)) {
+        if (!porCiudad.has(c.slug)) porCiudad.set(c.slug, []);
+        porCiudad.get(c.slug)!.push(t);
+      }
+      const cat = t.data.categoria as CategoriaId;
+      if (!porCategoria.has(cat)) porCategoria.set(cat, []);
+      porCategoria.get(cat)!.push(t);
+    }
+    return { todas, porId, porCiudad, porCategoria };
+  });
+  return cacheIndice;
+}
+
+/**
+ * Relacionadas: las declaradas en la ficha; si no hay, misma ciudad; si no,
+ * misma categoría. Resuelve contra el índice, sin recorrer la colección.
+ */
+export async function relacionadasDe(t: Tienda, max = 3, indice?: IndiceTiendas): Promise<Tienda[]> {
+  const ix = indice ?? (await indiceTiendas());
+  const otras = (lista: Tienda[] | undefined) => (lista ?? []).filter((o) => o.id !== t.id);
+
+  const declaradas = t.data.relacionadas
+    .map((id) => ix.porId.get(id))
+    .filter((o): o is Tienda => Boolean(o) && o!.id !== t.id);
   if (declaradas.length) return declaradas.slice(0, max);
-  const misCiudades = ciudadesDe(t).map((c) => c.slug);
-  const mismaCiudad = todas.filter((o) => ciudadesDe(o).some((c) => misCiudades.includes(c.slug)));
+
+  const vistas = new Set<string>();
+  const mismaCiudad: Tienda[] = [];
+  for (const c of ciudadesDe(t)) {
+    for (const o of otras(ix.porCiudad.get(c.slug))) {
+      if (!vistas.has(o.id)) { vistas.add(o.id); mismaCiudad.push(o); }
+    }
+  }
   if (mismaCiudad.length) return mismaCiudad.slice(0, max);
-  return todas.filter((o) => o.data.categoria === t.data.categoria).slice(0, max);
+
+  return otras(ix.porCategoria.get(t.data.categoria as CategoriaId)).slice(0, max);
 }
