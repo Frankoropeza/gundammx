@@ -54,16 +54,42 @@ export async function tiendasEnLinea() {
   return tiendas.filter((t) => t.data.envio_nacional || t.data.tipo === 'online');
 }
 
+/**
+ * GUARDIA ANTIFACETAS.
+ * Una faceta curada sólo merece URL propia si su conjunto es un subconjunto
+ * REAL del censo. Si devuelve exactamente las mismas fichas que `/tiendas/`,
+ * no aporta nada que el índice no tenga: se compila (conserva su tabla
+ * comparativa y su valor de navegación) pero sale del índice y del sitemap.
+ * En cuanto el censo la diferencie, se reactiva sola.
+ */
+export async function facetaAporta(items: { id: string }[]): Promise<boolean> {
+  const todas = await tiendasActivas();
+  if (items.length < UMBRAL_FACETA) return false;
+  if (items.length === todas.length) return false;   // items ⊆ todas, así que igual tamaño = mismo conjunto
+  return true;
+}
+
 export async function tiendasVerificadas() {
   const tiendas = await tiendasActivas();
   return tiendas.filter((t) => t.data.verificacion.estado === 'verificada');
 }
 
+/* ------------------------------------------------------------------ */
+/* Política de indexación — fuente única                               */
+/* ------------------------------------------------------------------ */
 /**
- * Ciudades con página propia: solo las que llegan al umbral.
- * Una página de ciudad vacía es deuda de indexación (vault: 02 §2.2).
+ * Una página de listado sólo existe si responde a una consulta real.
+ * Reglas, en orden:
+ *   - 0 entidades  → NO SE COMPILA. Un HTML vacío sólo consume rastreo.
+ *   - 1 entidad    → se compila con `noindex`; se activa sola al llegar a 2.
+ *   - ≥2 entidades → indexable y en el sitemap.
+ * Cada eje lleva su propio umbral: comparten el valor, no la constante,
+ * para que cambiar uno no cambie los otros sin querer.
  */
 export const UMBRAL_CIUDAD = 2;
+export const UMBRAL_ESTADO = 2;
+export const UMBRAL_CATEGORIA = 2;
+export const UMBRAL_FACETA = 2;
 
 /**
  * Ciudades que NO llevan página propia porque su página de estado ya las cubre
@@ -113,6 +139,11 @@ export async function categoriasConTiendas() {
   return (Object.keys(CATEGORIAS) as CategoriaId[])
     .map((slug) => ({ slug, ...CATEGORIAS[slug], total: tiendas.filter((t) => t.data.categoria === slug).length }))
     .filter((c) => c.total > 0);
+}
+
+/** Categorías que sí llevan página propia: las que llegan al umbral. */
+export async function categoriasConPagina() {
+  return (await categoriasConTiendas()).filter((c) => c.total >= UMBRAL_CATEGORIA);
 }
 
 export async function tiendasPorCategoria(slug: CategoriaId) {

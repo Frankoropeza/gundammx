@@ -5,15 +5,18 @@ import Breadcrumbs from '@components/Breadcrumbs.astro';
 import DirectoryCard from '@components/DirectoryCard.astro';
 import DirectoryFilters from '@components/DirectoryFilters.astro';
 import EmptyState from '@components/EmptyState.astro';
-import { CATEGORIAS, type CategoriaId, tiendasActivas, ciudadesConPagina, estadosDe } from '@lib/directorio';
+import { CATEGORIAS, type CategoriaId, tiendasActivas, ciudadesConPagina, categoriasConTiendas, estadosDe, indexable, UMBRAL_CATEGORIA } from '@lib/directorio';
 import { schemaListado, schemaMigaDePan } from '@lib/seo';
 
 export const getStaticPaths = (async () => {
-  const ciudades = await ciudadesConPagina();
+  const ciudades = (await ciudadesConPagina()).filter((c) => indexable(c.total));
   const todas = await tiendasActivas();
-  return (Object.keys(CATEGORIAS) as CategoriaId[]).map((slug) => ({
-    params: { categoria: slug },
-    props: { tiendas: todas.filter((t) => t.data.categoria === slug), ciudades },
+  // Se compila toda categoría con al menos una ficha; por debajo del umbral
+  // va con `noindex`. Sigue siendo navegación útil aunque no se indexe.
+  const conPagina = await categoriasConTiendas();
+  return conPagina.map((c) => ({
+    params: { categoria: c.slug },
+    props: { tiendas: todas.filter((t) => t.data.categoria === c.slug), ciudades },
   }));
 }) satisfies GetStaticPaths;
 
@@ -34,7 +37,7 @@ const schemas = [
 <BaseLayout
   titulo={`${info.nombre} | Tiendas Gundam en México`}
   descripcion={`${tiendas.length} ${tiendas.length === 1 ? 'tienda Gundam' : 'tiendas Gundam'} en México: ${info.descripcion} Cada ficha se verifica con fuente y fecha.`.slice(0, 155)}
-  noindex={tiendas.length < 2}
+  noindex={tiendas.length < UMBRAL_CATEGORIA}
   schemas={schemas}
 >
   <Breadcrumbs items={migas} />

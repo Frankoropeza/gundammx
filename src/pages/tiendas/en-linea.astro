@@ -2,11 +2,16 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
 import DirectoryCard from '@components/DirectoryCard.astro';
-import { tiendasEnLinea } from '@lib/directorio';
+import { tiendasEnLinea, facetaAporta } from '@lib/directorio';
 import { pesos } from '@lib/precio';
 import { schemaListado, schemaMigaDePan } from '@lib/seo';
 
 const tiendas = await tiendasEnLinea();
+// Hoy las 12 fichas del censo envían a todo el país, así que esta faceta
+// devuelve el mismo conjunto que /tiendas/. La página se conserva por su
+// tabla comparativa de paqueterías, pero no compite en el índice hasta que
+// el censo la diferencie (guardia antifacetas en @lib/directorio).
+const aporta = await facetaAporta(tiendas);
 const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Tiendas', href: '/tiendas/' }, { nombre: 'Con envío nacional', href: '/tiendas/en-linea/' }];
 const schemas = [
@@ -18,6 +23,7 @@ const schemas = [
 <BaseLayout
   titulo="Tiendas Gundam en línea | Envío a todo México"
   descripcion="Tiendas Gundam en línea con envío a todo México: comparativa de paqueterías, umbral de envío gratis, preventas y verificación con fuente y fecha."
+  noindex={!aporta}
   schemas={schemas}
 >
   <Breadcrumbs items={migas} />

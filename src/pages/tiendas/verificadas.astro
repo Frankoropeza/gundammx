@@ -2,10 +2,11 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
 import DirectoryCard from '@components/DirectoryCard.astro';
-import { tiendasVerificadas } from '@lib/directorio';
+import { tiendasVerificadas, facetaAporta } from '@lib/directorio';
 import { schemaListado, schemaMigaDePan } from '@lib/seo';
 
 const tiendas = await tiendasVerificadas();
+const aporta = await facetaAporta(tiendas);
 const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Tiendas', href: '/tiendas/' }, { nombre: 'Verificadas', href: '/tiendas/verificadas/' }];
 const schemas = [
@@ -17,6 +18,7 @@ const schemas = [
 <BaseLayout
   titulo="Tiendas Gundam verificadas | Gunpla original en México"
   descripcion="Tiendas Gundam de México cuya oferta de Gunpla comprobamos con fuente y fecha. La verificación no se compra: se otorga por evidencia y se revisa."
+  noindex={!aporta}
   schemas={schemas}
 >
   <Breadcrumbs items={migas} />

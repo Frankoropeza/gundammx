@@ -2,7 +2,8 @@ import { publicado } from '@lib/archivo';
 import { categoriasAbiertas, urlCategoria } from '@lib/categorias';
 import { getCollection } from 'astro:content';
 import {
-  tiendasActivas, ciudadesConPagina, estadosConTiendas, categoriasConTiendas, indexable,
+  tiendasActivas, ciudadesConPagina, estadosConTiendas, categoriasConPagina,
+  tiendasEnLinea, tiendasVerificadas, facetaAporta, indexable, UMBRAL_ESTADO,
 } from '@lib/directorio';
 import { GRADOS, type GradoId } from '@config/site';
 import { POR_PAGINA, urlPagina } from '@lib/paginacion';
@@ -18,9 +19,15 @@ export async function rutasIndexables(): Promise<{ url: string; lastmod?: string
 
   // Fijas
   ['/', '/universos/', '/series/', '/mobile-suits/', '/personajes/', '/gunpla/', '/cronologia/', '/articulos/',
-   '/tiendas/', '/tiendas/en-linea/', '/tiendas/verificadas/', '/kits/', '/noticias/',
+   '/tiendas/', '/kits/', '/noticias/',
    '/eventos/', '/servicios/', '/comunidad/', '/metodologia/', '/aviso-legal/', '/creditos/', '/alta-de-tienda/', '/reportar/']
     .forEach((u) => add(u));
+
+  // Facetas curadas: entran al sitemap sólo si aportan un conjunto propio.
+  // Misma guardia que aplica el `noindex` de la página, para que sitemap y
+  // etiqueta nunca digan cosas distintas.
+  if (await facetaAporta(await tiendasEnLinea())) add('/tiendas/en-linea/');
+  if (await facetaAporta(await tiendasVerificadas())) add('/tiendas/verificadas/');
 
   // Archivo editorial
   (await getCollection('universes', publicado)).forEach((u) => add(`/universos/${u.id}/`, u.data.actualizado));
@@ -39,12 +46,12 @@ export async function rutasIndexables(): Promise<{ url: string; lastmod?: string
   // Ciudades sobre el umbral
   (await ciudadesConPagina()).filter((c) => indexable(c.total)).forEach((c) => add(`/tiendas/ciudad/${c.slug}/`));
 
-  // Estados con ≥2 tiendas (misma regla que la página)
+  // Estados sobre el umbral (misma regla que la página)
   const porEstado = await estadosConTiendas();
-  [...porEstado.entries()].filter(([, total]) => indexable(total)).forEach(([slug]) => add(`/tiendas/${slug}/`));
+  [...porEstado.entries()].filter(([, total]) => total >= UMBRAL_ESTADO).forEach(([slug]) => add(`/tiendas/${slug}/`));
 
-  // Categorías con ≥2 tiendas (misma regla que la página)
-  (await categoriasConTiendas()).filter((c) => c.total >= 2).forEach((c) => add(`/tiendas/categoria/${c.slug}/`));
+  // Categorías sobre el umbral (misma regla que la página)
+  (await categoriasConPagina()).forEach((c) => add(`/tiendas/categoria/${c.slug}/`));
 
   // Kits y grados con kits
   const kits = await getCollection('kits');

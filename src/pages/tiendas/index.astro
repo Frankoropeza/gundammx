@@ -5,7 +5,7 @@ import DirectoryCard from '@components/DirectoryCard.astro';
 import DirectoryFilters from '@components/DirectoryFilters.astro';
 import LocationGrid from '@components/LocationGrid.astro';
 import CategoryGrid from '@components/CategoryGrid.astro';
-import { tiendasActivas, ciudadesConPagina, estadosConTiendas, categoriasConTiendas, indexable } from '@lib/directorio';
+import { tiendasActivas, ciudadesConPagina, estadosConTiendas, categoriasConTiendas, tiendasEnLinea, tiendasVerificadas, facetaAporta, indexable } from '@lib/directorio';
 import { ESTADOS } from '@lib/estados';
 import { schemaListado, schemaMigaDePan } from '@lib/seo';
 
@@ -14,7 +14,11 @@ const todasCiudades = await ciudadesConPagina();
 const ciudades = todasCiudades.filter((c) => indexable(c.total));
 const porEstado = await estadosConTiendas();
 const estados = ESTADOS.filter((e) => porEstado.has(e.slug)).map((e) => ({ slug: e.slug, total: porEstado.get(e.slug)! }));
+// Las facetas y las categorías se enlazan siempre que existan como página:
+// son navegación útil aunque estén por debajo del umbral de indexación.
 const categorias = await categoriasConTiendas();
+const facetaVerificadas = await facetaAporta(await tiendasVerificadas());
+const facetaEnLinea = await facetaAporta(await tiendasEnLinea());
 
 const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Tiendas', href: '/tiendas/' }];
@@ -48,6 +52,7 @@ import imgTiendas from '../../assets/hub-tiendas.jpg';
     <nav aria-label="Atajos" class="mt-8 flex flex-wrap gap-2">
       <a href="/tiendas/verificadas/" class="tag hover:border-ink hover:text-ink">Solo verificadas</a>
       <a href="/tiendas/en-linea/" class="tag hover:border-ink hover:text-ink">Con envío nacional</a>
+      {/* Las facetas se enlazan siempre: son navegación útil aunque no se indexen. */}
       {categorias.map((c) => <a href={`/tiendas/categoria/${c.slug}/`} class="tag hover:border-ink hover:text-ink">{c.nombre}</a>)}
     </nav>
 
@@ -64,10 +69,12 @@ import imgTiendas from '../../assets/hub-tiendas.jpg';
 
     <div class="mt-20 space-y-16">
       <LocationGrid ciudades={ciudades} estados={estados} />
-      <section>
-        <h2 class="eyebrow">Por tipo de tienda</h2>
-        <div class="mt-4"><CategoryGrid categorias={categorias} /></div>
-      </section>
+      {categorias.length > 0 && (
+        <section>
+          <h2 class="eyebrow">Por tipo de tienda</h2>
+          <div class="mt-4"><CategoryGrid categorias={categorias} /></div>
+        </section>
+      )}
     </div>
   </div>
 </BaseLayout>

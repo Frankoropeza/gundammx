@@ -15,6 +15,9 @@ import { fechaLarga } from '@lib/precio';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const tiendas = await tiendasActivas();
+  // Toda ciudad con al menos una tienda lleva página; por debajo del umbral
+  // va con `noindex` y se activa sola al llegar a dos. No se compilan páginas
+  // de cero fichas, pero `ciudadesConPagina()` nunca devuelve ninguna.
   const ciudades = await ciudadesConPagina();
   return ciudades.map((c) => ({
     params: { ciudad: c.slug },
