@@ -6,6 +6,8 @@ categoria: coleccionables
 sucursales:
   - ciudad: Guadalajara
     estado: jalisco
+seo:
+  titulo: El Reino Hobby Store | Gunpla Guadalajara
 web: https://elreino.mx/
 vende_gunpla: si
 maneja_preventa: true

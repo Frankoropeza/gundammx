@@ -26,6 +26,11 @@ const { tiendas, ciudades } = Astro.props;
 const info = CATEGORIAS[categoria as CategoriaId];
 const estados = [...new Set(tiendas.flatMap((t) => estadosDe(t)))];
 
+const tituloBase = info.nombre;
+const titulo = tituloBase.length + ' | Tiendas Gundam en México | GUNDAMMX'.length <= 60
+  ? `${tituloBase} | Tiendas Gundam en México`
+  : `${tituloBase} | Tiendas Gundam`;
+
 const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Tiendas', href: '/tiendas/' }, { nombre: info.nombre, href: `/tiendas/categoria/${categoria}/` }];
 const schemas = [
@@ -35,7 +40,7 @@ const schemas = [
 ---
 
 <BaseLayout
-  titulo={`${info.nombre} | Tiendas Gundam en México`}
+  titulo={titulo}
   descripcion={`${tiendas.length} ${tiendas.length === 1 ? 'tienda Gundam' : 'tiendas Gundam'} en México: ${info.descripcion} Cada ficha se verifica con fuente y fecha.`.slice(0, 155)}
   noindex={tiendas.length < UMBRAL_CATEGORIA}
   schemas={schemas}

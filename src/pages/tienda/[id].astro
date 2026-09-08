@@ -53,12 +53,16 @@ const migas = [
 const schemas = [
   schemaMigaDePan(base, migas),
   schemaTienda(base, {
-    nombre: d.nombre, descripcion: d.descripcion_corta, web: d.web, sucursales: d.sucursales,
-    redes: d.redes, marketplaces: d.marketplaces,
+    nombre: d.nombre, descripcion: d.descripcion_corta, web: d.web, email: d.email,
+    sucursales: d.sucursales, redes: d.redes, envioNacional: d.envio_nacional,
     imagen: d.imagen?.src, rangoPrecio: d.rango_precio,
   }),
-  // FAQPage sólo con pregunta propia: ver tieneFaqPropia() en @lib/directorio.
-  ...(tieneFaqPropia(tienda) ? [schemaFAQ(faq)] : []),
+  /**
+   * FAQPage sólo con las preguntas PROPIAS de la ficha. Las derivadas de datos
+   * se muestran al usuario, pero no se marcan: salen casi idénticas en las 12
+   * fichas y marcarlas sería publicar como rich result contenido de plantilla.
+   */
+  ...(tieneFaqPropia(tienda) ? [schemaFAQ(d.faq)] : []),
 ];
 ---
 

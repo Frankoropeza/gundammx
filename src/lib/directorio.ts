@@ -62,10 +62,13 @@ export async function tiendasEnLinea() {
  * comparativa y su valor de navegación) pero sale del índice y del sitemap.
  * En cuanto el censo la diferencie, se reactiva sola.
  */
-export async function facetaAporta(items: { id: string }[]): Promise<boolean> {
+export async function facetaAporta(items: Tienda[]): Promise<boolean> {
   const todas = await tiendasActivas();
-  if (items.length < UMBRAL_FACETA) return false;
-  if (items.length === todas.length) return false;   // items ⊆ todas, así que igual tamaño = mismo conjunto
+  const propios = new Set(items.map((t) => t.id));
+  if (propios.size < UMBRAL_FACETA) return false;
+  // Comparación real de conjuntos: no se asume que `items` sea un subconjunto
+  // ni que no traiga repetidos. Si cubre todo el censo, no aporta una URL.
+  if (propios.size >= todas.length && todas.every((t) => propios.has(t.id))) return false;
   return true;
 }
 

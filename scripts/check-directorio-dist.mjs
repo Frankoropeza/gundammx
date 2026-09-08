@@ -7,11 +7,15 @@
  *
  * Modo por defecto: ADVERTENCIA (exit 0). Con --strict, los errores rompen el build.
  */
-import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync, statSync, writeFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
 
-/** Calibración contra el censo del 2026-09-08: 12 fichas, 10 huérfanas, 60 páginas de directorio, 17 indexables. */
-export const FIXTURE_BASE = { paginasDirectorio: 60, indexables: 17, fichas: 12, huerfanas: 10 };
+/**
+ * Inventario de rutas versionado en el repo. Cada build lo compara y avisa qué
+ * URLs aparecieron y cuáles desaparecieron: es la red que evita publicar un 404
+ * en una ruta que ya existía. Se regenera a propósito con --actualizar-inventario.
+ */
+const INVENTARIO = 'scripts/rutas.inventario.json';
 
 export const UMBRALES = {
   TITULO_MAX: 60,
@@ -72,6 +76,8 @@ const docs = archivos.map((f) => {
     h1: (html.match(/<h1[\s>]/g) ?? []).length,
     noindex: /name="robots"\s+content="noindex/.test(html),
     hrefs: [...html.matchAll(/href="([^"]+)"/g)].map((m) => m[1]),
+    jsonld: [...html.matchAll(/<script[^>]+application\/ld\+json[^>]*>([\s\S]*?)<\/script>/g)].map((m) => m[1]),
+    canonicals: (html.match(/rel="canonical"/g) ?? []).length,
   };
 });
 const existentes = new Set(docs.map((d) => d.url));
@@ -89,6 +95,7 @@ const entrantes = new Map();
 for (const d of docs) {
   for (const href of d.hrefs) {
     if (/^(https?:|mailto:|tel:|#|javascript:|data:)/.test(href)) continue;
+    if (href.startsWith('//')) continue;   // protocol-relative: es externo, no una ruta del sitio
     const limpio = href.split('#')[0].split('?')[0];
     if (!limpio.startsWith('/')) continue;
     const destino = limpio.endsWith('/') ? limpio : `${limpio}/`;
@@ -122,6 +129,19 @@ for (const d of docs) {
   else if (d.desc.length > UMBRALES.DESC_MAX || d.desc.length < UMBRALES.DESC_MIN) avi(d.url, `meta description de ${d.desc.length} caracteres (banda ${UMBRALES.DESC_MIN}-${UMBRALES.DESC_MAX})`);
 }
 
+/* -------- 3b. JSON-LD parseable y canonical único -------- */
+for (const d of docs) {
+  for (const [i, bloque] of d.jsonld.entries()) {
+    try {
+      const obj = JSON.parse(bloque);
+      if (!obj['@context'] || !obj['@type']) err(d.url, `JSON-LD ${i + 1} sin @context o @type`);
+    } catch (e) {
+      err(d.url, `JSON-LD ${i + 1} no parsea: ${e.message}`);
+    }
+  }
+  if (d.canonicals !== 1) err(d.url, `${d.canonicals} etiquetas canonical (debe haber exactamente 1)`);
+}
+
 /* -------- 4. metas duplicadas entre páginas indexables -------- */
 const porDesc = new Map();
 for (const d of docs) {
@@ -138,6 +158,23 @@ if (sitemap) {
     if (!d.noindex && !d.redireccion && !sitemap.has(d.url) && d.url !== '/404/') avi(d.url, 'indexable pero ausente del sitemap');
   }
   for (const u of sitemap) if (!existentes.has(u)) err(u, 'en el sitemap pero sin HTML compilado');
+}
+
+/* -------- 6. inventario de rutas: qué apareció y qué desapareció -------- */
+const rutasHoy = docs.map((d) => d.url).sort();
+if (process.argv.includes('--actualizar-inventario')) {
+  writeFileSync(INVENTARIO, `${JSON.stringify({ generado: new Date().toISOString().slice(0, 10), rutas: rutasHoy }, null, 2)}\n`);
+  console.log(`Inventario regenerado: ${rutasHoy.length} rutas en ${INVENTARIO}`);
+} else if (existsSync(INVENTARIO)) {
+  const previo = new Set(JSON.parse(readFileSync(INVENTARIO, 'utf8')).rutas);
+  const hoy = new Set(rutasHoy);
+  const perdidas = [...previo].filter((u) => !hoy.has(u));
+  const nuevas = rutasHoy.filter((u) => !previo.has(u));
+  // Una ruta que desaparece es un 404 en potencia: error, no aviso.
+  for (const u of perdidas) err(u, 'estaba en el inventario y ya no se compila: sería un 404');
+  for (const u of nuevas) avi(u, 'ruta nueva, no está en el inventario');
+} else {
+  avisos.push(`${INVENTARIO} no existe: corre el script con --actualizar-inventario para fijar la línea base`);
 }
 
 /* -------- reporte -------- */

@@ -7,8 +7,17 @@ const GRADOS = [
   'eg', 'sd', 'hg', 'rg', 'mg', 'mgsd', 'mgex', 'pg', 'full-mechanics', 'mega-size', 're100',
 ] as const;
 
-/** Fecha ISO simple, YYYY-MM-DD. Evita formatos mezclados y fechas imposibles. */
-const fechaISO = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'La fecha debe ser ISO YYYY-MM-DD');
+/**
+ * Fecha ISO YYYY-MM-DD que además EXISTE en el calendario.
+ * El regex solo no basta: aceptaba 2026-02-31 y 2026-99-99.
+ */
+const fechaISO = z.string()
+  .regex(/^\d{4}-\d{2}-\d{2}$/, 'La fecha debe ser ISO YYYY-MM-DD')
+  .refine((v) => {
+    const [a, m, d] = v.split('-').map(Number);
+    const fecha = new Date(Date.UTC(a, m - 1, d));
+    return fecha.getUTCFullYear() === a && fecha.getUTCMonth() === m - 1 && fecha.getUTCDate() === d;
+  }, 'La fecha no existe en el calendario');
 
 /** Toda ficha publicada debe declarar de dónde salió el dato y cuándo se comprobó. */
 const verificacion = z.strictObject({
@@ -77,14 +86,14 @@ const tiendas = defineCollection({
     imagen: image().optional(),
     imagen_alt: z.string().optional(),
     imagen_credito: z.string().optional(),
-    galeria: z.array(z.object({ src: image(), alt: z.string() })).default([]),
+    galeria: z.array(z.strictObject({ src: image(), alt: z.string() })).default([]),
 
     zonas_cobertura: z.array(z.string()).default([]),
     especialidades: z.array(z.string()).default([]),
     rango_precio: z.enum(['$', '$$', '$$$']).optional(),
     faq: z.array(faqItem).default([]),
     relacionadas: z.array(z.string()).default([]),
-    seo: z.object({ titulo: z.string().optional(), descripcion: z.string().optional() }).optional(),
+    seo: z.strictObject({ titulo: z.string().optional(), descripcion: z.string().optional() }).optional(),
     autor: z.string().default('Redacción GUNDAMMX'),
     tipo: z.enum(['fisica', 'online', 'hibrida', 'popup', 'marketplace']),
     categoria: z.enum(['especialista', 'coleccionables', 'modelismo', 'oficial']),
@@ -94,7 +103,7 @@ const tiendas = defineCollection({
 
     web: z.string().url().optional(),
     email: z.string().optional(),
-    redes: z.object({
+    redes: z.strictObject({
       instagram: z.string().url().optional(),
       facebook: z.string().url().optional(),
       tiktok: z.string().url().optional(),
@@ -102,7 +111,7 @@ const tiendas = defineCollection({
       x: z.string().url().optional(),
       discord: z.string().url().optional(),
     }).default({}),
-    marketplaces: z.object({
+    marketplaces: z.strictObject({
       mercadolibre: z.string().url().optional(),
       amazon: z.string().url().optional(),
       mercadoshops: z.string().url().optional(),
@@ -144,6 +153,34 @@ const tiendas = defineCollection({
     plan: z.enum(['gratis', 'verificada', 'destacada']).default('gratis'),
     reclamada_por_dueno: z.boolean().default(false),
     actualizada: fechaISO,
+  }).superRefine((d, ctx) => {
+    /* Coherencia entre campos. Una ficha incoherente no es un aviso: es un dato
+       que afirma dos cosas distintas, y eso rompe la trazabilidad. */
+    const error = (path: string, message: string) =>
+      ctx.addIssue({ code: z.ZodIssueCode.custom, path: [path], message });
+
+    if (d.actualizada < d.verificacion.fecha) {
+      error('actualizada', 'No puede ser anterior a verificacion.fecha.');
+    }
+    if (d.alta && d.alta > d.actualizada) {
+      error('alta', 'No puede ser posterior a actualizada.');
+    }
+    if (d.politica_preventa && !d.maneja_preventa) {
+      error('politica_preventa', 'Hay política de preventa pero maneja_preventa es falso.');
+    }
+    if (d.marcas_pintura.length > 0 && !d.vende_pinturas) {
+      error('marcas_pintura', 'Se declaran marcas de pintura pero vende_pinturas es falso.');
+    }
+    if (d.envio_gratis_desde !== undefined && !d.envio_nacional) {
+      error('envio_gratis_desde', 'Hay umbral de envío gratis pero no se declara envío nacional.');
+    }
+    const online = d.tipo === 'online' || d.tipo === 'marketplace';
+    if (online && d.sucursales.length > 0) {
+      error('sucursales', `tipo "${d.tipo}" no debe declarar sucursales.`);
+    }
+    if (!online && d.sucursales.length === 0) {
+      error('sucursales', `tipo "${d.tipo}" exige al menos una sucursal.`);
+    }
   }),
 });
 

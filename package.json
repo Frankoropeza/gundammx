@@ -5,13 +5,15 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "check:directorio": "node scripts/check-directorio.mjs",
-    "check:directorio:dist": "node scripts/check-directorio-dist.mjs",
+    "check:directorio": "node scripts/check-directorio.mjs --strict",
+    "check:directorio:dist": "node scripts/check-directorio-dist.mjs --strict",
     "check": "astro check && npm run check:directorio",
     "build": "npm run check && astro build && npm run check:directorio:dist && pagefind --site dist",
     "postbuild": "node scripts/build-id.mjs",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check:directorio:avisos": "node scripts/check-directorio.mjs",
+    "inventario:actualizar": "node scripts/check-directorio-dist.mjs --actualizar-inventario"
   },
   "dependencies": {
     "@astrojs/mdx": "^6.0.0",

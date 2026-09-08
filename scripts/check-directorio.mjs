@@ -26,13 +26,12 @@ export const UMBRALES = {
   SIMILITUD_MAX: 0.6,              // Jaccard de trigramas de palabras
 };
 
-/** Recuento esperado al calibrar contra el censo del 2026-09-08 (12 fichas). */
-export const FIXTURE_BASE = {
-  fichas: 12,
-  cuerpoCorto: 12,        // ninguna llega a 150 palabras
-  sinFaqPropia: 12,
-  sinRedes: 12,
-};
+/**
+  * Cota superior de avisos tolerados. No es decorativa: si un cambio los
+  * aumenta, el script lo dice. Se baja a mano conforme se migran fichas, nunca
+  * se sube para silenciar un hallazgo.
+  */
+export const TOPE_AVISOS = 36;
 
 const DIR = 'src/content/tiendas';
 const errores = [];
@@ -75,7 +74,7 @@ function jaccard(a, b) {
 
 /* ---------------------------------------------------------------- */
 const fichas = [];
-for (const archivo of readdirSync(DIR).filter((f) => f.endsWith('.md')).sort()) {
+for (const archivo of readdirSync(DIR).filter((f) => f.endsWith('.md') || f.endsWith('.mdx')).sort()) {
   const bruto = readFileSync(join(DIR, archivo), 'utf8');
   const m = bruto.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
   if (!m) { err(archivo, 'no se pudo separar el frontmatter'); continue; }
@@ -134,7 +133,16 @@ for (const { archivo, d, cuerpo } of fichas) {
   if (d.maneja_preventa && !d.politica_preventa) avi(archivo, 'maneja_preventa sin politica_preventa: la FAQ saldrá con la respuesta genérica');
 }
 
-/* 9. Duplicados y casi-duplicados entre fichas */
+/* 9. relacionadas: los ids deben existir */
+const ids = new Set(fichas.map((f) => f.archivo.replace(/\.mdx?$/, '')));
+for (const { archivo, d } of fichas) {
+  for (const id of d.relacionadas ?? []) {
+    if (!ids.has(id)) err(archivo, `relacionadas apunta a "${id}", que no existe`);
+    if (id === archivo.replace(/\.mdx?$/, '')) err(archivo, 'relacionadas se apunta a sí misma');
+  }
+}
+
+/* 10. Duplicados y casi-duplicados entre fichas */
 for (const campo of ['descripcion_corta', 'cuerpo']) {
   const textos = fichas.map((f) => ({ archivo: f.archivo, t: campo === 'cuerpo' ? f.cuerpo : String(f.d.descripcion_corta ?? '') }));
   const tri = textos.map((x) => ({ ...x, g: trigramas(x.t) }));
@@ -153,5 +161,10 @@ console.log(`\n── check:directorio — ${fichas.length} fichas ──`);
 if (errores.length) { console.log(`\nERRORES (${errores.length})`); errores.forEach((e) => console.log(`  ✗ ${e}`)); }
 if (avisos.length) { console.log(`\nAVISOS (${avisos.length})`); avisos.forEach((a) => console.log(`  · ${a}`)); }
 if (!errores.length && !avisos.length) console.log('  Sin hallazgos.');
-console.log(`\nResumen: ${errores.length} errores, ${avisos.length} avisos${estricto ? '' : '  (modo advertencia: no rompe el build)'}\n`);
-process.exit(estricto && errores.length ? 1 : 0);
+if (avisos.length > TOPE_AVISOS) {
+  console.log(`\nREGRESIÓN: ${avisos.length} avisos, por encima del tope de ${TOPE_AVISOS}.`);
+  console.log('Si el aumento es legítimo, baja o ajusta TOPE_AVISOS a conciencia en este script.');
+}
+console.log(`\nResumen: ${errores.length} errores, ${avisos.length} avisos (tope ${TOPE_AVISOS})${estricto ? ' · modo estricto' : '  · modo advertencia'}\n`);
+const regresion = avisos.length > TOPE_AVISOS;
+process.exit(estricto && (errores.length || regresion) ? 1 : 0);

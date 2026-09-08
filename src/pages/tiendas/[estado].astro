@@ -31,8 +31,17 @@ interface Props { tiendas: CollectionEntry<'tiendas'>[]; ciudades: { slug: strin
 const { estado } = Astro.params;
 const { tiendas, ciudades } = Astro.props;
 const nombre = nombreEstado(estado!);
-// Ya no se compilan estados vacíos; el bloque se conserva por si un estado
-// se queda sin fichas al marcarlas como cerradas.
+/**
+ * El sufijo " | GUNDAMMX" que añade SEO.astro son 11 caracteres. Con
+ * topónimos largos, la cola "| Gunpla original" pasa de los 60 visibles en
+ * SERP, así que se omite en vez de dejar que Google truncue el título.
+ */
+const tituloBase = `Tiendas Gundam en ${nombre}`;
+const titulo = tituloBase.length + ' | Gunpla original | GUNDAMMX'.length <= 60
+  ? `${tituloBase} | Gunpla original`
+  : tituloBase;
+// Los estados sin fichas ya no se compilan (F2), pero un estado puede quedarse
+// vacío si todas sus tiendas se marcan como cerradas. La rama se conserva por eso.
 const sinContenido = tiendas.length === 0;
 
 const base = { site: Astro.site, url: Astro.url.pathname };
@@ -44,7 +53,7 @@ const schemas = [
 ---
 
 <BaseLayout
-  titulo={`Tiendas Gundam en ${nombre} | Gunpla original`}
+  titulo={titulo}
   descripcion={`Tiendas Gundam en ${nombre}: dónde comprar Gunpla y model kits originales, con grados en catálogo, cobertura de envío y verificación con fuente y fecha.`}
   noindex={tiendas.length < UMBRAL_ESTADO}
   schemas={schemas}

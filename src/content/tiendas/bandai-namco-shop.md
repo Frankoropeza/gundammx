@@ -10,6 +10,8 @@ sucursales:
     ciudad: Ciudad de México
     municipio: Cuauhtémoc
     estado: cdmx
+seo:
+  titulo: Bandai Namco Shop | Tienda Gundam CDMX
 web: https://bandainamcoshop.com.mx/
 vende_gunpla: si
 origen_producto: distribuidor_autorizado

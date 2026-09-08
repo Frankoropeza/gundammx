@@ -69,7 +69,7 @@ export function schemaMigaDePan(b: Base, items: { nombre: string; href: string }
 type Horarios = Record<string, string>;
 
 type SucursalSchema = {
-  calle?: string; colonia?: string; ciudad: string; estado: string; cp?: string;
+  etiqueta?: string; calle?: string; colonia?: string; ciudad: string; estado: string; cp?: string;
   lat?: number; lng?: number; telefono?: string; horarios?: Horarios;
 };
 
@@ -77,12 +77,14 @@ type DatosTienda = {
   nombre: string;
   descripcion: string;
   web?: string;
-  /** La primera sucursal es la principal por convención: de ella salen address, geo y horarios. */
+  email?: string;
+  /** La primera sucursal es la principal: de ella salen address, geo y horarios. */
   sucursales: SucursalSchema[];
   redes: Record<string, string | undefined>;
-  marketplaces?: Record<string, string | undefined>;
   imagen?: string;
   rangoPrecio?: string;
+  /** Sin envío nacional comprobado no se afirma cobertura nacional. */
+  envioNacional?: boolean;
 };
 
 const DIAS_SCHEMA: Record<string, string> = {
@@ -96,19 +98,42 @@ const DIAS_SCHEMA: Record<string, string> = {
  * Sólo emite lo que puede interpretar: un día desconocido o un rango que no
  * sea HH:MM-HH:MM se omite en silencio en vez de publicar un horario falso.
  */
+/** Normaliza "9:00" a "09:00" y rechaza horas imposibles como 25:00 o 10:99. */
+function hora(v: string): string | null {
+  const m = v.match(/^(\d{1,2}):(\d{2})$/);
+  if (!m) return null;
+  const h = Number(m[1]);
+  const min = Number(m[2]);
+  if (h > 24 || min > 59 || (h === 24 && min !== 0)) return null;
+  return `${String(h).padStart(2, '0')}:${m[2]}`;
+}
+
 function horariosSchema(horarios?: Horarios) {
   if (!horarios) return [];
   const spec: Record<string, string>[] = [];
   for (const [dia, rango] of Object.entries(horarios)) {
     const nombreDia = DIAS_SCHEMA[dia.trim().toLowerCase()];
-    const m = String(rango).match(/^\s*(\d{1,2}:\d{2})\s*[–-]\s*(\d{1,2}:\d{2})\s*$/);
-    if (!nombreDia || !m) continue;
-    spec.push({
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: `https://schema.org/${nombreDia}`,
-      opens: m[1].padStart(5, '0'),
-      closes: m[2].padStart(5, '0'),
-    });
+    if (!nombreDia) continue;
+    const texto = String(rango).trim();
+    // Cerrado se declara explícitamente; no se omite en silencio.
+    if (/^(cerrado|closed)$/i.test(texto)) {
+      spec.push({ '@type': 'OpeningHoursSpecification', dayOfWeek: `https://schema.org/${nombreDia}`, opens: '00:00', closes: '00:00' });
+      continue;
+    }
+    if (/^(24\s*h(oras)?|24\/7)$/i.test(texto)) {
+      spec.push({ '@type': 'OpeningHoursSpecification', dayOfWeek: `https://schema.org/${nombreDia}`, opens: '00:00', closes: '23:59' });
+      continue;
+    }
+    // Acepta turnos partidos y los separadores que se usan en la práctica:
+    // "10:00-20:00", "10:00 a 20:00", "10:00 — 20:00", "9:00-14:00, 16:00-20:00".
+    for (const tramo of texto.split(/\s*[,;]\s*|\s+y\s+/)) {
+      const m = tramo.match(/^\s*(\d{1,2}:\d{2})\s*(?:-|–|—|a|to)\s*(\d{1,2}:\d{2})\s*$/i);
+      if (!m) continue;
+      const abre = hora(m[1]);
+      const cierra = hora(m[2]);
+      if (!abre || !cierra) continue;
+      spec.push({ '@type': 'OpeningHoursSpecification', dayOfWeek: `https://schema.org/${nombreDia}`, opens: abre, closes: cierra });
+    }
   }
   return spec;
 }
@@ -120,42 +145,71 @@ function horariosSchema(horarios?: Horarios) {
  * afirma en los datos estructurados lo que la página no muestra.
  * Nunca lleva `aggregateRating`: no publicamos reseñas que no son nuestras.
  */
+const direccionDe = (s: SucursalSchema) => ({
+  '@type': 'PostalAddress',
+  ...(s.calle ? { streetAddress: s.calle } : {}),
+  addressLocality: s.ciudad,
+  // Nombre legible del estado, no el slug interno.
+  addressRegion: nombreEstado(s.estado),
+  ...(s.cp ? { postalCode: s.cp } : {}),
+  addressCountry: 'MX',
+});
+
 export function schemaTienda(b: Base, t: DatosTienda) {
   const principal = t.sucursales[0];
-  const sameAs = [
-    t.web,
-    ...Object.values(t.redes ?? {}),
-    ...Object.values(t.marketplaces ?? {}),
-  ].filter((u): u is string => Boolean(u));
+  /**
+   * `HobbyShop` es un negocio local, y un negocio local tiene domicilio.
+   * Sin calle comprobada no se emite: una ficha que sólo declara ciudad no
+   * sostiene el marcado local, aunque tenga punto de entrega. En ese caso
+   * sale `Store`, que describe el comercio sin afirmar una sede física.
+   */
+  const conDomicilio = Boolean(principal?.calle);
+  const tipo = conDomicilio ? 'HobbyShop' : principal ? 'Store' : 'OnlineStore';
+
+  // Marketplaces fuera de `sameAs`: un perfil de vendedor no prueba que la
+  // entidad sea la misma. Sólo el sitio propio y las redes de la tienda.
+  const sameAs = [t.web, ...Object.values(t.redes ?? {})]
+    .filter((u): u is string => Boolean(u));
+
   const horas = horariosSchema(principal?.horarios);
   const tieneGeo = principal?.lat !== undefined && principal?.lng !== undefined;
+  // Las sucursales que no son la principal se publican como lugares propios,
+  // en vez de quedar invisibles detrás de la primera dirección.
+  const otras = t.sucursales.slice(1);
 
   return {
     '@context': 'https://schema.org',
-    '@type': principal ? 'HobbyShop' : 'OnlineStore',
+    '@type': tipo,
     name: t.nombre,
     description: t.descripcion,
     url: abs(b.site, b.url),
-    areaServed: 'MX',
+    // Sólo se afirma cobertura nacional cuando está comprobada.
+    ...(t.envioNacional ? { areaServed: { '@type': 'Country', name: 'MX' } } : {}),
     ...(t.imagen ? { image: abs(b.site, t.imagen) } : {}),
     ...(t.rangoPrecio ? { priceRange: t.rangoPrecio } : {}),
+    ...(t.email ? { email: t.email } : {}),
     ...(sameAs.length ? { sameAs } : {}),
-    ...(principal
+    ...(conDomicilio
       ? {
-          address: {
-            '@type': 'PostalAddress',
-            streetAddress: principal.calle,
-            addressLocality: principal.ciudad,
-            // Nombre legible del estado, no el slug interno.
-            addressRegion: nombreEstado(principal.estado),
-            postalCode: principal.cp,
-            addressCountry: 'MX',
-          },
-          ...(principal.telefono ? { telephone: principal.telefono } : {}),
+          address: direccionDe(principal!),
+          ...(principal!.telefono ? { telephone: principal!.telefono } : {}),
           ...(tieneGeo
-            ? { geo: { '@type': 'GeoCoordinates', latitude: principal.lat, longitude: principal.lng } }
+            ? {
+                geo: { '@type': 'GeoCoordinates', latitude: principal!.lat, longitude: principal!.lng },
+                hasMap: `https://www.google.com/maps/search/?api=1&query=${principal!.lat},${principal!.lng}`,
+              }
             : {}),
           ...(horas.length ? { openingHoursSpecification: horas } : {}),
+        }
+      : {}),
+    ...(otras.length
+      ? {
+          location: otras.map((s) => ({
+            '@type': 'Place',
+            ...(s.etiqueta ? { name: `${t.nombre} — ${s.etiqueta}` } : { name: `${t.nombre} — ${s.ciudad}` }),
+            address: direccionDe(s),
+            ...(s.telefono ? { telephone: s.telefono } : {}),
+          })),
         }
       : {}),
   };

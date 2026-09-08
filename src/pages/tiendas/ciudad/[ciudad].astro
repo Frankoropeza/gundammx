@@ -43,6 +43,13 @@ const faq = [
   { pregunta: `Falta una tienda de ${nombre}`, respuesta: 'Mándanosla desde la página de alta y la verificamos antes de publicarla. Aparecer es gratis.' },
 ];
 
+// Misma regla que la página de estado: con topónimos largos se omite la cola
+// para no pasar de los 60 caracteres visibles en SERP.
+const tituloBase = `Tiendas Gundam en ${nombre}`;
+const titulo = tituloBase.length + ' | Gunpla original | GUNDAMMX'.length <= 60
+  ? `${tituloBase} | Gunpla original`
+  : tituloBase;
+
 const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [
   { nombre: 'Tiendas', href: '/tiendas/' },
@@ -57,7 +64,7 @@ const schemas = [
 ---
 
 <BaseLayout
-  titulo={`Tiendas Gundam en ${nombre} | Gunpla original`}
+  titulo={titulo}
   descripcion={`${total} ${total === 1 ? 'tienda Gundam' : 'tiendas Gundam'} en ${nombre}, ${nombreEstado(estado)}: dónde comprar Gunpla original, con grados, envío, preventas y verificación con fuente.`}
   noindex={!indexable(total)}
   schemas={schemas}

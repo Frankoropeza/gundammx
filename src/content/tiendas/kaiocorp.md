@@ -8,6 +8,8 @@ sucursales:
     colonia: Chapultepec Oriente
     ciudad: Morelia
     estado: michoacan
+seo:
+  titulo: Kaiocorp | Tienda Gundam en Morelia
 web: https://kaiocorp.com.mx/
 vende_gunpla: si
 maneja_preventa: true

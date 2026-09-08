@@ -7,6 +7,8 @@ sucursales:
   - calle: Av. Insurgentes Sur 1783
     ciudad: Ciudad de México
     estado: cdmx
+seo:
+  titulo: Palitroche Toys | Gunpla en CDMX
 web: https://palitrochestore.com.mx/
 vende_gunpla: si
 maneja_preventa: true
