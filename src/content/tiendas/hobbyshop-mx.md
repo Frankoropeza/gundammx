@@ -2,7 +2,7 @@
 nombre: HobbyShop.MX
 descripcion_corta: Tienda en línea con una colección de Gunpla de 112 productos, fuerte en Entry, High y Perfect Grade, con envío nacional.
 esquema_version: 2
-veredicto: 'Es donde buscar Perfect Grade y Entry Grade con envío nacional. Si lo que quieres es Real Grade o Master Grade, en la revisión que hicimos no había ninguno.'
+veredicto: 'Tenía cuatro Perfect Grade y ningún Real Grade ni Master Grade cuando la revisamos. Sirve para la parte alta del catálogo; para los grados intermedios, no.'
 tipo: online
 categoria: modelismo
 web: https://www.hobbyshop.mx/
@@ -32,6 +32,19 @@ evidencias:
     fecha: '2026-09-08'
   - afirmacion: Publica el correo hobbyshopmex@gmail.com y perfiles de Facebook e Instagram
     url: https://www.hobbyshop.mx/collections/gunpla-modelos
+    cita: Pie de página
+    fecha: '2026-09-08'
+  - afirmacion: Entrega a toda la República, salvo códigos postales donde las paqueterías no tienen cobertura
+    url: https://www.hobbyshop.mx/policies/shipping-policy
+    cita: Política de envío
+    fecha: '2026-09-08'
+  - afirmacion: Tiempos declarados de 3 a 5 días hábiles en existencia y de 5 a 7 tras el lanzamiento en preventa
+    url: https://www.hobbyshop.mx/policies/shipping-policy
+    cita: Política de envío
+    fecha: '2026-09-08'
+  - afirmacion: No publica qué paqueterías usa ni domicilio ni recolección en tienda
+    url: https://www.hobbyshop.mx/policies/shipping-policy
+    cita: Ausencia comprobada en la política de envío
     fecha: '2026-09-08'
 faq:
   - pregunta: ¿HobbyShop.MX tiene tienda física?
@@ -47,10 +60,11 @@ faq:
       No. Ése es el total de la colección al 8 de septiembre de 2026, y dentro entran líneas vecinas
       como Shokugan y G Frame, que no son model kits para armar. Conviene leer la cifra como tamaño
       de la colección, no como número de Gunpla.
-  - pregunta: ¿Desde cuánto es gratis el envío?
+  - pregunta: ¿Cuánto tarda y desde cuánto es gratis el envío?
     respuesta: >-
-      Publica envío gratis a partir de 2,000 pesos. No publica qué paqueterías usa ni tiempos de
-      entrega, así que conviene preguntarlo antes de cerrar la compra.
+      Publica envío gratis a partir de 2,000 pesos y tiempos de 3 a 5 días hábiles en productos en
+      existencia, o de 5 a 7 días hábiles después del lanzamiento en preventa. Advierte que hay
+      códigos postales sin cobertura de paquetería. No publica con qué paqueterías envía.
 verificacion:
   estado: verificada
   fecha: '2026-09-08'
@@ -58,6 +72,7 @@ verificacion:
   nivel_confianza: 2
   fuentes:
     - https://www.hobbyshop.mx/collections/gunpla-modelos
+    - https://www.hobbyshop.mx/policies/shipping-policy
   notas: >-
     El expediente de evidencia detalla qué sostiene cada dato. Correcciones del 2026-09-08 tras
     revisión cruzada: se retiran vende_herramientas y vende_pinturas, porque la única fuente
@@ -76,13 +91,15 @@ envío desde cualquier parte del país.
 
 Su colección de Gunpla tenía 112 productos al 8 de septiembre de 2026. La cifra hay que leerla con
 cuidado, porque dentro entran líneas vecinas como Shokugan y G Frame, que no son model kits para
-armar. Lo que sí destaca es la parte alta del catálogo: entre los Perfect Grade listados aparecían
-Strike, Strike Freedom, Astray Red Frame y Unicorn, y ver cuatro Perfect Grade juntos en un catálogo
-mexicano no es lo habitual. También hay Entry Grade y High Grade. Envía a todo el país, con envío
-gratis a partir de dos mil pesos, y acepta Visa, Mastercard, American Express y PayPal.
+armar. Donde sí carga el catálogo es en la parte alta: entre los Perfect Grade listados aparecían
+Strike, Strike Freedom, Astray Red Frame y Unicorn. También hay Entry Grade y High Grade. Su política
+de envío declara entrega a toda la República —con la advertencia de que hay códigos postales sin
+cobertura de paquetería—, envío gratis a partir de dos mil pesos y tiempos de 3 a 5 días hábiles en
+producto en existencia. Acepta Visa, Mastercard, American Express y PayPal.
 
 Ahora lo que falta. En esa misma revisión no apareció ningún Real Grade ni Master Grade, que son los
-dos grados intermedios por los que pasa buena parte del hobby; para ésos hay que ir a otra ficha del
-directorio. Tampoco publica domicilio, teléfono, horarios ni las paqueterías con las que envía, y el
-contacto visible es su correo y sus dos redes. Y su modalidad de órdenes sobre pedido no es lo mismo
-que una preventa con política escrita: pregunta condiciones y plazos antes de encargar.
+dos grados intermedios que concentran la mayor parte de los lanzamientos; para ésos hay que ir a otra
+ficha del directorio. Tampoco publica domicilio, teléfono, horarios, recolección en tienda ni las
+paqueterías con las que envía, y el contacto visible es su correo y sus dos redes. Y su modalidad de
+órdenes sobre pedido no es lo mismo que una preventa con política escrita: pregunta condiciones y
+plazos antes de encargar.

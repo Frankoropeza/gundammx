@@ -158,13 +158,14 @@ const direccionDe = (s: SucursalSchema) => ({
 export function schemaTienda(b: Base, t: DatosTienda) {
   const principal = t.sucursales[0];
   /**
-   * `HobbyShop` es un negocio local, y un negocio local tiene domicilio.
-   * Sin calle comprobada no se emite: una ficha que sólo declara ciudad no
-   * sostiene el marcado local, aunque tenga punto de entrega. En ese caso
-   * sale `Store`, que describe el comercio sin afirmar una sede física.
+   * `HobbyShop` y `Store` son negocios locales: afirman una sede física.
+   * Sólo se emiten con CALLE comprobada. Una ficha que declara nada más la
+   * ciudad, aunque tenga punto de entrega, no sostiene ese marcado, así que
+   * sale `OnlineStore`. Es más pobre, y es lo honesto: el sello de la ficha
+   * no puede comunicar más certeza que su expediente.
    */
   const conDomicilio = Boolean(principal?.calle);
-  const tipo = conDomicilio ? 'HobbyShop' : principal ? 'Store' : 'OnlineStore';
+  const tipo = conDomicilio ? 'HobbyShop' : 'OnlineStore';
 
   // Marketplaces fuera de `sameAs`: un perfil de vendedor no prueba que la
   // entidad sea la misma. Sólo el sitio propio y las redes de la tienda.

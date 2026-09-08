@@ -163,8 +163,15 @@ if (sitemap) {
 /* -------- 6. inventario de rutas: qué apareció y qué desapareció -------- */
 const rutasHoy = docs.map((d) => d.url).sort();
 if (process.argv.includes('--actualizar-inventario')) {
+  // La línea base no se fija sobre un build sucio: se congelaría el problema.
+  if (errores.length) {
+    console.log(`\nNO se actualizó el inventario: hay ${errores.length} errores. Arréglalos primero.`);
+    errores.forEach((e) => console.log(`  ✗ ${e}`));
+    process.exit(1);
+  }
   writeFileSync(INVENTARIO, `${JSON.stringify({ generado: new Date().toISOString().slice(0, 10), rutas: rutasHoy }, null, 2)}\n`);
   console.log(`Inventario regenerado: ${rutasHoy.length} rutas en ${INVENTARIO}`);
+  process.exit(0);
 } else if (existsSync(INVENTARIO)) {
   const previo = new Set(JSON.parse(readFileSync(INVENTARIO, 'utf8')).rutas);
   const hoy = new Set(rutasHoy);

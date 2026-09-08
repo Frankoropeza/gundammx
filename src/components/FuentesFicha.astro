@@ -5,7 +5,7 @@ interface Props {
   autor?: string;
   actualizada?: string;
   /** Expediente de evidencia: qué se comprobó, dónde y cuándo. */
-  evidencias?: { afirmacion: string; url: string; fecha: string; tipo: string }[];
+  evidencias?: { afirmacion: string; url: string; fecha: string; tipo: string; cita?: string }[];
 }
 const { verificacion: v, autor, actualizada, evidencias = [] } = Astro.props;
 const tipos: Record<string, string> = {
@@ -30,7 +30,7 @@ const metodos: Record<string, string> = {
     {autor && <div><dt class="text-ink-3">Redacción</dt><dd class="mt-1 text-ink">{autor}{actualizada && <span class="block text-xs text-ink-3">actualizada {fechaLarga(actualizada)}</span>}</dd></div>}
   </dl>
   {v.notas && <p class="mt-4 max-w-prose text-sm text-ink-2 text-pretty">{v.notas}</p>}
-  {evidencias.length > 0 ? (
+  {evidencias.length > 0 && (
     <>
       <h3 class="mt-8 text-xs text-ink-3">Qué comprobamos, dónde y cuándo</h3>
       <div class="table-scroll mt-3">
@@ -40,7 +40,7 @@ const metodos: Record<string, string> = {
           <tbody>
             {evidencias.map((e) => (
               <tr>
-                <td class="text-ink">{e.afirmacion}</td>
+                <td class="text-ink">{e.afirmacion}{e.cita && <span class="block text-xs text-ink-3">{e.cita}</span>}</td>
                 <td class="text-ink-2"><a href={e.url} class="link" rel="nofollow noopener" target="_blank">{anfitrion(e.url)}</a><span class="block text-xs text-ink-3">{tipos[e.tipo] ?? e.tipo}</span></td>
                 <td class="font-mono text-xs text-ink-2 tabular">{fechaLarga(e.fecha)}</td>
               </tr>
@@ -49,13 +49,11 @@ const metodos: Record<string, string> = {
         </table>
       </div>
     </>
-  ) : (
-    <>
-      <h3 class="mt-6 text-xs text-ink-3">Fuentes</h3>
-      <ul class="mt-2 space-y-1">
-        {v.fuentes.map((f) => <li class="truncate text-sm"><a href={f} class="link" rel="nofollow noopener" target="_blank">{f}</a></li>)}
-      </ul>
-    </>
   )}
+
+  <h3 class="mt-6 text-xs text-ink-3">Fuentes</h3>
+  <ul class="mt-2 space-y-1">
+    {v.fuentes.map((f) => <li class="truncate text-sm"><a href={f} class="link" rel="nofollow noopener" target="_blank">{f}</a></li>)}
+  </ul>
   <p class="mt-5 text-xs text-ink-3">¿Algo cambió? <a href="/reportar/" class="link">Repórtalo</a> y lo revisamos en 48 horas.</p>
 </section>

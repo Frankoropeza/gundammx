@@ -72,7 +72,7 @@ const tiendas = defineCollection({
      * La obligatoriedad por versión se activa en la etapa D, cuando el
      * contenido ya exista. Hoy el campo sólo declara en qué estándar está.
      */
-    esquema_version: z.number().int().min(1).default(1),
+    esquema_version: z.number().int().min(1).max(2).default(1),
     alta: fechaISO.optional(),
     politica_preventa: z.string().optional(),
 
@@ -91,9 +91,11 @@ const tiendas = defineCollection({
      * Obligatorio desde `esquema_version: 2`.
      */
     evidencias: z.array(z.strictObject({
-      afirmacion: z.string().max(200),
+      afirmacion: z.string().min(12).max(200),
       url: z.string().url(),
       fecha: fechaISO,
+      /** Dónde exactamente dentro de la fuente: sección, menú, encabezado. */
+      cita: z.string().max(160).optional(),
       tipo: z.enum(['pagina_propia', 'documento', 'nota_de_prensa', 'directorio_oficial']).default('pagina_propia'),
     })).default([]),
 

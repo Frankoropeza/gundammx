@@ -2,7 +2,7 @@
 nombre: Akibara Xpress
 descripcion_corta: Cadena regiomontana de anime y coleccionables con sección propia de Gundam y cuatro sucursales en Nuevo León.
 esquema_version: 2
-veredicto: 'La única ficha del directorio con cuatro sucursales registradas y con política de preventa publicada por escrito. Léela antes de apartar, porque no admite cancelaciones.'
+veredicto: 'Cuatro sucursales con domicilio y teléfono, y una política de preventa publicada por escrito. Léela antes de apartar, porque no admite cancelaciones ni devoluciones.'
 tipo: hibrida
 categoria: coleccionables
 sucursales:
@@ -70,7 +70,20 @@ evidencias:
     fecha: '2026-09-08'
   - afirmacion: Sección propia de Gundam con High Grade, Real Grade, Master Grade y Perfect Grade
     url: https://akibaraxpress.com/collections/gundam
+    cita: Colección de Gundam
     fecha: '2026-09-04'
+  - afirmacion: Declara envío a todo el país
+    url: https://akibaraxpress.com/policies/shipping-policy
+    cita: Política de envío
+    fecha: '2026-09-08'
+  - afirmacion: Ofrece recoger en sus cuatro sucursales
+    url: https://akibaraxpress.com/policies/shipping-policy
+    cita: Política de envío, sección de sucursales
+    fecha: '2026-09-08'
+  - afirmacion: No publica qué paqueterías usa ni umbral de envío gratis
+    url: https://akibaraxpress.com/policies/shipping-policy
+    cita: Ausencia comprobada en la política de envío
+    fecha: '2026-09-08'
 faq:
   - pregunta: ¿Akibara Xpress tiene sucursales fuera de Nuevo León?
     respuesta: >-
@@ -90,8 +103,8 @@ faq:
     respuesta: >-
       Su política publicada dice que las fechas dependen del proveedor y pueden cambiar sin aviso, y
       que una vez confirmado el pedido no hay cancelaciones ni devoluciones. También que al llegar el
-      producto tienes cinco días naturales para completar el pago, o pierdes el apartado. Es la
-      política más detallada del directorio, y conviene leerla completa antes de dar un anticipo.
+      producto tienes cinco días naturales para completar el pago, o pierdes el apartado. Conviene
+      leerla completa antes de dar un anticipo.
 verificacion:
   estado: verificada
   fecha: '2026-09-08'
@@ -101,6 +114,7 @@ verificacion:
     - https://akibaraxpress.com/pages/ubicaciones
     - https://akibaraxpress.com/pages/preventas
     - https://akibaraxpress.com/collections/gundam
+    - https://akibaraxpress.com/policies/shipping-policy
   notas: >-
     El expediente de evidencia detalla qué sostiene cada dato y en qué fecha. Correcciones del
     2026-09-08 tras revisión cruzada: se retira anio_fundacion 2014, que no estaba respaldado por
@@ -113,21 +127,21 @@ actualizada: '2026-09-08'
 ---
 
 Akibara Xpress es una cadena de anime y coleccionables con cuatro puntos de venta registrados, todos
-en Nuevo León, y es la única ficha de este directorio con más de dos sucursales. Le sirve a quien
-vive en el área metropolitana de Monterrey y quiere ver el producto antes de pagarlo, y a quien
-entra a preventas y necesita saber las condiciones de antemano.
+en Nuevo León y todos con domicilio publicado. Le sirve a quien vive en el área metropolitana de
+Monterrey y quiere recoger en tienda en lugar de pagar envío, y a quien entra a preventas y necesita
+conocer las condiciones antes de apartar.
 
 Tiene sección de Gundam propia dentro de su tienda en línea, con High Grade, Real Grade, Master Grade
 y Perfect Grade. Sus cuatro sucursales son Interplaza y Akiba Center, en el centro de Monterrey; la
 de Avenida Eugenio Garza Sada Sur, en la colonia Tecnológico; y la de Avenida Universidad, en San
 Nicolás de los Garza. Tres de las cuatro publican teléfono y todas tienen domicilio con código
-postal. Envía a todo el país y permite recoger en tienda. El horario que declara es general, de 10:00
-a 20:00, y su propio sitio pide confirmarlo por sucursal.
+postal. Su política de envío declara entrega a todo el país y recolección en las cuatro sucursales,
+sin especificar paqueterías ni umbral de envío gratis. El horario que declara es general, de 10:00 a
+20:00, y su propio sitio pide confirmarlo por sucursal.
 
-Lo que hay que leer con calma es su política de preventa, que es la única del directorio publicada
-por escrito. Dice que el pago va sólo en línea; que una vez confirmado el pedido no hay cancelaciones
-ni devoluciones; que las fechas de llegada dependen del proveedor y pueden cambiar sin aviso; que al
-llegar el producto tienes cinco días naturales para liquidar, y que si no lo haces pierdes el
-apartado. El límite declarado es de dos piezas. Que esté escrita es un punto a su favor, porque la
-mayoría del canal no publica ninguna; que sea tan cerrada es un riesgo que conviene medir antes de
-dar un anticipo.
+Lo que hay que leer con calma es su política de preventa, que sí está publicada por escrito. Dice que
+el pago va sólo en línea; que una vez confirmado el pedido no hay cancelaciones ni devoluciones; que
+las fechas de llegada dependen del proveedor y pueden cambiar sin aviso; que al llegar el producto
+tienes cinco días naturales para liquidar, y que si no lo haces pierdes el apartado. El límite
+declarado es de dos piezas. Tenerla escrita y a la vista es un punto a su favor; que sea tan cerrada
+es un riesgo que conviene medir antes de dar un anticipo, sobre todo en kits caros.
