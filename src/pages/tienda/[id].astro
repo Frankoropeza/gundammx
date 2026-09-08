@@ -53,7 +53,8 @@ const migas = [
 const schemas = [
   schemaMigaDePan(base, migas),
   schemaTienda(base, {
-    nombre: d.nombre, descripcion: d.descripcion_corta, web: d.web, sucursales: d.sucursales, redes: d.redes,
+    nombre: d.nombre, descripcion: d.descripcion_corta, web: d.web, sucursales: d.sucursales,
+    redes: d.redes, marketplaces: d.marketplaces,
     imagen: d.imagen?.src, rangoPrecio: d.rango_precio,
   }),
   ...(faq.length ? [schemaFAQ(faq)] : []),

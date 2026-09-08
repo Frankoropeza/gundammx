@@ -8,6 +8,7 @@ import { Image } from 'astro:assets';
 import BadgeVerificacion from '@components/BadgeVerificacion.astro';
 import ChipsGrado from '@components/ChipsGrado.astro';
 import { nombreEstado } from '@lib/estados';
+import { estadosDe } from '@lib/directorio';
 
 interface Props { tienda: CollectionEntry<'tiendas'>; prioridad?: boolean }
 const { tienda, prioridad = false } = Astro.props;
@@ -31,15 +32,18 @@ const señales = [
   d.pickup && 'Recoger en tienda',
 ].filter(Boolean) as string[];
 
-// Atributos para el filtrado progresivo en cliente (no generan URLs)
+// Atributos para el filtrado progresivo en cliente (no generan URLs).
+// `data-estados` lleva TODOS los estados donde la tienda tiene presencia:
+// una cadena con sucursales en dos entidades debe responder a las dos.
 const dataCiudades = d.sucursales.map((s) => s.ciudad).join('|');
+const dataEstados = estadosDe(tienda).join('|');
 ---
 
 <article
   class="card group relative"
   data-categoria={d.categoria}
   data-ciudades={dataCiudades}
-  data-estado={estadoPrincipal ?? ''}
+  data-estados={dataEstados}
   data-grados={d.grados.join('|')}
   data-envio={d.envio_nacional ? '1' : '0'}
   data-preventa={d.maneja_preventa ? '1' : '0'}

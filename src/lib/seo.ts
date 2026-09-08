@@ -1,4 +1,5 @@
 import { SITE } from '@config/site';
+import { nombreEstado } from '@lib/estados';
 
 type Base = { site: URL | undefined; url: string };
 
@@ -65,45 +66,96 @@ export function schemaMigaDePan(b: Base, items: { nombre: string; href: string }
   };
 }
 
+type Horarios = Record<string, string>;
+
+type SucursalSchema = {
+  calle?: string; colonia?: string; ciudad: string; estado: string; cp?: string;
+  lat?: number; lng?: number; telefono?: string; horarios?: Horarios;
+};
+
 type DatosTienda = {
   nombre: string;
   descripcion: string;
   web?: string;
-  sucursales: {
-    calle?: string; colonia?: string; ciudad: string; estado: string; cp?: string;
-    lat?: number; lng?: number; telefono?: string;
-  }[];
+  /** La primera sucursal es la principal por convención: de ella salen address, geo y horarios. */
+  sucursales: SucursalSchema[];
   redes: Record<string, string | undefined>;
+  marketplaces?: Record<string, string | undefined>;
   imagen?: string;
   rangoPrecio?: string;
 };
 
-/** HobbyShop (subtipo de Store), sin aggregateRating: no publicamos reseñas que no son nuestras. */
+const DIAS_SCHEMA: Record<string, string> = {
+  lunes: 'Monday', martes: 'Tuesday', miercoles: 'Wednesday', miércoles: 'Wednesday',
+  jueves: 'Thursday', viernes: 'Friday', sabado: 'Saturday', sábado: 'Saturday',
+  domingo: 'Sunday',
+};
+
+/**
+ * `openingHoursSpecification` a partir de `horarios` de la ficha.
+ * Sólo emite lo que puede interpretar: un día desconocido o un rango que no
+ * sea HH:MM-HH:MM se omite en silencio en vez de publicar un horario falso.
+ */
+function horariosSchema(horarios?: Horarios) {
+  if (!horarios) return [];
+  const spec: Record<string, string>[] = [];
+  for (const [dia, rango] of Object.entries(horarios)) {
+    const nombreDia = DIAS_SCHEMA[dia.trim().toLowerCase()];
+    const m = String(rango).match(/^\s*(\d{1,2}:\d{2})\s*[–-]\s*(\d{1,2}:\d{2})\s*$/);
+    if (!nombreDia || !m) continue;
+    spec.push({
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: `https://schema.org/${nombreDia}`,
+      opens: m[1].padStart(5, '0'),
+      closes: m[2].padStart(5, '0'),
+    });
+  }
+  return spec;
+}
+
+/**
+ * Ficha de tienda. `HobbyShop` (subtipo de Store, que a su vez es
+ * LocalBusiness) sólo cuando hay domicilio comprobado; una tienda sin punto
+ * físico es `OnlineStore`, porque marcar como negocio local algo que no lo es
+ * afirma en los datos estructurados lo que la página no muestra.
+ * Nunca lleva `aggregateRating`: no publicamos reseñas que no son nuestras.
+ */
 export function schemaTienda(b: Base, t: DatosTienda) {
   const principal = t.sucursales[0];
+  const sameAs = [
+    t.web,
+    ...Object.values(t.redes ?? {}),
+    ...Object.values(t.marketplaces ?? {}),
+  ].filter((u): u is string => Boolean(u));
+  const horas = horariosSchema(principal?.horarios);
+  const tieneGeo = principal?.lat !== undefined && principal?.lng !== undefined;
+
   return {
     '@context': 'https://schema.org',
-    '@type': 'HobbyShop',
+    '@type': principal ? 'HobbyShop' : 'OnlineStore',
     name: t.nombre,
     description: t.descripcion,
     url: abs(b.site, b.url),
+    areaServed: 'MX',
     ...(t.imagen ? { image: abs(b.site, t.imagen) } : {}),
     ...(t.rangoPrecio ? { priceRange: t.rangoPrecio } : {}),
-    ...(t.web ? { sameAs: [t.web, ...Object.values(t.redes).filter(Boolean)] } : {}),
+    ...(sameAs.length ? { sameAs } : {}),
     ...(principal
       ? {
           address: {
             '@type': 'PostalAddress',
             streetAddress: principal.calle,
             addressLocality: principal.ciudad,
-            addressRegion: principal.estado,
+            // Nombre legible del estado, no el slug interno.
+            addressRegion: nombreEstado(principal.estado),
             postalCode: principal.cp,
             addressCountry: 'MX',
           },
           ...(principal.telefono ? { telephone: principal.telefono } : {}),
-          ...(principal.lat && principal.lng
+          ...(tieneGeo
             ? { geo: { '@type': 'GeoCoordinates', latitude: principal.lat, longitude: principal.lng } }
             : {}),
+          ...(horas.length ? { openingHoursSpecification: horas } : {}),
         }
       : {}),
   };

@@ -113,10 +113,11 @@ const grados = (Object.keys(GRADOS) as GradoId[]).sort((a, b) => GRADOS[a].orden
       let visibles = 0;
       for (const t of tarjetas) {
         const ciudades = (t.dataset.ciudades ?? '').split('|');
+        const estados = (t.dataset.estados ?? '').split('|');
         const grados = (t.dataset.grados ?? '').split('|');
         const ok =
           (!q.ciudad || ciudades.includes(q.ciudad)) &&
-          (!q.estado || t.dataset.estado === q.estado) &&
+          (!q.estado || estados.includes(q.estado)) &&
           (!q.categoria || t.dataset.categoria === q.categoria) &&
           (!q.grado || grados.includes(q.grado)) &&
           (!q.envio || t.dataset.envio === '1') &&
