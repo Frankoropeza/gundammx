@@ -1,8 +1,8 @@
 ---
 nombre: HobbyShop.MX
-descripcion_corta: Tienda en línea de hobby con más de un centenar de SKU de Gunpla, además de radiocontrol y pinturas.
+descripcion_corta: Tienda en línea con una colección de Gunpla de 112 productos, fuerte en Entry, High y Perfect Grade, con envío nacional.
 esquema_version: 2
-veredicto: 'El catálogo de Gunpla más profundo que verificamos en línea en México, pero concentrado en Entry, High y Perfect Grade; para Real o Master Grade hay que buscar en otro lado.'
+veredicto: 'Es donde buscar Perfect Grade y Entry Grade con envío nacional. Si lo que quieres es Real Grade o Master Grade, en la revisión que hicimos no había ninguno.'
 tipo: online
 categoria: modelismo
 web: https://www.hobbyshop.mx/
@@ -14,21 +14,39 @@ vende_gunpla: si
 origen_producto: revende_original
 grados: [eg, hg, pg]
 profundidad_catalogo: 112
-vende_herramientas: true
-vende_pinturas: true
 envio_nacional: true
 envio_gratis_desde: 2000
 pagos: [Visa, Mastercard, American Express, PayPal]
+evidencias:
+  - afirmacion: Su colección de Gunpla tenía 112 productos, con Entry Grade, High Grade y Perfect Grade, y sin Real Grade ni Master Grade
+    url: https://www.hobbyshop.mx/collections/gunpla-modelos
+    fecha: '2026-09-08'
+  - afirmacion: Entre los Perfect Grade listados aparecían Strike, Strike Freedom, Astray Red Frame y Unicorn
+    url: https://www.hobbyshop.mx/collections/gunpla-modelos
+    fecha: '2026-09-08'
+  - afirmacion: Envío gratis a partir de 2,000 pesos
+    url: https://www.hobbyshop.mx/collections/gunpla-modelos
+    fecha: '2026-09-08'
+  - afirmacion: Acepta Visa, Mastercard, American Express y PayPal
+    url: https://www.hobbyshop.mx/collections/gunpla-modelos
+    fecha: '2026-09-08'
+  - afirmacion: Publica el correo hobbyshopmex@gmail.com y perfiles de Facebook e Instagram
+    url: https://www.hobbyshop.mx/collections/gunpla-modelos
+    fecha: '2026-09-08'
 faq:
   - pregunta: ¿HobbyShop.MX tiene tienda física?
     respuesta: >-
       No publica domicilio ni horarios en su sitio, así que la listamos como tienda en línea. El
-      contacto que sí publica es su correo y un botón de WhatsApp, sin número visible en la página.
+      contacto que sí publica es su correo y sus dos redes.
   - pregunta: ¿Qué grados de Gunpla maneja HobbyShop.MX?
     respuesta: >-
-      En su colección comprobamos Entry Grade, High Grade y Perfect Grade, además de líneas
-      vecinas como Shokugan y G Frame. No encontramos Real Grade ni Master Grade al momento de
-      la verificación.
+      Al 8 de septiembre de 2026 su colección tenía Entry Grade, High Grade y Perfect Grade, además
+      de líneas vecinas como Shokugan y G Frame. No aparecía ningún Real Grade ni Master Grade.
+  - pregunta: ¿Los 112 productos son todos model kits de Gundam?
+    respuesta: >-
+      No. Ése es el total de la colección al 8 de septiembre de 2026, y dentro entran líneas vecinas
+      como Shokugan y G Frame, que no son model kits para armar. Conviene leer la cifra como tamaño
+      de la colección, no como número de Gunpla.
   - pregunta: ¿Desde cuánto es gratis el envío?
     respuesta: >-
       Publica envío gratis a partir de 2,000 pesos. No publica qué paqueterías usa ni tiempos de
@@ -41,31 +59,30 @@ verificacion:
   fuentes:
     - https://www.hobbyshop.mx/collections/gunpla-modelos
   notas: >-
-    El 2026-09-08 se contaron 112 productos en su colección de Gunpla y se comprobaron los grados
-    presentes: Entry Grade, High Grade y Perfect Grade, más Shokugan y G Frame. No aparecieron
-    Real Grade ni Master Grade. Se verificaron también el correo, las dos redes, las formas de
-    pago y el umbral de envío gratis. No publica domicilio, teléfono, horarios ni paqueterías.
-    Tiene una modalidad de "Órdenes sobre pedido", pero no una preventa con política escrita, por
-    lo que maneja_preventa se deja en falso.
+    El expediente de evidencia detalla qué sostiene cada dato. Correcciones del 2026-09-08 tras
+    revisión cruzada: se retiran vende_herramientas y vende_pinturas, porque la única fuente
+    consultada es su colección de Gunpla y no documenta esas categorías; y la descripción deja de
+    hablar de radiocontrol y pinturas por la misma razón. La cifra de 112 es el total de la colección
+    y no equivale a 112 model kits, cosa que la ficha dice de forma explícita. Tiene una modalidad
+    de "órdenes sobre pedido", que no es una preventa con política escrita, así que maneja_preventa
+    se queda en falso. No publica domicilio, teléfono, horarios ni paqueterías.
 alta: '2026-09-04'
 actualizada: '2026-09-08'
 ---
 
-HobbyShop.MX es una tienda de hobby en sentido amplio —radiocontrol, maquetas, pinturas y
-herramienta— dentro de la cual el Gunpla ocupa una colección propia. Le sirve a quien ya arma y
-quiere resolver en un solo pedido el kit, la pinza y la pintura, sin ir saltando entre tiendas de
-coleccionable.
+HobbyShop.MX vende Gunpla sin tener punto físico publicado, y eso define cómo conviene usarla: es una
+tienda para pedir, no para visitar. Le sirve a quien ya sabe qué kit quiere y prefiere resolverlo por
+envío desde cualquier parte del país.
 
-Su colección de Gunpla es la más profunda que verificamos en catálogo mexicano en línea: 112
-productos al momento de la comprobación. Conviene leer ese número con cuidado, porque incluye
-líneas vecinas como Shokugan y G Frame junto a los model kits propiamente dichos. Los grados que
-encontramos son Entry Grade, High Grade y Perfect Grade, con varios Perfect Grade en existencia
-—Strike, Strike Freedom, Astray Red Frame y Unicorn—, lo cual es poco habitual en México. Envía a
-todo el país y el envío es gratis a partir de dos mil pesos. Paga con Visa, Mastercard, American
-Express o PayPal.
+Su colección de Gunpla tenía 112 productos al 8 de septiembre de 2026. La cifra hay que leerla con
+cuidado, porque dentro entran líneas vecinas como Shokugan y G Frame, que no son model kits para
+armar. Lo que sí destaca es la parte alta del catálogo: entre los Perfect Grade listados aparecían
+Strike, Strike Freedom, Astray Red Frame y Unicorn, y ver cuatro Perfect Grade juntos en un catálogo
+mexicano no es lo habitual. También hay Entry Grade y High Grade. Envía a todo el país, con envío
+gratis a partir de dos mil pesos, y acepta Visa, Mastercard, American Express y PayPal.
 
-Lo que hay que tener en cuenta: no encontramos Real Grade ni Master Grade, que son justo los grados
-intermedios donde cae la mayoría de las compras, así que para esos hay que ir a otra ficha del
-directorio. Tampoco publica domicilio, teléfono, horarios ni las paqueterías que usa; el contacto
-visible es un correo y un botón de WhatsApp sin número. Y su modalidad de "órdenes sobre pedido" no
-es lo mismo que una preventa con política escrita: pregunta condiciones antes de encargar.
+Ahora lo que falta. En esa misma revisión no apareció ningún Real Grade ni Master Grade, que son los
+dos grados intermedios por los que pasa buena parte del hobby; para ésos hay que ir a otra ficha del
+directorio. Tampoco publica domicilio, teléfono, horarios ni las paqueterías con las que envía, y el
+contacto visible es su correo y sus dos redes. Y su modalidad de órdenes sobre pedido no es lo mismo
+que una preventa con política escrita: pregunta condiciones y plazos antes de encargar.

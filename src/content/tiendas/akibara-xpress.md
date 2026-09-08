@@ -2,10 +2,9 @@
 nombre: Akibara Xpress
 descripcion_corta: Cadena regiomontana de anime y coleccionables con sección propia de Gundam y cuatro sucursales en Nuevo León.
 esquema_version: 2
-veredicto: 'La operación con más presencia física verificada del norte y la única del directorio con política de preventa escrita; también la más estricta, porque no admite cancelaciones.'
+veredicto: 'La única ficha del directorio con cuatro sucursales registradas y con política de preventa publicada por escrito. Léela antes de apartar, porque no admite cancelaciones.'
 tipo: hibrida
 categoria: coleccionables
-anio_fundacion: 2014
 sucursales:
   - etiqueta: Interplaza
     calle: José María Morelos 222, tercer piso
@@ -44,30 +43,55 @@ redes:
 vende_gunpla: si
 maneja_preventa: true
 politica_preventa: >-
-  Las preventas sólo se pagan en línea, con Shopify Payments, Mercado Pago o Aplazo. Una vez
-  confirmado el pedido no hay cancelaciones ni devoluciones. Las fechas de llegada dependen del
-  proveedor y pueden cambiar sin aviso. Cuando el producto llega tienes cinco días naturales para
-  completar el pago; si no lo haces, el pedido se cancela y pierdes el apartado. El límite es de
-  dos piezas por título.
+  Su política publicada indica que las preventas sólo se pagan en línea, con Shopify Payments,
+  Mercado Pago o Aplazo; que una vez confirmado el pedido no hay cancelaciones ni devoluciones; que
+  las fechas de llegada dependen del proveedor y pueden cambiar sin aviso; que al llegar el producto
+  hay cinco días naturales para completar el pago, y que pasado ese plazo el pedido se cancela y se
+  pierde el apartado. El límite declarado es de dos piezas.
 origen_producto: revende_original
 grados: [hg, rg, mg, pg]
 envio_nacional: true
 pickup: true
+evidencias:
+  - afirmacion: Cuatro sucursales en Nuevo León, con calle, colonia y código postal
+    url: https://akibaraxpress.com/pages/ubicaciones
+    fecha: '2026-09-08'
+  - afirmacion: Teléfonos de las sucursales Interplaza, TEC y San Nicolás
+    url: https://akibaraxpress.com/pages/ubicaciones
+    fecha: '2026-09-08'
+  - afirmacion: Correo de ventas y perfiles de Facebook, Instagram, X y YouTube
+    url: https://akibaraxpress.com/pages/ubicaciones
+    fecha: '2026-09-08'
+  - afirmacion: Declara horario general de 10:00 a 20:00 y pide confirmarlo por sucursal en sus redes
+    url: https://akibaraxpress.com/pages/ubicaciones
+    fecha: '2026-09-08'
+  - afirmacion: Política de preventa publicada por escrito, con pago en línea, sin cancelaciones y cinco días para liquidar
+    url: https://akibaraxpress.com/pages/preventas
+    fecha: '2026-09-08'
+  - afirmacion: Sección propia de Gundam con High Grade, Real Grade, Master Grade y Perfect Grade
+    url: https://akibaraxpress.com/collections/gundam
+    fecha: '2026-09-04'
 faq:
-  - pregunta: ¿En qué sucursal de Akibara Xpress hay más Gunpla?
-    respuesta: >-
-      No lo verificamos. Sus cuatro puntos están en Nuevo León, tres en Monterrey y uno en San
-      Nicolás de los Garza, y el surtido se mueve entre ellos. Si buscas un kit concreto, conviene
-      preguntarlo por redes o por correo antes de ir.
   - pregunta: ¿Akibara Xpress tiene sucursales fuera de Nuevo León?
     respuesta: >-
-      No. Su sitio publica páginas de destino por estado que no corresponden a puntos de venta
-      reales; las cuatro sucursales verificadas están todas en Nuevo León. Al resto del país llega
-      por envío.
+      Las cuatro sucursales que registramos están en Nuevo León, tres en Monterrey y una en San
+      Nicolás de los Garza. Si te aparece en una búsqueda de otra ciudad, confírmalo antes de ir.
+      Al resto del país llega por envío.
+  - pregunta: ¿En qué sucursal hay más Gunpla?
+    respuesta: >-
+      No lo verificamos, y no podemos suponerlo. Si buscas un kit concreto, pregúntalo por sus redes
+      o al correo de ventas antes de trasladarte.
   - pregunta: ¿Qué horario tienen las tiendas?
     respuesta: >-
-      Su sitio dice que generalmente abren de 10:00 a 20:00 todos los días, y pide confirmar el
-      horario de cada sucursal en sus redes. Por eso no publicamos horarios por punto de venta.
+      Su sitio declara un horario general de 10:00 a 20:00 y pide confirmar el de cada sucursal en
+      sus redes. Por eso esta ficha no publica horarios por punto de venta, ni los declara como dato
+      estructurado.
+  - pregunta: ¿Qué pasa si entro a una preventa y el kit no llega en la fecha anunciada?
+    respuesta: >-
+      Su política publicada dice que las fechas dependen del proveedor y pueden cambiar sin aviso, y
+      que una vez confirmado el pedido no hay cancelaciones ni devoluciones. También que al llegar el
+      producto tienes cinco días naturales para completar el pago, o pierdes el apartado. Es la
+      política más detallada del directorio, y conviene leerla completa antes de dar un anticipo.
 verificacion:
   estado: verificada
   fecha: '2026-09-08'
@@ -75,32 +99,35 @@ verificacion:
   nivel_confianza: 3
   fuentes:
     - https://akibaraxpress.com/pages/ubicaciones
-    - https://akibaraxpress.com/collections/gundam
     - https://akibaraxpress.com/pages/preventas
+    - https://akibaraxpress.com/collections/gundam
   notas: >-
-    Preventa verificada el 2026-09-07. El 2026-09-08 se tomaron de su página de ubicaciones los
-    domicilios completos con colonia y código postal, los teléfonos de tres sucursales, el correo
-    de ventas y las cuatro redes; y de su página de preventas la política, que sí está redactada.
-    Los horarios se declaran de forma general, "generalmente de 10:00 a 20:00", y su propio sitio
-    pide confirmarlos por sucursal, así que no se cargan como horarios estructurados.
+    El expediente de evidencia detalla qué sostiene cada dato y en qué fecha. Correcciones del
+    2026-09-08 tras revisión cruzada: se retira anio_fundacion 2014, que no estaba respaldado por
+    ninguna fuente del expediente; se retira la afirmación de que su sitio publica páginas de destino
+    por estado sin sucursal real, porque no volvimos a comprobarla; y se retira la mención a su blog,
+    que no aparece en las fuentes citadas. Los horarios se declaran de forma general y su propio
+    sitio pide confirmarlos por sucursal, así que no se cargan como horarios estructurados.
 alta: '2026-09-04'
 actualizada: '2026-09-08'
 ---
 
-Akibara Xpress es la cadena de anime y coleccionables con más presencia física verificada del norte
-del país, y por número de puntos de venta es la operación más grande de este directorio. Le sirve a
-quien vive en el área metropolitana de Monterrey y prefiere ver el kit antes de pagarlo, o a quien
-quiere entrar a una preventa sabiendo de antemano las reglas.
+Akibara Xpress es una cadena de anime y coleccionables con cuatro puntos de venta registrados, todos
+en Nuevo León, y es la única ficha de este directorio con más de dos sucursales. Le sirve a quien
+vive en el área metropolitana de Monterrey y quiere ver el producto antes de pagarlo, y a quien
+entra a preventas y necesita saber las condiciones de antemano.
 
-Tiene sección de Gundam propia dentro de su tienda en línea y es la única ficha del directorio donde
-comprobamos catálogo de High Grade hasta Perfect Grade. Sus cuatro sucursales están en Nuevo León:
-tres en Monterrey, que son Interplaza, Akiba Center y la de Garza Sada junto al Tec, y una en San
-Nicolás de los Garza. Envía a todo el país y permite recoger en tienda. También publica blog con
-contenido de iniciación, algo poco común en el canal mexicano.
+Tiene sección de Gundam propia dentro de su tienda en línea, con High Grade, Real Grade, Master Grade
+y Perfect Grade. Sus cuatro sucursales son Interplaza y Akiba Center, en el centro de Monterrey; la
+de Avenida Eugenio Garza Sada Sur, en la colonia Tecnológico; y la de Avenida Universidad, en San
+Nicolás de los Garza. Tres de las cuatro publican teléfono y todas tienen domicilio con código
+postal. Envía a todo el país y permite recoger en tienda. El horario que declara es general, de 10:00
+a 20:00, y su propio sitio pide confirmarlo por sucursal.
 
-Dos advertencias. La primera, su sitio publica páginas de destino por estado que no corresponden a
-sucursales reales, así que si aparece en una búsqueda de otra ciudad, no hay tienda ahí. La segunda,
-y la importante, es su política de preventa: la más explícita que encontramos y también la más dura.
-No hay cancelaciones ni devoluciones una vez confirmado el pedido, las fechas de llegada pueden
-moverse sin aviso, y si no completas el pago dentro de los cinco días siguientes a la llegada
-pierdes el apartado. Léela antes de dar un anticipo.
+Lo que hay que leer con calma es su política de preventa, que es la única del directorio publicada
+por escrito. Dice que el pago va sólo en línea; que una vez confirmado el pedido no hay cancelaciones
+ni devoluciones; que las fechas de llegada dependen del proveedor y pueden cambiar sin aviso; que al
+llegar el producto tienes cinco días naturales para liquidar, y que si no lo haces pierdes el
+apartado. El límite declarado es de dos piezas. Que esté escrita es un punto a su favor, porque la
+mayoría del canal no publica ninguna; que sea tan cerrada es un riesgo que conviene medir antes de
+dar un anticipo.

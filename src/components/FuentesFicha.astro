@@ -4,8 +4,17 @@ interface Props {
   verificacion: { estado: string; fecha: string; metodo: string; fuentes: string[]; nivel_confianza: number; notas?: string };
   autor?: string;
   actualizada?: string;
+  /** Expediente de evidencia: qué se comprobó, dónde y cuándo. */
+  evidencias?: { afirmacion: string; url: string; fecha: string; tipo: string }[];
 }
-const { verificacion: v, autor, actualizada } = Astro.props;
+const { verificacion: v, autor, actualizada, evidencias = [] } = Astro.props;
+const tipos: Record<string, string> = {
+  pagina_propia: 'Sitio de la tienda',
+  documento: 'Documento',
+  nota_de_prensa: 'Nota de prensa',
+  directorio_oficial: 'Directorio oficial',
+};
+const anfitrion = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return u; } };
 const metodos: Record<string, string> = {
   sitio_web: 'Revisión del sitio de la tienda', visita: 'Visita presencial', telefono: 'Contacto telefónico',
   distribuidor: 'Listado de distribuidor', documento: 'Documento probatorio',
@@ -21,9 +30,32 @@ const metodos: Record<string, string> = {
     {autor && <div><dt class="text-ink-3">Redacción</dt><dd class="mt-1 text-ink">{autor}{actualizada && <span class="block text-xs text-ink-3">actualizada {fechaLarga(actualizada)}</span>}</dd></div>}
   </dl>
   {v.notas && <p class="mt-4 max-w-prose text-sm text-ink-2 text-pretty">{v.notas}</p>}
-  <h3 class="mt-6 text-xs text-ink-3">Fuentes</h3>
-  <ul class="mt-2 space-y-1">
-    {v.fuentes.map((f) => <li class="truncate text-sm"><a href={f} class="link" rel="nofollow noopener" target="_blank">{f}</a></li>)}
-  </ul>
+  {evidencias.length > 0 ? (
+    <>
+      <h3 class="mt-8 text-xs text-ink-3">Qué comprobamos, dónde y cuándo</h3>
+      <div class="table-scroll mt-3">
+        <table>
+          <caption class="sr-only">Expediente de evidencia de esta ficha</caption>
+          <thead><tr><th scope="col">Afirmación</th><th scope="col">Fuente</th><th scope="col">Consultada</th></tr></thead>
+          <tbody>
+            {evidencias.map((e) => (
+              <tr>
+                <td class="text-ink">{e.afirmacion}</td>
+                <td class="text-ink-2"><a href={e.url} class="link" rel="nofollow noopener" target="_blank">{anfitrion(e.url)}</a><span class="block text-xs text-ink-3">{tipos[e.tipo] ?? e.tipo}</span></td>
+                <td class="font-mono text-xs text-ink-2 tabular">{fechaLarga(e.fecha)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
+  ) : (
+    <>
+      <h3 class="mt-6 text-xs text-ink-3">Fuentes</h3>
+      <ul class="mt-2 space-y-1">
+        {v.fuentes.map((f) => <li class="truncate text-sm"><a href={f} class="link" rel="nofollow noopener" target="_blank">{f}</a></li>)}
+      </ul>
+    </>
+  )}
   <p class="mt-5 text-xs text-ink-3">¿Algo cambió? <a href="/reportar/" class="link">Repórtalo</a> y lo revisamos en 48 horas.</p>
 </section>

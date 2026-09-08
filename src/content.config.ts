@@ -82,6 +82,21 @@ const tiendas = defineCollection({
      */
     veredicto: z.string().max(220).optional(),
 
+    /**
+     * EXPEDIENTE DE EVIDENCIA.
+     * Una lista global de `fuentes` no alcanza: no dice qué sostiene cada URL.
+     * Aquí cada afirmación comercial va amarrada a la página exacta que la
+     * respalda y a la fecha en que se consultó. Es lo que permite auditar la
+     * ficha sin volver a rastrear el sitio, y lo que se muestra al usuario.
+     * Obligatorio desde `esquema_version: 2`.
+     */
+    evidencias: z.array(z.strictObject({
+      afirmacion: z.string().max(200),
+      url: z.string().url(),
+      fecha: fechaISO,
+      tipo: z.enum(['pagina_propia', 'documento', 'nota_de_prensa', 'directorio_oficial']).default('pagina_propia'),
+    })).default([]),
+
     // Imagen propia o autorizada por la tienda. NUNCA box art ni material de terceros.
     imagen: image().optional(),
     imagen_alt: z.string().optional(),
@@ -158,6 +173,14 @@ const tiendas = defineCollection({
        que afirma dos cosas distintas, y eso rompe la trazabilidad. */
     const error = (path: string, message: string) =>
       ctx.addIssue({ code: z.ZodIssueCode.custom, path: [path], message });
+
+    /* Desde la versión 2 del estándar, la ficha se audita por afirmación. */
+    if (d.esquema_version >= 2) {
+      if (d.evidencias.length === 0) error('evidencias', 'Obligatorio desde esquema_version 2.');
+      if (!d.veredicto) error('veredicto', 'Obligatorio desde esquema_version 2.');
+      if (d.faq.length === 0) error('faq', 'Obligatorio desde esquema_version 2: al menos una pregunta propia.');
+      if (!d.alta) error('alta', 'Obligatorio desde esquema_version 2.');
+    }
 
     if (d.actualizada < d.verificacion.fecha) {
       error('actualizada', 'No puede ser anterior a verificacion.fecha.');
