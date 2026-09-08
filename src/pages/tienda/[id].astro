@@ -11,7 +11,7 @@ import ContactCTA from '@components/ContactCTA.astro';
 import FAQ from '@components/FAQ.astro';
 import FuentesFicha from '@components/FuentesFicha.astro';
 import RelatedListings from '@components/RelatedListings.astro';
-import { tiendasActivas, relacionadasDe, indiceTiendas, faqDeTienda, CATEGORIAS } from '@lib/directorio';
+import { tiendasActivas, relacionadasDe, indiceTiendas, faqDeTienda, tieneFaqPropia, CATEGORIAS } from '@lib/directorio';
 import { nombreEstado } from '@lib/estados';
 import { pesos } from '@lib/precio';
 import { schemaTienda, schemaMigaDePan, schemaFAQ, descripcionFicha } from '@lib/seo';
@@ -57,7 +57,8 @@ const schemas = [
     redes: d.redes, marketplaces: d.marketplaces,
     imagen: d.imagen?.src, rangoPrecio: d.rango_precio,
   }),
-  ...(faq.length ? [schemaFAQ(faq)] : []),
+  // FAQPage sólo con pregunta propia: ver tieneFaqPropia() en @lib/directorio.
+  ...(tieneFaqPropia(tienda) ? [schemaFAQ(faq)] : []),
 ];
 ---
 
@@ -75,6 +76,10 @@ const schemas = [
       destacada={d.destacada}
       rangoPrecio={d.rango_precio}
     />
+
+    {d.veredicto && (
+      <p class="mt-8 max-w-3xl border-l-2 border-accent pl-5 text-lg text-ink text-pretty">{d.veredicto}</p>
+    )}
 
     {(d.imagen || d.galeria.length > 0) && (
       <div class="mt-10 grid gap-3 sm:grid-cols-3">
@@ -170,7 +175,10 @@ const schemas = [
           </section>
         )}
 
-        <div class="prose-ed"><Content /></div>
+        <section aria-labelledby="esperar-h">
+          <h2 id="esperar-h" class="display text-2xl">Qué esperar aquí</h2>
+          <div class="prose-ed mt-5"><Content /></div>
+        </section>
 
         <FAQ items={faq} />
 

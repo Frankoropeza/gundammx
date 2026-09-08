@@ -53,7 +53,7 @@ const CLAVES = new Set([
   'maneja_pbandai', 'otras_lineas', 'vende_herramientas', 'vende_pinturas', 'marcas_pintura',
   'servicios', 'envio_nacional', 'paqueterias', 'envio_gratis_desde', 'pickup', 'pagos', 'msi',
   'verificacion', 'destacada', 'plan', 'reclamada_por_dueno', 'actualizada',
-  'esquema_version', 'alta', 'politica_preventa',
+  'esquema_version', 'alta', 'politica_preventa', 'veredicto',
 ]);
 
 const ISO = /^\d{4}-\d{2}-\d{2}$/;

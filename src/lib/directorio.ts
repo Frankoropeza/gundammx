@@ -154,6 +154,12 @@ export async function tiendasPorCategoria(slug: CategoriaId) {
 /* ------------------------------------------------------------------ */
 /* FAQ derivada de datos reales de la ficha (nunca inventada)          */
 /* ------------------------------------------------------------------ */
+/** Enumera en español: "a", "a y b", "a, b y c". */
+function listaEs(items: string[]): string {
+  if (items.length <= 1) return items[0] ?? '';
+  return `${items.slice(0, -1).join(', ')} y ${items[items.length - 1]}`;
+}
+
 export function faqDeTienda(t: Tienda): { pregunta: string; respuesta: string }[] {
   const d = t.data;
   const items: { pregunta: string; respuesta: string }[] = [];
@@ -177,7 +183,10 @@ export function faqDeTienda(t: Tienda): { pregunta: string; respuesta: string }[
   if (d.maneja_preventa) {
     items.push({
       pregunta: `¿${d.nombre} maneja preventas?`,
-      respuesta: 'Sí. Antes de dar un anticipo, pregunta el plazo estimado de llegada y la política si el kit no llega: es la duda más frecuente en este mercado.',
+      // Con política declarada se publica la de la tienda; sin ella, la
+      // advertencia genérica. Nunca se atribuye una política que no dijeron.
+      respuesta: d.politica_preventa
+        ?? 'Sí. Antes de dar un anticipo, pregunta el plazo estimado de llegada y la política si el kit no llega: es la duda más frecuente en este mercado.',
     });
   }
   if (ciudad) {
@@ -185,11 +194,22 @@ export function faqDeTienda(t: Tienda): { pregunta: string; respuesta: string }[
       pregunta: `¿Dónde está ${d.nombre}?`,
       respuesta: d.sucursales.length === 1
         ? `En ${[d.sucursales[0].calle, d.sucursales[0].colonia, ciudad].filter(Boolean).join(', ')}.`
-        : `Tiene ${d.sucursales.length} sucursales: ${[...new Set(d.sucursales.map((s) => s.ciudad))].join(', ')}.`,
+        : `Tiene ${d.sucursales.length} sucursales, en ${listaEs([...new Set(d.sucursales.map((s) => s.ciudad))])}.`,
     });
   }
-  // FAQ editorial de la ficha, si existe, al final
-  return [...items, ...d.faq];
+  // La FAQ propia de la ficha va primero: es la que aporta algo que las
+  // demás fichas no dicen. Las derivadas de datos van después.
+  return [...d.faq, ...items];
+}
+
+/**
+ * Sólo se emite `FAQPage` cuando la ficha aporta al menos una pregunta
+ * propia. Un FAQPage compuesto sólo de preguntas derivadas sale
+ * prácticamente idéntico en todas las fichas, y eso es exactamente el
+ * patrón que Google trata como contenido generado sin valor añadido.
+ */
+export function tieneFaqPropia(t: Tienda): boolean {
+  return t.data.faq.length > 0;
 }
 
 /* ------------------------------------------------------------------ */

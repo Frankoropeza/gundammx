@@ -67,6 +67,12 @@ const tiendas = defineCollection({
     alta: fechaISO.optional(),
     politica_preventa: z.string().optional(),
 
+    /**
+     * Veredicto editorial: una frase que responde «¿me sirve esta tienda?».
+     * No es la descripcion_corta, que describe; esto juzga, con lo verificado.
+     */
+    veredicto: z.string().max(220).optional(),
+
     // Imagen propia o autorizada por la tienda. NUNCA box art ni material de terceros.
     imagen: image().optional(),
     imagen_alt: z.string().optional(),
