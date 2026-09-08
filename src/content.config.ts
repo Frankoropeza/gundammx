@@ -1,28 +1,33 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { CATEGORIA_IDS } from './config/categorias';
+import { ESTADOS_SLUGS } from './lib/estados';
 
 const GRADOS = [
   'eg', 'sd', 'hg', 'rg', 'mg', 'mgsd', 'mgex', 'pg', 'full-mechanics', 'mega-size', 're100',
 ] as const;
 
+/** Fecha ISO simple, YYYY-MM-DD. Evita formatos mezclados y fechas imposibles. */
+const fechaISO = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'La fecha debe ser ISO YYYY-MM-DD');
+
 /** Toda ficha publicada debe declarar de dónde salió el dato y cuándo se comprobó. */
-const verificacion = z.object({
+const verificacion = z.strictObject({
   estado: z.enum(['verificada', 'reportada', 'sin_verificar', 'cerrada']),
-  fecha: z.string(),
+  fecha: fechaISO,
   metodo: z.enum(['sitio_web', 'visita', 'telefono', 'distribuidor', 'documento']),
   fuentes: z.array(z.string().url()).min(1),
   nivel_confianza: z.number().min(1).max(3),
   notas: z.string().optional(),
 });
 
-const sucursal = z.object({
+const sucursal = z.strictObject({
   etiqueta: z.string().optional(),
   calle: z.string().optional(),
   colonia: z.string().optional(),
   ciudad: z.string(),
   municipio: z.string().optional(),
-  estado: z.string(),
+  // Slug de estado, validado contra los 32. Un typo ya no compila en silencio.
+  estado: z.enum(ESTADOS_SLUGS),
   cp: z.string().optional(),
   lat: z.number().optional(),
   lng: z.number().optional(),
@@ -30,15 +35,37 @@ const sucursal = z.object({
   telefono: z.string().optional(),
   whatsapp: z.string().optional(),
   horarios: z.record(z.string(), z.string()).optional(),
+}).superRefine((s, ctx) => {
+  // Media coordenada no sirve para nada: el mapa desaparece sin avisar.
+  if ((s.lat === undefined) !== (s.lng === undefined)) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      path: [s.lat === undefined ? 'lat' : 'lng'],
+      message: 'lat y lng van juntos o no van.',
+    });
+  }
 });
 
-const faqItem = z.object({ pregunta: z.string(), respuesta: z.string() });
+const faqItem = z.strictObject({ pregunta: z.string(), respuesta: z.string() });
 
 const tiendas = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/tiendas' }),
-  schema: ({ image }) => z.object({
+  schema: ({ image }) => z.strictObject({
     nombre: z.string(),
-    descripcion_corta: z.string().max(200),
+    // 160 es el techo real de una meta description: la ficha la deriva de aquí.
+    descripcion_corta: z.string().max(160),
+
+    /**
+     * Versión del estándar de ficha (vault, doc 24 · F4).
+     *   1 = ficha heredada, se publica tal cual
+     *   2 = ficha migrada al estándar nuevo: exige alta, FAQ propia y,
+     *       si maneja preventa, la política declarada
+     * La obligatoriedad por versión se activa en la etapa D, cuando el
+     * contenido ya exista. Hoy el campo sólo declara en qué estándar está.
+     */
+    esquema_version: z.number().int().min(1).default(1),
+    alta: fechaISO.optional(),
+    politica_preventa: z.string().optional(),
 
     // Imagen propia o autorizada por la tienda. NUNCA box art ni material de terceros.
     imagen: image().optional(),
@@ -110,7 +137,7 @@ const tiendas = defineCollection({
     destacada: z.boolean().default(false),
     plan: z.enum(['gratis', 'verificada', 'destacada']).default('gratis'),
     reclamada_por_dueno: z.boolean().default(false),
-    actualizada: z.string(),
+    actualizada: fechaISO,
   }),
 });
 

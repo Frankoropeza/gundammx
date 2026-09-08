@@ -23,6 +23,7 @@ verificacion:
   fuentes:
     - https://kaiocorp.com.mx/product-category/gundam/
   notas: 'Preventa verificada el 2026-09-07 en su sitio, categoría "Preventas" y productos con prefijo PREVENTA, incluido Gunpla.'
+alta: '2026-09-04'
 actualizada: '2026-09-07'
 ---
 

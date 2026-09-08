@@ -22,6 +22,7 @@ verificacion:
   fuentes:
     - https://plastic-zoo.com/
   notas: 'Preventa verificada el 2026-09-07 en su sitio, menú "Preventas" y colección preventas-activas.'
+alta: '2026-09-04'
 actualizada: '2026-09-07'
 ---
 

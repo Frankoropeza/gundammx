@@ -24,6 +24,7 @@ verificacion:
   fuentes:
     - https://elreino.mx/
   notas: 'Preventa verificada el 2026-09-07 en su sitio, sección "Preventas" y "PREAVISOS - Planifica tu preventa".'
+alta: '2026-09-04'
 actualizada: '2026-09-07'
 ---
 

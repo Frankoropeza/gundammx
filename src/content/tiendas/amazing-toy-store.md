@@ -18,6 +18,7 @@ verificacion:
   fuentes:
     - https://amazingtoystore.com/
   notas: 'Preventa verificada el 2026-09-07 en su sitio, sección "PREVENTAS 2026" y enlace "Preventas" en la navegación.'
+alta: '2026-09-04'
 actualizada: '2026-09-07'
 ---
 

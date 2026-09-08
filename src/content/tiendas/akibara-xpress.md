@@ -43,6 +43,7 @@ verificacion:
     - https://akibaraxpress.com/pages/ubicaciones
     - https://akibaraxpress.com/collections/gundam
   notas: 'Preventa verificada el 2026-09-07 en su sitio, menú "Preventas" y productos etiquetados PREVENTA en el catálogo.'
+alta: '2026-09-04'
 actualizada: '2026-09-07'
 ---
 

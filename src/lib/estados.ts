@@ -35,6 +35,12 @@ export const ESTADOS = [
 
 export type EstadoSlug = (typeof ESTADOS)[number]['slug'];
 
+/**
+ * Los 32 slugs como tupla literal, para poder usarlos en `z.enum()`.
+ * Es la única fuente: si se añade un estado aquí, el esquema lo acepta solo.
+ */
+export const ESTADOS_SLUGS = ESTADOS.map((e) => e.slug) as unknown as [EstadoSlug, ...EstadoSlug[]];
+
 export function nombreEstado(slug: string): string {
   return ESTADOS.find((e) => e.slug === slug)?.nombre ?? slug;
 }

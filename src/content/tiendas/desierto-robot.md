@@ -23,6 +23,7 @@ verificacion:
   fuentes:
     - https://www.desiertorobot.com/
   notas: 'Preventa verificada el 2026-09-07 en su sitio, enlace "Información de Preventas" en atención a clientes.'
+alta: '2026-09-04'
 actualizada: '2026-09-07'
 ---
 

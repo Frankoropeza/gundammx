@@ -19,6 +19,7 @@ verificacion:
   nivel_confianza: 2
   fuentes:
     - https://www.hobbyshop.mx/collections/gunpla-modelos
+alta: '2026-09-04'
 actualizada: '2026-09-04'
 ---
 

@@ -23,6 +23,7 @@ verificacion:
   fuentes:
     - https://www.distritomax.com/collections/bandai-hobby-gunpla
   notas: 'Preventa verificada el 2026-09-07 en su sitio, secciones "PREVENTAS" y "PREVENTAS MÁS VENDIDAS" en la navegación.'
+alta: '2026-09-04'
 actualizada: '2026-09-07'
 ---
 

@@ -25,6 +25,7 @@ verificacion:
   fuentes:
     - https://www.herozone.com.mx/collections/all/gundam
   notas: 'Tiene colección con etiqueta Gundam, pero su foco es el coleccionable pop en general. Falta confirmar profundidad y origen del producto. Preventa verificada el 2026-09-07 en su sitio, productos publicados en preventa en el catálogo.'
+alta: '2026-09-04'
 actualizada: '2026-09-07'
 ---
 

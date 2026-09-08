@@ -22,6 +22,7 @@ verificacion:
   fuentes:
     - https://palitrochestore.com.mx/product-tag/gundam-model-kit/
   notas: 'Preventa verificada el 2026-09-07 en su sitio, sección "APARTADO / PREVENTAS" con reserva anticipada.'
+alta: '2026-09-04'
 actualizada: '2026-09-07'
 ---
 
