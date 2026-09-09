@@ -47,7 +47,8 @@
    Valores en RGB sin función para que Tailwind aplique alpha.
 ------------------------------------------------------------------- */
 @layer base {
-  /* Claro: blanco hueso, tinta Bandai #151515. Color usado con intención. */
+  /* Tema único: blanco hueso, tinta Bandai #151515. Sin modo oscuro por
+     decisión de marca (2026-09-09): el sitio siempre se sirve en claro. */
   :root {
     --paper: 246 245 241;
     --surface: 255 255 255;
@@ -63,40 +64,6 @@
     --alert: 154 12 24;
     color-scheme: light;
   }
-  /* Oscuro real: grafito profundo, no inversión. Contraste AA en texto y líneas. */
-  :root[data-theme='dark'] {
-    --paper: 16 17 19;
-    --surface: 27 28 31;
-    --line: 52 54 58;
-    --ink: 232 230 224;
-    --ink-2: 168 170 174;
-    --ink-3: 122 125 130;
-    --brand: 227 22 35;
-    --accent: 255 77 87;
-    --signal: 252 184 20;
-    --signal-ink: 255 209 102;
-    --verify: 110 155 255;
-    --alert: 255 107 107;
-    color-scheme: dark;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme='light']) {
-      --paper: 16 17 19;
-      --surface: 27 28 31;
-      --line: 52 54 58;
-      --ink: 232 230 224;
-      --ink-2: 168 170 174;
-      --ink-3: 122 125 130;
-      --brand: 227 22 35;
-      --accent: 255 77 87;
-      --signal: 252 184 20;
-      --signal-ink: 255 209 102;
-      --verify: 110 155 255;
-      --alert: 255 107 107;
-      color-scheme: dark;
-    }
-  }
-
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;

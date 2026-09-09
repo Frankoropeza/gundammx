@@ -22,17 +22,12 @@ const todos = [schemaSitio(base), schemaOrganizacion(base), ...schemas];
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#F6F5F1" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#101113" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#F6F5F1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" as="font" type="font/woff2" href="/fonts/archivo-latin-standard-normal.woff2" crossorigin />
     <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin-wght-normal.woff2" crossorigin />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <SEO titulo={titulo} descripcion={descripcion} tipo={tipo} noindex={noindex} schemas={todos} />
-    {/* Tema antes del primer pintado: evita el destello */}
-    <script is:inline>
-      try { var t = localStorage.getItem('tema'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
-    </script>
     <slot name="head" />
   </head>
   <body class="flex min-h-screen flex-col">

@@ -1,6 +1,5 @@
 ---
 import { SITE, NAV, NAV_SECUNDARIA } from '@config/site';
-import ThemeToggle from '@components/ThemeToggle.astro';
 import SearchDialog from '@components/SearchDialog.astro';
 const ruta = Astro.url.pathname;
 const activo = (href: string) => (href === '/' ? ruta === '/' : ruta.startsWith(href));
@@ -48,7 +47,6 @@ const activo = (href: string) => (href === '/' ? ruta === '/' : ruta.startsWith(
         <span class="font-mono text-xs uppercase tracking-[0.14em]">Buscar</span>
         <kbd class="hidden rounded-sm border border-line px-1.5 font-mono text-[10px] text-ink-3 lg:inline">⌘K</kbd>
       </button>
-      <ThemeToggle />
       <button id="menu-btn" type="button" class="btn-ghost lg:hidden" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil">
         <span class="font-mono text-xs uppercase tracking-[0.14em]">Menú</span>
       </button>
