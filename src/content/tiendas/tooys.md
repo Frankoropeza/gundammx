@@ -1,8 +1,8 @@
 ---
 nombre: Tooys Coleccionables
-descripcion_corta: Tienda en Gran Plaza Mazatlán, distribuidor confirmado de Tamashii Nations, con categoría de model kit y surtido de Gunpla sin confirmar.
+descripcion_corta: Tienda en Gran Plaza Mazatlán que lista Tamashii Nations y categoría de model kit, con surtido de Gunpla sin confirmar.
 esquema_version: 2
-veredicto: 'Cubre una plaza sin otras opciones verificadas, pero es la ficha más débil del directorio: no pudimos confirmar que maneje Gunpla. No la tomes como tienda de Gunpla hasta que alguien lo compruebe.'
+veredicto: 'Cubre Mazatlán, una plaza sin otra opción en el censo, pero no pudimos confirmar que maneje Gunpla. No la tomes como tienda de Gunpla hasta que alguien lo compruebe.'
 tipo: hibrida
 categoria: coleccionables
 sucursales:
@@ -16,9 +16,14 @@ maneja_preventa: true
 origen_producto: no_verificado
 envio_nacional: true
 evidencias:
-  - afirmacion: Es distribuidor confirmado de Tamashii Nations y tiene categoría de model kit
+  - afirmacion: Su sitio lista Tamashii Nations entre sus marcas y tiene una categoría de model kit
     url: https://www.tooys.mx/
     cita: Bloque de marcas y categorías del sitio
+    fecha: '2026-09-04'
+    vigencia_meses: 6
+  - afirmacion: Declara envío a todo el país
+    url: https://www.tooys.mx/
+    cita: Aviso de envíos del sitio, censo inicial
     fecha: '2026-09-04'
     vigencia_meses: 6
   - afirmacion: Su local está en Gran Plaza Mazatlán, local I-22
@@ -39,14 +44,13 @@ evidencias:
   - afirmacion: El 9 de septiembre su sitio no respondió a la consulta automatizada, así que la revisión no se pudo refrescar
     url: https://www.tooys.mx/robots.txt
     cita: robots.txt sin respuesta en dos intentos
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 3
 faq:
   - pregunta: ¿Tooys vende Gunpla?
     respuesta: >-
-      No lo sabemos, y preferimos decirlo. Es distribuidor confirmado de Tamashii Nations y tiene
-      categoría de model kit, pero no encontramos categoría ni colección de Gundam identificable en su
-      catálogo. Si compras ahí y lo confirmas, avísanos desde la página de reportes y actualizamos la
+      No lo sabemos, y preferimos decirlo. Lista Tamashii Nations y tiene categoría de model kit, pero no
+      encontramos categoría ni colección de Gundam identificable en su catálogo. Si compras ahí y lo confirmas, avísanos desde la página de reportes y actualizamos la
       ficha.
   - pregunta: ¿Por qué aparece en el directorio si no está confirmado?
     respuesta: >-
@@ -65,23 +69,25 @@ verificacion:
   fuentes:
     - https://www.tooys.mx/
   notas: >-
-    Es la ficha más débil del directorio y se conserva a propósito, con el estado real declarado. Lo
-    confirmado es que es distribuidor de Tamashii Nations, que tiene categoría de model kit y que
-    ofrece apartado en preventa. Lo NO confirmado es lo que el usuario viene a preguntar: si maneja
-    Gunpla. El 2026-09-09, al migrar al estándar v2, su sitio no respondió a la consulta automatizada
+    Es la ficha con menos datos confirmados del directorio y se conserva a propósito, con el estado real
+    declarado. Corrección del 2026-09-08: se retira "distribuidor confirmado de Tamashii Nations". Su
+    sitio lista la marca, lo cual no acredita distribución autorizada. Lo confirmado es que la lista, que
+    tiene categoría de model kit y que ofrece apartado en preventa. Lo NO confirmado es lo que el usuario viene a preguntar: si maneja
+    Gunpla. El 2026-09-08, al migrar al estándar v2, su sitio no respondió a la consulta automatizada
     en dos intentos, así que las evidencias conservan sus fechas originales. Cuando caduquen habrá que
     verificarla a mano, por teléfono o con una visita a la plaza.
 alta: '2026-09-04'
-actualizada: '2026-09-09'
+actualizada: '2026-09-08'
 ---
 
-Tooys Coleccionables opera en Gran Plaza Mazatlán y es distribuidor confirmado de Tamashii Nations. Está
-en este directorio por una razón geográfica: cubre una plaza donde no encontramos ninguna otra opción
-verificada, y dejar el estado en blanco le sirve menos al usuario que listarla con la advertencia puesta.
+Tooys Coleccionables opera en Gran Plaza Mazatlán y lista Tamashii Nations entre sus marcas. Está en este
+directorio por una razón geográfica: cubre una plaza donde no encontramos ninguna otra opción, y dejar el
+estado en blanco le sirve menos al usuario que listarla con la advertencia puesta.
 
-Lo que sí pudimos comprobar es su condición de distribuidor de Tamashii Nations, que tiene categoría de
-model kit dentro de su catálogo, que ofrece apartado en preventa con pago diferido, y que envía a todo
-el país. Su local está en Gran Plaza, local I-22.
+Lo que sí pudimos comprobar es que lista Tamashii Nations, que tiene categoría de model kit dentro de su
+catálogo, que ofrece apartado en preventa con pago diferido, y que declara envío a todo el país. Su local
+está en Gran Plaza, local I-22. Nótese la diferencia: listar una marca no es ser su distribuidor
+autorizado, y esta ficha no afirma lo segundo.
 
 Lo que no pudimos comprobar es lo que decide una compra en este directorio: **no encontramos categoría
 ni colección de Gundam identificable en su catálogo.** Tener línea de model kit no es lo mismo que tener

@@ -62,7 +62,7 @@ evidencias:
     url: https://www.hobbyshop.mx/policies/shipping-policy
     cita: Ausencia comprobada en la política de envío
     fecha: '2026-09-08'
-    vigencia_meses: 12
+    vigencia_meses: 6
 faq:
   - pregunta: ¿HobbyShop.MX tiene tienda física?
     respuesta: >-

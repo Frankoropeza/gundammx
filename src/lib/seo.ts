@@ -115,11 +115,13 @@ function horariosSchema(horarios?: Horarios) {
     const nombreDia = DIAS_SCHEMA[dia.trim().toLowerCase()];
     if (!nombreDia) continue;
     const texto = String(rango).trim();
-    // Cerrado se declara explícitamente; no se omite en silencio.
-    if (/^(cerrado|closed)$/i.test(texto)) {
-      spec.push({ '@type': 'OpeningHoursSpecification', dayOfWeek: `https://schema.org/${nombreDia}`, opens: '00:00', closes: '00:00' });
-      continue;
-    }
+    /**
+     * Un día cerrado se expresa por AUSENCIA en `openingHoursSpecification`.
+     * Emitirlo como 00:00–00:00 es un intervalo nulo que se puede leer como
+     * apertura, no como cierre. El usuario sí lo ve: la ficha renderiza el
+     * texto "cerrado" tal como lo declara la tienda.
+     */
+    if (/^(cerrado|closed)$/i.test(texto)) continue;
     if (/^(24\s*h(oras)?|24\/7)$/i.test(texto)) {
       spec.push({ '@type': 'OpeningHoursSpecification', dayOfWeek: `https://schema.org/${nombreDia}`, opens: '00:00', closes: '23:59' });
       continue;

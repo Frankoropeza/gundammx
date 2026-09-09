@@ -2,7 +2,7 @@
 nombre: Kaiocorp Coleccionables
 descripcion_corta: Tienda michoacana de coleccionables con categoría propia de Gundam, WhatsApp directo y domicilio en Chapultepec Oriente.
 esquema_version: 2
-veredicto: 'La única opción verificada en Michoacán con categoría de Gundam separada del resto del catálogo. Tiene WhatsApp directo, que aquí importa más que la tienda en línea.'
+veredicto: 'La única ficha de Michoacán en este directorio, con categoría de Gundam separada del resto del catálogo. Publica WhatsApp directo, que aquí sirve más que la tienda en línea.'
 tipo: hibrida
 categoria: coleccionables
 seo:
@@ -12,7 +12,7 @@ sucursales:
     colonia: Chapultepec Oriente
     ciudad: Morelia
     estado: michoacan
-    whatsapp: '524431105460'
+    whatsapp: '+524431105460'
 web: https://kaiocorp.com.mx/
 email: Kaiocorpcoleccionables@gmail.com
 redes:
@@ -25,25 +25,25 @@ grados: [hg, rg, mg]
 otras_lineas: [Blokees]
 envio_nacional: true
 evidencias:
-  - afirmacion: Tiene categoría propia de Gundam separada del resto de su catálogo
+  - afirmacion: Tiene categoría propia de Gundam con High Grade, Real Grade y Master Grade, y maneja también la línea Blokees
     url: https://kaiocorp.com.mx/product-category/gundam/
-    cita: Categoría de producto Gundam
+    cita: Categoría de producto Gundam, censo inicial
     fecha: '2026-09-04'
     vigencia_meses: 3
   - afirmacion: Su domicilio es Av. Acueducto 2588, colonia Chapultepec Oriente, Morelia, Michoacán
     url: https://kaiocorp.com.mx/
     cita: Bloque de contacto de la portada
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 12
   - afirmacion: Publica WhatsApp al 443 110 5460 y el correo Kaiocorpcoleccionables@gmail.com
     url: https://kaiocorp.com.mx/
     cita: Enlace de WhatsApp y correo de la portada
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 12
-  - afirmacion: Publica perfiles de Facebook e Instagram
+  - afirmacion: Declara envío nacional y publica perfiles de Facebook e Instagram
     url: https://kaiocorp.com.mx/
     cita: Pie de página
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 12
   - afirmacion: Tiene categoría de preventas y productos rotulados como preventa, incluido Gunpla
     url: https://kaiocorp.com.mx/
@@ -53,7 +53,7 @@ evidencias:
   - afirmacion: No publica código postal, horarios de atención, paqueterías, umbral de envío gratis ni formas de pago concretas
     url: https://kaiocorp.com.mx/
     cita: Ausencia comprobada en portada y pie de página
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 6
 faq:
   - pregunta: ¿Cómo le pregunto a Kaiocorp si tiene un kit?
@@ -71,24 +71,24 @@ faq:
       preguntarlos antes de cerrar la compra.
 verificacion:
   estado: verificada
-  fecha: '2026-09-09'
+  fecha: '2026-09-08'
   metodo: sitio_web
   nivel_confianza: 2
   fuentes:
     - https://kaiocorp.com.mx/
     - https://kaiocorp.com.mx/product-category/gundam/
   notas: >-
-    Revisión del 2026-09-09. La categoría de Gundam viene del censo del 2026-09-04. El domicilio se
+    Revisión del 2026-09-08. La categoría de Gundam viene del censo del 2026-09-04. El domicilio se
     corrigió a "Av. Acueducto 2588" según como lo publica su portada. origen_producto queda en
     "no_verificado": no publica documento de distribución ni declara el canal por el que compra. Su
     portada dice "Aceptamos:" sin enumerar métodos, así que las formas de pago quedan sin registrar.
 alta: '2026-09-04'
-actualizada: '2026-09-09'
+actualizada: '2026-09-08'
 ---
 
 Kaiocorp Coleccionables es una tienda de Morelia que trata el Gundam como categoría propia, separada del
-resto de su catálogo de coleccionables. Es la única opción verificada del directorio en Michoacán, así
-que para quien vive en el estado la alternativa realista es ésta o comprar por envío desde otra plaza.
+resto de su catálogo de coleccionables. Es la única ficha de Michoacán en este directorio, así que para
+quien vive en el estado la alternativa realista es ésta o comprar por envío desde otra plaza.
 
 Lo mejor documentado de su ficha es el contacto: publica WhatsApp como enlace directo desde su portada,
 correo, domicilio en Av. Acueducto y dos redes sociales. En un mercado donde buena parte de la venta se

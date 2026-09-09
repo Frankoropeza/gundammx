@@ -59,10 +59,12 @@ const ISO = /^\d{4}-\d{2}-\d{2}$/;
 const hoy = new Date();
 const mesesDesde = (iso) => (hoy - new Date(`${iso}T12:00:00Z`)) / (1000 * 60 * 60 * 24 * 30.44);
 /**
- * Margen de un día para el desfase de zona horaria: una verificación hecha hoy
- * en México (UTC-6) puede caer "mañana" en UTC y no por eso es una fecha futura.
+ * Futura = posterior al día de HOY en México. Se compara contra la fecha local
+ * mexicana, no contra UTC ni con un margen de horas: un margen permitía fechar
+ * evidencias con un día de anticipación.
  */
-const esFutura = (iso) => mesesDesde(iso) < -(1.5 / 30.44);
+const hoyMX = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Mexico_City' });
+const esFutura = (iso) => iso > hoyMX;
 
 /** Trigramas de palabras, para detectar frases reutilizadas entre fichas. */
 function trigramas(texto) {

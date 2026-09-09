@@ -2,7 +2,7 @@
 nombre: Palitroche Toys
 descripcion_corta: Tienda de juguete coleccionable en Insurgentes Sur con categoría de Bandai Hobby, horarios publicados y envío el mismo día en CDMX.
 esquema_version: 2
-veredicto: 'La ficha mejor documentada para contacto de todo el directorio: horarios por día, WhatsApp, correo y envío el mismo día si pides antes de las 11. Opción céntrica en CDMX.'
+veredicto: 'Publica horarios por día, WhatsApp, correo y envío el mismo día si pides antes de las 11. Es la opción céntrica en CDMX y la más fácil de contactar antes de ir.'
 tipo: hibrida
 categoria: coleccionables
 seo:
@@ -11,7 +11,7 @@ sucursales:
   - calle: Av. Insurgentes Sur 1783
     ciudad: Ciudad de México
     estado: cdmx
-    whatsapp: '5215573285376'
+    whatsapp: '+525573285376'
     horarios:
       lunes: 11:00-18:30
       martes: 11:00-18:30
@@ -34,35 +34,35 @@ grados: [hg, rg, mg]
 envio_nacional: true
 pickup: true
 evidencias:
-  - afirmacion: Tiene etiqueta específica de model kits de Gundam dentro de su categoría de Bandai Hobby
+  - afirmacion: Tiene etiqueta específica de model kits de Gundam, con High Grade, Real Grade y Master Grade, dentro de su categoría de Bandai Hobby
     url: https://palitrochestore.com.mx/product-tag/gundam-model-kit/
-    cita: Etiqueta de producto gundam-model-kit
+    cita: Etiqueta de producto gundam-model-kit, censo inicial
     fecha: '2026-09-04'
     vigencia_meses: 3
-  - afirmacion: 'Horarios publicados: lunes a viernes de 11:00 a 18:30 y sábado de 11:00 a 17:00'
+  - afirmacion: 'Horarios publicados: lunes a viernes de 11:00 a 18:30, sábado de 11:00 a 17:00 y domingo cerrado'
     url: https://palitrochestore.com.mx/
     cita: Bloque de horarios de la portada
-    fecha: '2026-09-09'
-    vigencia_meses: 12
+    fecha: '2026-09-08'
+    vigencia_meses: 6
   - afirmacion: Publica WhatsApp +52 55 7328 5376 y el correo ventas@palitrochestore.com.mx
     url: https://palitrochestore.com.mx/
     cita: Bloque de contacto de la portada
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 12
-  - afirmacion: Ofrece envío el mismo día si la compra se hace antes de las 11 de la mañana
+  - afirmacion: Envía a todo el país, y el mismo día si la compra se hace antes de las 11 de la mañana
     url: https://palitrochestore.com.mx/
     cita: Aviso de envío de la portada
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 6
   - afirmacion: Tiene recogida inmediata en tienda, que rotula como Pick Up Collector
     url: https://palitrochestore.com.mx/
     cita: Aviso de la portada
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 6
   - afirmacion: Publica perfiles de Instagram, Facebook, YouTube y TikTok
     url: https://palitrochestore.com.mx/
     cita: Pie de página
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 12
   - afirmacion: Maneja preventas y apartado
     url: https://palitrochestore.com.mx/
@@ -72,13 +72,13 @@ evidencias:
   - afirmacion: No publica paqueterías, umbral de envío gratis ni formas de pago en su portada
     url: https://palitrochestore.com.mx/
     cita: Ausencia comprobada en portada y pie de página
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 6
 faq:
   - pregunta: ¿A qué hora abre Palitroche Toys?
     respuesta: >-
       De lunes a viernes de 11:00 a 18:30 y el sábado de 11:00 a 17:00, según los horarios que publica
-      en su portada. Domingo no aparece como día de atención.
+      en su portada. El domingo figura como cerrado.
   - pregunta: ¿Me lo pueden mandar el mismo día?
     respuesta: >-
       Su portada anuncia envío el mismo día si la compra se hace antes de las 11 de la mañana. También
@@ -86,32 +86,32 @@ faq:
       usa ni si hay umbral de envío gratis.
   - pregunta: ¿Cómo les escribo antes de ir?
     respuesta: >-
-      Publica WhatsApp al +52 55 7328 5376 y el correo ventas@palitrochestore.com.mx. Es la ficha con
-      los canales de contacto mejor documentados del directorio.
+      Publica WhatsApp al +52 55 7328 5376 y el correo ventas@palitrochestore.com.mx, además de cuatro
+      redes sociales.
 verificacion:
   estado: verificada
-  fecha: '2026-09-09'
+  fecha: '2026-09-08'
   metodo: sitio_web
   nivel_confianza: 2
   fuentes:
     - https://palitrochestore.com.mx/
     - https://palitrochestore.com.mx/product-tag/gundam-model-kit/
   notas: >-
-    Revisión del 2026-09-09. Es la única ficha del directorio con horarios publicados por día, así que
+    Revisión del 2026-09-08. Es la única ficha del directorio con horarios publicados por día, así que
     sí se cargan como horarios estructurados. El domicilio de Av. Insurgentes Sur 1783 viene del censo
     del 2026-09-04: su portada publica una liga a mapas, no la dirección en texto. origen_producto
     queda en "no_verificado": no publica documento de distribución ni declara el canal por el que
     compra. No publica paqueterías, umbral de envío gratis ni formas de pago.
 alta: '2026-09-04'
-actualizada: '2026-09-09'
+actualizada: '2026-09-08'
 ---
 
 Palitroche Toys es una tienda de juguete coleccionable sobre Insurgentes Sur, con etiqueta propia de
 model kits de Gundam dentro de su categoría de Bandai Hobby. Le sirve a quien está en la Ciudad de
 México y quiere resolver hoy: es la ficha del directorio que hace más fácil llegar o preguntar.
 
-Es la única del directorio que publica horarios por día —lunes a viernes de 11:00 a 18:30 y sábado de
-11:00 a 17:00—, y una de las pocas con WhatsApp y correo a la vista. También anuncia envío el mismo día
+Es la única ficha del directorio con horarios publicados por día —lunes a viernes de 11:00 a 18:30,
+sábado de 11:00 a 17:00, domingo cerrado— y una de las pocas con WhatsApp y correo a la vista. También anuncia envío el mismo día
 si la compra se hace antes de las 11 de la mañana, y recogida inmediata en tienda. Esa combinación
 —horario, WhatsApp y entrega en el día— resuelve la duda que más frena una compra local: si vale la pena
 trasladarse. En Gunpla comprobamos High Grade, Real Grade y Master Grade, y maneja apartado y preventas.

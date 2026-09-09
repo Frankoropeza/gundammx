@@ -48,11 +48,16 @@ evidencias:
     cita: Política de envío
     fecha: '2026-09-08'
     vigencia_meses: 3
-  - afirmacion: Recolección en tienda en Francisco I. Madero 490, Centro, 78000 San Luis Potosí, con 24 horas de preparación
+  - afirmacion: Su domicilio es Francisco I. Madero 490, Centro, 78000 San Luis Potosí
     url: https://plastic-zoo.com/policies/shipping-policy
     cita: Política de envío, sección de recolección
     fecha: '2026-09-08'
     vigencia_meses: 12
+  - afirmacion: La recolección en tienda tiene un tiempo de preparación de unas 24 horas
+    url: https://plastic-zoo.com/policies/shipping-policy
+    cita: Política de envío, sección de recolección
+    fecha: '2026-09-08'
+    vigencia_meses: 6
   - afirmacion: Acepta Visa, Mastercard, American Express, PayPal, Apple Pay, Google Pay y Shop Pay
     url: https://plastic-zoo.com/
     cita: Pie de página

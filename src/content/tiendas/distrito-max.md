@@ -27,40 +27,40 @@ envio_gratis_desde: 700
 pickup: true
 pagos: [Visa, Mastercard, American Express, PayPal, Apple Pay, Google Pay, Diners Club, Discover, JCB]
 evidencias:
-  - afirmacion: Tiene colección específica de Bandai Hobby Gunpla dentro de su catálogo
+  - afirmacion: Tiene colección específica de Bandai Hobby Gunpla, con High Grade, Real Grade y Master Grade
     url: https://www.distritomax.com/collections/bandai-hobby-gunpla
-    cita: Colección de Bandai Hobby Gunpla
+    cita: Colección de Bandai Hobby Gunpla, censo inicial
     fecha: '2026-09-04'
     vigencia_meses: 3
-  - afirmacion: Envío gratis a partir de 700 pesos
+  - afirmacion: Envía a todo el país, con envío gratis a partir de 700 pesos
     url: https://www.distritomax.com/
     cita: Aviso de envío de la portada
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 3
   - afirmacion: 'Su propio sitio declara que no tiene sucursales físicas: sólo una bodega donde recoger lo comprado en línea'
     url: https://www.distritomax.com/pages/sucursales
     cita: Página de sucursales
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 12
   - afirmacion: La bodega de recogida está en Calle Norte 4, Alce Blanco, 53370 Naucalpan de Juárez
     url: https://www.distritomax.com/pages/sucursales
     cita: Página de sucursales
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 12
   - afirmacion: Acepta nueve formas de pago, entre ellas Apple Pay, Google Pay, Diners Club, Discover y JCB
     url: https://www.distritomax.com/
     cita: Pie de página
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 3
   - afirmacion: Tiene tres secciones de preventa en su navegación
     url: https://www.distritomax.com/
     cita: 'Navegación: PREVENTAS, PREVENTAS GOD y PREVENTAS MÁS VENDIDAS'
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 6
   - afirmacion: No publica redes sociales, teléfono, correo ni horarios de atención
     url: https://www.distritomax.com/
     cita: Ausencia comprobada en portada y pie de página
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 6
 faq:
   - pregunta: ¿Puedo ir a Distrito Max a ver los kits?
@@ -70,7 +70,7 @@ faq:
       publica horarios, así que conviene confirmar antes de ir.
   - pregunta: ¿Desde cuánto sale gratis el envío?
     respuesta: >-
-      Desde 700 pesos al 9 de septiembre de 2026, que es de los umbrales más bajos que registramos en
+      Desde 700 pesos al 8 de septiembre de 2026, que es de los umbrales más bajos que registramos en
       el directorio. No publica con qué paqueterías envía ni tiempos de entrega.
   - pregunta: ¿Cómo contacto a Distrito Max si hay un problema con mi pedido?
     respuesta: >-
@@ -78,20 +78,20 @@ faq:
       El único canal visible es su propia tienda en línea.
 verificacion:
   estado: verificada
-  fecha: '2026-09-09'
+  fecha: '2026-09-08'
   metodo: sitio_web
   nivel_confianza: 2
   fuentes:
     - https://www.distritomax.com/
     - https://www.distritomax.com/pages/sucursales
   notas: >-
-    Corrección importante del 2026-09-09: la ficha describía un "almacén y outlet" como sucursal. Su
+    Corrección importante del 2026-09-08: la ficha describía un "almacén y outlet" como sucursal. Su
     página de sucursales declara que NO tiene tiendas físicas, sólo una bodega de recogida, así que la
     dirección se marca con solo_recoleccion y no se emite marcado de negocio local. La colección de
     Bandai Hobby viene del censo del 2026-09-04. Su política de envío no detalla paqueterías ni
     tiempos. origen_producto queda en "no_verificado".
 alta: '2026-09-04'
-actualizada: '2026-09-09'
+actualizada: '2026-09-08'
 ---
 
 Distrito Max es una operación de comercio en línea con colección dedicada a Bandai Hobby dentro de un

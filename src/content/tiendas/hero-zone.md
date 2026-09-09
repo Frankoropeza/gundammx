@@ -2,7 +2,7 @@
 nombre: Hero Zone
 descripcion_corta: Tienda de coleccionables en Tijuana con dos puntos de venta, envío nacional de tarifa plana y colección etiquetada de Gundam.
 esquema_version: 2
-veredicto: 'De las pocas referencias verificables en Baja California, con domicilio y teléfono publicados. Su surtido de Gunpla parece ocasional: no lo tomes como catálogo profundo.'
+veredicto: 'Tiene domicilio y teléfono documentados, pero su oferta de Gunpla NO está verificada: no la tomes como tienda de Gunpla hasta confirmarlo con ellos.'
 tipo: hibrida
 categoria: coleccionables
 sucursales:
@@ -12,7 +12,7 @@ sucursales:
     ciudad: Tijuana
     estado: baja-california
     cp: '22504'
-    telefono: '6649773674'
+    telefono: '+526649773674'
   - etiqueta: Plaza Río
     ciudad: Tijuana
     estado: baja-california
@@ -30,45 +30,45 @@ envio_nacional: true
 pickup: true
 pagos: [Visa, Mastercard, Maestro, PayPal, Apple Pay, Amazon Pay, Shop Pay]
 evidencias:
-  - afirmacion: Tiene colección etiquetada de Gundam, aunque su foco es el coleccionable pop en general
+  - afirmacion: Tiene colección etiquetada de Gundam, con High Grade, aunque su foco es el coleccionable pop en general
     url: https://www.herozone.com.mx/collections/all/gundam
-    cita: Colección con etiqueta Gundam
+    cita: Colección con etiqueta Gundam, censo inicial
     fecha: '2026-09-04'
     vigencia_meses: 3
   - afirmacion: Su punto de Playas de Tijuana está en Av. Paseo Ensenada 130-A004, Sección Coronado, 22504 Tijuana
     url: https://www.herozone.com.mx/
     cita: Pie de página
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 12
   - afirmacion: Publica el teléfono 664 977 3674
     url: https://www.herozone.com.mx/
     cita: Pie de página
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 12
   - afirmacion: Envío a todo México con tarifa plana de 190 pesos
     url: https://www.herozone.com.mx/
     cita: Aviso de envío de la portada
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 3
   - afirmacion: Acepta Visa, Mastercard, Maestro, PayPal, Apple Pay, Amazon Pay y Shop Pay
     url: https://www.herozone.com.mx/
     cita: Pie de página
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 3
   - afirmacion: Publica perfiles de Facebook, Instagram, YouTube y TikTok
     url: https://www.herozone.com.mx/
     cita: Pie de página
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 12
   - afirmacion: Publica productos en preventa dentro de su catálogo
     url: https://www.herozone.com.mx/
     cita: Productos rotulados PREVENTA en la portada
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 6
   - afirmacion: No publica horarios de atención ni el domicilio de su punto de Plaza Río
     url: https://www.herozone.com.mx/
     cita: Ausencia comprobada en portada y pie de página
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 6
 faq:
   - pregunta: ¿Hero Zone tiene Gunpla en existencia?
@@ -78,7 +78,7 @@ faq:
       su oferta de Gunpla como ocasional y no como línea establecida. Pregunta por teléfono antes de ir.
   - pregunta: ¿Cuánto cuesta el envío?
     respuesta: >-
-      Al 9 de septiembre de 2026 su portada anunciaba tarifa plana de 190 pesos a todo México, sin
+      Al 8 de septiembre de 2026 su portada anunciaba tarifa plana de 190 pesos a todo México, sin
       umbral de envío gratis. No publica con qué paqueterías envía.
   - pregunta: ¿Dónde están sus tiendas?
     respuesta: >-
@@ -87,7 +87,7 @@ faq:
       horarios, así que conviene confirmarlo antes de ir.
 verificacion:
   estado: sin_verificar
-  fecha: '2026-09-09'
+  fecha: '2026-09-08'
   metodo: sitio_web
   nivel_confianza: 1
   fuentes:
@@ -99,12 +99,12 @@ verificacion:
     comprobar es lo que el usuario viene a preguntar, que es si maneja Gunpla de forma regular y con
     qué origen. Tener buenos datos de contacto no vuelve verificada la oferta.
 alta: '2026-09-04'
-actualizada: '2026-09-09'
+actualizada: '2026-09-08'
 ---
 
-Hero Zone es una tienda de coleccionables de Tijuana con dos puntos de venta y venta en línea. Aparece
-en este directorio porque es de las pocas referencias verificables en Baja California, un estado donde
-la oferta de Gunpla es delgada, pero aparece con la advertencia puesta.
+Hero Zone es una tienda de coleccionables de Tijuana con dos puntos de venta y venta en línea. Aparece en
+este directorio porque es la única ficha que registramos en Baja California, pero aparece con la
+advertencia puesta: sus datos de contacto están comprobados, su oferta de Gunpla no.
 
 Lo que sí está comprobado y fechado: el domicilio completo de su punto de Playas de Tijuana, con código
 postal y teléfono; envío a todo México con tarifa plana de 190 pesos; siete formas de pago, incluidas

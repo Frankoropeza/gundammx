@@ -72,7 +72,7 @@ evidencias:
     url: https://akibaraxpress.com/pages/ubicaciones
     cita: Página de ubicaciones, nota de horarios
     fecha: '2026-09-08'
-    vigencia_meses: 12
+    vigencia_meses: 6
   - afirmacion: Política de preventa publicada por escrito, con pago en línea, sin cancelaciones y cinco días para liquidar
     url: https://akibaraxpress.com/pages/preventas
     cita: Página de preventas
@@ -92,7 +92,7 @@ evidencias:
     url: https://akibaraxpress.com/policies/shipping-policy
     cita: Política de envío, sección de sucursales
     fecha: '2026-09-08'
-    vigencia_meses: 12
+    vigencia_meses: 6
   - afirmacion: No publica qué paqueterías usa ni umbral de envío gratis
     url: https://akibaraxpress.com/policies/shipping-policy
     cita: Ausencia comprobada en la política de envío

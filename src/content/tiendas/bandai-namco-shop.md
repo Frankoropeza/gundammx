@@ -2,7 +2,7 @@
 nombre: Bandai Namco Shop México
 descripcion_corta: Tienda propia de Bandai Namco en México, con punto físico en la colonia Juárez y catálogo en línea con envío nacional.
 esquema_version: 2
-veredicto: 'Es el canal directo de la marca, y el único del directorio con origen del producto acreditado. Su catálogo de Gunpla es de vitrina: para grados altos o kits descontinuados hay que buscar en otra parte.'
+veredicto: 'Es el canal directo de la marca y el único del directorio con origen del producto acreditado. Su catálogo de Gunpla es corto: poco más de una decena de referencias al momento del censo.'
 tipo: hibrida
 categoria: oficial
 seo:
@@ -40,40 +40,41 @@ evidencias:
   - afirmacion: 'Atención a clientes de lunes a viernes de 9:00 a 18:00: es horario de atención, no de la tienda'
     url: https://bandainamcoshop.com.mx/
     cita: Bloque de atención a clientes
-    fecha: '2026-09-09'
-    vigencia_meses: 12
+    fecha: '2026-09-08'
+    vigencia_meses: 6
   - afirmacion: Tiempo de entrega declarado de 3 a 5 días hábiles
     url: https://bandainamcoshop.com.mx/
     cita: Aviso de envíos
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 6
   - afirmacion: Acepta cambios y devoluciones dentro de los 2 días posteriores a la entrega
     url: https://bandainamcoshop.com.mx/
     cita: Aviso de cambios y devoluciones
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 6
   - afirmacion: Maneja Bandai Hobby, Tamashii Nations, Banpresto, Ichibansho, Megahouse, Gashapon y Tamagotchi
     url: https://bandainamcoshop.com.mx/
     cita: Líneas de producto de la portada
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 6
   - afirmacion: Publica perfiles de Facebook, Instagram y YouTube de Bandai Namco México
     url: https://bandainamcoshop.com.mx/
     cita: Pie de página
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 12
   - afirmacion: No publica teléfono, correo, código postal, paqueterías ni umbral de envío gratis
     url: https://bandainamcoshop.com.mx/
     cita: Ausencia comprobada en portada y pie de página
-    fecha: '2026-09-09'
+    fecha: '2026-09-08'
     vigencia_meses: 6
 faq:
   - pregunta: ¿Conviene comprar Gunpla en el canal oficial?
     respuesta: >-
       Depende de qué busques. Es el único punto del directorio con origen del producto acreditado, así
-      que si tu prioridad es certeza de originalidad, sí. Si buscas catálogo profundo, grados altos o
-      kits descontinuados, su surtido de Gunpla es de vitrina y conviene revisar también las tiendas
-      especializadas independientes.
+      que si tu prioridad es certeza de originalidad, sí. Si buscas catálogo profundo, su surtido de
+      Gunpla era de poco más de una decena de referencias al 4 de septiembre de 2026, concentradas en
+      Entry, High y Real Grade, así que conviene revisar también las tiendas especializadas
+      independientes.
   - pregunta: ¿Cuál es el horario de la tienda de la colonia Juárez?
     respuesta: >-
       No lo publica. Lo que publica es un horario de atención a clientes, de lunes a viernes de 9:00 a
@@ -89,7 +90,7 @@ faq:
       gratis.
 verificacion:
   estado: verificada
-  fecha: '2026-09-09'
+  fecha: '2026-09-08'
   metodo: sitio_web
   nivel_confianza: 3
   fuentes:
@@ -103,7 +104,7 @@ verificacion:
     El domicilio de Nápoles 33 y el conteo del catálogo vienen del censo del 2026-09-04 y están fechados
     así en el expediente. No publica teléfono, correo, código postal ni paqueterías.
 alta: '2026-09-04'
-actualizada: '2026-09-09'
+actualizada: '2026-09-08'
 ---
 
 Bandai Namco Shop México es el canal directo de la marca en el país, con punto físico en la colonia
@@ -117,8 +118,8 @@ total, de los cuales poco más de una decena eran Gunpla, concentrados en Entry,
 al hobby maneja Tamashii Nations, Banpresto, Ichibansho, Megahouse, Gashapon y Tamagotchi. Declara
 entrega de 3 a 5 días hábiles y devoluciones dentro de los 2 días siguientes a la entrega.
 
-Tres cosas que conviene tener claras. Los grados altos —Perfect Grade, Mega Size, Full Mechanics—
-prácticamente no circulan por aquí, así que para eso hay que ir a las tiendas especializadas
-independientes de este mismo directorio. El horario que publica es de atención a clientes, de lunes a
+Tres cosas que conviene tener claras. En el conteo del 4 de septiembre no observamos Perfect Grade, Mega
+Size ni Full Mechanics en su catálogo en línea; el surtido puede cambiar, pero al día de la revisión para
+esos grados había que ir a las tiendas especializadas independientes de este mismo directorio. El horario que publica es de atención a clientes, de lunes a
 viernes de 9:00 a 18:00, y no el del local, de modo que si piensas ir hay que confirmarlo por sus redes.
 Y el plazo de devolución de 2 días es corto: vale la pena revisar la caja el mismo día que llega.
