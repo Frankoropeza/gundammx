@@ -48,7 +48,7 @@ evidencias:
     url: https://palitrochestore.com.mx/
     cita: Bloque de contacto de la portada
     fecha: '2026-09-08'
-    vigencia_meses: 12
+    vigencia_meses: 6
   - afirmacion: Envía a todo el país, y el mismo día si la compra se hace antes de las 11 de la mañana
     url: https://palitrochestore.com.mx/
     cita: Aviso de envío de la portada
@@ -63,7 +63,7 @@ evidencias:
     url: https://palitrochestore.com.mx/
     cita: Pie de página
     fecha: '2026-09-08'
-    vigencia_meses: 12
+    vigencia_meses: 6
   - afirmacion: Maneja preventas y apartado
     url: https://palitrochestore.com.mx/
     cita: Sección APARTADO / PREVENTAS

@@ -47,7 +47,7 @@ evidencias:
     url: https://www.hobbyshop.mx/collections/gunpla-modelos
     cita: Pie de página
     fecha: '2026-09-08'
-    vigencia_meses: 12
+    vigencia_meses: 6
   - afirmacion: Entrega a toda la República, salvo códigos postales donde las paqueterías no tienen cobertura
     url: https://www.hobbyshop.mx/policies/shipping-policy
     cita: Política de envío

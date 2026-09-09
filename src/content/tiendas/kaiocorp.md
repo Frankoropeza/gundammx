@@ -39,12 +39,12 @@ evidencias:
     url: https://kaiocorp.com.mx/
     cita: Enlace de WhatsApp y correo de la portada
     fecha: '2026-09-08'
-    vigencia_meses: 12
+    vigencia_meses: 6
   - afirmacion: Declara envío nacional y publica perfiles de Facebook e Instagram
     url: https://kaiocorp.com.mx/
     cita: Pie de página
     fecha: '2026-09-08'
-    vigencia_meses: 12
+    vigencia_meses: 6
   - afirmacion: Tiene categoría de preventas y productos rotulados como preventa, incluido Gunpla
     url: https://kaiocorp.com.mx/
     cita: Categoría Preventas de la navegación

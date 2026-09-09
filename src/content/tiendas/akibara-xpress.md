@@ -62,12 +62,12 @@ evidencias:
     url: https://akibaraxpress.com/pages/ubicaciones
     cita: Página de ubicaciones, por sucursal
     fecha: '2026-09-08'
-    vigencia_meses: 12
+    vigencia_meses: 6
   - afirmacion: Correo de ventas y perfiles de Facebook, Instagram, X y YouTube
     url: https://akibaraxpress.com/pages/ubicaciones
     cita: Pie de página
     fecha: '2026-09-08'
-    vigencia_meses: 12
+    vigencia_meses: 6
   - afirmacion: Declara horario general de 10:00 a 20:00 y pide confirmarlo por sucursal en sus redes
     url: https://akibaraxpress.com/pages/ubicaciones
     cita: Página de ubicaciones, nota de horarios

@@ -32,7 +32,7 @@ evidencias:
     tipo: nota_de_prensa
     fecha: '2026-09-04'
     vigencia_meses: 24
-  - afirmacion: Su catálogo en línea rondaba los 130 productos, de los cuales poco más de una decena eran Gunpla, concentrados en Entry, High y Real Grade
+  - afirmacion: Su catálogo en línea rondaba los 130 productos, de los cuales poco más de una decena eran Gunpla, en Entry, High, Real y Master Grade
     url: https://bandainamcoshop.com.mx/
     cita: Conteo del catálogo en línea
     fecha: '2026-09-04'
@@ -61,7 +61,7 @@ evidencias:
     url: https://bandainamcoshop.com.mx/
     cita: Pie de página
     fecha: '2026-09-08'
-    vigencia_meses: 12
+    vigencia_meses: 6
   - afirmacion: No publica teléfono, correo, código postal, paqueterías ni umbral de envío gratis
     url: https://bandainamcoshop.com.mx/
     cita: Ausencia comprobada en portada y pie de página
@@ -72,8 +72,8 @@ faq:
     respuesta: >-
       Depende de qué busques. Es el único punto del directorio con origen del producto acreditado, así
       que si tu prioridad es certeza de originalidad, sí. Si buscas catálogo profundo, su surtido de
-      Gunpla era de poco más de una decena de referencias al 4 de septiembre de 2026, concentradas en
-      Entry, High y Real Grade, así que conviene revisar también las tiendas especializadas
+      Gunpla era de poco más de una decena de referencias al 4 de septiembre de 2026, en Entry, High,
+      Real y Master Grade, así que conviene revisar también las tiendas especializadas
       independientes.
   - pregunta: ¿Cuál es el horario de la tienda de la colonia Juárez?
     respuesta: >-
@@ -114,7 +114,7 @@ de la profundidad del catálogo, y a quien colecciona más allá del Gunpla.
 Es la única ficha del directorio con el origen del producto acreditado, y no por inferencia: la tienda
 es de la propia Bandai Namco. Eso resuelve de entrada la duda que domina este mercado. Su catálogo,
 en cambio, hay que leerlo con expectativas ajustadas: al momento del censo rondaba los 130 productos en
-total, de los cuales poco más de una decena eran Gunpla, concentrados en Entry, High y Real Grade. Junto
+total, de los cuales poco más de una decena eran Gunpla, en Entry, High, Real y Master Grade. Junto
 al hobby maneja Tamashii Nations, Banpresto, Ichibansho, Megahouse, Gashapon y Tamagotchi. Declara
 entrega de 3 a 5 días hábiles y devoluciones dentro de los 2 días siguientes a la entrega.
 

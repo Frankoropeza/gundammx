@@ -41,7 +41,7 @@ evidencias:
     cita: Ausencia comprobada en el catálogo consultado
     fecha: '2026-09-04'
     vigencia_meses: 3
-  - afirmacion: El 9 de septiembre su sitio no respondió a la consulta automatizada, así que la revisión no se pudo refrescar
+  - afirmacion: El 8 de septiembre su sitio no respondió a la consulta automatizada, así que la revisión no se pudo refrescar
     url: https://www.tooys.mx/robots.txt
     cita: robots.txt sin respuesta en dos intentos
     fecha: '2026-09-08'

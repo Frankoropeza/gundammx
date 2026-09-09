@@ -44,7 +44,7 @@ evidencias:
     url: https://elreino.mx/
     cita: Pie de página
     fecha: '2026-09-08'
-    vigencia_meses: 12
+    vigencia_meses: 6
   - afirmacion: Tiene sección de preventas y una colección de preavisos para planificarlas
     url: https://elreino.mx/
     cita: 'Navegación: PREAVISOS - Planifica tu preventa'

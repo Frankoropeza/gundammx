@@ -44,7 +44,7 @@ evidencias:
     url: https://www.herozone.com.mx/
     cita: Pie de página
     fecha: '2026-09-08'
-    vigencia_meses: 12
+    vigencia_meses: 6
   - afirmacion: Envío a todo México con tarifa plana de 190 pesos
     url: https://www.herozone.com.mx/
     cita: Aviso de envío de la portada
@@ -59,7 +59,7 @@ evidencias:
     url: https://www.herozone.com.mx/
     cita: Pie de página
     fecha: '2026-09-08'
-    vigencia_meses: 12
+    vigencia_meses: 6
   - afirmacion: Publica productos en preventa dentro de su catálogo
     url: https://www.herozone.com.mx/
     cita: Productos rotulados PREVENTA en la portada
@@ -108,8 +108,8 @@ advertencia puesta: sus datos de contacto están comprobados, su oferta de Gunpl
 
 Lo que sí está comprobado y fechado: el domicilio completo de su punto de Playas de Tijuana, con código
 postal y teléfono; envío a todo México con tarifa plana de 190 pesos; siete formas de pago, incluidas
-Apple Pay, Amazon Pay y Shop Pay; cuatro redes sociales activas; y productos publicados en preventa. En
-datos de contacto está mejor documentada que varias fichas del directorio.
+Apple Pay, Amazon Pay y Shop Pay; cuatro perfiles sociales; y productos publicados en preventa. Sus datos
+de contacto están completos.
 
 Lo que no está comprobado es justo lo que importa para decidir una compra de Gunpla. Tiene una
 colección etiquetada como Gundam, pero su catálogo es de coleccionable pop en general, no confirmamos

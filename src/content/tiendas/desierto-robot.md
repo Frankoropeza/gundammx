@@ -38,7 +38,7 @@ evidencias:
     cita: Enlace "Información de Preventas"
     fecha: '2026-09-07'
     vigencia_meses: 6
-  - afirmacion: Su robots.txt bloquea el rastreo automatizado de todas sus rutas, así que la revisión del 9 de septiembre no se pudo hacer
+  - afirmacion: Su robots.txt bloquea el rastreo automatizado de todas sus rutas, así que la revisión del 8 de septiembre no se pudo hacer
     url: https://www.desiertorobot.com/robots.txt
     cita: Directiva Disallow de todas las rutas
     fecha: '2026-09-08'
