@@ -1,16 +1,106 @@
 ---
-import { SITE, NAV, NAV_SECUNDARIA } from '@config/site';
+/**
+ * Pie del sitio en tres pisos:
+ *  1) Identidad + navegación primaria (misma jerarquía que el header).
+ *  2) Explora el archivo — panel de interlinking: toda faceta con página
+ *     propia (universo, categoría de blog, grado, categoría y ciudad de
+ *     tienda) sale de la misma fuente de verdad que el sitemap
+ *     (@lib/directorio, @lib/categorias, @lib/archivo). Cero listas fijas:
+ *     lo que no tiene página no aparece, y lo nuevo aparece solo.
+ *  3) Legal — aviso de independencia y cierre.
+ */
+import { getCollection } from 'astro:content';
+import { SITE, NAV, NAV_SECUNDARIA, GRADOS, type GradoId } from '@config/site';
+import { publicado, universosConContenido } from '@lib/archivo';
+import { ciudadesConPagina, categoriasConTiendas, tiendasVerificadas } from '@lib/directorio';
+import { categoriasAbiertas, urlCategoria } from '@lib/categorias';
 import AvisoIndependencia from '@components/AvisoIndependencia.astro';
+
 const anio = new Date().getFullYear();
+
+const [universos, series, mobileSuits, articulos, verificadas, categoriasTienda, ciudades, categoriasBlog, kits] =
+  await Promise.all([
+    universosConContenido(),
+    getCollection('series', publicado),
+    getCollection('mobile-suits', publicado),
+    getCollection('articles', ({ data }) => !data.borrador),
+    tiendasVerificadas(),
+    categoriasConTiendas(),
+    ciudadesConPagina(),
+    categoriasAbiertas(),
+    getCollection('kits'),
+  ]);
+
+const gradosConKits = (Object.keys(GRADOS) as GradoId[])
+  .filter((g) => kits.some((k) => k.data.grado === g))
+  .sort((a, b) => GRADOS[a].orden - GRADOS[b].orden);
+
+// Colofón editorial: el tamaño real del archivo, sin cifras inventadas.
+const censo = [
+  { n: universos.length, t: 'universos' },
+  { n: series.length, t: series.length === 1 ? 'serie' : 'series' },
+  { n: mobileSuits.length, t: 'mobile suits' },
+  { n: verificadas.length, t: verificadas.length === 1 ? 'tienda verificada' : 'tiendas verificadas' },
+  { n: articulos.length, t: articulos.length === 1 ? 'artículo' : 'artículos' },
+].filter((c) => c.n > 0);
+
+const DIRECTORIO = [
+  { texto: 'Todas las tiendas', href: '/tiendas/' },
+  { texto: 'Verificadas con fuente', href: '/tiendas/verificadas/' },
+  { texto: 'Envío a todo México', href: '/tiendas/en-linea/' },
+  { texto: 'Dar de alta una tienda', href: '/alta-de-tienda/' },
+  { texto: 'Buscar en el archivo', href: '/buscar/' },
+];
+
+const PROYECTO = [
+  { texto: 'Política de fuentes y verificación', href: '/metodologia/' },
+  { texto: 'Reportar un error', href: '/reportar/' },
+  { texto: 'Aviso legal y créditos', href: '/aviso-legal/' },
+  { texto: 'Créditos de imágenes', href: '/creditos/' },
+];
+
+// Piso 2: cada grupo se omite solo si su faceta aún no tiene fichas.
+const grupos = [
+  {
+    titulo: 'Universos',
+    items: universos.map((u) => ({ texto: u.data.nombre, nota: u.data.codigo, href: `/universos/${u.id}/` })),
+  },
+  {
+    titulo: 'Gundam en México · blog',
+    items: categoriasBlog.map((c) => ({ texto: c.meta.nombre, nota: String(c.piezas.length), href: urlCategoria(c.id) })),
+  },
+  {
+    titulo: 'Gunpla por grado',
+    items: gradosConKits.map((g) => ({ texto: GRADOS[g].etiqueta, nota: GRADOS[g].nombre, href: `/kits/${g}/` })),
+  },
+  {
+    titulo: 'Tiendas por tipo',
+    items: categoriasTienda.map((c) => ({ texto: c.nombre, nota: String(c.total), href: `/tiendas/categoria/${c.slug}/` })),
+  },
+  {
+    titulo: 'Tiendas por ciudad',
+    items: ciudades.map((c) => ({ texto: c.nombre, nota: String(c.total), href: `/tiendas/ciudad/${c.slug}/` })),
+  },
+].filter((g) => g.items.length > 0);
 ---
 
 <footer class="mt-30 border-t border-line">
   <div class="franja-gundam franja-gundam-fina" aria-hidden="true"></div>
+
+  {/* Piso 1 — identidad y navegación primaria */}
   <div class="grid-page grid gap-10 py-16 md:grid-cols-12">
     <div class="md:col-span-4">
       <p class="wordmark text-[2rem] leading-none">GUNDA<span class="mx">MX</span></p>
       <p class="mt-4 max-w-sm text-sm text-ink-2 text-pretty">{SITE.descripcion}</p>
       <p class="archive-code mt-6">Archivo editorial · {SITE.ciudad}</p>
+
+      {censo.length > 0 && (
+        <ul class="mt-6 flex flex-wrap gap-x-4 gap-y-1.5 font-mono text-xs text-ink-3 tabular" aria-label="Tamaño del archivo">
+          {censo.map((c, i) => (
+            <li>{i > 0 && <span class="mr-4 text-line" aria-hidden="true">·</span>}<span class="text-ink">{c.n}</span> {c.t}</li>
+          ))}
+        </ul>
+      )}
     </div>
 
     <nav aria-label="Archivo" class="md:col-span-2">
@@ -18,24 +108,56 @@ const anio = new Date().getFullYear();
       <ul class="mt-4 space-y-2">{NAV.map((i) => <li><a href={i.href} class="link-quiet text-sm">{i.texto}</a></li>)}</ul>
     </nav>
 
-    <nav aria-label="Hobby y México" class="md:col-span-3">
+    <nav aria-label="Hobby y México" class="md:col-span-2">
       <h2 class="class-line">Hobby y México</h2>
       <ul class="mt-4 space-y-2">{NAV_SECUNDARIA.map((i) => <li><a href={i.href} class="link-quiet text-sm">{i.texto}</a></li>)}</ul>
     </nav>
 
-    <nav aria-label="El proyecto" class="md:col-span-3">
+    <nav aria-label="Directorio de tiendas" class="md:col-span-2">
+      <h2 class="class-line">Directorio</h2>
+      <ul class="mt-4 space-y-2">{DIRECTORIO.map((i) => <li><a href={i.href} class="link-quiet text-sm">{i.texto}</a></li>)}</ul>
+    </nav>
+
+    <nav aria-label="El proyecto" class="md:col-span-2">
       <h2 class="class-line">El proyecto</h2>
       <ul class="mt-4 space-y-2">
-        <li><a href="/metodologia/" class="link-quiet text-sm">Política de fuentes y verificación</a></li>
-        <li><a href="/alta-de-tienda/" class="link-quiet text-sm">Dar de alta una tienda</a></li>
-        <li><a href="/reportar/" class="link-quiet text-sm">Reportar un error</a></li>
-        <li><a href="/aviso-legal/" class="link-quiet text-sm">Aviso legal y créditos</a></li>
-        <li><a href="/creditos/" class="link-quiet text-sm">Créditos de imágenes</a></li>
+        {PROYECTO.map((i) => <li><a href={i.href} class="link-quiet text-sm">{i.texto}</a></li>)}
         <li><span class="font-mono text-sm text-ink-3">{SITE.email}</span></li>
       </ul>
     </nav>
+  </div>
 
+  {/* Piso 2 — explora el archivo: panel de interlinking sobre datos reales */}
+  {grupos.length > 0 && (
+    <div class="border-y border-line bg-surface">
+      <div class="grid-page py-12">
+        <h2 class="class-line">Explora el archivo</h2>
+        <div class="mt-6 grid gap-x-10 gap-y-8 lg:grid-cols-2">
+          {grupos.map((g) => (
+            <section aria-labelledby={`pie-${g.titulo}`}>
+              <p id={`pie-${g.titulo}`} class="eyebrow">{g.titulo}</p>
+              <ul class="mt-3 flex flex-wrap gap-1.5">
+                {g.items.map((i) => (
+                  <li>
+                    <a href={i.href} class="tag hover:border-ink hover:text-ink" title={i.nota}>
+                      {i.texto}{i.nota && <span class="ml-1 text-ink-3 tabular">{i.nota}</span>}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
+
+  {/* Piso 3 — legal y cierre */}
+  <div class="grid-page grid gap-6 py-10 md:grid-cols-12">
     <div class="md:col-span-12"><AvisoIndependencia compacto /></div>
-    <p class="font-mono text-xs text-ink-3 md:col-span-12">© {anio} {SITE.nombre} · {SITE.nombreLargo}. Textos propios; datos con fuente citada en cada ficha.</p>
+    <div class="flex flex-wrap items-center justify-between gap-3 md:col-span-12">
+      <p class="font-mono text-xs text-ink-3">© {anio} {SITE.nombre} · {SITE.nombreLargo}. Textos propios; datos con fuente citada en cada ficha.</p>
+      <a href="/sitemap-index.xml" class="font-mono text-xs text-ink-3 underline decoration-ink-3 underline-offset-[3px] transition-colors hover:text-accent hover:decoration-accent">Mapa del sitio</a>
+    </div>
   </div>
 </footer>
