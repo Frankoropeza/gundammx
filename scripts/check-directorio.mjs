@@ -31,7 +31,7 @@ export const UMBRALES = {
   * aumenta, el script lo dice. Se baja a mano conforme se migran fichas, nunca
   * se sube para silenciar un hallazgo.
   */
-export const TOPE_AVISOS = 36;
+export const TOPE_AVISOS = 12;
 
 const DIR = 'src/content/tiendas';
 const errores = [];
@@ -58,6 +58,11 @@ const CLAVES = new Set([
 const ISO = /^\d{4}-\d{2}-\d{2}$/;
 const hoy = new Date();
 const mesesDesde = (iso) => (hoy - new Date(`${iso}T12:00:00Z`)) / (1000 * 60 * 60 * 24 * 30.44);
+/**
+ * Margen de un día para el desfase de zona horaria: una verificación hecha hoy
+ * en México (UTC-6) puede caer "mañana" en UTC y no por eso es una fecha futura.
+ */
+const esFutura = (iso) => mesesDesde(iso) < -(1.5 / 30.44);
 
 /** Trigramas de palabras, para detectar frases reutilizadas entre fichas. */
 function trigramas(texto) {
@@ -92,7 +97,7 @@ for (const { archivo, d, cuerpo } of fichas) {
   if (!ISO.test(String(v.fecha ?? ''))) err(archivo, `verificacion.fecha no es ISO YYYY-MM-DD: "${v.fecha}"`);
   else {
     const meses = mesesDesde(v.fecha);
-    if (meses < 0) err(archivo, `verificacion.fecha está en el futuro: ${v.fecha}`);
+    if (esFutura(v.fecha)) err(archivo, `verificacion.fecha está en el futuro: ${v.fecha}`);
     const tope = v.estado === 'verificada' ? UMBRALES.MESES_CADUCIDAD_VERIFICADA : UMBRALES.MESES_CADUCIDAD_RESTO;
     if (meses > tope) avi(archivo, `verificación caducada: ${meses.toFixed(1)} meses (tope ${tope})`);
   }
@@ -108,6 +113,7 @@ for (const { archivo, d, cuerpo } of fichas) {
   for (const [i, s] of suc.entries()) {
     if (!ESTADOS.includes(s.estado)) err(archivo, `sucursal ${i}: estado "${s.estado}" no está en los 32 slugs`);
     const tieneLat = s.lat !== undefined, tieneLng = s.lng !== undefined;
+    if (s.solo_recoleccion && !s.calle) avi(archivo, `sucursal ${i}: punto de recolección sin domicilio, no le sirve a nadie`);
     if (tieneLat !== tieneLng) err(archivo, `sucursal ${i}: lat y lng deben ir juntos o no ir`);
   }
   const online = d.tipo === 'online' || d.tipo === 'marketplace';
@@ -139,7 +145,7 @@ for (const { archivo, d } of fichas) {
     if (!ISO.test(String(e.fecha ?? ''))) { err(archivo, `evidencia con fecha inválida: "${e.fecha}"`); continue; }
     const meses = mesesDesde(e.fecha);
     const tope = e.vigencia_meses ?? 6;
-    if (meses < 0) err(archivo, `evidencia con fecha futura: ${e.fecha}`);
+    if (esFutura(e.fecha)) err(archivo, `evidencia con fecha futura: ${e.fecha}`);
     else if (meses > tope) avi(archivo, `evidencia vencida (${meses.toFixed(1)} de ${tope} meses): "${String(e.afirmacion).slice(0, 60)}…"`);
   }
 }

@@ -70,7 +70,7 @@ type Horarios = Record<string, string>;
 
 type SucursalSchema = {
   etiqueta?: string; calle?: string; colonia?: string; ciudad: string; estado: string; cp?: string;
-  lat?: number; lng?: number; telefono?: string; horarios?: Horarios;
+  lat?: number; lng?: number; telefono?: string; whatsapp?: string; horarios?: Horarios; solo_recoleccion?: boolean;
 };
 
 type DatosTienda = {
@@ -164,7 +164,8 @@ export function schemaTienda(b: Base, t: DatosTienda) {
    * sale `OnlineStore`. Es más pobre, y es lo honesto: el sello de la ficha
    * no puede comunicar más certeza que su expediente.
    */
-  const conDomicilio = Boolean(principal?.calle);
+  // Una bodega de recogida tiene domicilio pero no es una tienda: no califica.
+  const conDomicilio = Boolean(principal?.calle) && !principal?.solo_recoleccion;
   const tipo = conDomicilio ? 'HobbyShop' : 'OnlineStore';
 
   // Marketplaces fuera de `sameAs`: un perfil de vendedor no prueba que la
@@ -193,7 +194,11 @@ export function schemaTienda(b: Base, t: DatosTienda) {
     ...(conDomicilio
       ? {
           address: direccionDe(principal!),
-          ...(principal!.telefono ? { telephone: principal!.telefono } : {}),
+          // Varias tiendas del directorio sólo publican WhatsApp: es su número
+          // de contacto real y sirve igual como `telephone`.
+          ...(principal!.telefono || principal!.whatsapp
+            ? { telephone: principal!.telefono ?? principal!.whatsapp }
+            : {}),
           ...(tieneGeo
             ? {
                 geo: { '@type': 'GeoCoordinates', latitude: principal!.lat, longitude: principal!.lng },
@@ -205,11 +210,11 @@ export function schemaTienda(b: Base, t: DatosTienda) {
       : {}),
     ...(otras.length
       ? {
-          location: otras.map((s) => ({
+          location: otras.filter((s) => !s.solo_recoleccion).map((s) => ({
             '@type': 'Place',
             ...(s.etiqueta ? { name: `${t.nombre} — ${s.etiqueta}` } : { name: `${t.nombre} — ${s.ciudad}` }),
             address: direccionDe(s),
-            ...(s.telefono ? { telephone: s.telefono } : {}),
+            ...(s.telefono || s.whatsapp ? { telephone: s.telefono ?? s.whatsapp } : {}),
           })),
         }
       : {}),

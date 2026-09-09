@@ -41,6 +41,12 @@ const sucursal = z.strictObject({
   lat: z.number().optional(),
   lng: z.number().optional(),
   dentro_de_plaza: z.string().optional(),
+  /**
+   * true = bodega o punto de entrega, NO una tienda donde se pueda entrar a ver.
+   * La dirección se le muestra al usuario porque le sirve para recoger, pero no
+   * se emite marcado de negocio local: sería afirmar una tienda que no existe.
+   */
+  solo_recoleccion: z.boolean().default(false),
   telefono: z.string().optional(),
   whatsapp: z.string().optional(),
   horarios: z.record(z.string(), z.string()).optional(),
