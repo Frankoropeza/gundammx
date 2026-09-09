@@ -48,24 +48,32 @@ Ficha completa en [Bandai Namco Shop México](/tienda/bandai-namco-shop/).
 
 ## 2. La tienda especializada mexicana
 
-Existe una capa de tiendas que trabajan con distribuidor autorizado o revenden producto original, con
-catálogo más profundo que el canal oficial y presencia física en varias ciudades. Algunas son
-distribuidores de Bandai, como [Plastic Zoo](/tienda/plastic-zoo/) en San Luis Potosí; otras son
-tiendas de coleccionables con sección de modelismo. Varias manejan preventa, que es la vía habitual
-para los grados altos y los kits que no llegan por canal regular.
+Existe una capa de tiendas con catálogo más profundo que el canal oficial y presencia física en varias
+ciudades. Algunas trabajan el Gunpla como línea propia, como [Plastic Zoo](/tienda/plastic-zoo/) en San
+Luis Potosí o [HobbyShop.MX](/tienda/hobbyshop-mx/) en línea; otras son tiendas de coleccionables con
+sección de modelismo, como [Palitroche Toys](/tienda/palitroche-toys/) en Insurgentes Sur, que además
+publica horarios y envía el mismo día si pides antes de las 11. Varias manejan preventa, que es la vía
+habitual para los grados altos y los kits que no llegan por canal regular.
+
+Una advertencia que conviene subrayar: **ninguna de estas tiendas publica documento de distribución
+autorizada**, así que en sus fichas el origen del producto aparece como no verificado. No significa que
+vendan apócrifo; significa que no lo pudimos comprobar, y preferimos decirlo. El único punto del censo
+con origen acreditado es el canal oficial, porque la tienda es de la propia marca.
 
 Es el canal con mejor relación entre variedad y confianza, y el que sostiene el hobby fuera del
 centro del país. El precio varía más que en el canal oficial, así que conviene comparar.
 
-Todas las que hemos verificado están en el [directorio de tiendas](/tiendas/), y las que superaron la
-comprobación de origen de producto, en [tiendas verificadas](/tiendas/verificadas/).
+Todas están en el [directorio de tiendas](/tiendas/), y las que tienen su oferta de Gunpla comprobada
+con fuente y fecha, en [tiendas verificadas](/tiendas/verificadas/).
 
 ## 3. La tienda en línea con envío nacional
 
 Si no hay nada en tu ciudad, esta es la vía. Son las mismas tiendas especializadas del punto
 anterior, leídas por su capacidad de envío en lugar de por su mostrador. La comparativa de
 paqueterías, umbrales de envío gratis y políticas de preventa está en
-[tiendas con envío nacional](/tiendas/en-linea/).
+[tiendas con envío nacional](/tiendas/en-linea/). Los umbrales más bajos que registramos son los de
+[Distrito Max](/tienda/distrito-max/), desde 700 pesos, y [Desierto Robot](/tienda/desierto-robot/),
+desde 750.
 
 ## 4. El marketplace
 

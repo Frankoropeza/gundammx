@@ -42,6 +42,12 @@ Hay kits que ves en fotos, que claramente existen, y que no aparecen en ninguna 
 
 Ese es el canal P-Bandai, y funciona con una lógica que conviene entender antes de pagar por adelantado.
 
+De las doce tiendas de nuestro censo, **una sola publica su política de preventa por escrito**:
+[Akibara Xpress](/tienda/akibara-xpress/). Y conviene leerla, porque es estricta: pago sólo en línea, sin
+cancelaciones ni devoluciones una vez confirmado el pedido, y cinco días naturales para liquidar cuando
+el producto llega. Que exista por escrito es una ventaja para el comprador, aunque las condiciones sean
+duras; el problema es cuando no existe ninguna.
+
 ## Qué es P-Bandai y por qué es distinto
 
 **Premium Bandai** es la tienda oficial en línea de Bandai para figuras de acción, model kits y juguetes de Gundam, Kamen Rider, One Piece, Dragon Ball, Digimon y otras marcas. Se abrevia **P-Bandai**.
