@@ -5,6 +5,7 @@ import { getCollection, getEntry, render } from 'astro:content';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
 import BloquePrecio from '@components/BloquePrecio.astro';
+import InvitacionForo from '@components/InvitacionForo.astro';
 import { GRADOS } from '@config/site';
 import { schemaKit, schemaMigaDePan, descripcionFicha } from '@lib/seo';
 
@@ -81,5 +82,6 @@ const schemas = [
     )}
 
     <div class="prose-ed mt-10"><Content /></div>
+    <InvitacionForo categoria="gunpla-y-tecnicas" class="mt-10" />
   </div>
 </BaseLayout>

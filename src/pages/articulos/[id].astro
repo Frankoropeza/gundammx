@@ -6,11 +6,13 @@ import Breadcrumbs from '@components/Breadcrumbs.astro';
 import Figura from '@components/Figura.astro';
 import MetadataRow from '@components/MetadataRow.astro';
 import RelatedContent from '@components/RelatedContent.astro';
+import InvitacionForo from '@components/InvitacionForo.astro';
 import { entradasPorIds, nombreUniverso, FORMATO } from '@lib/archivo';
 import { fechaLarga } from '@lib/precio';
 import { schemaArticulo, schemaFAQ, schemaMigaDePan, tituloEditorial, descripcionFicha } from '@lib/seo';
 import { CATEGORIAS } from '@config/categorias';
 import { categoriasAbiertas, urlCategoria } from '@lib/categorias';
+import { categoriaForoArticulo } from '@lib/foro';
 
 export const getStaticPaths = (async () => {
   const articulos = await getCollection('articles', ({ data }) => !data.borrador);
@@ -50,6 +52,7 @@ const schemas = [
 ];
 const tituloSeo = d.seo?.titulo ?? tituloEditorial(d.titulo, categoria.nombre);
 const descripcionSeo = d.seo?.descripcion ?? descripcionFicha(d.resumen, 'Guía publicada en Gundam México.');
+const categoriaForo = categoriaForoArticulo(d);
 ---
 <BaseLayout titulo={tituloSeo} descripcion={descripcionSeo} tipo="article" schemas={schemas}>
   <Breadcrumbs items={migas} />
@@ -83,8 +86,10 @@ const descripcionSeo = d.seo?.descripcion ?? descripcionFicha(d.resumen, 'Guía 
           <h2 class="class-line">Referencias</h2>
           <ol class="mt-3 space-y-1 text-sm">{d.referencias.map((r, i) => <li><span class="folio mr-2">{String(i + 1).padStart(2, '0')}</span><a href={r.url} class="link" rel="nofollow noopener" target="_blank">{r.titulo}</a></li>)}</ol>
         </section>
+        <InvitacionForo categoria={categoriaForo} class="mt-12" />
       </div>
       <aside class="space-y-10 lg:col-span-4 lg:col-start-9" data-pagefind-ignore>
+        <InvitacionForo categoria={categoriaForo} variante="tarjeta" class="hidden lg:block" />
         <RelatedContent titulo="Series citadas" items={series.map((s) => ({ eyebrow: `${s.data.anio} · ${FORMATO[s.data.formato]}`, titulo: s.data.titulo, href: `/series/${s.id}/` }))} />
         <RelatedContent titulo="Seguir leyendo" items={otros.map((o) => ({ eyebrow: CATEGORIAS[o.data.categoria].nombre, titulo: o.data.titulo, href: `/articulos/${o.id}/` }))} />
       </aside>

@@ -1,0 +1,41 @@
+---
+import type { CategoriaForo } from '@lib/foro';
+import { urlCategoriaForo } from '@lib/foro';
+
+interface Props {
+  categoria?: CategoriaForo;
+  variante?: 'bloque' | 'tarjeta';
+  titulo?: string;
+  texto?: string;
+  class?: string;
+}
+
+const {
+  categoria = 'general',
+  variante = 'bloque',
+  titulo = 'Sigue la conversación en el foro',
+  texto = 'Comparte dudas, avances y hallazgos con la comunidad Gundam México.',
+  class: clase = '',
+} = Astro.props;
+
+const urlForo = urlCategoriaForo(categoria);
+const compacto = variante === 'tarjeta';
+---
+
+<section class:list={[
+  'border-t border-line bg-surface',
+  compacto ? 'p-5' : 'p-6 sm:p-8',
+  clase,
+]} data-pagefind-ignore>
+  <p class="class-line">Comunidad</p>
+  <h2 class:list={['display mt-4 text-balance', compacto ? 'text-2xl' : 'text-3xl']}>{titulo}</h2>
+  <p class:list={['mt-3 text-ink-2 text-pretty', compacto ? 'text-sm' : 'max-w-prose']}>{texto}</p>
+  <div class:list={['mt-5 flex flex-wrap gap-2', compacto && 'flex-col']}>
+    <a href={urlForo} class:list={[compacto ? 'btn-secondary justify-center' : 'btn-primary']}>
+      Ver discusiones
+    </a>
+    <a href="https://comunidad.gundam.mx/foro/nuevo/" class:list={[compacto ? 'btn-primary justify-center' : 'btn-secondary']}>
+      Abrir hilo
+    </a>
+  </div>
+</section>

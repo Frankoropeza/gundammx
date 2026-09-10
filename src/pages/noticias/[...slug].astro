@@ -4,6 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import { getCollection, render } from 'astro:content';
 import ArticleLayout from '@layouts/ArticleLayout.astro';
 import { schemaNoticia, schemaMigaDePan, tituloEditorial, descripcionFicha } from '@lib/seo';
+import { categoriaForoArticulo } from '@lib/foro';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const notas = await getCollection('noticias', ({ data }) => !data.borrador);
@@ -46,6 +47,7 @@ const schemas = [
   migas={migas}
   fuente={fuente}
   schemas={schemas}
+  categoriaForo={categoriaForoArticulo(d)}
 >
   <Content />
 </ArticleLayout>
