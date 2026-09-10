@@ -14,6 +14,7 @@ export const SITE = {
   pais: 'MX',
   email: 'contacto@gundam.mx',
   ciudad: 'Ciudad de México',
+  domicilio: 'Pilares 1022, Letrán Valle, Benito Juárez, 03650 Ciudad de México, CDMX',
 } as const;
 
 /** Aviso de independencia. Obligatorio en todas las páginas. */
