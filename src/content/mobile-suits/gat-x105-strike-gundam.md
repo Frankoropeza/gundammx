@@ -14,7 +14,7 @@ especificaciones:
   - { etiqueta: "Configuraciones", valor: "Aile, Sword, Launcher" }
 resumen: El Gundam de Kira Yamato. Un mobile suit modular cuyas configuraciones intercambiables definieron el diseño de la franquicia en los 2000.
 relacionados: [rx-78-2-gundam, zgmf-x10a-freedom-gundam]
-kits: []
+kits: [eg-strike-gundam]
 codigo: MS-CE-GAT-X105
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_SEED

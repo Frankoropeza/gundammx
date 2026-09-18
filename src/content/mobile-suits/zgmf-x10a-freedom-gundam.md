@@ -14,7 +14,7 @@ especificaciones:
   - { etiqueta: "Armamento", valor: "Cañones de haz Balaena, sables de haz Lacerta, cañones ferroviarios Xiphias" }
 resumen: El segundo Gundam de Kira Yamato. Construido en secreto por simpatizantes de Clyne para devolverle capacidad de combate tras la pérdida del Strike, con reactor nuclear propio.
 relacionados: [gat-x105-strike-gundam, zgmf-x20a-strike-freedom-gundam]
-kits: []
+kits: [mg-freedom-gundam-ver2]
 codigo: MS-CE-ZGMF-X10A
 fuentes:
   - https://www.mahq.net/zgmf-x10a/
