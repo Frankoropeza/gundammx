@@ -13,7 +13,7 @@ especificaciones:
   - { etiqueta: "Capacidad", valor: "Transformación a modo Bird" }
   - { etiqueta: "Armamento", valor: "Buster rifle" }
 resumen: El Gundam de Heero Yuy y la primera imagen de la franquicia para el público mexicano. Transformable y armado con el buster rifle.
-relacionados: [rx-78-2-gundam, xxxg-00w0-wing-gundam-zero, oz-13ms-gundam-epyon]
+relacionados: [rx-78-2-gundam, xxxg-00w0-wing-gundam-zero, oz-13ms-gundam-epyon, xxxg-01d-gundam-deathscythe]
 kits: [eg-wing-gundam]
 codigo: MS-AC-XXXG-01W
 fuentes:

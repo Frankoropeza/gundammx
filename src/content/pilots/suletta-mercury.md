@@ -4,7 +4,7 @@ alias: []
 universo: as
 facciones: [benerit-group]
 series: [the-witch-from-mercury]
-mobile_suits: [xvx-016-gundam-aerial]
+mobile_suits: [xvx-016-gundam-aerial, x-ex01-gundam-calibarn]
 rol: Protagonista
 resumen: La primera protagonista de una serie de Gundam. Llega desde Mercurio a la academia Asticassia con el Gundam Aerial.
 codigo: PIL-AS-SULETTA

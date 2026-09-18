@@ -14,7 +14,7 @@ resumen: Suletta Mercury llega desde Mercurio a la academia Asticassia, donde lo
 relevancia: La primera serie de Gundam con protagonista femenina y la entrada más accesible que existe hoy.
 orden_recomendado: 1
 ruta: empieza-aqui
-mobile_suits: [xvx-016-gundam-aerial]
+mobile_suits: [xvx-016-gundam-aerial, x-ex01-gundam-calibarn]
 pilotos: [suletta-mercury]
 facciones: [benerit-group]
 disponibilidad_mx: ['Azteca 7 (Planeta Anime)']
