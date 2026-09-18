@@ -15,8 +15,8 @@ relevancia: La secuela que volvió adulta a la franquicia y el punto más sombr�
 orden_recomendado: 6
 orden_cronologico: 4
 ruta: profundiza
-mobile_suits: [msz-006-zeta-gundam]
-pilotos: [kamille-bidan, char-aznable, amuro-ray]
+mobile_suits: [msz-006-zeta-gundam, mrx-009-psycho-gundam]
+pilotos: [kamille-bidan, char-aznable, amuro-ray, four-murasame]
 facciones: [aeug, titanes, federacion-terrestre]
 codigo: SER-UC-0087
 fuentes:

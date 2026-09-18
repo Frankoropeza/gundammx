@@ -15,8 +15,8 @@ relevancia: El regreso del Universal Century con producción de primer nivel y e
 orden_recomendado: 8
 orden_cronologico: 6
 ruta: profundiza
-mobile_suits: [rx-0-unicorn-gundam]
-pilotos: [banagher-links]
+mobile_suits: [rx-0-unicorn-gundam, nz-666-kshatriya]
+pilotos: [banagher-links, marida-cruz]
 facciones: [federacion-terrestre]
 codigo: SER-UC-0096
 fuentes:

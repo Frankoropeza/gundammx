@@ -13,7 +13,7 @@ especificaciones:
   - { etiqueta: "Sistema", valor: "NT-D (Newtype Destroyer)" }
   - { etiqueta: "Modos", valor: "Unicorn y Destroy" }
 resumen: Un mobile suit blanco de un solo cuerno que se transforma al detectar un Newtype. La máquina que devolvió al UC su icono.
-relacionados: [msz-006-zeta-gundam, rx-93-nu-gundam]
+relacionados: [msz-006-zeta-gundam, rx-93-nu-gundam, nz-666-kshatriya]
 kits: []
 codigo: MS-UC-RX-0
 fuentes:
