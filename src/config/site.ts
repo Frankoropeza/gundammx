@@ -13,6 +13,9 @@ export const SITE = {
   locale: 'es-MX',
   pais: 'MX',
   email: 'contacto@gundam.mx',
+  // Canal de WhatsApp del portal. Vacío = el formulario de contacto se
+  // renderiza inactivo. Se llena con PUBLIC_WHATSAPP, nunca en duro aquí.
+  whatsapp: process.env.PUBLIC_WHATSAPP ?? '',
   ciudad: 'Ciudad de México',
   domicilio: 'Pilares 1022, Letrán Valle, Benito Juárez, 03650 Ciudad de México, CDMX',
 } as const;

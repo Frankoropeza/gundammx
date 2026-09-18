@@ -1,0 +1,128 @@
+---
+/**
+ * Contacto general por WhatsApp.
+ * El sitio es estático: no hay backend. El mensaje se arma en el cliente
+ * y se abre en wa.me con el texto prellenado.
+ *
+ * El número vive en PUBLIC_WHATSAPP (ver SITE.whatsapp). Mientras esté vacío
+ * el formulario se renderiza inactivo, sin botón funcional ni enlace roto.
+ */
+import { SITE } from '@config/site';
+
+const numero = SITE.whatsapp.replace(/\D/g, '');
+const activo = numero.length > 0;
+
+const asuntos = [
+  'Duda sobre Gundam o Gunpla',
+  'Dar de alta una tienda',
+  'Reportar un error en una ficha',
+  'Prensa o colaboración',
+  'Otro',
+];
+---
+
+<section
+  class="flex h-full flex-col border border-line bg-surface"
+  aria-labelledby="contacto-wa-h"
+  data-pagefind-ignore
+>
+  <header class="border-b border-line px-6 py-6 sm:px-8">
+    <p class="eyebrow">Contacto directo</p>
+    <h2 id="contacto-wa-h" class="display mt-2 text-2xl">¿No encontraste tu respuesta?</h2>
+    <p class="mt-3 text-sm leading-relaxed text-ink-2 text-pretty">
+      Escríbenos por WhatsApp: dudas del archivo, altas de tienda y correcciones a una ficha.
+      No vendemos Gunpla —la compra siempre es con la tienda—, así que no preguntes por precios
+      ni disponibilidad: eso está en cada ficha del directorio.
+    </p>
+  </header>
+
+  <form
+    id="wa-form"
+    class="flex flex-1 flex-col gap-5 px-6 py-6 sm:px-8"
+    data-wa={numero}
+  >
+    <div>
+      <label for="wa-asunto" class:list={["eyebrow block", !activo && "text-ink-3"]}>Asunto</label>
+      <select
+        id="wa-asunto"
+        name="asunto"
+        class="mt-2 min-h-11 w-full rounded-sm border border-line bg-paper px-3 text-sm text-ink transition-colors focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand/30 disabled:cursor-not-allowed disabled:border-line/70 disabled:bg-line/20 disabled:text-ink-3 disabled:placeholder:text-ink-3/70"
+        disabled={!activo}
+      >
+        {asuntos.map((a) => <option value={a}>{a}</option>)}
+      </select>
+    </div>
+
+    <div>
+      <label for="wa-nombre" class:list={["eyebrow block", !activo && "text-ink-3"]}>Tu nombre</label>
+      <input
+        id="wa-nombre"
+        name="nombre"
+        type="text"
+        autocomplete="name"
+        required
+        maxlength="60"
+        placeholder="Cómo te llamamos"
+        class="mt-2 min-h-11 w-full rounded-sm border border-line bg-paper px-3 text-sm text-ink placeholder:text-ink-3 transition-colors focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand/30 disabled:cursor-not-allowed disabled:border-line/70 disabled:bg-line/20 disabled:text-ink-3 disabled:placeholder:text-ink-3/70"
+        disabled={!activo}
+      />
+    </div>
+
+    <div class="flex flex-1 flex-col">
+      <label for="wa-mensaje" class:list={["eyebrow block", !activo && "text-ink-3"]}>Mensaje</label>
+      <textarea
+        id="wa-mensaje"
+        name="mensaje"
+        rows="5"
+        required
+        maxlength="600"
+        placeholder="Cuéntanos en una o dos líneas qué necesitas."
+        class="mt-2 min-h-[7.5rem] w-full flex-1 resize-y rounded-sm border border-line bg-paper px-3 py-2.5 text-sm leading-relaxed text-ink placeholder:text-ink-3 transition-colors focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand/30 disabled:cursor-not-allowed disabled:border-line/70 disabled:bg-line/20 disabled:text-ink-3 disabled:placeholder:text-ink-3/70"
+        disabled={!activo}
+      ></textarea>
+    </div>
+
+    <div class="mt-auto">
+      {activo ? (
+        <button type="submit" class="btn-primary w-full">Abrir WhatsApp</button>
+      ) : (
+        <button type="button" class="btn w-full cursor-not-allowed border border-line bg-line/40 text-ink-3" disabled aria-disabled="true">
+          WhatsApp no disponible todavía
+        </button>
+      )}
+
+      <p class="mt-3 font-mono text-[11px] leading-relaxed text-ink-3">
+        {activo
+          ? 'Se abre WhatsApp con el mensaje ya escrito. Nada se envía desde este sitio ni se guarda aquí.'
+          : 'El canal de WhatsApp aún no está abierto.'}
+        {' '}Por correo:{' '}
+        <a href={`mailto:${SITE.email}`} class="link">{SITE.email}</a>.
+      </p>
+    </div>
+  </form>
+</section>
+
+<script>
+  const form = document.getElementById('wa-form');
+
+  if (form instanceof HTMLFormElement) {
+    const numero = form.dataset.wa ?? '';
+
+    form.addEventListener('submit', (evento) => {
+      evento.preventDefault();
+      if (!numero) return;
+
+      const datos = new FormData(form);
+      const asunto = String(datos.get('asunto') ?? '').trim();
+      const nombre = String(datos.get('nombre') ?? '').trim();
+      const mensaje = String(datos.get('mensaje') ?? '').trim();
+
+      const texto = `Hola GUNDAMMX.\nAsunto: ${asunto}\nNombre: ${nombre}\n\n${mensaje}`;
+      window.open(
+        `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`,
+        '_blank',
+        'noopener,noreferrer',
+      );
+    });
+  }
+</script>
