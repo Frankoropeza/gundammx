@@ -13,7 +13,7 @@ especificaciones:
   - { etiqueta: "Sistema", valor: "Psicoframe" }
   - { etiqueta: "Armamento característico", valor: "Fin funnels" }
 resumen: El último Gundam de Amuro Ray. Diseñado por él mismo, con psicoframe y fin funnels, para enfrentar al Sazabi de Char.
-relacionados: [msn-04-sazabi, rx-78-2-gundam]
+relacionados: [msn-04-sazabi, rx-78-2-gundam, f91-gundam-f91]
 kits: []
 codigo: MS-UC-RX-93
 fuentes:
