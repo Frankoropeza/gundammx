@@ -14,9 +14,9 @@ resumen: En un Universal Century donde la Guerra de un Año terminó de otra for
 relevancia: La colaboración entre Sunrise y el estudio de Evangelion, y la obra que disparó las ventas de la marca en 2025.
 orden_recomendado: 11
 ruta: alternativa
-mobile_suits: []
-pilotos: [char-aznable]
-facciones: []
+mobile_suits: [gms-omega-gquuuuuux, gms-alpha-red-gundam]
+pilotos: [char-aznable, amate-yuzuriha]
+facciones: [principado-de-zeon, federacion-terrestre]
 disponibilidad_mx: ['Película "Beginning" en Cinépolis, 6 de marzo de 2025 (Konnichiwa Festival)', 'Serie en Prime Video']
 codigo: SER-UC-0085-ALT
 fuentes:

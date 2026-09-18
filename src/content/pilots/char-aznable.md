@@ -4,7 +4,7 @@ alias: ['Casval Rem Deikun', 'Quattro Bajeena', 'Édouard Mass', 'El Cometa Rojo
 universo: uc
 facciones: [principado-de-zeon, aeug]
 series: [mobile-suit-gundam, zeta-gundam, chars-counterattack, gquuuuuux]
-mobile_suits: [ms-06-zaku-ii, msn-04-sazabi]
+mobile_suits: [ms-06-zaku-ii, msn-04-sazabi, gms-alpha-red-gundam]
 rol: Antagonista
 resumen: El as de Zeon con máscara, hijo del fundador del movimiento independentista y rival de Amuro durante catorce años. El personaje más influyente de la franquicia.
 codigo: PIL-UC-CHAR
