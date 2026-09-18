@@ -8,7 +8,7 @@ categoria: series
 nivel: principiante
 lectura_min: 3
 universos: []
-series: []
+series: [the-witch-from-mercury, requiem-for-vengeance]
 keyword_principal: 'gundam live action'
 keywords_secundarias:
   - 'gundam serie live action'

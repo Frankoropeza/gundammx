@@ -7,7 +7,7 @@ categoria: mobile-suits
 nivel: intermedio
 lectura_min: 4
 universos: ['uc', 'ac', 'ce', 'ad', 'pd', 'as', 'cc']
-series: ['mobile-suit-gundam', 'zeta-gundam', 'chars-counterattack', 'gundam-unicorn']
+series: ['mobile-suit-gundam', 'zeta-gundam', 'chars-counterattack', 'gundam-unicorn', '08th-ms-team', 'requiem-for-vengeance', 'gquuuuuux', 'gundam-f91']
 keyword_principal: 'gundam cronologia'
 keywords_secundarias:
   - 'serie gundam orden cronologico'
@@ -57,12 +57,13 @@ Es la línea original y la única con continuidad interna real: cada obra hereda
 | Año de ficción | Obra | Qué ocurre |
 |---|---|---|
 | UC 0079 | Mobile Suit Gundam | La Guerra de un Año, el conflicto fundacional de toda la línea |
-| UC 0079 | The 08th MS Team | El mismo conflicto visto desde una unidad de infantería en la Tierra |
-| UC 0079 | Requiem for Vengeance | Otro frente de la Guerra de un Año |
-| UC 0085 | GQuuuuuuX | Línea alterna que se desprende del UC |
+| UC 0079 | [The 08th MS Team](/series/08th-ms-team/) | El mismo conflicto visto desde una unidad de infantería en la Tierra |
+| UC 0079 | [Requiem for Vengeance](/series/requiem-for-vengeance/) | Otro frente de la Guerra de un Año |
+| UC 0085 | [GQuuuuuuX](/series/gquuuuuux/) | Línea alterna que se desprende del UC |
 | UC 0087 | Zeta Gundam | Ocho años después: un conflicto interno dentro del bando vencedor |
 | UC 0093 | Char's Counterattack | El enfrentamiento final entre los dos protagonistas de la línea |
 | UC 0096 | Gundam Unicorn | Dieciséis años después de la Guerra de un Año, tres después de Char's Counterattack |
+| UC 0123 | [Gundam F91](/series/gundam-f91/) | Casi tres décadas después, el conflicto entre la Federación y la milicia insurgente Crossbone Vanguard |
 
 Los años de ficción de esta tabla son los que están registrados y verificados en las fichas de serie de este sitio.
 

@@ -8,7 +8,7 @@ categoria: empezar
 lectura_min: 8
 destacado: true
 universos: [uc, ac, ce, ad, pd, as, cc]
-series: [the-witch-from-mercury, mobile-suit-gundam, gundam-wing, iron-blooded-orphans, zeta-gundam, chars-counterattack, gundam-unicorn]
+series: [the-witch-from-mercury, mobile-suit-gundam, gundam-wing, iron-blooded-orphans, zeta-gundam, chars-counterattack, gundam-unicorn, gquuuuuux, gundam-f91]
 referencias:
   - { titulo: 'Mobile Suit Gundam — Wikipedia', url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam' }
   - { titulo: 'Universal Century — Wikipedia', url: 'https://en.wikipedia.org/wiki/Universal_Century' }
@@ -69,7 +69,7 @@ Aquí sí importa el orden, porque las obras se responden entre sí. La ruta mí
 *Mobile Suit Gundam* (UC 0079), *Zeta Gundam* (UC 0087), *Char's Counterattack* (UC 0093) y *Unicorn*
 (UC 0096). Con ellos tienes el tronco completo; el resto de la línea es opcional.
 
-El orden detallado —qué presupone cada obra, cuáles se pueden saltar y dónde encajan *ZZ*, *Hathaway*, *F91* y
+El orden detallado —qué presupone cada obra, cuáles se pueden saltar y dónde encajan *ZZ*, *Hathaway*, [*F91*](/series/gundam-f91/) y
 *Victory*— está en la [guía del Universal Century](/universos/uc/), que es también donde ubicamos las
 facciones y las máquinas de la línea. La [cronología completa](/cronologia/) ubica todas las obras por año de
 ficción, incluidas las de las otras seis líneas.
@@ -83,7 +83,7 @@ terminado Gundam así.
 
 ## Una nota sobre GQuuuuuuX
 
-La serie de 2025 transcurre en un Universal Century alternativo, en UC 0085, y su gracia está en reconocer
+[La serie de 2025](/series/gquuuuuux/) transcurre en un Universal Century alternativo, en UC 0085, y su gracia está en reconocer
 qué cambió respecto al original. Es la obra que explica por qué Gundam volvió al centro de la conversación,
 pero no es un punto de entrada: guárdala para después de la serie de 1979.
 

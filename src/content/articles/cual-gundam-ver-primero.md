@@ -8,7 +8,7 @@ categoria: empezar
 lectura_min: 3
 destacado: false
 universos: [uc, ac, ce, ad, pd, as]
-series: [the-witch-from-mercury, iron-blooded-orphans, gundam-wing, mobile-suit-gundam, gundam-00, gundam-seed]
+series: [the-witch-from-mercury, iron-blooded-orphans, gundam-wing, mobile-suit-gundam, gundam-00, gundam-seed, gquuuuuux]
 referencias:
   - { titulo: 'Mobile Suit Gundam — Wikipedia', url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam' }
   - { titulo: 'The Witch from Mercury — Wikipedia', url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_The_Witch_from_Mercury' }

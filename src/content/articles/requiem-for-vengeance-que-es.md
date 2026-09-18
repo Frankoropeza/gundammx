@@ -60,7 +60,7 @@ Transcurre en **UC 0079**, durante las **etapas finales de la Guerra de un Año*
 
 Eso la sitúa en el mismo año que la serie original de 1979 y que otras obras que cubren frentes distintos del mismo conflicto. Cómo conviven todas en el mismo año está explicado en [la cronología de Gundam](/articulos/cronologia-de-gundam-explicada/).
 
-Como todas las obras de ese tramo, se ve desde el lado de una unidad concreta y no desde el mando: es la Guerra de un Año a ras de suelo.
+Como todas las obras de ese tramo, se ve desde el lado de una unidad concreta y no desde el mando: es la Guerra de un Año a ras de suelo. La protagoniza [Iria Solari](/personajes/iria-solari/), capitana del Escuadrón Lobo Rojo del Principado de Zeon.
 
 ## A quién le va a gustar
 

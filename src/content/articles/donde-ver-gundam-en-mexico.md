@@ -8,7 +8,7 @@ categoria: donde-ver
 lectura_min: 6
 destacado: false
 universos: [uc, ac, ce, as]
-series: [mobile-suit-gundam, gundam-wing, gundam-seed, the-witch-from-mercury, requiem-for-vengeance]
+series: [mobile-suit-gundam, gundam-wing, gundam-seed, the-witch-from-mercury, requiem-for-vengeance, gquuuuuux]
 referencias:
   - { titulo: 'Mobile Suit Gundam — Crunchyroll', url: 'https://www.crunchyroll.com/es/series/GKEH2G9XV/mobile-suit-gundam' }
   - { titulo: 'Cómo, cuándo y dónde ver gratis Mobile Suit Gundam SEED en español — Azteca 7', url: 'https://www.tvazteca.com/azteca7/series/como-cuando-y-donde-ver-gratis-mobile-suit-gundam-seed-en-espanol-ma-notas' }

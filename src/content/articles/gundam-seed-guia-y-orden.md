@@ -7,7 +7,7 @@ categoria: series
 nivel: principiante
 lectura_min: 4
 universos: ['ce']
-series: ['gundam-seed']
+series: ['gundam-seed', 'gundam-seed-destiny', 'gundam-seed-freedom']
 keyword_principal: 'gundam seed'
 keywords_secundarias:
   - 'en que orden ver gundam seed'
@@ -47,15 +47,15 @@ Su función dentro de la franquicia fue clara: reiniciar Gundam para un público
 
 ## El orden de la saga
 
-### 1. Mobile Suit Gundam SEED
+### 1. [Mobile Suit Gundam SEED](/series/gundam-seed/)
 
 La serie original. 50 episodios. Es el punto de entrada obligatorio.
 
-### 2. Mobile Suit Gundam SEED Destiny
+### 2. [Mobile Suit Gundam SEED Destiny](/series/gundam-seed-destiny/)
 
 La secuela directa: otros **50 episodios**, emitidos entre el **9 de octubre de 2004 y el 1 de octubre de 2005**. Continúa la Cosmic Era con un protagonista nuevo, Shinn Asuka, sin abandonar a los personajes de la primera serie.
 
-### 3. Mobile Suit Gundam SEED Freedom
+### 3. [Mobile Suit Gundam SEED Freedom](/series/gundam-seed-freedom/)
 
 La película, estrenada en Japón el **26 de enero de 2024**, con **124 minutos** de duración y de nuevo bajo dirección de Mitsuo Fukuda. Transcurre en el año **Cosmic Era 75**, un año después del final de Destiny, y retoma las tramas que quedaron abiertas de Kira Yamato, Athrun Zala y Shinn Asuka.
 

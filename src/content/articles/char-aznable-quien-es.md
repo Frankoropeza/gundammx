@@ -7,7 +7,7 @@ categoria: mobile-suits
 nivel: intermedio
 lectura_min: 3
 universos: ['uc']
-series: ['mobile-suit-gundam', 'zeta-gundam', 'chars-counterattack']
+series: ['mobile-suit-gundam', 'zeta-gundam', 'chars-counterattack', 'gquuuuuux']
 keyword_principal: 'char aznable'
 keywords_secundarias:
   - 'quien es char aznable'
@@ -82,7 +82,7 @@ Ninguna de las tres etapas se entiende sin las anteriores. Es la razón por la q
 | Mobile Suit Gundam | UC 0079 | Char Aznable | Zaku rojo | Antagonista |
 | Zeta Gundam | UC 0087 | Quattro Bajeena | Mobile suits del AEUG | Aliado de los protagonistas |
 | Char's Counterattack | UC 0093 | Char Aznable | Sazabi | Antagonista principal |
-| GQuuuuuuX | UC 0085 (línea alterna) | Char | Red Gundam | Presencia en continuidad alterna |
+| [GQuuuuuuX](/series/gquuuuuux/) | UC 0085 (línea alterna) | Char | [Red Gundam](/mobile-suits/gms-alpha-red-gundam/) | Presencia en continuidad alterna |
 
 ## Ruta de visionado centrada en el personaje
 

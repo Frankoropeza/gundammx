@@ -8,7 +8,7 @@ categoria: mobile-suits
 lectura_min: 7
 destacado: false
 universos: [uc]
-series: [mobile-suit-gundam, zeta-gundam, chars-counterattack, gundam-unicorn]
+series: [mobile-suit-gundam, zeta-gundam, chars-counterattack, gundam-unicorn, 08th-ms-team, requiem-for-vengeance, mobile-suit-gundam-hathaway, gundam-f91]
 referencias:
   - { titulo: 'Universal Century — Wikipedia', url: 'https://en.wikipedia.org/wiki/Universal_Century' }
   - { titulo: 'Mobile Suit Gundam — Wikipedia', url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam' }
@@ -65,13 +65,13 @@ Que la misma empresa arme a enemigos es una de las observaciones más agudas de 
 
 | Año UC | Obra | Formato |
 |---|---|---|
-| 0079 | *Mobile Suit Gundam* · *The 08th MS Team* · *Requiem for Vengeance* | TV · OVA · Web |
+| 0079 | *Mobile Suit Gundam* · [*The 08th MS Team*](/series/08th-ms-team/) · [*Requiem for Vengeance*](/series/requiem-for-vengeance/) | TV · OVA · Web |
 | 0087 | *Zeta Gundam* | TV |
 | 0088 | *ZZ Gundam* | TV |
 | 0093 | *Char's Counterattack* | Película |
 | 0096 | *Unicorn* | OVA |
-| 0105 | *Hathaway* | Películas |
-| 0123 | *F91* | Película |
+| 0105 | [*Hathaway*](/series/mobile-suit-gundam-hathaway/) | Películas |
+| 0123 | [*F91*](/series/gundam-f91/) | Película |
 | 0153 | *Victory Gundam* | TV |
 
 *GQuuuuuuX* (2025) transcurre en un UC alternativo, en 0085, y no forma parte de esta línea.
