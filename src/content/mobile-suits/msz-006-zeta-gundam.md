@@ -14,7 +14,7 @@ especificaciones:
   - { etiqueta: "Sistema", valor: "Biosensor" }
 resumen: "El primer Gundam transformable: robot y nave en una sola máquina, diseñado en parte por el propio piloto que lo usa."
 relacionados: [rx-78-2-gundam, rx-0-unicorn-gundam, mrx-009-psycho-gundam]
-kits: []
+kits: [mg-zeta-gundam-verka]
 codigo: MS-UC-MSZ-006
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Zeta_Gundam

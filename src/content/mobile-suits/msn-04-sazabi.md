@@ -14,7 +14,7 @@ especificaciones:
   - { etiqueta: "Armamento", valor: "Funnels controlados por psicomu" }
 resumen: "El mobile suit definitivo de Char Aznable: rojo, masivo y equipado con psicoframe. Rival directo del ν Gundam."
 relacionados: [rx-93-nu-gundam, ms-06-zaku-ii]
-kits: []
+kits: [rg-sazabi]
 codigo: MS-UC-MSN-04
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_Char%27s_Counterattack
