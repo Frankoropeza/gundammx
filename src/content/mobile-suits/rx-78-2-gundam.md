@@ -13,7 +13,7 @@ especificaciones:
   - { etiqueta: "Operador", valor: "White Base" }
   - { etiqueta: "Armamento característico", valor: "Beam rifle, beam saber, escudo" }
 resumen: El primer Gundam. Prototipo de la Federación que un civil, Amuro Ray, termina pilotando durante la Guerra de un Año.
-relacionados: [ms-06-zaku-ii, rx-93-nu-gundam]
+relacionados: [ms-06-zaku-ii, rx-93-nu-gundam, rx-78ge-gundam-ex]
 kits: [mg-rx-78-2-ver-ka]
 codigo: MS-UC-RX-78-2
 fuentes:

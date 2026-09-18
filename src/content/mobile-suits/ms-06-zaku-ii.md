@@ -13,7 +13,7 @@ especificaciones:
   - { etiqueta: "Variante célebre", valor: "MS-06S, tipo comandante, de Char Aznable" }
   - { etiqueta: "Rasgo distintivo", valor: "Monoocular y hombrera con pinchos" }
 resumen: "El mobile suit de producción de Zeon. Sin él no hay guerra: es la máquina que hizo posible la Guerra de un Año."
-relacionados: [rx-78-2-gundam, msn-04-sazabi]
+relacionados: [rx-78-2-gundam, msn-04-sazabi, ms-06rb-zaku-ii-solari]
 kits: []
 codigo: MS-UC-MS-06
 fuentes:

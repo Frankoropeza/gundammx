@@ -14,8 +14,8 @@ relevancia: La primera serie de Gundam producida para Netflix y en 3D con Unreal
 orden_recomendado: 12
 orden_cronologico: 3
 ruta: alternativa
-mobile_suits: [ms-06-zaku-ii]
-pilotos: []
+mobile_suits: [ms-06-zaku-ii, ms-06rb-zaku-ii-solari, rx-78ge-gundam-ex]
+pilotos: [iria-solari]
 facciones: [principado-de-zeon, federacion-terrestre]
 disponibilidad_mx: ['Netflix, desde el 17 de octubre de 2024, como "Gundam: Réquiem para una venganza"']
 codigo: SER-UC-0079-RFV
