@@ -14,7 +14,7 @@ resumen: Kira Yamato, un Coordinador que vive entre Naturales, termina pilotando
 relevancia: La reinvención de Gundam para el siglo XXI y la línea más popular de los 2000 en Japón.
 orden_recomendado: 8
 ruta: alternativa
-mobile_suits: [gat-x105-strike-gundam]
+mobile_suits: [gat-x105-strike-gundam, zgmf-x10a-freedom-gundam]
 pilotos: [kira-yamato]
 facciones: [zaft]
 disponibilidad_mx: ['Azteca 7 (Planeta Anime), desde noviembre de 2025']

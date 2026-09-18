@@ -14,7 +14,7 @@ resumen: Cinco Gundams descienden a la Tierra desde las colonias con la Operaci�
 relevancia: La serie que llevó Gundam a Occidente y a la televisión abierta mexicana.
 orden_recomendado: 3
 ruta: empieza-aqui
-mobile_suits: [xxxg-01w-wing-gundam]
+mobile_suits: [xxxg-01w-wing-gundam, xxxg-00w0-wing-gundam-zero, oz-13ms-gundam-epyon]
 pilotos: [heero-yuy]
 facciones: [oz]
 disponibilidad_mx:

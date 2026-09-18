@@ -4,7 +4,7 @@ alias: []
 universo: ac
 facciones: [oz]
 series: [gundam-wing]
-mobile_suits: [xxxg-01w-wing-gundam]
+mobile_suits: [xxxg-01w-wing-gundam, xxxg-00w0-wing-gundam-zero, oz-13ms-gundam-epyon]
 rol: Protagonista
 resumen: Piloto del Wing Gundam en la Operación Meteoro. Entrenado como arma desde niño, es el protagonista de Gundam más conocido en México.
 codigo: PIL-AC-HEERO

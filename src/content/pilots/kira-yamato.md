@@ -4,7 +4,7 @@ alias: []
 universo: ce
 facciones: [zaft]
 series: [gundam-seed]
-mobile_suits: [gat-x105-strike-gundam]
+mobile_suits: [gat-x105-strike-gundam, zgmf-x10a-freedom-gundam]
 rol: Protagonista
 resumen: Un Coordinador que vive entre Naturales y termina pilotando el Strike Gundam de la Alianza cuando ZAFT ataca su colonia neutral.
 codigo: PIL-CE-KIRA
