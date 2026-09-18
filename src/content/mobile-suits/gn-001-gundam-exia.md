@@ -13,7 +13,7 @@ especificaciones:
   - { etiqueta: "Propulsión", valor: "GN Drive original" }
   - { etiqueta: "Armamento", valor: "GN Sword y siete espadas" }
 resumen: El Gundam de Setsuna F. Seiei. Especializado en combate cercano y movido por un GN Drive, la tecnología que hace imbatible a Celestial Being.
-relacionados: [rx-78-2-gundam]
+relacionados: [rx-78-2-gundam, gn-002-gundam-dynames, gn-003-gundam-kyrios, gn-005-gundam-virtue]
 kits: []
 codigo: MS-AD-GN-001
 fuentes:

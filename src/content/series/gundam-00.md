@@ -14,8 +14,8 @@ resumen: Celestial Being, una organización privada con cuatro Gundams tecnológ
 relevancia: La primera serie de Gundam en alta definición y la más cercana a la geopolítica real.
 orden_recomendado: 5
 ruta: alternativa
-mobile_suits: [gn-001-gundam-exia]
-pilotos: [setsuna-f-seiei]
+mobile_suits: [gn-001-gundam-exia, gn-002-gundam-dynames, gn-003-gundam-kyrios, gn-005-gundam-virtue]
+pilotos: [setsuna-f-seiei, lockon-stratos, allelujah-haptism, tieria-erde]
 facciones: [celestial-being]
 codigo: SER-AD-2307
 fuentes:
