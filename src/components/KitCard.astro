@@ -2,13 +2,13 @@
 import type { CollectionEntry } from 'astro:content';
 import { GRADOS } from '@config/site';
 import { rangoEstimadoMXN, pesos } from '@lib/precio';
-interface Props { kit: CollectionEntry<'kits'> }
-const { kit } = Astro.props;
+interface Props { kit: CollectionEntry<'kits'>; class?: string }
+const { kit, class: className = '' } = Astro.props;
 const d = kit.data;
 const rango = d.precio_jp_jpy ? rangoEstimadoMXN(d.precio_jp_jpy) : null;
 ---
 
-<article class="card relative p-5">
+<article class:list={['card relative p-5', className]}>
   <div class="flex items-center justify-between">
     <span class="tag">{GRADOS[d.grado].etiqueta}</span>
     <span class="font-mono text-xs text-ink-3">{d.escala}</span>

@@ -37,9 +37,9 @@ import imgGunpla from '../../assets/hub-gunpla.jpg';
       <p>Si es tu primer kit, el orden útil es este: elige grado, calcula lo que <a href="/articulos/cuanto-cuesta-un-gunpla-en-mexico/">debería costarte en pesos</a>, cómpralo en un <a href="/articulos/donde-comprar-gunpla-en-mexico/">canal donde puedas verificar el origen</a> y ármalo siguiendo la <a href="/articulos/como-armar-tu-primer-gunpla/">guía del primer Gunpla</a>, que abre con la única herramienta que de verdad hace falta.</p>
     </div>
     {guiasHobby.length > 0 && (
-      <ul class="mt-8 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-3">
+      <ul class="mt-8 flex flex-wrap border-l border-t border-line">
         {guiasHobby.map((g) => (
-          <li class="card p-6">
+          <li class="card grow basis-full sm:basis-1/2 lg:basis-1/3 p-6">
             <p class="font-mono text-xs uppercase tracking-[0.14em] text-ink-3">Guía</p>
             <h3 class="display mt-3 text-xl"><a href={`/articulos/${g.id}/`} class="link-quiet">{g.data.titulo}</a></h3>
             <p class="mt-2 text-sm text-ink-2">{g.data.resumen}</p>
@@ -51,10 +51,10 @@ import imgGunpla from '../../assets/hub-gunpla.jpg';
   <div class="mt-10"><GunplaBlock grados={grados} totalTiendas={tiendas.length} totalVerificadas={verificadas.length} guias={guias.map((g) => ({ titulo: g.data.titulo, href: `/articulos/${g.id}/`, resumen: g.data.resumen, lectura: g.data.lectura_min }))} /></div>
   <section class="grid-page py-16" aria-labelledby="kits-h">
     <div class="flex items-end justify-between gap-6"><h2 id="kits-h" class="display text-3xl">Kits con precio de referencia</h2><a href="/kits/" class="link text-sm">Todos los kits</a></div>
-    <div class="mt-8 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-5">{kits.map((k) => <KitCard kit={k} />)}</div>
+    <div class="mt-8 flex flex-wrap border-l border-t border-line">{kits.map((k) => <KitCard kit={k} class="grow basis-full sm:basis-1/2 lg:basis-1/5" />)}</div>
   </section>
   <section class="grid-page pb-16" aria-labelledby="tiendas-h">
     <div class="flex items-end justify-between gap-6"><h2 id="tiendas-h" class="display text-3xl">Tiendas verificadas en México</h2><a href="/tiendas/" class="link text-sm">Directorio completo</a></div>
-    <div class="mt-8 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{verificadas.slice(0, 8).map((t) => <DirectoryCard tienda={t} />)}</div>
+    <div class="mt-8 flex flex-wrap border-l border-t border-line">{verificadas.slice(0, 8).map((t) => <DirectoryCard tienda={t} class="grow basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4" />)}</div>
   </section>
 </BaseLayout>

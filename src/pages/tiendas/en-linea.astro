@@ -53,8 +53,8 @@ const schemas = [
     </div>
 
     <h2 class="display mt-14 text-2xl md:text-3xl">Tiendas Gundam con envío nacional</h2>
-    <div class="mt-6 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-      {tiendas.map((t) => <DirectoryCard tienda={t} />)}
+    <div class="mt-6 flex flex-wrap border-l border-t border-line">
+      {tiendas.map((t) => <DirectoryCard tienda={t} class="grow basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 2xl:basis-1/5" />)}
     </div>
   </div>
 </BaseLayout>

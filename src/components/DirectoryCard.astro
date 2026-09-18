@@ -10,8 +10,8 @@ import ChipsGrado from '@components/ChipsGrado.astro';
 import { nombreEstado } from '@lib/estados';
 import { estadosDe } from '@lib/directorio';
 
-interface Props { tienda: CollectionEntry<'tiendas'>; prioridad?: boolean }
-const { tienda, prioridad = false } = Astro.props;
+interface Props { tienda: CollectionEntry<'tiendas'>; prioridad?: boolean; class?: string }
+const { tienda, prioridad = false, class: className = '' } = Astro.props;
 const d = tienda.data;
 
 const categorias: Record<string, string> = {
@@ -40,7 +40,7 @@ const dataEstados = estadosDe(tienda).join('|');
 ---
 
 <article
-  class="card group relative"
+  class:list={['card group relative', className]}
   data-categoria={d.categoria}
   data-ciudades={dataCiudades}
   data-estados={dataEstados}
