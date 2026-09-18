@@ -14,9 +14,9 @@ resumen: En una Tierra que vive como a principios del siglo XX, los descendiente
 relevancia: La serie del vigésimo aniversario y, según su propia lógica, el final de todas las cronologías.
 orden_recomendado: 10
 ruta: alternativa
-mobile_suits: []
-pilotos: []
-facciones: []
+mobile_suits: [system-a99-turn-a-gundam]
+pilotos: [loran-cehack]
+facciones: [milicia-terrestre, raza-lunar]
 codigo: SER-CC-2345
 fuentes:
   - https://en.wikipedia.org/wiki/Turn_A_Gundam
