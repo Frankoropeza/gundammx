@@ -1,10 +1,10 @@
 ---
 import { AVISO_INDEPENDENCIA, ENLACES_OFICIALES } from '@config/site';
-interface Props { compacto?: boolean }
-const { compacto = false } = Astro.props;
+interface Props { compacto?: boolean; borde?: boolean }
+const { compacto = false, borde = true } = Astro.props;
 ---
 
-<aside class:list={['border-t border-line pt-6 text-ink-2', compacto ? 'text-xs' : 'text-sm']} aria-label="Aviso de independencia">
+<aside class:list={['text-ink-2', borde && 'border-t border-line pt-6', compacto ? 'text-xs' : 'text-sm']} aria-label="Aviso de independencia">
   <p class="max-w-prose text-pretty">{AVISO_INDEPENDENCIA}</p>
   <p class="mt-2">
     {ENLACES_OFICIALES.map((e, i) => (
