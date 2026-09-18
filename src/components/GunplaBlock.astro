@@ -1,6 +1,11 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-interface Props { grados: CollectionEntry<'gunpla'>[]; totalTiendas: number; totalVerificadas: number; guias: { titulo: string; href: string }[] }
+interface Props {
+  grados: CollectionEntry<'gunpla'>[];
+  totalTiendas: number;
+  totalVerificadas: number;
+  guias: { titulo: string; href: string; resumen: string; lectura: number }[];
+}
 const { grados, totalTiendas, totalVerificadas, guias } = Astro.props;
 ---
 <section class="border-y border-line bg-surface" aria-labelledby="gunpla-h">
@@ -22,27 +27,39 @@ const { grados, totalTiendas, totalVerificadas, guias } = Astro.props;
       </div>
     </div>
 
-    <div class="lg:col-span-5">
+    <div class="lg:col-span-4">
       <h3 class="class-line">Grados, de menor a mayor complejidad</h3>
       <ol class="mt-4 divide-y divide-line border-y border-line">
         {grados.map((g) => (
-          <li class="flex items-baseline gap-5 py-3">
-            <span class="w-12 shrink-0 font-mono text-sm text-ink">{g.data.etiqueta}</span>
-            <div class="min-w-0 flex-1">
-              <a href={`/gunpla/${g.id}/`} class="link-quiet">{g.data.nombre}</a>
-              <span class="ml-2 font-mono text-xs text-ink-3">{g.data.escala} · desde {g.data.anio_lanzamiento}</span>
+          <li class="py-3.5">
+            <div class="flex items-baseline gap-5">
+              <span class="w-12 shrink-0 font-mono text-sm text-ink">{g.data.etiqueta}</span>
+              <div class="min-w-0 flex-1">
+                <a href={`/gunpla/${g.id}/`} class="link-quiet">{g.data.nombre}</a>
+                <span class="ml-2 font-mono text-xs text-ink-3">{g.data.escala} · desde {g.data.anio_lanzamiento}</span>
+              </div>
+              <span class="shrink-0 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">{g.data.dificultad}</span>
             </div>
-            <span class="shrink-0 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">{g.data.dificultad}</span>
+            <p class="mt-1.5 pl-[3.25rem] text-sm text-ink-2 text-pretty">{g.data.resumen}</p>
           </li>
         ))}
       </ol>
     </div>
 
-    <div class="lg:col-span-3">
-      <h3 class="class-line">Guías del hobby</h3>
-      <ul class="mt-4 space-y-3">
-        {guias.map((g) => <li><a href={g.href} class="link-quiet text-sm">{g.titulo}</a></li>)}
-      </ul>
+    <div class="lg:col-span-4">
+      <div class="flex items-end justify-between gap-4">
+        <h3 class="class-line">Guías del hobby</h3>
+        <a href="/articulos/categoria/comprar/" class="link text-xs shrink-0">Ver todas</a>
+      </div>
+      <ol class="mt-4 divide-y divide-line border-y border-line">
+        {guias.map((g) => (
+          <li class="py-3.5">
+            <a href={g.href} class="link-quiet">{g.titulo}</a>
+            <p class="mt-1.5 text-sm text-ink-2 text-pretty">{g.resumen}</p>
+            <p class="mt-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">{g.lectura} min de lectura</p>
+          </li>
+        ))}
+      </ol>
     </div>
   </div>
 </section>

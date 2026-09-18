@@ -162,6 +162,6 @@ const entradas = [
     </div>
   </section>
 
-  <GunplaBlock grados={grados} totalTiendas={tiendas.length} totalVerificadas={verificadas.length} guias={guias.map((g) => ({ titulo: g.data.titulo, href: `/articulos/${g.id}/` }))} />
+  <GunplaBlock grados={grados} totalTiendas={tiendas.length} totalVerificadas={verificadas.length} guias={guias.map((g) => ({ titulo: g.data.titulo, href: `/articulos/${g.id}/`, resumen: g.data.resumen, lectura: g.data.lectura_min }))} />
 
 </BaseLayout>
