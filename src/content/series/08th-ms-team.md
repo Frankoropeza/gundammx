@@ -15,8 +15,8 @@ relevancia: La mejor puerta al UC para quien prefiere guerra a espacio.
 orden_recomendado: 9
 orden_cronologico: 2
 ruta: profundiza
-mobile_suits: []
-pilotos: []
+mobile_suits: [rx-79g-ez8]
+pilotos: [shiro-amada]
 facciones: [federacion-terrestre, principado-de-zeon]
 codigo: SER-UC-0079-08
 fuentes:
