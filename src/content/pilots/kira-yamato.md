@@ -3,14 +3,15 @@ nombre: Kira Yamato
 alias: []
 universo: ce
 facciones: [zaft]
-series: [gundam-seed]
-mobile_suits: [gat-x105-strike-gundam, zgmf-x10a-freedom-gundam]
+series: [gundam-seed, gundam-seed-freedom]
+mobile_suits: [gat-x105-strike-gundam, zgmf-x10a-freedom-gundam, zgmf-x20a-strike-freedom-gundam, mighty-strike-freedom-gundam]
 rol: Protagonista
 resumen: Un Coordinador que vive entre Naturales y termina pilotando el Strike Gundam de la Alianza cuando ZAFT ataca su colonia neutral.
 codigo: PIL-CE-KIRA
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_SEED
-actualizado: '2026-09-05'
+  - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_SEED_Freedom
+actualizado: '2026-09-18'
 ---
 
 Kira Yamato es un estudiante de la colonia neutral de Heliópolis y un Coordinador: un humano con mejoras

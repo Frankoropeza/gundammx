@@ -13,7 +13,7 @@ especificaciones:
   - { etiqueta: "Sistema", valor: "Reactor de deuterio híper compacto + propulsión Voiture Lumiere" }
   - { etiqueta: "Armamento", valor: "8 DRAGOON del sistema Super DRAGOON, cañón Callidus, sables de haz Super Lacerta" }
 resumen: La evolución directa del Freedom Gundam. Ocho unidades DRAGOON de combate a distancia y un reactor de nueva generación lo vuelven uno de los mobile suits más reproducidos de la línea Cosmic Era.
-relacionados: [zgmf-x10a-freedom-gundam]
+relacionados: [zgmf-x10a-freedom-gundam, mighty-strike-freedom-gundam]
 kits: []
 codigo: MS-CE-ZGMF-X20A
 fuentes:
