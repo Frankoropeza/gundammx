@@ -15,7 +15,7 @@ especificaciones:
 resumen: "Prototipo Gundam diseñado para pilotos Newtype, robado por Amate Yuzuriha durante un enfrentamiento en la colonia Izuma. Su unidad Endymion, un sistema de origen misterioso, está ligada al fenómeno 'Zeknova' y al destino de Lalah Sune."
 relacionados:
   - gms-alpha-red-gundam
-kits: []
+kits: [hg-gquuuuuux]
 codigo: MS-UC-GMS-OMEGA
 fuentes:
   - "https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_GQuuuuuuX"

@@ -16,7 +16,7 @@ resumen: "En la línea alterna de UC 0085, Char Aznable captura el RX-78-02 Whit
 relacionados:
   - gms-omega-gquuuuuux
   - rx-78-2-gundam
-kits: []
+kits: [hg-red-gundam]
 codigo: MS-UC-GMS-ALPHA
 fuentes:
   - "https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_GQuuuuuuX"
