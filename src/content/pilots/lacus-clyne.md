@@ -12,6 +12,9 @@ fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_SEED_Freedom
 estado_editorial: verificado
 actualizado: '2026-09-18'
+imagen: ../../assets/gen-per-lacus-clyne.jpg
+imagen_alt: "Escenario vacío con un micrófono bajo una luz rosa suave."
+imagen_credito: gen-per-lacus-clyne
 ---
 
 Lacus Clyne es, junto a Kira Yamato, la cofundadora de Compass: una organización de vigilancia de paz creada

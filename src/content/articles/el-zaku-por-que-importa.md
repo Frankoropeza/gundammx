@@ -31,6 +31,9 @@ referencias:
     url: 'https://en.wikipedia.org/wiki/Zaku'
   - titulo: 'Gunpla — Wikipedia (grados y escalas de los model kits)'
     url: 'https://en.wikipedia.org/wiki/Gunpla'
+imagen: ../../assets/gen-art-el-zaku-por-que-importa.jpg
+imagen_alt: "Línea de producción con filas de piezas idénticas."
+imagen_credito: gen-art-el-zaku-por-que-importa
 ---
 
 Si entras a cualquier tienda de model kits, vas a ver más Zakus que Gundams. Es la máquina más reproducida de la franquicia y, para quien llega nuevo, la más difícil de justificar: es el enemigo, es verde, y es el que pierde.

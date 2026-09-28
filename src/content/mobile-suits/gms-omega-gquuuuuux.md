@@ -21,6 +21,9 @@ fuentes:
   - "https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_GQuuuuuuX"
 estado_editorial: verificado
 actualizado: '2026-09-18'
+imagen: ../../assets/gen-ms-gms-omega-gquuuuuux.jpg
+imagen_alt: "Arena subterránea iluminada con reflectores azules y magenta."
+imagen_credito: gen-ms-gms-omega-gquuuuuux
 ---
 
 El GQuuuuuuX (gMS-Ω) es un mobile suit prototipo diseñado para pilotos Newtype, equipado con una interfaz psycommu. El oficial de Zeon Xavier Olivette lo pilota en una misión para recapturar al reaparecido Red Gundam; durante el choque dentro de la colonia Izuma se estrella y es expulsado de la cabina. Amate Yuzuriha salta a los controles, lo roba y derrota con él a la policía local, quedando después al cuidado de los Pomeranians, un equipo clandestino de mecánicos.

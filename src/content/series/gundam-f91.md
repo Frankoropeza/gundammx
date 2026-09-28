@@ -20,6 +20,9 @@ fuentes:
   - https://ja.wikipedia.org/wiki/機動戦士ガンダムF91
 estado_editorial: verificado
 actualizado: '2026-09-28'
+imagen: ../../assets/gen-ser-gundam-f91.jpg
+imagen_alt: "Barrio residencial dentro de una colonia espacial al atardecer, con humo a lo lejos."
+imagen_credito: gen-ser-gundam-f91
 ---
 
 *Gundam F91* (1991) es una película original hecha para el décimo aniversario del estreno en cines de *Mobile

@@ -31,6 +31,9 @@ referencias:
     url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Zeta_Gundam'
   - titulo: 'Sitio oficial de Gundam'
     url: 'https://en.gundam-official.com/'
+imagen: ../../assets/gen-art-zeta-gundam-guia.jpg
+imagen_alt: "Interior oscuro de una colonia espacial dañada con restos flotando."
+imagen_credito: gen-art-zeta-gundam-guia
 ---
 
 Zeta Gundam es la continuación directa de la serie que fundó la franquicia, y la que más gente abandona a la mitad. No porque sea mala: porque nadie le avisa de lo que va.

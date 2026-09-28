@@ -19,6 +19,9 @@ codigo: MS-AS-X-EX01
 fuentes:
   - https://en.wikipedia.org/wiki/Suletta_Mercury
 actualizado: '2026-09-18'
+imagen: ../../assets/gen-ms-x-ex01-gundam-calibarn.jpg
+imagen_alt: "Estructura orbital blanca atravesada por un solo haz de luz."
+imagen_credito: gen-ms-x-ex01-gundam-calibarn
 ---
 
 El X-EX01 Gundam Calibarn entra en la historia después del Incidente Quiet Zero, cuando se revelan las

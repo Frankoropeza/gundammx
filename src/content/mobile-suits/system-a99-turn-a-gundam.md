@@ -26,6 +26,9 @@ estado_editorial: verificado
 actualizado: '2026-09-28'
 seo:
   descripcion: "Turn A Gundam (System-∀99): el mobile suit de Loran en Turn A Gundam. Origen en la White Doll, Moonlight Butterfly, diseño de Syd Mead y especificaciones."
+imagen: ../../assets/gen-ms-system-a99-turn-a-gundam.jpg
+imagen_alt: "Estructura antigua emergiendo de una montaña bajo la luz de la Luna."
+imagen_credito: gen-ms-system-a99-turn-a-gundam
 ---
 
 El ∀ Gundam (Turn A Gundam, System-∀99) es el mobile suit de [Loran Cehack](/personajes/loran-cehack/) en

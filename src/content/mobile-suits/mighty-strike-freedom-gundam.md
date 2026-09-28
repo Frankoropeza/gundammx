@@ -21,6 +21,9 @@ fuentes:
   - https://ja.wikipedia.org/wiki/フリーダムガンダム
 estado_editorial: verificado
 actualizado: '2026-09-28'
+imagen: ../../assets/gen-ms-mighty-strike-freedom-gundam.jpg
+imagen_alt: "Estallido de luz dorada en el espacio profundo."
+imagen_credito: gen-ms-mighty-strike-freedom-gundam
 ---
 
 El ZGMF/A-262PD-P Mighty Strike Freedom Gundam es la máquina que cierra el arco de *SEED Freedom* (2024). Es el

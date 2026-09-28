@@ -12,6 +12,9 @@ fuentes:
   - https://en.wikipedia.org/wiki/Gundam:_Requiem_for_Vengeance
 estado_editorial: verificado
 actualizado: '2026-09-18'
+imagen: ../../assets/gen-per-iria-solari.jpg
+imagen_alt: "Bosque invernal nevado al anochecer con huellas solitarias."
+imagen_credito: gen-per-iria-solari
 ---
 
 Protagonista de *Gundam: Requiem for Vengeance* (Netflix, 2024). Capitana de la 1ª Compañía de Mobile Suits,

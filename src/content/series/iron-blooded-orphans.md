@@ -30,6 +30,9 @@ fuentes:
 actualizado: '2026-09-28'
 seo:
   descripcion: 'Gundam Iron-Blooded Orphans: de qué trata, sus 50 episodios en dos temporadas, qué significa Tekkadan, el Gundam Barbatos y dónde verla en México.'
+imagen: ../../assets/gen-ser-iron-blooded-orphans.jpg
+imagen_alt: "Base industrial oxidada en el desierto de Marte."
+imagen_credito: gen-ser-iron-blooded-orphans
 ---
 
 *Mobile Suit Gundam: Iron-Blooded Orphans* es una serie de televisión japonesa de 50 episodios, emitida en dos

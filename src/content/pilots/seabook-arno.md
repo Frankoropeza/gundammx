@@ -13,6 +13,9 @@ fuentes:
   - https://ja.wikipedia.org/wiki/ガンダムF91
 estado_editorial: verificado
 actualizado: '2026-09-28'
+imagen: ../../assets/gen-per-seabook-arno.jpg
+imagen_alt: "Patio escolar en una colonia durante un festival nocturno."
+imagen_credito: gen-per-seabook-arno
 ---
 
 Seabook Arno es un estudiante de mecánica en la colonia Frontier IV, arrastrado a la guerra cuando Crossbone

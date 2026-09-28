@@ -24,6 +24,9 @@ fuentes:
   - https://www.tvazteca.com/azteca7/series/como-cuando-y-donde-ver-gratis-mobile-suit-gundam-seed-en-espanol-ma-notas
   - https://www.anmtvla.com/2025/11/mexico-mobile-suit-gundam-seed-se.html
 actualizado: '2026-09-05'
+imagen: ../../assets/gen-ser-gundam-seed.jpg
+imagen_alt: "Astillero industrial oculto dentro de un asteroide."
+imagen_credito: gen-ser-gundam-seed
 ---
 
 *SEED* fue concebida por Sunrise y Mitsuo Fukuda como una relectura de la serie de 1979 para el público de los

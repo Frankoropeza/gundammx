@@ -24,6 +24,9 @@ fuentes:
   - https://about.netflix.com/en/news/trailer-gundam-requiem-for-vengeance-coming-to-netflix-october-17
   - https://about.netflix.com/en/news/trailer-gundam-requiem-for-vengeance-coming-to-netflix-october-17
 actualizado: '2026-09-05'
+imagen: ../../assets/gen-ser-requiem-for-vengeance.jpg
+imagen_alt: "Pueblo europeo en ruinas cubierto de nieve al anochecer."
+imagen_credito: gen-ser-requiem-for-vengeance
 ---
 
 Seis episodios estrenados en Netflix el 17 de octubre de 2024, producidos por Bandai Namco Filmworks con

@@ -40,6 +40,9 @@ referencias:
     url: 'https://www.gematsu.com/2026/09/gundam-rogue-orbit-launches-march-5-2027'
   - titulo: 'Anime News Network — tráiler y fecha de lanzamiento'
     url: 'https://www.animenewsnetwork.com/news/2026-09-03/gundam-rogue-orbit-game-trailer-reveals-march-2027-release/.241324'
+imagen: ../../assets/gen-art-gundam-rogue-orbit-todo-lo-que-se-sabe.jpg
+imagen_alt: "Monitor curvo con una nebulosa en una habitación oscura de videojuegos."
+imagen_credito: gen-art-gundam-rogue-orbit-todo-lo-que-se-sabe
 ---
 
 > **Nota de vigencia.** Este artículo cubre un juego que aún no sale. Fechas, ediciones e idiomas se

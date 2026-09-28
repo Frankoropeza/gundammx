@@ -25,6 +25,9 @@ fuentes:
 actualizado: '2026-09-28'
 seo:
   descripcion: 'Gundam Astray Red Frame (MBF-P02): el Gundam de Lowe Guele en SEED ASTRAY. Origen en Heliópolis, especificaciones, la katana Gerbera Straight y sus kits de Gunpla.'
+imagen: ../../assets/gen-ms-mbf-p02-gundam-astray-red-frame.jpg
+imagen_alt: "Chatarrería orbital con restos flotantes y un remolcador pequeño."
+imagen_credito: gen-ms-mbf-p02-gundam-astray-red-frame
 ---
 
 El MBF-P02 Gundam Astray Red Frame es el mobile suit de [Lowe Guele](/personajes/lowe-guele/), un chatarrero

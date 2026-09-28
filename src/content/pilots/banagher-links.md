@@ -11,6 +11,9 @@ codigo: PIL-UC-BANAGHER
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Unicorn
 actualizado: '2026-09-05'
+imagen: ../../assets/gen-per-banagher-links.jpg
+imagen_alt: "Ventana de dormitorio con vista a un puerto industrial de colonia."
+imagen_credito: gen-per-banagher-links
 ---
 
 Banagher Links estudia en Industrial 7 cuando conoce a Audrey Burne, una joven que intenta impedir la entrega

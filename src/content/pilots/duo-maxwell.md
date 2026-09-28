@@ -11,6 +11,9 @@ codigo: PIL-AC-DUO
 fuentes:
   - https://en.wikipedia.org/wiki/Duo_Maxwell
 actualizado: '2026-09-18'
+imagen: ../../assets/gen-per-duo-maxwell.jpg
+imagen_alt: "Iglesia de piedra al anochecer con velas encendidas."
+imagen_credito: gen-per-duo-maxwell
 ---
 
 Duo Maxwell es uno de los cinco adolescentes que pilotan un Gundam en la Operación Meteoro, entrenado por el

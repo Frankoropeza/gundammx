@@ -11,6 +11,9 @@ codigo: PIL-UC-AMURO
 fuentes:
   - https://en.wikipedia.org/wiki/Amuro_Ray
 actualizado: '2026-09-05'
+imagen: ../../assets/gen-per-amuro-ray.jpg
+imagen_alt: "Mesa de trabajo de electrónica con circuitos y cautín."
+imagen_credito: gen-per-amuro-ray
 ---
 
 Amuro Ray tiene quince años cuando la guerra llega a su colonia y sube al Gundam porque no hay nadie más. A lo

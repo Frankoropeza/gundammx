@@ -18,6 +18,9 @@ codigo: MS-UC-RX-78AL
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Thunderbolt
 actualizado: '2026-09-18'
+imagen: ../../assets/gen-ms-rx-78al-atlas-gundam.jpg
+imagen_alt: "Isla selvática del Pacífico al amanecer con vapor sobre el río."
+imagen_credito: gen-ms-rx-78al-atlas-gundam
 ---
 
 El RX-78AL Atlas Gundam aparece en el tramo final de *Gundam Thunderbolt*, ya terminada la Guerra de un

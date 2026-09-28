@@ -16,6 +16,9 @@ fuentes:
   - "https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_GQuuuuuuX"
 estado_editorial: verificado
 actualizado: '2026-09-18'
+imagen: ../../assets/gen-per-amate-yuzuriha.jpg
+imagen_alt: "Azotea nocturna con vista a luces de neón y una mochila escolar."
+imagen_credito: gen-per-amate-yuzuriha
 ---
 
 Amate Yuzuriha es una estudiante de preparatoria de la colonia Izuma, en Side 6, en la línea alterna de Universal Century 0085 donde Zeon ganó la Guerra de un Año. Durante un enfrentamiento entre el oficial de Zeon Xavier Olivette y el reaparecido Red Gundam, Amate salta a la cabina del dañado GQuuuuuuX, lo roba y derrota con él a la policía local.

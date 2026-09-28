@@ -16,6 +16,9 @@ fuentes:
   - "https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Hathaway%27s_Flash"
 estado_editorial: verificado
 actualizado: '2026-09-18'
+imagen: ../../assets/gen-per-hathaway-noa.jpg
+imagen_alt: "Balcón de hotel tropical al atardecer con vista al mar."
+imagen_credito: gen-per-hathaway-noa
 ---
 
 Hathaway Noa es hijo del capitán Bright Noa y un piloto veterano de la guerra que enfrentó a Char Aznable. Doce años después de la Segunda Guerra de Neo Zeon, y en desacuerdo con el rumbo corrupto de la Federación Terrestre, lidera en la clandestinidad el grupo terrorista Mafty bajo el alias Mafty Navue Erin, convertido en objetivo de la unidad Circe del coronel Kenneth Sleg.

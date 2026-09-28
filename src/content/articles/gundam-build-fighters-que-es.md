@@ -26,6 +26,9 @@ faq:
     respuesta: 'El sistema ficticio central de la serie: un dispositivo llamado GP Base y unas "partículas Plavsky" animan modelos Gunpla reales dentro de un campo de batalla holográfico. La calidad de construcción del kit —piezas personalizadas, weathering, escala— determina sus estadísticas de combate, y el daño se refleja físicamente en el kit.'
   - pregunta: '¿Hay secuelas de Gundam Build Fighters?'
     respuesta: 'Sí: Gundam Build Fighters Try (2014), el ONA GM''s Counterattack (2017), el OVA Battlogue (2017) y la línea Gundam Build Divers, que continúa el concepto de Gunpla Battle con nuevos protagonistas.'
+imagen: ../../assets/gen-art-gundam-build-fighters-que-es.jpg
+imagen_alt: "Mesa de competencia de modelismo bajo un reflector."
+imagen_credito: gen-art-gundam-build-fighters-que-es
 ---
 
 Gundam Build Fighters no es una historia de guerra en el espacio. Es una serie sobre el hobby de armar Gunpla, protagonizada por gente que arma Gunpla — y esa diferencia es la razón por la que sigue generando búsquedas más de una década después de su estreno.

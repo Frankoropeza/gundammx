@@ -19,6 +19,9 @@ codigo: MS-AS-XVX-016
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_The_Witch_from_Mercury
 actualizado: '2026-09-05'
+imagen: ../../assets/gen-ms-xvx-016-gundam-aerial.jpg
+imagen_alt: "Arena blanca de duelos dentro de una academia orbital."
+imagen_credito: gen-ms-xvx-016-gundam-aerial
 ---
 
 El XVX-016 Gundam Aerial llega a la academia Asticassia con Suletta Mercury y gana su primer duelo el día de

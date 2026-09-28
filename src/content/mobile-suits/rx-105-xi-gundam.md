@@ -15,6 +15,9 @@ fuentes:
   - "https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Hathaway%27s_Flash"
 estado_editorial: verificado
 actualizado: '2026-09-18'
+imagen: ../../assets/gen-ms-rx-105-xi-gundam.jpg
+imagen_alt: "Tormenta eléctrica nocturna sobre un mar tropical."
+imagen_credito: gen-ms-rx-105-xi-gundam
 ---
 
 El Xi Gundam (RX-105) es el mobile suit protagonista de Mobile Suit Gundam Hathaway, pilotado por Hathaway Noa en su lucha clandestina contra la Federación Terrestre. Se enfrenta directamente al RX-104FF Penelope, pilotado por Lane Aim de la unidad Circe. La fuente disponible no detalla fabricante ni armamento, así que esta ficha se mantiene deliberadamente mínima hasta contar con datos verificables.

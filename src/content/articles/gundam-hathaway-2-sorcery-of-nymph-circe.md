@@ -40,6 +40,9 @@ referencias:
     url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Hathaway%27s_Flash'
   - titulo: 'ComicBook — el director de Hathaway habla de la tercera parte (enero de 2026)'
     url: 'https://comicbook.com/anime/news/gundam-director-shares-update-on-hathaway-franchise/'
+imagen: ../../assets/gen-art-gundam-hathaway-2-sorcery-of-nymph-circe.jpg
+imagen_alt: "Ciudad tropical del sudeste asiático al atardecer después de la lluvia."
+imagen_credito: gen-art-gundam-hathaway-2-sorcery-of-nymph-circe
 ---
 
 > **Nota de vigencia.** Verificado el **28 de septiembre de 2026**. La disponibilidad en plataformas cambia

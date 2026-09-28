@@ -36,6 +36,9 @@ referencias:
     url: 'https://www.brothers-brick.com/2022/07/07/these-gundam-builds-would-make-for-great-sets/'
   - titulo: 'BANDAI HOBBY SITE — catálogo oficial de Gunpla'
     url: 'https://global.bandai-hobby.net/en-us/gunpla/'
+imagen: ../../assets/gen-art-existe-lego-gundam.jpg
+imagen_alt: "Bloques de construcción genéricos junto a un marco de plástico."
+imagen_credito: gen-art-existe-lego-gundam
 ---
 
 > **Nota de vigencia.** Verificado el **28 de septiembre de 2026**. Si LEGO o Bandai anuncian una colaboración,

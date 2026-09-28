@@ -20,6 +20,9 @@ codigo: SER-CE-0073
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_SEED_Destiny
 actualizado: '2026-09-28'
+imagen: ../../assets/gen-ser-gundam-seed-destiny.jpg
+imagen_alt: "Costa en llamas al atardecer con una ciudad isleña a lo lejos."
+imagen_credito: gen-ser-gundam-seed-destiny
 ---
 
 *SEED Destiny* retoma la historia dos años después del final de *SEED*, con Mitsuo Fukuda otra vez en la

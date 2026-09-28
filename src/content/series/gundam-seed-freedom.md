@@ -19,6 +19,9 @@ fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_SEED_Freedom
 estado_editorial: verificado
 actualizado: '2026-09-18'
+imagen: ../../assets/gen-ser-gundam-seed-freedom.jpg
+imagen_alt: "Panorama de espacio profundo con una nebulosa luminosa y restos brillantes."
+imagen_credito: gen-ser-gundam-seed-freedom
 ---
 
 Secuela directa de *SEED Destiny*, estrenada en cines japoneses el 26 de enero de 2024 bajo la dirección de

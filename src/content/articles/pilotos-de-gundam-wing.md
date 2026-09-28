@@ -35,6 +35,9 @@ referencias:
     url: 'https://en.wikipedia.org/wiki/Gundam_Wing:_Endless_Waltz'
   - titulo: 'Mobile Suit Gundam Wing — sitio oficial de Gundam'
     url: 'https://en.gundam-official.com/news/sw472bw8nir2slirqezp70r2'
+imagen: ../../assets/gen-art-pilotos-de-gundam-wing.jpg
+imagen_alt: "Cinco estelas como meteoros entrando a la atmósfera terrestre."
+imagen_credito: gen-art-pilotos-de-gundam-wing
 ---
 
 Gundam Wing arranca con cinco pilotos que llegan a la Tierra por separado, sin conocerse entre ellos y sin que la serie se detenga a presentarlos. Para cuando empiezan a cruzarse, ya hay cinco nombres, cinco máquinas y cinco motivaciones en circulación.

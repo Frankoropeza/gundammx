@@ -20,6 +20,9 @@ codigo: SER-UC-0079-ALT
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Thunderbolt
 actualizado: '2026-09-18'
+imagen: ../../assets/gen-ser-mobile-suit-gundam-thunderbolt.jpg
+imagen_alt: "Campo de restos de colonias destruidas iluminado por descargas eléctricas."
+imagen_credito: gen-ser-mobile-suit-gundam-thunderbolt
 ---
 
 *Thunderbolt* nace como manga seinen de Yasuo Ohtagaki en 2012 y llega al anime como ONA —episodios

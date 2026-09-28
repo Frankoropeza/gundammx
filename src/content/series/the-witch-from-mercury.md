@@ -22,6 +22,9 @@ codigo: SER-AS-0122
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_The_Witch_from_Mercury
 actualizado: '2026-09-05'
+imagen: ../../assets/gen-ser-the-witch-from-mercury.jpg
+imagen_alt: "Horizonte de Mercurio con el Sol enorme y una estación orbital blanca."
+imagen_credito: gen-ser-the-witch-from-mercury
 ---
 
 Dos temporadas de 12 episodios (2022–2023) precedidas por un prólogo. *The Witch from Mercury* fue la primera

@@ -19,6 +19,9 @@ codigo: MS-CE-GAT-X105
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_SEED
 actualizado: '2026-09-05'
+imagen: ../../assets/gen-ms-gat-x105-strike-gundam.jpg
+imagen_alt: "Fábrica secreta dentro de una colonia con luces de emergencia rojas."
+imagen_credito: gen-ms-gat-x105-strike-gundam
 ---
 
 El GAT-X105 Strike es uno de los cinco prototipos que la Alianza Terrestre desarrolla en secreto en la colonia

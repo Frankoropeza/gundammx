@@ -23,6 +23,9 @@ fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Unicorn
 estado_editorial: verificado
 actualizado: '2026-09-28'
+imagen: ../../assets/gen-ms-nz-666-kshatriya.jpg
+imagen_alt: "Interior rocoso de una base militar en un asteroide."
+imagen_credito: gen-ms-nz-666-kshatriya
 ---
 
 El Kshatriya (NZ-666) es un mobile suit de uso Newtype desarrollado por Neo Zeon como sucesor compacto del NZ-000 Queen Mansa, conservando un poder de fuego equivalente gracias a sus 24 funnels almacenados en cuatro "binders" que le dan su apodo de "cuatro alas". Fue la unidad personal de Marida Cruz (Ple Twelve) durante el Incidente Laplace de UC 0096. Resultó gravemente dañado en la Batalla de Palau al enfrentar al RX-0 Unicorn Gundam de Banagher Links, y fue capturado y reparado en campo por el Nahel Argama, pasando a conocerse como "Kshatriya Besserung".

@@ -33,6 +33,9 @@ referencias:
     url: 'https://en.wikipedia.org/wiki/Amuro_Ray'
   - titulo: 'Sitio oficial de Gundam'
     url: 'https://en.gundam-official.com/'
+imagen: ../../assets/gen-art-char-aznable-quien-es.jpg
+imagen_alt: "Pasillo de nave espacial bañado en luz roja."
+imagen_credito: gen-art-char-aznable-quien-es
 ---
 
 Si empiezas a ver Gundam, vas a oír el nombre de Char Aznable antes de entender quién es. Aparece citado en foros, en fichas de kits y en el diseño de personajes de otras series que lo imitan abiertamente.

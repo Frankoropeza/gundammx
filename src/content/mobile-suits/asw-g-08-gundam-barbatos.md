@@ -20,6 +20,9 @@ fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_Iron-Blooded_Orphans
   - https://ja.wikipedia.org/wiki/機動戦士ガンダム_鉄血のオルフェンズ
 actualizado: '2026-09-28'
+imagen: ../../assets/gen-ms-asw-g-08-gundam-barbatos.jpg
+imagen_alt: "Hangar industrial oxidado en Marte con una grúa de mantenimiento vacía."
+imagen_credito: gen-ms-asw-g-08-gundam-barbatos
 ---
 
 El ASW-G-08 Gundam Barbatos es uno de los 72 Gundam Frames construidos durante la Guerra del Calamity, tres

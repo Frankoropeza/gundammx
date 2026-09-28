@@ -19,6 +19,9 @@ fuentes:
   - https://en.wikipedia.org/wiki/Gundam:_Requiem_for_Vengeance
 estado_editorial: verificado
 actualizado: '2026-09-18'
+imagen: ../../assets/gen-ms-rx-78ge-gundam-ex.jpg
+imagen_alt: "Paso de montaña nevado en Europa con un puente de piedra en ruinas."
+imagen_credito: gen-ms-rx-78ge-gundam-ex
 ---
 
 El Gundam EX es el mobile suit que la Federación Terrestre despliega en el frente europeo hacia el final de

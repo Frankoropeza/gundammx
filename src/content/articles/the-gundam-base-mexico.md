@@ -35,6 +35,9 @@ referencias:
   - { titulo: 'El Financiero — dónde está la primera tienda oficial de Bandai Namco en CDMX', url: 'https://www.elfinanciero.com.mx/entretenimiento/2026/08/13/donde-esta-la-primera-tienda-oficial-de-bandai-namco-en-cdmx/' }
   - { titulo: 'Bandai Namco Shop México', url: 'https://bandainamcoshop.com.mx/' }
   - { titulo: 'THE GUNDAM BASE — sitio oficial (sedes en Japón y gira internacional)', url: 'https://www.gundam-base.net/' }
+imagen: ../../assets/gen-art-the-gundam-base-mexico.jpg
+imagen_alt: "Paseo de la Reforma en la Ciudad de México a la hora azul."
+imagen_credito: gen-art-the-gundam-base-mexico
 ---
 
 > **Nota de vigencia.** Actualizado el **28 de septiembre de 2026**. Los datos de la tienda de la colonia Juárez

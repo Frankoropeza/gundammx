@@ -22,6 +22,9 @@ codigo: SER-UC-0079-08
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_The_08th_MS_Team
 actualizado: '2026-09-05'
+imagen: ../../assets/gen-ser-08th-ms-team.jpg
+imagen_alt: "Selva del sudeste asiático con niebla y un campamento improvisado junto a un río."
+imagen_credito: gen-ser-08th-ms-team
 ---
 
 Once episodios de OVA (1996–1999) más un epílogo, y una película compilatoria, *Miller's Report* (1998).

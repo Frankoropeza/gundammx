@@ -13,6 +13,9 @@ fuentes:
   - https://ja.wikipedia.org/wiki/クロスボーン・バンガードの機動兵器
 estado_editorial: verificado
 actualizado: '2026-09-28'
+imagen: ../../assets/gen-per-cecily-fairchild.jpg
+imagen_alt: "Mostrador de panadería familiar con pan recién hecho."
+imagen_credito: gen-per-cecily-fairchild
 ---
 
 Cecily Fairchild crece en la colonia Frontier IV sin saber que es, en realidad, Berah Ronah: hija de Carozzo

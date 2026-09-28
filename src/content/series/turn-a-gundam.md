@@ -21,6 +21,9 @@ codigo: SER-CC-2345
 fuentes:
   - https://en.wikipedia.org/wiki/Turn_A_Gundam
 actualizado: '2026-09-05'
+imagen: ../../assets/gen-ser-turn-a-gundam.jpg
+imagen_alt: "Aldea junto a un lago bajo una Luna llena enorme, con una estructura antigua en la colina."
+imagen_credito: gen-ser-turn-a-gundam
 ---
 
 Yoshiyuki Tomino volvió a dirigir Gundam para el vigésimo aniversario y entregó su serie más pausada y, para

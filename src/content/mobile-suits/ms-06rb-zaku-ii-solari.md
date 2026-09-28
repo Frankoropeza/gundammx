@@ -19,6 +19,9 @@ fuentes:
   - https://en.wikipedia.org/wiki/Gundam:_Requiem_for_Vengeance
 estado_editorial: verificado
 actualizado: '2026-09-18'
+imagen: ../../assets/gen-ms-ms-06rb-zaku-ii-solari.jpg
+imagen_alt: "Bosque europeo nevado en invierno con un resplandor lejano."
+imagen_credito: gen-ms-ms-06rb-zaku-ii-solari
 ---
 
 Iria Solari originalmente pilotaba un MS-06F Zaku II tipo comandante con cuernos dobles distintivos y un

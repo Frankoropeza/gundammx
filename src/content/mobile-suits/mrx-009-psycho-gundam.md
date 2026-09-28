@@ -26,6 +26,9 @@ estado_editorial: verificado
 actualizado: '2026-09-28'
 seo:
   descripcion: "Psycho Gundam (MRX-009): el mobile suit de 40 metros de Four Murasame en Zeta Gundam. Por qué es tan grande, armamento, especificaciones y su papel en la serie."
+imagen: ../../assets/gen-ms-mrx-009-psycho-gundam.jpg
+imagen_alt: "Megaciudad asiática de noche bajo tormenta, con reflectores en el cielo."
+imagen_credito: gen-ms-mrx-009-psycho-gundam
 ---
 
 El MRX-009 Psycho Gundam es el mobile suit gigante que pilota [Four Murasame](/personajes/four-murasame/) en

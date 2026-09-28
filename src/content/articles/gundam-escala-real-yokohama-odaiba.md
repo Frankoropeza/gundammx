@@ -49,6 +49,9 @@ referencias:
     url: 'https://en.gundam-official.com/news/uqm9czj96y1pximejy3jxug1'
   - titulo: 'GUNDAM Official — GUNDAM-Con 2027 SIDE MAKUHARI (9 al 11 de enero de 2027)'
     url: 'https://en.gundam-official.com/news/p265yy8dsvloa2po7ryf03k2'
+imagen: ../../assets/gen-art-gundam-escala-real-yokohama-odaiba.jpg
+imagen_alt: "Puerto japonés a la hora azul con luces reflejadas en la bahía."
+imagen_credito: gen-art-gundam-escala-real-yokohama-odaiba
 ---
 
 > **Nota de vigencia.** Actualizado el **28 de septiembre de 2026**. Cambio importante respecto a la versión

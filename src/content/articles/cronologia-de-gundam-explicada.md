@@ -33,6 +33,9 @@ referencias:
     url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Unicorn'
   - titulo: 'Sitio oficial de Gundam'
     url: 'https://en.gundam-official.com/'
+imagen: ../../assets/gen-art-cronologia-de-gundam-explicada.jpg
+imagen_alt: "Estelas de estrellas sobre un observatorio de montaña."
+imagen_credito: gen-art-cronologia-de-gundam-explicada
 ---
 
 Hay dos preguntas que suenan igual y no lo son:

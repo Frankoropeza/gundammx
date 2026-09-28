@@ -15,6 +15,9 @@ fuentes:
   - https://ja.wikipedia.org/wiki/サイコガンダム
 estado_editorial: verificado
 actualizado: '2026-09-28'
+imagen: ../../assets/gen-per-four-murasame.jpg
+imagen_alt: "Calle nocturna mojada con reflejos de neón."
+imagen_credito: gen-per-four-murasame
 ---
 
 Four Murasame es una Newtype artificial del Instituto Murasame, un laboratorio Newtype de la Federación, asignada a los Titans como piloto del [Psycho Gundam](/mobile-suits/mrx-009-psycho-gundam/), un mobile suit gigante de 40 metros. Su papel en Zeta Gundam la enfrenta directamente a Kamille Bidan, dando lugar a uno de los conflictos más recordados de la primera mitad de la serie.

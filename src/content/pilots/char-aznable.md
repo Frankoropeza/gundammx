@@ -11,6 +11,9 @@ codigo: PIL-UC-CHAR
 fuentes:
   - https://en.wikipedia.org/wiki/Char_Aznable
 actualizado: '2026-09-05'
+imagen: ../../assets/gen-per-char-aznable.jpg
+imagen_alt: "Estela roja como un cometa cruzando un campo de estrellas."
+imagen_credito: gen-per-char-aznable
 ---
 
 Char Aznable nace Casval Rem Deikun, hijo del líder ideológico de la independencia de las colonias, y crece

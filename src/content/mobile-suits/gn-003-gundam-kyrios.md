@@ -27,6 +27,9 @@ estado_editorial: verificado
 actualizado: '2026-09-28'
 seo:
   descripcion: "Gundam Kyrios (GN-003): el Gundam transformable de Allelujah Haptism en Gundam 00. Modo de vuelo, armamento, especificaciones oficiales y su destino en la serie."
+imagen: ../../assets/gen-ms-gn-003-gundam-kyrios.jpg
+imagen_alt: "Estelas de alta velocidad entre nubes sobre el océano."
+imagen_credito: gen-ms-gn-003-gundam-kyrios
 ---
 
 El GN-003 Gundam Kyrios es el Gundam transformable de Celestial Being en la primera temporada de

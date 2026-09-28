@@ -26,6 +26,9 @@ estado_editorial: verificado
 actualizado: '2026-09-28'
 seo:
   descripcion: "Gundam Ez8 (RX-79[G]Ez-8): el Gundam reconstruido de Shiro Amada en The 08th MS Team. Qué significa Ez8, cómo se armó con restos, armamento y especificaciones."
+imagen: ../../assets/gen-ms-rx-79g-ez8.jpg
+imagen_alt: "Claro de selva con un taller de campaña improvisado bajo la lluvia."
+imagen_credito: gen-ms-rx-79g-ez8
 ---
 
 El Gundam Ez8 (RX-79[G]Ez-8) es el mobile suit de [Shiro Amada](/personajes/shiro-amada/) en la segunda mitad de

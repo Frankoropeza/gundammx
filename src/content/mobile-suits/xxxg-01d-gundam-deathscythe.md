@@ -25,6 +25,9 @@ fuentes:
 actualizado: '2026-09-28'
 seo:
   descripcion: 'Gundam Deathscythe (XXXG-01D): el Gundam de Duo Maxwell en Gundam Wing. Quién lo diseñó, hyper jammers, guadaña de haz, Deathscythe Hell y especificaciones.'
+imagen: ../../assets/gen-ms-xxxg-01d-gundam-deathscythe.jpg
+imagen_alt: "Campanario de iglesia de piedra de noche bajo una luna creciente."
+imagen_credito: gen-ms-xxxg-01d-gundam-deathscythe
 ---
 
 El XXXG-01D Gundam Deathscythe es el Gundam de [Duo Maxwell](/personajes/duo-maxwell/), uno de los cinco que la

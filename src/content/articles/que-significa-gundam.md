@@ -31,6 +31,9 @@ referencias:
     url: 'https://en.wikipedia.org/wiki/Gundam'
   - titulo: 'Sitio oficial de Gundam'
     url: 'https://en.gundam-official.com/'
+imagen: ../../assets/gen-art-que-significa-gundam.jpg
+imagen_alt: "Mesa de diseñador industrial con bocetos de formas geométricas."
+imagen_credito: gen-art-que-significa-gundam
 ---
 
 Una de las búsquedas más frecuentes sobre la franquicia es *"Gundam, ¿de qué serie es?"*. La pregunta está mal formulada, y eso mismo es lo interesante: revela que mucha gente llega creyendo que Gundam es un personaje.

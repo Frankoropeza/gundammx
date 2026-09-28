@@ -22,6 +22,9 @@ fuentes:
   - "https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_GQuuuuuuX"
 estado_editorial: verificado
 actualizado: '2026-09-18'
+imagen: ../../assets/gen-ms-gms-alpha-red-gundam.jpg
+imagen_alt: "Deshuesadero de colonia de noche bañado en luz roja."
+imagen_credito: gen-ms-gms-alpha-red-gundam
 ---
 
 El Red Gundam (gMS-α) es, en la línea temporal alterna de *GQuuuuuuX*, el RX-78-02 White Gundam capturado por Char Aznable durante el asalto a Side 7 —en vez de por Amuro Ray, como en la continuidad principal—, rebautizado tras el cambio de piloto. Esa única divergencia altera drásticamente el desenlace de la Guerra de un Año, que en esta línea termina con la victoria de Zeon. Char desaparece después en un fenómeno llamado "Zeknova", y el propio Red Gundam reaparece años más tarde pilotado por el misterioso Shuji Ito, compañero de batallas clandestinas de Amate Yuzuriha.

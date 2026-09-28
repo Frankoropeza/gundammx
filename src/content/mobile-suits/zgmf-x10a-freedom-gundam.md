@@ -24,6 +24,9 @@ fuentes:
 actualizado: '2026-09-28'
 seo:
   descripcion: 'Freedom Gundam (ZGMF-X10A): el segundo Gundam de Kira Yamato en SEED. Quién lo construyó, cómo llegó a Kira, motor nuclear, armamento y kits de Gunpla.'
+imagen: ../../assets/gen-ms-zgmf-x10a-freedom-gundam.jpg
+imagen_alt: "Espacio profundo con una fuente de luz azul y estelas dispersas."
+imagen_credito: gen-ms-zgmf-x10a-freedom-gundam
 ---
 
 El ZGMF-X10A Freedom Gundam es el segundo Gundam de [Kira Yamato](/personajes/kira-yamato/) en

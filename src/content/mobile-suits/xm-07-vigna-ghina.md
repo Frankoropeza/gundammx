@@ -24,6 +24,9 @@ estado_editorial: verificado
 actualizado: '2026-09-28'
 seo:
   descripcion: "Vigna-Ghina (XM-07): el mobile suit de Cecily Fairchild en Gundam F91. Fin Nozzle de ocho toberas, armamento, especificaciones y su combate con la Rafflesia."
+imagen: ../../assets/gen-ms-xm-07-vigna-ghina.jpg
+imagen_alt: "Interior barroco aristocrático con rosas rojas dentro de una colonia."
+imagen_credito: gen-ms-xm-07-vigna-ghina
 ---
 
 El XM-07 Vigna-Ghina es el mobile suit de Berah Ronah, identidad de [Cecily Fairchild](/personajes/cecily-fairchild/)

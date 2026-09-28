@@ -27,6 +27,9 @@ estado_editorial: verificado
 actualizado: '2026-09-28'
 seo:
   descripcion: "Gundam Dynames (GN-002): el Gundam francotirador de Lockon Stratos en Gundam 00. Cómo apunta, el papel de Haro, su armamento y especificaciones oficiales."
+imagen: ../../assets/gen-ms-gn-002-gundam-dynames.jpg
+imagen_alt: "Acantilado sobre un desierto al amanecer con una línea de visión despejada."
+imagen_credito: gen-ms-gn-002-gundam-dynames
 ---
 
 El GN-002 Gundam Dynames es uno de los cuatro Gundams con los que Celestial Being inicia su intervención armada en

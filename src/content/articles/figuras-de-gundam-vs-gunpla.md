@@ -51,6 +51,9 @@ referencias:
     url: 'https://tamashiiweb.com/item_brand/metal_robot_tamashii/?wovn=en'
   - titulo: 'GUNDAM Official — gashapon EXCEED MODEL TRINITY RX-78-2 y MOBILE SUIT ENSEMBLE (septiembre de 2026)'
     url: 'https://en.gundam-official.com/news/x5r3pbc4ax9j322isn5teqmm'
+imagen: ../../assets/gen-art-figuras-de-gundam-vs-gunpla.jpg
+imagen_alt: "Repisa de coleccionista con una vitrina de acrílico vacía y una caja lisa."
+imagen_credito: gen-art-figuras-de-gundam-vs-gunpla
 ---
 
 Es una de las confusiones más caras al comprar Gundam por primera vez, sobre todo cuando es un regalo: se pide "una figura de Gundam" y llega una caja con doscientas piezas sin armar.
