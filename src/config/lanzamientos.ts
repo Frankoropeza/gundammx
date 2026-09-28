@@ -5,7 +5,7 @@
  * Nada de rumores ni de «se espera». Si una fecha solo tiene mes, `precision: 'mes'`.
  * Precios: se copian tal como los publica la fuente y se indica si incluyen impuestos
  * (`impuestos: 'incluidos'`) o si el calendario de Bandai Hobby no lo especifica
- * (`impuestos: 'sin_especificar'`). Nunca se convierten a pesos aquí.
+ * (`impuestos: 'sin_especificar'`, se muestra como «la fuente no especifica impuestos»). Nunca se convierten a pesos aquí.
  *
  * Mantenimiento: revisar cada mes; mover a `pasados` lo que ya salió.
  * Verificación completa: 2026-09-28 (doc 65 del vault).
