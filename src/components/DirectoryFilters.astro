@@ -26,10 +26,16 @@ const categorias = [
 const grados = (Object.keys(GRADOS) as GradoId[]).sort((a, b) => GRADOS[a].orden - GRADOS[b].orden);
 ---
 
-<details class="group border-y border-line" id="filtros" open data-pagefind-ignore>
-  <summary class="flex min-h-12 items-center justify-between px-5 text-sm font-medium">
-    <span>Filtrar</span>
-    <span class="font-mono text-xs text-ink-3" id="filtros-conteo" aria-live="polite"></span>
+<details class="group scroll-mt-24 border-y border-line" id="filtros" open data-pagefind-ignore>
+  <summary class="flex min-h-12 items-center justify-between gap-4 px-5 text-sm font-medium">
+    <span class="flex items-center gap-3">
+      <span>Filtrar</span>
+      <span id="filtros-activos" class="tag-brand min-h-6 px-1.5 text-[11px]" hidden></span>
+    </span>
+    <span class="flex items-center gap-3">
+      <span class="font-mono text-xs text-ink-3" id="filtros-conteo" aria-live="polite"></span>
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="h-4 w-4 text-ink-3 transition-transform duration-150 group-open:rotate-180 motion-reduce:transition-none"><path d="m6 9 6 6 6-6"></path></svg>
+    </span>
   </summary>
 
   <form id="filtros-form" method="get" class="grid gap-4 border-t border-line p-5 sm:grid-cols-2 lg:grid-cols-6">
@@ -92,6 +98,9 @@ const grados = (Object.keys(GRADOS) as GradoId[]).sort((a, b) => GRADOS[a].orden
   const form = document.getElementById('filtros-form') as HTMLFormElement | null;
   const conteo = document.getElementById('filtros-conteo');
   const vacio = document.getElementById('filtros-vacio');
+  const activos = document.getElementById('filtros-activos');
+  const panel = document.getElementById('filtros') as HTMLDetailsElement | null;
+  const movil = window.matchMedia('(max-width: 767px)');
   const tarjetas = Array.from(document.querySelectorAll<HTMLElement>('[data-categoria]'));
 
   if (form && tarjetas.length) {
@@ -127,6 +136,11 @@ const grados = (Object.keys(GRADOS) as GradoId[]).sort((a, b) => GRADOS[a].orden
         if (ok) visibles++;
       }
       if (conteo) conteo.textContent = `${visibles} de ${tarjetas.length}`;
+      const nActivos = Object.values(q).filter((v) => v !== '' && v !== false).length;
+      if (activos) {
+        activos.hidden = nActivos === 0;
+        activos.textContent = nActivos === 1 ? '1 activo' : `${nActivos} activos`;
+      }
       if (vacio) vacio.hidden = visibles > 0;
 
       // Estado compartible sin recargar y sin crear rutas
@@ -146,7 +160,19 @@ const grados = (Object.keys(GRADOS) as GradoId[]).sort((a, b) => GRADOS[a].orden
       else el.value = v;
     }
 
-    form.addEventListener('submit', (e) => { e.preventDefault(); aplicar(); });
+    // En móvil el panel arranca plegado (salvo que la URL traiga filtros) para que las
+    // tiendas aparezcan en la primera pantalla; en escritorio sigue abierto como siempre.
+    if (panel && movil.matches && !location.search) panel.open = false;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      aplicar();
+      // En móvil, «Aplicar» pliega el panel y lleva a los resultados.
+      if (panel && movil.matches) {
+        panel.open = false;
+        panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
     form.addEventListener('change', aplicar);
     form.addEventListener('reset', () => setTimeout(aplicar, 0));
     aplicar();

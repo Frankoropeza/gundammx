@@ -221,6 +221,14 @@
   .placeholder-frame { @apply relative flex flex-col justify-between border border-dashed border-line bg-surface p-4 text-ink-3; }
   .placeholder-frame::after { content: ''; @apply pointer-events-none absolute inset-3 border border-line/60; }
 
+  /* Barra de contacto fija en fichas de tienda (móvil): reserva su alto al pie
+     del documento y respeta el área segura inferior de iOS. */
+  .barra-contacto-movil { padding-bottom: env(safe-area-inset-bottom); transition: transform 160ms ease; }
+  .barra-contacto-movil.barra-contacto-oculta { transform: translateY(100%); }
+  @media (max-width: 767px) {
+    body:has(.barra-contacto-movil) { padding-bottom: calc(4.5rem + env(safe-area-inset-bottom)); }
+  }
+
   /* Resaltado de coincidencias de Pagefind con el amarillo institucional */
   #buscar-resultados mark { background: rgb(var(--signal) / 0.35); color: inherit; padding: 0 1px; }
 
