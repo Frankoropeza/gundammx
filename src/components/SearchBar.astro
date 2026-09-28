@@ -19,10 +19,10 @@ const id = `q-${Math.random().toString(36).slice(2, 7)}`;
     autofocus={autofocus}
     class:list={[
       'min-w-0 flex-1 border border-line bg-surface px-4 text-ink placeholder:text-ink-3 focus:border-ink focus:outline-none',
-      compacto ? 'h-10 rounded-l-sm text-sm' : 'h-14 rounded-l-sm text-base',
+      compacto ? 'h-11 rounded-l-sm text-base sm:h-10 sm:text-sm' : 'h-14 rounded-l-sm text-base',
     ]}
   />
-  <button type="submit" class:list={['btn-primary rounded-l-none rounded-r-sm', compacto ? 'h-10 px-4' : 'h-14 px-6']}>
+  <button type="submit" class:list={['btn-primary rounded-l-none rounded-r-sm', compacto ? 'h-11 px-4 sm:h-10' : 'h-14 px-6']}>
     Buscar
   </button>
 </form>

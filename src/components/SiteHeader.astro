@@ -9,15 +9,15 @@ const activo = (href: string) => (href === '/' ? ruta === '/' : ruta.startsWith(
 
 <div class="border-b border-line bg-surface">
   <div class="grid-page flex h-9 items-center justify-between gap-6 overflow-hidden">
-    <p class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-2">
+    <p class="flex shrink-0 items-center gap-3 whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.18em] text-ink-2">
       <span class="text-ink">{SITE.nombreLargo}</span>
-      <span aria-hidden="true" class="hidden text-ink-3 sm:inline">·</span>
-      <span class="hidden text-ink-3 sm:inline">Archivo independiente del universo Gundam</span>
+      <span aria-hidden="true" class="hidden text-ink-3 sm:inline lg:hidden 2xl:inline">·</span>
+      <span class="hidden text-ink-3 sm:inline lg:hidden 2xl:inline">Archivo independiente del universo Gundam</span>
     </p>
     <nav aria-label="Secciones del directorio" class="hidden shrink lg:block">
-      <ul class="flex items-center gap-5">
+      <ul class="flex items-center gap-4 xl:gap-5">
         {NAV_SECUNDARIA.map((i) => (
-          <li><a href={i.href} class="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3 transition-colors hover:text-ink">{i.texto}</a></li>
+          <li><a href={i.href} class="whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3 transition-colors hover:text-ink">{i.texto}</a></li>
         ))}
       </ul>
     </nav>
@@ -25,14 +25,14 @@ const activo = (href: string) => (href === '/' ? ruta === '/' : ruta.startsWith(
 </div>
 
 <header class="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur-sm">
-  <div class="grid-page flex h-16 items-center gap-6">
+  <div class="grid-page flex h-14 items-center gap-2 min-[380px]:gap-3 sm:h-16 sm:gap-6">
     <a href="/" class="flex shrink-0 items-baseline gap-3" aria-label="GUNDAMX, ir al inicio">
-      <span class="wordmark text-[1.5rem] leading-none sm:text-[1.65rem]">GUNDA<span class="mx">MX</span></span>
+      <span class="wordmark text-[1.5rem] leading-none max-[379px]:text-[1.3rem] sm:text-[1.65rem]">GUNDA<span class="mx">MX</span></span>
       <span class="hidden whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3 xl:inline">{SITE.descriptor}</span>
     </a>
 
     <nav aria-label="Principal" class="hidden flex-1 lg:block">
-      <ul class="flex items-center justify-center gap-6">
+      <ul class="flex items-center justify-center gap-4 xl:gap-6">
         {NAV.map((i) => (
           <li>
             <a href={i.href} aria-current={activo(i.href) ? 'page' : undefined}
@@ -42,45 +42,41 @@ const activo = (href: string) => (href === '/' ? ruta === '/' : ruta.startsWith(
       </ul>
     </nav>
 
-    <div class="ml-auto flex items-center gap-2">
+    <div class="ml-auto flex items-center gap-1 sm:gap-2">
       <a
         href="https://comunidad.gundam.mx/foro/"
-        class="btn-primary min-h-9 px-3 sm:hidden"
+        class="btn-primary min-h-10 px-3 max-[379px]:px-2.5 sm:px-4 lg:min-h-9"
         aria-label="Ir al foro de la comunidad Gundam México"
       >
         <span class="font-mono text-xs uppercase tracking-[0.14em]">Foro</span>
       </a>
-      <a
-        href="https://comunidad.gundam.mx/foro/"
-        class="btn-primary hidden min-h-9 px-4 sm:inline-flex"
-        aria-label="Ir al foro de la comunidad Gundam México"
-      >
-        <span class="font-mono text-xs uppercase tracking-[0.14em]">Foro</span>
-      </a>
-      <button type="button" data-abrir-busqueda class="btn-ghost gap-2" aria-label="Buscar, abrir búsqueda">
-        <span class="font-mono text-xs uppercase tracking-[0.14em]">Buscar</span>
+      <button type="button" data-abrir-busqueda class="btn-ghost h-11 min-h-11 w-11 shrink-0 px-0 max-[379px]:w-10 sm:w-auto sm:px-3" aria-label="Buscar, abrir búsqueda">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="h-5 w-5 lg:hidden" stroke="currentColor" stroke-width="1.75"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+        <span class="hidden font-mono text-xs uppercase tracking-[0.14em] sm:inline">Buscar</span>
         <kbd class="hidden rounded-sm border border-line px-1.5 font-mono text-[10px] text-ink-3 lg:inline">⌘K</kbd>
       </button>
-      <button id="menu-btn" type="button" class="btn-ghost lg:hidden" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil">
-        <span class="font-mono text-xs uppercase tracking-[0.14em]">Menú</span>
+      <button id="menu-btn" type="button" class="btn-ghost h-11 min-h-11 w-11 shrink-0 px-0 max-[379px]:w-10 lg:hidden sm:w-auto sm:px-3" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="h-5 w-5" stroke="currentColor" stroke-width="1.75"><path class="menu-line menu-line-top origin-center transition-transform duration-150 motion-reduce:transition-none" d="M4 7h16"></path><path class="menu-line menu-line-middle origin-center transition-opacity duration-150 motion-reduce:transition-none" d="M4 12h16"></path><path class="menu-line menu-line-bottom origin-center transition-transform duration-150 motion-reduce:transition-none" d="M4 17h16"></path></svg>
+        <span class="sr-only sm:not-sr-only sm:ml-1 font-mono text-xs uppercase tracking-[0.14em]">Menú</span>
       </button>
     </div>
   </div>
 
-  <div id="menu-movil" class="border-t border-line bg-paper lg:hidden" hidden>
-    <nav aria-label="Principal móvil" class="grid-page py-2">
-      <a
-        href="https://comunidad.gundam.mx/foro/"
-        class="btn-primary mb-2 mt-2 w-full justify-center"
-      >
-        <span class="font-mono text-xs uppercase tracking-[0.14em]">Ir al foro de la comunidad</span>
-      </a>
-      <ul class="divide-y divide-line">
-        {NAV.map((i) => <li><a href={i.href} class="block py-3 text-base text-ink transition-colors hover:text-accent">{i.texto}</a></li>)}
-        {NAV_SECUNDARIA.map((i) => (
-          <li class="lg:hidden"><a href={i.href} class="block py-3 font-mono text-xs uppercase tracking-[0.14em] text-ink-2">{i.texto}</a></li>
-        ))}
+  <div id="menu-movil" class="max-h-[calc(100dvh-3.5rem)] overflow-y-auto overscroll-contain border-t border-line bg-paper sm:max-h-[calc(100dvh-4rem)] lg:hidden" hidden>
+    <nav aria-label="Principal móvil" class="grid-page py-5">
+      <ul class="divide-y divide-line border-y border-line">
+        {NAV.map((i, n) => <li><a href={i.href} aria-current={activo(i.href) ? 'page' : undefined} class:list={['flex min-h-12 items-center gap-4 py-2 text-lg transition-colors hover:text-accent', activo(i.href) ? 'text-ink underline decoration-brand decoration-2 underline-offset-[6px]' : 'text-ink-2']}><span class="folio">{String(n + 1).padStart(2, '0')}</span><span class="flex-1">{i.texto}</span><span aria-hidden="true" class="text-ink-3">→</span></a></li>)}
       </ul>
+      <div class="mt-7">
+        <p class="class-line">Hobby y México</p>
+        <ul class="mt-4 grid grid-cols-2 gap-2">
+          {NAV_SECUNDARIA.map((i) => <li><a href={i.href} class="tag min-h-11 w-full justify-center text-center hover:border-ink hover:text-ink">{i.texto}</a></li>)}
+        </ul>
+      </div>
+      <div class="mt-7 grid gap-2">
+        <a href="https://comunidad.gundam.mx/foro/" class="btn-primary w-full"><span class="font-mono text-xs uppercase tracking-[0.14em]">Ir al foro de la comunidad</span></a>
+        <button type="button" data-abrir-busqueda class="btn-secondary w-full">Buscar en el archivo</button>
+      </div>
     </nav>
   </div>
 </header>
@@ -88,12 +84,33 @@ const activo = (href: string) => (href === '/' ? ruta === '/' : ruta.startsWith(
 <SearchDialog />
 
 <script>
-  const btn = document.getElementById('menu-btn');
+  const btn = document.getElementById('menu-btn') as HTMLButtonElement | null;
   const menu = document.getElementById('menu-movil');
-  btn?.addEventListener('click', () => {
-    const abierto = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!abierto));
-    btn.setAttribute('aria-label', abierto ? 'Abrir menú' : 'Cerrar menú');
-    if (menu) menu.hidden = abierto;
-  });
+  const barra = btn?.parentElement?.parentElement ?? null;
+  const ajustarAlto = () => {
+    if (!menu || !barra || menu.hidden) return;
+    menu.style.maxHeight = `${Math.max(240, window.innerHeight - barra.getBoundingClientRect().bottom)}px`;
+  };
+  const abrir = () => {
+    if (!btn || !menu) return;
+    menu.hidden = false;
+    ajustarAlto();
+    btn.setAttribute('aria-expanded', 'true');
+    btn.setAttribute('aria-label', 'Cerrar menú');
+    document.documentElement.classList.add('overflow-hidden');
+    menu.querySelector<HTMLAnchorElement>('a')?.focus();
+  };
+  const cerrar = (devolverFoco = true) => {
+    if (!btn || !menu || menu.hidden) return;
+    menu.hidden = true;
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Abrir menú');
+    document.documentElement.classList.remove('overflow-hidden');
+    if (devolverFoco) btn.focus();
+  };
+  btn?.addEventListener('click', () => btn.getAttribute('aria-expanded') === 'true' ? cerrar() : abrir());
+  menu?.querySelectorAll('a, [data-abrir-busqueda]').forEach((enlace) => enlace.addEventListener('click', () => cerrar(false)));
+  window.addEventListener('resize', ajustarAlto);
+  document.addEventListener('keydown', (event) => { if (event.key === 'Escape') cerrar(); });
+  window.matchMedia('(min-width:1024px)').addEventListener('change', (event) => { if (event.matches) cerrar(false); });
 </script>

@@ -88,8 +88,8 @@ const grupos = [
   <div class="franja-gundam franja-gundam-fina" aria-hidden="true"></div>
 
   {/* Piso 1 — identidad y navegación primaria */}
-  <div class="grid-page grid gap-10 py-16 md:grid-cols-12">
-    <div class="md:col-span-4">
+  <div class="grid-page grid grid-cols-2 gap-x-6 gap-y-10 py-16 md:grid-cols-12">
+    <div class="col-span-2 md:col-span-4">
       <p class="wordmark text-[2rem] leading-none">GUNDA<span class="mx">MX</span></p>
       <p class="mt-4 max-w-sm text-sm text-ink-2 text-pretty">{SITE.descripcion}</p>
       <p class="archive-code mt-6">Archivo editorial · {SITE.ciudad}</p>
@@ -105,24 +105,24 @@ const grupos = [
 
     <nav aria-label="Archivo" class="md:col-span-2">
       <h2 class="class-line">Archivo</h2>
-      <ul class="mt-4 space-y-2">{NAV.map((i) => <li><a href={i.href} class="link-quiet text-sm">{i.texto}</a></li>)}</ul>
+      <ul class="mt-3 space-y-0 md:mt-4 md:space-y-2">{NAV.map((i) => <li><a href={i.href} class="link-quiet text-sm max-md:flex max-md:min-h-11 max-md:items-center">{i.texto}</a></li>)}</ul>
     </nav>
 
     <nav aria-label="Hobby y México" class="md:col-span-2">
       <h2 class="class-line">Hobby y México</h2>
-      <ul class="mt-4 space-y-2">{NAV_SECUNDARIA.map((i) => <li><a href={i.href} class="link-quiet text-sm">{i.texto}</a></li>)}</ul>
+      <ul class="mt-3 space-y-0 md:mt-4 md:space-y-2">{NAV_SECUNDARIA.map((i) => <li><a href={i.href} class="link-quiet text-sm max-md:flex max-md:min-h-11 max-md:items-center">{i.texto}</a></li>)}</ul>
     </nav>
 
     <nav aria-label="Directorio de tiendas" class="md:col-span-2">
       <h2 class="class-line">Directorio</h2>
-      <ul class="mt-4 space-y-2">{DIRECTORIO.map((i) => <li><a href={i.href} class="link-quiet text-sm">{i.texto}</a></li>)}</ul>
+      <ul class="mt-3 space-y-0 md:mt-4 md:space-y-2">{DIRECTORIO.map((i) => <li><a href={i.href} class="link-quiet text-sm max-md:flex max-md:min-h-11 max-md:items-center">{i.texto}</a></li>)}</ul>
     </nav>
 
     <nav aria-label="El proyecto" class="md:col-span-2">
       <h2 class="class-line">El proyecto</h2>
-      <ul class="mt-4 space-y-2">
-        {PROYECTO.map((i) => <li><a href={i.href} class="link-quiet text-sm">{i.texto}</a></li>)}
-        <li><span class="font-mono text-sm text-ink-3">{SITE.email}</span></li>
+      <ul class="mt-3 space-y-0 md:mt-4 md:space-y-2">
+        {PROYECTO.map((i) => <li><a href={i.href} class="link-quiet text-sm max-md:flex max-md:min-h-11 max-md:items-center">{i.texto}</a></li>)}
+        <li><span class="font-mono text-sm text-ink-3 [overflow-wrap:anywhere] max-md:flex max-md:min-h-11 max-md:items-center">{SITE.email}</span></li>
       </ul>
     </nav>
   </div>
@@ -137,11 +137,11 @@ const grupos = [
           coleccionistas en el mercado. Se entra con una cuenta de Google, sin costo.
         </p>
       </div>
-      <nav aria-label="Comunidad" class="flex flex-wrap items-center gap-2">
-        <a href="https://comunidad.gundam.mx/foro/" class="btn-secondary">Foro</a>
-        <a href="https://comunidad.gundam.mx/hangar/" class="btn-secondary">Hangar</a>
-        <a href="https://comunidad.gundam.mx/mercado/" class="btn-secondary">Mercado</a>
-        <a href="https://comunidad.gundam.mx/entrar/" class="btn-primary">Entrar con Google</a>
+      <nav aria-label="Comunidad" class="grid w-full grid-cols-3 gap-2 sm:flex sm:w-auto sm:flex-wrap sm:items-center">
+        <a href="https://comunidad.gundam.mx/foro/" class="btn-secondary px-2 sm:px-5">Foro</a>
+        <a href="https://comunidad.gundam.mx/hangar/" class="btn-secondary px-2 sm:px-5">Hangar</a>
+        <a href="https://comunidad.gundam.mx/mercado/" class="btn-secondary px-2 sm:px-5">Mercado</a>
+        <a href="https://comunidad.gundam.mx/entrar/" class="btn-primary col-span-3 sm:col-auto">Entrar con Google</a>
       </nav>
     </div>
   </div>
@@ -180,7 +180,7 @@ const grupos = [
       <div class="flex flex-col gap-2.5 font-mono text-xs text-ink-3 lg:col-span-4 lg:col-start-9 lg:items-end lg:text-right xl:col-span-5 xl:col-start-8">
         <p>{SITE.domicilio}</p>
         <p>© {anio} {SITE.nombre} · {SITE.nombreLargo}. Textos propios; datos con fuente citada en cada ficha.</p>
-        <a href="/sitemap-index.xml" class="underline decoration-ink-3 underline-offset-[3px] transition-colors hover:text-accent hover:decoration-accent">Mapa del sitio</a>
+        <a href="/sitemap-index.xml" class="inline-flex min-h-11 items-center underline decoration-ink-3 underline-offset-[3px] transition-colors hover:text-accent hover:decoration-accent lg:min-h-0">Mapa del sitio</a>
       </div>
     </div>
   </div>
