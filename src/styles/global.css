@@ -204,7 +204,7 @@
 
 @layer components {
   /* Código de archivo: etiqueta técnica monoespaciada */
-  .archive-code { @apply inline-flex max-w-full items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3; }
+  .archive-code { @apply inline-flex max-w-full flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3; }
   .archive-code::before { content: ''; @apply inline-block h-px w-4 bg-brand; }
 
   /* Línea de clasificación: separador con etiqueta */
