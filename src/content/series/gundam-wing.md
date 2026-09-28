@@ -18,11 +18,12 @@ mobile_suits: [xxxg-01w-wing-gundam, xxxg-00w0-wing-gundam-zero, oz-13ms-gundam-
 pilotos: [heero-yuy, duo-maxwell]
 facciones: [oz]
 disponibilidad_mx:
-  - 'Disney+ — ficha oficial vigente a septiembre de 2026'
+  - 'Crunchyroll — catálogo México (verificado el 28-sep-2026)'
+  - 'Prime Video México — a través del canal de Crunchyroll'
 codigo: SER-AC-0195
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Wing
-  - https://www.disneyplus.com/es-us/browse/entity-ca21d947-e5b1-4c5d-b973-f638016b112c
+  - https://www.crunchyroll.com/es/watch/GR2PDVDMR
   - https://doblaje.fandom.com/es/wiki/Gundam_Wing
 actualizado: '2026-09-28'
 imagen: ../../assets/ms-wing.jpg

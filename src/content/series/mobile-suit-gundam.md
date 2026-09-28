@@ -20,13 +20,11 @@ pilotos: [amuro-ray, char-aznable]
 facciones: [federacion-terrestre, principado-de-zeon]
 codigo: SER-UC-0079
 disponibilidad_mx:
-  - 'Crunchyroll — catálogo México'
-  - 'Netflix México'
-  - 'Prime Video México'
+  - 'Crunchyroll — catálogo México (verificado el 28-sep-2026)'
+  - 'Prime Video México — a través del canal de Crunchyroll'
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam
   - https://www.crunchyroll.com/es/series/GKEH2G9XV/mobile-suit-gundam
-  - https://www.netflix.com/mx/title/81276500
   - https://www.primevideo.com/-/es/detail/0KK5BXKGUUPM3NG6YTAK4ZPXCL
 actualizado: '2026-09-06'
 imagen: ../../assets/art-historia-mexico.jpg

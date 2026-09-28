@@ -18,8 +18,12 @@ mobile_suits: [asw-g-08-gundam-barbatos, asw-g-08-gundam-barbatos-lupus-rex]
 pilotos: [mikazuki-augus]
 facciones: [tekkadan, gjallarhorn]
 codigo: SER-PD-0323
+disponibilidad_mx:
+  - 'Crunchyroll — catálogo México (verificado el 28-sep-2026)'
+  - 'Prime Video México — a través del canal de Crunchyroll'
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_Iron-Blooded_Orphans
+  - https://www.crunchyroll.com/es/watch/GYQ400D76
 actualizado: '2026-09-28'
 ---
 

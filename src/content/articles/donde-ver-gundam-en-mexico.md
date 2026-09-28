@@ -9,14 +9,15 @@ categoria: donde-ver
 lectura_min: 6
 destacado: false
 universos: [uc, ac, ce, as]
-series: [mobile-suit-gundam, gundam-wing, gundam-seed, the-witch-from-mercury, requiem-for-vengeance, gquuuuuux]
+series: [mobile-suit-gundam, gundam-wing, gundam-seed, the-witch-from-mercury, requiem-for-vengeance, gquuuuuux, iron-blooded-orphans, gundam-unicorn]
 referencias:
   - { titulo: 'GUNDAM Official — Hathaway: The Sorcery of Nymph Circe llega a Netflix el 31 de agosto', url: 'https://en.gundam-official.com/news/lpqft8o0yl0pnrwsfj6klikz' }
   - { titulo: 'Mobile Suit Gundam — Crunchyroll', url: 'https://www.crunchyroll.com/es/series/GKEH2G9XV/mobile-suit-gundam' }
   - { titulo: 'Cómo, cuándo y dónde ver gratis Mobile Suit Gundam SEED en español — Azteca 7', url: 'https://www.tvazteca.com/azteca7/series/como-cuando-y-donde-ver-gratis-mobile-suit-gundam-seed-en-espanol-ma-notas' }
-  - { titulo: 'Mobile Suit Gundam — Netflix México', url: 'https://www.netflix.com/mx/title/81276500' }
-  - { titulo: 'Mobile Suit Gundam — Prime Video', url: 'https://www.primevideo.com/-/es/detail/0KK5BXKGUUPM3NG6YTAK4ZPXCL' }
-  - { titulo: 'Mobile Suit Gundam Wing — Disney+', url: 'https://www.disneyplus.com/es-us/browse/entity-ca21d947-e5b1-4c5d-b973-f638016b112c' }
+  - { titulo: 'Mobile Suit Gundam — Prime Video (canal de Crunchyroll)', url: 'https://www.primevideo.com/-/es/detail/0KK5BXKGUUPM3NG6YTAK4ZPXCL' }
+  - { titulo: 'Mobile Suit Gundam Wing — Crunchyroll', url: 'https://www.crunchyroll.com/es/watch/GR2PDVDMR' }
+  - { titulo: 'Mobile Suit Gundam: Iron-Blooded Orphans — Crunchyroll', url: 'https://www.crunchyroll.com/es/watch/GYQ400D76' }
+  - { titulo: 'Mobile Suit Gundam Unicorn — búsqueda en JustWatch México', url: 'https://www.justwatch.com/mx/buscar?q=gundam%20unicorn' }
   - { titulo: 'GUNDAM: ver en YouTube — sitio oficial', url: 'https://es.gundam-official.com/feature/gwoy/' }
   - { titulo: 'Gundam Requiem for Vengeance — Netflix', url: 'https://about.netflix.com/en/news/trailer-gundam-requiem-for-vengeance-coming-to-netflix-october-17' }
 imagen: ../../assets/art-donde-ver.jpg
@@ -41,13 +42,14 @@ oficial antes de empezar una maratón.
 
 ## Servicios de suscripción
 
-- **Crunchyroll** concentra la mayor parte del catálogo de anime de la franquicia, incluida la serie original
-  de 1979.
-- **Netflix** tiene títulos de Gundam en su catálogo mexicano, entre ellos la serie original y *Requiem for
-  Vengeance*, producción original de la plataforma estrenada en octubre de 2024.
-- **Prime Video** lista la serie original y varias películas.
-- **Disney+** ha tenido *Mobile Suit Gundam Wing*, la serie con la que la mayoría del público mexicano conoció
-  la franquicia.
+- **Crunchyroll** concentra la mayor parte del catálogo de anime de la franquicia: la serie original de 1979,
+  *Gundam Wing* e *Iron-Blooded Orphans*, entre otras.
+- **Netflix** tiene producciones propias o de estreno global: *Requiem for Vengeance* (octubre de 2024) y la
+  segunda película de *Hathaway* (agosto de 2026). La serie original de 1979 **no** está en Netflix México.
+- **Prime Video** muestra la serie original, *Wing* e *Iron-Blooded Orphans*, pero a través del canal de
+  Crunchyroll, que se contrata aparte de la membresía Prime.
+- **Disney+:** *Gundam Wing*, la serie con la que la mayoría del público mexicano conoció la franquicia, no
+  aparece en Disney+ México; su ficha no abre desde México. Hoy está en Crunchyroll.
 
 Los catálogos regionales no coinciden: una serie disponible en México puede no estarlo en España o en Estados
 Unidos, y al revés. Los enlaces del final de esta página apuntan a las fichas oficiales de cada plataforma
@@ -60,10 +62,12 @@ fecha de verificación.
 
 | Serie | Dónde verla en México |
 |---|---|
-| [Mobile Suit Gundam](/series/mobile-suit-gundam/) (1979) | Crunchyroll · Netflix · Prime Video |
-| [Mobile Suit Gundam Wing](/series/gundam-wing/) (1995) | Disney+ |
+| [Mobile Suit Gundam](/series/mobile-suit-gundam/) (1979) | Crunchyroll · Prime Video (canal de Crunchyroll) |
+| [Mobile Suit Gundam Wing](/series/gundam-wing/) (1995) | Crunchyroll · Prime Video (canal de Crunchyroll) |
 | [Mobile Suit Gundam SEED](/series/gundam-seed/) (2002) | Azteca 7, televisión abierta, con doblaje latino |
 | [The Witch from Mercury](/series/the-witch-from-mercury/) (2022) | Azteca 7 (Planeta Anime) |
+| [Mobile Suit Gundam Unicorn](/series/gundam-unicorn/) (2010–2014) | No encontramos plataforma de streaming en México (búsqueda en JustWatch, 28 de septiembre de 2026) |
+| [Iron-Blooded Orphans](/series/iron-blooded-orphans/) (2015–2017) | Crunchyroll · Prime Video (canal de Crunchyroll) |
 | [Requiem for Vengeance](/series/requiem-for-vengeance/) (2024) | Netflix |
 | [Mobile Suit Gundam Hathaway](/series/mobile-suit-gundam-hathaway/) · parte 2, *The Sorcery of Nymph Circe* (2026) | Netflix (estreno global del 31 de agosto de 2026; [guía](/articulos/gundam-hathaway-2-sorcery-of-nymph-circe/)) |
 | [GQuuuuuuX](/series/gquuuuuux/) (2025) | Prime Video · película *Beginning* en Cinépolis (Konnichiwa Festival, marzo 2025) |
