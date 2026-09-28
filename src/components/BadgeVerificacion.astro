@@ -18,6 +18,6 @@ const s = mapa[estado];
 <span class:list={[s.clase, 'gap-2']}>
   <span aria-hidden="true" class="inline-block h-1.5 w-1.5 rounded-full bg-current"></span>
   <span>{s.texto}</span>
-  {fecha && <span class="opacity-70">{fechaCorta(fecha)}</span>}
+  {fecha && <span>{fechaCorta(fecha)}</span>}
   {conEnlace && <a href="/metodologia/" class="underline decoration-dotted underline-offset-2" aria-label="Cómo verificamos">?</a>}
 </span>

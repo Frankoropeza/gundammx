@@ -24,8 +24,9 @@ if (!c) throw new Error(`Falta el crédito de la imagen "${id}" en src/config/cr
     <Image
       src={src}
       alt={alt ?? c.alt}
-      widths={[640, 1024, 1440]}
-      sizes="(min-width: 1280px) 1200px, 100vw"
+      widths={[480, 720, 960, 1280, 1600]}
+      sizes="(min-width: 1280px) calc(100vw - 8rem), (min-width: 1024px) calc(100vw - 6rem), (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)"
+      quality={72}
       class:list={['w-full object-cover', ratio]}
       loading={prioridad ? 'eager' : 'lazy'}
       fetchpriority={prioridad ? 'high' : undefined}
