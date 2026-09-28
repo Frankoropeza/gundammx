@@ -10,7 +10,7 @@ fabricante: Neo Zeon
 tipo: "Mobile suit de uso Newtype"
 especificaciones:
   - { etiqueta: "Altura", valor: "22.3 m" }
-  - { etiqueta: "Peso vacío", valor: "29.7 toneladas (más 22.32 toneladas de binders)" }
+  - { etiqueta: "Peso", valor: "29.7 t el cuerpo; 22.32 t cada uno de los 4 binders" }
   - { etiqueta: "Peso máximo", valor: "74.02 toneladas" }
   - { etiqueta: "Sistema", valor: "Cabina de psicoframe" }
   - { etiqueta: "Armamento", valor: "4 cañones de mega partículas en el pecho, 8 en los binders, 4 generadores de campo I, 2 cañones de ametralladora, 2 sables/pistolas de haz, 24 funnels" }
@@ -19,9 +19,10 @@ relacionados: []
 kits: []
 codigo: MS-UC-NZ-666
 fuentes:
-  - "https://www.mahq.net/nz-666/"
+  - https://ja.wikipedia.org/wiki/機動戦士ガンダムUCの登場兵器
+  - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Unicorn
 estado_editorial: verificado
-actualizado: '2026-09-18'
+actualizado: '2026-09-28'
 ---
 
 El Kshatriya (NZ-666) es un mobile suit de uso Newtype desarrollado por Neo Zeon como sucesor compacto del NZ-000 Queen Mansa, conservando un poder de fuego equivalente gracias a sus 24 funnels almacenados en cuatro "binders" que le dan su apodo de "cuatro alas". Fue la unidad personal de Marida Cruz (Ple Twelve) durante el Incidente Laplace de UC 0096. Resultó gravemente dañado en la Batalla de Palau al enfrentar al RX-0 Unicorn Gundam de Banagher Links, y fue capturado y reparado en campo por el Nahel Argama, pasando a conocerse como "Kshatriya Besserung".

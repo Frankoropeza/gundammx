@@ -5,33 +5,50 @@ universo: ac
 faccion: oz
 pilotos: [heero-yuy]
 primera_aparicion: gundam-wing
-fabricante: OZ (diseñado por Treize Khushrenada)
-tipo: Mobile suit transformable sin armamento a distancia
+fabricante: Una facción de OZ, por encargo de Treize Khushrenada
+tipo: Mobile suit de combate cuerpo a cuerpo, transformable en forma de dragón
 especificaciones:
   - { etiqueta: "Universo", valor: "After Colony" }
   - { etiqueta: "Primera aparición", valor: "Mobile Suit Gundam Wing, 1995" }
-  - { etiqueta: "Sistema", valor: "Epyon System (interfaz mental de combate)" }
-  - { etiqueta: "Armamento", valor: "Sable de haz conectado por cable al generador, heat rod retráctil" }
-resumen: El único Gundam construido por OZ. Diseñado por Treize Khushrenada sin un arma a distancia, obliga a su piloto a pelear siempre cuerpo a cuerpo.
+  - { etiqueta: "Altura y peso", valor: "17.4 m (a la cabeza) · 8.5 t" }
+  - { etiqueta: "Blindaje", valor: "Aleación Gundanium" }
+  - { etiqueta: "Sistema", valor: "Sistema Epyon (del mismo tipo que el Zero System)" }
+  - { etiqueta: "Armamento", valor: "Espada de haz alimentada por cable desde el generador, escudo con heat rod, 2 garras Epyon" }
+resumen: "El Gundam que Treize Khushrenada manda construir en secreto, sin armas de largo alcance. Lo pilota primero Heero Yuy y después Zechs Merquise, en el duelo final de Gundam Wing."
 relacionados: [xxxg-00w0-wing-gundam-zero, xxxg-01w-wing-gundam]
 kits: []
 codigo: MS-AC-OZ-13MS
 fuentes:
-  - https://www.mahq.net/oz-13ms/
-actualizado: '2026-09-18'
+  - https://ja.wikipedia.org/wiki/ガンダムエピオン
+  - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Wing
+actualizado: '2026-09-28'
+seo:
+  descripcion: 'Gundam Epyon (OZ-13MS): el Gundam cuerpo a cuerpo de Treize en Gundam Wing. Quién lo pilota, espada de haz, forma de dragón, sistema Epyon y especificaciones.'
 ---
 
-El OZ-13MS Gundam Epyon es el único Gundam que no construyen las colonias: lo diseña Treize Khushrenada,
-líder de OZ, como una declaración de principios tanto como una máquina de guerra. Lo pilota primero Zechs
-Merquise, y más adelante Treize se lo entrega a Heero Yuy como un desafío directo.
+El OZ-13MS Gundam Epyon es el Gundam que Treize Khushrenada manda construir en secreto después de perder el mando de
+OZ, a partir de los datos del Tallgeese y de los cinco Gundams de la Operación Meteoro. «Epyon» significa «el
+siguiente» en griego. Lo pilota primero [Heero Yuy](/personajes/heero-yuy/), a quien Treize se lo entrega; más
+adelante Heero lo intercambia con Zechs Merquise por el [Wing Gundam Zero](/mobile-suits/xxxg-00w0-wing-gundam-zero/),
+y el duelo final de la serie es Zechs en el Epyon contra Heero en el Wing Zero.
 
-Su diseño es deliberadamente incompleto: no lleva ningún arma de largo alcance, sólo un sable de haz
-conectado por cable al generador —de energía prácticamente ilimitada mientras dure la conexión— y un heat rod
-retráctil montado en el escudo. Treize lo construyó así a propósito, para forzar a quien lo pilote a pelear
-siempre cuerpo a cuerpo, sin la opción de disparar y huir.
+## Una máquina solo para el cuerpo a cuerpo
 
-Como el Wing Zero, monta una computadora de combate con interfaz mental —el Epyon System— y puede
-transformarse a un modo de armadura móvil para vuelo de alta velocidad. Su duelo con el Wing Zero, primero
-entre Zechs y Heero y después entre Heero y Treize, es uno de los enfrentamientos centrales del tramo final de
-*Gundam Wing*. En Gunpla existe en High Grade y Master Grade, casi siempre en su acabado morado y dorado
-característico.
+El Epyon refleja la idea de Treize de que el combate cercano es la forma más noble de pelear: no lleva ningún arma
+de largo alcance.
+
+- **Espada de haz:** en lugar de cargar energía en la empuñadura, se conecta por cable al generador del mobile
+  suit, lo que le permite formar una hoja mucho más grande que un sable común.
+- **Escudo con heat rod:** un látigo de calor que sale del escudo.
+- **Garras Epyon:** dos garras para el combate a corta distancia.
+- **Forma de dragón:** se transforma en una forma de dragón de dos cabezas para desplazarse a gran velocidad.
+
+Tiene un sistema de combate del mismo tipo que el Zero System del Wing Zero; algunas fuentes lo llaman «sistema
+Epyon». Al entregárselo a Heero, Treize le advierte que no debe convertirse en vencedor con esa máquina.
+
+## Diseño y versiones
+
+Lo diseñó Kunio Okawara. No apareció en *Endless Waltz*, así que durante años no tuvo versión rediseñada; Hajime
+Katoki lo actualizó después para el manga *Glory of the Losers* y la novela *Frozen Teardrop*. Es una de las seis
+miniaturas del juego de mesa [Gundam Assemble](/articulos/gundam-assemble-que-es/). La serie completa está en la
+ficha de [*Gundam Wing*](/series/gundam-wing/).
