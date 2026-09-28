@@ -7,6 +7,9 @@ import {
 } from '@lib/directorio';
 import { GRADOS, type GradoId } from '@config/site';
 import { POR_PAGINA, urlPagina } from '@lib/paginacion';
+import { LANZAMIENTOS_VERIFICADO } from '@config/lanzamientos';
+
+export const UMBRAL_KITS_GRADO = 5;
 
 /**
  * Única fuente de verdad del sitemap. Aplica exactamente las mismas reglas
@@ -19,9 +22,9 @@ export async function rutasIndexables(): Promise<{ url: string; lastmod?: string
 
   // Fijas
   ['/', '/universos/', '/series/', '/mobile-suits/', '/personajes/', '/gunpla/', '/cronologia/', '/articulos/',
-   '/tiendas/', '/kits/', '/noticias/',
+   '/tiendas/', '/kits/', '/noticias/', '/lanzamientos/',
    '/eventos/', '/servicios/', '/comunidad/', '/metodologia/', '/aviso-legal/', '/creditos/', '/alta-de-tienda/', '/reportar/']
-    .forEach((u) => add(u));
+    .forEach((u) => add(u, u === '/lanzamientos/' ? LANZAMIENTOS_VERIFICADO : undefined));
 
   // Facetas curadas: entran al sitemap sólo si aportan un conjunto propio.
   // Misma guardia que aplica el `noindex` de la página, para que sitemap y
@@ -36,7 +39,7 @@ export async function rutasIndexables(): Promise<{ url: string; lastmod?: string
   (await getCollection('pilots', publicado)).forEach((p) => add(`/personajes/${p.id}/`, p.data.actualizado));
   (await getCollection('factions', publicado)).forEach((f) => add(`/facciones/${f.id}/`, f.data.actualizado));
   (await getCollection('gunpla', publicado)).forEach((g) => add(`/gunpla/${g.id}/`, g.data.actualizado));
-  (await getCollection('articles', ({ data }) => !data.borrador)).forEach((a) => add(`/articulos/${a.id}/`, a.data.fecha.toISOString()));
+  (await getCollection('articles', ({ data }) => !data.borrador)).forEach((a) => add(`/articulos/${a.id}/`, a.data.actualizada ?? a.data.fecha.toISOString()));
   (await categoriasAbiertas()).forEach((c) => add(urlCategoria(c.id)));
 
   // Tiendas
@@ -56,7 +59,9 @@ export async function rutasIndexables(): Promise<{ url: string; lastmod?: string
   // Kits y grados con kits
   const kits = await getCollection('kits');
   kits.forEach((k) => add(`/kit/${k.id}/`));
-  (Object.keys(GRADOS) as GradoId[]).filter((g) => kits.some((k) => k.data.grado === g)).forEach((g) => add(`/kits/${g}/`));
+  (Object.keys(GRADOS) as GradoId[])
+    .filter((g) => kits.filter((k) => k.data.grado === g).length >= UMBRAL_KITS_GRADO)
+    .forEach((g) => add(`/kits/${g}/`));
 
   // Editorial
   const noticias = await getCollection('noticias', ({ data }) => !data.borrador);

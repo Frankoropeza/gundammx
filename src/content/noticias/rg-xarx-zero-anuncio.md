@@ -1,35 +1,37 @@
 ---
-titulo: "RG XΛRX-ZERO: Bandai Spirits anuncia nueva continuidad original con serie y videojuego"
-descripcion: El "RG Project" debuta en abril de 2027 con una serie dirigida por Kenji Kamiyama en SOLA ANIMATION y el videojuego Gundam Rogue Orbit, en un universo original compartido entre ambos productos.
+titulo: "RG XARX-ZERO, el nuevo anime de Gundam, llega en abril de 2027"
+descripcion: Mobile Suit Gundam RG XARX-ZERO, serie de Kenji Kamiyama en SOLA ANIMATION, se estrena en abril de 2027 en Norteamérica y Japón y comparte universo con Gundam Rogue Orbit.
 fecha: 2026-09-18
 categoria: anime
-fuente_nombre: Gundam Official
-fuente_url: https://www.gundam-official.com/
-tags: [rg-project, xarx-zero, kenji-kamiyama, anuncio]
+fuente_nombre: GUNDAM Official
+fuente_url: https://en.gundam-official.com/news/r3gircojylscg505jiqn4z91
+tags: [rg-project, xarx-zero, kenji-kamiyama, rogue-orbit, anuncio]
 ---
 
-Bandai Spirits anunció "RG XΛRX-ZERO", punta de lanza de un nuevo "RG Project": una continuidad original
-que no se ata a ninguna de las líneas temporales existentes. La serie está dirigida por Kenji Kamiyama
-(Ghost in the Shell: Stand Alone Complex, ejecutivo de Blue Eye Samurai) en el estudio SOLA ANIMATION, con
-estreno previsto para abril de 2027 en Japón y Norteamérica.
+> **Actualizada el 28 de septiembre de 2026** con el anuncio oficial de fecha del 14 de septiembre y los
+> productos presentados en San Diego Comic-Con.
 
-El proyecto no llega solo. Comparte universo con el videojuego Gundam Rogue Orbit, que lanza el 5 de marzo
-de 2027 para PS5, Xbox Series X|S y Steam — series y juego se desarrollan en paralelo como una misma
-propuesta narrativa, no como una adaptación de uno a otro.
+**Mobile Suit Gundam RG XARX-ZERO** es la nueva serie de televisión de Gundam y se estrena en **abril de 2027 en
+Norteamérica y Japón**. La dirige **Kenji Kamiyama**, que también se encarga de la composición de la serie, con
+animación de **SOLA ANIMATION**. Para México y el resto de Latinoamérica todavía no hay fecha ni plataforma: el
+anuncio oficial solo dice que habrá novedades para otras regiones.
 
-## Por qué importa
+## Qué es el RG Project
 
-Es la primera continuidad completamente nueva que Bandai Spirits presenta como proyecto multimedia desde
-el arranque, con serie y videojuego anunciados a la vez y el mismo nombre de proyecto paraguas ("RG
-Project") cubriendo ambos. Kamiyama detrás de la dirección eleva las expectativas de calidad narrativa
-sobre un anuncio que, de otro modo, sería solo otro Gunpla más en el catálogo.
+La serie forma parte del **RG Project**, una iniciativa de Bandai que reúne en un mismo universo esta serie y el
+videojuego [Gundam Rogue Orbit](/articulos/gundam-rogue-orbit-todo-lo-que-se-sabe/), que sale el 5 de marzo de
+2027. Bandai lo presenta como una propuesta completamente nueva: no continúa ninguna serie anterior ni pertenece a
+las líneas temporales conocidas, como el Universal Century o la Cosmic Era.
+
+El proyecto se presentó al público en la San Diego Comic-Con de julio de 2026, donde Bandai anunció también
+productos ligados a la serie, entre ellos un Gunpla **HG 1/144 Gundam ZERO**, según el [anuncio oficial de productos](https://en.gundam-official.com/news/iy8kb9gi7u7rpa8smeru7dwj). La serie y el juego también llegarán al Gundam Card Game. Precio y fecha de esos productos no se
+han anunciado.
 
 ## Lo que falta por confirmar
 
-Bandai Spirits no ha publicado todavía diseños de mobile suits, reparto de voces ni sinopsis extendida.
-Tampoco hay información sobre si "RG" en el nombre remite a la línea de kits Real Grade o es una
-coincidencia de branding — este archivo se actualizará en cuanto haya confirmación oficial.
+- Plataforma y fecha para México y Latinoamérica.
+- Precio y fecha del HG Gundam ZERO y del resto de productos.
+- Si habrá doblaje al español.
 
-De cara a nuestro propio catálogo, "RG XΛRX-ZERO" abre la pregunta de si el sitio debe tratarlo como una
-octava línea temporal independiente o como un spin-off fuera del esquema de universos numerados. Es una
-decisión editorial pendiente, no técnica.
+En el archivo del sitio, la serie tendrá ficha propia en cuanto haya sinopsis y reparto oficiales. Mientras tanto,
+todas las fechas confirmadas de la franquicia están en el [calendario de lanzamientos](/lanzamientos/).

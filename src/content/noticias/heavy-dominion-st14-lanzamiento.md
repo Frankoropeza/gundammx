@@ -1,30 +1,42 @@
 ---
-titulo: "Gundam: Heavy Dominion [ST14], el nuevo starter deck del TCG, llega el 25 de septiembre"
-descripcion: Bandai lanza el starter deck [ST14] Gundam Heavy Dominion, con Full Armor Unicorn Gundam como carta central, el 25 de septiembre de 2026 a 15.99 dólares.
+titulo: "Heavy Dominion y otros tres starter decks del Gundam Card Game"
+descripcion: Bandai lanza el 25 de septiembre de 2026 cuatro starter decks del Gundam Card Game (ST11 a ST14), entre ellos Heavy Dominion, a 15.99 dólares cada uno.
 fecha: 2026-09-18
 categoria: lanzamientos
-fuente_nombre: Dork
-fuente_url: https://readdork.com/
-tags: [tcg, heavy-dominion, unicorn-gundam, starter-deck]
+fuente_nombre: GUNDAM CARD GAME (sitio oficial)
+fuente_url: https://www.gundam-gcg.com/en/products/st14.html
+tags: [tcg, heavy-dominion, starter-deck]
 ---
 
-Bandai lanza el 25 de septiembre de 2026 el starter deck [ST14] Gundam: Heavy Dominion para el Gundam Card
-Game, con un precio de lista de 15.99 dólares. La carta central del mazo es Full Armor Unicorn Gundam,
-acompañada del resto de las 51 cartas preconstruidas típicas de un starter de la línea.
+> **Actualizada el 28 de septiembre de 2026.** La primera versión de esta nota se apoyaba en cobertura de
+> prensa; ahora cita directamente la ficha oficial del producto, que corrige un dato: el mazo trae **50**
+> cartas, no 51.
+
+El 25 de septiembre de 2026 salieron a la venta cuatro starter decks del Gundam Card Game: **Aquatic
+Assault [ST11]**, **Raging Onslaught [ST12]**, **Silent Barrage [ST13]** y **Heavy Dominion [ST14]**. Cada
+uno tiene un precio de lista de **15.99 dólares** en Estados Unidos, según el
+[catálogo oficial](https://www.gundam-gcg.com/en/products/list.php).
+
+## Qué trae cada caja
+
+La ficha oficial de Heavy Dominion detalla el contenido:
+
+| Contenido | Cantidad |
+|---|---|
+| Mazo de 50 cartas listo para jugar | 1 |
+| Cartas de recurso | 10 |
+| Cartas token | 2 |
+| Contador de daño de papel | 1 |
+| Hoja de reglas | 1 |
+| Sobre de regalo | 1 |
 
 ## Por qué importa
 
-Los starter decks son la puerta de entrada del TCG: vienen listos para jugar desde la caja, sin necesidad
-de armar mazo desde cero ni de comprar sobres sueltos. Que Bandai elija Full Armor Unicorn Gundam como cara
-del set apunta a una de las unidades más reconocibles del catálogo Gundam fuera del círculo de jugadores
-habituales del TCG, lo que sugiere que el lanzamiento también busca captar público nuevo.
+Los starter decks son la entrada al juego: vienen armados y permiten jugar desde la caja, sin comprar sobres
+sueltos. Llegan justo antes de **Stardust Trails [GD06]**, el siguiente booster, que sale el 30 de octubre.
 
-## Lo que no confirma esta fuente
+## Y en México
 
-Al momento de esta nota, la página oficial del Gundam Card Game (gundam-gcg.com) no listaba todavía
-"Heavy Dominion" en su portada, por lo que esta ficha se basa en la cobertura periodística de Dork, con
-fecha y precio detallados, y no en un comunicado directo de Bandai. Se actualizará si la fuente oficial
-publica variaciones en fecha, precio o contenido del set.
-
-Para el mercado mexicano, la disponibilidad y el precio local del starter todavía dependen de qué tiendas
-del [directorio verificado](/tiendas/verificadas/) confirmen stock tras el lanzamiento en Japón/Norteamérica.
+El panorama del juego en México —idioma de las cartas, dónde conseguirlas y torneos oficiales en la Ciudad de
+México— está en
+[el Gundam Card Game en México](/articulos/gundam-card-game-en-mexico/).

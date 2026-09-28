@@ -12,7 +12,7 @@ destacado: false
 referencias:
   - { titulo: 'Macrofotografía — Wikipedia', url: 'https://es.wikipedia.org/wiki/Macrofotograf%C3%ADa' }
 seo:
-  titulo: 'Cómo fotografiar tu Gunpla: guía para el Hangar | GUNDAM MX'
+  titulo: 'Cómo fotografiar tu Gunpla: guía para el Hangar'
   descripcion: 'Guía práctica de fotografía de Gunpla con celular: luz, fondo y ángulos para mostrar tu armado en el Hangar de la comunidad sin necesitar cámara profesional.'
 keyword_principal: 'cómo fotografiar gunpla'
 keywords_secundarias:

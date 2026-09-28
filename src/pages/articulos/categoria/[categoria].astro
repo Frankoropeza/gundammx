@@ -4,7 +4,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
 import ArchiveCard from '@components/ArchiveCard.astro';
 import { categoriasAbiertas, urlCategoria } from '@lib/categorias';
-import { schemaColeccion, schemaMigaDePan } from '@lib/seo';
+import { componerTitulo, schemaColeccion, schemaMigaDePan } from '@lib/seo';
 
 export const getStaticPaths = (async () => {
   const abiertas = await categoriasAbiertas();
@@ -27,12 +27,12 @@ const schemas = [
   }),
 ];
 ---
-<BaseLayout titulo={`${cat.meta.nombre} | Gundam México`} descripcion={cat.meta.descripcion} schemas={schemas}>
+<BaseLayout titulo={componerTitulo(cat.meta.nombre, 'Gundam México')} descripcion={cat.meta.meta} schemas={schemas}>
   <Breadcrumbs items={migas} />
   <div class="grid-page py-10">
     <p class="class-line">Artículos · {cat.piezas.length} {cat.piezas.length === 1 ? 'pieza' : 'piezas'}</p>
     <h1 class="display mt-3 text-4xl md:text-5xl">{cat.meta.nombre}</h1>
-    <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">{cat.meta.descripcion}</p>
+    <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">{cat.meta.intro}</p>
     <section class="mt-10" aria-labelledby="lista-categoria">
       <h2 id="lista-categoria" class="sr-only">Piezas publicadas en {cat.meta.nombre}</h2>
       <div class="mt-6 grid gap-x-12 gap-y-2 lg:grid-cols-2">

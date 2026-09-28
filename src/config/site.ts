@@ -47,6 +47,7 @@ export const NAV = [
 /** Secciones secundarias (pie y hub Gunpla) */
 export const NAV_SECUNDARIA = [
   { texto: 'Noticias', href: '/noticias/' },
+  { texto: 'Lanzamientos', href: '/lanzamientos/' },
   { texto: 'Tiendas verificadas', href: '/tiendas/' },
   { texto: 'Kits y precios', href: '/kits/' },
   { texto: 'Eventos', href: '/eventos/' },

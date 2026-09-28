@@ -2,7 +2,7 @@
 titulo: 'Gundam en live action: qué está confirmado del proyecto de Netflix'
 resumen: 'Rodaje terminado, reparto anunciado y estreno en 2027. Lo confirmado, separado de lo que sigue sin anunciarse.'
 fecha: 2026-09-07
-actualizada: '2026-09-07'
+actualizada: '2026-09-28'
 tema: series
 categoria: series
 nivel: principiante
@@ -24,16 +24,20 @@ faq:
     respuesta: 'Está anunciado 2027. El mes y el día concretos no se han anunciado, verificado el 7 de septiembre de 2026.'
   - pregunta: '¿Ya se rodó?'
     respuesta: 'Sí. La fotografía principal comenzó el 20 de abril de 2026 en Queensland, Australia, y terminó el 21 de julio de 2026. El proyecto está en posproducción.'
+  - pregunta: '¿Cómo se llama la película?'
+    respuesta: 'Todavía no tiene título definitivo. Bandai Namco la presenta como «GUNDAM (título provisional)», coproducida por Bandai Namco Filmworks, Netflix y Legendary Pictures.'
   - pregunta: '¿Quién la dirige?'
     respuesta: 'Jim Mickle, que tomó el proyecto a finales de octubre de 2024 tras la salida de Jordan Vogt-Roberts.'
 referencias:
   - titulo: 'Gundam (película) — Wikipedia (productoras, dirección, reparto, fechas de rodaje y estado de producción)'
     url: 'https://en.wikipedia.org/wiki/Gundam_(film)'
-  - titulo: 'Sitio oficial de Gundam'
-    url: 'https://en.gundam-official.com/'
+  - titulo: 'GUNDAM Official — mensaje en video del director Jim Mickle y reparto del live-action «GUNDAM (título provisional)»'
+    url: 'https://en.gundam-official.com/news/a6tx647jcecyrxo3b2okl442'
+  - titulo: 'Netflix Tudum — película live-action de Gundam: fecha, reparto y noticias'
+    url: 'https://www.netflix.com/tudum/articles/gundam-live-action-movie-release-date-news'
 ---
 
-> **Nota de vigencia.** Este artículo separa deliberadamente lo confirmado de lo que no lo está. Todo se verificó el **7 de septiembre de 2026**. Se revisa cada trimestre, porque es información que cambia.
+> **Nota de vigencia.** Este artículo separa deliberadamente lo confirmado de lo que no lo está. Se verificó el **7 de septiembre de 2026** y se revisó de nuevo el **28 de septiembre de 2026** contra el sitio oficial de Gundam y Netflix Tudum. Se revisa cada trimestre, porque es información que cambia.
 
 Alrededor de la adaptación de Gundam en imagen real circula mucha especulación y poca información firme. Esta página existe para separar una cosa de la otra.
 
@@ -49,9 +53,9 @@ Alrededor de la adaptación de Gundam en imagen real circula mucha especulación
 | Fin de rodaje | Confirmado | 21 de julio de 2026 |
 | Estado actual | Confirmado | Posproducción |
 | Estreno | Confirmado | 2027, sin mes ni día anunciados |
-| Título de trabajo | Confirmado | *Teardrop* |
+| Título oficial | Provisional | Bandai lo anuncia como «GUNDAM (título provisional)»; *Teardrop* fue el título de trabajo durante el rodaje |
 
-**Reparto anunciado:** Sydney Sweeney, Noah Centineo, Michael Mando, Shioli Kutsuna, Gemma Chua-Tran, Nonso Anozie, Javon Walton, Oleksandr Rudynskyi, Jason Isaacs y Jackson White.
+**Reparto anunciado** (presentado oficialmente en la *Gundam Conference 2026 Spring*): Sydney Sweeney, Noah Centineo, Michael Mando, Shioli Kutsuna, Gemma Chua-Tran, Nonso Anozie, Javon Walton, Oleksandr Rudynskyi, Jason Isaacs y Jackson White.
 
 ### El cambio de director
 
@@ -64,7 +68,7 @@ Con la misma claridad, esto es lo que **no** se ha anunciado a fecha de verifica
 - **El mes y el día de estreno** dentro de 2027.
 - **Los personajes y roles** de la mayor parte del reparto.
 - **La trama**, más allá de la premisa de dos facciones enfrentadas.
-- **El título definitivo.** *Teardrop* es el título de trabajo usado durante la producción.
+- **El título definitivo.** Bandai lo presenta como «GUNDAM (título provisional)»; *Teardrop* fue el título de trabajo del rodaje.
 
 Todo lo que leas sobre estos cuatro puntos presentado como un hecho es, a día de hoy, especulación.
 

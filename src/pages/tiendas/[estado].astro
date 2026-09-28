@@ -8,7 +8,7 @@ import EmptyState from '@components/EmptyState.astro';
 import LocationGrid from '@components/LocationGrid.astro';
 import { tiendasActivas, estadosDe, ciudadesConPagina, indexable, UMBRAL_ESTADO } from '@lib/directorio';
 import { ESTADOS, nombreEstado } from '@lib/estados';
-import { schemaListado, schemaMigaDePan } from '@lib/seo';
+import { componerTitulo, schemaListado, schemaMigaDePan } from '@lib/seo';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const tiendas = await tiendasActivas();
@@ -31,15 +31,8 @@ interface Props { tiendas: CollectionEntry<'tiendas'>[]; ciudades: { slug: strin
 const { estado } = Astro.params;
 const { tiendas, ciudades } = Astro.props;
 const nombre = nombreEstado(estado!);
-/**
- * El sufijo " | GUNDAMMX" que añade SEO.astro son 11 caracteres. Con
- * topónimos largos, la cola "| Gunpla original" pasa de los 60 visibles en
- * SERP, así que se omite en vez de dejar que Google truncue el título.
- */
 const tituloBase = `Tiendas Gundam en ${nombre}`;
-const titulo = tituloBase.length + ' | Gunpla original | GUNDAMMX'.length <= 60
-  ? `${tituloBase} | Gunpla original`
-  : tituloBase;
+const titulo = componerTitulo(tituloBase, 'Gunpla original');
 // Los estados sin fichas ya no se compilan (F2), pero un estado puede quedarse
 // vacío si todas sus tiendas se marcan como cerradas. La rama se conserva por eso.
 const sinContenido = tiendas.length === 0;

@@ -6,7 +6,8 @@ import Breadcrumbs from '@components/Breadcrumbs.astro';
 import KitCard from '@components/KitCard.astro';
 import { getCollection } from 'astro:content';
 import { GRADOS, type GradoId } from '@config/site';
-import { schemaListado, schemaMigaDePan } from '@lib/seo';
+import { componerTitulo, schemaListado, schemaMigaDePan } from '@lib/seo';
+import { UMBRAL_KITS_GRADO } from '@lib/rutas-indexables';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const [kits, grados] = await Promise.all([getCollection('kits'), getCollection('gunpla')]);
@@ -46,9 +47,9 @@ const schemas = [
 ---
 
 <BaseLayout
-  titulo={`Kits ${info.etiqueta} | Gunpla ${info.nombre} en México`}
+  titulo={componerTitulo(`Kits ${info.etiqueta}`, `Gunpla ${info.nombre} en México`)}
   descripcion={`Kits Gunpla de grado ${info.nombre} (${info.escala}): qué incluye el grado, precio de referencia en pesos y disponibilidad en tiendas Gundam de México.`}
-  noindex={kits.length === 0}
+  noindex={kits.length < UMBRAL_KITS_GRADO}
   schemas={schemas}
 >
   <Breadcrumbs items={migas} />

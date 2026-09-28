@@ -13,7 +13,7 @@ referencias:
   - { titulo: 'PROFECO — Consejos y recomendaciones para comprar en línea', url: 'https://www.gob.mx/profeco/articulos/consejos-y-recomendaciones-para-comprar-en-linea' }
   - { titulo: 'Procuraduría Federal del Consumidor (PROFECO) — Wikipedia', url: 'https://en.wikipedia.org/wiki/PROFECO' }
 seo:
-  titulo: 'Comprar y vender Gunpla usado en México | GUNDAM MX'
+  titulo: 'Comprar y vender Gunpla usado en México'
   descripcion: 'Guía para comprar y vender Gunpla de segunda mano en México: qué revisar antes de pagar, cómo describir un kit y cómo reducir el riesgo de fraude.'
 keyword_principal: 'comprar gunpla usado méxico'
 keywords_secundarias:

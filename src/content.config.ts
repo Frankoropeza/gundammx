@@ -255,7 +255,9 @@ const noticias = defineCollection({
     categoria: z.enum(['lanzamientos', 'p-bandai', 'eventos', 'anime', 'precios', 'directorio']),
     // Regla editorial: ninguna nota sobre terceros se publica sin fuente enlazada
     fuente_nombre: z.string().optional(),
-    fuente_url: z.string().url().optional(),
+    fuente_url: z.string().url().refine((url) => new URL(url).pathname !== '/', {
+      message: 'fuente_url debe apuntar a la nota exacta, no a la portada del sitio',
+    }).optional(),
     autor: z.string().default('Redacción GUNDAMMX'),
     tags: z.array(z.string()).default([]),
     kits_relacionados: z.array(z.string()).default([]),
@@ -484,7 +486,7 @@ const articles = defineCollection({
     keyword_principal: z.string().optional(),
     keywords_secundarias: z.array(z.string()).default([]),
 
-    // Bloque de preguntas frecuentes. Alimenta schemaFAQ() y es elegible para rich results.
+    // Alimenta schemaFAQ(). Desde 2023 Google solo muestra FAQ enriquecidas a sitios de gobierno y salud: se mantiene por valor para el lector y para respuestas generativas, no por el resultado enriquecido.
     faq: z.array(faqItem).default([]),
 
     borrador: z.boolean().default(false),

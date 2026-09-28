@@ -16,7 +16,7 @@ const schemas = [schemaMigaDePan(base, migas), schemaColeccion(base, { nombre: '
 import HubImagen from '@components/HubImagen.astro';
 import imgSeries from '../../assets/hub-series.jpg';
 ---
-<BaseLayout titulo="Series de Gundam | Lista y orden para verlas" descripcion={`Todas las series de Gundam del archivo: ${todas.length} obras con año, universo, formato y equipo, más las tres rutas para ver Gundam según por dónde quieras empezar.`} schemas={schemas}>
+<BaseLayout titulo="Series y películas de Gundam: lista completa" descripcion={`Catálogo de series y películas de anime Gundam: ${todas.length} obras con año, universo, formato y datos para explorar la franquicia.`} schemas={schemas}>
   <Breadcrumbs items={migas} />
 
   <HubImagen src={imgSeries} id="hub-series" />
@@ -24,6 +24,7 @@ import imgSeries from '../../assets/hub-series.jpg';
     <p class="class-line">Archivo</p>
     <h1 class="display mt-3 text-4xl md:text-5xl">Series</h1>
     <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">Selección curada, no lista plana. Cada ficha dice cuándo conviene verla, y las agrupamos por ruta de descubrimiento.</p>
+    <p class="mt-4 max-w-prose text-ink-2 text-pretty">Si buscas una ruta de entrada, revisa <a href="/articulos/en-que-orden-ver-gundam/" class="link">en qué orden verlas</a> o decide <a href="/articulos/cual-gundam-ver-primero/" class="link">por cuál empezar</a>.</p>
   </div>
   <SeriesRail eyebrow="Ruta 1" titulo="Empieza aquí" series={empieza} />
   <SeriesRail eyebrow="Ruta 2" titulo="Profundiza en la continuidad" series={profundiza} />

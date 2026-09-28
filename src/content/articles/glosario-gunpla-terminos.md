@@ -13,7 +13,7 @@ referencias:
   - { titulo: 'Gunpla — Wikipedia (inglés)', url: 'https://en.wikipedia.org/wiki/Gunpla' }
   - { titulo: 'BANDAI HOBBY SITE — Gunpla', url: 'https://global.bandai-hobby.net/en-us/gunpla/' }
 seo:
-  titulo: 'Glosario Gunpla: grados y términos explicados | GUNDAM MX'
+  titulo: 'Glosario Gunpla: grados y términos explicados'
   descripcion: 'Diccionario de Gunpla en español: qué significan EG, HG, RG, MG, PG, runner, nub, panel lining y más de 20 términos que usan el fandom y el foro.'
 keyword_principal: 'glosario gunpla'
 keywords_secundarias:

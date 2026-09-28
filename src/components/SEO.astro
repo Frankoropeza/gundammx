@@ -12,7 +12,13 @@ interface Props {
 const { titulo, descripcion, tipo = 'website', noindex = false, schemas = [] } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
-const tituloCompleto = titulo === SITE.nombre ? titulo : `${titulo} | ${SITE.nombre}`;
+/* La marca solo se añade si cabe: por encima de 65 caracteres Google trunca el título
+   y lo que se corta es precisamente la marca, que ya se muestra aparte como nombre del sitio. */
+const MAX_TITULO = 65;
+const conMarca = `${titulo} | ${SITE.nombre}`;
+const tituloCompleto = titulo === SITE.nombre || /\|\s*gundam\s*mx\s*$/i.test(titulo) || conMarca.length > MAX_TITULO
+  ? titulo
+  : conMarca;
 
 /** Imagen social por sección. Activos propios; nunca arte de terceros. */
 const OG_SECCION: [string, string][] = [
@@ -32,6 +38,7 @@ const OG_SECCION: [string, string][] = [
   ['/comunidad', 'tiendas'],
   ['/eventos', 'noticias'],
   ['/noticias', 'noticias'],
+  ['/lanzamientos', 'noticias'],
   ['/articulos', 'articulos'],
 ];
 const ruta = Astro.url.pathname;

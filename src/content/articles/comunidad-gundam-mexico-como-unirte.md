@@ -12,7 +12,7 @@ destacado: true
 referencias:
   - { titulo: 'GUNDAM.INFO — portal oficial en español', url: 'https://es.gundam-official.com/' }
 seo:
-  titulo: 'Comunidad Gundam México: qué es y cómo unirte | GUNDAM MX'
+  titulo: 'Comunidad Gundam México: qué es y cómo unirte'
   descripcion: 'Conoce comunidad.gundam.mx: Hangar para mostrar tu colección, foro de discusión y mercado entre coleccionistas. Cómo entrar con Google y qué encontrarás.'
 keyword_principal: 'comunidad gundam méxico'
 keywords_secundarias:

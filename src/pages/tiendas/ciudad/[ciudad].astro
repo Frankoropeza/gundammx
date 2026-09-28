@@ -10,7 +10,7 @@ import TablaTiendas from '@components/TablaTiendas.astro';
 import FAQ from '@components/FAQ.astro';
 import { tiendasActivas, ciudadesDe, ciudadesConPagina, indexable } from '@lib/directorio';
 import { nombreEstado, slugificar } from '@lib/estados';
-import { schemaListado, schemaMigaDePan, schemaFAQ } from '@lib/seo';
+import { componerTitulo, schemaListado, schemaMigaDePan, schemaFAQ } from '@lib/seo';
 import { fechaLarga } from '@lib/precio';
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -43,12 +43,8 @@ const faq = [
   { pregunta: `Falta una tienda de ${nombre}`, respuesta: 'Mándanosla desde la página de alta y la verificamos antes de publicarla. Aparecer es gratis.' },
 ];
 
-// Misma regla que la página de estado: con topónimos largos se omite la cola
-// para no pasar de los 60 caracteres visibles en SERP.
 const tituloBase = `Tiendas Gundam en ${nombre}`;
-const titulo = tituloBase.length + ' | Gunpla original | GUNDAMMX'.length <= 60
-  ? `${tituloBase} | Gunpla original`
-  : tituloBase;
+const titulo = componerTitulo(tituloBase, 'Gunpla original');
 
 const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [

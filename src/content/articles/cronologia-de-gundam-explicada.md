@@ -115,4 +115,4 @@ Con esos dos campos sabes si dos máquinas podrían coincidir en pantalla o no. 
 - **Cosmic Era** — [Gundam SEED](/articulos/gundam-seed-guia-y-orden/).
 - **Ad Stella** — [The Witch from Mercury](/articulos/witch-from-mercury-guia/).
 
-Las fichas completas de cada línea temporal están en [el archivo de universos](/universos/uc/), y la vista año por año, en [la cronología del sitio](/cronologia).
+Las fichas completas de cada línea temporal están en [el archivo de universos](/universos/uc/), y la vista año por año, en [la cronología del sitio](/cronologia/).

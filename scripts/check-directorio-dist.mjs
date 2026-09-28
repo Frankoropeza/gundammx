@@ -19,6 +19,7 @@ const INVENTARIO = 'scripts/rutas.inventario.json';
 
 export const UMBRALES = {
   TITULO_MAX: 60,
+  TITULO_LARGO: 65,
   DESC_MIN: 140,
   DESC_MAX: 165,
   DESC_ERROR: 180,
@@ -123,7 +124,8 @@ for (const d of docs) {
   if (d.redireccion) continue;   // páginas de redirección de Astro: sin h1 ni meta, a propósito
   if (d.h1 !== 1) err(d.url, `${d.h1} etiquetas <h1> (debe haber exactamente 1)`);
   if (!d.titulo) err(d.url, 'sin <title>');
-  else if (d.titulo.length > UMBRALES.TITULO_MAX) avi(d.url, `<title> de ${d.titulo.length} caracteres (máx ${UMBRALES.TITULO_MAX})`);
+  else if (d.titulo.length > UMBRALES.TITULO_LARGO) avi(d.url, `<title> de ${d.titulo.length} caracteres (supera ${UMBRALES.TITULO_LARGO})`);
+  else if (d.titulo.length > UMBRALES.TITULO_MAX) avi(d.url, `<title> de ${d.titulo.length} caracteres (máx recomendado ${UMBRALES.TITULO_MAX})`);
   if (!d.desc) err(d.url, 'sin meta description');
   else if (d.desc.length > UMBRALES.DESC_ERROR) err(d.url, `meta description de ${d.desc.length} caracteres`);
   else if (d.desc.length > UMBRALES.DESC_MAX || d.desc.length < UMBRALES.DESC_MIN) avi(d.url, `meta description de ${d.desc.length} caracteres (banda ${UMBRALES.DESC_MIN}-${UMBRALES.DESC_MAX})`);

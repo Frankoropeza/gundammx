@@ -7,7 +7,7 @@ import Breadcrumbs from '@components/Breadcrumbs.astro';
 import BloquePrecio from '@components/BloquePrecio.astro';
 import InvitacionForo from '@components/InvitacionForo.astro';
 import { GRADOS } from '@config/site';
-import { schemaKit, schemaMigaDePan, descripcionFicha } from '@lib/seo';
+import { componerTitulo, schemaKit, schemaMigaDePan, descripcionFicha } from '@lib/seo';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const kits = await getCollection('kits');
@@ -40,7 +40,7 @@ const schemas = [
 ];
 ---
 
-<BaseLayout titulo={`${d.nombre} | Kit de Gunpla en México`} descripcion={descripcionFicha(d.resumen, 'Precio en pesos y tiendas Gundam en México.')} schemas={schemas}>
+<BaseLayout titulo={componerTitulo(d.nombre, 'Kit de Gunpla en México')} descripcion={descripcionFicha(d.resumen, 'Precio en pesos y tiendas Gundam en México.')} schemas={schemas}>
   <Breadcrumbs items={migas} />
 
   <div class="grid-page max-w-3xl py-8">

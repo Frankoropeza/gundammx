@@ -21,7 +21,8 @@ facciones: [federacion-terrestre]
 codigo: SER-UC-0096
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Unicorn
-actualizado: '2026-09-05'
+  - https://www.unicorn-gundam-statue.jp/en/
+actualizado: '2026-09-28'
 imagen: ../../assets/art-universal-century.jpg
 imagen_alt: "Model kit del RX-0 Unicorn Gundam, protagonista de la serie."
 imagen_credito: art-universal-century
@@ -36,5 +37,5 @@ Vist. El mobile suit, blanco y de un solo cuerno, se transforma en el "Destroy M
 psicoframe reacciona ante un Newtype: es el diseño que devolvió al UC su máquina emblemática.
 
 *Unicorn* devolvió al Universal Century a la primera línea de la franquicia tras décadas de líneas alternas,
-y abrió la etapa actual: *Narrative* (2018), *Hathaway* (2021) y la estatua a escala real del Unicorn en Odaiba.
+y abrió la etapa actual: *Narrative* (2018), *Hathaway* (2021) y la estatua a escala real del Unicorn en Odaiba, exhibida hasta el 31 de agosto de 2026.
 Presupone haber visto la serie original, *Zeta* y *Char's Counterattack*.

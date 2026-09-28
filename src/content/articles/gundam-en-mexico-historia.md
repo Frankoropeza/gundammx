@@ -1,5 +1,7 @@
 ---
 titulo: Gundam en México, de Cartoon Network a la tienda de la colonia Juárez
+seo:
+  titulo: 'Historia de Gundam en México: de TV a tienda oficial'
 resumen: Cómo llegó la franquicia al país, qué se emitió y cuándo, y por qué 2025–2026 es el momento de mayor presencia oficial de Bandai Namco en su historia mexicana.
 autor: Redacción GUNDAMMX
 fecha: 2026-09-05

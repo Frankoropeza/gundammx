@@ -1,5 +1,7 @@
 ---
 titulo: 'Gundam Build Fighters: la serie que convirtió el Gunpla en protagonista'
+seo:
+  titulo: 'Gundam Build Fighters: la serie del Gunpla'
 resumen: 'Una serie donde armar bien tu Gunpla te hace pelear mejor. El origen de "Gunpla Battle" y por qué sigue vivo en secuelas hasta hoy.'
 autor: Redacción GUNDAMMX
 fecha: 2026-09-18

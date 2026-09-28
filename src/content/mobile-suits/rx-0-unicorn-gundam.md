@@ -18,7 +18,8 @@ kits: [rg-unicorn-gundam]
 codigo: MS-UC-RX-0
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Unicorn
-actualizado: '2026-09-05'
+  - https://www.unicorn-gundam-statue.jp/en/
+actualizado: '2026-09-28'
 imagen: ../../assets/art-universal-century.jpg
 imagen_alt: "Model kit del RX-0 Unicorn Gundam en modo unicornio."
 imagen_credito: art-universal-century
@@ -30,8 +31,8 @@ lisa, con un solo cuerno; cuando el sistema NT-D detecta a un Newtype, el armaz�
 abre en la V característica de los Gundams, revelando el psicoframe iluminado.
 
 Esa transformación —de máquina anónima a Gundam— es el argumento visual de toda la serie, y la razón por la que
-el Unicorn se convirtió en el nuevo emblema del Universal Century: es el mobile suit de la estatua a escala
-real de Odaiba, en Tokio.
+el Unicorn se convirtió en el nuevo emblema del Universal Century: fue el mobile suit de la estatua a escala
+real de Odaiba, en Tokio, exhibida de 2017 al 31 de agosto de 2026 ([qué queda hoy en Japón](/articulos/gundam-escala-real-yokohama-odaiba/)).
 
 En Gunpla, las versiones Master Grade, Real Grade y Perfect Grade reproducen la transformación completa, con
-distinto nivel de exigencia. El Unicorn en Destroy Mode es uno de los kits más fotografiados del hobby.
+distinto nivel de exigencia.

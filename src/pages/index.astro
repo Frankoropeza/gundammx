@@ -7,6 +7,7 @@ import SeriesRail from '@components/SeriesRail.astro';
 import MobileSuitCard from '@components/MobileSuitCard.astro';
 import TimelineGuide from '@components/TimelineGuide.astro';
 import ArchiveCard from '@components/ArchiveCard.astro';
+import TarjetaNoticia from '@components/TarjetaNoticia.astro';
 import GunplaBlock from '@components/GunplaBlock.astro';
 import EntryRow from '@components/EntryRow.astro';
 import FAQ from '@components/FAQ.astro';
@@ -32,6 +33,9 @@ const n = await nombres();
 const articulos = (await getCollection('articles', ({ data }) => !data.borrador)).sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime());
 const destacado = articulos.find((a) => a.data.destacado) ?? articulos[0];
 const archivo = articulos.filter((a) => a.id !== destacado?.id).slice(0, 5);
+const ultimaHora = (await getCollection('noticias', ({ data }) => !data.borrador))
+  .sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime())
+  .slice(0, 3);
 
 const grados = (await getCollection('gunpla', publicado)).sort((a, b) => a.data.orden - b.data.orden);
 const guias = (await getCollection('articles', ({ data }) => !data.borrador && data.categoria === 'comprar')).sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime()).slice(0, 4);
@@ -114,6 +118,21 @@ const entradas = [
   )}
 
   <EntryRow items={entradas} />
+
+  {ultimaHora.length > 0 && (
+    <section class="grid-page py-16" aria-labelledby="ultima-hora">
+      <div class="flex flex-wrap items-end justify-between gap-6">
+        <div>
+          <p class="class-line">Noticias</p>
+          <h2 id="ultima-hora" class="display mt-3 text-3xl md:text-4xl">Última hora</h2>
+        </div>
+        <a href="/noticias/" class="link text-sm">Todas las noticias</a>
+      </div>
+      <div class="mt-10 grid gap-x-8 gap-y-2 md:grid-cols-3">
+        {ultimaHora.map((nota, i) => <TarjetaNoticia nota={nota} grande={i === 0} />)}
+      </div>
+    </section>
+  )}
 
   <UniverseNavigator universos={universos} />
 

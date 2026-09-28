@@ -9,7 +9,7 @@ lectura_min: 4
 universos: []
 series: []
 kits_relacionados: ['mg-rx-78-2-ver-ka']
-keyword_principal: 'gundam pg'
+keyword_principal: 'perfect grade vale la pena'
 keywords_secundarias:
   - 'gunpla perfect grade'
   - 'perfect grade precio'

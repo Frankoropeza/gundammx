@@ -3,7 +3,7 @@ import type { GetStaticPaths } from 'astro';
 import type { CollectionEntry } from 'astro:content';
 import { getCollection, render } from 'astro:content';
 import ArticleLayout from '@layouts/ArticleLayout.astro';
-import { schemaNoticia, schemaMigaDePan, tituloEditorial, descripcionFicha } from '@lib/seo';
+import { componerTitulo, schemaNoticia, schemaMigaDePan, descripcionFicha } from '@lib/seo';
 import { categoriaForoArticulo } from '@lib/foro';
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -41,7 +41,7 @@ const schemas = [
 ---
 
 <ArticleLayout
-  titulo={tituloEditorial(d.titulo, 'mexico')}
+  titulo={componerTitulo(d.titulo, 'Gundam México')}
   descripcion={descripcionFicha(d.descripcion, 'Noticia de Gundam en México.')}
   fecha={d.fecha}
   migas={migas}

@@ -6,7 +6,7 @@ import DirectoryCard from '@components/DirectoryCard.astro';
 import DirectoryFilters from '@components/DirectoryFilters.astro';
 import EmptyState from '@components/EmptyState.astro';
 import { CATEGORIAS, type CategoriaId, tiendasActivas, ciudadesConPagina, categoriasConTiendas, estadosDe, indexable, UMBRAL_CATEGORIA } from '@lib/directorio';
-import { schemaListado, schemaMigaDePan } from '@lib/seo';
+import { componerTitulo, schemaListado, schemaMigaDePan } from '@lib/seo';
 
 export const getStaticPaths = (async () => {
   const ciudades = (await ciudadesConPagina()).filter((c) => indexable(c.total));
@@ -27,9 +27,7 @@ const info = CATEGORIAS[categoria as CategoriaId];
 const estados = [...new Set(tiendas.flatMap((t) => estadosDe(t)))];
 
 const tituloBase = info.nombre;
-const titulo = tituloBase.length + ' | Tiendas Gundam en México | GUNDAMMX'.length <= 60
-  ? `${tituloBase} | Tiendas Gundam en México`
-  : `${tituloBase} | Tiendas Gundam`;
+const titulo = componerTitulo(tituloBase, 'Tiendas Gundam en México');
 
 const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Tiendas', href: '/tiendas/' }, { nombre: info.nombre, href: `/tiendas/categoria/${categoria}/` }];

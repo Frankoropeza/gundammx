@@ -5,6 +5,12 @@ type Base = { site: URL | undefined; url: string };
 
 const abs = (site: URL | undefined, path: string) => new URL(path, site).toString();
 
+/** Añade un módulo sólo si, con la marca que completa SEO.astro, no rebasa el límite. */
+export function componerTitulo(base: string, modulo?: string, max = 60) {
+  if (!modulo || `${base} | ${modulo} | GUNDAMMX`.length > max) return base;
+  return `${base} | ${modulo}`;
+}
+
 export function schemaSitio(b: Base) {
   return {
     '@context': 'https://schema.org',
@@ -262,15 +268,16 @@ export function schemaNoticia(
 
 export function schemaArticulo(
   b: Base,
-  a: { titulo: string; descripcion: string; fecha: Date; actualizado?: Date; autor?: string; imagen?: string },
+  a: { titulo: string; descripcion: string; fecha: Date; actualizada?: Date; autor?: string; imagen?: string },
 ) {
+  const actualizada = a.actualizada && !Number.isNaN(a.actualizada.getTime()) ? a.actualizada : a.fecha;
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: a.titulo,
     description: a.descripcion,
     datePublished: a.fecha.toISOString(),
-    dateModified: (a.actualizado ?? a.fecha).toISOString(),
+    dateModified: actualizada.toISOString(),
     author: { '@type': a.autor && !a.autor.startsWith('Redacción') ? 'Person' : 'Organization', name: a.autor ?? SITE.nombre },
     publisher: {
       '@type': 'Organization',

@@ -24,12 +24,13 @@ disponibilidad_mx: []
 codigo: SER-UC-0105
 fuentes:
   - "https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Hathaway%27s_Flash"
+  - "https://en.gundam-official.com/news/lpqft8o0yl0pnrwsfj6klikz"
 estado_editorial: verificado
-actualizado: '2026-09-18'
+actualizado: '2026-09-28'
 ---
 
 Mobile Suit Gundam Hathaway es una trilogía cinematográfica basada en las novelas de Yoshiyuki Tomino, ambientada doce años después de la Segunda Guerra de Neo Zeon. Hathaway Noa, veterano piloto de la era de Char's Counterattack e hijo del capitán Bright Noa, lidera en la clandestinidad el grupo terrorista Mafty Navue Erin contra una Federación Terrestre que considera corrupta.
 
-La primera película se estrenó en Japón el 11 de junio de 2021 y llegó a Netflix el 1 de julio del mismo año; una versión televisiva de cuatro episodios se emitió en Nippon TV entre el 6 y el 27 de enero de 2026. La segunda entrega, La hechicería de la ninfa Circe, se estrenó el 30 de enero de 2026, centrada en la persecución de Hathaway por parte de la unidad Circe del coronel Kenneth Sleg.
+La primera película se estrenó en Japón el 11 de junio de 2021 y llegó a Netflix el 1 de julio del mismo año; una versión televisiva de cuatro episodios se emitió en Nippon TV entre el 6 y el 27 de enero de 2026. La segunda entrega, La hechicería de la ninfa Circe (*The Sorcery of Nymph Circe*), se estrenó en Japón el 30 de enero de 2026, centrada en la persecución de Hathaway por parte de la unidad Circe del coronel Kenneth Sleg, y llegó a Netflix el 31 de agosto de 2026. Dónde verla desde México y qué se sabe de la tercera parte, en [Gundam Hathaway 2](/articulos/gundam-hathaway-2-sorcery-of-nymph-circe/).
 
 Narrativamente, la obra se apoya más en la novela Beltorchika's Children —versión literaria de Char's Counterattack— que en la película, lo que la convierte en una puerta de entrada exigente para quien ya conoce esa era del Universal Century.

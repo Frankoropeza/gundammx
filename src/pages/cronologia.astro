@@ -11,12 +11,12 @@ const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Cronología', href: '/cronologia/' }];
 const schemas = [schemaMigaDePan(base, migas), schemaArticulo(base, { titulo: 'En qué orden ver Gundam', descripcion: 'Orden recomendado para empezar y cronología interna del Universal Century, separados.', fecha: new Date('2026-09-05') })];
 ---
-<BaseLayout titulo="Cronología de Gundam | Orden para ver las series" descripcion="La cronología de Gundam en dos pistas: el orden recomendado para empezar hoy y la cronología interna del Universal Century, año por año, solo con obras verificadas." schemas={schemas}>
+<BaseLayout titulo="Línea de tiempo de Gundam: cronología por universo" descripcion="Línea de tiempo de Gundam por universo: ubica series, películas y eventos dentro de cada continuidad, con foco en la cronología del Universal Century." schemas={schemas}>
   <Breadcrumbs items={migas} />
   <div class="grid-page pt-10">
     <p class="class-line">Guía de entrada</p>
-    <h1 class="display mt-3 text-4xl md:text-5xl text-balance">Cronología y orden de visionado</h1>
-    <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">La franquicia tiene siete calendarios independientes. Solo el <a href="/universos/uc/" class="link">Universal Century</a> exige orden —su ruta de visionado, facciones y máquinas están en esa guía—; el resto son puertas de entrada por derecho propio. El <a href="/articulos/en-que-orden-ver-gundam/" class="link">artículo completo</a> argumenta cada decisión.</p>
+    <h1 class="display mt-3 text-4xl md:text-5xl text-balance">Línea de tiempo de Gundam</h1>
+    <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">La franquicia tiene siete calendarios independientes. Esta línea de tiempo ubica obras y acontecimientos por universo; si buscas una recomendación de entrada, consulta <a href="/articulos/en-que-orden-ver-gundam/" class="link">en qué orden ver Gundam</a>.</p>
   </div>
   <TimelineGuide cronologia={cronologia} recomendado={recomendado} />
   <section class="grid-page pb-16" aria-labelledby="alt-h">
