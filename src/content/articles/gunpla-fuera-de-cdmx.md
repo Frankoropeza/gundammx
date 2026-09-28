@@ -9,6 +9,21 @@ lectura_min: 2
 destacado: false
 universos: []
 series: []
+keyword_principal: 'tiendas gunpla mexico'
+keywords_secundarias:
+  - 'gunpla guadalajara'
+  - 'gunpla monterrey'
+  - 'gunpla envios mexico'
+seo:
+  titulo: 'Tiendas Gunpla México fuera de CDMX'
+  descripcion: 'Tiendas Gunpla México fuera de CDMX: opciones en Monterrey, Guadalajara, Tijuana y otras ciudades, además de alternativas con envío nacional.'
+faq:
+  - pregunta: '¿Qué ciudad tiene más puntos de venta registrados fuera de CDMX?'
+    respuesta: 'Monterrey y su área metropolitana son la plaza con más puntos de venta registrados fuera de la capital.'
+  - pregunta: '¿Hay tiendas de Gunpla en Guadalajara?'
+    respuesta: 'El Reino Hobby Store maneja una categoría dedicada a Gunpla, pero no publica domicilio ni horarios.'
+  - pregunta: '¿Qué hago si mi ciudad no aparece en el censo?'
+    respuesta: 'Puedes buscar tiendas con envío nacional o reportar una tienda para que se compruebe su información.'
 tiendas_relacionadas: ['akibara-xpress', 'el-reino-hobby-store', 'hero-zone', 'plastic-zoo', 'kaiocorp', 'tooys', 'distrito-max', 'desierto-robot', 'hobbyshop-mx', 'amazing-toy-store']
 referencias:
   - { titulo: 'BANDAI SPIRITS Hobby — For Oversea Customer', url: 'https://bandai-hobby.net/global/index.html' }

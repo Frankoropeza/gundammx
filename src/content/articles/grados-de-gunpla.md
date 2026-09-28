@@ -10,6 +10,21 @@ lectura_min: 3
 destacado: true
 universos: []
 series: []
+keyword_principal: 'grados de gunpla'
+keywords_secundarias:
+  - 'tipos de gunpla'
+  - 'gunpla hg rg mg pg'
+  - 'escalas gunpla'
+seo:
+  titulo: 'Grados de Gunpla: EG, HG, RG, MG y PG'
+  descripcion: 'Grados de Gunpla explicados: diferencias entre EG, HG, RG, MG y PG en escala, piezas, dificultad, tiempo de armado y elección de compra para principiantes.'
+faq:
+  - pregunta: '¿El grado de Gunpla indica calidad?'
+    respuesta: 'No. Es una combinación de escala, cantidad de piezas y dificultad.'
+  - pregunta: '¿Qué grado conviene para un primer kit?'
+    respuesta: 'Entry Grade está pensado para un primer kit, y High Grade es una opción recurrente para principiantes.'
+  - pregunta: '¿Cuánto tiempo toma armar cada grado?'
+    respuesta: 'Un HG puede tomar una tarde; un RG, un fin de semana con detalle; un MG, varias sesiones, y un PG, semanas.'
 referencias:
   - { titulo: 'BANDAI HOBBY SITE — GUNPLA', url: 'https://global.bandai-hobby.net/en-us/gunpla/' }
   - { titulo: 'BANDAI SPIRITS Hobby — For Oversea Customer', url: 'https://bandai-hobby.net/global/index.html' }

@@ -9,6 +9,20 @@ lectura_min: 3
 destacado: false
 universos: [uc, ac, ce, ad, pd, as]
 series: [the-witch-from-mercury, iron-blooded-orphans, gundam-wing, mobile-suit-gundam, gundam-00, gundam-seed, gquuuuuux]
+keyword_principal: 'cual gundam ver primero'
+keywords_secundarias:
+  - 'por donde empezar gundam'
+  - 'mejor gundam para empezar'
+seo:
+  titulo: 'Cuál Gundam ver primero según tus gustos'
+  descripcion: 'Cuál Gundam ver primero según tus gustos: rutas de entrada para drama, política, acción, nostalgia o una serie reciente sin necesidad de contexto previo.'
+faq:
+  - pregunta: '¿Qué Gundam es más accesible para empezar?'
+    respuesta: 'The Witch from Mercury es la opción más corta entre las entradas y la que menos conocimiento previo exige.'
+  - pregunta: '¿Qué serie conviene si quiero drama humano?'
+    respuesta: 'Iron-Blooded Orphans se entiende sola y presenta niños soldado, mercenarios y violencia con consecuencias.'
+  - pregunta: '¿Qué Gundam elijo si quiero política internacional?'
+    respuesta: 'Gundam 00 sigue a una organización armada que interviene militarmente para acabar con la guerra.'
 referencias:
   - { titulo: 'Mobile Suit Gundam — Wikipedia', url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam' }
   - { titulo: 'The Witch from Mercury — Wikipedia', url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_The_Witch_from_Mercury' }

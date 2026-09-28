@@ -11,6 +11,20 @@ lectura_min: 2
 destacado: false
 universos: []
 series: []
+keyword_principal: 'gunpla original o pirata'
+keywords_secundarias:
+  - 'como saber si un gunpla es original'
+  - 'gunpla bootleg'
+seo:
+  titulo: 'Gunpla original o pirata: cómo identificarlo'
+  descripcion: 'Gunpla original o pirata: señales en el anuncio, la caja y los runners para revisar antes de pagar y reducir el riesgo de un bootleg en México.'
+faq:
+  - pregunta: '¿Qué palabras pueden alertar sobre un Gunpla no original?'
+    respuesta: 'Palabras como réplica, estilo, no original y KO suelen acompañar al producto no original.'
+  - pregunta: '¿Qué reviso en la caja de un Gunpla?'
+    respuesta: 'La impresión debe ser nítida, los colores sólidos y los códigos del fabricante deben estar presentes y legibles.'
+  - pregunta: '¿Qué señal da un precio demasiado bajo?'
+    respuesta: 'Si el precio baja mucho del rango de mercado y el vendedor no explica el origen, conviene asumir que no es original.'
 imagen: ../../assets/gui-original.jpg
 imagen_alt: "Model kit Real Grade del RX-78-2 expuesto en una vitrina."
 imagen_credito: gui-original

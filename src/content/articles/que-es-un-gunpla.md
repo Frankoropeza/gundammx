@@ -9,6 +9,21 @@ lectura_min: 2
 destacado: true
 universos: []
 series: []
+keyword_principal: 'que es un gunpla'
+keywords_secundarias:
+  - 'gunpla'
+  - 'que es gunpla'
+  - 'gundam armable'
+seo:
+  titulo: 'Qué es un Gunpla y cómo se arma'
+  descripcion: 'Qué es un Gunpla, cómo se diferencia de una figura armable, por qué no requiere pegamento y qué grado conviene elegir para comenzar desde México.'
+faq:
+  - pregunta: '¿Un Gunpla necesita pegamento?'
+    respuesta: 'No. Sus piezas se unen por ajuste y el diseño de los moldes sostiene el kit.'
+  - pregunta: '¿Es obligatorio pintar un Gunpla?'
+    respuesta: 'No. El plástico ya viene del color correcto y pintar es una decisión estética.'
+  - pregunta: '¿Un Gunpla es una figura?'
+    respuesta: 'No. Llega desarmado en marcos de plástico y armarlo es parte del producto.'
 referencias:
   - { titulo: 'BANDAI SPIRITS — historia corporativa', url: 'https://www.bandaispirits.co.jp/e/about/history/' }
   - { titulo: 'BANDAI HOBBY SITE — GUNPLA', url: 'https://global.bandai-hobby.net/en-us/gunpla/' }

@@ -9,6 +9,20 @@ lectura_min: 5
 destacado: false
 universos: [ac]
 series: [gundam-wing]
+keyword_principal: 'gundam wing mexico'
+keywords_secundarias:
+  - 'gundam wing doblaje latino'
+  - 'gundam wing cartoon network'
+seo:
+  titulo: 'Gundam Wing México: por qué marcó al público'
+  descripcion: 'Gundam Wing México: cómo llegó a la televisión, por qué marcó al público y cuál es su lugar como puerta de entrada a la franquicia en México.'
+faq:
+  - pregunta: '¿Por qué Gundam Wing fue importante en México?'
+    respuesta: 'Fue la serie con la que la mayoría del público mexicano conoció Gundam: llegó por Cartoon Network en 2002, con doblaje grabado en Cuernavaca, y por Canal 5 en 2003.'
+  - pregunta: '¿Gundam Wing se puede ver sin conocer otras series?'
+    respuesta: 'Sí. Sunrise la diseñó para poder verse sin saber nada de la franquicia.'
+  - pregunta: '¿Cuántos episodios tiene Gundam Wing?'
+    respuesta: 'La serie tiene cuarenta y nueve episodios y sigue siendo una puerta de entrada válida.'
 referencias:
   - { titulo: 'Mobile Suit Gundam Wing — Wikipedia', url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Wing' }
   - { titulo: 'Gundam Wing — Doblaje Wiki', url: 'https://doblaje.fandom.com/es/wiki/Gundam_Wing' }

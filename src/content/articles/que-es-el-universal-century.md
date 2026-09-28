@@ -9,6 +9,20 @@ lectura_min: 7
 destacado: false
 universos: [uc]
 series: [mobile-suit-gundam, zeta-gundam, chars-counterattack, gundam-unicorn, 08th-ms-team, requiem-for-vengeance, mobile-suit-gundam-hathaway, gundam-f91]
+keyword_principal: 'universal century gundam'
+keywords_secundarias:
+  - 'que es el universal century'
+  - 'uc gundam'
+seo:
+  titulo: 'Universal Century Gundam: qué es y por dónde entrar'
+  descripcion: 'Universal Century Gundam: qué es este calendario, por qué su orden importa y por dónde entrar a la línea original de la franquicia sin perder contexto.'
+faq:
+  - pregunta: '¿Qué significa UC 0079?'
+    respuesta: 'Significa el año 79 de la era universal, el calendario donde ocurre la serie original y sus continuaciones directas.'
+  - pregunta: '¿Por qué importa el orden en Universal Century?'
+    respuesta: 'Cada obra hereda consecuencias, personajes y máquinas de la anterior.'
+  - pregunta: '¿Por dónde conviene entrar al Universal Century?'
+    respuesta: 'Por la serie de 1979 o por sus tres películas recopilatorias si prefieres casi siete horas a cuarenta y tres episodios.'
 referencias:
   - { titulo: 'Universal Century — Wikipedia', url: 'https://en.wikipedia.org/wiki/Universal_Century' }
   - { titulo: 'Mobile Suit Gundam — Wikipedia', url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam' }
@@ -78,7 +92,7 @@ Que la misma empresa arme a enemigos es una de las observaciones más agudas de 
 
 ## Por dónde entrar
 
-Por la serie de 1979, o por sus tres películas recopilatorias si prefieres seis horas a cuarenta y tres
+Por la serie de 1979, o por sus tres películas recopilatorias si prefieres casi siete horas a cuarenta y tres
 episodios. Todo lo demás del Universal Century se apoya en ella. El orden completo de la línea —qué ver, qué
 saltarse y en qué momento— está en la [guía del Universal Century](/universos/uc/), y el orden recomendado
 para toda la franquicia, en [en qué orden ver Gundam](/articulos/en-que-orden-ver-gundam/).

@@ -2,6 +2,7 @@
 titulo: Gundam en México, de Cartoon Network a la tienda de la colonia Juárez
 seo:
   titulo: 'Historia de Gundam en México: de TV a tienda oficial'
+  descripcion: 'Historia de Gundam en México: de Cartoon Network a la presencia oficial de Bandai Namco, con series, tiendas y eventos clave a lo largo de dos décadas.'
 resumen: Cómo llegó la franquicia al país, qué se emitió y cuándo, y por qué 2025–2026 es el momento de mayor presencia oficial de Bandai Namco en su historia mexicana.
 autor: Redacción GUNDAMMX
 fecha: 2026-09-05
@@ -11,6 +12,17 @@ lectura_min: 6
 destacado: false
 universos: [ac, ce, as, uc]
 series: [gundam-wing, gundam-seed, the-witch-from-mercury, gquuuuuux, requiem-for-vengeance]
+keyword_principal: 'gundam mexico'
+keywords_secundarias:
+  - 'historia de gundam en mexico'
+  - 'gundam en mexico'
+faq:
+  - pregunta: '¿Qué serie llevó Gundam a la televisión mexicana?'
+    respuesta: 'Gundam Wing llegó a Cartoon Network Latinoamérica en julio de 2002 con doblaje grabado en Cuernavaca.'
+  - pregunta: '¿Qué cambió para Gundam en México entre 2024 y 2026?'
+    respuesta: 'Llegaron estrenos con doblaje latino, cine, televisión abierta y presencia física de Bandai Namco.'
+  - pregunta: '¿Qué ofrece el canal oficial para quien arma kits?'
+    respuesta: 'Ofrece envío nacional y un catálogo de vitrina; el surtido profundo sigue en tiendas especializadas independientes.'
 referencias:
   - { titulo: 'Gundam Wing — Doblaje Wiki', url: 'https://doblaje.fandom.com/es/wiki/Gundam_Wing' }
   - { titulo: 'Gundam SEED llega a Azteca 7 — ANMTV', url: 'https://www.anmtvla.com/2025/11/mexico-mobile-suit-gundam-seed-se.html' }

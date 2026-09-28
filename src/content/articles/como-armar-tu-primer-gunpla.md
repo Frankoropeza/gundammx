@@ -9,6 +9,20 @@ lectura_min: 3
 destacado: false
 universos: []
 series: []
+keyword_principal: 'como armar un gunpla'
+keywords_secundarias:
+  - 'armar gunpla por primera vez'
+  - 'gunpla para principiantes'
+seo:
+  titulo: 'Cómo armar un Gunpla por primera vez'
+  descripcion: 'Cómo armar un Gunpla por primera vez: herramientas necesarias, técnica de corte, orden de armado y errores que conviene evitar para terminar tu kit.'
+faq:
+  - pregunta: '¿Qué herramienta necesito para armar mi primer Gunpla?'
+    respuesta: 'Un cortador de plástico de punta fina es la única compra que cambia el resultado de forma visible.'
+  - pregunta: '¿Cómo evito la marca blanca al cortar una pieza?'
+    respuesta: 'Haz dos cortes: primero lejos de la pieza y después al ras con el filo plano contra ella.'
+  - pregunta: '¿Puedo saltarme pasos del manual?'
+    respuesta: 'No conviene. Los kits están diseñados para que las piezas encajen en esa secuencia y saltarse pasos deja partes inaccesibles.'
 referencias:
   - { titulo: 'BANDAI HOBBY SITE — GUNPLA', url: 'https://global.bandai-hobby.net/en-us/gunpla/' }
   - { titulo: 'BANDAI SPIRITS Hobby — For Oversea Customer', url: 'https://bandai-hobby.net/global/index.html' }

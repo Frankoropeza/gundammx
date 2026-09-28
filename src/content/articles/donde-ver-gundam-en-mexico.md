@@ -10,6 +10,21 @@ lectura_min: 6
 destacado: false
 universos: [uc, ac, ce, as]
 series: [mobile-suit-gundam, gundam-wing, gundam-seed, the-witch-from-mercury, requiem-for-vengeance, gquuuuuux, iron-blooded-orphans, gundam-unicorn]
+keyword_principal: 'donde ver gundam en mexico'
+keywords_secundarias:
+  - 'donde ver gundam'
+  - 'gundam crunchyroll'
+  - 'gundam netflix'
+seo:
+  titulo: 'Dónde ver Gundam en México: plataformas y TV'
+  descripcion: 'Dónde ver Gundam en México: opciones gratis, plataformas de suscripción y pasos para comprobar si una serie sigue disponible antes de suscribirte.'
+faq:
+  - pregunta: '¿Dónde puedo ver Gundam gratis en México?'
+    respuesta: 'Gundam SEED se transmite en Azteca 7 y el canal oficial de YouTube publica series completas de forma gratuita y rotativa.'
+  - pregunta: '¿Qué plataforma concentra más anime de Gundam?'
+    respuesta: 'Crunchyroll concentra la mayor parte del catálogo de anime de la franquicia.'
+  - pregunta: '¿Gundam Wing está en Disney+ México?'
+    respuesta: 'No. La ficha de Disney+ no abre desde México; hoy la serie está en Crunchyroll y en Prime Video a través del canal de Crunchyroll.'
 referencias:
   - { titulo: 'GUNDAM Official — Hathaway: The Sorcery of Nymph Circe llega a Netflix el 31 de agosto', url: 'https://en.gundam-official.com/news/lpqft8o0yl0pnrwsfj6klikz' }
   - { titulo: 'Mobile Suit Gundam — Crunchyroll', url: 'https://www.crunchyroll.com/es/series/GKEH2G9XV/mobile-suit-gundam' }

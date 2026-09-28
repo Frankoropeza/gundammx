@@ -11,6 +11,21 @@ lectura_min: 4
 destacado: true
 universos: []
 series: []
+keyword_principal: 'donde comprar gunpla en mexico'
+keywords_secundarias:
+  - 'donde comprar gundam en mexico'
+  - 'gunpla mexico'
+  - 'tiendas gunpla cdmx'
+seo:
+  titulo: 'Dónde comprar Gunpla en México sin arriesgarte'
+  descripcion: 'Dónde comprar Gunpla en México: compara tienda oficial, especializadas, envíos nacionales, marketplace e importación antes de pagar según origen y catálogo.'
+faq:
+  - pregunta: '¿Dónde hay certeza absoluta sobre el origen de un Gunpla?'
+    respuesta: 'La tienda oficial es el canal donde el origen del producto no admite duda.'
+  - pregunta: '¿Qué opción tengo si no hay tiendas en mi ciudad?'
+    respuesta: 'Las tiendas especializadas con envío nacional son la vía cuando no hay oferta local.'
+  - pregunta: '¿Qué debo hacer antes de comprar en marketplace?'
+    respuesta: 'Revisa al vendedor, pues en marketplace la responsabilidad de verificar el origen pasa a ti.'
 imagen: ../../assets/gui-donde-comprar.jpg
 imagen_alt: "Entrada de la tienda The Gundam Base en Tokio."
 imagen_credito: gui-donde-comprar

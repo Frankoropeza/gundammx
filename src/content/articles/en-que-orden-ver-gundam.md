@@ -9,6 +9,21 @@ lectura_min: 8
 destacado: true
 universos: [uc, ac, ce, ad, pd, as, cc]
 series: [the-witch-from-mercury, mobile-suit-gundam, gundam-wing, iron-blooded-orphans, zeta-gundam, chars-counterattack, gundam-unicorn, gquuuuuux, gundam-f91]
+keyword_principal: 'como ver gundam en orden'
+keywords_secundarias:
+  - 'como ver gundam'
+  - 'orden de gundam'
+  - 'en que orden ver gundam'
+seo:
+  titulo: 'Cómo ver Gundam en orden sin perderte'
+  descripcion: 'Cómo ver Gundam en orden: diferencia entre cronología y orden de entrada, rutas recomendadas y cómo seguir el Universal Century desde México.'
+faq:
+  - pregunta: '¿Debo ver Gundam en orden cronológico?'
+    respuesta: 'No para empezar. La cronología interna solo tiene sentido dentro de una misma línea temporal.'
+  - pregunta: '¿Por qué el Universal Century sí requiere orden?'
+    respuesta: 'Sus obras se responden entre sí y dependen de consecuencias, personajes y máquinas de títulos anteriores.'
+  - pregunta: '¿Con qué serie recomienda empezar la guía?'
+    respuesta: 'The Witch from Mercury es la recomendación principal: es autocontenida, moderna y tiene veinticuatro episodios más un prólogo.'
 referencias:
   - { titulo: 'Mobile Suit Gundam — Wikipedia', url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam' }
   - { titulo: 'Universal Century — Wikipedia', url: 'https://en.wikipedia.org/wiki/Universal_Century' }
@@ -54,7 +69,7 @@ por una alternativa?
 1. **The Witch from Mercury (2022).** Veinticuatro episodios más un prólogo, autocontenida, moderna y con el
    ritmo de una serie actual. Si solo vas a probar una, que sea esta. Se transmitió en México por Azteca 7.
 2. **Mobile Suit Gundam (1979).** El origen. Si la animación de la época te frena, las tres películas
-   recopilatorias de 1981–1982 condensan la serie en unas seis horas.
+   recopilatorias de 1981–1982 condensan la serie en casi siete horas.
 3. **Gundam Wing (1995).** La serie que vio México en Cartoon Network y Canal 5 a principios de los 2000.
    Cuarenta y nueve episodios, ritmo alto, cinco pilotos.
 4. **Iron-Blooded Orphans (2015).** La mejor entrada para quien no viene del anime de robots: física,

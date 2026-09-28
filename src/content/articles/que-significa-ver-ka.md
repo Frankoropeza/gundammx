@@ -9,6 +9,20 @@ lectura_min: 2
 destacado: false
 universos: []
 series: []
+keyword_principal: 'ver ka gundam'
+keywords_secundarias:
+  - 'que significa ver ka'
+  - 'gunpla ver ka'
+seo:
+  titulo: 'Ver Ka Gundam: qué significa y qué cambia'
+  descripcion: 'Ver Ka Gundam: qué significa Version Katoki, qué cambia frente a un Master Grade estándar y cuándo conviene elegir esta línea sin confundirla con otros sufijos.'
+faq:
+  - pregunta: '¿Qué cambia frente a un Master Grade estándar?'
+    respuesta: 'Suele traer proporciones reinterpretadas, más piezas, más detalle de superficie, calcas extensas y más tiempo de armado.'
+  - pregunta: '¿Un Ver.Ka es una edición limitada?'
+    respuesta: 'No. No es una edición limitada ni un aniversario; es una firma de autor.'
+  - pregunta: '¿Conviene un Ver.Ka como primer Master Grade?'
+    respuesta: 'No. Las calcas son muchas y finas; conviene empezar por un MG estándar.'
 referencias:
   - { titulo: 'Hajime Katoki — Wikipedia', url: 'https://en.wikipedia.org/wiki/Hajime_Katoki' }
   - { titulo: 'GUNDAM.INFO — MASTER GRADE Ver.Ka', url: 'https://en.gundam-official.com/feature/mgka/zeta/' }

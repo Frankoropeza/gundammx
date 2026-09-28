@@ -9,6 +9,21 @@ lectura_min: 2
 destacado: true
 universos: [uc, ac, ce, ad, pd, as, cc]
 series: [mobile-suit-gundam, the-witch-from-mercury, gundam-wing]
+keyword_principal: 'que es gundam'
+keywords_secundarias:
+  - 'que es un gundam'
+  - 'gundam significado'
+  - 'gundam anime'
+seo:
+  titulo: 'Qué es Gundam: guía rápida para empezar'
+  descripcion: 'Qué es Gundam, cómo funcionan sus líneas temporales, qué es un mobile suit y por qué el Gunpla es una puerta de entrada a la franquicia sin cronología única.'
+faq:
+  - pregunta: '¿Gundam es una historia continua?'
+    respuesta: 'No. La franquicia tiene siete líneas temporales independientes, cada una con su propio universo, personajes y tecnología.'
+  - pregunta: '¿Qué es un mobile suit?'
+    respuesta: 'Es una máquina humanoide con piloto dentro, tratada como equipo militar y no como personaje.'
+  - pregunta: '¿Qué es el Gunpla?'
+    respuesta: 'Son los model kits de las máquinas de Gundam que Bandai vende desde 1980.'
 referencias:
   - { titulo: 'Mobile Suit Gundam — Wikipedia', url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam' }
   - { titulo: 'Gundam — Wikipedia', url: 'https://en.wikipedia.org/wiki/Gundam' }

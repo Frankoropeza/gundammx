@@ -11,6 +11,20 @@ lectura_min: 2
 destacado: false
 universos: []
 series: []
+keyword_principal: 'cuanto cuesta un gunpla'
+keywords_secundarias:
+  - 'precio gunpla mexico'
+  - 'gunpla barato'
+seo:
+  titulo: 'Cuánto cuesta un Gunpla en México por grado'
+  descripcion: 'Cuánto cuesta un Gunpla en México: rangos por grado, cómo estimar un precio esperado y cuándo un precio indica sobreprecio o riesgo antes de comprar.'
+faq:
+  - pregunta: '¿Cómo puedo estimar cuánto debería costar un Gunpla en México?'
+    respuesta: 'Si conoces el precio de lista en yenes, puedes estimar lo que debería costar aquí con el rango esperado en pesos.'
+  - pregunta: '¿Qué indica un precio más de 15% arriba del rango esperado?'
+    respuesta: 'Si no es un kit descontinuado ni un exclusivo, es sobreprecio.'
+  - pregunta: '¿Un precio muy bajo es una buena señal?'
+    respuesta: 'No necesariamente. Un precio muy por debajo del rango apunta a producto no original.'
 imagen: ../../assets/gui-precio.jpg
 imagen_alt: "Model kits High Grade expuestos junto a su ficha de precio."
 imagen_credito: gui-precio

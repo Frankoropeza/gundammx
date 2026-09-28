@@ -31,7 +31,7 @@ Esta es la única línea de Gundam donde el orden importa, porque cada obra pres
 mínima son cuatro títulos:
 
 1. **[Mobile Suit Gundam](/series/mobile-suit-gundam/)** (UC 0079). La serie de 1979, o sus tres películas
-   recopilatorias de 1981–1982 si prefieres seis horas a cuarenta y tres episodios. Todo lo demás se apoya aquí.
+   recopilatorias de 1981–1982 si prefieres casi siete horas a cuarenta y tres episodios. Todo lo demás se apoya aquí.
 2. **[Zeta Gundam](/series/zeta-gundam/)** (UC 0087). Secuela directa siete años después. Presupone la
    anterior de principio a fin.
 3. **[Char's Counterattack](/series/chars-counterattack/)** (UC 0093). La película que cierra el duelo entre

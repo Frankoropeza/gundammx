@@ -9,6 +9,20 @@ lectura_min: 2
 destacado: false
 universos: []
 series: []
+keyword_principal: 'eventos gundam mexico'
+keywords_secundarias:
+  - 'convenciones gundam mexico'
+  - 'torneos gundam card game mexico'
+seo:
+  titulo: 'Eventos Gundam México: convenciones y activaciones'
+  descripcion: 'Eventos Gundam México: convenciones, concurso de modelismo y activaciones verificadas para planear tu asistencia durante el año con fuentes oficiales.'
+faq:
+  - pregunta: '¿Qué eventos Gundam aparecen en el calendario?'
+    respuesta: 'El calendario reúne dos convenciones grandes, un concurso nacional de modelismo y activaciones de Bandai Namco.'
+  - pregunta: '¿Cuál es el evento indicado para aprender técnicas de modelismo?'
+    respuesta: 'La Exposición Nacional IPMS México es el evento donde se aprende técnica de pintura, aerografía y weathering.'
+  - pregunta: '¿Cómo se seleccionan los eventos incluidos?'
+    respuesta: 'Solo aparecen eventos verificados con fuente oficial; los anunciados en redes sin confirmación no entran.'
 referencias:
   - { titulo: 'La Mole Convention — sitio oficial', url: 'https://lamole.com.mx/' }
   - { titulo: 'Multianime — Bandai Namco México en el 30 aniversario de La Mole Convention', url: 'https://multianime.com.mx/2026/03/01/bandai-namco-mexico-se-suma-al-historico-30-aniversario-de-la-mole-convention-con-experiencias-unicas-anime-comics-coleccionables/' }

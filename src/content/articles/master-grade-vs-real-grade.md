@@ -10,6 +10,20 @@ lectura_min: 2
 destacado: false
 universos: []
 series: []
+keyword_principal: 'master grade vs real grade'
+keywords_secundarias:
+  - 'mg vs rg'
+  - 'diferencia mg y rg'
+seo:
+  titulo: 'Master Grade vs Real Grade: diferencias clave'
+  descripcion: 'Master Grade vs Real Grade: compara escala, piezas, tiempo, espacio y precio para elegir el Gunpla que mejor se adapta a tu experiencia al armar y exhibir.'
+faq:
+  - pregunta: '¿Cuál es la diferencia de escala entre Real Grade y Master Grade?'
+    respuesta: 'Real Grade usa escala 1/144 y Master Grade, 1/100.'
+  - pregunta: '¿Cuál conviene si nunca has armado Gunpla?'
+    respuesta: 'Ninguno de los dos. Para el primer kit conviene un Entry Grade o un High Grade.'
+  - pregunta: '¿Cuál es más cómodo para transformar un Unicorn?'
+    respuesta: 'El 1/100 es más cómodo de transformar porque tiene piezas más grandes y menos riesgo de forzar el mecanismo.'
 referencias:
   - { titulo: 'BANDAI HOBBY SITE — GUNPLA', url: 'https://global.bandai-hobby.net/en-us/gunpla/' }
   - { titulo: 'BANDAI SPIRITS Hobby — For Oversea Customer', url: 'https://bandai-hobby.net/global/index.html' }
