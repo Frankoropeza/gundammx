@@ -13,6 +13,9 @@ fuentes:
   - https://en.wikipedia.org/wiki/Gunpla
   - https://global.bandai-hobby.net/en-us/schedule/
 actualizado: '2026-09-28'
+imagen: ../../assets/gen-grado-real-grade.jpg
+imagen_alt: "Marcos de plástico multicolor con piezas diminutas y muy densas junto a una lupa de precisión."
+imagen_credito: gen-grado-real-grade
 ---
 
 **Gundam RG** significa Real Grade, la línea de Gunpla 1/144 que busca verse realista y que Bandai Spirits lanzó en julio de 2010. Conserva una escala compacta, pero concentra más piezas, detalle de superficie y calcas que un grado de entrada en la misma escala.

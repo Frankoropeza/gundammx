@@ -29,6 +29,9 @@ faq:
   - pregunta: '¿Por qué es más seguro vender dentro de una comunidad que en un marketplace abierto?'
     respuesta: 'Porque hay perfil, historial y reputación dentro del mismo grupo de coleccionistas, algo que un marketplace anónimo no ofrece por defecto.'
 borrador: false
+imagen: ../../assets/gen-art-comprar-vender-gunpla-segunda-mano.jpg
+imagen_alt: "Dos personas revisan el contenido de una caja de kit sobre una mesa."
+imagen_credito: gen-art-comprar-vender-gunpla-segunda-mano
 ---
 
 El mercado de Gunpla usado en México mueve tanto como el de kits nuevos: kits descontinuados, ediciones P-Bandai que

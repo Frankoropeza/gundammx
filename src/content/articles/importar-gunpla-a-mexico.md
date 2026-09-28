@@ -34,6 +34,9 @@ referencias:
     url: 'https://www.anam.gob.mx/mensajeria-y-paqueteria/'
   - titulo: 'SAT — Reglas Generales de Comercio Exterior para 2026'
     url: 'https://www.sat.gob.mx/minisitio/NormatividadRMFyRGCE/documentos2026/rgce/rgce/ReglasGeneralesComercioExteriorpara2026.pdf'
+imagen: ../../assets/gen-art-importar-gunpla-a-mexico.jpg
+imagen_alt: "Paquete internacional con sobre de documentos aduanales sobre un escritorio."
+imagen_credito: gen-art-importar-gunpla-a-mexico
 ---
 
 > **Nota de vigencia.** Toda la información normativa de este artículo se verificó el **7 de septiembre de 2026** contra las fuentes oficiales enlazadas al final. Las Reglas Generales de Comercio Exterior se actualizan cada año, así que **antes de comprar, confirma las cifras vigentes en el portal de la ANAM**. Este artículo se revisa cada seis meses.

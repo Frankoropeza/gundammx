@@ -30,6 +30,9 @@ referencias:
     url: 'https://en.wikipedia.org/wiki/Gundam:_Requiem_for_Vengeance'
   - titulo: 'Gundam: Requiem for Vengeance — sitio oficial de Gundam'
     url: 'https://en.gundam-official.com/requiem-for-vengeance/'
+imagen: ../../assets/gen-art-requiem-for-vengeance-que-es.jpg
+imagen_alt: "Estación de trabajo de animación 3D con un paisaje renderizado en tiempo real."
+imagen_credito: gen-art-requiem-for-vengeance-que-es
 ---
 
 Si viste la portada y no supiste si era un anime, un videojuego o una cinemática, la confusión es razonable: **Requiem for Vengeance no se produjo como el resto de la franquicia**.

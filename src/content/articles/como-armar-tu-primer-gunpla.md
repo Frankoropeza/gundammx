@@ -27,6 +27,9 @@ referencias:
   - { titulo: 'BANDAI HOBBY SITE — GUNPLA', url: 'https://global.bandai-hobby.net/en-us/gunpla/' }
   - { titulo: 'BANDAI SPIRITS Hobby — For Oversea Customer', url: 'https://bandai-hobby.net/global/index.html' }
   - { titulo: 'BANDAI SPIRITS — historia corporativa', url: 'https://www.bandaispirits.co.jp/e/about/history/' }
+imagen: ../../assets/gen-art-como-armar-tu-primer-gunpla.jpg
+imagen_alt: "Manos separando una pieza de plástico del marco con pinzas de corte."
+imagen_credito: gen-art-como-armar-tu-primer-gunpla
 ---
 
 Un Gunpla no necesita pegamento, pintura ni experiencia previa. Lo que sí necesita es que no lo armes

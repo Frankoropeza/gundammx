@@ -30,6 +30,9 @@ referencias:
   - { titulo: 'Plastic Zoo — San Luis Potosí', url: 'https://plastic-zoo.com/' }
   - { titulo: 'El Reino Hobby Store — Guadalajara', url: 'https://elreino.mx/' }
   - { titulo: 'Akibara Xpress — Monterrey', url: 'https://akibaraxpress.com/' }
+imagen: ../../assets/gen-art-gunpla-fuera-de-cdmx.jpg
+imagen_alt: "Paquetes listos para envío en la trastienda de una tienda de hobby."
+imagen_credito: gen-art-gunpla-fuera-de-cdmx
 ---
 
 El hobby no vive solo en la Ciudad de México. De las tiendas que hemos verificado, la mayoría está

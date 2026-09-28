@@ -51,6 +51,9 @@ referencias:
     url: 'https://www.mexplay.com/collections/gundam-cartas-sueltas'
   - titulo: 'TCGplayer — categoría Gundam Card Game'
     url: 'https://www.tcgplayer.com/categories/trading-and-collectible-card-games/gundam-card-game'
+imagen: ../../assets/gen-art-gundam-card-game-en-mexico.jpg
+imagen_alt: "Manos de dos jugadores sobre un tapete con cartas boca abajo en un torneo."
+imagen_credito: gen-art-gundam-card-game-en-mexico
 ---
 
 > **Nota de vigencia.** Actualizado el **28 de septiembre de 2026** contra el sitio oficial del juego. Esta

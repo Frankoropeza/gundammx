@@ -30,6 +30,9 @@ faq:
   - pregunta: '¿Dónde pregunto si un término no me quedó claro?'
     respuesta: 'En el foro de la comunidad: es exactamente el tipo de duda que resuelve más rápido alguien que ya armó ese kit que un manual.'
 borrador: false
+imagen: ../../assets/gen-art-glosario-gunpla-terminos.jpg
+imagen_alt: "Cuaderno abierto con pluma y piezas de plástico sueltas."
+imagen_credito: gen-art-glosario-gunpla-terminos
 ---
 
 Entrar al Gunpla se siente como entrar a una conversación a la mitad: todo mundo dice "HG", "runner", "nub", "panel

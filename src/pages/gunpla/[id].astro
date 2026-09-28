@@ -3,6 +3,7 @@ import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import Figura from '@components/Figura.astro';
 import MetadataRow from '@components/MetadataRow.astro';
 import KitCard from '@components/KitCard.astro';
 import RelatedContent from '@components/RelatedContent.astro';
@@ -37,6 +38,7 @@ const schemas = [schemaMigaDePan(base, migas), schemaFicha(base, { nombre: `${d.
       <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">{d.resumen}</p>
       <MetadataRow class="mt-8" items={[{ etiqueta: 'Escala', valor: d.escala }, { etiqueta: 'Línea desde', valor: String(d.anio_lanzamiento) }, { etiqueta: 'Dificultad', valor: d.dificultad }, { etiqueta: 'Para quién', valor: d.para_quien }]} />
     </header>
+    {d.imagen && <div class="lg:col-span-4 lg:col-start-9"><Figura src={d.imagen} alt={d.imagen_alt} credito={d.imagen_credito} codigo={d.codigo} prioridad ratio="aspect-[16/10]" /></div>}
     <div class="prose-ed lg:col-span-7"><Content /></div>
     <aside class="space-y-10 lg:col-span-4 lg:col-start-9" data-pagefind-ignore>
       <RelatedContent titulo="Otros grados" items={otros.map((o) => ({ eyebrow: `${o.data.etiqueta} · ${o.data.escala}`, titulo: o.data.nombre, href: `/gunpla/${o.id}/` }))} />

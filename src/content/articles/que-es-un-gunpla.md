@@ -28,6 +28,9 @@ referencias:
   - { titulo: 'BANDAI SPIRITS — historia corporativa', url: 'https://www.bandaispirits.co.jp/e/about/history/' }
   - { titulo: 'BANDAI HOBBY SITE — GUNPLA', url: 'https://global.bandai-hobby.net/en-us/gunpla/' }
   - { titulo: 'BANDAI SPIRITS Hobby — For Oversea Customer', url: 'https://bandai-hobby.net/global/index.html' }
+imagen: ../../assets/gen-art-que-es-un-gunpla.jpg
+imagen_alt: "Marcos de plástico sin cortar junto a un instructivo con diagramas de piezas."
+imagen_credito: gen-art-que-es-un-gunpla
 ---
 
 **Gunpla** es la contracción de *Gundam plastic model*: los model kits de las máquinas de la franquicia

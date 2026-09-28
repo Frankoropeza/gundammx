@@ -32,6 +32,9 @@ referencias:
     url: 'https://en.wikipedia.org/wiki/Gunpla'
   - titulo: 'Historia de Bandai Spirits — sitio oficial'
     url: 'https://www.bandaispirits.co.jp/e/about/history/'
+imagen: ../../assets/gen-art-perfect-grade-que-es.jpg
+imagen_alt: "Caja grande y lisa llena de marcos de plástico empacados."
+imagen_credito: gen-art-perfect-grade-que-es
 ---
 
 El Perfect Grade es el grado más alto del catálogo de Gunpla, y también el que más gente compra antes de estar lista. Es una compra cara, larga y difícil de revertir.

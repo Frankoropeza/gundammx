@@ -15,7 +15,11 @@ if (credito && !c) throw new Error(`Falta el crédito de la imagen "${credito}" 
   ? (
     <figure>
       <Image src={src} alt={alt || c?.alt || ''} width={ancho} height={alto} class:list={['w-full border border-line object-cover', ratio, cls]} loading={prioridad ? 'eager' : 'lazy'} fetchpriority={prioridad ? 'high' : undefined} decoding="async" />
-      {c && (
+      {c?.tipo === 'ia' ? (
+        <figcaption class="mt-2 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">
+          Imagen ilustrativa · <a href="/creditos/#imagenes-generadas" class="link-quiet">generada con IA</a>
+        </figcaption>
+      ) : c && (
         <figcaption class="mt-2 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">
           Foto de <a href={c.fuente} class="link-quiet" rel="nofollow noopener" target="_blank">{c.autor}</a>
           · <a href={c.licenciaUrl} class="link-quiet" rel="nofollow noopener license" target="_blank">{c.licencia}</a> · Recortada

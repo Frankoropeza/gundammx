@@ -443,7 +443,7 @@ const factions = defineCollection({
 
 const gunpla = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/gunpla' }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
     nombre: z.string(),                     // "High Grade"
     etiqueta: z.string(),                   // "HG"
     escala: z.string(),
@@ -452,6 +452,9 @@ const gunpla = defineCollection({
     resumen: z.string(),
     para_quien: z.string(),
     orden: z.number(),
+    imagen: image().optional(),
+    imagen_alt: z.string().optional(),
+    imagen_credito: z.string().optional(),
     ...base,
   }),
 });

@@ -10,6 +10,9 @@ codigo: UNI-AD
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_00
 actualizado: '2026-09-05'
+imagen: ../../assets/gen-universo-ad.jpg
+imagen_alt: "Elevador orbital que se eleva desde una plataforma oceánica al amanecer."
+imagen_credito: gen-universo-ad
 ---
 
 Anno Domini es el calendario de *Gundam 00* (2007–2009) y de su película *A wakening of the Trailblazer* (2010).

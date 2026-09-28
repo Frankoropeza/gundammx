@@ -29,6 +29,9 @@ faq:
   - pregunta: '¿Dónde pregunto qué kit me conviene según lo que busco?'
     respuesta: 'En el foro de la comunidad: describe tu presupuesto y lo que te gusta, y alguien con experiencia te puede recomendar algo puntual.'
 borrador: false
+imagen: ../../assets/gen-art-checklist-antes-de-comprar-tu-primer-gunpla.jpg
+imagen_alt: "Cajas lisas de kits junto a una tabla con una lista de verificación en blanco."
+imagen_credito: gen-art-checklist-antes-de-comprar-tu-primer-gunpla
 ---
 
 El error más común de quien empieza en Gunpla no es de técnica: es comprar el kit equivocado para su nivel,

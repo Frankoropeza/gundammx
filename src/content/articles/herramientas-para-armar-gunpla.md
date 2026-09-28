@@ -31,6 +31,9 @@ referencias:
     url: 'https://en.wikipedia.org/wiki/Gunpla'
   - titulo: 'Historia de Bandai Spirits — sitio oficial'
     url: 'https://www.bandaispirits.co.jp/e/about/history/'
+imagen: ../../assets/gen-art-herramientas-para-armar-gunpla.jpg
+imagen_alt: "Herramientas de modelismo ordenadas sobre un tapete de corte."
+imagen_credito: gen-art-herramientas-para-armar-gunpla
 ---
 
 Casi todas las listas de herramientas para Gunpla tienen el mismo problema: mezclan lo que necesitas hoy con lo que quizá necesites en dos años. El resultado es que mucha gente gasta en su primer kit más en herramientas que en el kit.

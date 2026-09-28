@@ -28,6 +28,9 @@ referencias:
   - { titulo: 'BANDAI HOBBY SITE — GUNPLA', url: 'https://global.bandai-hobby.net/en-us/gunpla/' }
   - { titulo: 'BANDAI SPIRITS Hobby — For Oversea Customer', url: 'https://bandai-hobby.net/global/index.html' }
   - { titulo: 'Bandai Namco Shop México — catálogo oficial', url: 'https://bandainamcoshop.com.mx/' }
+imagen: ../../assets/gen-art-master-grade-vs-real-grade.jpg
+imagen_alt: "Dos pilas de marcos de plástico comparadas con una regla metálica."
+imagen_credito: gen-art-master-grade-vs-real-grade
 ---
 
 Es la comparación que más se busca cuando alguien ya armó un par de High Grade y quiere subir de

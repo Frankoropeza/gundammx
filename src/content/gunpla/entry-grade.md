@@ -13,6 +13,9 @@ fuentes:
   - https://en.wikipedia.org/wiki/Gunpla
   - https://global.bandai-hobby.net/en-us/schedule/
 actualizado: '2026-09-28'
+imagen: ../../assets/gen-grado-entry-grade.jpg
+imagen_alt: "Un solo marco de plástico gris con pocas piezas grandes, típico de un kit de nivel inicial."
+imagen_credito: gen-grado-entry-grade
 ---
 
 Entry Grade es una línea de modelos de plástico fáciles de armar y de alta calidad, lanzada por Bandai Spirits en septiembre de 2020. Cuando alguien busca **Entry Grade**, normalmente busca un Gunpla 1/144 para empezar: las piezas encajan a presión y llegan moldeadas en color, por lo que no requieren pegamento para el armado.

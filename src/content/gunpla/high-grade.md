@@ -13,6 +13,9 @@ fuentes:
   - https://en.wikipedia.org/wiki/Gunpla
   - https://global.bandai-hobby.net/en-us/schedule/
 actualizado: '2026-09-28'
+imagen: ../../assets/gen-grado-high-grade.jpg
+imagen_alt: "Dos marcos de plástico gris y azul con piezas pequeñas junto a unas pinzas de corte."
+imagen_credito: gen-grado-high-grade
 ---
 
 **Gundam HG** se refiere a High Grade, la marca estándar de Gunpla a escala 1/144 que Bandai Spirits lanzó en marzo de 1990. Es un punto de referencia para quien quiere un modelo compacto, con partes moldeadas en color y ensamble a presión, sin necesitar pegamento para comenzar.

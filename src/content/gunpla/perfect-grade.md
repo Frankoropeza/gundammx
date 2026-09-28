@@ -14,6 +14,9 @@ fuentes:
   - https://global.bandai-hobby.net/en-us/schedule/
   - https://en.gundam-official.com/news/gknxe9b8n5slzl5iypx1s8yv
 actualizado: '2026-09-28'
+imagen: ../../assets/gen-grado-perfect-grade.jpg
+imagen_alt: "Gran cantidad de marcos de plástico de formato grande con piezas metalizadas, tornillos y un módulo LED."
+imagen_credito: gen-grado-perfect-grade
 ---
 
 **Gundam PG** significa Perfect Grade, la marca de más alto grado de Gunpla y el Gunpla definitivo a escala 1/60, lanzada por Bandai Spirits en noviembre de 1998. Un Perfect Grade plantea un modelo grande y detallado, pensado como proyecto de armado para quien quiere dedicarle varias sesiones y espacio de exhibición.

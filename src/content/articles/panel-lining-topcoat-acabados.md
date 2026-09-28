@@ -31,6 +31,9 @@ referencias:
     url: 'https://en.wikipedia.org/wiki/Gunpla'
   - titulo: 'Historia de Bandai Spirits — sitio oficial'
     url: 'https://www.bandaispirits.co.jp/e/about/history/'
+imagen: ../../assets/gen-art-panel-lining-topcoat-acabados.jpg
+imagen_alt: "Rotulador de punta fina marcando líneas de panel en una pieza de plástico blanca."
+imagen_credito: gen-art-panel-lining-topcoat-acabados
 ---
 
 Armas tu kit, lo pones en el estante, y no se ve como los de las fotos. No es tu impresión ni es el kit: son tres pasos que casi nadie explica en español y que se aplican **después** de terminar el armado.

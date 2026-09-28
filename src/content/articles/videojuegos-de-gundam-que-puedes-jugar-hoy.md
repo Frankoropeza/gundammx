@@ -39,6 +39,9 @@ referencias:
     url: 'https://heartbitsvg.mx/gundam-breaker-4-lanzamiento-oficial/'
   - titulo: 'Game Informer — anuncio del cierre de Gundam Evolution'
     url: 'https://gameinformer.com/2023/07/20/gundam-evolution-is-shutting-down-in-november'
+imagen: ../../assets/gen-art-videojuegos-de-gundam-que-puedes-jugar-hoy.jpg
+imagen_alt: "Manos con un control de videojuego iluminadas por la pantalla."
+imagen_credito: gen-art-videojuegos-de-gundam-que-puedes-jugar-hoy
 ---
 
 > **Nota de vigencia.** Precios y estado de servicio verificados en Steam México el **9 de septiembre de 2026**. Un juego con servidores en línea puede cambiar de estado sin aviso; confirma en la tienda antes de comprar.

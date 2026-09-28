@@ -38,6 +38,9 @@ referencias:
     url: 'https://global.bandai-hobby.net/en-us/site/gundam-assemble/'
   - titulo: 'BANDAI TABLETOP GAMES — plataforma oficial de eventos'
     url: 'https://www.bandai-tabletop-games.com/'
+imagen: ../../assets/gen-art-gundam-assemble-que-es.jpg
+imagen_alt: "Mesa de juego estratégico con escenografía, dados y cinta métrica."
+imagen_credito: gen-art-gundam-assemble-que-es
 ---
 
 > **Nota de vigencia.** Verificado el **28 de septiembre de 2026** contra el comunicado oficial de Bandai.

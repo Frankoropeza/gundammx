@@ -10,6 +10,9 @@ codigo: UNI-CC
 fuentes:
   - https://en.wikipedia.org/wiki/Turn_A_Gundam
 actualizado: '2026-09-05'
+imagen: ../../assets/gen-universo-cc.jpg
+imagen_alt: "Campo nocturno bajo una Luna llena enorme con ruinas antiguas cubiertas de vegetación."
+imagen_credito: gen-universo-cc
 ---
 
 Correct Century es el calendario de *Turn A Gundam* (1999–2000), la serie con la que Yoshiyuki Tomino celebró

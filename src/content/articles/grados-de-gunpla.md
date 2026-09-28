@@ -29,6 +29,9 @@ referencias:
   - { titulo: 'BANDAI HOBBY SITE — GUNPLA', url: 'https://global.bandai-hobby.net/en-us/gunpla/' }
   - { titulo: 'BANDAI SPIRITS Hobby — For Oversea Customer', url: 'https://bandai-hobby.net/global/index.html' }
   - { titulo: 'BANDAI SPIRITS — historia corporativa', url: 'https://www.bandaispirits.co.jp/e/about/history/' }
+imagen: ../../assets/gen-art-grados-de-gunpla.jpg
+imagen_alt: "Cinco marcos de plástico ordenados de menor a mayor densidad de piezas."
+imagen_credito: gen-art-grados-de-gunpla
 ---
 
 El grado es lo primero que hay que decidir y lo que más confunde al llegar. No es un nivel de calidad:

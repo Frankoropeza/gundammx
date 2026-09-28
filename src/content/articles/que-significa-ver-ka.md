@@ -27,6 +27,9 @@ referencias:
   - { titulo: 'Hajime Katoki — Wikipedia', url: 'https://en.wikipedia.org/wiki/Hajime_Katoki' }
   - { titulo: 'GUNDAM.INFO — MASTER GRADE Ver.Ka', url: 'https://en.gundam-official.com/feature/mgka/zeta/' }
   - { titulo: 'BANDAI HOBBY SITE — GUNPLA', url: 'https://global.bandai-hobby.net/en-us/gunpla/' }
+imagen: ../../assets/gen-art-que-significa-ver-ka.jpg
+imagen_alt: "Macro de una pieza de plástico con detalle grabado muy fino."
+imagen_credito: gen-art-que-significa-ver-ka
 ---
 
 **Ver.Ka** es la abreviatura de *Version Katoki*: la línea de Master Grade rediseñada por **Hajime

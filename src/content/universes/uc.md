@@ -11,6 +11,9 @@ fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam
   - https://en.wikipedia.org/wiki/Universal_Century
 actualizado: '2026-09-06'
+imagen: ../../assets/gen-universo-uc.jpg
+imagen_alt: "Colonia espacial cilíndrica en órbita terrestre con la Tierra al fondo."
+imagen_credito: gen-universo-uc
 ---
 
 El Universal Century es el calendario con el que arrancó la franquicia en 1979 y el único que se ha seguido

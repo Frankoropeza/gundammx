@@ -31,6 +31,9 @@ referencias:
     url: 'https://link.springer.com/article/10.1186/2193-1801-2-398'
   - titulo: 'Gunpla — Wikipedia (materiales: poliestireno, ABS y polietileno)'
     url: 'https://en.wikipedia.org/wiki/Gunpla'
+imagen: ../../assets/gen-art-por-que-amarillean-los-gunpla.jpg
+imagen_alt: "Dos piezas de plástico idénticas: una blanca y otra amarillenta por el tiempo."
+imagen_credito: gen-art-por-que-amarillean-los-gunpla
 ---
 
 Un kit blanco que llevaba tres años en el estante deja de ser blanco. No es polvo y no se quita limpiándolo: el plástico cambió.

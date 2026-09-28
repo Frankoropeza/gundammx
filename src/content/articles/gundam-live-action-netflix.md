@@ -35,6 +35,9 @@ referencias:
     url: 'https://en.gundam-official.com/news/a6tx647jcecyrxo3b2okl442'
   - titulo: 'Netflix Tudum — película live-action de Gundam: fecha, reparto y noticias'
     url: 'https://www.netflix.com/tudum/articles/gundam-live-action-movie-release-date-news'
+imagen: ../../assets/gen-art-gundam-live-action-netflix.jpg
+imagen_alt: "Cámara de cine en un set de filmación con pantalla verde."
+imagen_credito: gen-art-gundam-live-action-netflix
 ---
 
 > **Nota de vigencia.** Este artículo separa deliberadamente lo confirmado de lo que no lo está. Se verificó el **7 de septiembre de 2026** y se revisó de nuevo el **28 de septiembre de 2026** contra el sitio oficial de Gundam y Netflix Tudum. Se revisa cada trimestre, porque es información que cambia.

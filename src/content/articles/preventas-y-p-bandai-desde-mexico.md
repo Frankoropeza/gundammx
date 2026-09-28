@@ -34,6 +34,9 @@ referencias:
     url: 'https://www.anam.gob.mx/mensajeria-y-paqueteria/'
   - titulo: 'Gunpla — Wikipedia (líneas, grados y distribución)'
     url: 'https://en.wikipedia.org/wiki/Gunpla'
+imagen: ../../assets/gen-art-preventas-y-p-bandai-desde-mexico.jpg
+imagen_alt: "Escritorio con laptop, calendario con una fecha marcada y un paquete."
+imagen_credito: gen-art-preventas-y-p-bandai-desde-mexico
 ---
 
 > **Nota de vigencia.** Las políticas de este canal y de sus tiendas regionales cambian. Lo aquí descrito se verificó el **7 de septiembre de 2026**; confirma condiciones, plazos y política de cancelación en la ficha del producto concreto antes de pagar. Este artículo se revisa cada seis meses.

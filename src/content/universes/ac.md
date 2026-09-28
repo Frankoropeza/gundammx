@@ -10,6 +10,9 @@ codigo: UNI-AC
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Wing
 actualizado: '2026-09-05'
+imagen: ../../assets/gen-universo-ac.jpg
+imagen_alt: "Grupo de colonias y estaciones orbitales lejanas en un punto de Lagrange, con la Tierra y la Luna."
+imagen_credito: gen-universo-ac
 ---
 
 After Colony es el calendario de *Gundam Wing* (1995) y de su epílogo *Endless Waltz*. La premisa invierte la

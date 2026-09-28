@@ -10,6 +10,9 @@ codigo: UNI-AS
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_The_Witch_from_Mercury
 actualizado: '2026-09-05'
+imagen: ../../assets/gen-universo-as.jpg
+imagen_alt: "Campus corporativo moderno dentro de una estación orbital, arquitectura blanca y luminosa."
+imagen_credito: gen-universo-as
 ---
 
 Ad Stella es el calendario de *The Witch from Mercury* (2022–2023), la primera serie de televisión de Gundam en

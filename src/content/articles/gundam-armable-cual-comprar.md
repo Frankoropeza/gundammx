@@ -37,6 +37,9 @@ referencias:
     url: 'https://bandainamcoshop.com.mx/'
   - titulo: 'BANDAI HOBBY SITE — catálogo oficial global de Gunpla y precios de lista en Japón'
     url: 'https://global.bandai-hobby.net/en-us/gunpla/'
+imagen: ../../assets/gen-art-gundam-armable-cual-comprar.jpg
+imagen_alt: "Tres cajas lisas de distinto tamaño en fila."
+imagen_credito: gen-art-gundam-armable-cual-comprar
 ---
 
 > **Nota de vigencia.** Los precios vienen de las fichas de kit de este sitio, verificadas contra la tienda

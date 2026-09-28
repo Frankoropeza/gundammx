@@ -28,6 +28,9 @@ faq:
   - pregunta: '¿Dónde subo las fotos una vez que las tengo?'
     respuesta: 'Al Hangar de la comunidad, donde cada quien muestra su colección de armados terminados.'
 borrador: false
+imagen: ../../assets/gen-art-como-fotografiar-tu-gunpla.jpg
+imagen_alt: "Estudio fotográfico de mesa con cámara, caja de luz y una pieza sobre base giratoria."
+imagen_credito: gen-art-como-fotografiar-tu-gunpla
 ---
 
 Un buen armado se puede ver mal en foto, y uno sencillo puede verse espectacular con la luz correcta. La diferencia

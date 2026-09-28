@@ -28,6 +28,9 @@ faq:
   - pregunta: '¿La comunidad reemplaza al portal editorial de GUNDAM MX?'
     respuesta: 'No, lo complementa. El portal (gundam.mx) es el archivo editorial de series, mobile suits y el directorio de tiendas; la comunidad es donde los lectores interactúan entre sí.'
 borrador: false
+imagen: ../../assets/gen-art-comunidad-gundam-mexico-como-unirte.jpg
+imagen_alt: "Mesa compartida donde varias personas arman modelos juntas."
+imagen_credito: gen-art-comunidad-gundam-mexico-como-unirte
 ---
 
 GUNDAM MX empezó como un portal editorial: series, universos, mobile suits y un directorio de tiendas verificadas.

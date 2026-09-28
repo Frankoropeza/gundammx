@@ -7,7 +7,9 @@ import { schemaMigaDePan } from '@lib/seo';
 const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Créditos de imágenes', href: '/creditos/' }];
 const items = Object.entries(CREDITOS).sort(([a], [b]) => a.localeCompare(b));
-const porLicencia = items.reduce<Record<string, number>>((acc, [, c]) => {
+const imagenesBanco = items.filter(([, c]) => c.tipo !== 'ia');
+const imagenesGeneradas = items.filter(([, c]) => c.tipo === 'ia');
+const porLicencia = imagenesBanco.reduce<Record<string, number>>((acc, [, c]) => {
   acc[c.licencia] = (acc[c.licencia] ?? 0) + 1;
   return acc;
 }, {});
@@ -15,7 +17,7 @@ const porLicencia = items.reduce<Record<string, number>>((acc, [, c]) => {
 
 <BaseLayout
   titulo="Créditos de imágenes | Autoría y licencias"
-  descripcion="Autoría, licencia y fuente de cada fotografía usada en GUNDAMMX. Todas son de banco con licencia libre para uso comercial y obra derivada."
+  descripcion="Autoría, licencia y fuente de las imágenes usadas en GUNDAMMX: fotografías de banco con licencia libre e ilustraciones generadas con IA para apoyo editorial."
   schemas={[schemaMigaDePan(base, migas)]}
 >
   <Breadcrumbs items={migas} />
@@ -25,9 +27,9 @@ const porLicencia = items.reduce<Record<string, number>>((acc, [, c]) => {
       <p class="eyebrow">El proyecto</p>
       <h1 class="display mt-3 text-4xl md:text-5xl text-balance">Créditos de imágenes</h1>
       <p class="mt-5 text-lg text-ink-2 text-pretty">
-        Ninguna fotografía de este sitio es propia todavía. Todas vienen de bancos con licencia libre que
-        permite uso comercial y obra derivada, y todas están recortadas y recomprimidas. Aquí está el autor,
-        la licencia y el enlace al original de cada una, como exigen las licencias CC BY y CC BY-SA.
+        Las fotografías de este sitio vienen de bancos con licencia libre que permite uso comercial y obra derivada,
+        y están recortadas y recomprimidas. También usamos ilustraciones generadas con IA como apoyo editorial.
+        Aquí están los créditos, licencias y procedencia de cada imagen.
       </p>
       <p class="mt-4 max-w-prose text-sm text-ink-2">
         Las fotografías muestran model kits de plástico. GUNDAMMX es un archivo independiente: no está
@@ -39,7 +41,9 @@ const porLicencia = items.reduce<Record<string, number>>((acc, [, c]) => {
       </p>
     </header>
 
-    <div class="table-scroll mt-10">
+    <section class="mt-10">
+      <h2 class="class-line">Fotografías de banco con licencia libre</h2>
+      <div class="table-scroll mt-5">
       <table>
         <thead>
           <tr>
@@ -51,7 +55,7 @@ const porLicencia = items.reduce<Record<string, number>>((acc, [, c]) => {
           </tr>
         </thead>
         <tbody>
-          {items.map(([id, c]) => (
+          {imagenesBanco.map(([id, c]) => (
             <tr>
               <td class="font-mono text-xs text-ink-2">{id}</td>
               <td>{c.titulo}</td>
@@ -62,6 +66,24 @@ const porLicencia = items.reduce<Record<string, number>>((acc, [, c]) => {
           ))}
         </tbody>
       </table>
-    </div>
+      </div>
+    </section>
+
+    <section id="imagenes-generadas" class="mt-10">
+      <h2 class="class-line">Imágenes ilustrativas generadas con IA</h2>
+      <p class="mt-5 max-w-prose text-sm text-ink-2">
+        Son ilustraciones generadas para GUNDAMMX; no fotografían productos, tiendas ni eventos reales, no reproducen diseños de mobile suits, personajes ni logotipos de la franquicia, y se usan sólo como apoyo visual editorial.
+      </p>
+      <div class="table-scroll mt-5">
+        <table>
+          <thead><tr><th scope="col">Archivo</th><th scope="col">Descripción</th></tr></thead>
+          <tbody>
+            {imagenesGeneradas.map(([id, c]) => (
+              <tr><td class="font-mono text-xs text-ink-2">{id}</td><td>{c.alt}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
   </div>
 </BaseLayout>

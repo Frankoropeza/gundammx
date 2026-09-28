@@ -10,6 +10,9 @@ codigo: UNI-PD
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_Iron-Blooded_Orphans
 actualizado: '2026-09-05'
+imagen: ../../assets/gen-universo-pd.jpg
+imagen_alt: "Asentamiento industrial desgastado en la superficie de Marte con tormentas de polvo."
+imagen_credito: gen-universo-pd
 ---
 
 Post Disaster es el calendario de *Iron-Blooded Orphans* (2015–2017). Tres siglos después de una guerra

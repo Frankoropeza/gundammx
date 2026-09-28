@@ -3,6 +3,7 @@ import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import Figura from '@components/Figura.astro';
 import SeriesRail from '@components/SeriesRail.astro';
 import MetadataRow from '@components/MetadataRow.astro';
 import RelatedContent from '@components/RelatedContent.astro';
@@ -47,6 +48,7 @@ const schemas = [schemaMigaDePan(base, migas), schemaFicha(base, { nombre: d.nom
         ...(entrada ? [{ etiqueta: 'Empieza por', valor: entrada.data.titulo, href: `/series/${entrada.id}/` }] : []),
       ]} />
     </header>
+    {d.imagen && <div class="lg:col-span-4 lg:col-start-9"><Figura src={d.imagen} alt={d.imagen_alt} credito={d.imagen_credito} codigo={d.codigo} prioridad ratio="aspect-[16/10]" /></div>}
     <div class="prose-ed lg:col-span-7"><Content /></div>
     <aside class="lg:col-span-4 lg:col-start-9">
       <h2 class="class-line">Fuentes</h2>

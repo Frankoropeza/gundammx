@@ -28,6 +28,9 @@ referencias:
   - { titulo: 'The Witch from Mercury — Wikipedia', url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_The_Witch_from_Mercury' }
   - { titulo: 'Iron-Blooded Orphans — Wikipedia', url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_Iron-Blooded_Orphans' }
   - { titulo: 'GUNDAM.INFO — portal oficial en español', url: 'https://es.gundam-official.com/' }
+imagen: ../../assets/gen-art-cual-gundam-ver-primero.jpg
+imagen_alt: "Sala acogedora de noche iluminada por el brillo de la televisión."
+imagen_credito: gen-art-cual-gundam-ver-primero
 ---
 
 La pregunta *"¿en qué orden veo Gundam?"* tiene su propia [respuesta

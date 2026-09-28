@@ -10,6 +10,9 @@ codigo: UNI-CE
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_SEED
 actualizado: '2026-09-05'
+imagen: ../../assets/gen-universo-ce.jpg
+imagen_alt: "Laboratorio de biotecnología en órbita con una gran ventana hacia la Tierra."
+imagen_credito: gen-universo-ce
 ---
 
 Cosmic Era es el calendario de *Gundam SEED* (2002), *SEED Destiny* (2004) y la película *SEED Freedom* (2024).
