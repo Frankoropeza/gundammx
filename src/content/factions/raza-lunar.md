@@ -7,7 +7,7 @@ series:
 resumen: "Los descendientes de la humanidad que colonizó la Luna generaciones atrás. En Correct Century 2345 lanzan una invasión militar de la Tierra, la Dianna Counter, para recolonizar el planeta."
 codigo: FAC-CC-RAZA-LUNAR
 fuentes:
-  - "https://www.mahq.net/turnagundam/"
+  - https://ja.wikipedia.org/wiki/∀ガンダム
   - "https://en.wikipedia.org/wiki/Turn_A_Gundam"
 estado_editorial: verificado
 actualizado: '2026-09-18'

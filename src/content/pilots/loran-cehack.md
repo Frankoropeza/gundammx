@@ -13,7 +13,7 @@ rol: Protagonista
 resumen: "Joven de la raza lunar enviado a la Tierra en misión de observación. Al estallar la invasión lunar, descubre y pasa a pilotar el ∀ Gundam, quedando atrapado entre los dos bandos del conflicto."
 codigo: PIL-CC-LORAN-CEHACK
 fuentes:
-  - "https://www.mahq.net/system-a99/"
+  - https://ja.wikipedia.org/wiki/∀ガンダム_(架空の兵器)
   - "https://en.wikipedia.org/wiki/Turn_A_Gundam"
 estado_editorial: verificado
 actualizado: '2026-09-18'

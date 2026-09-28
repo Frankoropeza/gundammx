@@ -6,26 +6,47 @@ faccion: celestial-being
 pilotos:
   - tieria-erde
 primera_aparicion: gundam-00
-fabricante: Celestial Being
-tipo: "Mobile suit de asalto pesado"
+fabricante: "Celestial Being"
+tipo: "Mobile suit de artillería pesada"
 especificaciones:
   - { etiqueta: "Universo", valor: "Anno Domini" }
   - { etiqueta: "Primera aparición", valor: "Mobile Suit Gundam 00, 2007" }
-  - { etiqueta: "Arma opcional", valor: "GN Bazooka con Burst Mode conectado al GN Drive" }
-  - { etiqueta: "Armamento fijo", valor: "2 cañones GN en los hombros, 2 sables de haz GN" }
-  - { etiqueta: "Defensa", valor: "Campo GN generado por condensadores GN en las piernas" }
-resumen: "El Gundam de mayor poder de fuego y defensa entre los cuatro originales de Celestial Being, diseñado para ataque antibuque y antifortaleza. Pilotado por Tieria Erde; oculta en su interior al más pequeño GN-004 Gundam Nadleeh."
+  - { etiqueta: "Altura y peso", valor: "18.4 m (a la cabeza) · 66.7 t" }
+  - { etiqueta: "Motor", valor: "GN Drive" }
+  - { etiqueta: "Arma principal", valor: "GN Bazooka, con modo de disparo conectado al GN Drive" }
+  - { etiqueta: "Armamento", valor: "2 cañones GN dobles en la espalda, 2 sables de haz GN" }
+  - { etiqueta: "Defensa", valor: "Campo GN" }
+resumen: "El Gundam de artillería pesada de Tieria Erde en Gundam 00: el más blindado y armado de los cuatro. Bajo su blindaje esconde al Gundam Nadleeh."
 relacionados:
   - gn-001-gundam-exia
 kits: []
 codigo: MS-AD-GN-005
 fuentes:
-  - "https://www.mahq.net/gn-005/"
-  - "https://en.wikipedia.org/wiki/List_of_Mobile_Suit_Gundam_00_characters"
+  - https://ja.wikipedia.org/wiki/機動戦士ガンダム00シリーズの登場兵器
+  - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_00
 estado_editorial: verificado
-actualizado: '2026-09-18'
+actualizado: '2026-09-28'
+seo:
+  descripcion: "Gundam Virtue (GN-005): el Gundam de artillería pesada de Tieria Erde en Gundam 00. GN Bazooka, Campo GN, el Nadleeh oculto y especificaciones oficiales."
 ---
 
-El Gundam Virtue (GN-005) es, según su propia base de datos técnica, el Gundam de mayor poder de fuego y defensa entre los cuatro originales de Celestial Being, construido para misiones de ataque antibuque y antifortaleza. Combina un GN Bazooka capaz de destruir varios mobile suits de un solo disparo, un par de cañones GN en los hombros, sables de haz y un Campo GN defensivo generado por condensadores en las piernas.
+El GN-005 Gundam Virtue es el Gundam de artillería pesada de Celestial Being en la primera temporada de
+[*Mobile Suit Gundam 00*](/series/gundam-00/), pilotado por [Tieria Erde](/personajes/tieria-erde/). De los cuatro
+es el más grande, el más blindado y el de más potencia de fuego. Aun así pesa 66.7 t, menos que algunos mobile
+suits de vuelo, porque las partículas GN reducen su peso.
 
-Su piloto, Tieria Erde, oculta dentro del Virtue una segunda unidad más pequeña, el GN-004 Gundam Nadleeh, que se ve forzado a exponer durante un ataque de la Liga de Reforma Humana en 2308. El Nadleeh resulta gravemente dañado, y el concepto del Virtue continúa más adelante en el GN-008 Seravee Gundam.
+## Armamento y defensa
+
+- **GN Bazooka:** un cañón de haz capaz de destruir varios mobile suits de un disparo. Conectado directamente al
+  GN Drive del pecho pasa a un modo de mayor potencia, pero gasta tanta energía que no puede disparar seguido.
+- **Dos cañones GN dobles** en la espalda, con amplio ángulo de giro.
+- **Campo GN:** gracias a sus grandes condensadores puede mantener el escudo de partículas más tiempo que los
+  otros Gundams. Resiste las armas de haz, pero no las armas sólidas cubiertas de partículas GN.
+
+## El Nadleeh
+
+Si es necesario, el Virtue suelta su blindaje exterior y queda el **Gundam Nadleeh**, más ligero; sus sables de haz
+van guardados en las rodillas del Nadleeh, por eso siguen disponibles. Después de que el Campo GN falla en un
+combate, Tieria tiene que salir con el Nadleeh en la batalla final. En la segunda temporada, la idea del Virtue
+continúa en el Seravee Gundam. Los otros Gundams del equipo son el [Exia](/mobile-suits/gn-001-gundam-exia/), el
+[Dynames](/mobile-suits/gn-002-gundam-dynames/) y el [Kyrios](/mobile-suits/gn-003-gundam-kyrios/).

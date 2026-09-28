@@ -6,25 +6,52 @@ faccion: celestial-being
 pilotos:
   - lockon-stratos
 primera_aparicion: gundam-00
-fabricante: Celestial Being
-tipo: "Mobile suit francotirador de largo alcance"
+fabricante: "Celestial Being"
+tipo: "Mobile suit de combate a larga distancia"
 especificaciones:
   - { etiqueta: "Universo", valor: "Anno Domini" }
   - { etiqueta: "Primera aparición", valor: "Mobile Suit Gundam 00, 2007" }
-  - { etiqueta: "Arma principal", valor: "GN Sniper Rifle, controlada desde una cabina con forma de rifle" }
-  - { etiqueta: "Armamento fijo", valor: "2 sables de haz GN, 24 misiles GN, escudo GN" }
-resumen: "Uno de los cuatro Gundams originales de Celestial Being, especializado en apoyo de fuego a largo alcance. Pilotado por Lockon Stratos, con el robot Haro encargándose de las defensas para que él se concentre en apuntar."
+  - { etiqueta: "Altura y peso", valor: "18.2 m (a la cabeza) · 59.1 t" }
+  - { etiqueta: "Motor", valor: "GN Drive" }
+  - { etiqueta: "Arma principal", valor: "GN Sniper Rifle" }
+  - { etiqueta: "Armamento", valor: "2 pistolas de haz GN, 2 sables de haz GN, 24 misiles GN, escudo GN y GN Full Shield" }
+resumen: "Uno de los cuatro Gundams de Celestial Being en la primera temporada de Gundam 00, especializado en disparo a larga distancia. Lo pilota Lockon Stratos, con Haro a cargo de la defensa."
 relacionados:
   - gn-001-gundam-exia
 kits: []
 codigo: MS-AD-GN-002
 fuentes:
-  - "https://www.mahq.net/gn-002/"
-  - "https://en.wikipedia.org/wiki/List_of_Mobile_Suit_Gundam_00_characters"
+  - https://ja.wikipedia.org/wiki/機動戦士ガンダム00シリーズの登場兵器
+  - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_00
 estado_editorial: verificado
-actualizado: '2026-09-18'
+actualizado: '2026-09-28'
+seo:
+  descripcion: "Gundam Dynames (GN-002): el Gundam francotirador de Lockon Stratos en Gundam 00. Cómo apunta, el papel de Haro, su armamento y especificaciones oficiales."
 ---
 
-El Gundam Dynames (GN-002) es uno de los cuatro Gundams originales con los que Celestial Being inicia su intervención armada contra la guerra, especializado en apoyo de fuego a largo alcance. Su arma principal, el GN Sniper Rifle, se controla desde una cabina con forma de rifle integrada en el brazo de la unidad; tiene baja cadencia de tiro pero un alcance extremadamente largo. El robot asistente Haro se encarga de gestionar las defensas de la máquina para que su piloto, Lockon Stratos, pueda concentrarse en apuntar.
+El GN-002 Gundam Dynames es uno de los cuatro Gundams con los que Celestial Being inicia su intervención armada en
+la primera temporada de [*Mobile Suit Gundam 00*](/series/gundam-00/). Es la unidad de disparo a larga distancia y
+la pilota [Lockon Stratos](/personajes/lockon-stratos/). Mide 18.2 m y pesa 59.1 t.
 
-Tras la muerte de Lockon en 2308, el concepto de Dynames continúa en el GN-006 Cherudim Gundam, pilotado desde 2312 por Lyle Dylandy, hermano gemelo de Neil Dylandy (el Lockon Stratos original).
+## Cómo dispara
+
+Para los tiros de precisión, las antenas de la cabeza bajan sobre los ojos y queda expuesta una cámara de alta
+precisión en la frente; Lockon apunta con una mira que desciende del techo de la cabina. Mientras tanto, el robot
+**Haro**, instalado en la cabina, se encarga de las maniobras de evasión y de mover el escudo, para que Lockon se
+concentre en disparar.
+
+## Armamento
+
+- **GN Sniper Rifle:** baja cadencia y enorme alcance. Como no tiene culata y es corto, también se usa como rifle
+  normal, incluso con una mano.
+- **Dos pistolas de haz GN** en las pantorrillas, para disparo rápido a corta distancia.
+- **Dos sables de haz GN**, solo para defensa si el enemigo se acerca.
+- **24 misiles GN** en el faldón y las rodillas.
+- **Escudo GN** y el **GN Full Shield**, dos grandes placas que cubren los hombros.
+
+## Después
+
+Tras la muerte de Lockon en la primera temporada, la idea del Dynames continúa en el Cherudim Gundam de la segunda,
+que pilota Lyle Dylandy con el mismo nombre en clave. Los otros Gundams del equipo son el
+[Exia](/mobile-suits/gn-001-gundam-exia/), el [Kyrios](/mobile-suits/gn-003-gundam-kyrios/) y el
+[Virtue](/mobile-suits/gn-005-gundam-virtue/).

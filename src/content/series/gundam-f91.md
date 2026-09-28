@@ -9,7 +9,7 @@ estudio: Sunrise
 direccion: [Yoshiyuki Tomino]
 anio_ficcion: UC 0123
 resumen: Treinta años después de Char's Counterattack, la milicia insurgente Crossbone Vanguard ataca las colonias Frontier y un estudiante sin entrenamiento militar, Seabook Arno, termina pilotando el prototipo Gundam F91 para defenderlas.
-relevancia: El intento de Tomino de abrir una nueva era del Universal Century con reparto completamente nuevo, y el origen del diseño de mobile suits más compactos que definió la década siguiente.
+relevancia: El intento de Tomino de abrir una nueva era del Universal Century con reparto completamente nuevo, con mobile suits compactos de unos 15 metros.
 ruta: profundiza
 mobile_suits: [f91-gundam-f91, xm-07-vigna-ghina]
 pilotos: [seabook-arno, cecily-fairchild]
@@ -17,15 +17,16 @@ facciones: [federacion-terrestre, crossbone-vanguard]
 codigo: SER-UC-0123
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_F91
-  - https://www.mahq.net/f91/
+  - https://ja.wikipedia.org/wiki/機動戦士ガンダムF91
 estado_editorial: verificado
-actualizado: '2026-09-18'
+actualizado: '2026-09-28'
 ---
 
-Concebida originalmente como una serie de televisión para el décimo aniversario de la franquicia, *Gundam F91*
-se condensó en una película tras problemas de producción, con guiones de solo los primeros trece episodios ya
-escritos. Yoshiyuki Tomino volvió a dirigir treinta años después de *Mobile Suit Gundam*, esta vez con reparto
-enteramente nuevo, buscando abrir una era distinta del Universal Century.
+*Gundam F91* (1991) es una película original hecha para el décimo aniversario del estreno en cines de *Mobile
+Suit Gundam*. Nació como proyecto de serie de televisión: llegó a haber un plan de trece episodios, pero el
+calendario no alcanzaba para una serie en abril de 1990 y se decidió llevarla al cine, adaptando ese primer tramo.
+La dirigió Yoshiyuki Tomino, con un reparto enteramente nuevo, buscando abrir una era distinta del Universal
+Century.
 
 En UC 0123, Crossbone Vanguard —el brazo militar de la aristocrática Cosmo Babylonia— ataca la colonia
 Frontier IV. Seabook Arno, un estudiante de mecánica sin entrenamiento militar, y su amiga de la infancia
@@ -33,8 +34,8 @@ Cecily Fairchild quedan atrapados en el ataque; ella es secuestrada y revelada c
 líderes de la facción invasora. Seabook termina pilotando el prototipo Gundam F91, varado en la nave de
 entrenamiento Space Ark, para defender a los refugiados.
 
-La película introdujo mobile suits notablemente más compactos que sus predecesores —el F91 mide 15.2 metros
-frente a los 18 del Gundam original—, una decisión de diseño pensada para abaratar la producción de kits, que
-definió el aspecto de la línea Gunpla durante buena parte de los años noventa. Aunque nunca tuvo secuela
-animada directa, Tomino participó después en el guion conceptual del manga *Mobile Suit Crossbone Gundam*, que
-continúa parcialmente su historia.
+En la historia, la Federación había pedido mobile suits pequeños y de alto rendimiento: el
+[Gundam F91](/mobile-suits/f91-gundam-f91/) mide 15.2 metros, frente a los 18 del Gundam original, y su rival es el
+[Vigna-Ghina](/mobile-suits/xm-07-vigna-ghina/). El plan original prometía una secuela que nunca se hizo; en su lugar,
+en 1993 llegó la serie *Mobile Suit Victory Gundam*, ambientada treinta años después. La continuación de *F91* se
+cuenta en parte en el manga *Mobile Suit Crossbone Gundam*, con historia original de Tomino.

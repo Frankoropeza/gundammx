@@ -6,26 +6,48 @@ faccion: milicia-terrestre
 pilotos:
   - loran-cehack
 primera_aparicion: turn-a-gundam
-fabricante: Desconocido
+fabricante: "Desconocido (civilización anterior al Correct Century)"
 tipo: "Mobile suit de propósito general"
 especificaciones:
   - { etiqueta: "Universo", valor: "Correct Century" }
   - { etiqueta: "Primera aparición", valor: "Turn A Gundam, 1999" }
-  - { etiqueta: "Designación alterna", valor: "WD-M01 (apodo de la Milicia Terrestre: White Doll)" }
-  - { etiqueta: "Armamento fijo", valor: "6 silos de misiles en el pecho, rifle de haz, 2 sables de haz en los hombros, escudo, 2 cañones de haz en el abdomen" }
-  - { etiqueta: "Armamento opcional", valor: "Martillo Gundam, taladro Minchi" }
-  - { etiqueta: "Sistema", valor: "Auto-reparación con nanomáquinas; sistema Moonlight Butterfly" }
-resumen: "El mobile suit titular de la serie, desenterrado de una estatua en la ciudad de Nocis y convertido en el núcleo de la resistencia terrestre. Su verdadera naturaleza es un arma antigua capaz de borrar civilizaciones enteras con el sistema Moonlight Butterfly."
+  - { etiqueta: "Designación alterna", valor: "WD-M01 («White Doll Militia 01»), asignada por la milicia" }
+  - { etiqueta: "Altura y peso", valor: "20.0 m · 28.6 t" }
+  - { etiqueta: "Armamento", valor: "Silo multipropósito en el pecho, rifle de haz, escudo, Gundam Hammer, 2 sables de haz, 2 cañones de haz en el abdomen" }
+  - { etiqueta: "Sistema", valor: "Moonlight Butterfly" }
+resumen: "El mobile suit de Loran Cehack en Turn A Gundam, encontrado dentro de la estatua de la White Doll. Es una máquina de una civilización perdida, capaz de liberar el Moonlight Butterfly."
 relacionados: []
 kits: []
 codigo: MS-CC-SYSTEM-A99
 fuentes:
-  - "https://www.mahq.net/system-a99/"
-  - "https://en.wikipedia.org/wiki/Turn_A_Gundam"
+  - https://ja.wikipedia.org/wiki/∀ガンダム_(架空の兵器)
+  - https://en.wikipedia.org/wiki/Turn_A_Gundam
 estado_editorial: verificado
-actualizado: '2026-09-18'
+actualizado: '2026-09-28'
+seo:
+  descripcion: "Turn A Gundam (System-∀99): el mobile suit de Loran en Turn A Gundam. Origen en la White Doll, Moonlight Butterfly, diseño de Syd Mead y especificaciones."
 ---
 
-El ∀ Gundam (System-∀99, también designado WD-M01 y apodado "White Doll" por la Milicia Terrestre) es el mobile suit titular de *Turn A Gundam*, desenterrado en Correct Century 2345 de una estatua en la ciudad de Nocis. Se convierte en el núcleo simbólico y militar de la resistencia de la Tierra contra la invasión de la raza lunar, pilotado principalmente por Loran Cehack, aunque a lo largo de la serie también lo pilotan Sochie Heim, Teteth Halleh, Merrybell Gadget y Joseph Yaht.
+El ∀ Gundam (Turn A Gundam, System-∀99) es el mobile suit de [Loran Cehack](/personajes/loran-cehack/) en
+[*Turn A Gundam*](/series/turn-a-gundam/). Estaba enterrado dentro de la **White Doll**, una estatua venerada en el
+monte Ark, en la región de Vicinity. Se activa cuando las tropas de la Luna atacan, reconoce a Loran como piloto y
+pasa a pelear del lado de la milicia de Inglessa, que le asigna la designación WD-M01.
 
-Combina armamento fijo —silos de misiles, rifle y sables de haz, cañones abdominales— con un martillo y un taladro como armas opcionales, además de un sistema de auto-reparación con nanomáquinas. Su verdadera naturaleza se revela como una reliquia de una civilización terrestre mucho más avanzada, borrada por el sistema Moonlight Butterfly: un ataque que libera nanomáquinas capaces de destruir la civilización a escala planetaria. Ese mismo sistema comparte "unidad hermana" con el Turn X, y ambos lo activan en el enfrentamiento climático de la serie.
+## Una máquina de otra era
+
+El ∀ reúne la tecnología perdida de una civilización muy anterior a la historia de la serie. Poco a poco se
+descubre que es una de las máquinas «tipo Turn» que acabaron con esa civilización mediante el **Moonlight
+Butterfly**, una dispersión de nanomáquinas que destruye la tecnología a escala planetaria. Su nombre oficial no se
+conoce: «Gundam» se le da por su parecido con una figura legendaria del pasado.
+
+## Diseño
+
+Lo diseñó el diseñador industrial Syd Mead, el de *Blade Runner*; es la única serie de Gundam con un diseñador
+mecánico extranjero. Mead explicó que el «bigote» de la cara es la antena de los Gundams anteriores llevada a la
+boca, y la «V» de la cabeza, un homenaje a esas antenas. La cabina va al frente de la cintura.
+
+## Pilotos y armamento
+
+Además de Loran lo pilotan Sochie Heim, Joseph Yaht y Merrybell Gadget. Lleva un silo multipropósito en el pecho
+(misiles y otros módulos), rifle de haz, escudo, dos sables de haz, dos cañones de haz en el abdomen y el Gundam
+Hammer, además del sistema Moonlight Butterfly.

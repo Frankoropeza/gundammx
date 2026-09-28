@@ -13,7 +13,7 @@ rol: Protagonista
 resumen: "Uno de los cuatro Gundam Meisters originales de Celestial Being, piloto del francotirador Gundam Dynames. Su nombre real es Neil Dylandy; se unió a Celestial Being tras perder a su familia en un atentado terrorista, y murió en 2308 enfrentando al terrorista responsable, Ali Al-Saachez."
 codigo: PIL-AD-LOCKON-STRATOS
 fuentes:
-  - "https://www.mahq.net/gn-002/"
+  - https://ja.wikipedia.org/wiki/機動戦士ガンダム00シリーズの登場兵器
   - "https://en.wikipedia.org/wiki/List_of_Mobile_Suit_Gundam_00_characters"
 estado_editorial: verificado
 actualizado: '2026-09-18'

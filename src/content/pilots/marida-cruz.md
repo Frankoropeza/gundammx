@@ -13,7 +13,7 @@ rol: Antagonista
 resumen: "Newtype creada artificialmente y piloto del mobile suit Kshatriya para Neo Zeon durante el Incidente Laplace. Conocida también por el alias Ple Twelve, su enfrentamiento con Banagher Links en la Batalla de Palau es central en Mobile Suit Gundam Unicorn."
 codigo: PIL-UC-MARIDA-CRUZ
 fuentes:
-  - "https://www.mahq.net/nz-666/"
+  - https://ja.wikipedia.org/wiki/機動戦士ガンダムUCの登場兵器
 estado_editorial: verificado
 actualizado: '2026-09-18'
 ---
