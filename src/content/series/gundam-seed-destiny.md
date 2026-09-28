@@ -13,19 +13,20 @@ anio_ficcion: CE 73
 resumen: Dos años después de la primera guerra, un nuevo soldado de ZAFT, Shinn Asuka, se ve arrastrado a un segundo conflicto entre la Alianza Terrestre y ZAFT que Kira Yamato y Athrun Zala terminan deteniendo desde fuera de ambos bandos.
 relevancia: La secuela directa de SEED y el origen del Strike Freedom, uno de los Gundams más reconocibles del catálogo Gunpla.
 ruta: profundiza
-mobile_suits: [zgmf-x20a-strike-freedom-gundam]
-pilotos: [kira-yamato]
+mobile_suits: [zgmf-x20a-strike-freedom-gundam, zgmf-x42s-destiny-gundam]
+pilotos: [kira-yamato, shinn-asuka]
 facciones: [zaft]
 codigo: SER-CE-0073
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_SEED_Destiny
-actualizado: '2026-09-18'
+actualizado: '2026-09-28'
 ---
 
 *SEED Destiny* retoma la historia dos años después del final de *SEED*, con Mitsuo Fukuda otra vez en la
-dirección. El protagonismo recae primero en Shinn Asuka, un soldado de ZAFT que pierde a su familia en la
+dirección. El protagonismo recae primero en [Shinn Asuka](/personajes/shinn-asuka/), un soldado de ZAFT que pierde a su familia en la
 guerra anterior y termina en el centro de un segundo conflicto entre la Alianza Terrestre y ZAFT/PLANT,
 mientras Gilbert Durandal avanza su "Plan Destiny" para reorganizar la humanidad por decreto genético.
+Shinn pilota el Impulse y, en la segunda mitad, el [Destiny Gundam](/mobile-suits/zgmf-x42s-destiny-gundam/).
 
 Kira Yamato y Athrun Zala, protagonistas de la primera serie, regresan como personajes centrales que actúan
 fuera de ambos bandos oficiales para frenar ese plan. Es en este tramo de la historia donde Kira pasa del

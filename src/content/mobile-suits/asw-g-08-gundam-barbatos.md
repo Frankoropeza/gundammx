@@ -5,7 +5,7 @@ universo: pd
 faccion: tekkadan
 pilotos: [mikazuki-augus]
 primera_aparicion: iron-blooded-orphans
-fabricante: Gjallarhorn (era de la Guerra del Calamity)
+fabricante: Sin fabricante acreditado (uno de los 72 Gundam Frames de la Guerra del Calamity)
 tipo: Gundam Frame de combate cuerpo a cuerpo
 especificaciones:
   - { etiqueta: "Universo", valor: "Post Disaster" }
@@ -13,12 +13,13 @@ especificaciones:
   - { etiqueta: "Sistema", valor: "Alaya-Vijnana" }
   - { etiqueta: "Armamento", valor: "Maza y espada; sin armas de energía" }
 resumen: Una reliquia de tres siglos desenterrada en Marte. Pelea con maza y espada, y evoluciona pieza por pieza a lo largo de la serie.
-relacionados: [rx-78-2-gundam]
+relacionados: [asw-g-08-gundam-barbatos-lupus-rex, rx-78-2-gundam]
 kits: []
 codigo: MS-PD-ASW-G-08
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_Iron-Blooded_Orphans
-actualizado: '2026-09-05'
+  - https://ja.wikipedia.org/wiki/機動戦士ガンダム_鉄血のオルフェンズ
+actualizado: '2026-09-28'
 ---
 
 El ASW-G-08 Gundam Barbatos es uno de los 72 Gundam Frames construidos durante la Guerra del Calamity, tres
@@ -28,7 +29,7 @@ máquina y cobra, en cada uso, un precio físico.
 
 A diferencia del resto de la franquicia, aquí no hay armas de rayos: el Barbatos pelea con una maza, una
 espada y su propio peso, y la serie lo hace evolucionar visiblemente —cambia piezas, gana blindaje, pierde
-otras— hasta su forma final, el Barbatos Lupus Rex.
+otras— hasta su forma final, el [Barbatos Lupus Rex](/mobile-suits/asw-g-08-gundam-barbatos-lupus-rex/).
 
 Esa evolución se tradujo en Gunpla en una secuencia de kits que documentan cada etapa. El Barbatos en Full
 Mechanics y las variantes en High Grade son de los más buscados del catálogo de la serie.

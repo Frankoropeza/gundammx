@@ -4,7 +4,7 @@ alias: []
 universo: pd
 facciones: [tekkadan]
 series: [iron-blooded-orphans]
-mobile_suits: [asw-g-08-gundam-barbatos]
+mobile_suits: [asw-g-08-gundam-barbatos, asw-g-08-gundam-barbatos-lupus-rex]
 rol: Protagonista
 resumen: Piloto del Barbatos y brazo armado de Tekkadan. Un niño soldado que obedece a su amigo Orga sin preguntar, y paga con su cuerpo cada victoria.
 codigo: PIL-PD-MIKAZUKI

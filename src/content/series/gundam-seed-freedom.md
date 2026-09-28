@@ -11,8 +11,8 @@ anio_ficcion: CE 75
 resumen: Un año después de SEED Destiny, Kira Yamato y Lacus Clyne encabezan Compass, una organización de paz que se enfrenta a los remanentes de Blue Cosmos y a una potencia emergente, el Reino de Foundation.
 relevancia: La película de Gundam más taquillera de la historia de la franquicia en Japón.
 ruta: profundiza
-mobile_suits: [mighty-strike-freedom-gundam]
-pilotos: [kira-yamato, lacus-clyne]
+mobile_suits: [mighty-strike-freedom-gundam, zgmf-x42s-destiny-gundam]
+pilotos: [kira-yamato, lacus-clyne, shinn-asuka]
 facciones: [zaft]
 codigo: SER-CE-0075
 fuentes:

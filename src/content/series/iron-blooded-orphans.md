@@ -14,19 +14,21 @@ resumen: Niños soldado de una compañía de seguridad marciana se amotinan, fun
 relevancia: La serie más física y menos idealista de la franquicia, y una de las mejores entradas para quien no viene del anime.
 orden_recomendado: 4
 ruta: empieza-aqui
-mobile_suits: [asw-g-08-gundam-barbatos]
+mobile_suits: [asw-g-08-gundam-barbatos, asw-g-08-gundam-barbatos-lupus-rex]
 pilotos: [mikazuki-augus]
 facciones: [tekkadan, gjallarhorn]
 codigo: SER-PD-0323
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_Iron-Blooded_Orphans
-actualizado: '2026-09-05'
+actualizado: '2026-09-28'
 ---
 
 Dos temporadas de 25 episodios (2015–2017) dirigidas por Tatsuyuki Nagai. En un Marte colonizado y pobre, un
 grupo de adolescentes usados como carne de cañón por una compañía de seguridad se rebela, toma el control y
 funda Tekkadan, "la bandera de hierro". Su piloto principal, Mikazuki Augus, conecta con el Gundam Barbatos
-mediante el sistema Alaya-Vijnana, un implante que une cuerpo y máquina a costa del propio cuerpo.
+mediante el sistema Alaya-Vijnana, un implante que une cuerpo y máquina a costa del propio cuerpo. En la
+segunda temporada el Barbatos se reconstruye dos veces, hasta su forma final: el
+[Barbatos Lupus Rex](/mobile-suits/asw-g-08-gundam-barbatos-lupus-rex/).
 
 La serie abandona los rayos y las batallas espaciales limpias: los mobile suits pelean con mazas, espadas y
 puños, y la animación subraya el peso del metal. Su temática —quién decide qué vidas valen— la acerca más a
