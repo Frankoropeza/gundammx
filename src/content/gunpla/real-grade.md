@@ -4,23 +4,55 @@ etiqueta: RG
 escala: '1/144'
 anio_lanzamiento: 2010
 dificultad: intermedio
-resumen: "Detalle de Master Grade en escala 1/144: armazón interno, más piezas y calcas finas. No es el primer kit, pero es un excelente segundo."
-para_quien: Quien ya armó un HG o dos y quiere más detalle sin pasar a 1/100.
+resumen: "Gunpla 1/144 que busca una apariencia realista mediante más detalle, piezas y calcas."
+para_quien: Quien ya conoce el ensamble básico y busca más detalle en la misma escala 1/144.
 orden: 3
 codigo: GP-RG
 fuentes:
   - https://www.bandaispirits.co.jp/e/about/history/
   - https://en.wikipedia.org/wiki/Gunpla
-actualizado: '2026-09-05'
+  - https://global.bandai-hobby.net/en-us/schedule/
+actualizado: '2026-09-28'
 ---
 
-Real Grade apareció en 2010, para el trigésimo aniversario, con el RX-78-2. La idea es meter la complejidad
-de un Master Grade —armazón interno, articulación completa, separación de colores real— en la escala 1/144.
-El resultado son kits del tamaño de un HG con dos o tres veces más piezas, muchas de ellas muy pequeñas, y
-hojas de calcas que exigen pulso.
+**Gundam RG** significa Real Grade, la línea de Gunpla 1/144 que busca verse realista y que Bandai Spirits lanzó en julio de 2010. Conserva una escala compacta, pero concentra más piezas, detalle de superficie y calcas que un grado de entrada en la misma escala.
 
-En México el Real Grade del Gundam Exia cuesta 779 pesos en el canal oficial; en retail el rango observado va
-de 480 a 1 250 pesos según el kit. El RG Nu Gundam, el RG Sazabi y el RG Unicorn son los más exigentes de la
-línea; el RG Strike o el RG Zaku II, buenos puntos de entrada.
+## Escala, tamaño y qué trae la caja
 
-No conviene como primer kit: las piezas pequeñas y las calcas frustran a quien todavía no controla el corte.
+RG usa escala 1/144. Como referencia, un mobile suit de 18 metros mide alrededor de 12.5 centímetros en esta escala, igual que un HG o un EG. La diferencia no está en la altura, sino en cómo se resuelve el modelo: un Real Grade busca una apariencia más realista dentro de ese espacio.
+
+La caja trae runners, instructivo, piezas para el modelo y, según el kit, calcas y accesorios. El armado usa encajes a presión, por lo que no necesita pegamento. La separación de colores y las piezas de detalle permiten terminarlo sin pintura, aunque el número de componentes pequeños pide una mesa ordenada y herramientas de corte cuidadosas. La [guía de herramientas para armar Gunpla](/articulos/herramientas-para-armar-gunpla/) explica el equipo básico para trabajar los puntos de unión.
+
+No todos los RG resuelven igual su armazón o sus accesorios. Antes de elegir, conviene leer la ficha de cada modelo y no usar el grado como sustituto de esa revisión. El catálogo de [kits](/kits/) reúne los datos específicos disponibles para comparar.
+
+## Cuánto cuesta en México
+
+El [RG Gundam Exia](/kit/rg-gundam-exia/) y el [RG MS-06S Zaku II](/kit/rg-ms-06s-zaku-ii/) cuestan $894 cada uno; ambos tienen precio de lista japonés de ¥2,800. El [RG Unicorn Gundam](/kit/rg-unicorn-gundam/) cuesta $1,189 y su precio de lista japonés es ¥4,100. El [RG Sazabi](/kit/rg-sazabi/) cuesta $1,613 y su precio de lista japonés es ¥4,800. Los precios en pesos fueron verificados el 18 de septiembre de 2026 en la tienda oficial.
+
+El precio japonés de lista permite comparar modelos, pero no debe leerse como conversión automática a pesos. Consulta [cuánto cuesta un Gunpla en México](/articulos/cuanto-cuesta-un-gunpla-en-mexico/) para el contexto de esas referencias y revisa [kits](/kits/) para cada ficha.
+
+## Para quién es
+
+Real Grade suele ser una orientación razonable para quien ya armó uno o más modelos sencillos y quiere permanecer en 1/144 con una experiencia más detallada. Las piezas pequeñas y las calcas requieren más atención que un EG o HG; no hay prisa por llegar a este grado si todavía estás aprendiendo a cortar y seguir el instructivo.
+
+Frente a [High Grade](/gunpla/high-grade/), RG mantiene la escala pero busca una apariencia más realista mediante mayor complejidad. Frente a [Master Grade](/gunpla/master-grade/), conserva un tamaño compacto en vez de pasar a 1/100. La comparación directa entre ambos está en [Master Grade vs Real Grade](/articulos/master-grade-vs-real-grade/); para una vista amplia, consulta [grados de Gunpla](/articulos/grados-de-gunpla/) y [qué Gundam armable comprar](/articulos/gundam-armable-cual-comprar/).
+
+Como orientación, separar cada runner o grupo de piezas antes de iniciar reduce el riesgo de perder componentes pequeños. Es una preparación sencilla que también hace más fácil retomar el kit entre sesiones.
+
+## Próximos lanzamientos
+
+El calendario oficial incluye RG Gundam Ground Type para febrero de 2027. Consulta la fecha y su fuente en [lanzamientos](/lanzamientos/).
+
+## Preguntas frecuentes
+
+### ¿Qué significa RG en Gundam?
+
+RG significa Real Grade, una línea 1/144 lanzada en julio de 2010 que busca verse realista.
+
+### ¿Cuánto mide un RG?
+
+Como referencia, un mobile suit de 18 metros mide aproximadamente 12.5 centímetros a escala 1/144.
+
+### ¿Un RG necesita pintura?
+
+No para armarse: usa piezas moldeadas en color y ensamble a presión. Pintarlo es opcional.

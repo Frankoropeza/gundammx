@@ -3,6 +3,7 @@ titulo: Dónde ver Gundam en México
 resumen: En qué plataformas está Gundam hoy en México, qué se puede ver gratis en televisión abierta y en YouTube, y cómo comprobar si una serie sigue en catálogo.
 autor: Redacción GUNDAMMX
 fecha: 2026-09-05
+actualizada: '2026-09-28'
 tema: mexico
 categoria: donde-ver
 lectura_min: 6
@@ -10,6 +11,7 @@ destacado: false
 universos: [uc, ac, ce, as]
 series: [mobile-suit-gundam, gundam-wing, gundam-seed, the-witch-from-mercury, requiem-for-vengeance, gquuuuuux]
 referencias:
+  - { titulo: 'GUNDAM Official — Hathaway: The Sorcery of Nymph Circe llega a Netflix el 31 de agosto', url: 'https://en.gundam-official.com/news/lpqft8o0yl0pnrwsfj6klikz' }
   - { titulo: 'Mobile Suit Gundam — Crunchyroll', url: 'https://www.crunchyroll.com/es/series/GKEH2G9XV/mobile-suit-gundam' }
   - { titulo: 'Cómo, cuándo y dónde ver gratis Mobile Suit Gundam SEED en español — Azteca 7', url: 'https://www.tvazteca.com/azteca7/series/como-cuando-y-donde-ver-gratis-mobile-suit-gundam-seed-en-espanol-ma-notas' }
   - { titulo: 'Mobile Suit Gundam — Netflix México', url: 'https://www.netflix.com/mx/title/81276500' }
@@ -63,6 +65,7 @@ fecha de verificación.
 | [Mobile Suit Gundam SEED](/series/gundam-seed/) (2002) | Azteca 7, televisión abierta, con doblaje latino |
 | [The Witch from Mercury](/series/the-witch-from-mercury/) (2022) | Azteca 7 (Planeta Anime) |
 | [Requiem for Vengeance](/series/requiem-for-vengeance/) (2024) | Netflix |
+| [Mobile Suit Gundam Hathaway](/series/mobile-suit-gundam-hathaway/) · parte 2, *The Sorcery of Nymph Circe* (2026) | Netflix (estreno global del 31 de agosto de 2026; [guía](/articulos/gundam-hathaway-2-sorcery-of-nymph-circe/)) |
 | [GQuuuuuuX](/series/gquuuuuux/) (2025) | Prime Video · película *Beginning* en Cinépolis (Konnichiwa Festival, marzo 2025) |
 
 Las demás obras del [archivo de series](/series/) no tienen disponibilidad verificada en México a la fecha de

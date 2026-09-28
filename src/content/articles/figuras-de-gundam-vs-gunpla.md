@@ -27,7 +27,7 @@ faq:
   - pregunta: '¿Qué conviene para regalar a alguien que nunca ha armado nada?'
     respuesta: 'Un Entry Grade, que está diseñado para armarse sin herramientas, o directamente una figura ya terminada si la persona no tiene interés en el proceso de armado. Un Master Grade como primer regalo suele terminar sin abrir.'
   - pregunta: '¿Cuál sale más caro?'
-    respuesta: 'Depende del grado y de la línea, no de la categoría. Un Entry Grade está entre lo más barato del catálogo y un Perfect Grade entre lo más caro. Conviene comparar por pieza concreta, no por tipo de producto.'
+    respuesta: 'Depende del grado y de la línea, no de la categoría. Un Entry Grade suele tener un precio menor que un Perfect Grade, pero conviene comparar por pieza concreta, no por tipo de producto.'
   - pregunta: '¿Cuáles son las líneas oficiales de figuras de Gundam?'
     respuesta: 'Las principales son de Tamashii Nations, la marca de figuras de colección de Bandai Spirits: ROBOT SPIRITS, METAL ROBOT SPIRITS y METAL BUILD, de menor a mayor nivel de acabado y precio. Además hay gashapon, figuras pequeñas en cápsula.'
   - pregunta: '¿Dónde compro figuras de Gundam originales en México?'

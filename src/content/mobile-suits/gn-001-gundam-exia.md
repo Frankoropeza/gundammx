@@ -18,7 +18,7 @@ kits: [rg-gundam-exia]
 codigo: MS-AD-GN-001
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_00
-actualizado: '2026-09-05'
+actualizado: '2026-09-28'
 imagen: ../../assets/ms-exia.jpg
 imagen_alt: "Model kit Real Grade del GN-001 Gundam Exia."
 imagen_credito: ms-exia
@@ -34,4 +34,5 @@ más pesado de los Gundams anteriores, y se convirtió en el estándar estético
 siguiente.
 
 En Gunpla, el Exia en Real Grade fue uno de los primeros kits de esa línea y sigue siendo una recomendación
-habitual como segundo kit. En el catálogo oficial mexicano circula en Real Grade a 779 pesos.
+habitual como segundo kit. En el catálogo oficial mexicano, el [RG Gundam Exia](/kit/rg-gundam-exia/) cuesta
+894 pesos, verificado el 18 de septiembre de 2026.

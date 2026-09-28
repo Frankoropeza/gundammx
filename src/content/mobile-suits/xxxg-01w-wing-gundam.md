@@ -18,7 +18,7 @@ kits: [eg-wing-gundam]
 codigo: MS-AC-XXXG-01W
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Wing
-actualizado: '2026-09-05'
+actualizado: '2026-09-28'
 imagen: ../../assets/ms-wing.jpg
 imagen_alt: "Model kit del XXXG-01W Wing Gundam armado."
 imagen_credito: ms-wing
@@ -31,6 +31,6 @@ convirtieron en el Gundam más reconocible de los noventa fuera de Japón.
 Aparece en el campo `faccion` como OZ porque es la fuerza contra la que combate; en rigor, los cinco Gundams
 de *Wing* no pertenecen a ningún Estado: son armas de las colonias, operadas por pilotos sin bandera.
 
-Su versión Entry Grade es hoy el kit más barato del catálogo oficial mexicano —299 pesos al momento de esta
-ficha— y una de las mejores primeras compras para quien quiere probar el hobby sin herramienta ni pintura.
-Existe también en High Grade, Real Grade y Master Grade.
+Su [Entry Grade](/kit/eg-wing-gundam/) cuesta 337 pesos en la tienda oficial, verificado el 18 de septiembre
+de 2026, y es una referencia para quien quiere probar el hobby sin herramienta ni pintura. Existe también
+en High Grade, Real Grade y Master Grade.

@@ -3,6 +3,7 @@ titulo: 'Master Grade vs Real Grade: cuál comprar'
 resumen: 'Dos grados con nivel de detalle parecido y escalas distintas. La decisión no es de calidad, es de espacio, tiempo y presupuesto.'
 autor: Redacción GUNDAMMX
 fecha: 2026-09-05
+actualizada: '2026-09-28'
 tema: gunpla
 categoria: gunpla
 lectura_min: 2
@@ -49,7 +50,7 @@ debería ser un [Entry Grade](/gunpla/entry-grade/) o un [High Grade](/gunpla/hi
 ## El factor precio en México
 
 En Japón la brecha de lista entre ambos grados es moderada: el [RG Gundam Exia](/kit/rg-gundam-exia/)
-está en ¥3,080 y el [MG RX-78-2 Ver.Ka](/kit/mg-rx-78-2-ver-ka/) en ¥3,960.
+está en ¥2,800 y el [MG Freedom Gundam Ver.2.0](/kit/mg-freedom-gundam-ver2/) en ¥4,900.
 
 En anaquel mexicano la brecha se abre más, porque el sobreprecio se aplica sobre una base mayor y
 porque el Master Grade rota menos. **Compara antes de comprar**: en este grado la diferencia entre

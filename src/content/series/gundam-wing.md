@@ -24,7 +24,7 @@ fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Wing
   - https://www.disneyplus.com/es-us/browse/entity-ca21d947-e5b1-4c5d-b973-f638016b112c
   - https://doblaje.fandom.com/es/wiki/Gundam_Wing
-actualizado: '2026-09-06'
+actualizado: '2026-09-28'
 imagen: ../../assets/ms-wing.jpg
 imagen_alt: "Model kit del XXXG-01W Wing Gundam, protagonista de la serie."
 imagen_credito: ms-wing
@@ -41,7 +41,7 @@ en México se emitió también por Canal 5 a partir de 2003. Para el público me
 "Gundam" es, antes que cualquier otra cosa, esta serie.
 
 Sus mobile suits —el Wing Gundam, el Deathscythe, el Heavyarms, el Sandrock, el Shenlong— siguen entre los kits
-más vendidos y reeditados de Gunpla, y el Entry Grade del Wing Gundam es hoy el kit más barato del catálogo
-oficial mexicano.
+más vendidos y reeditados de Gunpla, y el Entry Grade del Wing Gundam es una de las entradas más baratas al
+Gunpla en la tienda oficial mexicana.
 
 Su epílogo, *Endless Waltz* (1997), cierra la historia en tres episodios de OVA y una película.

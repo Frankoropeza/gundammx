@@ -6,7 +6,7 @@ fecha: 2026-09-04
 tema: guia
 categoria: comprar
 nivel: principiante
-actualizada: '2026-09-04'
+actualizada: '2026-09-28'
 lectura_min: 2
 destacado: false
 universos: []
@@ -49,12 +49,12 @@ en tiendas mexicanas, con su fecha.
 
 ## Rangos de referencia por grado
 
-| Grado | Rango observado en México |
+| Grado | Rango observado en México (tienda oficial; EG a MG verificados el 18 de septiembre de 2026) |
 |---|---|
-| Entry Grade | alrededor de $300 |
-| High Grade | $549 – $839 |
-| Real Grade | $779 en canal oficial; $480 – $1,250 en retail |
-| Master Grade | $979 – $1,799 |
+| Entry Grade | $219 (EG Strike Gundam) – $337 (EG Wing Gundam) |
+| High Grade | $539 (HG GQuuuuuuX) – $778 (HG Red Gundam) |
+| Real Grade | $894 (RG Gundam Exia y RG MS-06S Zaku II) – $1,613 (RG Sazabi) |
+| Master Grade | $1,389 (MG Freedom Gundam Ver.2.0) – $1,640 (MG Zeta Gundam Ver.Ka) |
 | MGSD | alrededor de $750 |
 | MGEX | alrededor de $2,350 |
 

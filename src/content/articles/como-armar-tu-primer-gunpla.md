@@ -70,8 +70,9 @@ Dos costumbres que ayudan:
 
 ## Qué kit comprar para empezar
 
-El [EG Wing Gundam](/kit/eg-wing-gundam/) es el punto de entrada más barato del catálogo y está pensado
-exactamente para esto: sin herramienta obligatoria y con piezas que se separan casi a mano.
+El [EG Wing Gundam](/kit/eg-wing-gundam/) es uno de los puntos de entrada más baratos y está pensado
+exactamente para esto: sin herramienta obligatoria y con piezas que se separan casi a mano. El [EG Strike
+Gundam](/kit/eg-strike-gundam/) también tiene un precio verificado menor en la tienda oficial.
 
 Si prefieres algo con más contenido desde el principio, cualquier [High
 Grade](/gunpla/high-grade/) sirve. Es el grado con más catálogo y más rotación en tiendas mexicanas.

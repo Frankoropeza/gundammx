@@ -54,8 +54,8 @@ Depende de qué buscas, y conviene ser franco con dos cosas.
 la impaciencia. **No es un buen primer Master Grade.** Si nunca has armado un MG, empieza por uno
 estándar y deja el Ver.Ka para el siguiente.
 
-El [MG RX-78-2 Ver.Ka](/kit/mg-rx-78-2-ver-ka/) es el punto de entrada habitual a la línea: ¥3,960 de
-precio de lista en Japón, dificultad avanzada.
+El [MG Zeta Gundam Ver.Ka](/kit/mg-zeta-gundam-verka/) tiene precio de lista de ¥6,500 en Japón y dificultad
+avanzada.
 
 ## Otros sufijos que verás
 
