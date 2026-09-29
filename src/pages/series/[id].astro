@@ -1,6 +1,7 @@
 ---
 import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
 import { getCollection, render } from 'astro:content';
+import { getImage } from 'astro:assets';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
 import Figura from '@components/Figura.astro';
@@ -33,7 +34,9 @@ const { Content } = await render(serie);
 const rutaTexto: Record<string, string> = { 'empieza-aqui': 'Empieza aquí', profundiza: 'Profundiza en la continuidad', alternativa: 'Alternativa independiente' };
 const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Series', href: '/series/' }, { nombre: d.titulo, href: `/series/${serie.id}/` }];
-const schemas = [schemaMigaDePan(base, migas), schemaSerie(base, { titulo: d.titulo, resumen: d.resumen, anio: d.anio, episodios: d.episodios, formato: d.formato, direccion: d.direccion, estudio: d.estudio, fechaInicio: d.fecha_inicio, fechaFin: d.fecha_fin })];
+// Google exige `image` en Movie/TVSeries para resultados enriquecidos (Ahrefs Site Audit 28-sep).
+const imagenSchema = d.imagen ? (await getImage({ src: d.imagen, width: 1200, format: 'jpg' })).src : '/og/series.png';
+const schemas = [schemaMigaDePan(base, migas), schemaSerie(base, { titulo: d.titulo, resumen: d.resumen, anio: d.anio, episodios: d.episodios, formato: d.formato, direccion: d.direccion, estudio: d.estudio, fechaInicio: d.fecha_inicio, fechaFin: d.fecha_fin, imagen: imagenSchema })];
 ---
 <BaseLayout noindex={d.estado_editorial === 'borrador'} titulo={d.seo?.titulo ?? componerTitulo(d.titulo, d.titulo.length > 26 ? `Serie ${d.anio}` : `Serie de Gundam (${d.anio})`)} descripcion={d.seo?.descripcion ?? descripcionFicha(d.resumen, 'Ficha de la serie en Gundam México.')} tipo="article" schemas={schemas}>
   <Breadcrumbs items={migas} />

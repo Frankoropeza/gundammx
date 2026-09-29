@@ -368,7 +368,7 @@ export function schemaColeccion(b: Base, c: { nombre: string; descripcion: strin
 
 export function schemaSerie(b: Base, s: {
   titulo: string; resumen: string; anio: number; episodios?: number; formato: string;
-  direccion: string[]; estudio: string; fechaInicio?: string; fechaFin?: string;
+  direccion: string[]; estudio: string; fechaInicio?: string; fechaFin?: string; imagen?: string;
 }) {
   const tipo = s.formato === 'pelicula' ? 'Movie' : 'TVSeries';
   return {
@@ -377,6 +377,7 @@ export function schemaSerie(b: Base, s: {
     name: s.titulo,
     description: s.resumen,
     url: abs(b.site, b.url),
+    ...(s.imagen ? { image: abs(b.site, s.imagen) } : {}),
     inLanguage: 'ja',
     ...(s.fechaInicio ? { datePublished: s.fechaInicio } : {}),
     ...(s.fechaFin && tipo === 'TVSeries' ? { endDate: s.fechaFin } : {}),
