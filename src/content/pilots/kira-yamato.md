@@ -12,9 +12,9 @@ fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_SEED
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_SEED_Freedom
 actualizado: '2026-09-18'
-imagen: ../../assets/gen-per-kira-yamato.jpg
-imagen_alt: "Playa tropical al atardecer con una laptop cerrada en la arena."
-imagen_credito: gen-per-kira-yamato
+imagen: ../../assets/cc-per-kira-yamato.jpg
+imagen_alt: "Model kit del Strike Freedom Gundam, la unidad de Kira Yamato."
+imagen_credito: cc-per-kira-yamato
 ---
 
 Kira Yamato es un estudiante de la colonia neutral de Heliópolis y un Coordinador: un humano con mejoras

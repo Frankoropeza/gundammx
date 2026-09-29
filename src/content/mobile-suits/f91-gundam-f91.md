@@ -24,9 +24,9 @@ estado_editorial: verificado
 actualizado: '2026-09-28'
 seo:
   descripcion: "Gundam F91: el mobile suit compacto de Seabook Arno en Gundam F91 (1991). Quién lo desarrolló, VSBR, biocomputadora, armamento y especificaciones oficiales."
-imagen: ../../assets/gen-ms-f91-gundam-f91.jpg
-imagen_alt: "Casco exterior de una colonia espacial con destellos a lo lejos."
-imagen_credito: gen-ms-f91-gundam-f91
+imagen: ../../assets/cc-ms-f91-gundam-f91.jpg
+imagen_alt: "Gundam F91 exhibido en Anime Expo 2013."
+imagen_credito: cc-ms-f91-gundam-f91
 ---
 
 El Gundam F91 es el mobile suit que [Seabook Arno](/personajes/seabook-arno/) pilota en

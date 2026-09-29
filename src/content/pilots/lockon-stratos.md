@@ -17,9 +17,9 @@ fuentes:
   - "https://en.wikipedia.org/wiki/List_of_Mobile_Suit_Gundam_00_characters"
 estado_editorial: verificado
 actualizado: '2026-09-18'
-imagen: ../../assets/gen-per-lockon-stratos.jpg
-imagen_alt: "Calle de un pueblo irlandés bajo la lluvia."
-imagen_credito: gen-per-lockon-stratos
+imagen: ../../assets/cc-per-lockon-stratos.jpg
+imagen_alt: "Model kit del Gundam Dynames, la unidad de Lockon Stratos."
+imagen_credito: cc-per-lockon-stratos
 ---
 
 Lockon Stratos, cuyo nombre real es Neil Dylandy, es uno de los cuatro Gundam Meisters originales de Celestial Being y piloto del Gundam Dynames, especializado en fuego de precisión a largo alcance. Se unió a Celestial Being después de que sus padres y su hermana menor murieran en un atentado terrorista vinculado a Ali Al-Saachez, y murió en 2308 al enfrentar la máquina de Saachez, no sin antes asegurarse de que su Haro devolviera a salvo el Dynames dañado.

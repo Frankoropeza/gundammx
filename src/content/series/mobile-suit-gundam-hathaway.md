@@ -27,9 +27,9 @@ fuentes:
   - "https://en.gundam-official.com/news/lpqft8o0yl0pnrwsfj6klikz"
 estado_editorial: verificado
 actualizado: '2026-09-28'
-imagen: ../../assets/gen-ser-mobile-suit-gundam-hathaway.jpg
-imagen_alt: "Ciudad costera tropical de noche bajo lluvia intensa."
-imagen_credito: gen-ser-mobile-suit-gundam-hathaway
+imagen: ../../assets/cc-ser-mobile-suit-gundam-hathaway.jpg
+imagen_alt: "Model kit del Penelope, de Gundam Hathaway, en The Gundam Base Tokyo."
+imagen_credito: cc-ser-mobile-suit-gundam-hathaway
 ---
 
 Mobile Suit Gundam Hathaway es una trilogía cinematográfica basada en las novelas de Yoshiyuki Tomino, ambientada doce años después de la Segunda Guerra de Neo Zeon. Hathaway Noa, veterano piloto de la era de Char's Counterattack e hijo del capitán Bright Noa, lidera en la clandestinidad el grupo terrorista Mafty Navue Erin contra una Federación Terrestre que considera corrupta.

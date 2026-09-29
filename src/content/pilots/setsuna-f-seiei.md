@@ -11,9 +11,9 @@ codigo: PIL-AD-SETSUNA
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_00
 actualizado: '2026-09-05'
-imagen: ../../assets/gen-per-setsuna-f-seiei.jpg
-imagen_alt: "Aldea desértica devastada al anochecer."
-imagen_credito: gen-per-setsuna-f-seiei
+imagen: ../../assets/cc-per-setsuna-f-seiei.jpg
+imagen_alt: "Model kit del Gundam Exia, la unidad de Setsuna F. Seiei."
+imagen_credito: cc-per-setsuna-f-seiei
 ---
 
 Setsuna F. Seiei nació en Krugis, un país ficticio de Oriente Medio, y fue reclutado de niño como soldado

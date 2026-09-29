@@ -16,9 +16,9 @@ fuentes:
   - "https://en.wikipedia.org/wiki/List_of_Mobile_Suit_Gundam_00_characters"
 estado_editorial: verificado
 actualizado: '2026-09-28'
-imagen: ../../assets/gen-per-tieria-erde.jpg
-imagen_alt: "Centro de datos blanco con servidores iluminados en violeta."
-imagen_credito: gen-per-tieria-erde
+imagen: ../../assets/cc-per-tieria-erde.jpg
+imagen_alt: "Model kit del Gundam Virtue, la unidad de Tieria Erde."
+imagen_credito: cc-per-tieria-erde
 ---
 
 Tieria Erde es uno de los cuatro Gundam Meisters originales de Celestial Being y piloto del Gundam Virtue, la máquina de mayor poder de fuego y defensa del grupo. Bajo el blindaje del [Virtue](/mobile-suits/gn-005-gundam-virtue/) se esconde una segunda unidad, el Gundam Nadleeh; después de que el Campo GN del Virtue falla en combate, Tieria tiene que salir con el Nadleeh en la batalla final de la primera temporada.

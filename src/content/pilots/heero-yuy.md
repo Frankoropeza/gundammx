@@ -11,9 +11,9 @@ codigo: PIL-AC-HEERO
 fuentes:
   - https://en.wikipedia.org/wiki/Heero_Yuy
 actualizado: '2026-09-05'
-imagen: ../../assets/gen-per-heero-yuy.jpg
-imagen_alt: "Mar tranquilo al amanecer con una línea de luz en el horizonte."
-imagen_credito: gen-per-heero-yuy
+imagen: ../../assets/cc-per-heero-yuy.jpg
+imagen_alt: "Model kit Perfect Grade del Wing Gundam Zero, la unidad de Heero Yuy."
+imagen_credito: cc-per-heero-yuy
 ---
 
 Heero Yuy es el nombre en clave del piloto del Wing Gundam, tomado del líder pacifista de las colonias

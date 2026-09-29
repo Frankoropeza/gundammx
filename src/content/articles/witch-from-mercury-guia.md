@@ -31,9 +31,9 @@ referencias:
     url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_The_Witch_from_Mercury'
   - titulo: 'Sitio oficial de Gundam'
     url: 'https://en.gundam-official.com/'
-imagen: ../../assets/gen-art-witch-from-mercury-guia.jpg
-imagen_alt: "El Sol saliendo sobre el horizonte de Mercurio."
-imagen_credito: gen-art-witch-from-mercury-guia
+imagen: ../../assets/cc-art-witch-from-mercury-guia.jpg
+imagen_alt: "Model kit del Gundam Aerial en una muestra de The Witch from Mercury."
+imagen_credito: cc-art-witch-from-mercury-guia
 ---
 
 *The Witch from Mercury* es la serie que trajo a la franquicia a más público nuevo en años. También es la que más se aparta de lo que Gundam venía haciendo desde 1979, y esa es exactamente la razón por la que funcionó.

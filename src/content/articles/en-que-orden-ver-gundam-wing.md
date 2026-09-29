@@ -35,9 +35,9 @@ referencias:
     url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Wing'
   - titulo: 'Gundam Wing: Endless Waltz — Wikipedia (formatos y fechas de estreno)'
     url: 'https://en.wikipedia.org/wiki/Gundam_Wing:_Endless_Waltz'
-imagen: ../../assets/gen-art-en-que-orden-ver-gundam-wing.jpg
-imagen_alt: "Pila de videocasetes sin etiqueta junto a un televisor antiguo."
-imagen_credito: gen-art-en-que-orden-ver-gundam-wing
+imagen: ../../assets/cc-art-en-que-orden-ver-gundam-wing.jpg
+imagen_alt: "Model kit del Wing Gundam Zero de Endless Waltz."
+imagen_credito: cc-art-en-que-orden-ver-gundam-wing
 ---
 
 Gundam Wing es, para buena parte del público hispanohablante, la puerta de entrada a la franquicia. Y también es una de las más confusas de ordenar: hay una serie de televisión, una OVA de tres partes, una película que recopila esa OVA, un recopilatorio de la serie y una novela secuela. Nada de eso viene numerado.

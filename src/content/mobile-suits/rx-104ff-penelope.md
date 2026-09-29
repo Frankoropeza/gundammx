@@ -14,9 +14,9 @@ fuentes:
   - "https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Hathaway%27s_Flash"
 estado_editorial: verificado
 actualizado: '2026-09-18'
-imagen: ../../assets/gen-ms-rx-104ff-penelope.jpg
-imagen_alt: "Frente de tormenta con relámpagos acercándose a una costa tropical."
-imagen_credito: gen-ms-rx-104ff-penelope
+imagen: ../../assets/cc-ms-rx-104ff-penelope.jpg
+imagen_alt: "Model kit HGUC del Penelope exhibido en The Gundam Base Tokyo."
+imagen_credito: cc-ms-rx-104ff-penelope
 ---
 
 El Penelope (RX-104FF) es el mobile suit experimental de la unidad Circe, pilotado por Lane Aim en su cacería de Hathaway Noa por orden del coronel Kenneth Sleg. En la segunda película, La hechicería de la ninfa Circe, Lane Aim opera temporalmente otra unidad experimental, el Alyzeus. Como con el Xi Gundam, se omiten fabricante y especificaciones técnicas por no estar confirmados en la fuente disponible.

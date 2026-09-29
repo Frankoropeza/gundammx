@@ -28,9 +28,9 @@ referencias:
   - { titulo: 'Multianime — Bandai Namco México en el 30 aniversario de La Mole Convention', url: 'https://multianime.com.mx/2026/03/01/bandai-namco-mexico-se-suma-al-historico-30-aniversario-de-la-mole-convention-con-experiencias-unicas-anime-comics-coleccionables/' }
   - { titulo: 'IPMS México — Exposición Nacional EX2026', url: 'https://nacionalipmsmexico.com/ex2026' }
   - { titulo: 'Bandai Namco Shop México — registro Gundam Summit 2026', url: 'https://bandainamcoshop.com.mx/pages/registro-gundam-summit-2026' }
-imagen: ../../assets/gen-art-eventos-gundam-mexico.jpg
-imagen_alt: "Sala de exhibición de modelismo con mesas de modelos a escala."
-imagen_credito: gen-art-eventos-gundam-mexico
+imagen: ../../assets/cc-art-eventos-gundam-mexico.jpg
+imagen_alt: "Modelista armando Gunpla en la Gunpla Expo Taiwán 2013."
+imagen_credito: cc-art-eventos-gundam-mexico
 ---
 
 El calendario Gundam mexicano no es largo, pero sí tiene forma: dos convenciones grandes, un concurso

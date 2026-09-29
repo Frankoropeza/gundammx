@@ -24,9 +24,9 @@ fuentes:
 actualizado: '2026-09-28'
 seo:
   descripcion: 'Gundam Epyon (OZ-13MS): el Gundam cuerpo a cuerpo de Treize en Gundam Wing. Quién lo pilota, espada de haz, forma de dragón, sistema Epyon y especificaciones.'
-imagen: ../../assets/gen-ms-oz-13ms-gundam-epyon.jpg
-imagen_alt: "Planicie antártica de noche bajo la Luna, con nieve arrastrada por el viento."
-imagen_credito: gen-ms-oz-13ms-gundam-epyon
+imagen: ../../assets/cc-ms-oz-13ms-gundam-epyon.jpg
+imagen_alt: "Model kit del Gundam Epyon con acabado personalizado."
+imagen_credito: cc-ms-oz-13ms-gundam-epyon
 ---
 
 El OZ-13MS Gundam Epyon es el Gundam que Treize Khushrenada manda construir en secreto después de perder el mando de

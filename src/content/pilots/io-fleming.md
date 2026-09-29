@@ -11,9 +11,9 @@ codigo: PIL-UC-IO-FLEMING
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Thunderbolt
 actualizado: '2026-09-18'
-imagen: ../../assets/gen-per-io-fleming.jpg
-imagen_alt: "Disco de vinil girando en un tocadiscos con luz tenue."
-imagen_credito: gen-per-io-fleming
+imagen: ../../assets/cc-per-io-fleming.jpg
+imagen_alt: "Model kit del Full Armor Gundam de Thunderbolt, la unidad de Io Fleming."
+imagen_credito: cc-per-io-fleming
 ---
 
 Io Fleming pelea para la Federación dentro de la Hermandad Moore, en el campo de escombros conocido como

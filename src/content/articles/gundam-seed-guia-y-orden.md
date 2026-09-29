@@ -33,9 +33,9 @@ referencias:
     url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_SEED_Freedom'
   - titulo: 'Sitio oficial de Gundam'
     url: 'https://en.gundam-official.com/'
-imagen: ../../assets/gen-art-gundam-seed-guia-y-orden.jpg
-imagen_alt: "Costa de una nación isleña al atardecer con una ciudad portuaria."
-imagen_credito: gen-art-gundam-seed-guia-y-orden
+imagen: ../../assets/cc-art-gundam-seed-guia-y-orden.jpg
+imagen_alt: "Model kit del Strike Freedom Gundam, de la saga SEED."
+imagen_credito: cc-art-gundam-seed-guia-y-orden
 ---
 
 Mucha gente llega hoy a Gundam SEED por el final: la película *Freedom* se estrenó en 2024, veinte años después de que terminara la serie que la origina. Es una entrada legítima, pero conviene saber en qué te estás metiendo.

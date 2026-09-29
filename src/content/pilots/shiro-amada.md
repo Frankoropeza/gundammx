@@ -16,9 +16,9 @@ fuentes:
   - "https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_The_08th_MS_Team"
 estado_editorial: verificado
 actualizado: '2026-09-28'
-imagen: ../../assets/gen-per-shiro-amada.jpg
-imagen_alt: "Puente sobre un río selvático entre niebla."
-imagen_credito: gen-per-shiro-amada
+imagen: ../../assets/cc-per-shiro-amada.jpg
+imagen_alt: "Gundam Ground Type RX-79(G), la unidad de Shiro Amada."
+imagen_credito: cc-per-shiro-amada
 ---
 
 Shiro Amada es un oficial de la Federación Terrestre asignado como líder de pelotón del 08vo Equipo de Mobile Suits, desplegado en el sudeste asiático durante la Guerra de un Año, lejos del frente de Amuro Ray y la White Base. Pilota primero el Gundam terrestre y, después de que queda dañado en el combate con el Apsaras II, su reconstrucción de campo, el [Gundam Ez8](/mobile-suits/rx-79g-ez8/).

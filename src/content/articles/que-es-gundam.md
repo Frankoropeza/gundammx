@@ -29,9 +29,9 @@ referencias:
   - { titulo: 'Gundam — Wikipedia', url: 'https://en.wikipedia.org/wiki/Gundam' }
   - { titulo: 'BANDAI SPIRITS — historia corporativa', url: 'https://www.bandaispirits.co.jp/e/about/history/' }
   - { titulo: 'GUNDAM.INFO — portal oficial en español', url: 'https://es.gundam-official.com/' }
-imagen: ../../assets/gen-art-que-es-gundam.jpg
-imagen_alt: "La Tierra desde la órbita con colonias espaciales a lo lejos."
-imagen_credito: gen-art-que-es-gundam
+imagen: ../../assets/cc-art-que-es-gundam.jpg
+imagen_alt: "Estatua a escala real del RX-78-2 Gundam en Odaiba."
+imagen_credito: cc-art-que-es-gundam
 ---
 
 **Gundam** es una franquicia japonesa de ciencia ficción que empezó en 1979 con una serie de televisión,

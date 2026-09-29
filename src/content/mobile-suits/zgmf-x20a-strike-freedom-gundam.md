@@ -25,9 +25,9 @@ fuentes:
 actualizado: '2026-09-28'
 seo:
   descripcion: 'Strike Freedom Gundam (ZGMF-X20A): el Gundam de Kira Yamato en SEED Destiny. Quién lo construyó, especificaciones, DRAGOON, armamento y sus kits de Gunpla.'
-imagen: ../../assets/gen-ms-zgmf-x20a-strike-freedom-gundam.jpg
-imagen_alt: "Puente de mando de una nave espacial con ventanal hacia las estrellas."
-imagen_credito: gen-ms-zgmf-x20a-strike-freedom-gundam
+imagen: ../../assets/cc-ms-zgmf-x20a-strike-freedom-gundam.jpg
+imagen_alt: "Model kit del Strike Freedom Gundam en exhibición."
+imagen_credito: cc-ms-zgmf-x20a-strike-freedom-gundam
 ---
 
 El ZGMF-X20A Strike Freedom es el mobile suit que [Kira Yamato](/personajes/kira-yamato/) pilota en

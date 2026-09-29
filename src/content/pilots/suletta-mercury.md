@@ -11,9 +11,9 @@ codigo: PIL-AS-SULETTA
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_The_Witch_from_Mercury
 actualizado: '2026-09-05'
-imagen: ../../assets/gen-per-suletta-mercury.jpg
-imagen_alt: "Invernadero con plantas de jitomate dentro de una estación espacial."
-imagen_credito: gen-per-suletta-mercury
+imagen: ../../assets/cc-per-suletta-mercury.jpg
+imagen_alt: "Model kit del Gundam Aerial, la unidad de Suletta Mercury."
+imagen_credito: cc-per-suletta-mercury
 ---
 
 Suletta Mercury creció en Mercurio, en el margen del sistema, y llega a la academia Asticassia del conglomerado

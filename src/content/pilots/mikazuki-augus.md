@@ -11,9 +11,9 @@ codigo: PIL-PD-MIKAZUKI
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_Iron-Blooded_Orphans
 actualizado: '2026-09-05'
-imagen: ../../assets/gen-per-mikazuki-augus.jpg
-imagen_alt: "Roca en el desierto marciano con una bolsa de frutos secos."
-imagen_credito: gen-per-mikazuki-augus
+imagen: ../../assets/cc-per-mikazuki-augus.jpg
+imagen_alt: "Model kit del Gundam Barbatos, la unidad de Mikazuki Augus."
+imagen_credito: cc-per-mikazuki-augus
 ---
 
 Mikazuki Augus es un huérfano marciano criado como mano de obra armada por una compañía de seguridad.

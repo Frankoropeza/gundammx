@@ -15,9 +15,9 @@ fuentes:
 actualizado: '2026-09-28'
 seo:
   descripcion: 'Shinn Asuka, protagonista de Gundam SEED Destiny: quién es, por qué pelea, su paso del Impulse al Destiny Gundam y su regreso en la película SEED Freedom.'
-imagen: ../../assets/gen-per-shinn-asuka.jpg
-imagen_alt: "Bosque quemado en la costa de una isla al amanecer."
-imagen_credito: gen-per-shinn-asuka
+imagen: ../../assets/cc-per-shinn-asuka.jpg
+imagen_alt: "Model kit del Sword Impulse Gundam, la unidad de Shinn Asuka."
+imagen_credito: cc-per-shinn-asuka
 ---
 
 Shinn Asuka es el protagonista de [*Mobile Suit Gundam SEED Destiny*](/series/gundam-seed-destiny/) y el

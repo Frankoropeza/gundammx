@@ -26,9 +26,9 @@ fuentes:
 actualizado: '2026-09-28'
 seo:
   descripcion: 'Destiny Gundam (ZGMF-X42S): el mobile suit de Shinn Asuka en SEED Destiny. Especificaciones, armamento, la versión Spec II de SEED Freedom y sus kits de Gunpla.'
-imagen: ../../assets/gen-ms-zgmf-x42s-destiny-gundam.jpg
-imagen_alt: "Cielo en llamas al atardecer sobre el océano."
-imagen_credito: gen-ms-zgmf-x42s-destiny-gundam
+imagen: ../../assets/cc-ms-zgmf-x42s-destiny-gundam.jpg
+imagen_alt: "Figura Metal Robot Tamashii del Destiny Gundam."
+imagen_credito: cc-ms-zgmf-x42s-destiny-gundam
 ---
 
 El ZGMF-X42S Destiny Gundam es el mobile suit que ZAFT entrega a [Shinn Asuka](/personajes/shinn-asuka/) a

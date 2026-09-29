@@ -11,9 +11,9 @@ codigo: PIL-UC-KAMILLE
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Zeta_Gundam
 actualizado: '2026-09-05'
-imagen: ../../assets/gen-per-kamille-bidan.jpg
-imagen_alt: "Planeador de aeromodelismo sobre el pasto dentro de una colonia."
-imagen_credito: gen-per-kamille-bidan
+imagen: ../../assets/cc-per-kamille-bidan.jpg
+imagen_alt: "Model kit del Zeta Gundam, la unidad de Kamille Bidan."
+imagen_credito: cc-per-kamille-bidan
 ---
 
 Kamille Bidan es un estudiante de la colonia Green Noa con talento para la ingeniería y ningún control sobre

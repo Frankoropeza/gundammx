@@ -14,9 +14,9 @@ fuentes:
 actualizado: '2026-09-28'
 seo:
   descripcion: 'Lowe Guele, el chatarrero protagonista de Gundam SEED ASTRAY: cómo encontró el Astray Red Frame, quién es 8 y de dónde sale la katana Gerbera Straight.'
-imagen: ../../assets/gen-per-lowe-guele.jpg
-imagen_alt: "Taller de chatarrero en órbita con herramientas y una escotilla hacia la Tierra."
-imagen_credito: gen-per-lowe-guele
+imagen: ../../assets/cc-per-lowe-guele.jpg
+imagen_alt: "Model kit del Gundam Astray Red Frame, la unidad de Lowe Guele."
+imagen_credito: cc-per-lowe-guele
 ---
 
 Lowe Guele es el protagonista de *Mobile Suit Gundam SEED ASTRAY*, la línea de manga, novelas y fotonovelas que

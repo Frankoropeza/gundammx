@@ -31,9 +31,9 @@ referencias:
     url: 'https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_Unicorn'
   - titulo: 'Sitio oficial de Gundam'
     url: 'https://en.gundam-official.com/'
-imagen: ../../assets/gen-art-gundam-unicorn-guia.jpg
-imagen_alt: "Tapiz medieval de un unicornio en la sala de un museo."
-imagen_credito: gen-art-gundam-unicorn-guia
+imagen: ../../assets/cc-art-gundam-unicorn-guia.jpg
+imagen_alt: "Estatua del Unicorn Gundam en DiverCity Tokyo Plaza, de noche."
+imagen_credito: cc-art-gundam-unicorn-guia
 ---
 
 El Universal Century intimida por dos motivos: empieza en 1979 y tiene cuarenta años de material encima. La objeción es razonable, y *Gundam Unicorn* es la respuesta habitual a ella.

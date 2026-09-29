@@ -16,9 +16,9 @@ fuentes:
   - "https://en.wikipedia.org/wiki/List_of_Mobile_Suit_Gundam_00_characters"
 estado_editorial: verificado
 actualizado: '2026-09-28'
-imagen: ../../assets/gen-per-allelujah-haptism.jpg
-imagen_alt: "Asiento de piloto vacío iluminado mitad naranja y mitad azul."
-imagen_credito: gen-per-allelujah-haptism
+imagen: ../../assets/cc-per-allelujah-haptism.jpg
+imagen_alt: "Model kit del Arios Gundam, unidad de Allelujah Haptism."
+imagen_credito: cc-per-allelujah-haptism
 ---
 
 Allelujah Haptism es uno de los cuatro Gundam Meisters originales de Celestial Being y piloto del Gundam Kyrios. Es un sobreviviente de los experimentos ilegales de supersoldado de la Liga de Reforma Humana, identificado originalmente como "E-57" y bautizado por otra sujeto de prueba, Marie Parfacy. Su condición le dejó una personalidad alterna, Hallelujah, que puede tomar el control bajo exposición a ondas cerebrales cuánticas.

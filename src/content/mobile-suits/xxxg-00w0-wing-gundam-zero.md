@@ -24,9 +24,9 @@ fuentes:
 actualizado: '2026-09-28'
 seo:
   descripcion: 'Wing Gundam Zero (XXXG-00W0): quién lo diseñó y construyó, cómo funciona el Zero System, sus pilotos, versiones TV y Endless Waltz, y sus kits de Gunpla.'
-imagen: ../../assets/gen-ms-xxxg-00w0-wing-gundam-zero.jpg
-imagen_alt: "Campo de hielo antártico bajo una aurora verde."
-imagen_credito: gen-ms-xxxg-00w0-wing-gundam-zero
+imagen: ../../assets/cc-ms-xxxg-00w0-wing-gundam-zero.jpg
+imagen_alt: "Model kit Perfect Grade del Wing Gundam Zero, versión Endless Waltz."
+imagen_credito: cc-ms-xxxg-00w0-wing-gundam-zero
 ---
 
 El XXXG-00W0 Wing Gundam Zero es el Gundam protagonista de la segunda mitad de *Gundam Wing* y el que termina

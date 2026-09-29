@@ -28,9 +28,9 @@ estado_editorial: verificado
 actualizado: '2026-09-28'
 seo:
   descripcion: "Gundam Virtue (GN-005): el Gundam de artillería pesada de Tieria Erde en Gundam 00. GN Bazooka, Campo GN, el Nadleeh oculto y especificaciones oficiales."
-imagen: ../../assets/gen-ms-gn-005-gundam-virtue.jpg
-imagen_alt: "Maquinaria industrial pesada con ventilas incandescentes en una fundición."
-imagen_credito: gen-ms-gn-005-gundam-virtue
+imagen: ../../assets/cc-ms-gn-005-gundam-virtue.jpg
+imagen_alt: "Model kit del Gundam Virtue."
+imagen_credito: cc-ms-gn-005-gundam-virtue
 ---
 
 El GN-005 Gundam Virtue es el Gundam de artillería pesada de Celestial Being en la primera temporada de
