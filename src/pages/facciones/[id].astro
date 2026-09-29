@@ -46,7 +46,7 @@ const schemas = [schemaMigaDePan(base, migas), schemaFicha(base, { nombre: d.nom
       <RelatedContent titulo="Obras" items={series.map((s) => ({ eyebrow: `${s.data.anio} · ${FORMATO[s.data.formato]}`, titulo: s.data.titulo, href: `/series/${s.id}/` }))} />
       <RelatedContent titulo="Mobile suits" items={ms.map((m) => ({ codigo: m.data.designacion, eyebrow: 'Mobile suit', titulo: m.data.nombre, href: `/mobile-suits/${m.id}/` }))} />
       <RelatedContent titulo="Personajes" items={pilotos.map((p) => ({ eyebrow: p.data.rol, titulo: p.data.nombre, href: `/personajes/${p.id}/` }))} />
-      <section class="border-t border-line pt-6"><h2 class="class-line">Fuentes</h2><ul class="mt-3 space-y-1">{d.fuentes.map((f) => <li class="truncate text-sm"><a href={f} class="link" rel="nofollow noopener" target="_blank">{f}</a></li>)}</ul><p class="mt-3 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">Actualizado {fechaLarga(d.actualizado)}</p></section>
+      <section class="border-t border-line pt-6"><h2 class="class-line">Fuentes</h2><ul class="mt-3 space-y-1">{d.fuentes.map((f) => <li class="truncate text-sm"><a href={f} class="link" rel="nofollow noopener" target="_blank">{f}</a></li>)}</ul><p class="mt-3 rotulo text-ink-3">Actualizado {fechaLarga(d.actualizado)}</p></section>
     </aside>
   </article>
 </BaseLayout>

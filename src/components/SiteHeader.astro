@@ -17,7 +17,7 @@ const activo = (href: string) => (href === '/' ? ruta === '/' : ruta.startsWith(
     <nav aria-label="Secciones del directorio" class="hidden shrink lg:block">
       <ul class="flex items-center gap-4 xl:gap-5">
         {NAV_SECUNDARIA.map((i) => (
-          <li><a href={i.href} class="whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3 transition-colors hover:text-ink">{i.texto}</a></li>
+          <li><a href={i.href} class="whitespace-nowrap rotulo text-ink-3 transition-colors hover:text-ink">{i.texto}</a></li>
         ))}
       </ul>
     </nav>
@@ -28,7 +28,7 @@ const activo = (href: string) => (href === '/' ? ruta === '/' : ruta.startsWith(
   <div class="grid-page flex h-14 items-center gap-2 min-[380px]:gap-3 sm:h-16 sm:gap-6">
     <a href="/" class="flex shrink-0 items-baseline gap-3 py-2.5" aria-label="GUNDAMX, ir al inicio">
       <span class="wordmark text-[1.5rem] leading-none max-[379px]:text-[1.3rem] sm:text-[1.65rem]">GUNDA<span class="mx">MX</span></span>
-      <span class="hidden whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3 xl:inline">{SITE.descriptor}</span>
+      <span class="hidden whitespace-nowrap rotulo text-ink-3 xl:inline">{SITE.descriptor}</span>
     </a>
 
     <nav aria-label="Principal" class="hidden flex-1 lg:block">

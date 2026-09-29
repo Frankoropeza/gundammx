@@ -1,30 +1,37 @@
 ---
-/** Imagen propia/licenciada si existe; si no, marco pendiente. Dimensiones fijas: cero CLS. */
+/**
+ * Imagen propia/licenciada si existe; si no, marco pendiente. Dimensiones fijas: cero CLS.
+ * `widths` + `sizes` generan un srcset: el navegador baja la variante que corresponde al ancho
+ * pintado (una miniatura de 8rem no descarga el original de 1600 px). Astro descarta los
+ * anchos mayores que el archivo fuente. Cada uso debe pasar un `sizes` fiel a su rejilla.
+ */
 import { Image } from 'astro:assets';
 import ImagenPendiente from '@components/ImagenPendiente.astro';
 import { CREDITOS } from '@config/creditos-imagenes';
 interface Props {
   src?: ImageMetadata; alt?: string; codigo: string; ancho?: number; alto?: number;
   prioridad?: boolean; class?: string; ratio?: string; credito?: string;
+  widths?: number[]; sizes?: string;
 }
-const { src, alt = '', codigo, ancho = 1600, alto = 1000, prioridad = false, class: cls = '', ratio = 'aspect-[16/10]', credito } = Astro.props;
+const { src, alt = '', codigo, ancho = 1600, alto = 1000, prioridad = false, class: cls = '', ratio = 'aspect-[16/10]', credito,
+  widths = [320, 480, 640, 800, 1024, 1280, 1600], sizes = '(min-width: 1024px) 50vw, 100vw' } = Astro.props;
 const c = credito ? CREDITOS[credito] : undefined;
 if (credito && !c) throw new Error(`Falta el crédito de la imagen "${credito}" en src/config/creditos-imagenes.ts`);
 ---
 {src
   ? (
     <figure>
-      <Image src={src} alt={alt || c?.alt || ''} width={ancho} height={alto} class:list={['w-full border border-line object-cover', ratio, cls]} loading={prioridad ? 'eager' : 'lazy'} fetchpriority={prioridad ? 'high' : undefined} decoding="async" />
+      <Image src={src} alt={alt || c?.alt || ''} width={ancho} height={alto} widths={widths} sizes={sizes} class:list={['w-full border border-line object-cover', ratio, cls]} loading={prioridad ? 'eager' : 'lazy'} fetchpriority={prioridad ? 'high' : undefined} decoding="async" />
       {c?.tipo === 'ia' ? (
-        <figcaption class="mt-2 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">
+        <figcaption class="mt-2 rotulo text-ink-3">
           Imagen ilustrativa · <a href="/creditos/#imagenes-generadas" class="link-quiet">generada con IA</a>
         </figcaption>
       ) : c?.tipo === 'propia' ? (
-        <figcaption class="mt-2 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">
+        <figcaption class="mt-2 rotulo text-ink-3">
           <a href="/creditos/#fotografia-propia" class="link-quiet">Fotografía · GUNDAMMX</a>
         </figcaption>
       ) : c && (
-        <figcaption class="mt-2 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">
+        <figcaption class="mt-2 rotulo text-ink-3">
           Foto de <a href={c.fuente} class="link-quiet" rel="nofollow noopener" target="_blank">{c.autor}</a>
           · <a href={c.licenciaUrl} class="link-quiet" rel="nofollow noopener license" target="_blank">{c.licencia}</a> · Recortada
         </figcaption>

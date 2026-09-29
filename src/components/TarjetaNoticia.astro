@@ -7,7 +7,7 @@ const d = nota.data;
 ---
 
 <article class="group relative flex flex-col gap-3 border-t border-line pt-5">
-  <p class="flex items-center gap-3 font-mono text-xs text-ink-3">
+  <p class="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs text-ink-3">
     <span class="uppercase tracking-wider">{d.categoria}</span>
     <time datetime={d.fecha.toISOString()}>{fechaCorta(d.fecha)}</time>
   </p>

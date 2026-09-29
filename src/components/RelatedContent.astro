@@ -8,7 +8,7 @@ const { titulo = 'Relacionado', items } = Astro.props;
     <ul class="mt-5 grid gap-px sm:grid-cols-2 lg:grid-cols-3">
       {items.map((i) => (
         <li class="group relative border border-line p-5 transition-colors hover:bg-paper">
-          <p class="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">{i.eyebrow}{i.codigo && <span class="ml-2 text-ink-3">{i.codigo}</span>}</p>
+          <p class="rotulo text-ink-3">{i.eyebrow}{i.codigo && <span class="ml-2 text-ink-3">{i.codigo}</span>}</p>
           <h3 class="display mt-2 text-xl"><a href={i.href} class="after:absolute after:inset-0 after:content-['']">{i.titulo}</a></h3>
           {i.texto && <p class="mt-2 text-sm text-ink-2">{i.texto}</p>}
         </li>

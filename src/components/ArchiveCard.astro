@@ -8,7 +8,7 @@ const d = articulo.data;
 const etiqueta = CATEGORIAS[d.categoria].nombre;
 ---
 <article class="group relative flex flex-col gap-3 border-t border-line pt-5">
-  <p class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">
+  <p class="flex flex-wrap items-center gap-x-3 gap-y-1 rotulo text-ink-3">
     {folio !== undefined && <span class="folio">{String(folio).padStart(2, '0')}</span>}
     <span>{etiqueta}</span><span aria-hidden="true">·</span>
     <time datetime={d.fecha.toISOString()}>{fechaCorta(d.fecha)}</time><span aria-hidden="true">·</span>

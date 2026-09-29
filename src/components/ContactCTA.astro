@@ -55,7 +55,7 @@ const enlaces = [...Object.entries(redes), ...Object.entries(marketplaces)].filt
 {(waUrl || web || telefono) && (
   <div class="barra-contacto-movil fixed inset-x-0 bottom-0 z-40 border-t border-line bg-paper/95 backdrop-blur-sm md:hidden" data-pagefind-ignore>
     <div class="grid-page flex items-center gap-2 py-3">
-      <p class="min-w-0 flex-1 truncate font-mono text-[11px] uppercase tracking-[0.14em] text-ink-2">{nombre}</p>
+      <p class="min-w-0 flex-1 truncate rotulo text-ink-2">{nombre}</p>
       {waUrl && <a href={waUrl} class="btn-primary shrink-0 px-4" rel="nofollow noopener" target="_blank">WhatsApp</a>}
       {web && <a href={web} class:list={[waUrl ? 'btn-secondary' : 'btn-primary', 'shrink-0 px-4']} rel="nofollow noopener" target="_blank">Sitio web</a>}
       {telefono && !waUrl && <a href={`tel:${telefono}`} class="btn-secondary shrink-0 px-4">Llamar</a>}

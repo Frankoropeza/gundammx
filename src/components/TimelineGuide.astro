@@ -7,7 +7,7 @@ import type { CollectionEntry } from 'astro:content';
 interface Props { cronologia: CollectionEntry<'series'>[]; recomendado: CollectionEntry<'series'>[]; compacto?: boolean }
 const { cronologia, recomendado, compacto = false } = Astro.props;
 ---
-<section class="grid-page py-16" aria-labelledby="tl-h">
+<section class="grid-page py-12 md:py-16" aria-labelledby="tl-h">
   <div class="flex flex-wrap items-end justify-between gap-6">
     <div>
       <p class="class-line">Guía de entrada</p>
@@ -17,10 +17,10 @@ const { cronologia, recomendado, compacto = false } = Astro.props;
         ordena por dónde conviene empezar hoy. Un principiante no debería seguir la primera.
       </p>
     </div>
-    {compacto && <a href="/cronologia/" class="link text-sm">Cronología completa</a>}
+    {compacto && <a href="/cronologia/" class="link inline-flex min-h-11 items-center text-sm md:min-h-0">Cronología completa</a>}
   </div>
 
-  <div class="mt-10 grid gap-10 lg:grid-cols-2 lg:gap-16">
+  <div class="mt-6 grid gap-10 md:mt-10 lg:grid-cols-2 lg:gap-16">
     <div>
       <h3 class="class-line">Pista A · Orden recomendado para empezar</h3>
       <ol class="mt-5 divide-y divide-line border-y border-line">

@@ -84,11 +84,11 @@ const grupos = [
 ].filter((g) => g.items.length > 0);
 ---
 
-<footer class="mt-30 border-t border-line">
+<footer class="mt-16 border-t md:mt-30 border-line">
   <div class="franja-gundam franja-gundam-fina" aria-hidden="true"></div>
 
   {/* Piso 1 — identidad y navegación primaria */}
-  <div class="grid-page grid grid-cols-2 gap-x-6 gap-y-10 py-16 md:grid-cols-12">
+  <div class="grid-page grid grid-cols-2 gap-x-6 gap-y-10 py-12 md:grid-cols-12 md:py-16">
     <div class="col-span-2 md:col-span-4">
       <p class="wordmark text-[2rem] leading-none">GUNDA<span class="mx">MX</span></p>
       <p class="mt-4 max-w-sm text-sm text-ink-2 text-pretty">{SITE.descripcion}</p>
@@ -149,13 +149,13 @@ const grupos = [
   {/* Piso 2 — explora el archivo: panel de interlinking sobre datos reales */}
   {grupos.length > 0 && (
     <div class="border-y border-line bg-surface">
-      <div class="grid-page py-12">
+      <div class="grid-page py-10 md:py-12">
         <h2 class="class-line">Explora el archivo</h2>
         <div class="mt-6 columns-1 gap-x-10 lg:columns-2 xl:columns-3">
           {grupos.map((g) => (
             <section aria-labelledby={`pie-${g.titulo}`} class="mb-8 break-inside-avoid">
               <p id={`pie-${g.titulo}`} class="eyebrow">{g.titulo}</p>
-              <ul class="mt-3 flex flex-wrap gap-1.5">
+              <ul class="fila-desliza mt-3 flex flex-wrap gap-1.5 max-md:flex-nowrap">
                 {g.items.map((i) => (
                   <li>
                     <a href={i.href} class="tag hover:border-ink hover:text-ink" title={i.nota}>

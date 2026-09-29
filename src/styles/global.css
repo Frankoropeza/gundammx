@@ -203,6 +203,10 @@
 }
 
 @layer components {
+  /* Rótulo técnico monoespaciado: metadatos, créditos, etiquetas de dato.
+     Una sola definición en vez de repetir la cadena de utilidades en cada componente. */
+  .rotulo { @apply font-mono text-[11px] uppercase tracking-[0.14em]; }
+
   /* Código de archivo: etiqueta técnica monoespaciada */
   .archive-code { @apply inline-flex max-w-full flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3; }
   .archive-code::before { content: ''; @apply inline-block h-px w-4 bg-brand; }
@@ -255,6 +259,32 @@
 
   /* Regla de sección con guía roja de encabezado */
   .rule-brand { @apply border-t-2 border-brand; }
+}
+
+@layer components {
+  /* Móvil: los rótulos mono suben a 12 px y cierran el tracking para leerse sin esfuerzo.
+     Desde 640 px conservan la medida editorial de 11 px. */
+  @media (max-width: 639px) {
+    .rotulo, .class-line, .archive-code { font-size: 0.75rem; letter-spacing: 0.1em; }
+  }
+
+  /* Fila deslizable (móvil): convierte una lista de tags que se envuelve en una sola fila
+     con scroll horizontal. Mismo patrón que .rail-movil; desde 768 px no hace nada. */
+  @media (max-width: 767px) {
+    /* El nowrap lo pone la utilidad max-md:flex-nowrap en el marcado: aquí perdería contra flex-wrap. */
+    .fila-desliza {
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      overscroll-behavior-x: contain;
+      scrollbar-width: none;
+      margin-inline: -1.25rem;
+      padding-inline: max(1.25rem, env(safe-area-inset-left)) max(1.25rem, env(safe-area-inset-right));
+      scroll-padding-inline: 1.25rem;
+    }
+    .fila-desliza::-webkit-scrollbar { display: none; }
+    .fila-desliza > * { flex: 0 0 auto; scroll-snap-align: start; }
+    .fila-desliza a { white-space: nowrap; }
+  }
 }
 
 @layer utilities {

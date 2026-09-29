@@ -120,15 +120,15 @@ const entradas = [
   <EntryRow items={entradas} />
 
   {ultimaHora.length > 0 && (
-    <section class="grid-page py-16" aria-labelledby="ultima-hora">
+    <section class="grid-page py-12 md:py-16" aria-labelledby="ultima-hora">
       <div class="flex flex-wrap items-end justify-between gap-6">
         <div>
           <p class="class-line">Noticias</p>
           <h2 id="ultima-hora" class="display mt-3 text-3xl md:text-4xl">Última hora</h2>
         </div>
-        <a href="/noticias/" class="link text-sm">Todas las noticias</a>
+        <a href="/noticias/" class="link inline-flex min-h-11 items-center text-sm md:min-h-0">Todas las noticias</a>
       </div>
-      <div class="mt-10 grid gap-x-8 gap-y-2 md:grid-cols-3">
+      <div class="mt-6 grid gap-x-8 gap-y-2 md:mt-10 md:grid-cols-3">
         {ultimaHora.map((nota, i) => <TarjetaNoticia nota={nota} grande={i === 0} />)}
       </div>
     </section>
@@ -138,20 +138,20 @@ const entradas = [
 
   <SeriesRail eyebrow="Series esenciales · Empieza aquí" titulo="Por dónde empezar a ver Gundam" series={empiezaAqui} verTodo={{ texto: 'Todas las series', href: '/series/' }} />
 
-  <section class="grid-page py-16" aria-labelledby="ms-h">
+  <section class="grid-page py-12 md:py-16" aria-labelledby="ms-h">
     <div class="flex flex-wrap items-end justify-between gap-6">
       <div>
         <p class="class-line">Mobile suits · fichas técnicas</p>
         <h2 id="ms-h" class="display mt-3 text-3xl md:text-4xl">Mobile suits: qué es cada máquina y quién la pilota</h2>
       </div>
-      <a href="/mobile-suits/" class="link text-sm">Archivo completo</a>
+      <a href="/mobile-suits/" class="link inline-flex min-h-11 items-center text-sm md:min-h-0">Archivo completo</a>
     </div>
-    <div class="rail-movil mt-10 md:grid md:border-l md:border-t md:border-line md:grid-cols-2 lg:grid-cols-3" aria-label={`Mobile suits destacados: ${destacadosMS.length} piezas`}>
+    <div class="rail-movil mt-6 md:mt-10 md:grid md:border-l md:border-t md:border-line md:grid-cols-2 lg:grid-cols-3" aria-label={`Mobile suits destacados: ${destacadosMS.length} piezas`}>
       {destacadosMS.map((m, i) => (
         <MobileSuitCard ms={m} folio={i + 1} faccion={n.facciones[m.data.faccion]} piloto={m.data.pilotos.map((p) => n.pilotos[p]).join(', ')} />
       ))}
     </div>
-    <p class="mt-3 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3 md:hidden">Desliza · {destacadosMS.length} piezas</p>
+    <p class="mt-3 rotulo text-ink-3 md:hidden">Desliza · {destacadosMS.length} piezas</p>
   </section>
 
   <TimelineGuide cronologia={cronologia} recomendado={recomendado} compacto />
@@ -159,26 +159,26 @@ const entradas = [
   <SeriesRail eyebrow="Series esenciales · Profundiza en el Universal Century" titulo="Después de la primera" series={profundiza} />
   <SeriesRail eyebrow="Series esenciales · Líneas independientes" titulo="Series de Gundam que se ven sueltas" series={alternativas} />
 
-  <section class="grid-page py-16" aria-labelledby="arch-h">
+  <section class="grid-page py-12 md:py-16" aria-labelledby="arch-h">
     <div class="flex flex-wrap items-end justify-between gap-6">
       <div>
         <p class="class-line">Archivo editorial</p>
         <h2 id="arch-h" class="display mt-3 text-3xl md:text-4xl">Guías y explicadores sobre Gundam</h2>
       </div>
-      <a href="/articulos/" class="link text-sm">Todos los artículos</a>
+      <a href="/articulos/" class="link inline-flex min-h-11 items-center text-sm md:min-h-0">Todos los artículos</a>
     </div>
-    <div class="mt-10 grid gap-x-12 gap-y-2 lg:grid-cols-2">
+    <div class="mt-6 grid gap-x-12 gap-y-2 md:mt-10 lg:grid-cols-2">
       {archivo.map((a, i) => <ArchiveCard articulo={a} grande={i === 0} folio={i + 1} />)}
     </div>
   </section>
 
-  <section class="grid-page py-16" aria-labelledby="faq-home">
+  <section class="grid-page py-12 md:py-16" aria-labelledby="faq-home">
     <p class="class-line">Preguntas frecuentes</p>
     <div class="mt-8 max-w-3xl">
       <h2 id="faq-home" class="display text-3xl md:text-4xl text-balance">Las dudas con las que casi todos llegan</h2>
       <p class="mt-4 text-ink-2 text-pretty">Respuestas cortas a lo que más se pregunta sobre la franquicia y sobre el hobby en México. Cada una lleva a la ficha o a la guía donde está el detalle.</p>
     </div>
-    <div class="mt-12 grid items-stretch gap-x-16 gap-y-12 lg:grid-cols-2">
+    <div class="mt-8 grid items-stretch gap-x-16 gap-y-12 md:mt-12 lg:grid-cols-2">
       <FAQ items={faq} titulo="Sobre Gundam, el Gunpla y dónde comprarlo" />
       <ContactoWhatsApp />
     </div>
