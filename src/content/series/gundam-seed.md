@@ -24,9 +24,9 @@ fuentes:
   - https://www.tvazteca.com/azteca7/series/como-cuando-y-donde-ver-gratis-mobile-suit-gundam-seed-en-espanol-ma-notas
   - https://www.anmtvla.com/2025/11/mexico-mobile-suit-gundam-seed-se.html
 actualizado: '2026-09-05'
-imagen: ../../assets/cc-ser-gundam-seed.jpg
-imagen_alt: "Estatua a escala del Freedom Gundam, de Gundam SEED, en Shanghái."
-imagen_credito: cc-ser-gundam-seed
+imagen: ../../assets/un-strike-gundam.jpg
+imagen_alt: "Model kit del Strike Gundam, protagonista de Gundam SEED."
+imagen_credito: un-strike-gundam
 ---
 
 *SEED* fue concebida por Sunrise y Mitsuo Fukuda como una relectura de la serie de 1979 para el público de los

@@ -23,9 +23,9 @@ fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_GQuuuuuuX
   - https://www.konnichiwafestival.com/cine/estrenos-cine/gundam-gquuuuuux-the-beginning/
 actualizado: '2026-09-05'
-imagen: ../../assets/gen-ser-gquuuuuux.jpg
-imagen_alt: "Calle nocturna con luces de neón dentro de una colonia espacial cilíndrica."
-imagen_credito: gen-ser-gquuuuuux
+imagen: ../../assets/un-gquuuuuux.jpg
+imagen_alt: "Model kit HG del GQuuuuuuX, unidad protagonista de la serie."
+imagen_credito: un-gquuuuuux
 ---
 
 Doce episodios (abril–junio de 2025) producidos por Studio Khara —el estudio de Hideaki Anno— junto a
