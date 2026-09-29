@@ -15,6 +15,7 @@ import { publicado, universosConContenido } from '@lib/archivo';
 import { ciudadesConPagina, categoriasConTiendas, tiendasVerificadas } from '@lib/directorio';
 import { categoriasAbiertas, urlCategoria } from '@lib/categorias';
 import AvisoIndependencia from '@components/AvisoIndependencia.astro';
+import Plegable from '@components/Plegable.astro';
 
 const anio = new Date().getFullYear();
 
@@ -88,8 +89,8 @@ const grupos = [
   <div class="franja-gundam franja-gundam-fina" aria-hidden="true"></div>
 
   {/* Piso 1 — identidad y navegación primaria */}
-  <div class="grid-page grid grid-cols-2 gap-x-6 gap-y-10 py-12 md:grid-cols-12 md:py-16">
-    <div class="col-span-2 md:col-span-4">
+  <div class="grid-page grid grid-cols-2 gap-x-6 py-12 md:grid-cols-12 md:gap-y-10 md:py-16">
+    <div class="col-span-2 max-md:mb-8 md:col-span-4">
       <p class="wordmark text-[2rem] leading-none">GUNDA<span class="mx">MX</span></p>
       <p class="mt-4 max-w-sm text-sm text-ink-2 text-pretty">{SITE.descripcion}</p>
       <p class="archive-code mt-6">Archivo editorial · {SITE.ciudad}</p>
@@ -103,27 +104,31 @@ const grupos = [
       )}
     </div>
 
-    <nav aria-label="Archivo" class="md:col-span-2">
-      <h2 class="class-line">Archivo</h2>
-      <ul class="mt-3 space-y-0 md:mt-4 md:space-y-2">{NAV.map((i) => <li><a href={i.href} class="link-quiet text-sm max-md:flex max-md:min-h-11 max-md:items-center">{i.texto}</a></li>)}</ul>
+    <nav aria-label="Archivo" class="col-span-2 border-t border-line md:col-span-2 md:border-0">
+      <Plegable titulo="Archivo">
+      <ul class="space-y-0 pb-3 md:mt-4 md:space-y-2 md:pb-0">{NAV.map((i) => <li><a href={i.href} class="link-quiet text-sm max-md:flex max-md:min-h-11 max-md:items-center">{i.texto}</a></li>)}</ul>
+      </Plegable>
     </nav>
 
-    <nav aria-label="Hobby y México" class="md:col-span-2">
-      <h2 class="class-line">Hobby y México</h2>
-      <ul class="mt-3 space-y-0 md:mt-4 md:space-y-2">{NAV_SECUNDARIA.map((i) => <li><a href={i.href} class="link-quiet text-sm max-md:flex max-md:min-h-11 max-md:items-center">{i.texto}</a></li>)}</ul>
+    <nav aria-label="Hobby y México" class="col-span-2 border-t border-line md:col-span-2 md:border-0">
+      <Plegable titulo="Hobby y México">
+      <ul class="space-y-0 pb-3 md:mt-4 md:space-y-2 md:pb-0">{NAV_SECUNDARIA.map((i) => <li><a href={i.href} class="link-quiet text-sm max-md:flex max-md:min-h-11 max-md:items-center">{i.texto}</a></li>)}</ul>
+      </Plegable>
     </nav>
 
-    <nav aria-label="Directorio de tiendas" class="md:col-span-2">
-      <h2 class="class-line">Directorio</h2>
-      <ul class="mt-3 space-y-0 md:mt-4 md:space-y-2">{DIRECTORIO.map((i) => <li><a href={i.href} class="link-quiet text-sm max-md:flex max-md:min-h-11 max-md:items-center">{i.texto}</a></li>)}</ul>
+    <nav aria-label="Directorio de tiendas" class="col-span-2 border-t border-line md:col-span-2 md:border-0">
+      <Plegable titulo="Directorio">
+      <ul class="space-y-0 pb-3 md:mt-4 md:space-y-2 md:pb-0">{DIRECTORIO.map((i) => <li><a href={i.href} class="link-quiet text-sm max-md:flex max-md:min-h-11 max-md:items-center">{i.texto}</a></li>)}</ul>
+      </Plegable>
     </nav>
 
-    <nav aria-label="El proyecto" class="md:col-span-2">
-      <h2 class="class-line">El proyecto</h2>
-      <ul class="mt-3 space-y-0 md:mt-4 md:space-y-2">
+    <nav aria-label="El proyecto" class="col-span-2 border-y border-line md:col-span-2 md:border-0">
+      <Plegable titulo="El proyecto">
+      <ul class="space-y-0 pb-3 md:mt-4 md:space-y-2 md:pb-0">
         {PROYECTO.map((i) => <li><a href={i.href} class="link-quiet text-sm max-md:flex max-md:min-h-11 max-md:items-center">{i.texto}</a></li>)}
         <li><span class="font-mono text-sm text-ink-3 [overflow-wrap:anywhere] max-md:flex max-md:min-h-11 max-md:items-center">{SITE.email}</span></li>
       </ul>
+      </Plegable>
     </nav>
   </div>
 

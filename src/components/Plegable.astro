@@ -1,0 +1,20 @@
+---
+/**
+ * Bloque plegable solo en móvil (<768 px). En desktop queda abierto y no se puede cerrar, así que
+ * se ve igual que antes. En móvil arranca cerrado: el contenido sigue en el HTML (lo leen el
+ * buscador y el lector de pantalla), pero no ocupa pantalla hasta que se toca el título.
+ * Sin JS, queda abierto en todas partes (degradación segura).
+ * El script en línea corre justo después del <details>, antes de pintarlo: sin parpadeo ni CLS.
+ */
+interface Props { titulo: string; nivel?: 'h2' | 'h3' | 'p'; id?: string; class?: string; claseTitulo?: string }
+const { titulo, nivel = 'h2', id, class: cls = '', claseTitulo = '' } = Astro.props;
+const Tag = nivel;
+---
+<details open data-plegable class:list={['group/pl', cls]}>
+  <summary class="flex min-h-12 items-center gap-4 md:pointer-events-none md:min-h-0 md:cursor-default">
+    <Tag id={id} class:list={['class-line flex-1', claseTitulo]}>{titulo}</Tag>
+    <span aria-hidden="true" class="font-mono text-lg leading-none text-ink-3 transition-transform group-open/pl:rotate-45 md:hidden">+</span>
+  </summary>
+  <slot />
+</details>
+<script is:inline>(function(d){var m=matchMedia('(max-width: 767px)');if(m.matches)d.open=false;d.addEventListener('toggle',function(){if(!d.open&&!m.matches)d.open=true});m.addEventListener('change',function(e){if(!e.matches)d.open=true})})(document.currentScript.previousElementSibling)</script>

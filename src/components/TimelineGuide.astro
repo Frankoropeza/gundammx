@@ -4,6 +4,7 @@
  * No se mezclan: son preguntas distintas.
  */
 import type { CollectionEntry } from 'astro:content';
+import Plegable from '@components/Plegable.astro';
 interface Props { cronologia: CollectionEntry<'series'>[]; recomendado: CollectionEntry<'series'>[]; compacto?: boolean }
 const { cronologia, recomendado, compacto = false } = Astro.props;
 ---
@@ -35,9 +36,8 @@ const { cronologia, recomendado, compacto = false } = Astro.props;
         ))}
       </ol>
     </div>
-    <div>
-      <h3 class="class-line">Pista B · Cronología interna del Universal Century</h3>
-      <ol class="mt-5 divide-y divide-line border-y border-line">
+    <Plegable titulo="Pista B · Cronología interna del Universal Century" nivel="h3">
+      <ol class="divide-y max-md:mt-2 md:mt-5 divide-line border-y border-line">
         {cronologia.map((s) => (
           <li class="flex items-baseline gap-5 py-4">
             <span class="w-20 shrink-0 font-mono text-xs tabular text-ink-2">{s.data.anio_ficcion}</span>
@@ -49,6 +49,6 @@ const { cronologia, recomendado, compacto = false } = Astro.props;
         ))}
       </ol>
       <p class="mt-4 text-xs text-ink-3 text-pretty">Solo obras presentes en el archivo. Las líneas alternas (After Colony, Cosmic Era, Anno Domini, Post Disaster, Ad Stella, Correct Century) son independientes y no requieren orden previo.</p>
-    </div>
+    </Plegable>
   </div>
 </section>
