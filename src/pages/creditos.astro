@@ -7,8 +7,9 @@ import { schemaMigaDePan } from '@lib/seo';
 const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Créditos de imágenes', href: '/creditos/' }];
 const items = Object.entries(CREDITOS).sort(([a], [b]) => a.localeCompare(b));
-const imagenesBanco = items.filter(([, c]) => c.tipo !== 'ia');
+const imagenesBanco = items.filter(([, c]) => c.tipo !== 'ia' && c.tipo !== 'propia');
 const imagenesGeneradas = items.filter(([, c]) => c.tipo === 'ia');
+const fotografiasPropias = items.filter(([, c]) => c.tipo === 'propia');
 const porLicencia = imagenesBanco.reduce<Record<string, number>>((acc, [, c]) => {
   acc[c.licencia] = (acc[c.licencia] ?? 0) + 1;
   return acc;
@@ -68,6 +69,25 @@ const porLicencia = imagenesBanco.reduce<Record<string, number>>((acc, [, c]) =>
       </table>
       </div>
     </section>
+
+    {fotografiasPropias.length > 0 && (
+      <section id="fotografia-propia" class="mt-10">
+        <h2 class="class-line">Fotografía propia de GUNDAMMX</h2>
+        <p class="mt-5 max-w-prose text-sm text-ink-2">
+          Los kits fueron comprados y fotografiados por el equipo de GUNDAMMX. Derechos reservados.
+        </p>
+        <div class="table-scroll mt-5">
+          <table>
+            <thead><tr><th scope="col">Archivo</th><th scope="col">Descripción</th></tr></thead>
+            <tbody>
+              {fotografiasPropias.map(([id, c]) => (
+                <tr><td class="font-mono text-xs text-ink-2">{id}</td><td>{c.alt}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    )}
 
     <section id="imagenes-generadas" class="mt-10">
       <h2 class="class-line">Imágenes ilustrativas generadas con IA</h2>

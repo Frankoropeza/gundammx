@@ -19,6 +19,10 @@ if (credito && !c) throw new Error(`Falta el crédito de la imagen "${credito}" 
         <figcaption class="mt-2 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">
           Imagen ilustrativa · <a href="/creditos/#imagenes-generadas" class="link-quiet">generada con IA</a>
         </figcaption>
+      ) : c?.tipo === 'propia' ? (
+        <figcaption class="mt-2 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">
+          <a href="/creditos/#fotografia-propia" class="link-quiet">Fotografía · GUNDAMMX</a>
+        </figcaption>
       ) : c && (
         <figcaption class="mt-2 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">
           Foto de <a href={c.fuente} class="link-quiet" rel="nofollow noopener" target="_blank">{c.autor}</a>

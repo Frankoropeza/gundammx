@@ -16,7 +16,7 @@ export interface CreditoImagen {
   licenciaUrl: string;
   fuente: string;
   alt: string;
-  tipo?: 'banco' | 'ia';
+  tipo?: 'banco' | 'ia' | 'propia';
 }
 
 export const CREDITOS: Record<string, CreditoImagen> = {

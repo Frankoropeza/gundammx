@@ -1,0 +1,10 @@
+{
+  "red-gundam":   {"nombre":"Red Gundam","fichas":[{"archivo":"src/content/mobile-suits/gms-alpha-red-gundam.md","alt":"Model kit del Red Gundam, fotografía de GUNDAMMX."}]},
+  "xi-gundam":    {"nombre":"Xi Gundam","fichas":[{"archivo":"src/content/mobile-suits/rx-105-xi-gundam.md","alt":"Model kit del Xi Gundam, fotografía de GUNDAMMX."},{"archivo":"src/content/pilots/hathaway-noa.md","alt":"Model kit del Xi Gundam, la unidad de Hathaway Noa.","vertical":true}]},
+  "gundam-ex":    {"nombre":"Gundam EX","fichas":[{"archivo":"src/content/mobile-suits/rx-78ge-gundam-ex.md","alt":"Model kit del Gundam EX, fotografía de GUNDAMMX."},{"archivo":"src/content/series/requiem-for-vengeance.md","alt":"Model kit del Gundam EX, unidad de Requiem for Vengeance."}]},
+  "calibarn":     {"nombre":"Gundam Calibarn","fichas":[{"archivo":"src/content/mobile-suits/x-ex01-gundam-calibarn.md","alt":"Model kit del Gundam Calibarn, fotografía de GUNDAMMX."}]},
+  "vigna-ghina":  {"nombre":"Vigna-Ghina","fichas":[{"archivo":"src/content/mobile-suits/xm-07-vigna-ghina.md","alt":"Model kit del Vigna-Ghina, fotografía de GUNDAMMX."},{"archivo":"src/content/pilots/cecily-fairchild.md","alt":"Model kit del Vigna-Ghina, la unidad de Cecily Fairchild.","vertical":true}]},
+  "atlas-gundam": {"nombre":"Atlas Gundam","fichas":[{"archivo":"src/content/mobile-suits/rx-78al-atlas-gundam.md","alt":"Model kit del Atlas Gundam, fotografía de GUNDAMMX."}]},
+  "deathscythe":  {"nombre":"Gundam Deathscythe","fichas":[{"archivo":"src/content/mobile-suits/xxxg-01d-gundam-deathscythe.md","alt":"Model kit del Gundam Deathscythe, fotografía de GUNDAMMX."},{"archivo":"src/content/pilots/duo-maxwell.md","alt":"Model kit del Gundam Deathscythe, la unidad de Duo Maxwell.","vertical":true}]},
+  "kshatriya":    {"nombre":"Kshatriya","fichas":[{"archivo":"src/content/mobile-suits/nz-666-kshatriya.md","alt":"Model kit del Kshatriya, fotografía de GUNDAMMX."},{"archivo":"src/content/pilots/marida-cruz.md","alt":"Model kit del Kshatriya, la unidad de Marida Cruz.","vertical":true}]}
+}
