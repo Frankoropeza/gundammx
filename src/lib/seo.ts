@@ -20,14 +20,6 @@ export function schemaSitio(b: Base) {
     url: b.site?.toString(),
     description: SITE.descripcion,
     inLanguage: SITE.locale,
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: abs(b.site, '/buscar/?q={search_term_string}'),
-      },
-      'query-input': 'required name=search_term_string',
-    },
   };
 }
 

@@ -40,7 +40,7 @@ const schemas = [
 ];
 ---
 
-<BaseLayout titulo={componerTitulo(d.nombre, 'Kit de Gunpla en México')} descripcion={descripcionFicha(d.resumen, 'Precio en pesos y tiendas Gundam en México.')} schemas={schemas}>
+<BaseLayout titulo={d.seo?.titulo ?? componerTitulo(d.nombre, 'Kit de Gunpla en México')} descripcion={d.seo?.descripcion ?? descripcionFicha(d.resumen, 'Precio en pesos y tiendas Gundam en México.')} schemas={schemas}>
   <Breadcrumbs items={migas} />
 
   <div class="grid-page max-w-3xl py-8">

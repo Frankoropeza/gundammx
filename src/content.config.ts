@@ -243,6 +243,7 @@ const kits = defineCollection({
     dificultad: z.enum(['principiante', 'intermedio', 'avanzado']).optional(),
     disponible_en: z.array(z.string()).default([]),
     resumen: z.string(),
+    seo: z.strictObject({ titulo: z.string().optional(), descripcion: z.string().min(120).max(155).optional() }).optional(),
   }),
 });
 
