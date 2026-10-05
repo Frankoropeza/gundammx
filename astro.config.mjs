@@ -5,6 +5,10 @@ import mdx from '@astrojs/mdx';
 // Requisito de arquitectura domain-agnostic del proyecto.
 export default defineConfig({
   site: process.env.PUBLIC_SITE_URL ?? 'https://gundam.mx',
+  cacheDir: '.astro',
+  vite: {
+    cacheDir: '.astro/vite',
+  },
   // El sitemap lo genera src/pages/sitemap-0.xml.ts con las mismas reglas de indexación
   integrations: [mdx()],
   // Las guías se unificaron en /articulos/. En salida estática Astro emite una página
