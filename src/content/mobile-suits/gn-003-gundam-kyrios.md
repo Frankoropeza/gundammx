@@ -26,7 +26,7 @@ fuentes:
 estado_editorial: verificado
 actualizado: '2026-09-28'
 seo:
-  descripcion: "Gundam Kyrios (GN-003): el Gundam transformable de Allelujah Haptism en Gundam 00. Modo de vuelo, armamento, especificaciones oficiales y su destino en la serie."
+  descripcion: "Gundam Kyrios (GN-003), el mobile suit transformable de Allelujah en Gundam 00: revisa su modo de vuelo, armas y especificaciones oficiales."
 imagen: ../../assets/cc-ms-gn-003-gundam-kyrios.jpg
 imagen_alt: "Detalle de un model kit del Gundam Kyrios."
 imagen_credito: cc-ms-gn-003-gundam-kyrios

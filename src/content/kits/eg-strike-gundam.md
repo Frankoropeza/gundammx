@@ -13,6 +13,8 @@ precio_mx_observado:
 dificultad: principiante
 disponible_en: [bandai-namco-shop]
 resumen: El Strike Gundam de Kira Yamato en Entry Grade, la versión "3L" con las tres configuraciones Striker Pack (Aile, Sword y Launcher) incluidas en una sola caja.
+seo:
+  descripcion: 'Entry Grade Strike Gundam 1/144: conoce la versión 3L con Aile, Sword y Launcher Striker Pack, su precio de referencia y tiendas en México.'
 ---
 
 Entry Grade, escala 1/144, salió a la venta en Japón el 15 de enero de 2022. Sin herramienta, sin

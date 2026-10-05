@@ -5,6 +5,8 @@ esquema_version: 2
 veredicto: 'Tenía cuatro Perfect Grade y ningún Real Grade ni Master Grade cuando la revisamos. Sirve para la parte alta del catálogo; para los grados intermedios, no.'
 tipo: online
 categoria: modelismo
+seo:
+  descripcion: 'HobbyShop.MX vende model kits y Gunpla en línea, con Entry Grade, High Grade y Perfect Grade. Consulta su catálogo y datos verificados antes de comprar.'
 web: https://www.hobbyshop.mx/
 email: hobbyshopmex@gmail.com
 redes:

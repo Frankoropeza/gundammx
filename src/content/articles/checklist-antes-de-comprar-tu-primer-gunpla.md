@@ -14,7 +14,7 @@ referencias:
   - { titulo: 'BANDAI HOBBY SITE — Gunpla', url: 'https://global.bandai-hobby.net/en-us/gunpla/' }
 seo:
   titulo: 'Checklist antes de tu primer Gunpla'
-  descripcion: 'Seis preguntas antes de comprar tu primer Gunpla: grado, presupuesto, herramientas, tiempo y dónde conseguirlo en México, para no arrepentirte de tu primera compra.'
+  descripcion: 'Checklist para comprar tu primer Gunpla: revisa grado, presupuesto, herramientas, tiempo y tiendas en México antes de elegir tu primer kit.'
 keyword_principal: 'antes de comprar mi primer gunpla'
 keywords_secundarias:
   - 'primer gunpla recomendado'

@@ -5,6 +5,8 @@ esquema_version: 2
 veredicto: 'Su umbral de envío gratis es de los más bajos del directorio. No es una tienda que se pueda visitar: su propio sitio dice que no tiene sucursales, sólo una bodega para recoger.'
 tipo: hibrida
 categoria: coleccionables
+seo:
+  descripcion: 'Distrito Max vende Gunpla y coleccionables en línea, con envío nacional y recolección en Naucalpan. Consulta su ficha verificada antes de hacer tu pedido.'
 sucursales:
   - etiqueta: Bodega de recogida
     calle: Calle Norte 4

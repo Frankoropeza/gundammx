@@ -7,6 +7,7 @@ tipo: hibrida
 categoria: oficial
 seo:
   titulo: Bandai Namco Shop | Tienda Gundam CDMX
+  descripcion: 'Bandai Namco Shop México es la tienda directa de la marca en CDMX, con catálogo en línea y envío nacional. Revisa aquí sus datos verificados de Gunpla.'
 sucursales:
   - etiqueta: Colonia Juárez
     calle: Nápoles 33

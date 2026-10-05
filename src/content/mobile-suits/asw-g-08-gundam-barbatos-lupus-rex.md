@@ -24,7 +24,7 @@ fuentes:
   - https://ja.wikipedia.org/wiki/機動戦士ガンダム_鉄血のオルフェンズ
 actualizado: '2026-09-28'
 seo:
-  descripcion: 'Gundam Barbatos Lupus Rex: la forma final del Barbatos de Mikazuki en Iron-Blooded Orphans. Especificaciones oficiales, armas, origen de su cola y kits de Gunpla.'
+  descripcion: 'Gundam Barbatos Lupus Rex, la forma final de Mikazuki en Iron-Blooded Orphans: conoce sus armas, su cola y especificaciones oficiales.'
 imagen: ../../assets/cc-ms-asw-g-08-gundam-barbatos-lupus-rex.jpg
 imagen_alt: "Model kit del Gundam Barbatos, la unidad que evoluciona hasta el Lupus Rex."
 imagen_credito: cc-ms-asw-g-08-gundam-barbatos-lupus-rex

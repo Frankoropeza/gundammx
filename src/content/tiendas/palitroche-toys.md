@@ -7,6 +7,7 @@ tipo: hibrida
 categoria: coleccionables
 seo:
   titulo: Palitroche Toys | Gunpla en CDMX
+  descripcion: 'Palitroche Toys vende Gunpla y coleccionables en CDMX, con horarios publicados y envío local. Consulta sus datos verificados antes de visitar la tienda.'
 sucursales:
   - calle: Av. Insurgentes Sur 1783
     ciudad: Ciudad de México

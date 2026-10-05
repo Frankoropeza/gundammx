@@ -17,7 +17,7 @@ keywords_secundarias:
   - 'gundam para armar'
 seo:
   titulo: '¿Existe LEGO Gundam? Lo oficial y qué comprar en su lugar'
-  descripcion: 'No encontramos un set oficial de LEGO Gundam: lo que circula son creaciones de fans y bloques de otras marcas. Qué es cada cosa y qué alternativas oficiales hay.'
+  descripcion: 'LEGO Gundam no tiene sets oficiales: distingue creaciones de fans y bloques de otras marcas, y conoce alternativas oficiales para armar un Gundam.'
 faq:
   - pregunta: '¿LEGO vende sets de Gundam?'
     respuesta: 'No que hayamos podido encontrar. Al 28 de septiembre de 2026 la página oficial de temas de LEGO no incluye Gundam, y no localizamos anuncio de licencia en las noticias oficiales de Gundam ni en el catálogo de Bandai Hobby.'

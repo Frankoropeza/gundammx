@@ -5,6 +5,8 @@ esquema_version: 2
 veredicto: 'Cubre Mazatlán, una plaza sin otra opción en el censo, pero no pudimos confirmar que maneje Gunpla. No la tomes como tienda de Gunpla hasta que alguien lo compruebe.'
 tipo: hibrida
 categoria: coleccionables
+seo:
+  descripcion: 'Tooys Coleccionables está en Mazatlán y ofrece model kits con envío nacional. Revisa datos verificados y confirma la disponibilidad de Gunpla antes de comprar.'
 sucursales:
   - etiqueta: Gran Plaza, local I-22
     ciudad: Mazatlán

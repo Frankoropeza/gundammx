@@ -5,6 +5,8 @@ esquema_version: 2
 veredicto: 'Publica cinco paqueterías a elegir y ocho formas de pago, incluido efectivo en tienda de conveniencia. No publica domicilio ni teléfono, así que todo pasa por su tienda en línea.'
 tipo: online
 categoria: coleccionables
+seo:
+  descripcion: 'Amazing Toy Store vende coleccionables y Gunpla en línea, con cinco paqueterías y ocho formas de pago. Consulta su ficha verificada antes de comprar.'
 web: https://amazingtoystore.com/
 redes:
   facebook: https://www.facebook.com/AMAZINGTOYSTORE

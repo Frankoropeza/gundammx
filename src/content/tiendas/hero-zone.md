@@ -5,6 +5,8 @@ esquema_version: 2
 veredicto: 'Tiene domicilio y teléfono documentados, pero su oferta de Gunpla NO está verificada: no la tomes como tienda de Gunpla hasta confirmarlo con ellos.'
 tipo: hibrida
 categoria: coleccionables
+seo:
+  descripcion: 'Hero Zone es una tienda de coleccionables en Tijuana con dos puntos de venta y envío nacional. Revisa qué datos de Gunpla están verificados en su ficha.'
 sucursales:
   - etiqueta: Playas de Tijuana
     calle: Av. Paseo Ensenada 130-A004

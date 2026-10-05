@@ -24,7 +24,7 @@ fuentes:
   - https://ja.wikipedia.org/wiki/機動戦士ガンダムSEED_ASTRAYシリーズの登場人物
 actualizado: '2026-09-28'
 seo:
-  descripcion: 'Gundam Astray Red Frame (MBF-P02): el Gundam de Lowe Guele en SEED ASTRAY. Origen en Heliópolis, especificaciones, la katana Gerbera Straight y sus kits de Gunpla.'
+  descripcion: 'Gundam Astray Red Frame (MBF-P02), el mobile suit de Lowe Guele en SEED ASTRAY: conoce su origen, katana y especificaciones oficiales.'
 imagen: ../../assets/cc-ms-mbf-p02-gundam-astray-red-frame.jpg
 imagen_alt: "Model kit del Gundam Astray Red Frame con su katana."
 imagen_credito: cc-ms-mbf-p02-gundam-astray-red-frame

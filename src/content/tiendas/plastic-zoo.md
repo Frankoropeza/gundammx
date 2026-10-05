@@ -5,6 +5,8 @@ esquema_version: 2
 veredicto: 'Buena opción si estás en San Luis Potosí o buscas HG, RG y MG con envío nacional. Ojo con el costo de envío, que no tiene umbral gratis y arranca en 169 pesos.'
 tipo: hibrida
 categoria: especialista
+seo:
+  descripcion: 'Plastic Zoo vende Gunpla y coleccionables en San Luis Potosí, con envío nacional y recolección. Consulta sus datos verificados antes de ordenar tus kits.'
 sucursales:
   - etiqueta: La Tepis
     calle: Francisco I. Madero 490

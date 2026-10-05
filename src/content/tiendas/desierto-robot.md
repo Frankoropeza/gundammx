@@ -5,6 +5,8 @@ esquema_version: 2
 veredicto: 'Opción del noroeste con sección propia de Gunpla y envío gratis desde 750 pesos. Su sitio bloquea el rastreo automatizado, así que no pudimos volver a comprobar sus datos.'
 tipo: hibrida
 categoria: coleccionables
+seo:
+  descripcion: 'Desierto Robot es una tienda de coleccionables en Ciudad Obregón con sección de Gunpla y envío nacional. Consulta sus datos verificados antes de ordenar.'
 sucursales:
   - calle: Zacatecas 221 Sur
     colonia: Centro

@@ -1,5 +1,5 @@
 ---
-titulo: Bandai Namco abre en CDMX su primera tienda permanente de América Latina
+titulo: Bandai Namco abre su primera tienda permanente en CDMX
 descripcion: La marca inauguró un local de unos 400 m² en la colonia Juárez, el primer punto físico permanente de Bandai Namco en la región.
 fecha: 2026-08-21
 categoria: eventos

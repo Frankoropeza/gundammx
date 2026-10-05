@@ -7,6 +7,7 @@ tipo: hibrida
 categoria: coleccionables
 seo:
   titulo: El Reino Hobby Store | Gunpla Guadalajara
+  descripcion: 'El Reino Hobby Store ofrece Gunpla y modelismo desde Guadalajara, con envío nacional. Consulta sus datos verificados antes de comprar.'
 sucursales:
   - ciudad: Guadalajara
     estado: jalisco

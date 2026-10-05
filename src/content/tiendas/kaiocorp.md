@@ -7,6 +7,7 @@ tipo: hibrida
 categoria: coleccionables
 seo:
   titulo: Kaiocorp | Tienda Gundam en Morelia
+  descripcion: 'Kaiocorp es una tienda de coleccionables en Morelia con categoría de Gundam y contacto por WhatsApp. Consulta sus datos verificados antes de visitar o pedir.'
 sucursales:
   - calle: Av. Acueducto 2588
     colonia: Chapultepec Oriente

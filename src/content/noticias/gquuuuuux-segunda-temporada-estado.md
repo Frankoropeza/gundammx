@@ -1,5 +1,5 @@
 ---
-titulo: "¿Habrá segunda temporada de GQuuuuuuX? Esto es lo que se sabe (y lo que no)"
+titulo: "GQuuuuuuX: ¿habrá segunda temporada? Lo que se sabe"
 descripcion: No existe confirmación ni desmentido oficial sobre una segunda temporada de GQuuuuuuX. Repasamos de dónde viene el rumor de cancelación y qué falta para tener certeza.
 fecha: 2026-09-18
 categoria: anime
