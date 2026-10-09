@@ -17,8 +17,10 @@ facciones: [zaft]
 codigo: SER-CE-0075
 fuentes:
   - https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_SEED_Freedom
+  - https://gundam-official.com/seed/freedom/news/item.php?id=u41ricmmmttp4p014dosmk9p
+  - https://www.prnewswire.com/news-releases/mobile-suit-gundam-seed-freedom-zero-coming-to-north-american-theaters-in-february-2027-announced-at-new-york-comic-con-2026-302902878.html
 estado_editorial: verificado
-actualizado: '2026-09-18'
+actualizado: '2026-10-09'
 imagen: ../../assets/cc-ser-gundam-seed-freedom.jpg
 imagen_alt: "Detalle de un model kit del Strike Freedom Gundam, unidad central de SEED Freedom."
 imagen_credito: cc-ser-gundam-seed-freedom
@@ -37,3 +39,11 @@ película.
 
 Con más de 5 mil millones de yenes recaudados en Japón, es la película de Gundam más taquillera de la historia
 de la franquicia, y estuvo entre los estrenos más vistos de Netflix tras su llegada a la plataforma.
+
+## La precuela: SEED FREEDOM ZERO
+
+*Mobile Suit Gundam SEED FREEDOM ZERO* cuenta lo que pasa entre *SEED Destiny* y esta película. Está ambientada en
+C.E. 74, mientras se forma Compass, con Shinn Asuka al centro de la historia. Se estrena en cines de Japón el 15 de enero de 2027 y
+en cines de Norteamérica en febrero de 2027, según lo anunciado en New York Comic Con el 8 de octubre de 2026. Repiten
+Mitsuo Fukuda en la dirección y Sunrise en la producción. Para México todavía no hay fecha: los detalles y las fuentes
+están en [la noticia del anuncio](/noticias/seed-freedom-zero-fecha-estreno/).
