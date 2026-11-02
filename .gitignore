@@ -11,3 +11,50 @@ _referencia/
 _screens/
 _to_delete/
 _imagenes/
+
+# --- OrigenLab: documentacion fuera del repo (vault OBSIDIAN) ---
+# Regla: el repo del sitio solo lleva archivos del sitio. Auditorias, estudios,
+# planes y notas viven en Projects/OBSIDIAN/. Nada de esto llega al dist/ igual,
+# solo engorda el repo. Ver CLAUDE.md.
+/docs/
+/research/
+/investigacion/
+/graphify-out/
+/obsidian-vault/
+/_docs/
+/AUDITORIA*
+/AUDITORÍA*
+/ANALISIS*
+/ANÁLISIS*
+/ESTUDIO*
+/INFORME*
+/REPORTE*
+/RESUMEN*
+/DIAGNOSTICO*
+/PROPUESTA*
+/BLUEPRINT*
+/CHECKLIST*
+/CHANGELOG-SEO*
+/CHANGELOG-AEO*
+/PLAN-*
+/PLAN_*
+/FASE-*
+/FASE_*
+/PROMPT-*
+/PROMPT_*
+/HANDOFF*
+/RUNBOOK*
+/BITACORA*
+/SESION*
+/STATUS_*
+/*.docx
+/*.xlsx
+/*.pptx
+
+# --- OrigenLab: pipeline API, secretos y worktrees fuera del repo ---
+.env
+.env.*
+.api/
+scripts/api/
+.worktrees/
+.claude/worktrees/
