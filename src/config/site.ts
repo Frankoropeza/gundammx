@@ -18,6 +18,11 @@ export const SITE = {
   whatsapp: process.env.PUBLIC_WHATSAPP ?? '',
   ciudad: 'Ciudad de México',
   domicilio: 'Pilares 1022, Letrán Valle, Benito Juárez, 03650 Ciudad de México, CDMX',
+  // Ahrefs: verificación del sitio + Web Analytics (proyecto gundam.mx). Los pinta SEO.astro.
+  ahrefs: {
+    verificacion: '40cd9b4cc4c260d40efb96782881710bbb25965aa5bbb6d072dee8e4bf18b4f5',
+    analyticsKey: 'keC2ci69XeyrBRDHu0Lhgg',
+  },
 } as const;
 
 /** Aviso de independencia. Obligatorio en todas las páginas. */

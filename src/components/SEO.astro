@@ -49,6 +49,7 @@ const ogImagen = new URL(`/og/${slugOg}.png`, Astro.site).toString();
 <title>{tituloCompleto}</title>
 <meta name="description" content={descripcion} />
 <link rel="canonical" href={canonical} />
+<meta name="ahrefs-site-verification" content={SITE.ahrefs.verificacion} />
 {noindex && <meta name="robots" content="noindex,follow" />}
 
 <meta property="og:type" content={tipo} />
@@ -67,3 +68,5 @@ const ogImagen = new URL(`/og/${slugOg}.png`, Astro.site).toString();
 <meta name="twitter:description" content={descripcion} />
 
 {schemas.map((s) => <script is:inline type="application/ld+json" set:html={JSON.stringify(s)} />)}
+
+<script is:inline src="https://analytics.ahrefs.com/analytics.js" data-key={SITE.ahrefs.analyticsKey} async></script>
