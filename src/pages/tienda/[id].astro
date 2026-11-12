@@ -13,7 +13,7 @@ import FuentesFicha from '@components/FuentesFicha.astro';
 import RelatedListings from '@components/RelatedListings.astro';
 import { tiendasActivas, relacionadasDe, indiceTiendas, faqDeTienda, tieneFaqPropia, CATEGORIAS } from '@lib/directorio';
 import { nombreEstado } from '@lib/estados';
-import { pesos } from '@lib/precio';
+import { pesos, fechaLarga } from '@lib/precio';
 import { componerTitulo, schemaTienda, schemaMigaDePan, schemaFAQ, descripcionFicha } from '@lib/seo';
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -203,6 +203,28 @@ const schemas = [
         </div>
       </aside>
     </div>
+
+    {d.galeria.length > 2 && (
+      <section class="mt-20" aria-labelledby="galeria-h">
+        <h2 id="galeria-h" class="display text-2xl">La tienda por dentro</h2>
+        <p class="mt-3 max-w-prose text-sm text-ink-2">
+          {d.verificacion.metodo === 'visita'
+            ? `Fotografías de la redacción tomadas en la tienda el ${fechaLarga(d.verificacion.fecha)}. Muestran lo que había ese día: ni el surtido ni la exhibición son permanentes.`
+            : 'Fotografías de la redacción. Muestran lo que había el día de la visita: ni el surtido ni la exhibición son permanentes.'}
+        </p>
+        <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {d.galeria.slice(2).map((g) => (
+            <figure>
+              <Image src={g.src} alt={g.alt} width={800} height={600} widths={[320, 480, 800]} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" class="aspect-[4/3] w-full border border-line object-cover" loading="lazy" decoding="async" />
+              <figcaption class="mt-2 rotulo text-ink-3">{g.alt}</figcaption>
+            </figure>
+          ))}
+        </div>
+        <p class="mt-6 rotulo text-ink-3">
+          <a href="/creditos/#fotografia-propia" class="link-quiet">Fotografía · GUNDAMMX</a>
+        </p>
+      </section>
+    )}
 
     <div class="mt-20">
       <RelatedListings

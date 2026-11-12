@@ -13,6 +13,9 @@ precio_mx_observado:
 dificultad: principiante
 disponible_en: [bandai-namco-shop]
 resumen: Entry Grade del Wing Gundam con rifle Buster y escudo incluidos, pensado para un armado sencillo.
+imagen: ../../assets/foto-entry-grade-wing-gundam-caja.avif
+imagen_alt: "Caja del Entry Grade 1/144 Wing Gundam XXXG-01W en el anaquel de la tienda."
+imagen_credito: foto-entry-grade-wing-gundam-caja
 ---
 
 Entry Grade 1/144, salió a la venta en Japón el 11 de octubre de 2025. Es la línea diseñada para armarse sin herramienta y sin pintura: las piezas salen del runner con el color puesto, sin necesidad de calcomanías para el color base, y con puertas de pieza que se quitan con la mano.

@@ -9,6 +9,18 @@ export default defineConfig({
   vite: {
     cacheDir: '.astro/vite',
   },
+  // Servicio de imagen propio: conserva AVIF como salida cuando el original ya es AVIF.
+  // Ver el porqué en src/lib/servicio-imagen.ts.
+  image: {
+    service: {
+      entrypoint: './src/lib/servicio-imagen.ts',
+      // La fotografía propia ya entra comprimida en AVIF. Recodificarla con la calidad alta
+      // por omisión la inflaba: un original de 224 kB salía en 301 kB. Con calidad 52 y
+      // effort 4 la variante de 1600 px baja a una fracción de eso sin diferencia visible
+      // en foto de vitrina. No afecta a los JPG de banco, que salen en WebP.
+      config: { avif: { quality: 52, effort: 4 } },
+    },
+  },
   // El sitemap lo genera src/pages/sitemap-0.xml.ts con las mismas reglas de indexación
   integrations: [mdx()],
   // Las guías se unificaron en /articulos/. En salida estática Astro emite una página

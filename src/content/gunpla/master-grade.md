@@ -13,9 +13,9 @@ fuentes:
   - https://en.wikipedia.org/wiki/Gunpla
   - https://global.bandai-hobby.net/en-us/schedule/
 actualizado: '2026-09-28'
-imagen: ../../assets/gen-grado-master-grade.jpg
-imagen_alt: "Marcos de plástico apilados junto a piezas de armazón interno gris oscuro, sueltas."
-imagen_credito: gen-grado-master-grade
+imagen: ../../assets/foto-master-grade-sazabi-ver-ka-caja.avif
+imagen_alt: "Caja del Master Grade MSN-04 Sazabi Ver.Ka de Neo Zeon."
+imagen_credito: foto-master-grade-sazabi-ver-ka-caja
 ---
 
 **Gundam MG** significa Master Grade, la marca avanzada de Gunpla a escala 1/100 que Bandai Spirits lanzó en julio de 1995. Frente a un kit 1/144, el modelo es más grande y suele incorporar un armazón interno, más partes y una experiencia de armado por etapas.

@@ -225,7 +225,7 @@ const tiendas = defineCollection({
 
 const kits = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/kits' }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
     nombre: z.string(),
     grado: z.enum(GRADOS),
     escala: z.string(),
@@ -243,6 +243,10 @@ const kits = defineCollection({
     dificultad: z.enum(['principiante', 'intermedio', 'avanzado']).optional(),
     disponible_en: z.array(z.string()).default([]),
     resumen: z.string(),
+    // Foto de la caja o del kit armado. Activo propio o licenciado del repo: nunca box art de terceros.
+    imagen: image().optional(),
+    imagen_alt: z.string().optional(),
+    imagen_credito: z.string().optional(),
     seo: z.strictObject({ titulo: z.string().optional(), descripcion: z.string().min(120).max(155).optional() }).optional(),
   }),
 });

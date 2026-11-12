@@ -5,6 +5,7 @@ import { getCollection, getEntry, render } from 'astro:content';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
 import BloquePrecio from '@components/BloquePrecio.astro';
+import Figura from '@components/Figura.astro';
 import InvitacionForo from '@components/InvitacionForo.astro';
 import { GRADOS } from '@config/site';
 import { componerTitulo, schemaKit, schemaMigaDePan, descripcionFicha } from '@lib/seo';
@@ -52,6 +53,22 @@ const schemas = [
 
     <h1 class="mt-4 display text-3xl md:text-4xl">{d.nombre}</h1>
     <p class="mt-3 text-ink-2">{d.resumen}</p>
+
+    {d.imagen && (
+      <div class="mt-8">
+        <Figura
+          src={d.imagen}
+          alt={d.imagen_alt}
+          codigo={kit.id}
+          credito={d.imagen_credito}
+          ancho={1200}
+          alto={900}
+          ratio="aspect-[4/3]"
+          widths={[320, 480, 800, 1200]}
+          sizes="(min-width: 768px) 48rem, 100vw"
+        />
+      </div>
+    )}
 
     <dl class="mt-8 grid gap-3 text-sm sm:grid-cols-3">
       <div class="card p-5">

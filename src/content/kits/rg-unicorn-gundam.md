@@ -13,6 +13,9 @@ precio_mx_observado:
 dificultad: intermedio
 disponible_en: [bandai-namco-shop]
 resumen: El Unicorn Gundam en Real Grade, con el mecanismo de transformación a modo Destroy y el armazón interno que la línea RG hereda de Master Grade.
+imagen: ../../assets/foto-real-grade-unicorn-gundam-caja.avif
+imagen_alt: "Caja del Real Grade Unicorn Gundam con el marco de psycho-frame en la ilustración."
+imagen_credito: foto-real-grade-unicorn-gundam-caja
 ---
 
 Real Grade, escala 1/144, salió a la venta en Japón el 5 de agosto de 2017. Reproduce el mecanismo

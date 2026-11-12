@@ -13,6 +13,9 @@ precio_mx_observado:
 dificultad: intermedio
 disponible_en: [bandai-namco-shop]
 resumen: El mobile suit de Char Aznable en Char's Counterattack, en Real Grade — armazón interno y detalle de Master Grade dentro de una escala 1/144.
+imagen: ../../assets/foto-real-grade-sazabi-caja.avif
+imagen_alt: "Caja del Real Grade MSN-04 Sazabi, el mobile suit de Char Aznable."
+imagen_credito: foto-real-grade-sazabi-caja
 ---
 
 Real Grade, escala 1/144, salió a la venta en Japón el 11 de agosto de 2018. Es la versión más

@@ -27,7 +27,7 @@ const schemas = [
   schemaListado(base, 'Tiendas de Gundam en México', tiendas.map((t) => ({ nombre: t.data.nombre, href: `/tienda/${t.id}/` }))),
 ];
 import HubImagen from '@components/HubImagen.astro';
-import imgTiendas from '../../assets/hub-tiendas.jpg';
+import imgTiendas from '../../assets/foto-bandai-namco-shop-mexico-fachada-exterior.avif';
 ---
 
 <BaseLayout
@@ -37,7 +37,7 @@ import imgTiendas from '../../assets/hub-tiendas.jpg';
 >
   <Breadcrumbs items={migas} />
 
-  <HubImagen src={imgTiendas} id="hub-tiendas" />
+  <HubImagen src={imgTiendas} id="foto-bandai-namco-shop-mexico-fachada-exterior" />
 
   <div class="grid-page py-10">
     <header class="max-w-3xl">
