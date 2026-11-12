@@ -1,0 +1,104 @@
+---
+import ArticleTableOfContents from '@components/ArticleTableOfContents.astro';
+import InvitacionForo from '@components/InvitacionForo.astro';
+import type { CategoriaForo } from '@lib/foro';
+
+interface Enlace { titulo: string; href: string; meta?: string; actual?: boolean }
+interface Props {
+  headings: { slug: string; text: string; depth: number }[];
+  ruta: Enlace[];
+  grados: Enlace[];
+  kits: Enlace[];
+  tiendas: Enlace[];
+  relacionados: Enlace[];
+  categoriaForo: CategoriaForo;
+}
+
+const { headings, ruta, grados, kits, tiendas, relacionados, categoriaForo } = Astro.props;
+---
+
+<aside class="lg:col-span-4" data-pagefind-ignore>
+  <div class="space-y-9 lg:sticky lg:top-6">
+    <ArticleTableOfContents headings={headings} />
+
+    {ruta.length > 0 && (
+      <section class="border-t border-line pt-6" aria-labelledby="ruta-aprendizaje">
+        <h2 id="ruta-aprendizaje" class="class-line">Ruta para empezar</h2>
+        <ol class="mt-4 grid gap-px bg-line">
+          {ruta.map((item, index) => (
+            <li class:list={['relative bg-surface p-4', item.actual && 'border-l-2 border-brand']}>
+              <p class="rotulo text-ink-3">Paso {String(index + 1).padStart(2, '0')}{item.actual && ' · Estás aquí'}</p>
+              <a href={item.href} aria-current={item.actual ? 'page' : undefined} class="mt-1 block font-medium leading-snug text-ink after:absolute after:inset-0 hover:text-accent">{item.titulo}</a>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )}
+
+    {grados.length > 0 && (
+      <section class="border-t border-line pt-6" aria-labelledby="comparar-grados">
+        <h2 id="comparar-grados" class="class-line">Comparar grados</h2>
+        <ul class="mt-4 grid grid-cols-2 gap-2">
+          {grados.map((item) => (
+            <li>
+              <a href={item.href} aria-current={item.actual ? 'page' : undefined} class:list={['flex min-h-16 flex-col justify-between border p-3 text-sm transition-colors hover:border-brand hover:text-accent', item.actual ? 'border-brand bg-brand/[0.05]' : 'border-line bg-surface']}>
+                <span class="font-medium">{item.titulo}</span>
+                {item.meta && <span class="mt-2 rotulo text-ink-3">{item.meta}</span>}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {kits.length > 0 && (
+      <section class="border-t border-line pt-6" aria-labelledby="kits-entry-grade">
+        <h2 id="kits-entry-grade" class="class-line">Kits Entry Grade</h2>
+        <ul class="mt-4 divide-y divide-line border-y border-line">
+          {kits.map((item) => (
+            <li class="relative py-4">
+              <a href={item.href} class="block font-medium leading-snug after:absolute after:inset-0 hover:text-accent">{item.titulo}</a>
+              {item.meta && <p class="mt-1 text-sm text-ink-2">{item.meta}</p>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {tiendas.length > 0 && (
+      <section class="border-t border-line pt-6" aria-labelledby="donde-comprar">
+        <h2 id="donde-comprar" class="class-line">Dónde comprar</h2>
+        <ul class="mt-4 space-y-3">
+          {tiendas.map((item) => (
+            <li class="relative border border-line bg-surface p-4">
+              <p class="rotulo text-verify">Ficha verificada</p>
+              <a href={item.href} class="mt-1 block font-medium after:absolute after:inset-0 hover:text-accent">{item.titulo}</a>
+              {item.meta && <p class="mt-2 text-sm leading-relaxed text-ink-2">{item.meta}</p>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {relacionados.length > 0 && (
+      <section class="border-t border-line pt-6" aria-labelledby="seguir-leyendo">
+        <h2 id="seguir-leyendo" class="class-line">Seguir leyendo</h2>
+        <ul class="mt-4 space-y-4">
+          {relacionados.map((item, index) => (
+            <li class="grid grid-cols-[2rem_1fr] gap-3">
+              <span class="folio pt-0.5">{String(index + 1).padStart(2, '0')}</span>
+              <div>
+                <a href={item.href} class="font-medium leading-snug hover:text-accent hover:underline">{item.titulo}</a>
+                {item.meta && <p class="mt-1 rotulo text-ink-3">{item.meta}</p>}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <div class="hidden lg:block">
+      <InvitacionForo categoria={categoriaForo} variante="tarjeta" />
+    </div>
+  </div>
+</aside>

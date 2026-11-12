@@ -10,6 +10,8 @@ lectura_min: 5
 destacado: false
 universos: []
 series: []
+kits_relacionados: ['eg-wing-gundam', 'eg-strike-gundam']
+tiendas_relacionadas: ['bandai-namco-shop']
 keyword_principal: 'entry grade gunpla'
 keywords_secundarias:
   - 'que es entry grade'

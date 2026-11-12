@@ -165,6 +165,15 @@
   .prose-ed strong { @apply font-semibold; }
   .prose-ed code { @apply rounded-sm bg-line/50 px-1 font-mono text-[0.9em]; }
 
+  /* Plantilla editorial amplia: cada pieza ocupa la columna de lectura completa.
+     Los recursos embebidos conservan proporción y nunca heredan un max-width de prosa. */
+  .prose-ed-ancha > * { width: 100%; max-width: none; }
+  .prose-ed-ancha > p:first-child { @apply text-xl leading-relaxed text-ink; }
+  .prose-ed-ancha :is(img, picture, figure, video, iframe) { width: 100%; max-width: none; }
+  .prose-ed-ancha img { @apply h-auto border border-line object-cover; }
+  .prose-ed-ancha h2, .prose-ed-ancha h3 { scroll-margin-top: 2rem; }
+  .prose-ed-ancha table { width: 100%; }
+
   @media (max-width: 767px) {
     .prose-ed table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .tag { min-height: 2.25rem; }

@@ -1,0 +1,46 @@
+---
+interface Props {
+  headings: { slug: string; text: string; depth: number }[];
+  movil?: boolean;
+}
+
+const { headings, movil = false } = Astro.props;
+const secciones = headings.filter((heading) => heading.depth === 2);
+---
+
+{secciones.length > 0 && (
+  movil ? (
+    <details class="border-y border-line bg-surface lg:hidden" data-pagefind-ignore>
+      <summary class="flex min-h-14 items-center justify-between gap-5 py-3">
+        <span class="class-line flex-1">En este artículo</span>
+        <span aria-hidden="true" class="font-mono text-lg text-ink-3">+</span>
+      </summary>
+      <nav aria-label="Índice del artículo" class="pb-5">
+        <ol class="grid gap-1">
+          {secciones.map((heading, index) => (
+            <li>
+              <a href={`#${heading.slug}`} class="group flex min-h-11 items-start gap-3 py-2 text-sm text-ink-2 transition-colors hover:text-accent">
+                <span class="folio mt-0.5">{String(index + 1).padStart(2, '0')}</span>
+                <span class="leading-snug group-hover:underline">{heading.text}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    </details>
+  ) : (
+    <nav aria-label="Índice del artículo" class="hidden lg:block">
+      <p class="class-line">En este artículo</p>
+      <ol class="mt-4 grid gap-1 border-l border-line pl-4">
+        {secciones.map((heading, index) => (
+          <li>
+            <a href={`#${heading.slug}`} class="group flex items-start gap-3 py-1.5 text-sm text-ink-2 transition-colors hover:text-accent">
+              <span class="folio mt-0.5">{String(index + 1).padStart(2, '0')}</span>
+              <span class="leading-snug group-hover:underline">{heading.text}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )
+)}
