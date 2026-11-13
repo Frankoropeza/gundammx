@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import PageHeader from '@components/PageHeader.astro';
 import DirectoryCard from '@components/DirectoryCard.astro';
 import DirectoryFilters from '@components/DirectoryFilters.astro';
 import LocationGrid from '@components/LocationGrid.astro';
 import CategoryGrid from '@components/CategoryGrid.astro';
-import { tiendasActivas, ciudadesConPagina, estadosConTiendas, categoriasConTiendas, tiendasEnLinea, tiendasVerificadas, facetaAporta, indexable } from '@lib/directorio';
+import { tiendasActivas, ciudadesConPagina, estadosConTiendas, categoriasConTiendas, tiendasVerificadas, indexable } from '@lib/directorio';
 import { ESTADOS } from '@lib/estados';
 import { schemaListado, schemaMigaDePan } from '@lib/seo';
 
@@ -17,8 +18,7 @@ const estados = ESTADOS.filter((e) => porEstado.has(e.slug)).map((e) => ({ slug:
 // Las facetas y las categorías se enlazan siempre que existan como página:
 // son navegación útil aunque estén por debajo del umbral de indexación.
 const categorias = await categoriasConTiendas();
-const facetaVerificadas = await facetaAporta(await tiendasVerificadas());
-const facetaEnLinea = await facetaAporta(await tiendasEnLinea());
+const verificadas = await tiendasVerificadas();
 
 const base = { site: Astro.site, url: Astro.url.pathname };
 const migas = [{ nombre: 'Tiendas', href: '/tiendas/' }];
@@ -37,24 +37,22 @@ import imgTiendas from '../../assets/foto-bandai-namco-shop-mexico-fachada-exter
 >
   <Breadcrumbs items={migas} />
 
-  <HubImagen src={imgTiendas} id="foto-bandai-namco-shop-mexico-fachada-exterior" />
-
-  <div class="grid-page py-10">
-    <header class="max-w-3xl">
-      <p class="eyebrow">Directorio</p>
-      <h1 class="display mt-3 text-4xl md:text-5xl text-balance">Tiendas de Gundam en México</h1>
-      <p class="mt-5 text-lg text-ink-2 text-pretty">
-        {tiendas.length} tiendas. Cada ficha dice qué grados maneja, si envía a todo el país y con qué fuente
-        comprobamos su oferta. La verificación no se cobra ni se vende.
-      </p>
-    </header>
-
-    <nav aria-label="Atajos" class="mt-8 flex flex-wrap gap-2">
+  <PageHeader
+    sello="Directorio · Verificación independiente"
+    titulo="Tiendas de Gundam en México"
+    entrada={`${tiendas.length} tiendas. Cada ficha dice qué grados maneja, si envía a todo el país y con qué fuente comprobamos su oferta. La verificación no se cobra ni se vende.`}
+    meta={`${verificadas.length} verificadas · ${estados.length} estados con oferta`}
+  >
+    <div slot="navegacion" class="flex flex-wrap gap-2">
       <a href="/tiendas/verificadas/" class="tag hover:border-ink hover:text-ink">Solo verificadas</a>
       <a href="/tiendas/en-linea/" class="tag hover:border-ink hover:text-ink">Con envío nacional</a>
       {/* Las facetas se enlazan siempre: son navegación útil aunque no se indexen. */}
       {categorias.map((c) => <a href={`/tiendas/categoria/${c.slug}/`} class="tag hover:border-ink hover:text-ink">{c.nombre}</a>)}
-    </nav>
+    </div>
+  </PageHeader>
+  <HubImagen src={imgTiendas} id="foto-bandai-namco-shop-mexico-fachada-exterior" />
+
+  <div class="grid-page py-12 md:py-16">
 
     <div class="mt-10">
       <DirectoryFilters ciudades={todasCiudades} estados={estados.map((e) => e.slug)} />

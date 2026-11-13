@@ -37,12 +37,12 @@ const schemas = [schemaMigaDePan(base, migas), schemaFicha(base, { nombre: `${d.
 ---
 <BaseLayout noindex={d.estado_editorial === 'borrador'} titulo={d.seo?.titulo ?? componerTitulo(`${d.designacion} ${d.nombre}`, 'Mobile Suit de Gundam')} descripcion={d.seo?.descripcion ?? descripcionFicha(d.resumen, 'Ficha técnica en Gundam México.')} tipo="article" schemas={schemas}>
   <Breadcrumbs items={migas} />
-  <article class="grid-page py-10">
+  <article class="grid-page py-12 md:py-16">
     <header class="grid gap-10 lg:grid-cols-12">
       <div class="lg:col-span-6">
         <p class="archive-code">{d.codigo}</p>
         <p class="mt-4 font-mono text-lg tracking-wide text-ink">{d.designacion}</p>
-        <h1 class="display mt-1 text-4xl md:text-5xl text-balance">{d.nombre}</h1>
+        <h1 class="display mt-1 text-4xl leading-[1.02] text-balance md:text-5xl lg:text-6xl">{d.nombre}</h1>
         <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">{d.resumen}</p>
       </div>
       <div class="lg:col-span-6"><Figura src={d.imagen} alt={d.imagen_alt} credito={d.imagen_credito} codigo={d.codigo} prioridad ratio="aspect-[4/3]" /></div>

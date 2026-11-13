@@ -17,10 +17,10 @@ const { titulo, descripcion, fecha, actualizada, migas, fuente, schemas = [], ey
 
 <BaseLayout titulo={titulo} descripcion={descripcion} tipo="article" schemas={schemas}>
   <Breadcrumbs items={migas} />
-  <article class="grid-page grid gap-10 py-10 md:grid-cols-12">
+  <article class="grid-page grid gap-12 py-12 md:grid-cols-12 md:py-16">
     <header class="md:col-span-10 md:col-start-2">
-      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
-      <h1 class="display mt-3 text-4xl md:text-5xl text-balance">{titulo}</h1>
+      {eyebrow && <p class="class-line">{eyebrow}</p>}
+      <h1 class="display mt-5 text-4xl leading-[1.02] text-balance md:text-5xl lg:text-6xl">{titulo}</h1>
       <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">{descripcion}</p>
       <p class="mt-5 font-mono text-xs text-ink-3">
         {fecha && <>Publicado el {fechaLarga(fecha)}</>}

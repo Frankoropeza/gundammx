@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import PageHeader from '@components/PageHeader.astro';
 import ArchiveCard from '@components/ArchiveCard.astro';
 import { schemaColeccion, schemaMigaDePan } from '@lib/seo';
 import { categoriasAbiertas, urlCategoria } from '@lib/categorias';
@@ -16,11 +17,14 @@ import imgArticulos from '../../assets/hub-articulos.jpg';
 <BaseLayout titulo="Guías de Gundam | Explicadores y análisis" descripcion="Guías y explicadores de Gundam con referencias: qué es cada universo, en qué orden ver la franquicia, dónde verla y cómo llegó Gundam a México." schemas={schemas}>
   <Breadcrumbs items={migas} />
 
+  <PageHeader
+    sello="Archivo editorial · Guías y explicadores"
+    titulo="Artículos"
+    entrada="Redacción propia, con referencias visibles al pie de cada texto. Nada de resúmenes de wiki ni de traducciones de comunicados."
+    meta={`${articulos.length} piezas publicadas`}
+  />
   <HubImagen src={imgArticulos} id="hub-articulos" />
-  <div class="grid-page py-10">
-    <p class="class-line">Archivo editorial</p>
-    <h1 class="display mt-3 text-4xl md:text-5xl">Artículos</h1>
-    <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">Redacción propia, con referencias visibles al pie de cada texto. Nada de resúmenes de wiki ni de traducciones de comunicados.</p>
+  <div class="grid-page py-12 md:py-16">
     {abiertas.length > 0 && (
       <nav class="mt-10 border-t border-line pt-6" aria-labelledby="nav-categorias">
         <h2 id="nav-categorias" class="class-line">Por categoría</h2>

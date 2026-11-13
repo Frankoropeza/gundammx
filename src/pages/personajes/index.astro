@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import PageHeader from '@components/PageHeader.astro';
 import { nombreUniverso, nombres, publicado } from '@lib/archivo';
 import { schemaColeccion, schemaMigaDePan } from '@lib/seo';
 const pilotos = (await getCollection('pilots', publicado)).sort((a, b) => a.data.universo.localeCompare(b.data.universo) || a.data.nombre.localeCompare(b.data.nombre));
@@ -15,12 +16,15 @@ import imgPersonajes from '../../assets/hub-personajes.jpg';
 <BaseLayout titulo="Personajes de Gundam | Pilotos y facciones" descripcion={`Los personajes de Gundam por universo: ${pilotos.length} fichas de pilotos y protagonistas con su facción, su serie de origen y los mobile suits que conducen.`} schemas={schemas}>
   <Breadcrumbs items={migas} />
 
+  <PageHeader
+    sello="Archivo · Pilotos y facciones"
+    titulo="Personajes"
+    entrada="Los pilotos que sostienen cada historia. Cada ficha enlaza su serie, su facción y sus máquinas."
+    meta={`${pilotos.length} perfiles documentados`}
+  />
   <HubImagen src={imgPersonajes} id="hub-personajes" />
-  <div class="grid-page py-10">
-    <p class="class-line">Archivo</p>
-    <h1 class="display mt-3 text-4xl md:text-5xl">Personajes</h1>
-    <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">Los pilotos que sostienen cada historia. Cada ficha enlaza su serie, su facción y sus máquinas.</p>
-    <ol class="mt-6 grid border-l md:mt-10 border-t border-line sm:grid-cols-2 lg:grid-cols-3">
+  <div class="grid-page py-12 md:py-16">
+    <ol class="grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-3">
       {pilotos.map((p, i) => (
         <li class="card group relative p-5 sm:p-6">
           <div class="flex items-center justify-between"><span class="folio">{String(i + 1).padStart(2, '0')}</span><span class="rotulo text-ink-3">{p.data.rol}</span></div>

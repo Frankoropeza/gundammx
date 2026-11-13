@@ -40,12 +40,12 @@ const schemas = [schemaMigaDePan(base, migas), schemaSerie(base, { titulo: d.tit
 ---
 <BaseLayout noindex={d.estado_editorial === 'borrador'} titulo={d.seo?.titulo ?? componerTitulo(d.titulo, d.titulo.length > 26 ? `Serie ${d.anio}` : `Serie de Gundam (${d.anio})`)} descripcion={d.seo?.descripcion ?? descripcionFicha(d.resumen, 'Ficha de la serie en Gundam México.')} tipo="article" schemas={schemas}>
   <Breadcrumbs items={migas} />
-  <article class="grid-page py-10">
+  <article class="grid-page py-12 md:py-16">
     <header class="grid gap-10 lg:grid-cols-12">
       <div class="lg:col-span-6">
         <p class="archive-code">{d.codigo}</p>
         <p class="class-line mt-4">{FORMATO[d.formato]} · {d.anio} · {nombreUniverso(d.universo)}</p>
-        <h1 class="display mt-4 text-4xl md:text-5xl text-balance">{d.titulo}</h1>
+        <h1 class="display mt-4 text-4xl leading-[1.02] text-balance md:text-5xl lg:text-6xl">{d.titulo}</h1>
         {d.titulo_original && <p class="mt-2 font-mono text-sm text-ink-3">{d.titulo_original}</p>}
         <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">{d.resumen}</p>
         <p class="mt-4 border-l-2 border-accent pl-4 text-sm text-ink"><span class="text-ink-3">Por qué importa · </span>{d.relevancia}</p>

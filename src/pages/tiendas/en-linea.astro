@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import PageHeader from '@components/PageHeader.astro';
 import DirectoryCard from '@components/DirectoryCard.astro';
 import { tiendasEnLinea, facetaAporta } from '@lib/directorio';
 import { pesos } from '@lib/precio';
@@ -27,14 +28,15 @@ const schemas = [
   schemas={schemas}
 >
   <Breadcrumbs items={migas} />
-  <div class="grid-page py-10">
-    <header class="max-w-3xl">
-      <p class="eyebrow">Envío nacional</p>
-      <h1 class="display mt-3 text-4xl md:text-5xl text-balance">Tiendas con envío a todo México</h1>
-      <p class="mt-5 text-lg text-ink-2 text-pretty">Si no hay tienda física en tu ciudad, esta es la lista. Comparamos paqueterías, umbral de envío gratis y si manejan preventa: donde más dudas genera el comercio de kits en México.</p>
-    </header>
+  <PageHeader
+    sello="Directorio · Envío nacional"
+    titulo="Tiendas con envío a todo México"
+    entrada="Si no hay tienda física en tu ciudad, esta es la lista. Comparamos paqueterías, umbral de envío gratis y si manejan preventa: donde más dudas genera el comercio de kits en México."
+    meta={`${tiendas.length} tiendas con cobertura nacional`}
+  />
+  <div class="grid-page py-12 md:py-16">
 
-    <div class="table-scroll mt-10">
+    <div class="table-scroll">
       <table>
         <caption class="sr-only">Comparativa de envíos</caption>
         <thead><tr><th scope="col">Tienda</th><th scope="col">Paqueterías</th><th scope="col">Envío gratis desde</th><th scope="col">Preventa</th><th scope="col">Verificación</th></tr></thead>

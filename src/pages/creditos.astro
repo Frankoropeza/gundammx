@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import PageHeader from '@components/PageHeader.astro';
 import { CREDITOS } from '@config/creditos-imagenes';
 import { schemaMigaDePan } from '@lib/seo';
 
@@ -23,26 +24,20 @@ const porLicencia = imagenesBanco.reduce<Record<string, number>>((acc, [, c]) =>
 >
   <Breadcrumbs items={migas} />
 
-  <div class="grid-page py-10">
-    <header class="max-w-3xl">
-      <p class="eyebrow">El proyecto</p>
-      <h1 class="display mt-3 text-4xl md:text-5xl text-balance">Créditos de imágenes</h1>
-      <p class="mt-5 text-lg text-ink-2 text-pretty">
-        Las fotografías de este sitio vienen de bancos con licencia libre que permite uso comercial y obra derivada,
-        y están recortadas y recomprimidas. También usamos ilustraciones generadas con IA como apoyo editorial.
-        Aquí están los créditos, licencias y procedencia de cada imagen.
-      </p>
-      <p class="mt-4 max-w-prose text-sm text-ink-2">
-        Las fotografías muestran model kits de plástico. GUNDAMMX es un archivo independiente: no está
-        afiliado a Bandai Namco, Sunrise ni Sotsu, y ninguna de estas imágenes se usa como logotipo,
-        favicon ni imagen de marca.
-      </p>
-      <p class="mt-6 flex flex-wrap gap-2">
+  <PageHeader
+    sello="El proyecto · Autoría y licencias"
+    titulo="Créditos de imágenes"
+    entrada="Las fotografías de este sitio vienen de bancos con licencia libre que permite uso comercial y obra derivada, y están recortadas y recomprimidas. También usamos ilustraciones generadas con IA como apoyo editorial. Aquí están los créditos, licencias y procedencia de cada imagen."
+    meta={`${items.length} imágenes acreditadas`}
+  >
+    <p>Las fotografías muestran model kits de plástico. GUNDAMMX es un archivo independiente: no está afiliado a Bandai Namco, Sunrise ni Sotsu, y ninguna de estas imágenes se usa como logotipo, favicon ni imagen de marca.</p>
+    <div slot="navegacion" class="flex flex-wrap gap-2">
         {Object.entries(porLicencia).map(([lic, n]) => <span class="tag">{lic} · {n}</span>)}
-      </p>
-    </header>
+    </div>
+  </PageHeader>
 
-    <section class="mt-10">
+  <div class="grid-page py-12 md:py-16">
+    <section>
       <h2 class="class-line">Fotografías de banco con licencia libre</h2>
       <div class="table-scroll mt-5">
       <table>

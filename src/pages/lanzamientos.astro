@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import PageHeader from '@components/PageHeader.astro';
 import { ETIQUETAS_TIPO, LANZAMIENTOS, LANZAMIENTOS_VERIFICADO, type Lanzamiento } from '@config/lanzamientos';
 import { fechaLarga } from '@lib/precio';
 import { schemaListado, schemaMigaDePan } from '@lib/seo';
@@ -67,21 +68,17 @@ const schemas = [
 >
   <Breadcrumbs items={migas} />
 
-  <div class="grid-page py-10">
-    <header class="max-w-3xl">
-      <p class="eyebrow">Calendario</p>
-      <h1 class="display mt-3 text-4xl md:text-5xl">Calendario de lanzamientos de Gundam</h1>
-      <p class="mt-5 text-lg text-ink-2 text-pretty">
-        Reunimos lanzamientos de Gunpla, anime, cine, videojuegos y el Gundam Card Game con la fecha que publica cada fuente oficial.
-      </p>
-      <p class="mt-3 text-ink-2 text-pretty">
-        Los precios son los publicados por Bandai en Japón o Estados Unidos; no son precio en México. Consulta
-        <a href="/articulos/cuanto-cuesta-un-gunpla-en-mexico/" class="link">cuánto cuesta un Gunpla en México</a>.
-      </p>
-      <p class="mt-5 font-mono text-xs text-ink-3">Verificado el {fechaLarga(LANZAMIENTOS_VERIFICADO)}</p>
-    </header>
+  <PageHeader
+    sello="Calendario · Fechas oficiales"
+    titulo="Calendario de lanzamientos de Gundam"
+    entrada="Reunimos lanzamientos de Gunpla, anime, cine, videojuegos y el Gundam Card Game con la fecha que publica cada fuente oficial."
+    meta={`Verificado el ${fechaLarga(LANZAMIENTOS_VERIFICADO)} · ${proximos.length} próximos`}
+  >
+    <p>Los precios son los publicados por Bandai en Japón o Estados Unidos; no son precio en México. Consulta <a href="/articulos/cuanto-cuesta-un-gunpla-en-mexico/">cuánto cuesta un Gunpla en México</a>.</p>
+  </PageHeader>
 
-    <section class="mt-12" aria-labelledby="proximos-lanzamientos">
+  <div class="grid-page py-12 md:py-16">
+    <section aria-labelledby="proximos-lanzamientos">
       <h2 id="proximos-lanzamientos" class="display text-2xl md:text-3xl">Próximos lanzamientos</h2>
       {gruposProximos.map((grupo) => (
         <section class="mt-8" aria-labelledby={`grupo-${grupo.id}`}>

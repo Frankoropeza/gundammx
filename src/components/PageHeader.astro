@@ -1,0 +1,47 @@
+---
+interface Props {
+  sello: string;
+  titulo: string;
+  entrada?: string;
+  meta?: string;
+  compacto?: boolean;
+}
+
+const { sello, titulo, entrada, meta, compacto = false } = Astro.props;
+const tieneComplemento = Astro.slots.has('complemento');
+const tieneNavegacion = Astro.slots.has('navegacion');
+const tieneContenido = Astro.slots.has('default');
+---
+
+<header class:list={['grid-page border-b border-line', compacto ? 'py-10 md:py-12' : 'py-12 md:py-16']}>
+  <p class="class-line">{sello}</p>
+  <div class:list={['mt-5 grid gap-8 lg:grid-cols-12', tieneComplemento && 'lg:gap-12']}>
+    <div class:list={[tieneComplemento ? 'lg:col-span-8' : 'lg:col-span-9']}>
+      <h1 class="display text-4xl leading-[1.02] text-balance md:text-5xl lg:text-6xl">{titulo}</h1>
+      {entrada && <p class="mt-5 max-w-[65ch] text-lg leading-relaxed text-ink-2 text-pretty">{entrada}</p>}
+      {tieneContenido && <div class="page-header-copy mt-5 max-w-[65ch] text-ink-2 text-pretty"><slot /></div>}
+      {meta && <p class="mt-5 font-mono text-xs uppercase tracking-[0.12em] text-ink-3 tabular">{meta}</p>}
+      {tieneNavegacion && <nav class="mt-8" aria-label="Navegación contextual"><slot name="navegacion" /></nav>}
+    </div>
+    {tieneComplemento && (
+      <aside class="border-t border-line pt-5 lg:col-span-4 lg:mt-1" aria-label="Contexto de la página">
+        <slot name="complemento" />
+      </aside>
+    )}
+  </div>
+</header>
+
+<style>
+  .page-header-copy :global(p + p) { margin-top: 0.75rem; }
+  .page-header-copy :global(a) {
+    color: rgb(var(--ink));
+    text-decoration: underline;
+    text-decoration-color: rgb(var(--ink-3));
+    text-underline-offset: 3px;
+    transition: color 180ms ease, text-decoration-color 180ms ease;
+  }
+  .page-header-copy :global(a:hover) {
+    color: rgb(var(--accent));
+    text-decoration-color: rgb(var(--accent));
+  }
+</style>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import PageHeader from '@components/PageHeader.astro';
 import TimelineGuide from '@components/TimelineGuide.astro';
 import { seriesOrdenRecomendado, seriesCronologiaUC, universosConContenido } from '@lib/archivo';
 import { schemaArticulo, schemaMigaDePan } from '@lib/seo';
@@ -13,11 +14,9 @@ const schemas = [schemaMigaDePan(base, migas), schemaArticulo(base, { titulo: 'E
 ---
 <BaseLayout titulo="Línea de tiempo de Gundam: cronología por universo" descripcion="Línea de tiempo de Gundam por universo: ubica series, películas y eventos dentro de cada continuidad, con foco en la cronología del Universal Century." schemas={schemas}>
   <Breadcrumbs items={migas} />
-  <div class="grid-page pt-10">
-    <p class="class-line">Guía de entrada</p>
-    <h1 class="display mt-3 text-4xl md:text-5xl text-balance">Línea de tiempo de Gundam</h1>
-    <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">La franquicia tiene siete calendarios independientes. Esta línea de tiempo ubica obras y acontecimientos por universo; si buscas una recomendación de entrada, consulta <a href="/articulos/en-que-orden-ver-gundam/" class="link">en qué orden ver Gundam</a>.</p>
-  </div>
+  <PageHeader sello="Guía de entrada · Cronología" titulo="Línea de tiempo de Gundam" meta={`${universos.length} calendarios independientes`}>
+    <p>La franquicia tiene siete calendarios independientes. Esta línea de tiempo ubica obras y acontecimientos por universo; si buscas una recomendación de entrada, consulta <a href="/articulos/en-que-orden-ver-gundam/">en qué orden ver Gundam</a>.</p>
+  </PageHeader>
   <TimelineGuide cronologia={cronologia} recomendado={recomendado} />
   <section class="grid-page pb-16" aria-labelledby="alt-h">
     <h2 id="alt-h" class="class-line">Líneas independientes: por dónde entra cada una</h2>

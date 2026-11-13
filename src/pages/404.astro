@@ -3,13 +3,16 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
 <BaseLayout titulo="Página no encontrada" descripcion="La página que buscas no existe." noindex>
-  <section class="grid-page max-w-xl py-28 text-center">
-    <p class="display text-7xl text-accent">404</p>
-    <h1 class="mt-4 display text-2xl">Esta página no existe</h1>
-    <p class="mt-4 text-ink-2">
-      Puede que la ficha se haya movido o que el link esté mal escrito.
-    </p>
-    <div class="mt-8 flex flex-wrap justify-center gap-3">
+  <section class="grid-page py-16 md:py-24">
+    <p class="class-line">Error · 404</p>
+    <div class="mt-6 grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-8">
+        <h1 class="display text-4xl leading-[1.02] text-balance md:text-5xl lg:text-6xl">Esta página no existe</h1>
+        <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">Puede que la ficha se haya movido o que el link esté mal escrito.</p>
+      </div>
+      <p class="display text-7xl text-accent lg:col-span-4 lg:text-right lg:text-8xl" aria-hidden="true">404</p>
+    </div>
+    <div class="mt-10 flex flex-wrap gap-3 border-t border-line pt-6">
       <a href="/tiendas/" class="btn-primary">Ver el directorio</a>
       <a href="/" class="btn-secondary">Ir al inicio</a>
     </div>

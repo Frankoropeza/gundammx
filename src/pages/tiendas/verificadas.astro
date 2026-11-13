@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import PageHeader from '@components/PageHeader.astro';
 import DirectoryCard from '@components/DirectoryCard.astro';
 import { tiendasVerificadas, facetaAporta } from '@lib/directorio';
 import { schemaListado, schemaMigaDePan } from '@lib/seo';
@@ -22,16 +23,11 @@ const schemas = [
   schemas={schemas}
 >
   <Breadcrumbs items={migas} />
-  <div class="grid-page py-10">
-    <header class="max-w-3xl">
-      <p class="eyebrow">Verificación</p>
-      <h1 class="display mt-3 text-4xl md:text-5xl">Tiendas verificadas</h1>
-      <p class="mt-5 text-lg text-ink-2 text-pretty">
-        Comprobamos que venden Gunpla, con qué fuente y en qué fecha. <strong class="text-ink">La verificación no se paga.</strong>
-        Un listado patrocinado cambia la posición, nunca el sello. El detalle está en <a href="/metodologia/" class="link">cómo verificamos</a>.
-      </p>
-    </header>
-    <h2 class="display mt-12 text-2xl md:text-3xl">Tiendas Gundam con verificación vigente</h2>
+  <PageHeader sello="Directorio · Verificación" titulo="Tiendas verificadas" meta={`${tiendas.length} fichas con verificación vigente`}>
+    <p>Comprobamos que venden Gunpla, con qué fuente y en qué fecha. <strong class="text-ink">La verificación no se paga.</strong> Un listado patrocinado cambia la posición, nunca el sello. El detalle está en <a href="/metodologia/">cómo verificamos</a>.</p>
+  </PageHeader>
+  <div class="grid-page py-12 md:py-16">
+    <h2 class="display text-2xl md:text-3xl">Tiendas Gundam con verificación vigente</h2>
     <div class="mt-6 flex flex-wrap border-l border-t border-line">
       {tiendas.map((t, i) => <DirectoryCard tienda={t} prioridad={i < 3} class="grow basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 2xl:basis-1/5" />)}
     </div>

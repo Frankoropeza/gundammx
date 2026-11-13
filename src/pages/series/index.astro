@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import PageHeader from '@components/PageHeader.astro';
 import SeriesRail from '@components/SeriesRail.astro';
 import { seriesPorRuta, publicado } from '@lib/archivo';
 import { UNIVERSOS_META, type UniversoId } from '@config/site';
@@ -19,13 +20,10 @@ import imgSeries from '../../assets/hub-series.jpg';
 <BaseLayout titulo="Series y películas de Gundam: lista completa" descripcion={`Catálogo de series y películas de anime Gundam: ${todas.length} obras con año, universo, formato y datos para explorar la franquicia.`} schemas={schemas}>
   <Breadcrumbs items={migas} />
 
+  <PageHeader sello="Archivo · Rutas de descubrimiento" titulo="Series" entrada="Selección curada, no lista plana. Cada ficha dice cuándo conviene verla, y las agrupamos por ruta de descubrimiento.">
+    <p>Si buscas una ruta de entrada, revisa <a href="/articulos/en-que-orden-ver-gundam/">en qué orden verlas</a> o decide <a href="/articulos/cual-gundam-ver-primero/">por cuál empezar</a>.</p>
+  </PageHeader>
   <HubImagen src={imgSeries} id="hub-series" />
-  <div class="grid-page pt-10">
-    <p class="class-line">Archivo</p>
-    <h1 class="display mt-3 text-4xl md:text-5xl">Series</h1>
-    <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">Selección curada, no lista plana. Cada ficha dice cuándo conviene verla, y las agrupamos por ruta de descubrimiento.</p>
-    <p class="mt-4 max-w-prose text-ink-2 text-pretty">Si buscas una ruta de entrada, revisa <a href="/articulos/en-que-orden-ver-gundam/" class="link">en qué orden verlas</a> o decide <a href="/articulos/cual-gundam-ver-primero/" class="link">por cuál empezar</a>.</p>
-  </div>
   <SeriesRail eyebrow="Ruta 1" titulo="Empieza aquí" series={empieza} />
   <SeriesRail eyebrow="Ruta 2" titulo="Profundiza en la continuidad" series={profundiza} />
   <SeriesRail eyebrow="Ruta 3" titulo="Alternativas independientes" series={alternativas} />

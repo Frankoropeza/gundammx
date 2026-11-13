@@ -2,6 +2,7 @@
 import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import PageHeader from '@components/PageHeader.astro';
 import ArchiveCard from '@components/ArchiveCard.astro';
 import { categoriasAbiertas, urlCategoria } from '@lib/categorias';
 import { componerTitulo, schemaColeccion, schemaMigaDePan } from '@lib/seo';
@@ -29,11 +30,14 @@ const schemas = [
 ---
 <BaseLayout titulo={componerTitulo(cat.meta.nombre, 'Gundam México')} descripcion={cat.meta.meta} schemas={schemas}>
   <Breadcrumbs items={migas} />
-  <div class="grid-page py-10">
-    <p class="class-line">Artículos · {cat.piezas.length} {cat.piezas.length === 1 ? 'pieza' : 'piezas'}</p>
-    <h1 class="display mt-3 text-4xl md:text-5xl">{cat.meta.nombre}</h1>
-    <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">{cat.meta.intro}</p>
-    <section class="mt-10" aria-labelledby="lista-categoria">
+  <PageHeader
+    sello="Archivo editorial · Categoría"
+    titulo={cat.meta.nombre}
+    entrada={cat.meta.intro}
+    meta={`${cat.piezas.length} ${cat.piezas.length === 1 ? 'pieza publicada' : 'piezas publicadas'}`}
+  />
+  <div class="grid-page py-12 md:py-16">
+    <section aria-labelledby="lista-categoria">
       <h2 id="lista-categoria" class="sr-only">Piezas publicadas en {cat.meta.nombre}</h2>
       <div class="mt-6 grid gap-x-12 gap-y-2 lg:grid-cols-2">
         {cat.piezas.map((a, i) => <ArchiveCard articulo={a} grande={i === 0} folio={i + 1} />)}

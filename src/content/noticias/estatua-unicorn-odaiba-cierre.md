@@ -1,5 +1,5 @@
 ---
-titulo: "La estatua del Unicorn Gundam de Odaiba cerró tras casi nueve años"
+titulo: "Unicorn Gundam de Odaiba cerró tras casi nueve años"
 descripcion: La estatua a escala real del Unicorn Gundam en DiverCity Tokyo Plaza terminó su exhibición el 31 de agosto de 2026. Bandai abrirá Gundam Base en Shibuya (noviembre) y Osaka (2027).
 fecha: 2026-09-28
 categoria: eventos

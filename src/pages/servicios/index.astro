@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import PageHeader from '@components/PageHeader.astro';
 import { getCollection } from 'astro:content';
 import { nombreEstado } from '@lib/estados';
 import { schemaListado, schemaMigaDePan } from '@lib/seo';
@@ -29,20 +30,17 @@ const schemas = [
 >
   <Breadcrumbs items={migas} />
 
-  <div class="grid-page py-8">
-    <h1 class="display text-3xl md:text-4xl">Servicios, herramientas y pinturas</h1>
-    <p class="mt-4 max-w-3xl text-ink-2">
-      El kit es la mitad del hobby. Aquí van los proveedores de pintura y herramienta, y los talleres
-      donde se aprende a armar. Es la sección más vacía del ecosistema mexicano: si conoces a alguien
-      que ofrezca pintado por encargo, <a href="/alta-de-tienda/" class="link">mándanoslo</a>.
-    </p>
+  <PageHeader sello="Hobby · Servicios especializados" titulo="Servicios, herramientas y pinturas" meta={`${servicios.length} proveedores documentados`}>
+    <p>El kit es la mitad del hobby. Aquí van los proveedores de pintura y herramienta, y los talleres donde se aprende a armar. Es la sección más vacía del ecosistema mexicano: si conoces a alguien que ofrezca pintado por encargo, <a href="/alta-de-tienda/">mándanoslo</a>.</p>
+  </PageHeader>
 
+  <div class="grid-page py-12 md:py-16">
     {servicios.length === 0 ? (
       <p class="mt-8 text-ink-2">Estamos armando esta sección.</p>
     ) : (
-      <div class="mt-8 grid gap-4 sm:grid-cols-2">
+      <div class="grid border-l border-t border-line sm:grid-cols-2">
         {servicios.map((s) => (
-          <article class="card p-5">
+          <article class="card p-5 sm:p-6">
             <ul class="flex flex-wrap gap-1.5">
               {s.data.tipo.map((t) => <li class="tag">{etiquetas[t] ?? t}</li>)}
             </ul>

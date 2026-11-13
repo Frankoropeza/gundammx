@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import PageHeader from '@components/PageHeader.astro';
 import { schemaMigaDePan } from '@lib/seo';
 import { SITE } from '@config/site';
 
@@ -14,13 +15,10 @@ const schemasMiga = [schemaMigaDePan({ site: Astro.site, url: Astro.url.pathname
  schemas={schemasMiga}>
   <Breadcrumbs items={migas} />
 
-  <div class="grid-page max-w-3xl py-8">
-    <h1 class="display text-3xl md:text-4xl">Reportar</h1>
-    <p class="mt-4 text-lg text-ink-2">
-      El directorio se mantiene con reportes. Si algo está mal, avísanos.
-    </p>
+  <PageHeader sello="Directorio · Control editorial" titulo="Reportar" entrada="El directorio se mantiene con reportes. Si algo está mal, avísanos." />
 
-    <section class="mt-10">
+  <div class="grid-page max-w-3xl py-12 md:py-16">
+    <section>
       <h2 class="display text-2xl">Qué puedes reportar</h2>
       <ul class="mt-4 space-y-2 text-sm text-ink-2">
         <li>Un dato incorrecto: dirección, horario, catálogo o envíos.</li>

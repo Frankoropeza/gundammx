@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import PageHeader from '@components/PageHeader.astro';
 import MobileSuitCard from '@components/MobileSuitCard.astro';
 import { nombres, publicado } from '@lib/archivo';
 import { UNIVERSOS_META, type UniversoId } from '@config/site';
@@ -18,11 +19,14 @@ import imgMobileSuits from '../../assets/hub-mobile-suits.jpg';
 <BaseLayout titulo="Mobile Suits de Gundam | Fichas por universo" descripcion={`Los mobile suits de Gundam, máquina por máquina: ${ms.length} fichas con designación, facción, piloto, primera aparición y los kits de Gunpla que existen de cada una.`} schemas={schemas}>
   <Breadcrumbs items={migas} />
 
+  <PageHeader
+    sello="Archivo · Fichas técnicas"
+    titulo="Mobile suits"
+    entrada="Las máquinas, tratadas como lo que son en la ficción: armamento con fabricante, designación y piloto. Agrupadas por universo."
+    meta={`${ms.length} máquinas documentadas`}
+  />
   <HubImagen src={imgMobileSuits} id="hub-mobile-suits" />
-  <div class="grid-page py-10">
-    <p class="class-line">Archivo</p>
-    <h1 class="display mt-3 text-4xl md:text-5xl">Mobile suits</h1>
-    <p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">Las máquinas, tratadas como lo que son en la ficción: armamento con fabricante, designación y piloto. Agrupadas por universo.</p>
+  <div class="grid-page py-12 md:py-16">
     {porUniverso.map(({ u, items }) => (
       <section class="mt-10 md:mt-14" aria-labelledby={`ms-${u}`}>
         <h2 id={`ms-${u}`} class="class-line">{UNIVERSOS_META[u as UniversoId].nombre} · {items.length}</h2>

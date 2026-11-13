@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import PageHeader from '@components/PageHeader.astro';
 import { getCollection } from 'astro:content';
 import { nombreEstado } from '@lib/estados';
 import { schemaListado, schemaMigaDePan } from '@lib/seo';
@@ -31,21 +32,21 @@ import imgComunidad from '../../assets/hub-comunidad.jpg';
 >
   <Breadcrumbs items={migas} />
 
+  <PageHeader
+    sello="Comunidad · Clubes y grupos"
+    titulo="Comunidad"
+    entrada="Casi toda la comunidad mexicana de Gunpla vive en grupos de Facebook, y el circuito de modelismo organizado está en los capítulos de IPMS. Los juntamos aquí porque hoy no hay ningún punto de entrada."
+    meta={`${nodos.length} comunidades documentadas`}
+  />
   <HubImagen src={imgComunidad} id="hub-comunidad" />
 
-  <div class="grid-page py-8">
-    <h1 class="display text-3xl md:text-4xl">Comunidad</h1>
-    <p class="mt-4 max-w-3xl text-ink-2">
-      Casi toda la comunidad mexicana de Gunpla vive en grupos de Facebook, y el circuito de modelismo
-      organizado está en los capítulos de IPMS. Los juntamos aquí porque hoy no hay ningún punto de entrada.
-    </p>
-
+  <div class="grid-page py-12 md:py-16">
     {nodos.length === 0 ? (
       <p class="mt-8 text-ink-2">Estamos armando esta sección.</p>
     ) : (
-      <ul class="mt-8 grid gap-4 sm:grid-cols-2">
+      <ul class="grid border-l border-t border-line sm:grid-cols-2">
         {nodos.map((n) => (
-          <li class="card p-5">
+          <li class="card p-5 sm:p-6">
             <div class="flex flex-wrap items-center gap-2">
               <span class="tag">{etiquetas[n.data.tipo] ?? n.data.tipo}</span>
               <span class="tag capitalize">{n.data.alcance}</span>

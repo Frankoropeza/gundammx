@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import PageHeader from '@components/PageHeader.astro';
 import UniverseNavigator from '@components/UniverseNavigator.astro';
 import { universosConContenido } from '@lib/archivo';
 import { schemaColeccion, schemaMigaDePan } from '@lib/seo';
@@ -14,7 +15,11 @@ import imgUniversos from '../../assets/hub-universos.jpg';
 <BaseLayout titulo="Universos de Gundam | Las siete líneas temporales" descripcion="Explora los universos de Gundam y sus series de entrada: Universal Century, Cosmic Era, After Colony y cuatro líneas temporales más." schemas={schemas}>
   <Breadcrumbs items={migas} />
 
+  <PageHeader
+    sello="Archivo · Líneas temporales"
+    titulo="Universos"
+    entrada="Gundam no es una historia continua sino siete calendarios independientes. Solo uno de ellos —el Universal Century— exige seguir un orden."
+  />
   <HubImagen src={imgUniversos} id="hub-universos" />
-  <div class="grid-page pt-10"><p class="class-line">Archivo</p><h1 class="display mt-3 text-4xl md:text-5xl">Universos</h1><p class="mt-5 max-w-prose text-lg text-ink-2 text-pretty">Gundam no es una historia continua sino siete calendarios independientes. Solo uno de ellos —el Universal Century— exige seguir un orden.</p></div>
   <UniverseNavigator universos={universos} />
 </BaseLayout>
