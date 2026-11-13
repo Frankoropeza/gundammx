@@ -245,6 +245,15 @@ export const CREDITOS: Record<string, CreditoImagen> = {
     alt: "Estudio fotográfico de mesa con cámara, caja de luz y una pieza sobre base giratoria.",
     tipo: 'ia',
   },
+  'gen-art-drones-como-hobby-en-mexico': {
+    titulo: 'Imagen ilustrativa generada para GUNDAMMX',
+    autor: 'GUNDAMMX',
+    licencia: 'Generada con IA',
+    licenciaUrl: '/creditos/#imagenes-generadas',
+    fuente: '/creditos/#imagenes-generadas',
+    alt: "Persona preparando un dron recreativo sobre una mesa antes de volarlo en un parque abierto.",
+    tipo: 'ia',
+  },
   'gen-art-comprar-vender-gunpla-segunda-mano': {
     titulo: 'Imagen ilustrativa generada para GUNDAMMX',
     autor: 'GUNDAMMX',
